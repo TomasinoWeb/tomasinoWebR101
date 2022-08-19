@@ -114,7 +114,7 @@ const Form = () => {
                 placeholder='twitter'
             />
             <p>{errors.twitter?.message}</p>
-            <input type='submit' />
+            <button type="submit" disabled={submitting}>SUBMIT</button>
         </form>
     )
 }
