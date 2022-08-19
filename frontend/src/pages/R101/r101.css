@@ -1,0 +1,49 @@
+.card{
+    width: 15% ;
+    margin-left: 10%;
+    float:left;
+}
+.card-body{
+    width: 190px;
+    margin-right:10px; 
+}
+
+.appProcess{
+    color: #333;
+    /* font-family: sans-serif; */
+    font-weight: 570;
+    font-size: 350%;
+    margin-top: 6%;
+    margin-left: 10%; 
+    display: block;
+}
+/* Title and paragraphs */
+    .font-Head-paragraph{
+        font-weight: 10;
+        font-size: 160%;
+    }
+    .custom-paragraph{
+        font-weight: 10;
+        font-size: 100%;
+    }
+/* For the icons */
+    .divider-custom-form {
+        margin-left: 10%; 
+        width: 3%;
+
+    }
+    .divider-custom-icons {
+        margin-left: 1%; 
+        width: 3%;
+    }
+/* For the arrows */
+    .divider-custom-arrow{
+        margin-left: 2%; 
+        margin-bottom: 1%;
+        color: black;
+        font-size: 200%;
+        width: 15%;
+    }
+
+
+

@@ -4,9 +4,15 @@
     align-items: center;
     padding: 0 30px 0 30px;
     background-color: #151F28;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    transition: 1s;
 }
 
 .transparent { 
+    position: static;
+    transition: 1s;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -78,6 +84,7 @@
         height: 200px;
         padding: 0;
         width: 100%;
+        position: block;
     }
 
     .nav-link { 
@@ -87,15 +94,17 @@
 
     .nav-link:hover { 
         background-color: var(--lead);
+        color: black;
     }
-
+    
     .transparent-nav-link { 
         width: 100%;
         padding: 15px 0 15px 30px;
     }
-
+    
     .transparent-nav-link:hover { 
         background-color: var(--lead);
+        color: black;
     }
 
     .invisible { 
