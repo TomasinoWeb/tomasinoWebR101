@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Sailec";
+  src: local("Sailec"),
+  url("./fonts//Sailec/Sailec\ Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal
+}
+@font-face {
+  font-family: ;
+  src: url();
+}
+
 :root { 
   --primary: #151F28;
   --secondary: #F7A81E;
@@ -8,6 +20,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Sailec;
+  font-weight: 800;
 }
 
 a  {
