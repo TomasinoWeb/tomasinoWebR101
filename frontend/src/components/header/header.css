@@ -6,13 +6,13 @@
     background-color: #151F28;
     width: 100%;
     top: 0;
-    position: fixed;
-    transition: 1s;
+    position: sticky;
+    transition: 0.3s;
 }
 
 .transparent { 
-    position: static;
-    transition: 1s;
+    position: sticky;
+    transition: 0.3s;
     background-color: rgba(0, 0, 0, 0);
 }
 

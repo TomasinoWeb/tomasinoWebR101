@@ -1,0 +1,26 @@
+.departments-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.departments-left-col { 
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px
+}
+
+.department { 
+    padding: 15px 0 15px 0;
+}
+
+.departments-right-col { 
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
