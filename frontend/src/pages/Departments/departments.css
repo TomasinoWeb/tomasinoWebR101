@@ -311,6 +311,57 @@
 
 
 }
+@media only screen and (max-width: 576px) {
+  .hero { 
+    font-size: 1em;
+  }
+
+  .creatives { 
+    top: 0px;
+}
+
+.community-development { 
+  top: 30px;
+}
+
+.external-affairs { 
+  top: 60px;
+}
+
+.finance { 
+  top: 90px;
+}
+
+.human-resources { 
+  top: 120px;
+}
+
+.photography { 
+  top: 150px;
+}
+
+.publicity {
+  top: 180px
+}
+
+.secretariat { 
+  top: 240px;
+}
+
+.videography { 
+  top: 270px;
+}
+
+.web-technologies { 
+  top: 300px;
+}
+
+.writing { 
+  top: 330px;
+}
+
+
+}
 
 @media only screen and (max-width: 375px) {
   .hero { 
