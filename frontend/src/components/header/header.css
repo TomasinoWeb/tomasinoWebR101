@@ -11,7 +11,7 @@
     z-index: 99;
 }
 
-.transparent { 
+.colored { 
     position: sticky;
     transition: 0.3s;
     background-color: rgba(0, 0, 0, 0);
@@ -37,11 +37,11 @@
     color: var(--lead);
 }
 
-.transparent-nav-link { 
+.colored-nav-link { 
     color:  #141F28;
 }
 
-.transparent-nav-link:hover {
+.colored-nav-link:hover {
     color: var(--lead)
 }
 
@@ -98,12 +98,12 @@
         color: black;
     }
     
-    .transparent-nav-link { 
+    .colored-nav-link { 
         width: 100%;
         padding: 15px 0 15px 30px;
     }
     
-    .transparent-nav-link:hover { 
+    .colored-nav-link:hover { 
         background-color: var(--lead);
         color: black;
     }
