@@ -6,16 +6,25 @@ import "./form.css"
 
 // TODO:
 // DO RECAPTCHAS (NEED TO BE DEPLOYED TO USE CAPTCHAS CANT BE IN LOCALHOST)
-// FILL IN PROPER POSITION NAMES
+// ASK BRIN WHICH ONES NEED TO BE REQUIRED
 
 const FORMSPARK_FORM_ID = "EapXXsTZ"
 
 const options = [
-    { value: "volkswagen", label: "Volkswagen" },
-    { value: "seat", label: "Seat" },
-    { value: "burger", label: "burger" },
-    { value: "steak", label: "steak" },
-    { value: "noodles", label: "noodles" },
+    { value: "Creatives", label: "Creatives" },
+    { value: "Community Development", label: "Community Development" },
+    { value: "External Affairs", label: "External Affairs" },
+    { value: "Finance", label: "Finance" },
+    { value: "Human Resources", label: "Human Resources" },
+    { value: "Photography", label: "Photography" },
+    {
+        value: "Publicity and Communications",
+        label: "Publicity and Communications",
+    },
+    { value: "Secretariat", label: "Secretariat" },
+    { value: "Videography", label: "Videography" },
+    { value: "Web Technologies", label: "Web Technologies" },
+    { value: "Writing", label: "Writing" },
 ]
 
 const Form = () => {
@@ -33,7 +42,7 @@ const Form = () => {
     // when form is submitted it comes out as an array of objects, i only want the value
     const getValue = (data) => {
         let result = []
-        for (let i = 0; i < data.length; i++) { 
+        for (let i = 0; i < data.length; i++) {
             result.push(data[i].value)
         }
         return result
@@ -41,10 +50,10 @@ const Form = () => {
 
     const onSubmit = async (data, event) => {
         event.preventDefault()
-        const positionValueOnly = getValue(data.position)
+        const positionSelected = getValue(data.position)
         // delete data.position because data.position is an array of objects i only want the value
-        delete data.position 
-        const payload = ({...data, positionValueOnly})
+        delete data.position
+        const payload = { ...data, positionSelected }
         await submit(payload)
         alert("Form submitted")
     }
@@ -57,64 +66,105 @@ const Form = () => {
                 render={({ field }) => {
                     return (
                         <div>
+                            <label for='positionFilter'>Select Positions</label>
                             <Select
-                                name='filters'
-                                placeholder='Filters'
+                                name='positionFilter'
+                                placeholder='Position'
                                 options={options}
                                 isMulti
                                 {...field}
                             />
                         </div>
-                
                     )
                 }}
             />
+            <p className='error-message'>{errors.name?.message}</p>
+            <label for='name'>Name</label>
             <input
-                {...register("name", { required: "This is required" })}
+                {...register("name", { required: "Name is required" })}
+                name='name'
                 placeholder='name'
+                className='input-class'
             />
-            <p>{errors.name?.message}</p>
+
+            <p className='error-message'>{errors.year?.message}</p>
+            <label for='year'>Year</label>
             <input
-                {...register("year", { required: "This is required" })}
+                {...register("year", { required: "Year is required" })}
+                name='year'
                 placeholder='year'
+                className='input-class'
             />
-            <p>{errors.year?.message}</p>
+
+            <p className='error-message'>{errors.studentNumber?.message}</p>
+            <label for='studentNumber'>Student Number</label>
             <input
-                {...register("studentNumber", { required: "This is required" })}
+                {...register("studentNumber", {
+                    required: "Student Number is required",
+                })}
+                name='studentNumber'
                 placeholder='studentNumber'
+                className='input-class'
             />
-            <p>{errors.studentNumber?.message}</p>
+
+            <p className='error-message'>{errors.program?.message}</p>
+            <label for='program'>Program</label>
             <input
-                {...register("program", { required: "This is required" })}
+                {...register("program", { required: "Program is required" })}
+                name='program'
                 placeholder='program'
+                className='input-class'
             />
-            <p>{errors.program?.message}</p>
+
+            <p className='error-message'>{errors.college?.message}</p>
+            <label for='college'>College</label>
             <input
-                {...register("college", { required: "This is required" })}
+                {...register("college", { required: "College is required" })}
+                name='college'
                 placeholder='college'
+                className='input-class'
             />
-            <p>{errors.college?.message}</p>
+
+            <p className='error-message'>{errors.email?.message}</p>
+            <label for='email'>Email</label>
             <input
-                {...register("email", { required: "This is required" })}
+                {...register("email", { required: "Email is required" })}
+                name='email'
                 placeholder='email'
+                className='input-class'
             />
-            <p>{errors.email?.message}</p>
+
+            <p className='error-message'>{errors.phone?.message}</p>
+            <label for='phone'>Phone Number</label>
             <input
-                {...register("phone", { required: "This is required" })}
+                {...register("phone", { required: "Phone Number is required" })}
+                name='phone'
                 placeholder='phone'
+                className='input-class'
             />
-            <p>{errors.phone?.message}</p>
+
+            <p className='error-message'>{errors.facebook?.message}</p>
+            <label for='facebook'>Facebook Link</label>
             <input
-                {...register("facebook", { required: "This is required" })}
+                {...register("facebook", { required: "Facebook Link is required" })}
+                name='facebook'
                 placeholder='facebook'
+                className='input-class'
             />
-            <p>{errors.facebook?.message}</p>
+
+            <p className='error-message'>{errors.twitter?.message}</p>
+            <label for='twitter'>Twitter Link</label>
             <input
-                {...register("twitter", { required: "This is required" })}
+                {...register("twitter", {
+                    required: "Twitter Link is required",
+                })}
+                name='twitter'
                 placeholder='twitter'
+                className='input-class'
             />
-            <p>{errors.twitter?.message}</p>
-            <button type="submit" disabled={submitting}>SUBMIT</button>
+            <button type='submit' disabled={submitting} className='submit-btn'>
+                SUBMIT
+            </button>
         </form>
     )
 }

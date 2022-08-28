@@ -11,7 +11,16 @@
   font-family: "Sailec";
   src: local("Sailec"),
   url("./fonts//Sailec//Sailec\ Medium.otf") format("truetype");
-  font-weight: medium;
+  font-weight: 500;
+  font-style: normal
+  /* font weight = 500 */
+}
+
+@font-face {
+  font-family: "Sailec";
+  src: local("Sailec"),
+  url("./fonts//Sailec//Sailec\ Bold.otf") format("truetype");
+  font-weight: bold;
   font-style: normal
   /* font weight = 500 */
 }
