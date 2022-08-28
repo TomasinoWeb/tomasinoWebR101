@@ -112,6 +112,7 @@
     color: black;
     position: absolute;
     right: 30px;
+    text-align: right;
 }
   
 .creatives { 
@@ -181,22 +182,185 @@
 
 
 @media only screen and (max-width: 1024px) {
-  .department { 
-    font-size: 1.6em;
-  }
-
-  .publicity { 
-    top: calc(10vh + 360px);
-    right: 20px;
+  .hero { 
+    font-size: 2em;
   }
   
+  .department { 
+    font-size: 160%;
+  }
   
 }
 
 @media only screen and (max-width: 768px) {
     .hero { 
-        font-size: 2em;
+        font-size: 1.5em;
     }
+
+    .departments-showcase{
+      flex-direction: column-reverse;
+    }
+
+    .departments-right-col { 
+      margin-top: 10vh;
+    }
+
+    .department { 
+      font-size: 1em;
+      right: 0;
+    }
+
+    .creatives { 
+      top: 0px;
+  }
+  
+  .community-development { 
+    top: 30px;
+  }
+  
+  .external-affairs { 
+    top: 60px;
+  }
+  
+  .finance { 
+    top: 90px;
+  }
+  
+  .human-resources { 
+    top: 120px;
+  }
+  
+  .photography { 
+    top: 150px;
+  }
+  
+  .publicity { 
+    top: 180px
+  }
+  
+  .secretariat { 
+    top: 210px;
+  }
+  
+  .videography { 
+    top: 240px;
+  }
+  
+  .web-technologies { 
+    top: 270px;
+  }
+  
+  .writing { 
+    top: 300px;
+  }
+
+  .department-title { 
+    font-size: 1em;
+  }
+  
+}
+
+@media only screen and (max-width: 425px) {
+  .hero { 
+    font-size: 1em;
+  }
+
+  .creatives { 
+    top: 0px;
+}
+
+.community-development { 
+  top: 30px;
+}
+
+.external-affairs { 
+  top: 90px;
+}
+
+.finance { 
+  top: 120px;
+}
+
+.human-resources { 
+  top: 150px;
+}
+
+.photography { 
+  top: 180px;
+}
+
+.publicity {
+  top: 210px
+}
+
+.secretariat { 
+  top: 270px;
+}
+
+.videography { 
+  top: 300px;
+}
+
+.web-technologies { 
+  top: 330px;
+}
+
+.writing { 
+  top: 360px;
+}
+
+
+}
+
+@media only screen and (max-width: 375px) {
+  .hero { 
+    font-size: 0.8em;
+  }
+
+  .creatives { 
+    top: 0px;
+}
+
+.community-development { 
+  top: 30px;
+}
+
+.external-affairs { 
+  top: 90px;
+}
+
+.finance { 
+  top: 120px;
+}
+
+.human-resources { 
+  top: 150px;
+}
+
+.photography { 
+  top: 210px;
+}
+
+.publicity {
+  top: 240px
+}
+
+.secretariat { 
+  top: 300px;
+}
+
+.videography { 
+  top: 330px;
+}
+
+.web-technologies { 
+  top: 360px;
+}
+
+.writing { 
+  top: 390px;
+}
+
 }
 
 

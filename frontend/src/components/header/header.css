@@ -114,3 +114,17 @@
 
 
 }
+
+@media only screen and (max-width: 375px) {
+    .brand { 
+        padding: 0;
+    }
+
+    .brand img{ 
+        width: 270px;
+    }
+
+    .hamburger-icon { 
+        right: 10px;
+    }
+}
