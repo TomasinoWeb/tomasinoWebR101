@@ -363,6 +363,12 @@
 
 }
 
+@media only screen and (max-width: 320px) {
+  .writing {
+    top: 420px;
+  }
+}
+
 
 
 

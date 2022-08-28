@@ -83,7 +83,7 @@ const Form = () => {
             <input
                 {...register("name", { required: "Name is required" })}
                 name='name'
-                placeholder='name'
+                placeholder='Given Name M.I. Last Name'
                 className='input-class'
             />
 
@@ -92,7 +92,7 @@ const Form = () => {
             <input
                 {...register("year", { required: "Year is required" })}
                 name='year'
-                placeholder='year'
+                placeholder='Year'
                 className='input-class'
             />
 
@@ -103,7 +103,7 @@ const Form = () => {
                     required: "Student Number is required",
                 })}
                 name='studentNumber'
-                placeholder='studentNumber'
+                placeholder='Student Number'
                 className='input-class'
             />
 
@@ -112,7 +112,7 @@ const Form = () => {
             <input
                 {...register("program", { required: "Program is required" })}
                 name='program'
-                placeholder='program'
+                placeholder='Program'
                 className='input-class'
             />
 
@@ -121,7 +121,7 @@ const Form = () => {
             <input
                 {...register("college", { required: "College is required" })}
                 name='college'
-                placeholder='college'
+                placeholder='College'
                 className='input-class'
             />
 
@@ -130,7 +130,7 @@ const Form = () => {
             <input
                 {...register("email", { required: "Email is required" })}
                 name='email'
-                placeholder='email'
+                placeholder='Email'
                 className='input-class'
             />
 
@@ -139,7 +139,7 @@ const Form = () => {
             <input
                 {...register("phone", { required: "Phone Number is required" })}
                 name='phone'
-                placeholder='phone'
+                placeholder='Phone'
                 className='input-class'
             />
 
@@ -148,7 +148,7 @@ const Form = () => {
             <input
                 {...register("facebook", { required: "Facebook Link is required" })}
                 name='facebook'
-                placeholder='facebook'
+                placeholder='Facebook'
                 className='input-class'
             />
 
@@ -159,7 +159,7 @@ const Form = () => {
                     required: "Twitter Link is required",
                 })}
                 name='twitter'
-                placeholder='twitter'
+                placeholder='Twitter'
                 className='input-class'
             />
             <button type='submit' disabled={submitting} className='submit-btn'>
