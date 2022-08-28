@@ -5,6 +5,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Application from './pages/Application/Application';
 import Departments from './pages/Departments/Departments';
 import R101 from './pages/R101/R101';
+import FaqPage from './pages/faq/FaqPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/application" element={<Application />}></Route>
           <Route path="/departments" element={<Departments />}></Route>
           <Route path="/r101" element={<R101 />}></Route>
+          <Route path="/faq" element={<FaqPage />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
         <Footer />
