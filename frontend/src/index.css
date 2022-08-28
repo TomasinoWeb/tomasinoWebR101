@@ -4,7 +4,19 @@
   url("./fonts//Sailec/Sailec\ Regular.otf") format("truetype");
   font-weight: normal;
   font-style: normal
+  /* font weight = 400 */
 }
+
+@font-face {
+  font-family: "Sailec";
+  src: local("Sailec"),
+  url("./fonts//Sailec//Sailec\ Medium.otf") format("truetype");
+  font-weight: medium;
+  font-style: normal
+  /* font weight = 500 */
+}
+
+
 
 :root { 
   --primary: #151F28;
@@ -17,7 +29,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Sailec;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 a  {

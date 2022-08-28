@@ -1,26 +1,276 @@
+.Departments { 
+  width: 100%;
+  /* overflow-x: hidden; */
+}
+
+.departments-container { 
+    /* margin: 0 125px 0 125px; */
+}
+
+.hero { 
+    width: 100%;
+    padding: 200px 30px 0 30px;
+    font-size: 3em;
+    height: calc(100vh - 10vh);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.css-typing h1 {
+    font-weight: 400;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.css-typing h1:nth-child(1) {
+    width: 8.4em;
+    -webkit-animation: type 2s steps(40, end);
+    animation: type 2s steps(60, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.css-typing h1:nth-child(2) {
+    width: 6em;
+    opacity: 0;
+    -webkit-animation: type2 2s steps(40, end);
+    animation: type2 2s steps(40, end);
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.css-typing h1:nth-child(3) {
+    width: 9.5em;
+    opacity: 0;
+    -webkit-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+    animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.departments-showcase-section { 
+  position: sticky;
+  top: 0;
+  /* height: 100vh; */
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.white-background { 
+  background-color: white;
+}
+
 .departments-showcase {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
+
 
 .departments-left-col { 
     width: 50%;
+    height: 100%;
     display: flex;
+    /* flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px
+    padding: 0 30px 0 0;
+     */
+    position: relative;
+    align-items: flex-end;
+    background-color: rgba(0, 0, 0, 0);
+
+    
+}
+
+.department-title { 
+  font-size: 2em;
+  position: absolute;
+  left: -100px;
+  bottom: 15vh;
+  letter-spacing: 2px;
+  transform: rotate(270deg);
+  color: var(--secondary);
 }
 
 .department { 
-    padding: 15px 0 15px 0;
+    padding: 15px 0px 15px 0px;
+    word-wrap: break-word;
+    /* font-size: 1.8em; */
+    font-size: 180%;
+    letter-spacing: 2px;
+    color: black;
+    position: absolute;
+    right: 30px;
+}
+  
+.creatives { 
+    top: calc(10vh - 30px);
+}
+
+.community-development { 
+  top: calc(10vh + 30px);
+}
+
+.external-affairs { 
+  top: calc(10vh + 90px);
+}
+
+.finance { 
+  top: calc(10vh + 150px);
+}
+
+.human-resources { 
+  top: calc(10vh + 210px);
+}
+
+.photography { 
+  top: calc(10vh + 270px);
+}
+
+.publicity { 
+  top: calc(10vh + 330px);
+}
+
+.secretariat { 
+  top: calc(10vh + 390px);
+}
+
+.videography { 
+  top: calc(10vh + 450px);
+}
+
+.web-technologies { 
+  top: calc(10vh + 510px);
+}
+
+.writing { 
+  top: calc(10vh + 570px);
+}
+
+.departments-left-col small { 
+    font-size: 1.2em;
 }
 
 .departments-right-col { 
+    height: 100%;
     width: 50%;
+    background-color: blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    /* background-color: red; */
 }
+
+.departments-right-col img { 
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  .department { 
+    font-size: 1.6em;
+  }
+
+  .publicity { 
+    top: calc(10vh + 360px);
+    right: 20px;
+  }
+  
+  
+}
+
+@media only screen and (max-width: 768px) {
+    .hero { 
+        font-size: 2em;
+    }
+}
+
+
+
+
+
+
+
+/* animations */
+@keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+}
+
+@-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+}
+
+@keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+}
+  
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+}
+  
+@keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+}
+@-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
+}
+  
