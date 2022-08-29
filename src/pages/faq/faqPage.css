@@ -1,6 +1,7 @@
 .FaqPage { 
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
@@ -10,6 +11,7 @@
 .picker-div {
     margin: 0% 12%;
     display: flex;
+    width: 70vw;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -23,7 +25,6 @@
       flex-direction: column;
     }
   }
-  
   
   .faq-main-holder {
     display: flex;
