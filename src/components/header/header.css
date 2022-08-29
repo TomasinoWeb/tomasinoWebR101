@@ -1,0 +1,130 @@
+.header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 30px;
+    background-color: #151F28;
+    width: 100%;
+    top: 0;
+    position: sticky;
+    transition: 0.3s;
+    z-index: 99;
+}
+
+.colored { 
+    position: sticky;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.logo { 
+    width: 288px;
+    height: 88px;
+}
+
+.nav-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 33px;
+}
+
+.nav-link { 
+    color: #FFFFFF;
+}
+
+.nav-link:hover { 
+    color: var(--lead);
+}
+
+.colored-nav-link { 
+    color:  #141F28;
+}
+
+.colored-nav-link:hover {
+    color: var(--lead)
+}
+
+.hamburger-icon { 
+    display: none;
+} 
+
+
+@media only screen and (max-width: 768px){
+    .hamburger-icon { 
+        display: flex;
+        position: absolute;
+        top: 25px;
+        right: 45px;
+        font-size: 1.2em;
+        padding: 10px;
+        border-radius: 100px;
+    }
+    .hamburger-icon:hover { 
+        background-color: var(--lead);
+    }
+
+    .header { 
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0
+    }
+
+    .brand { 
+        padding-left: 30px;
+    }
+
+    .nav-container { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+        height: 200px;
+        padding: 0;
+        width: 100%;
+        position: block;
+    }
+
+    .nav-link { 
+        width: 100%;
+        padding: 15px 0 15px 30px;
+    }
+
+    .nav-link:hover { 
+        background-color: var(--lead);
+        color: black;
+    }
+    
+    .colored-nav-link { 
+        width: 100%;
+        padding: 15px 0 15px 30px;
+    }
+    
+    .colored-nav-link:hover { 
+        background-color: var(--lead);
+        color: black;
+    }
+
+    .invisible { 
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 375px) {
+    .brand { 
+        padding: 0;
+    }
+
+    .brand img{ 
+        width: 270px;
+    }
+
+    .hamburger-icon { 
+        right: 10px;
+    }
+}
