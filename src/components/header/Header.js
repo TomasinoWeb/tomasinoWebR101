@@ -51,7 +51,8 @@ const Header = () => {
                 </Link>
                 <a
                     href="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
-                    className={header ? "colored-nav-link" : "nav-link"}>
+                    target="_blank"
+                    className={header ? "colored-nav-link" : "nav-link"} rel="noreferrer">
                     APPLY
                 </a>
             </div>
