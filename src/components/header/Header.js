@@ -26,7 +26,7 @@ const Header = () => {
     }, [])
 
     return (
-        <div className={header ? "header colored" : "header"}>
+        <div className={header ? "header " : "header colored"}>
             <div className='brand'>
                 <Link to="/"><img src={logo} className='logo' alt='logo' /></Link>
             </div>
@@ -36,23 +36,24 @@ const Header = () => {
             <div className={visible ? 'nav-container' : 'nav-container invisible'}>
                 <Link
                     to='/about'
-                    className={header ? "colored-nav-link" : "nav-link"}>
+                    className={header ? "nav-link" : "colored-nav-link"}>
                     ABOUT
                 </Link>
                 <Link
                     to='/r101'
-                    className={header ? "colored-nav-link" : "nav-link"}>
+                    className={header ? "nav-link" : "colored-nav-link"}>
                     R101
                 </Link>
                 <Link
                     to='/faq'
-                    className={header ? "colored-nav-link" : "nav-link"}>
+                    className={header ? "nav-link" : "colored-nav-link"}>
                     FAQ
                 </Link>
                 <a
                     href="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
                     target="_blank"
-                    className={header ? "colored-nav-link" : "nav-link"} rel="noreferrer">
+                    rel="noreferrer"
+                    className={header ? "nav-link" : "colored-nav-link"} >
                     APPLY
                 </a>
             </div>

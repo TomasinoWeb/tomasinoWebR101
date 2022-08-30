@@ -16,9 +16,13 @@ const Footer = () => {
                 <Link to='/departments' className='footer-link'>
                     Departments
                 </Link>
-                <Link to='/application' className='footer-link'>
+                <a
+                    href='https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png'
+                    target='_blank'
+                    rel="noreferrer"
+                    className='footer-link'>
                     Application Form
-                </Link>
+                </a>
                 <Link to='/faq' className='footer-link'>
                     Frequently Asked Questions
                 </Link>
