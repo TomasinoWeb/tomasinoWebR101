@@ -49,11 +49,11 @@ const Header = () => {
                     className={header ? "colored-nav-link" : "nav-link"}>
                     FAQ
                 </Link>
-                <Link
-                    to='/application'
+                <a
+                    href="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
                     className={header ? "colored-nav-link" : "nav-link"}>
                     APPLY
-                </Link>
+                </a>
             </div>
         </div>
     )
