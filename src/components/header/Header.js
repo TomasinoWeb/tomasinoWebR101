@@ -30,7 +30,7 @@ const Header = () => {
             <div className='brand'>
                 <Link to="/"><img src={logo} className='logo' alt='logo' /></Link>
             </div>
-            <span className='hamburger-icon' onClick={toggleVisible}>
+            <span className={header ? 'hamburger-icon white' : "hamburger-icon "} onClick={toggleVisible}>
                 {visible ? <AiOutlineClose /> : <AiOutlineMenu /> }
             </span>
             <div className={visible ? 'nav-container' : 'nav-container invisible'}>
