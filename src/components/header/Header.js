@@ -1,5 +1,6 @@
 import "./header.css"
 import logo from "../../assets/TomasinoWeb-Logo-2.png"
+import logo2 from "../../assets/TomasinoWeb Logo 2.png"
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
@@ -26,34 +27,35 @@ const Header = () => {
     }, [])
 
     return (
-        <div className={header ? "header " : "header colored"}>
+        <div className={header ? "header " : "header transparent"}>
             <div className='brand'>
-                <Link to="/"><img src={logo} className='logo' alt='logo' /></Link>
+                <Link to="/"><img src={logo} className='logo desktop-logo' alt='logo' /></Link>
+                <Link to="/"><img src={logo2} className='logo mobile-logo' alt='logo2' /></Link>
             </div>
-            <span className={header ? 'hamburger-icon white' : "hamburger-icon "} onClick={toggleVisible}>
+            <span className="hamburger-icon" onClick={toggleVisible}>
                 {visible ? <AiOutlineClose /> : <AiOutlineMenu /> }
             </span>
             <div className={visible ? 'nav-container' : 'nav-container invisible'}>
                 <Link
                     to='/about'
-                    className={header ? "nav-link" : "colored-nav-link"}>
+                    className="nav-link">
                     ABOUT
                 </Link>
                 <Link
                     to='/r101'
-                    className={header ? "nav-link" : "colored-nav-link"}>
+                    className="nav-link">
                     R101
                 </Link>
                 <Link
                     to='/faq'
-                    className={header ? "nav-link" : "colored-nav-link"}>
+                    className="nav-link">
                     FAQ
                 </Link>
                 <a
                     href="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
                     target="_blank"
                     rel="noreferrer"
-                    className={header ? "nav-link" : "colored-nav-link"} >
+                    className={header ? "transparent-nav-link" : "nav-link"} >
                     APPLY
                 </a>
             </div>
