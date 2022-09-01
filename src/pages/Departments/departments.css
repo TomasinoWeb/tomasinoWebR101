@@ -7,11 +7,11 @@
     width: 100%;
     padding: 200px 30px 0 30px;
     font-size: 3em;
-    height: calc(100vh - 10vh);
+    height: 100vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
+    font-weight: normal;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -57,7 +57,7 @@
 .departments-showcase-section { 
   position: sticky;
   top: 0;
-  /* height: 100vh; */
+  height: 100vh;
   width: 100%;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0);
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 
@@ -79,81 +79,63 @@
     width: 50%;
     height: 100%;
     display: flex;
-    /* flex-direction: column;
-    justify-content: center;
-    padding: 0 30px 0 0;
-     */
     position: relative;
-    align-items: flex-end;
-    background-color: rgba(0, 0, 0, 0);
-
-    
-}
-
-.department-title { 
-  font-size: 2em;
-  position: absolute;
-  left: -100px;
-  bottom: 15vh;
-  letter-spacing: 2px;
-  transform: rotate(270deg);
-  color: var(--secondary);
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .department { 
-    padding: 15px 0px 15px 0px;
-    word-wrap: break-word;
-    font-size: 180%;
-    letter-spacing: 2px;
-    color: black;
-    position: absolute;
-    right: 30px;
-    text-align: right;
-    font-weight: 500;
+  padding-right: 15px;
+  font-size: 160%;
+  letter-spacing: 2px;
+  color: black;
+  text-align: right;
+  font-weight: 500;
+  line-height: 111%;
 }
   
 .creatives { 
-    top: calc(10vh - 30px);
+  padding-top: 20%;
 }
 
 .community-development { 
-  top: calc(10vh + 30px);
+  padding-top: 27%;
 }
 
 .external-affairs { 
-  top: calc(10vh + 90px);
+  padding-top: 34%;
 }
 
 .finance { 
-  top: calc(10vh + 150px);
+  padding-top: 41%;
 }
 
 .human-resources { 
-  top: calc(10vh + 210px);
+  padding-top: 48%;
 }
 
 .photography { 
-  top: calc(10vh + 270px);
+  padding-top: 55%;
 }
 
 .publicity { 
-  top: calc(10vh + 330px);
+  padding-top: 62%;
 }
 
 .secretariat { 
-  top: calc(10vh + 390px);
+  padding-top: 69%;
 }
 
 .videography { 
-  top: calc(10vh + 450px);
+  padding-top: 76%;
 }
 
 .web-technologies { 
-  top: calc(10vh + 510px);
+  padding-top: 83%;
 }
 
 .writing { 
-  top: calc(10vh + 570px);
+  padding-top: 90%;
 }
 
 .departments-left-col small { 
@@ -161,12 +143,11 @@
 }
 
 .departments-right-col { 
-    height: 100%;
     width: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
 }
 
 .departments-right-col img { 
@@ -183,239 +164,196 @@
   }
   
   .department { 
-    font-size: 160%;
+    font-size: 140%;
   }
   
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 807px) {
     .hero { 
         font-size: 1.5em;
     }
 
     .departments-showcase{
       flex-direction: column-reverse;
+      min-height: 100vh;
+    }
+
+    .departments-left-col { 
+      height: 100%;
+      /* background-color: yellow; */
+      justify-content: center;
+      align-items: flex-start;
+      text-align: center;
+    }
+
+    .department { 
+      width: 100%;
+      text-align: center;
+      padding-right: 0;
     }
 
     .departments-right-col { 
-      margin-top: 10vh;
+      margin-top: 100px;
+    }
+
+    .departments-right-col img {
+      height: 100%;
     }
 
     .department { 
       font-size: 1em;
-      right: 0;
     }
 
     .creatives { 
-      top: 0px;
-  }
-  
-  .community-development { 
-    top: 30px;
-  }
-  
-  .external-affairs { 
-    top: 60px;
-  }
-  
-  .finance { 
-    top: 90px;
-  }
-  
-  .human-resources { 
-    top: 120px;
-  }
-  
-  .photography { 
-    top: 150px;
-  }
-  
-  .publicity { 
-    top: 180px
-  }
-  
+      padding-top: 0%;
+    }
+    
+    .community-development { 
+      padding-top: 7%;
+    }
+    
+    .external-affairs { 
+      padding-top: 14%;
+    }
+    
+    .finance { 
+      padding-top: 21%;
+    }
+    
+    .human-resources { 
+      padding-top: 28%;
+    }
+    
+    .photography { 
+      padding-top: 35%;
+    }
+    
+    .publicity { 
+      padding-top: 42%;
+    }
+    
+    .secretariat { 
+      padding-top: 49%;
+    }
+    
+    .videography { 
+      padding-top: 56%;
+    }
+    
+    .web-technologies { 
+      padding-top: 63%;
+    }
+    
+    .writing { 
+      padding-top: 70%;
+    }
+
+
+}
+
+@media only screen and (max-width: 588px) {
   .secretariat { 
-    top: 210px;
+    padding-top: 56%;
   }
   
   .videography { 
-    top: 240px;
+    padding-top: 63%;
   }
   
   .web-technologies { 
-    top: 270px;
+    padding-top: 70%;
   }
   
   .writing { 
-    top: 300px;
+    padding-top: 77%;
   }
+}
 
-  .department-title { 
-    font-size: 1em;
+@media only screen and (max-width: 485px) {
+.hero { 
+  font-size: 0.9em;
+}
+
+.creatives { 
+  padding-top: 0%;
+}
+
+.community-development { 
+  padding-top: 10%;
+}
+
+.external-affairs { 
+  padding-top: 30%;
+}
+
+.finance { 
+  padding-top: 40%;
+}
+
+.human-resources { 
+  padding-top: 50%;
+}
+
+.photography { 
+  padding-top: 60%;
+}
+
+.publicity { 
+  padding-top: 70%;
+}
+
+.secretariat { 
+  padding-top: 90%;
+}
+
+.videography { 
+  padding-top: 100%;
+}
+
+.web-technologies { 
+  padding-top: 110%;
+}
+
+.writing { 
+  padding-top: 120%;
+}
+
+
+}
+
+@media only screen and (max-width: 355px) {
+  .writing { 
+    padding-top: 130%;
+  }
+}
+
+@media only screen and (max-width: 339px) { 
+  .photography { 
+    padding-top: 70%;
   }
   
-}
-
- @media only screen and (max-width: 481px) {
-  .hero { 
-    font-size: 1em;
+  .publicity { 
+    padding-top: 80%;
   }
-
-  .creatives { 
-    top: 0px;
-}
-
-.community-development { 
-  top: 30px;
-}
-
-.external-affairs { 
-  top: 90px;
-}
-
-.finance { 
-  top: 120px;
-}
-
-.human-resources { 
-  top: 150px;
-}
-
-.photography { 
-  top: 180px;
-}
-
-.publicity {
-  top: 210px
-}
-
-.secretariat { 
-  top: 270px;
-}
-
-.videography { 
-  top: 300px;
-}
-
-.web-technologies { 
-  top: 330px;
-}
-
-.writing { 
-  top: 360px;
-}
-
-
-}
-@media only screen and (max-width: 576px) {
-  .hero { 
-    font-size: 1em;
+  
+  .secretariat { 
+    padding-top: 100%;
   }
-
-  .creatives { 
-    top: 0px;
-}
-
-.community-development { 
-  top: 30px;
-}
-
-.external-affairs { 
-  top: 60px;
-}
-
-.finance { 
-  top: 90px;
-}
-
-.human-resources { 
-  top: 120px;
-}
-
-.photography { 
-  top: 150px;
-}
-
-.publicity {
-  top: 180px
-}
-
-.secretariat { 
-  top: 240px;
-}
-
-.videography { 
-  top: 270px;
-}
-
-.web-technologies { 
-  top: 300px;
-}
-
-.writing { 
-  top: 330px;
-}
-
-
-} 
-
-@media only screen and (max-width: 481px) {
-  .hero { 
-    font-size: 0.8em;
+  
+  .videography { 
+    padding-top: 110%;
   }
-
-  .creatives { 
-    top: 0px;
-}
-
-.community-development { 
-  top: 30px;
-}
-
-.external-affairs { 
-  top: 90px;
-}
-
-.finance { 
-  top: 120px;
-}
-
-.human-resources { 
-  top: 150px;
-}
-
-.photography { 
-  top: 210px;
-}
-
-.publicity {
-  top: 240px
-}
-
-.secretariat { 
-  top: 300px;
-}
-
-.videography { 
-  top: 330px;
-}
-
-.web-technologies { 
-  top: 360px;
-}
-
-.writing { 
-  top: 390px;
-}
-
-}
-
-@media only screen and (max-width: 320px) {
-  .writing {
-    top: 420px;
+  
+  .web-technologies { 
+    padding-top: 120%;
+  }
+  
+  .writing { 
+    padding-top: 140%;
   }
 }
-
 
 
 

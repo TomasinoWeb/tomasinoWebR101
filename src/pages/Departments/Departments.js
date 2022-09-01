@@ -5,9 +5,9 @@ const Departments = () => {
         <div className='Departments'>
             <div className='hero'>
                 <div className='css-typing'>
-                    <h1 className='hero-title'>Executive Affairs.</h1>
-                    <h1 className='hero-title'>Publication.</h1>
-                    <h1 className='hero-title'>Web Technologies.</h1>
+                    <h1>Executive Affairs.</h1>
+                    <h1>Publication.</h1>
+                    <h1>Web Technologies.</h1>
                 </div>
             </div>
 
@@ -15,7 +15,6 @@ const Departments = () => {
                 <div className='departments-showcase'>
                     <div className='departments-left-col'>
                         <p className='department creatives'>Creatives</p>
-                        <p className='department-title'>DEPARTMENTS</p>
                     </div>
                     <div className='departments-right-col'>
                         <img
