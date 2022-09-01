@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px;
+    font-weight: bold;
 }
 
 .footer-left-col {
@@ -14,7 +15,16 @@
     align-items: center;
     gap: 33px;
     font-size: 14px;
-    color: black
+    color: black;
+    
+}
+
+.footer-link { 
+    font-weight: 500;
+}
+
+.footer-icons { 
+    font-weight: 500;
 }
 
 .footer-right-col { 
@@ -25,11 +35,12 @@
 }
 
 .footer-link:hover { 
-    color: var(--lead)
+    color: var(--lead);
 }
 
 .footer-icons:hover { 
-    color: var(--lead)
+    color: var(--lead);
+    
 }
 
 @media only screen and (max-width: 768px) {
