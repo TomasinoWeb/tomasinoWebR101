@@ -1,12 +1,13 @@
 .footer { 
     width: 100%;
     bottom: 0;
-    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
     font-weight: bold;
+    background-color: white;
+    z-index: 999;
 }
 
 .footer-left-col {
