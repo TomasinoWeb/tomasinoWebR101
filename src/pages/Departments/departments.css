@@ -3,7 +3,7 @@
 }
 
 
-.hero { 
+.departments-hero { 
     width: 100%;
     padding: 200px 30px 0 30px;
     font-size: 3em;
@@ -159,7 +159,7 @@
 
 
 @media only screen and (max-width: 1024px) {
-  .hero { 
+  .departments-hero { 
     font-size: 2em;
   }
   
@@ -171,7 +171,7 @@
 
 
 @media only screen and (max-width: 807px) {
-    .hero { 
+    .departments-hero { 
         font-size: 1.5em;
     }
 
@@ -272,7 +272,7 @@
 }
 
 @media only screen and (max-width: 485px) {
-.hero { 
+.departments-hero { 
   font-size: 0.9em;
 }
 

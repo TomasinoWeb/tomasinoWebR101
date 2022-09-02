@@ -7,87 +7,77 @@ import result from "../../assets/result.png"
 
 const R101 = () => {
     return (
-        <div className='r101'>
-            <p className='appProcess'>
-                The <br /> Application
-                <br /> Process
-            </p>
-            <div>
-                <img src={form} className='divider-custom-form' alt='...' />
-
-                <img src={arrow} className='divider-custom-arrow' alt='...' />
-
-                <img src={exam} className='divider-custom-icons' alt='...' />
-
-                <img src={arrow} className='divider-custom-arrow' alt='...' />
-
-                <img
-                    src={interview}
-                    className='divider-custom-icons'
-                    alt='...'
-                />
-
-                <img src={arrow} className='divider-custom-arrow' alt='...' />
-
-                <img src={result} className='divider-custom-icons' alt='...' />
+        <div className='R101'>
+            <div className='r101-hero'>
+                <h1 className='r101-hero-title'>The</h1>
+                <h1 className='r101-hero-title'>Application</h1>
+                <h1 className='r101-hero-title'>Process</h1>
             </div>
-
-            <div className='row'>
-                <div className='column'>
-                    <div className='card'>
-                        <h3 className='font-Head-paragraph'>
-                            Formal application
-                        </h3>
-                        <p className='custom-paragraph'>
-                            Fill out the application form <br />
-                            found at the website
+            <div className='r101-card-container'>
+                <div className='r101-card'>
+                    <div className='r101-card-icon-row'>
+                        <img src={form} alt='form' className='r101-icon' />
+                        <img src={arrow} alt='arrow' className='r101-arrow' />
+                    </div>
+                    <div className='r101-card-content-container'>
+                        <h2 className='r101-card-title'>Formal Application</h2>
+                        <p className='r101-card-text'>
+                            Applicants must first accomplish the{" "}
+                            <a
+                                href='https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png'
+                                target='_blank'
+                                rel='noreferrer'>
+                                Google Forms
+                            </a>{" "}
+                            for applicants.
+                        </p>
+                    </div>
+                </div>
+                <div className='r101-card'>
+                    <div className='r101-card-icon-row'>
+                        <img src={exam} alt='exam' className='r101-icon' />
+                        <img src={arrow} alt='arrow' className='r101-arrow' />
+                    </div>
+                    <div className='r101-card-content-container'>
+                        <h2 className='r101-card-title'>Take the exam</h2>
+                        <p className='r101-card-text'>
+                            The deparment examination will be sent by our Human
+                            Resources department. Skip this step if your
+                            department does not have an exam
+                        </p>
+                    </div>
+                </div>
+                <div className='r101-card'>
+                    <div className='r101-card-icon-row'>
+                        <img
+                            src={interview}
+                            alt='interview'
+                            className='r101-icon'
+                        />
+                        <img src={arrow} alt='arrow' className='r101-arrow' />
+                    </div>
+                    <div className='r101-card-content-container'>
+                        <h2 className='r101-card-title'>Interview</h2>
+                        <p className='r101-card-text'>
+                            After passing your requirements, the Human Resources
+                            department will send you a scheduling sheet for the
+                            interview.
+                        </p>
+                    </div>
+                </div>
+                <div className='r101-card'>
+                    <div className='r101-card-icon-row'>
+                        <img src={result} alt='result' className='r101-icon' />
+                    </div>
+                    <div className='r101-card-content-container'>
+                        <h2 className='r101-card-title'>Results</h2>
+                        <p className='r101-card-text'>
+                            The results will be sent to you in less than a week
+                            by our Human Resources department
                         </p>
                     </div>
                 </div>
             </div>
-
-            <div class='column'>
-                <div class='card' style={{ marginLeft: "6%" }}>
-                    <h3 class='font-Head-paragraph'>Take the exam</h3>
-                    <p class='custom-paragraph'>
-                        The department <br />
-                        examination will be sent by <br />
-                        our Human Resources
-                        <br />
-                        department. Skip this step if <br />
-                        your department does not have an exam.
-                    </p>
-                </div>
-            </div>
-
-            <div className='column'>
-                <div className='card' style={{ marginLeft: "6%" }}>
-                    <h3 className='font-Head-paragraph'>Interview</h3>
-                    <p className='custom-paragraph'>
-                        After passing your
-                        <br />
-                        requirements,the Human <br />
-                        Resources department will
-                        <br />
-                        send you a scheduling sheet
-                        <br />
-                        for the interview.
-                    </p>
-                </div>
-            </div>
-
-            <div className="column">
-            <div className="card" style={{marginLeft: "6%"}}>
-              <h3 className="font-Head-paragraph">Results</h3>
-              <p className="custom-paragraph">
-                The results will be sent to <br /> 
-                you in less than a week by<br /> 
-                our Human Resources department.
-  
-              </p>
-            </div>
-          </div> 
-
         </div>
     )
 }

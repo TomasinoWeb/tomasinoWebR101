@@ -3,7 +3,7 @@ import "./departments.css"
 const Departments = () => {
     return (
         <div className='Departments'>
-            <div className='hero'>
+            <div className='departments-hero'>
                 <div className='css-typing'>
                     <h1>Executive Affairs.</h1>
                     <h1>Publication.</h1>

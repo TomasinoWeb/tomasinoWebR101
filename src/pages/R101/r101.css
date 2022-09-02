@@ -1,53 +1,149 @@
-.r101 { 
-    height: 97vh;
+.R101 { 
+    width: 90%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.r101-hero { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 3em;
+    padding-bottom: 100px;
 }
 
-.card{
-    width: 15% ;
-    margin-left: 10%;
-    float:left;
-}
-.card-body{
-    width: 190px;
-    margin-right:10px; 
+.r101-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
 }
 
-.appProcess{
-    color: #333;
-    /* font-family: sans-serif; */
-    font-weight: 570;
-    font-size: 350%;
-    margin-top: 6%;
-    margin-left: 10%; 
-    display: block;
+.r101-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 25%;
+    height: 300px;
+    gap: 30px;
 }
-/* Title and paragraphs */
-    .font-Head-paragraph{
-        font-weight: 10;
-        font-size: 160%;
-    }
-    .custom-paragraph{
-        font-weight: 10;
-        font-size: 100%;
-    }
-/* For the icons */
-    .divider-custom-form {
-        margin-left: 10%; 
-        width: 3%;
 
-    }
-    .divider-custom-icons {
-        margin-left: 1%; 
-        width: 3%;
-    }
-/* For the arrows */
-    .divider-custom-arrow{
-        margin-left: 2%; 
-        margin-bottom: 1%;
-        color: black;
-        font-size: 200%;
-        width: 15%;
+.r101-card-icon-row {
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.r101-icon { 
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.r101-arrow { 
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.r101-card-content-container { 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.r101-card-title { 
+    font-size: 2em;
+    padding-bottom: 15px;
+}
+
+.r101-card-text { 
+    font-weight: 500;
+}
+
+.R101 a { 
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.R101 a:hover { 
+    color: #be7c0a
+}
+
+@media only screen and (max-width: 768px) {
+
+    .r101-card-container { 
+        flex-direction: column;
     }
 
+    .r101-card {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 
+    .r101-card-icon-row { 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .r101-arrow { 
+        transform: rotate(90deg);
+        max-width: 55%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .r101-hero { 
+        font-size: 2em;
+    }
+
+    .r101-card-title { 
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .r101-hero { 
+        font-size: 1.5em;
+    }
+
+    .r101-card-title { 
+        font-size: 1.2em;
+    }
+
+    .r101-card-content-container {
+        justify-content: center;
+        gap: 10px;
+    }
+    .r101-card-text { 
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .r101-hero { 
+        font-size: 1.3em;
+    }
+
+    .r101-card-title { 
+        font-size: 0.8em;
+    }
+    
+    .r101-card-text { 
+        font-size: 0.5em;
+    }
+}
 
