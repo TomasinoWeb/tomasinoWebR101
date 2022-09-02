@@ -55,7 +55,7 @@ const Header = () => {
                     href="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
                     target="_blank"
                     rel="noreferrer"
-                    className={header ? "transparent-nav-link" : "nav-link"} >
+                    className="nav-link">
                     APPLY
                 </a>
             </div>
