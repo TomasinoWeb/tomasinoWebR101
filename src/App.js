@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {browserHistory} from 'react-router'
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
@@ -15,7 +16,7 @@ function App() {
           <Route path="/departments" element={<Departments />}></Route>
           <Route path="/r101" element={<R101 />}></Route>
           <Route path="/faq" element={<FaqPage />}></Route>
-          <Route path="*" element={<ErrorPage />}></Route>
+          <Route path="/*" element={<ErrorPage />}></Route>
         </Routes>
         <Footer />
       </Router>
