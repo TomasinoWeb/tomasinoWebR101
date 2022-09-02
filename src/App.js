@@ -12,9 +12,9 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/#/departments" element={<Departments />}></Route>
-          <Route path="/#/r101" element={<R101 />}></Route>
-          <Route path="/#/faq" element={<FaqPage />}></Route>
+          <Route path="/departments" element={<Departments />}></Route>
+          <Route path="/r101" element={<R101 />}></Route>
+          <Route path="/faq" element={<FaqPage />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
         <Footer />
