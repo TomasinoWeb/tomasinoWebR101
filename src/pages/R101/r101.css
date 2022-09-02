@@ -31,7 +31,6 @@
     flex-direction: column;
     width: 25%;
     height: 300px;
-    gap: 30px;
 }
 
 .r101-card-icon-row {
@@ -52,7 +51,7 @@
 }
 
 .r101-card-content-container { 
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -101,7 +100,7 @@
 
     .r101-arrow { 
         transform: rotate(90deg);
-        max-width: 55%;
+        max-width: 40%;
     }
 }
 
