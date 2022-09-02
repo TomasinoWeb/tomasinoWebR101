@@ -1,11 +1,28 @@
-const express = require('express');
-const path = require('path');
-const app = express();
+import express from 'express'
+import fs from 'fs'
+import path from 'path'
 
-app.use(express.static(path.join(__dirname, 'build')));
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+import App from '../src/App'
 
-app.listen(9000);
+const PORT = 8000
+
+const app = express()
+
+app.use('/*', (req, res, next) => { 
+    fs.readFile(path.resolve('./build/index.html'), 'utf-8', (err, data) => { 
+        if(err) { 
+            console.log(err)
+            return res.status(500).send("some error happened")
+        }
+        return res.send(data.replace('<div id="root></div>', `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`))
+    })
+})
+
+app.use(express.static(path.resolve(__dirname, '..', 'build')))
+
+app.listen(PORT, () => { 
+    console.log(`App launched on ${PORT}`)
+})
