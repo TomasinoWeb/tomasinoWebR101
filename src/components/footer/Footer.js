@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className='footer-left-col'>
-                <p className="footer-link">&copy;2022 TomasinoWeb</p>
+                <p className="fw-500">&copy;2022 TomasinoWeb</p>
                 <Link to='/departments' className='footer-link'>
                     Departments
                 </Link>

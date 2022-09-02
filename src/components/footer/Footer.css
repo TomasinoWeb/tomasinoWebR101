@@ -15,7 +15,9 @@
     gap: 33px;
     font-size: 14px;
     color: black;
-    
+}
+.fw-500 { 
+    font-weight: 500;
 }
 
 .footer-link { 
