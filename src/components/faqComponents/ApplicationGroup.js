@@ -6,14 +6,14 @@ function ApplicationGroup() {
     {
       question: "Am I eligible to apply?",
       answer:
-        "You should be eligible to apply for TomasinoWeb if:\n\n1. You are not involved in any/all political parties; \n2. You do not hold a position in a student council and/or part of an organization that has the same nature with TomasinoWeb and; \n3. You are a bonafide undergraduate student of the University of Santo Tomas enrolled in any program.",
+        "You should be eligible to apply for TomasinoWeb if:\n \t1. You are not involved in any/all political parties; \n\t2. You do not hold a position in a student council and/or part of an organization that has the same nature with TomasinoWeb and; \n\t3. You are a bonafide undergraduate student of the University of Santo Tomas enrolled in any program.",
       tag: "application",
       open: false,
     },
     {
       question: "What is the application process?",
       answer:
-        "Fill out the application form found in the website. After sending the necessary documents stated at the end of the application form, we will inform you of the next step.        Should you qualify for an interview, the Human Resources department will send you a scheduling sheet to confirm your slot. After the interview, wait for a few days for the said department to send your application results. ",
+        "Fill out the application form found in the website. After sending the necessary documents stated at the end of the application form, we will inform you of the next step. \n\nShould you qualify for an interview, the Human Resources department will send you a scheduling sheet to confirm your slot. After the interview, wait for a few days for the said department to send your application results. ",
       tag: "application",
       open: false,
     },
@@ -48,7 +48,6 @@ function ApplicationGroup() {
         } else {
           faq.open = false;
         }
-
         return faq;
       })
     );

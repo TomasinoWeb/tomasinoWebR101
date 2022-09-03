@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  width: 100%;
 }
 
 
@@ -46,7 +47,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    gap: 12px;
+    gap: 5px;
+    width: 100%;
   }
   
   .faq-main-item {
@@ -59,7 +61,6 @@
     border-radius: 20px;
     display: inline-block;
     padding: 10px 30px;
-  
   }
   
   .button-picker{
@@ -140,6 +141,8 @@
     opacity: 0;
     max-height: 0;
     overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
     transition: all 0.4s ease;
   }
   
@@ -148,4 +151,10 @@
     max-height: 1000px;
     transition: all 0.4s ease;
   }
-  
+  pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
