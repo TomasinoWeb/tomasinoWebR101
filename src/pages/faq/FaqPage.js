@@ -22,19 +22,29 @@ const FaqPage = () => {
     const [resultsShown, setResultsShown] = useState(false)
     const [sussyShown, setSussyShown] = useState(false)
 
+    const picked = {
+      color: "white",
+      backgroundColor: "black",
+    };
+
+    const unpicked = {
+      color: "black",
+      backgroundColor: "white",
+    };
+
     useEffect(() => {
-        tag === "org" ? setOrgShown(true) : setOrgShown(false)
-        tag === "interview" ? setInterviewShown(true) : setInterviewShown(false)
-        tag === "application"
-            ? setApplicationShown(true)
-            : setApplicationShown(false)
-        tag === "results" ? setResultsShown(true) : setResultsShown(false)
-        tag === "sussy" ? setSussyShown(true) : setSussyShown(false)
-    }, [tag])
+      tag === "org" ? setOrgShown(true) : setOrgShown(false);
+      tag === "interview" ? setInterviewShown(true) : setInterviewShown(false);
+      tag === "application"
+        ? setApplicationShown(true)
+        : setApplicationShown(false);
+      tag === "results" ? setResultsShown(true) : setResultsShown(false);
+      tag === "sussy" ? setSussyShown(true) : setSussyShown(false);
+    }, [tag]);
 
     const handleOnChange = (e) => {
-        setTag(e.target.value)
-    }
+      setTag(e.target.value);
+    };
 
     return (
       <div className="FaqPage">
@@ -46,131 +56,71 @@ const FaqPage = () => {
           </div>
 
           <div className="selection-div">
-            <table class="faq-main-holder">
-              <tr class="faq-main-group">
-                <td>
-                  <button
-                    value="org"
-                    className="button-picker"
-                    onClick={handleOnChange}
-                    style={
-                      orgShown
-                        ? {
-                            color: "white",
-                            backgroundColor: "black",
-                          }
-                        : {
-                            color: "black",
-                            backgroundColor: "white",
-                          }
-                    }
-                  >
-                    the org
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="button-picker"
-                    value="interview"
-                    onClick={handleOnChange}
-                    style={
-                      interviewShown
-                        ? {
-                            color: "white",
-                            backgroundColor: "black",
-                          }
-                        : {
-                            color: "black",
-                            backgroundColor: "white",
-                          }
-                    }
-                  >
-                    interview
-                  </button>
-                </td>
-                <td>
-                  <div class="faq-main-item">
-                    <img src={Beer} class="faq-icons" alt="icon"></img>
-                  </div>
-                </td>
-              </tr>
+            <div class="faq-main-holder">
+              <row class="faq-main-group">
+                <button
+                  value="org"
+                  className="button-picker"
+                  onClick={handleOnChange}
+                  style={orgShown ? picked : unpicked}
+                >
+                  the org
+                </button>
 
-              <tr class="faq-main-group">
-                <td>
-                  <button
-                    className="button-picker"
-                    value="application"
-                    onClick={handleOnChange}
-                    style={
-                      applicationShown
-                        ? {
-                            color: "white",
-                            backgroundColor: "black",
-                          }
-                        : {
-                            color: "black",
-                            backgroundColor: "white",
-                          }
-                    }
-                  >
-                    application
-                  </button>
-                </td>
-                <td>
-                  <div class="faq-main-item">
-                    <img src={Burger} class="faq-icons" alt="icon"></img>
-                  </div>
-                </td>
-                <td>
-                  <button
-                    className="button-picker"
-                    value="results"
-                    onClick={handleOnChange}
-                    style={
-                      resultsShown
-                        ? {
-                            color: "white",
-                            backgroundColor: "black",
-                          }
-                        : {
-                            color: "black",
-                            backgroundColor: "white",
-                          }
-                    }
-                  >
-                    results
-                  </button>
-                </td>
-              </tr>
+                <button
+                  className="button-picker"
+                  value="interview"
+                  onClick={handleOnChange}
+                  style={interviewShown ? picked : unpicked}
+                >
+                  interview
+                </button>
 
-              <tr class="faq-main-group">
-                <td>
-                  <div class="faq-main-item">
-                    <img src={Duck} class="faq-icons" alt="icon"></img>
-                  </div>
-                </td>
-                <td>
-                  <button
-                    className="button-picker"
-                    value="sussy"
-                    onClick={handleOnChange}
-                    style={
-                      sussyShown
-                        ? {
-                            color: "white",
-                            backgroundColor: "black",
-                          }
-                        : {
-                            color: "black",
-                            backgroundColor: "white",
-                          }
-                    }
-                  >
-                    thought you'd never ask
-                  </button>
-                </td>
-              </tr>
-            </table>
+                <div class="faq-main-item">
+                  <img src={Beer} class="faq-icons" alt="icon"></img>
+                </div>
+              </row>
+
+              <row class="faq-main-group">
+                <button
+                  className="button-picker"
+                  value="application"
+                  onClick={handleOnChange}
+                  style={applicationShown ? picked : unpicked}
+                >
+                  application
+                </button>
+                <div class="faq-main-item">
+                  <img src={Burger} class="faq-icons" alt="icon"></img>
+                </div>
+                <button
+                  className="button-picker"
+                  value="results"
+                  onClick={handleOnChange}
+                  style={resultsShown ? picked : unpicked}
+                >
+                  results
+                </button>
+              </row>
+
+              <row class="faq-main-group">
+                <div class="faq-main-item">
+                  <img src={Duck} class="faq-icons" alt="icon"></img>
+                </div>
+                <button
+                  className="button-picker"
+                  value="sussy"
+                  onClick={handleOnChange}
+                  style={
+                    sussyShown
+                      ? picked
+                      : unpicked
+                  }
+                >
+                  thought you'd never ask
+                </button>
+              </row>
+            </div>
           </div>
         </div>
         <br />
