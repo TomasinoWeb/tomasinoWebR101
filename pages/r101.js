@@ -45,7 +45,7 @@ const R101 = () => {
                 <div className={styles['r101-card']}>
                     <div className={styles['r101-card-icon-row']}>
                         <img
-                            src="/static/exam.png"
+                            src="/static/interview.png"
                             alt='interview'
                             className={styles['r101-icon']}
                         />

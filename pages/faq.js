@@ -68,7 +68,7 @@ const FaqPage = () => {
 
                             <div className={styles["faq-main-item"]}>
                                 <img
-                                    src='/static/beer.png'
+                                    src='/static/Beer.png'
                                     className={styles['faq-icons']}
                                     alt='icon'></img>
                             </div>
@@ -84,7 +84,7 @@ const FaqPage = () => {
                             </button>
                             <div className={styles['faq-main-item']}>
                                 <img
-                                    src='/static/burger.png'
+                                    src='/static/Burger.png'
                                     className={styles['faq-icons']}
                                     alt='icon'></img>
                             </div>
@@ -100,7 +100,7 @@ const FaqPage = () => {
                         <row className={styles['faq-main-group']}>
                             <div className={styles['faq-main-item']}>
                                 <img
-                                    src='/static/duck.png'
+                                    src='/static/Duck.png'
                                     className={styles['faq-icons']}
                                     alt='icon'></img>
                             </div>
