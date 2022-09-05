@@ -109,7 +109,7 @@ const FaqPage = () => {
                                 value='sussy'
                                 onClick={handleOnChange}
                                 style={sussyShown ? picked : unpicked}>
-                                thought you`&apos;`d never ask
+                                thought you&apos;d never ask
                             </button>
                         </row>
                     </div>
