@@ -118,7 +118,6 @@ const FaqPage = () => {
             <br />
             <div className={styles['faqs']}>
                 <pre>
-                    {/* if x is true, display x group, else dont */}
                     {orgShown && <OrgGroup />}
                     {interviewShown && <InterviewGroup />}
                     {applicationShown && <ApplicationGroup />}
