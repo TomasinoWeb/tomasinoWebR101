@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
                     content='width=device-width, initial-scale=1.0'
                 />
                 <meta name="keywords" content="tomasinoweb, r101, ust" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
             <Component {...pageProps} />
