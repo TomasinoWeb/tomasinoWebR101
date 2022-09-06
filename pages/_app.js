@@ -7,11 +7,13 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>TomasinoWeb</title>
+                <title>TomasinoWeb R101 Application</title>
+                <meta charset="utf-8"/>
                 <meta
                     name='viewport'
                     content='width=device-width, initial-scale=1.0'
                 />
+                <meta name="keywords" content="tomasinoweb, r101, ust" />
             </Head>
             <Header />
             <Component {...pageProps} />

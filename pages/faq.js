@@ -1,4 +1,5 @@
 import styles from "../styles/Faq.module.css"
+import Head from "next/head"
 import { useEffect, useState } from "react"
 import ApplicationGroup from "../components/faqComponents/ApplicationGroup"
 import InterviewGroup from "../components/faqComponents/InterviewGroup"
@@ -39,93 +40,101 @@ const FaqPage = () => {
     }
 
     return (
-        <div className={styles["FaqPage"]}>
-            <div className={styles["picker-div"]}>
-                <div className={styles["title-div"]}>
-                    <h1 className={styles["faq-head"]}>
-                        Frequently<br></br>Asked<br></br>Questions
-                    </h1>
-                </div>
+        <>
+            <Head>
+                <title>TomasinoWeb R101 FAQ</title>
+                <meta name="description" content="Frequently Asked Questions. What is TomasinoWeb?. Am I Eligible to Apply?  How Long Should I Wait For Results?" />
+            </Head>
+            <div className={styles["FaqPage"]}>
+                <div className={styles["picker-div"]}>
+                    <div className={styles["title-div"]}>
+                        <h1 className={styles["faq-head"]}>
+                            Frequently<br></br>Asked<br></br>Questions
+                        </h1>
+                    </div>
 
-                <div className={styles["selection-div"]}>
-                    <div className={styles["faq-main-holder"]}>
-                        <row className={styles["faq-main-group"]}>
-                            <button
-                                value='org'
-                                className={styles["button-picker"]}
-                                onClick={handleOnChange}
-                                style={orgShown ? picked : unpicked}>
-                                the org
-                            </button>
+                    <div className={styles["selection-div"]}>
+                        <div className={styles["faq-main-holder"]}>
+                            <row className={styles["faq-main-group"]}>
+                                <button
+                                    value='org'
+                                    className={styles["button-picker"]}
+                                    onClick={handleOnChange}
+                                    style={orgShown ? picked : unpicked}>
+                                    the org
+                                </button>
 
-                            <button
-                                className={styles["button-picker"]}
-                                value='interview'
-                                onClick={handleOnChange}
-                                style={interviewShown ? picked : unpicked}>
-                                interview
-                            </button>
+                                <button
+                                    className={styles["button-picker"]}
+                                    value='interview'
+                                    onClick={handleOnChange}
+                                    style={interviewShown ? picked : unpicked}>
+                                    interview
+                                </button>
 
-                            <div className={styles["faq-main-item"]}>
-                                <img
-                                    src='/static/Beer.png'
-                                    className={styles['faq-icons']}
-                                    alt='icon'></img>
-                            </div>
-                        </row>
+                                <div className={styles["faq-main-item"]}>
+                                    <img
+                                        src='/static/Beer.png'
+                                        className={styles["faq-icons"]}
+                                        alt='icon'></img>
+                                </div>
+                            </row>
 
-                        <row className={styles['faq-main-group']}>
-                            <button
-                                className={styles['button-picker']}
-                                value='application'
-                                onClick={handleOnChange}
-                                style={applicationShown ? picked : unpicked}>
-                                application
-                            </button>
-                            <div className={styles['faq-main-item']}>
-                                <img
-                                    src='/static/Burger.png'
-                                    className={styles['faq-icons']}
-                                    alt='icon'></img>
-                            </div>
-                            <button
-                                className={styles['button-picker']}
-                                value='results'
-                                onClick={handleOnChange}
-                                style={resultsShown ? picked : unpicked}>
-                                results
-                            </button>
-                        </row>
+                            <row className={styles["faq-main-group"]}>
+                                <button
+                                    className={styles["button-picker"]}
+                                    value='application'
+                                    onClick={handleOnChange}
+                                    style={
+                                        applicationShown ? picked : unpicked
+                                    }>
+                                    application
+                                </button>
+                                <div className={styles["faq-main-item"]}>
+                                    <img
+                                        src='/static/Burger.png'
+                                        className={styles["faq-icons"]}
+                                        alt='icon'></img>
+                                </div>
+                                <button
+                                    className={styles["button-picker"]}
+                                    value='results'
+                                    onClick={handleOnChange}
+                                    style={resultsShown ? picked : unpicked}>
+                                    results
+                                </button>
+                            </row>
 
-                        <row className={styles['faq-main-group']}>
-                            <div className={styles['faq-main-item']}>
-                                <img
-                                    src='/static/Duck.png'
-                                    className={styles['faq-icons']}
-                                    alt='icon'></img>
-                            </div>
-                            <button
-                                className={styles['button-picker']}
-                                value='sussy'
-                                onClick={handleOnChange}
-                                style={sussyShown ? picked : unpicked}>
-                                thought you&apos;d never ask
-                            </button>
-                        </row>
+                            <row className={styles["faq-main-group"]}>
+                                <div className={styles["faq-main-item"]}>
+                                    <img
+                                        src='/static/Duck.png'
+                                        className={styles["faq-icons"]}
+                                        alt='icon'></img>
+                                </div>
+                                <button
+                                    className={styles["button-picker"]}
+                                    value='sussy'
+                                    onClick={handleOnChange}
+                                    style={sussyShown ? picked : unpicked}>
+                                    thought you&apos;d never ask
+                                </button>
+                            </row>
+                        </div>
                     </div>
                 </div>
+                <br />
+                <div className={styles["faqs"]}>
+                    <pre>
+                        {orgShown && <OrgGroup />}
+                        {interviewShown && <InterviewGroup />}
+                        {applicationShown && <ApplicationGroup />}
+                        {resultsShown && <ResultsGroup />}
+                        {sussyShown && <SussyGroup />}
+                    </pre>
+                </div>
             </div>
-            <br />
-            <div className={styles['faqs']}>
-                <pre>
-                    {orgShown && <OrgGroup />}
-                    {interviewShown && <InterviewGroup />}
-                    {applicationShown && <ApplicationGroup />}
-                    {resultsShown && <ResultsGroup />}
-                    {sussyShown && <SussyGroup />}
-                </pre>
-            </div>
-        </div>
+        </>
     )
 }
 
