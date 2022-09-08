@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "r101",
+=======
+  "name": "r101-next",
+>>>>>>> 53e0cbedd63fcd21879f157ce850e53bc1111256
   "version": "0.1.0",
   "private": true,
   "scripts": {
