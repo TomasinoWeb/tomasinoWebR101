@@ -384,10 +384,10 @@ const People = () => {
                             <p className={styles["bottom-title"]}>
                                 LOREM IPSUM DOLOR SIT AMET
                             </p>
-                        </div>
                         <div className={styles["button-cont"]}>
                             <button>TAKE THE CHALLENGE</button>
                             <button>HM, WHERE DO I FIT?</button>
+                        </div>
                         </div>
                     </div>
                 </center>
