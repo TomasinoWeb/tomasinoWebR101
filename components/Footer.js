@@ -24,7 +24,7 @@ const Footer = () => {
                     Application Form
                 </a>
                 <Link href='/faq'>
-                    <a className={footerStyles["footer-link"]}>Departments</a>
+                    <a className={footerStyles["footer-link"]}>FAQ</a>
                 </Link>
             </div>
             <div className={footerStyles["footer-right-col"]}>

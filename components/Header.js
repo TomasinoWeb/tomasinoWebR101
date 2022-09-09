@@ -1,10 +1,7 @@
 import headerStyles from "../styles/Header.module.css"
 import Link from "next/link"
-import Image from "next/image"
 import { useState, useEffect } from "react"
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
-import logo from "../public/static/TomasinoWeb-Logo-2.png"
-import logo2 from "../public/static/TomasinoWeb Logo 2.png"
 
 function Header() {
     const [header, setHeader] = useState(false)

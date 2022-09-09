@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>TomasinoWeb R101 Application</title>
+                <title>TomasinoWeb R101</title>
                 <meta charset='utf-8' />
                 <meta
                     name='viewport'

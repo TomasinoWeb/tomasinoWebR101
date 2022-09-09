@@ -36,27 +36,27 @@ const People = () => {
                     <div className={styles["img-sect-row-1"]}>
                         <div className={styles["img-sect-column-up"]}>
                             <img
-                                src='https://i.imgur.com/Qi3ZZsq.png'
+                                src='/static/Qi3ZZsq.png'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/amkcUA5.png'
+                                src='/static/amkcUA5.png'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/c2JDda7.jpg'
+                                src='/static/c2JDda7.jpg'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/UOfOx8B.png'
+                                src='/static/UOfOx8B.png'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/xmDHjdG.jpg'
+                                src='/static/xmDHjdG.jpg'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/1kBc7Tz.jpg'
+                                src='/static/1kBc7Tz.jpg'
                                 className={styles["circle-image"]}
                             />
                         </div>
@@ -65,27 +65,27 @@ const People = () => {
                     <div className={styles["img-sect-row-2"]}>
                         <div className={styles["img-sect-column-down"]}>
                             <img
-                                src='https://i.imgur.com/tZAfPP9.jpg'
+                                src='/static/tZAfPP9.jpg'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/tZAfPP9.jpg'
+                                src='/static/tZAfPP9.jpg'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/2rwqdq1.jpg'
+                                src='/static/2rwqdq1.jpg'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/nJQqXh6.png'
+                                src='/static/nJQqXh6.png'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/tZAfPP9.jpg'
+                                src='/static/tZAfPP9.jpg'
                                 className={styles["circle-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/tZAfPP9.jpg'
+                                src='/static/tZAfPP9.jpg'
                                 className={styles["circle-image"]}
                             />
                         </div>
@@ -111,15 +111,15 @@ const People = () => {
 
                     <div className={styles["image-section-2"]}>
                         <img
-                            src='https://i.imgur.com/uDGL6KW.png'
+                            src='/static/uDGL6KW.png'
                             className={styles["portrait-image"]}
                         />
                         <img
-                            src='https://i.imgur.com/kTBb7ss.png'
+                            src='/static/kTBb7ss.png'
                             className={styles["portrait-image"]}
                         />
                         <img
-                            src='https://i.imgur.com/e90g920.jpg'
+                            src='/static/e90g920.jpg'
                             className={styles["portrait-image"]}
                         />
                     </div>
@@ -142,7 +142,7 @@ const People = () => {
                         <div className={styles["testimony-container-left"]}>
                             <div className={styles["test-image-section"]}>
                                 <img
-                                    src='https://i.imgur.com/tZAfPP9.jpg'
+                                    src='/static/tZAfPP9.jpg'
                                     className={styles["test-image"]}
                                 />
                             </div>
@@ -181,7 +181,7 @@ const People = () => {
                         <div className={styles["testimony-container-right"]}>
                             <div className={styles["test-image-section"]}>
                                 <img
-                                    src='https://i.imgur.com/tZAfPP9.jpg'
+                                    src='/static/tZAfPP9.jpg'
                                     className={styles["test-image"]}
                                 />
                             </div>
@@ -237,7 +237,7 @@ const People = () => {
 
                         <div className={styles["short-img-div"]}>
                             <img
-                                src='https://i.imgur.com/Zms3hEL.jpg'
+                                src='/static/Zms3hEL.jpg'
                                 className={styles["short-img"]}
                             />
                             <div className={styles["orange-tag"]}>
@@ -264,27 +264,27 @@ const People = () => {
 
                         <div className={styles["alumni-img-section"]}>
                             <img
-                                src='https://i.imgur.com/3NuGMEi.jpg'
+                                src='/static/3NuGMEi.jpg'
                                 className={styles["alumni-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/3NuGMEi.jpg'
+                                src='/static/3NuGMEi.jpg'
                                 className={styles["alumni-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/3NuGMEi.jpg'
+                                src='/static/3NuGMEi.jpg'
                                 className={styles["alumni-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/3NuGMEi.jpg'
+                                src='/static/3NuGMEi.jpg'
                                 className={styles["alumni-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/3NuGMEi.jpg'
+                                src='/static/3NuGMEi.jpg'
                                 className={styles["alumni-image"]}
                             />
                             <img
-                                src='https://i.imgur.com/3NuGMEi.jpg'
+                                src='/static/3NuGMEi.jpg'
                                 className={styles["alumni-image"]}
                             />
                         </div>
@@ -306,7 +306,7 @@ const People = () => {
                             <div className={styles["testimony-container-left"]}>
                                 <div className='test-image-section'>
                                     <img
-                                        src='https://i.imgur.com/tZAfPP9.jpg'
+                                        src='/static/tZAfPP9.jpg'
                                         className={styles["test-image"]}
                                     />
                                 </div>
@@ -348,7 +348,7 @@ const People = () => {
                                 className={styles["testimony-container-right"]}>
                                 <div className={styles["test-image-section"]}>
                                     <img
-                                        src='https://i.imgur.com/tZAfPP9.jpg'
+                                        src='/static/tZAfPP9.jpg'
                                         className={styles["test-image"]}
                                     />
                                 </div>
@@ -377,7 +377,7 @@ const People = () => {
                 <center className={styles["bottom-section"]}>
                     <div className={styles["bottom-cont"]}>
                         <img
-                            src='https://i.imgur.com/lOvT88k.jpg'
+                            src='/static/lOvT88k.jpg'
                             className={styles["twphoto"]}
                         />
                         <div className={styles["bottom-text"]} >
