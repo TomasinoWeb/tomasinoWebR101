@@ -1,4 +1,4 @@
-const About = () => { 
+const Culture = () => { 
     return(
         <>
             <div>
@@ -8,4 +8,4 @@ const About = () => {
     )
 }
 
-export default About
+export default Culture
