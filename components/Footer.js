@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <div className={footerStyles["footer"]}>
             <div className={footerStyles["footer-left-col"]}>
-                <p className={footerStyles["fw-500"]}>&copy;2022 TomasinoWeb</p>
+                <p className={footerStyles["footer-link"]}>&copy;2022 TomasinoWeb</p>
                 <Link href='/departments'>
                     <a className={footerStyles["footer-link"]}>Departments</a>
                 </Link>

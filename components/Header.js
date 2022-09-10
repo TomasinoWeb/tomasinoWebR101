@@ -8,7 +8,7 @@ function Header() {
     const [visible, setVisible] = useState(false)
 
     const changeBackground = () => {
-        if (window.scrollY >= 50) {
+        if (window.scrollY) {
             setHeader(true)
         } else {
             setHeader(false)
