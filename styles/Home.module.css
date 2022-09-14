@@ -81,9 +81,9 @@
         align-items: center;
         justify-content: center;
         margin-top: 20px;
-        transition: 1.2s;
+        transition: 0.2s;
     }
     .button-deco:hover { 
         transform: scale(1.2);
-        transition: 1.2s;
+        transition: 0.2s;
     }

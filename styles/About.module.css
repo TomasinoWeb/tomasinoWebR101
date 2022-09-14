@@ -1,135 +1,173 @@
-@media only screen and (max-width: 410px) {
-  .TW-img {
-    margin-bottom: 10px;
-  }
-
-  .main-header {
-    font-size: 35px !important;
-  }
-
-  .About p {
-    font-size: 18px !important;
-  }
-
-  .stmnt {
-    padding-right: 10px;
-  }
-
-  .sub-header {
-    font-size: 40px !important;
-  }
+.container {
+  background-color: var(--primary);
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero-container { 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height:100vh ;
+}
+#logo-container {
+  width: 30%;
+  display: grid;
+  place-items: center;
 }
 
-@media only screen and (max-width: 550px) {
-  .TW-img {
-    margin: 0 80px 10px 0;
-  }
-
-  .main-header {
-    font-size: 40px !important;
-  }
-
-  .About p {
-    font-size: 20px !important;
-  }
-
-  .stmnt {
-    padding-right: 10px;
-  }
-
-  .sub-header {
-    font-size: 40px !important;
-  }
+.main-heading {
+  font-size: 43px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-left: 110px;
+  padding-top: 50px;
 }
 
-.About {
-  background-color: #151f28;
-}
-
-/* navbar styles */
-.About h4 {
-  text-align: center;
-  color: #fff;
-  font-family: 'Sailec';
-  margin-bottom: 80px;
-  margin-top: 25px;
-}
-
-/* main div styles */
-
-/* top div styles */
-
-.top-container {
-  margin-bottom: 100px;
-}
-
-.TW-img {
-  width: 55%;
-  height: auto;
-  float: right;
-  margin-right: 80px;
-}
-
-.copy {
-  padding: 30px 0 0 35px;
-}
-
-.main-header {
-  font-size: 45px;
-  color: #fff;
-  font-family: 'Sailec';
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.About p {
+.container p {
   font-size: 23px;
   line-height: 27px;
-  color: #fff;
-  font-family: 'Sailec';
+  color: white;
+  padding-left: 110px;
   font-weight: 500;
+
 }
 
-/* bot div styles */
 
-.sub-header {
-  font-size: 45px;
-  color: #fff;
-  font-family: 'Sailec';
+#statement-container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-direction: column;
+  padding-bottom: 150px;
+  padding: 60px;
+}
+
+.sub-heading {
+  font-size: 48px;
+  color: white;
   font-weight: bold;
-}
-
-.About a {
-  width: 100%;
-  height: 100%;
-  display: block;
   text-decoration: none;
+  padding-bottom: 150px;
 }
 
-.About a:hover {
-  color: #fff;
+.redirect-container { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.departments {
+#departments {
   background-image: url("../public/static/img1.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 466px;
-  padding: 28px 0 0 28px;
+  background-position: center;
+  min-height: calc(100vh - 105px);
+  padding: 28px 0px 0px 28px;
+  width: calc(100vw / 3);
+  cursor: pointer;
 }
 
-.people {
+#people {
   background-image: url("../public/static/img2.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 466px;
-  padding: 28px 0 0 28px;
+  background-position: center;
+  min-height: calc(100vh - 105px);
+  padding: 28px 0px 0px 28px;
+  width: calc(100vw / 3);
+  cursor: pointer;
 }
 
-.culture {
+#culture {
   background-image: url("../public/static/img3.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 466px;
-  padding: 28px 0 0 28px;
+  background-position: center;
+  min-height: calc(100vh - 105px);
+  padding: 28px 0px 0px 28px;
+  width: calc(100vw / 3);
+  cursor: pointer;
+  transition: 0.2s;
 }
+
+@media only screen and (max-width: 1024px) {
+  .hero-container { 
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  #logo-container { 
+    width: 100%;
+    
+  }
+
+  #statement-container { 
+    width: 100%;
+  }
+
+  .main-heading {
+    font-size: 40px;
+    padding-left: 50px;
+    padding-top: 30px;
+  }
+
+  .sub-heading { 
+    font-size: 80px;
+  }
+
+  .container p {
+    font-size: 23px;
+    padding-left: 50px;
+  }
+
+  .redirect-container {
+    flex-direction: column;
+  }
+  
+  #departments { 
+    width: 100%;
+    height: 100vh;
+  }
+
+  #people { 
+    width: 100%;
+    height: 100vh;
+  }
+
+  #culture { 
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .sub-heading { 
+    font-size: 60px;
+  }
+
+  .main-heading { 
+    font-size: 32px;
+  }
+
+  #logo-container img { 
+    width: 30%;
+  }
+  
+}
+
+@media only screen and (max-width: 425px) {
+  .sub-heading {
+    font-size: 40px;
+  }
+}
+
