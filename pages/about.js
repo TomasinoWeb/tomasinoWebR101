@@ -1,9 +1,10 @@
-const About = () => { 
-    return(
+import styles from "../styles/About.module.css"
+import Head from "next/head"
+
+const About = () => {
+    return ( 
         <>
-            <div>
-                in progress
-            </div>
+            
         </>
     )
 }
