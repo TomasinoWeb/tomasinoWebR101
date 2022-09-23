@@ -1,12 +1,10 @@
 .footer { 
     width: 100%;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
     z-index: 999;
-    background-color: white;
 }
 
 .footer-left-col {

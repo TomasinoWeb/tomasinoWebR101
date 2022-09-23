@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css"
 import Head from "next/head"
 import Link from "next/link"
+import Header from "../components/Header"
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
                     content='R101 Application Website for TomasinoWeb, The Premier Digital Media Organization of the University of Santo Tomas'
                 />
             </Head>
+            <Header />
             <div className={styles["maindiv"]}>
                 <div>
                     <div>

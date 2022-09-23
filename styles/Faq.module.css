@@ -6,6 +6,7 @@
     align-items: center;
     overflow-x: hidden;
     width: 100%;
+    margin-top: 105px;
   }
   
   
@@ -37,9 +38,6 @@
       row-gap: 5px;
     }
     
-    /* td {
-      padding-top: 6px;
-    } */
     
     .faq-main-group {
       display: flex;  
@@ -53,7 +51,6 @@
     }
     
     .faq-main-item {
-      /*flex: 1;*/
       flex-grow: 1;
       font-weight: 500;
       display: table-cell;
@@ -102,6 +99,7 @@
       background-color: #FFFFFF;
       border: 2px solid #151F28;
       border-radius: 20px;
+      cursor: pointer;
     }
     
     .faqs .faq .faq-question {

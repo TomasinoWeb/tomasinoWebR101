@@ -34,7 +34,6 @@ function MyApp({ Component, pageProps }) {
                     href='/static/favicon-16x16.png'
                 />
             </Head>
-            <Header />
             <Component {...pageProps} />
             <Footer/>
         </>

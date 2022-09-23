@@ -1,5 +1,6 @@
 import styles from "../styles/Departments.module.css"
 import Head from "next/head"
+import Header from "../components/Header"
 
 const Departments = () => {
     return (
@@ -8,6 +9,7 @@ const Departments = () => {
                 <title>TomasinoWeb Departments</title>
                 <meta name="description" content="Learn more about our different TomasinoWeb departments. Apply now and be a part of our team "/>
             </Head>
+            <Header />
             <div className={styles["Departments"]}>
                 <div className={styles["departments-hero"]}>
                     <div className={styles["css-typing"]}>

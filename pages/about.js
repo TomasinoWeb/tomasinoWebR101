@@ -1,10 +1,12 @@
 import styles from "../styles/About.module.css"
 import Head from "next/head"
 import Link from "next/link"
+import Header from "../components/Header"
 
 const About = () => {
     return (
         <>
+            <Header />
             <div className={styles["container"]}>
                 <div className={styles["hero-container"]}>
                     <div id={styles["logo-container"]}>

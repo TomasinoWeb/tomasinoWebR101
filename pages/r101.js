@@ -1,5 +1,6 @@
 import styles from "../styles/R101.module.css"
 import Head from "next/head"
+import Header from "../components/Header"
 
 const R101 = () => {
     return (
@@ -8,6 +9,7 @@ const R101 = () => {
                 <title>TomasinoWeb R101 Application Process</title>
                 <meta name="description" content="Become a part of TomasinoWeb through these easy steps. Step 1: Fill out the Google Forms. Step 2: Take the Exam. Step 3: Take an Interview. Step 4: Wait for results" />
             </Head>
+            <Header />
             <div className={styles["R101"]}>
                 <div className={styles["r101-hero"]}>
                     <h1 className={styles["r101-hero-title"]}>The</h1>

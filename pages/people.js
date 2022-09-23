@@ -1,8 +1,10 @@
 import styles from "../styles/People.module.css"
+import Header from "../components/Header"
 
 const People = () => {
     return (
         <>
+            <Header />
             <div className={styles["People"]}>
                 <div className={styles["main-container"]}>
                     <h1 className={styles["front-text"]}>
@@ -379,16 +381,16 @@ const People = () => {
                         <img
                             src='/static/lOvT88k.jpg'
                             className={styles["twphoto"]}
-                            alt="tw-photo"
+                            alt='tw-photo'
                         />
-                        <div className={styles["bottom-text"]} >
+                        <div className={styles["bottom-text"]}>
                             <p className={styles["bottom-title"]}>
                                 LOREM IPSUM DOLOR SIT AMET
                             </p>
-                        <div className={styles["button-cont"]}>
-                            <button>TAKE THE CHALLENGE</button>
-                            <button>HM, WHERE DO I FIT?</button>
-                        </div>
+                            <div className={styles["button-cont"]}>
+                                <button>TAKE THE CHALLENGE</button>
+                                <button>HM, WHERE DO I FIT?</button>
+                            </div>
                         </div>
                     </div>
                 </center>
