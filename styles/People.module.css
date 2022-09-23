@@ -283,7 +283,6 @@
 }
 
 .bottom-cont {
-    /*    margin: auto;*/
     position: relative;
 }
 
@@ -292,13 +291,14 @@
     top: 50%;   
     width: 100%;
     transform: translate(-50%, -50%);
-    position: absolute;
-    
+    position: absolute;  
 }
 
 .bottom-title {
     font-size: 3.3em; 
 }
+
+
 
 .People button {
     background-color: transparent;

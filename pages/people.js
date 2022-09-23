@@ -379,6 +379,7 @@ const People = () => {
                         <img
                             src='/static/lOvT88k.jpg'
                             className={styles["twphoto"]}
+                            alt="tw-photo"
                         />
                         <div className={styles["bottom-text"]} >
                             <p className={styles["bottom-title"]}>
