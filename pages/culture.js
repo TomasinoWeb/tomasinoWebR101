@@ -402,24 +402,15 @@ const Culture = () => {
                 </div>
             </section>
 
-            <center>
-                <div className={styles["bottom-cont"]}>
-                    <img
-                        src='/static/lOvT88k.jpg'
-                        className={styles["twphoto"]}
-                        alt='tw-photo'
-                    />
-                    <div className={styles["bottom-text"]}>
-                        <p className={styles["bottom-title"]}>
-                            LOREM IPSUM DOLOR SIT AMET
-                        </p>
-                        <div className={styles["button-cont"]}>
-                            <button>TAKE THE CHALLENGE</button>
-                            <button>HM, WHERE DO I FIT?</button>
-                        </div>
-                    </div>
+            <section className={styles["bottom-banner"]}>
+                <div className={styles["banner-text"]}>
+                    <h2>What do you say&#63;</h2>
                 </div>
-            </center>
+                <div className={styles["bottom-banner-buttons-container"]}>
+                    <button className={styles["bottom-banner-buttons"]}><a href="">TAKE THE CHALLENGE</a></button>
+                    <button className={styles["bottom-banner-buttons"]}><a href="">HM&#44; WHERE DO I FIT&#63;</a></button>
+                </div>
+            </section>
         </div>
     )
 }
