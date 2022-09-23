@@ -365,39 +365,39 @@ const Culture = () => {
                         alt='Jianne'
                     />
                     <img
-                        src='/static/Jianne.jpg'
+                        src='/static/Brin (2).JPG'
                         className={styles["people"]}
-                        alt='Jianne'
+                        alt='Brin'
                     />
                     <img
-                        src='/static/Jianne.jpg'
+                        src='/static/Alejandrino.jpg'
                         className={styles["people"]}
-                        alt='Jianne'
+                        alt='Alejandrino'
                     />
                     <img
-                        src='/static/Jianne.jpg'
+                        src='/static/Genise.JPG'
                         className={styles["people"]}
-                        alt='Jianne'
+                        alt='Genise'
                     />
                     <img
-                        src='/static/Jianne.jpg'
+                        src='/static/Juliana.jpg'
                         className={styles["people"]}
-                        alt='Jianne'
+                        alt='Juliana'
                     />
                     <img
-                        src='/static/Jianne.jpg'
+                        src='/static/julius.jpg'
                         className={styles["people"]}
-                        alt='Jianne'
+                        alt='Julius'
                     />
                     <img
-                        src='/static/Jianne.jpg'
+                        src='/static/Mika.JPG'
                         className={styles["people"]}
-                        alt='Jianne'
+                        alt='Mika'
                     />
                     <img
-                        src='/static/Jianne.jpg'
+                        src='/static/teen.JPG'
                         className={styles["people"]}
-                        alt='Jianne'
+                        alt='teen'
                     />
                 </div>
             </section>
