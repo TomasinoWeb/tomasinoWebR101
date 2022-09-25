@@ -1,3 +1,31 @@
+.About { 
+  --fs-48px: 48px;
+  --fs-50px: 50px;
+  --fs-25px: 25px;
+  overflow: hidden;
+}
+@media (max-width: 1200px) { 
+  .About { 
+    --fs-48px: 45px;
+    --fs-50px: 47px;
+    --fs-25px: 22px;
+  }
+}
+@media (max-width: 1000px) { 
+  .About { 
+    --fs-48px: 40px;
+    --fs-50px: 42px;
+    --fs-25px: 17px;
+  }
+}
+@media screen and (max-width: 900px), screen and (max-height: 800px) { 
+  .About { 
+    --fs-48px: 35px;
+    --fs-50px: 37px;
+    --fs-25px: 15px;
+  }
+}
+
 .container {
   background-color: var(--primary);
   display: flex;
@@ -7,53 +35,54 @@
 }
 .hero-container { 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  min-height:100vh ;
+  height: calc(50vh - 80px);
+  margin-top: 80px;
 }
 #logo-container {
-  width: 30%;
+  width: 40%;
   display: grid;
   place-items: center;
 }
-
 .main-heading {
-  font-size: 43px;
+  font-size: var(--fs-48px);
   color: white;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-left: 110px;
   padding-top: 50px;
 }
 
 .container p {
-  font-size: 23px;
+  font-size: var(--fs-25px);
   line-height: 27px;
   color: white;
   padding-left: 110px;
   font-weight: 500;
-
 }
 
 
 #statement-container {
-  width: 70%;
+  width: 60%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 30px;
   flex-direction: column;
-  padding-bottom: 150px;
-  padding: 60px;
+  height: 100%;
 }
 
 .sub-heading {
-  font-size: 48px;
-  color: white;
+  font-size: var(--fs-50px);
   font-weight: bold;
   text-decoration: none;
   padding-bottom: 150px;
+  -webkit-text-stroke: 2px black;
+  -webkit-text-fill-color: white;
+  text-shadow: 2px 2px black;
+  filter: drop-shadow(2px 18px 13px #000);
 }
 
 .redirect-container { 
@@ -61,112 +90,146 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 50vh;
 }
 
 #departments {
-  background-image: url("../public/static/img1.png");
+  background-image: url("../public/static/thumbnail6.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 105px);
-  padding: 28px 0px 0px 28px;
-  width: calc(100vw / 3);
-  cursor: pointer;
-}
-
-#people {
-  background-image: url("../public/static/img2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: calc(100vh - 105px);
-  padding: 28px 0px 0px 28px;
-  width: calc(100vw / 3);
-  cursor: pointer;
-}
-
-#culture {
-  background-image: url("../public/static/img3.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: calc(100vh - 105px);
+  height: 100%;
   padding: 28px 0px 0px 28px;
   width: calc(100vw / 3);
   cursor: pointer;
   transition: 0.2s;
 }
+#departments:hover { 
+  z-index: 999;
+  background-image: url("../public/static/thumbnail4.png");
+  transition: 0.2s;
+  transform: scale(1.05);
+}
 
-@media only screen and (max-width: 1024px) {
+#people {
+  background-image: url("../public/static/thumbnail1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 28px 0px 0px 28px;
+  width: calc(100vw / 3);
+  cursor: pointer;
+  transition: 0.2s;
+}
+#people:hover { 
+  z-index: 999;
+  background-image: url("../public/static/thumbnail10.png");
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+#culture {
+  transition: 0.2s;
+  background-image: url("../public/static/thumbnail2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 28px 0px 0px 28px;
+  width: calc(100vw / 3);
+  cursor: pointer;
+}
+#culture:hover { 
+  z-index: 999;
+  background-image: url("../public/static/thumbnail9.png");
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+@media screen and (max-height: 900px) { 
+  #logo-container > img { 
+    max-width: 180px;
+    object-fit: contain;
+  }
+  #statement-container {
+    gap: 10px;
+  }
+  
+}
+
+@media (max-width: 768px) { 
   .hero-container { 
-    flex-direction: column;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
     min-height: 100vh;
   }
-
-  #logo-container { 
+  #logo-container {
     width: 100%;
-    
+    height: 30%;
+    display: grid;
+    place-items: center;
   }
-
-  #statement-container { 
-    width: 100%;
-  }
-
   .main-heading {
-    font-size: 40px;
-    padding-left: 50px;
-    padding-top: 30px;
+    margin: 0;
+    padding: 0;
   }
-
-  .sub-heading { 
-    font-size: 80px;
-  }
-
   .container p {
-    font-size: 23px;
-    padding-left: 50px;
+    padding: 0;
   }
-
-  .redirect-container {
+  #statement-container {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
     flex-direction: column;
+    padding: 0 30px 0 30px;
   }
   
-  #departments { 
+  .redirect-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: auto;
   }
-
-  #people { 
+  #departments {
+    background-image: url("../public/static/thumbnail6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    padding: 28px 0px 0px 28px;
     width: 100%;
-    height: 100vh;
+    cursor: pointer;
+    transition: 0.5s;
   }
-
-  #culture { 
+  #people {
+    background-image: url("../public/static/thumbnail1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    padding: 28px 0px 0px 28px;
     width: 100%;
-    height: 100vh;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  #culture {
+    transition: 0.5s;
+    background-image: url("../public/static/thumbnail2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    padding: 28px 0px 0px 28px;
+    width: 100%;
+    cursor: pointer;
   }
 }
-
-@media only screen and (max-width: 768px) {
-
-  .sub-heading { 
-    font-size: 60px;
-  }
-
-  .main-heading { 
-    font-size: 32px;
-  }
-
-  #logo-container img { 
-    width: 30%;
-  }
-  
-}
-
-@media only screen and (max-width: 425px) {
-  .sub-heading {
-    font-size: 40px;
-  }
-}
-

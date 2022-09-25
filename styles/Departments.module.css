@@ -1,433 +1,447 @@
 .Departments { 
+  --fs-55px: 55px;
+  --fs-48px: 48px;
+  --fs-45px: 45px;
+  --fs-35px: 35px;
+  --fs-27px: 27px;
+  --fs-40px: 40px;
+  --fs-24px: 24px;
+}
+
+@media screen and (max-width: 1200px){
+  .Departments { 
+    --fs-55px: 48px;
+    --fs-48px: 41px;
+    --fs-45px: 38px;
+    --fs-35px: 28px;
+    --fs-27px: 20px;
+    --fs-40px: 33px;
+    --fs-24px: 17px;
+  }
+}
+@media screen and (max-width: 986px), screen and (max-height: 1050px){
+  .Departments { 
+    --fs-55px: 44px;
+    --fs-48px: 37px;
+    --fs-45px: 34px;
+    --fs-35px: 24px;
+    --fs-27px: 16px;
+    --fs-40px: 29px;
+    --fs-24px: 13px;
+  }
+}
+
+@media screen and (max-width: 940px), screen and (max-height: 800px) {
+  .Departments { 
+    --fs-55px: 40px;
+    --fs-48px: 33px;
+    --fs-45px: 31px;
+    --fs-35px: 21px;
+    --fs-27px: 13px;
+    --fs-40px: 16px;
+    --fs-24px: 11px;
+ }
+}
+
+@media screen and (max-width: 860px), screen and (max-height: 700px) {
+  .Departments { 
+    --fs-55px: 37px;
+    --fs-48px: 30px;
+    --fs-45px: 28px;
+    --fs-35px: 18px;
+    --fs-27px: 10px;
+    --fs-40px: 13px;
+    --fs-24px: 11px;
+  }
+}
+
+@media screen and (max-width: 768px), screen and (max-height: 700px) {
+  .Departments { 
+    --fs-55px: 33px;
+    --fs-48px: 26px;
+    --fs-45px: 24px;
+    --fs-35px: 14px;
+    --fs-27px: 10px;
+    --fs-40px: 24px;
+    --fs-24px: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Departments { 
+    --fs-55px: 28px;
+    --fs-48px: 21px;
+    --fs-45px: 19px;
+    --fs-35px: 12px;
+    --fs-27px: 10px;
+    --fs-40px: 24px;
+    --fs-24px: 16px;
+  }
+  .department-title-wrapper > h2 { 
+    font-size: 13px;
+    
+    
+  }
+}
+.departments-hero { 
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-weight: normal;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  gap: 30px;
+}
+
+.departments-hero h1 { 
+  margin-left: 30px;
+}
+  
+.banner-wrapper { 
+  width: 100%;
+}
+
+.banner-wrapper > img { 
+  width: 100%;
+  height: 100%;
+}
+.bottom-hero-text-wrapper { 
+  width: 80%;
+}
+.bottom-hero-text-wrapper > h1 { 
+  font-size: var(--fs-48px);
+  font-weight: 500;
+}
+.css-typing h1 {
+  font-size: var(--fs-55px);
+  font-weight: 400;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  overflow: hidden;
+}
+  
+.css-typing h1:nth-child(1) {
+  width: 9em;
+  -webkit-animation: type 2s steps(20, end);
+  animation: type 2s steps(60, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+  
+.css-typing h1:nth-child(2) {
+  width: 6em;
+  opacity: 0;
+  -webkit-animation: type2 2s steps(20, end);
+  animation: type2 2s steps(80, end);
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing h1:nth-child(3) {
+  width: 10em;
+  opacity: 0;
+  -webkit-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+  animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.departments-showcase-section { 
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.white-background { 
+  background-color: white;
+}
+
+.departments-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+.departments-left-col { 
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 30px 0 30px;
+}
+.department-title-wrapper { 
+  font-size: var(--fs-45px);
+}
+.department-paragraph-wrapper { 
+  flex: 2;
+  padding-top: 30px;
+  padding-right: 150px;
+  font-size: var(--fs-35px);
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 40px;
+}
+.department-paragraph-wrapper > p {
+  font-size: var(--fs-35px);
+}
+.department-paragraph-wrapper > small {
+  font-size: var(--fs-27px);
+}
+
+
+.departments-right-col { 
+  width: 50%;
+  height: 100%;
+}
+#community-development { 
+  background-image: url(../public/static/Community\ Development.png);
+  background-size: cover;
+  background-position: right;
+}
+#creatives { 
+  background-image: url(../public/static/Creatives.png);
+  background-size: cover;
+  background-position: right;
+}
+#external-affairs { 
+  background-image: url(../public/static/External\ Affairs.png);
+  background-size: cover;
+  background-position: right;
+}
+#finance { 
+  background-image: url(../public/static/Finance.png);
+  background-size: cover;
+  background-position: right;
+}
+#human-resources { 
+  background-image: url(../public/static/Human\ Resources.png);
+  background-size: cover;
+  background-position: right;
+}
+#photography { 
+  background-image: url(../public/static/Photography.png);
+  background-size: cover;
+  background-position: right;
+}
+#publicity { 
+  background-image: url(../public/static/Haley.png);
+  background-size: cover;
+  background-position: right;
+}
+#secretariat { 
+  background-image: url(../public/static/Secretariat.png);
+  background-size: cover;
+  background-position: right;
+}
+#videography { 
+  background-image: url(../public/static/Videography.png);
+  background-size: cover;
+  background-position: right;
+}
+#webtech { 
+  background-image: url(../public/static/Web\ Technologies.png);
+  background-size: cover;
+  background-position: right;
+}
+#writing { 
+  background-image: url(../public/static/Writing.png);
+  background-size: cover;
+  background-position: right;
+}
+
+@media (max-width: 768px) {
+  .departments-showcase {
+    flex-direction: column-reverse;
+  }
+  .departments-left-col { 
+    height: 50%;
     width: 100%;
-    padding-bottom: 120px;
-    margin-top: 105px;
-  }
-  
-  
-  .departments-hero { 
-      width: 100%;
-      padding: 0px 30px 0px 30px;
-      font-size: 2.8em;
-      height: 100vh;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      font-weight: normal;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-  }
-  
-  .css-typing h1 {
-      font-weight: 400;
-      border-right: .15em solid orange;
-      white-space: nowrap;
-      overflow: hidden;
-  }
-  
-  .css-typing h1:nth-child(1) {
-      width: 8.4em;
-      -webkit-animation: type 2s steps(40, end);
-      animation: type 2s steps(60, end);
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-  }
-  
-  .css-typing h1:nth-child(2) {
-      width: 6em;
-      opacity: 0;
-      -webkit-animation: type2 2s steps(40, end);
-      animation: type2 2s steps(40, end);
-      -webkit-animation-delay: 2s;
-      animation-delay: 2s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-  }
-  
-  .css-typing h1:nth-child(3) {
-      width: 9.5em;
-      opacity: 0;
-      -webkit-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
-      animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
-      -webkit-animation-delay: 4s;
-      animation-delay: 4s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-  }
-  
-  .departments-showcase-section { 
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 30px 0 30px;
     position: sticky;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0);
-  }
-  
-  .white-background { 
     background-color: white;
   }
-  
-  .departments-showcase {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+  .department-title-wrapper { 
+    font-size: var(--fs-45px);
+    line-height: 61.6px;
   }
-  
-  
-  .departments-left-col { 
-      width: 50%;
-      height: 100%;
-      display: flex;
-      position: relative;
-      justify-content: flex-end;
-      align-items: flex-start;
-  }
-  
-  .department { 
-    padding-right: 15px;
-    font-size: 160%;
-    letter-spacing: 2px;
-    color: black;
-    text-align: right;
+  .department-paragraph-wrapper { 
+    flex: none;
+    padding: 0;
+    font-size: var(--fs-35px);
     font-weight: 500;
-    line-height: 111%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
   }
-    
-  .creatives { 
-    padding-top: 20%;
+  .department-paragraph-wrapper > p {
+    font-size: var(--fs-35px);
   }
-  
-  .community-development { 
-    padding-top: 27%;
-  }
-  
-  .external-affairs { 
-    padding-top: 34%;
-  }
-  
-  .finance { 
-    padding-top: 41%;
-  }
-  
-  .human-resources { 
-    padding-top: 48%;
-  }
-  
-  .photography { 
-    padding-top: 55%;
-  }
-  
-  .publicity { 
-    padding-top: 62%;
-  }
-  
-  .secretariat { 
-    padding-top: 69%;
-  }
-  
-  .videography { 
-    padding-top: 76%;
-  }
-  
-  .web-technologies { 
-    padding-top: 83%;
-  }
-  
-  .writing { 
-    padding-top: 90%;
-  }
-  
-  .departments-left-col small { 
-      font-size: 1.2em;
+  .department-paragraph-wrapper > small {
+    font-size: var(--fs-27px);
+    padding: 0;
   }
   
   .departments-right-col { 
-      width: 50%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  .departments-right-col img { 
-    object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: 50%;
   }
-  
-  
-  
-  @media only screen and (max-width: 1024px) {
-    .departments-hero { 
-      font-size: 2em;
-    }
-    
-    .department { 
-      font-size: 140%;
-    }
-    
+  #community-development { 
+    background-size: cover;
   }
-  
-  
-  @media only screen and (max-width: 807px) {
-      .departments-hero { 
-          font-size: 1.5em;
-      }
-  
-      .departments-showcase{
-        flex-direction: column-reverse;
-        min-height: 100vh;
-      }
-  
-      .departments-left-col { 
-        height: 50%;
-        justify-content: center;
-        align-items: flex-start;
-        text-align: center;
-      }
-  
-      .department { 
-        width: 100%;
-        text-align: center;
-        padding-right: 0;
-      }
-  
-      .departments-right-col { 
-        height: 50%;
-        padding-top: 100px;
-      }
-  
-      .departments-right-col img {
-        /* height: 100%; */
-        object-fit: contain;
-      }
-  
-      .department { 
-        font-size: 1em;
-      }
-  
-      .creatives { 
-        padding-top: 0%;
-      }
-      
-      .community-development { 
-        padding-top: 7%;
-      }
-      
-      .external-affairs { 
-        padding-top: 14%;
-      }
-      
-      .finance { 
-        padding-top: 21%;
-      }
-      
-      .human-resources { 
-        padding-top: 28%;
-      }
-      
-      .photography { 
-        padding-top: 35%;
-      }
-      
-      .publicity { 
-        padding-top: 42%;
-      }
-      
-      .secretariat { 
-        padding-top: 49%;
-      }
-      
-      .videography { 
-        padding-top: 56%;
-      }
-      
-      .web-technologies { 
-        padding-top: 63%;
-      }
-      
-      .writing { 
-        padding-top: 70%;
-      }
-  
-  
+  #creatives { 
+    background-size: cover;
   }
-  
-  @media only screen and (max-width: 588px) {
-    .secretariat { 
-      padding-top: 56%;
-    }
-    
-    .videography { 
-      padding-top: 63%;
-    }
-    
-    .web-technologies { 
-      padding-top: 70%;
-    }
-    
-    .writing { 
-      padding-top: 77%;
-    }
+  #external-affairs { 
+    background-size: cover;
   }
-  
-  @media only screen and (max-width: 485px) {
-  .departments-hero { 
-    font-size: 0.9em;
+  #finance { 
+    background-size: cover;
   }
-  
-  .creatives { 
-    padding-top: 0%;
+  #human-resources { 
+    background-size: cover;
   }
-  
-  .community-development { 
-    padding-top: 10%;
+  #photography { 
+    background-size: cover;
   }
-  
-  .external-affairs { 
-    padding-top: 30%;
+  #publicity { 
+    background-size: cover;
   }
-  
-  .finance { 
-    padding-top: 40%;
+  #secretariat { 
+    background-size: cover;
   }
-  
-  .human-resources { 
-    padding-top: 50%;
+  #videography { 
+    background-size: cover;
   }
-  
-  .photography { 
-    padding-top: 60%;
+  #webtech { 
+    background-size: cover;
   }
-  
-  .publicity { 
-    padding-top: 70%;
+  #writing { 
+    background-size: cover;
   }
-  
-  .secretariat { 
-    padding-top: 90%;
+}
+
+.bottom-banner { 
+  bottom: 0;
+  background-color: red;
+  width: 100%;
+  height: 268px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.bottom-banner-text-wrapper > h2 { 
+  font-size: var(--fs-40px);
+}.bottom-banner-button-wrapper > button { 
+  background-color: transparent;
+  border: 2.5px solid;
+  border-radius: 25px;
+  color: black;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;    
+  margin: 4px 10px;
+  cursor: pointer;
+  font-size: var(--fs-24px);
+  font-weight: 500;
+}
+.bottom-banner-button-wrapper > button:hover { 
+  background-color: white;
+  opacity: 0.8;
+}
+
+/* animations */
+@keyframes type {
+  0% {
+    width: 0;
   }
-  
-  .videography { 
-    padding-top: 100%;
+  99.9% {
+    border-right: .15em solid orange;
   }
-  
-  .web-technologies { 
-    padding-top: 110%;
+  100% {
+    border: none;
   }
-  
-  .writing { 
-    padding-top: 120%;
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
   }
-  
-  
+  99.9% {
+    border-right: .15em solid orange;
   }
-  
-  @media only screen and (max-width: 355px) {
-    .writing { 
-      padding-top: 130%;
-    }
+  100% {
+    border: none;
   }
-  
-  @media only screen and (max-width: 339px) { 
-    .photography { 
-      padding-top: 70%;
-    }
-    
-    .publicity { 
-      padding-top: 80%;
-    }
-    
-    .secretariat { 
-      padding-top: 100%;
-    }
-    
-    .videography { 
-      padding-top: 110%;
-    }
-    
-    .web-technologies { 
-      padding-top: 120%;
-    }
-    
-    .writing { 
-      padding-top: 140%;
-    }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
   }
-  
-  
-  
-  
-  
-  
-  /* animations */
-  @keyframes type {
-      0% {
-        width: 0;
-      }
-      99.9% {
-        border-right: .15em solid orange;
-      }
-      100% {
-        border: none;
-      }
+  1% {
+    opacity: 1;
   }
-  
-  @-webkit-keyframes type {
-      0% {
-        width: 0;
-      }
-      99.9% {
-        border-right: .15em solid orange;
-      }
-      100% {
-        border: none;
-      }
+  99.9% {
+    border-right: .15em solid orange;
   }
-  
-  @keyframes type2 {
-      0% {
-        width: 0;
-      }
-      1% {
-        opacity: 1;
-      }
-      99.9% {
-        border-right: .15em solid orange;
-      }
-      100% {
-        opacity: 1;
-        border: none;
-      }
+  100% {
+    opacity: 1;
+    border: none;
   }
-    
-    @-webkit-keyframes type2 {
-      0% {
-        width: 0;
-      }
-      1% {
-        opacity: 1;
-      }
-      99.9% {
-        border-right: .15em solid orange;
-      }
-      100% {
-        opacity: 1;
-        border: none;
-      }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
   }
-    
-  @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
+  1% {
+    opacity: 1;
   }
-  @-webkit-keyframes blink {
-      50% {
-        border-color: tranparent;
-      }
+  99.9% {
+    border-right: .15em solid orange;
   }
-    
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}

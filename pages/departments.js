@@ -1,13 +1,16 @@
 import styles from "../styles/Departments.module.css"
 import Head from "next/head"
-import Header from "../components/Header"
-
+import Footer from "../components/Footer"
+import Header from '../components/Header'
 const Departments = () => {
     return (
         <>
             <Head>
                 <title>TomasinoWeb Departments</title>
-                <meta name="description" content="Learn more about our different TomasinoWeb departments. Apply now and be a part of our team "/>
+                <meta
+                    name='description'
+                    content='Learn more about our different TomasinoWeb departments. Apply now and be a part of our team '
+                />
             </Head>
             <Header />
             <div className={styles["Departments"]}>
@@ -17,194 +20,321 @@ const Departments = () => {
                         <h1>Publication.</h1>
                         <h1>Web Technologies.</h1>
                     </div>
+                    <div className={styles["banner-wrapper"]}>
+                        <img src='/static/Banner 1.png' alt='web tech banner' />
+                    </div>
+                    <div className={styles["bottom-hero-text-wrapper"]}>
+                        <h1>
+                            Here are the departments that solidify TomasinoWeb
+                            in its pursuit to continue its legacy of innovation,
+                            passion, and dedication.
+                        </h1>
+                    </div>
                 </div>
 
                 <section
                     className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["creatives"]}`}>
-                                Creatives
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Community Development</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Social development is at the heart of the
+                                    Community Development Department. Together
+                                    with the pursuit of social transformation,
+                                    the department helps the partner communities
+                                    of UST simbahayan
+                                </p>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_a761cae85167405a8db41f8a21d1dd36~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/MOODBOARD_01.jpg'
-                                alt='first'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles["community-development"]}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["community-development"]}`}>
-                                Community Development
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Creatives</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Artists narrate stories through their
+                                    impactful artworks. They draw, create, and
+                                    make the impossible possible.
+                                </p>
+                                <small>
+                                    TEAMS: Graphic design and Illustration
+                                </small>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_dc2716ad17aa4d4e949061faca228a3b~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_dc2716ad17aa4d4e949061faca228a3b~mv2.jpg'
-                                alt='second'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles["creatives"]}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["external-affairs"]}`}>
-                                External Affairs
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>External Affairs</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Through the power of linkages and
+                                    partnerships, the External Affairs
+                                    department connects digital journalism to
+                                    people of various affiliations, as well as
+                                    managing it&#39;s brand identity online
+                                </p>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_db211c7d3f09495bafa8205ec748797a~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_db211c7d3f09495bafa8205ec748797a~mv2.jpg'
-                                alt='third'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles["external-affairs"]}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["finance"]}`}>
-                                Finance
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Finance</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    With great attention to detail and numbers,
+                                    the Finance department manages the financial
+                                    needs and edmands of the premier digital
+                                    media organization of the University.
+                                </p>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_ae661f11d7d945d6a52f827f257846ab~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_ae661f11d7d945d6a52f827f257846ab~mv2.jpg'
-                                alt='fourth'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles.finance}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["human-resources"]}`}>
-                                Human Resources
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Human Resources</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Internal communication and development are
+                                    two of the greatest assets of any
+                                    organization. With the Human Resources
+                                    department, members are assesd and empowered
+                                    to grow as budding young professionals.
+                                </p>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_bfd3538838554196949170a3a049d310~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_bfd3538838554196949170a3a049d310~mv2.jpg'
-                                alt='fifth'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles["human-resources"]}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["photography"]}`}>
-                                Photography
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Photography</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Photographers are able to tell a story
+                                    beyong words, and capture the unseed facets
+                                    of the dominant narratives from all angles
+                                    and persepectives.
+                                </p>
+                                <small>
+                                    TEAMS: Events, Sports, Portraits, and
+                                    Photojournalism
+                                </small>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_a031115543ab485091a802cfa7173a7f~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_a031115543ab485091a802cfa7173a7f~mv2.jpg'
-                                alt='sixth'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles.photography}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["publicity"]}`}>
-                                Publicity and Communications
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Publicity and Communications</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Garnering a wide audience, publicists tackle
+                                    the spread of projects, engagements, and
+                                    content of the organization to reach every
+                                    single member of the Thomasian community.
+                                </p>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_a761cae85167405a8db41f8a21d1dd36~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/MOODBOARD_01.jpg'
-                                alt='seventh'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles.publicity}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["secretariat"]}`}>
-                                Secretariat
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Secretariat</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Efficient and adaptable, secretaries ensure
+                                    that documents and transactions are kept and
+                                    created through organized systems
+                                </p>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_dc2716ad17aa4d4e949061faca228a3b~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_dc2716ad17aa4d4e949061faca228a3b~mv2.jpg'
-                                alt='eigth'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles.secretariat}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["videography"]}`}>
-                                Videography
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Videography</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Videographers tell stories through frames in
+                                    motion and angles you&#39;ve never seen
+                                    before.
+                                </p>
+                                <small>
+                                    TEAMS: Camera Operations Team, Screenwriting
+                                    and Storyboarding Team, and the Editing Team
+                                </small>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_a031115543ab485091a802cfa7173a7f~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_a031115543ab485091a802cfa7173a7f~mv2.jpg'
-                                alt='ninth'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles.videography}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["web-technologies"]}`}>
-                                Web Technologies
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Web Technologies</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Web Technologists are the competitive game
+                                    changers in the modern world. They innovate,
+                                    lead, and evolve the way we tell stories
+                                    today.
+                                </p>
+                                <small>
+                                    TEAMS: Front-end, Back-end, and UI/UX Design
+                                </small>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_db211c7d3f09495bafa8205ec748797a~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_db211c7d3f09495bafa8205ec748797a~mv2.jpg'
-                                alt='tenth'
-                            />
-                        </div>
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles.webtech}></div>
                     </div>
                 </section>
 
-                <section className={styles["departments-showcase-section"]}>
+                <section
+                    className={`${styles["departments-showcase-section"]} ${styles["white-background"]} ${styles["plus268"]}`}>
                     <div className={styles["departments-showcase"]}>
                         <div className={styles["departments-left-col"]}>
-                            <p
-                                className={`${styles["department"]} ${styles["writing"]}`}>
-                                Writing
-                            </p>
+                            <div className={styles["department-title-wrapper"]}>
+                                <h2>Writing</h2>
+                            </div>
+                            <div
+                                className={
+                                    styles["department-paragraph-wrapper"]
+                                }>
+                                <p>
+                                    Writers are not just limited to telling
+                                    stories. They disturb the undisturbed, and
+                                    take it upon themselves to make sure that
+                                    the necessary truths see the light of day.
+                                </p>
+                                <small>
+                                    SECTIONS: Reports, Stories (Features and
+                                    Literary), Blogs, and Sports
+                                </small>
+                            </div>
                         </div>
-                        <div className={styles["departments-right-col"]}>
-                            <img
-                                src='https://static.wixstatic.com/media/4290cb_ae661f11d7d945d6a52f827f257846ab~mv2.jpg/v1/fill/w_720,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4290cb_ae661f11d7d945d6a52f827f257846ab~mv2.jpg'
-                                alt='eleventh'
-                            />
+                        <div
+                            className={styles["departments-right-col"]}
+                            id={styles.writing}></div>
+                    </div>
+
+                    <div className={styles["bottom-banner"]}>
+                        <div className={styles["bottom-banner-text-wrapper"]}>
+                            <h2>WHAT DO YOU SAY?</h2>
+                        </div>
+                        <div className={styles["bottom-banner-button-wrapper"]}>
+                            <button>TAKE THE CHALLENGE</button>
+                            <button>WHAT&#39;S IT LIKE IN TW?</button>
                         </div>
                     </div>
+
+                    <Footer />
                 </section>
             </div>
         </>

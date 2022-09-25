@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "../styles/Culture.module.css"
 import Header from "../components/Header"
+import styles from "../styles/Culture.module.css"
 
 const Culture = () => {
     return (

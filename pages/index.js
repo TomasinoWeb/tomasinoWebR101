@@ -1,8 +1,7 @@
 import styles from "../styles/Home.module.css"
 import Head from "next/head"
 import Link from "next/link"
-import Header from "../components/Header"
-
+import TransparentHeader from '../components/TransparentHeader'
 export default function Home() {
     return (
         <>
@@ -12,27 +11,22 @@ export default function Home() {
                     content='R101 Application Website for TomasinoWeb, The Premier Digital Media Organization of the University of Santo Tomas'
                 />
             </Head>
-            <Header />
-            <div className={styles["maindiv"]}>
-                <div>
-                    <div>
-                        <div className={`${styles["main"]} ${styles["text"]}`}>
-                            <h1>
-                                Innovation. <br /> Passion. <br /> Dedication.
-                                <br />
-                            </h1>
-                            <p>
-                                <span>Do you have what it takes to be a </span>
-                                <br /> TomWebber?
-                            </p>
-
-                            
-                                <Link href='/about'>
-                                    <button className={`${styles["submit"]} ${styles["button-deco"]}`}>
-                                        TAKE THE CHALLENGE
-                                    </button>
-                                </Link>
-                            
+            <TransparentHeader />
+            <div className={styles["homepage"]}>
+                <div className={styles["main"]}>
+                    <div className={styles["container"]}>
+                        <div className={styles["heading-wrapper"]}>
+                            <h1>Innovation.</h1>
+                            <h1>Passion.</h1>
+                            <h1>Dedication</h1>
+                        </div>
+                        <div className={styles["paragraph-wrapper"]}>
+                            <p>Do you have what it takes to be a TomWebber?</p>
+                        </div>
+                        <div className={styles["button-wrapper"]}>
+                            <Link href='/about'>
+                                <button>TAKE THE CHALLENGE</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
