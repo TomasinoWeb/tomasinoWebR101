@@ -36,6 +36,7 @@
       align-items: flex-start;
       padding: 0px;    
       row-gap: 5px;
+  
     }
     
     
@@ -73,17 +74,19 @@
       font-size: 20px;
       cursor: pointer;
       min-width: fit-content;
+      font-size: calc(15px + 2vmin);
     }
   
     .faq-icons {
-      max-height: 21.5px;
+      height: calc(15px + 2vmin);
     }
   
     .faq-head {
       line-height: 83%;
       font-size: calc(45px + 2vmin);
+      font-weight: 500;
     }
-    
+
     /* QUESTION DIVS */
     
     .faqs {
