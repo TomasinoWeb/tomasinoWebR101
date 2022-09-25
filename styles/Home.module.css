@@ -1,6 +1,7 @@
 .homepage { 
     --fs-60px: 60px;
     --fs-24px: 24px;   
+    user-select: none;
 }
 
 .main { 
@@ -48,12 +49,14 @@
     border: white 4px solid;
     border-radius: 60px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .button-wrapper > button:hover { 
+    transition: 0.3s;
     background-color: #FFFD;
     backdrop-filter: blur(10px) saturate(260%) contrast(180%);
-    
+    transform: scale(1.1);   
 }
 
 @media (max-width: 768px) {
@@ -67,5 +70,9 @@
     .container { 
         padding: 0px 0px 15px 15px;
     }
+}
+
+@media (max-height: 800px) { 
+    
 }
 

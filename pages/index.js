@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.css"
 import Head from "next/head"
 import Link from "next/link"
-
+import TransparentHeader from '../components/TransparentHeader'
 export default function Home() {
     return (
         <>
@@ -11,6 +11,7 @@ export default function Home() {
                     content='R101 Application Website for TomasinoWeb, The Premier Digital Media Organization of the University of Santo Tomas'
                 />
             </Head>
+            <TransparentHeader />
             <div className={styles["homepage"]}>
                 <div className={styles["main"]}>
                     <div className={styles["container"]}>
