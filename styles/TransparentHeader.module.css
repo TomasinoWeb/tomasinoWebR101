@@ -37,6 +37,7 @@
 
 .nav-link:hover { 
     color: black;
+    transition: 0.3s;
 }
 
 .mobile-logo { 
@@ -45,14 +46,26 @@
 
 .hamburger-icon { 
     display: none;
+    color: white;
+    filter: drop-shadow(2px 3px 1px #000);
 } 
-
-.white { 
-    color: white
+#discord { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-align: center;
 }
 
 
 @media only screen and (max-width: 768px){
+    #discord { 
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.5em;
+        text-align: center;
+    }
     .desktop-logo { 
         display: none;
     }
@@ -95,7 +108,6 @@
         align-items: center;
         flex-direction: column;
         gap: 0;
-        height: 200px;
         padding: 0;
         width: 100%;
         position: block;

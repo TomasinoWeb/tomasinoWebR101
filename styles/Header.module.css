@@ -46,12 +46,22 @@
     display: none;
 } 
 
-.white { 
-    color: white
+#discord { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-align: center;
 }
 
-
 @media only screen and (max-width: 768px){
+    #discord { 
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.5em;
+        text-align: center;
+    }
     .desktop-logo { 
         display: none;
     }
@@ -69,15 +79,10 @@
     .hamburger-icon { 
         display: block;
         position: fixed;
-        top: 15px;
-        right: 45px;
+        top: 25px;
+        right: 25px;
         font-size: 1.2em;
-        padding: 10px;
-        border-radius: 100px;
         z-index: 99;
-    }
-    .hamburger-icon:hover { 
-        background-color: var(--lead);
     }
 
     .header { 
@@ -98,7 +103,6 @@
         align-items: center;
         flex-direction: column;
         gap: 0;
-        height: 200px;
         padding: 0;
         width: 100%;
         position: block;

@@ -102,12 +102,12 @@
   padding: 28px 0px 0px 28px;
   width: calc(100vw / 3);
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 #departments:hover { 
   z-index: 999;
   background-image: url("../public/static/thumbnail4.png");
-  transition: 0.5s;
+  transition: 0.2s;
   transform: scale(1.05);
 }
 
@@ -120,17 +120,17 @@
   padding: 28px 0px 0px 28px;
   width: calc(100vw / 3);
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 #people:hover { 
   z-index: 999;
   background-image: url("../public/static/thumbnail10.png");
-  transition: 0.5s;
+  transition: 0.2s;
   transform: scale(1.05);
 }
 
 #culture {
-  transition: 0.5s;
+  transition: 0.2s;
   background-image: url("../public/static/thumbnail2.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -143,7 +143,7 @@
 #culture:hover { 
   z-index: 999;
   background-image: url("../public/static/thumbnail9.png");
-  transition: 0.5s;
+  transition: 0.2s;
   transform: scale(1.05);
 }
 

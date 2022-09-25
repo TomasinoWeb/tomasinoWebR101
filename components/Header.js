@@ -1,36 +1,18 @@
 import headerStyles from "../styles/Header.module.css"
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
+import { FaDiscord } from "react-icons/fa"
 
 function Header() {
-    const [header, setHeader] = useState(false)
     const [visible, setVisible] = useState(false)
-
-    const changeBackground = () => {
-        if (window.scrollY) {
-            setHeader(true)
-        } else {
-            setHeader(false)
-        }
-    }
 
     const toggleVisible = () => {
         setVisible(!visible)
     }
 
-    useEffect(() => {
-        changeBackground()
-        window.addEventListener("scroll", changeBackground)
-    }, [])
-
     return (
-        <div
-            className={
-                header
-                    ? headerStyles.header
-                    : `${headerStyles.header} ${headerStyles.transparent}`
-            }>
+        <div className={headerStyles.header}>
             <div className={headerStyles.brand}>
                 <Link href='/'>
                     <a>
@@ -78,6 +60,9 @@ function Header() {
                     rel='noreferrer'
                     className={headerStyles["nav-link"]}>
                     APPLY
+                </a>
+                <a href='https://discord.com' target='_blank' rel='noreferrer' className={headerStyles["nav-link"]} id={headerStyles.discord}>
+                    <FaDiscord />
                 </a>
             </div>
         </div>

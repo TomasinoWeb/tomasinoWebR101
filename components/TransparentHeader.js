@@ -2,6 +2,7 @@ import headerStyles from "../styles/TransparentHeader.module.css"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
+import { FaDiscord } from "react-icons/fa"
 
 function Header() {
     const [visible, setVisible] = useState(false)
@@ -73,6 +74,9 @@ function Header() {
                     rel='noreferrer'
                     className={headerStyles["nav-link"]}>
                     APPLY
+                </a>
+                <a href='https://discord.com' target='_blank' rel='noreferrer' className={headerStyles["nav-link"]} id={headerStyles.discord}>
+                    <FaDiscord />
                 </a>
             </div>
         </div>
