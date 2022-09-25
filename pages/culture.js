@@ -370,9 +370,12 @@ const Culture = () => {
                         <h2>
                             &#34;Who are the people behind the scenes&#63;&#34;
                         </h2>
+                        <Link href="people">
                         <button>
-                            <a href='#'>OUR COMMUNITY</a>
+                            OUR COMMUNITY
                         </button>
+                        
+                        </Link>
                     </div>
                     <div className={styles["people-container"]}>
                         <img
