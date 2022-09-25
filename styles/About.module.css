@@ -7,17 +7,17 @@
 }
 .hero-container { 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  min-height:100vh ;
+  height: 50vh;
+
 }
 #logo-container {
   width: 30%;
   display: grid;
   place-items: center;
 }
-
 .main-heading {
   font-size: 43px;
   color: white;
@@ -33,7 +33,6 @@
   color: white;
   padding-left: 110px;
   font-weight: 500;
-
 }
 
 
@@ -50,10 +49,12 @@
 
 .sub-heading {
   font-size: 48px;
-  color: white;
+  /* color: white; */
   font-weight: bold;
   text-decoration: none;
   padding-bottom: 150px;
+  -webkit-text-stroke: 3px black;
+  -webkit-text-fill-color: white;
 }
 
 .redirect-container { 
@@ -61,36 +62,37 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 50vh;
 }
 
 #departments {
-  background-image: url("../public/static/img1.png");
+  background-image: url("../public/static/thumbnail6.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 105px);
+  height: 100%;
   padding: 28px 0px 0px 28px;
   width: calc(100vw / 3);
   cursor: pointer;
 }
 
 #people {
-  background-image: url("../public/static/img2.png");
+  background-image: url("../public/static/thumbnail1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 105px);
+  height: 100%;
   padding: 28px 0px 0px 28px;
   width: calc(100vw / 3);
   cursor: pointer;
 }
 
 #culture {
-  background-image: url("../public/static/img3.png");
+  background-image: url("../public/static/thumbnail2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 105px);
+  height: 100%;
   padding: 28px 0px 0px 28px;
   width: calc(100vw / 3);
   cursor: pointer;
@@ -167,6 +169,52 @@
 @media only screen and (max-width: 425px) {
   .sub-heading {
     font-size: 40px;
+  }
+}
+
+@media only screen and (max-height: 940px){
+  #logo-container > img { 
+    max-width: 225px;
+  }
+}
+@media only screen and (max-height: 735px){
+  #logo-container > img { 
+    max-width: 175px;
+  }
+  .main-heading {
+    font-size: 33px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-left: 110px;
+    padding-top: 50px;
+  }
+  .container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: white;
+    padding-left: 110px;
+    font-weight: 500;
+  }
+}
+@media only screen and (max-height: 650px){
+  #logo-container > img { 
+    max-width: 150px;
+  }
+  .main-heading {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-left: 110px;
+    padding-top: 50px;
+  }
+  .container p {
+    font-size: 16px;
+    line-height: 12px;
+    color: white;
+    padding-left: 110px;
+    font-weight: 500;
   }
 }
 

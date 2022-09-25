@@ -29,10 +29,6 @@
   --secondary: #F7A81E;
   --lead: #D9D9D9;
 }
-
-.page { 
-  background-color: red;
-}
 * { 
   margin: 0;
   padding: 0;

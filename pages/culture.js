@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "../styles/Culture.module.css"
-import Header from "../components/Header"
 
 const Culture = () => {
     return (
         <>
-            <Header />
             <div className={styles["culture"]}>
                 <section className={styles["header"]}>
                     <div className={styles["showcase-container"]}>

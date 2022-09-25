@@ -6,7 +6,6 @@ import InterviewGroup from "../components/faqComponents/InterviewGroup"
 import OrgGroup from "../components/faqComponents/OrgGroup"
 import ResultsGroup from "../components/faqComponents/ResultsGroup"
 import SussyGroup from "../components/faqComponents/SussyGroup"
-import Header from "../components/Header"
 
 const FaqPage = () => {
     const [tag, setTag] = useState("selectTag")
@@ -44,9 +43,11 @@ const FaqPage = () => {
         <>
             <Head>
                 <title>TomasinoWeb R101 FAQ</title>
-                <meta name="description" content="Frequently Asked Questions. What is TomasinoWeb?. Am I Eligible to Apply?  How Long Should I Wait For Results?" />
+                <meta
+                    name='description'
+                    content='Frequently Asked Questions. What is TomasinoWeb?. Am I Eligible to Apply?  How Long Should I Wait For Results?'
+                />
             </Head>
-            <Header />
             <div className={styles["FaqPage"]}>
                 <div className={styles["picker-div"]}>
                     <div className={styles["title-div"]}>
