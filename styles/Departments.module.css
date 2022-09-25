@@ -8,81 +8,6 @@
   --fs-24px: 24px;
 }
 
-@media screen and (max-width: 1200px){
-  .Departments { 
-    --fs-55px: 48px;
-    --fs-48px: 41px;
-    --fs-45px: 38px;
-    --fs-35px: 28px;
-    --fs-27px: 20px;
-    --fs-40px: 33px;
-    --fs-24px: 17px;
-  }
-}
-@media screen and (max-width: 986px), screen and (max-height: 1050px){
-  .Departments { 
-    --fs-55px: 44px;
-    --fs-48px: 37px;
-    --fs-45px: 34px;
-    --fs-35px: 24px;
-    --fs-27px: 16px;
-    --fs-40px: 29px;
-    --fs-24px: 13px;
-  }
-}
-
-@media screen and (max-width: 940px), screen and (max-height: 800px) {
-  .Departments { 
-    --fs-55px: 40px;
-    --fs-48px: 33px;
-    --fs-45px: 31px;
-    --fs-35px: 21px;
-    --fs-27px: 13px;
-    --fs-40px: 16px;
-    --fs-24px: 11px;
- }
-}
-
-@media screen and (max-width: 860px), screen and (max-height: 700px) {
-  .Departments { 
-    --fs-55px: 37px;
-    --fs-48px: 30px;
-    --fs-45px: 28px;
-    --fs-35px: 18px;
-    --fs-27px: 10px;
-    --fs-40px: 13px;
-    --fs-24px: 11px;
-  }
-}
-
-@media screen and (max-width: 768px), screen and (max-height: 700px) {
-  .Departments { 
-    --fs-55px: 33px;
-    --fs-48px: 26px;
-    --fs-45px: 24px;
-    --fs-35px: 14px;
-    --fs-27px: 10px;
-    --fs-40px: 24px;
-    --fs-24px: 16px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .Departments { 
-    --fs-55px: 28px;
-    --fs-48px: 21px;
-    --fs-45px: 19px;
-    --fs-35px: 12px;
-    --fs-27px: 10px;
-    --fs-40px: 24px;
-    --fs-24px: 16px;
-  }
-  .department-title-wrapper > h2 { 
-    font-size: 13px;
-    
-    
-  }
-}
 .departments-hero { 
   width: 100%;
   height: 100vh;
@@ -92,7 +17,7 @@
   font-weight: normal;
   flex-direction: column;
   position: sticky;
-  top: 0;
+  margin-top: 80px;
   z-index: 1;
   gap: 30px;
 }
@@ -156,7 +81,7 @@
 
 .departments-showcase-section { 
   position: sticky;
-  top: 0;
+  top: 80px;
   height: 100vh;
   width: 100%;
   z-index: 2;
@@ -348,7 +273,10 @@
 
 .bottom-banner { 
   bottom: 0;
-  background-color: red;
+  background-image: url(../public/static/What\ Do\ You\ Say\ Banner\ 2\ Blurred\ \(2\).png);
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 268px;
   display: flex;
@@ -359,7 +287,7 @@
 }
 .bottom-banner-text-wrapper > h2 { 
   font-size: var(--fs-40px);
-}.bottom-banner-button-wrapper > button { 
+}.bottom-banner-button-wrapper button { 
   background-color: transparent;
   border: 2.5px solid;
   border-radius: 25px;
@@ -373,10 +301,79 @@
   font-size: var(--fs-24px);
   font-weight: 500;
 }
-.bottom-banner-button-wrapper > button:hover { 
+.bottom-banner-button-wrapper button:hover { 
   background-color: white;
   opacity: 0.8;
 }
+
+
+@media screen and (max-width: 1200px){
+  .Departments { 
+    --fs-55px: 48px;
+    --fs-48px: 41px;
+    --fs-45px: 38px;
+    --fs-35px: 44px;
+    --fs-27px: 20px;
+    --fs-40px: 33px;
+    --fs-24px: 17px;
+  }
+}
+
+@media screen and (max-width: 986px), screen and (max-height: 1050px){
+  .Departments { 
+    --fs-55px: 44px;
+    --fs-48px: 37px;
+    --fs-45px: 34px;
+    --fs-35px: 24px;
+    --fs-27px: 16px;
+    --fs-40px: 35px;
+    --fs-24px: 13px;
+  }
+  .departments-hero { 
+    margin-top: 100px;
+  }
+  .departments-showcase { 
+    top: 80px;
+  }
+}
+
+@media screen and (max-width: 940px), screen and (max-height: 800px) {
+  .Departments { 
+    --fs-55px: 40px;
+    --fs-48px: 33px;
+    --fs-45px: 31px;
+    --fs-35px: 21px;
+    --fs-27px: 13px;
+    --fs-40px: 35px;
+    --fs-24px: 11px;
+ }
+}
+/* , screen and (max-height: 700px) */
+@media screen and (max-width: 860px), screen and (max-height: 700px)  {
+  .Departments { 
+    --fs-55px: 37px;
+    --fs-48px: 30px;
+    --fs-45px: 28px;
+    --fs-35px: 18px;
+    --fs-27px: 10px;
+    --fs-40px: 35px;
+    --fs-24px: 19px;
+  }
+}
+
+/*   */
+@media screen and (max-width: 768px){
+  .Departments { 
+    --fs-55px: 33px;
+    --fs-48px: 26px;
+    --fs-45px: 24px;
+    --fs-35px: 20px;
+    --fs-27px: 18px;
+    --fs-40px: 24px;
+    --fs-24px: 15px;
+  }
+}
+
 
 /* animations */
 @keyframes type {

@@ -1,7 +1,8 @@
 import styles from "../styles/Departments.module.css"
 import Head from "next/head"
 import Footer from "../components/Footer"
-import Header from '../components/Header'
+import Header from "../components/Header"
+import Link from "next/link"
 const Departments = () => {
     return (
         <>
@@ -329,8 +330,15 @@ const Departments = () => {
                             <h2>WHAT DO YOU SAY?</h2>
                         </div>
                         <div className={styles["bottom-banner-button-wrapper"]}>
-                            <button>TAKE THE CHALLENGE</button>
+                            <a
+                                href='https://forms.gle/WyzZ99XBtZjVLPdH7'
+                                target='_blank'
+                                rel='noreferrer'>
+                                <button>TAKE THE CHALLENGE</button>
+                            </a>
+                            <Link href="/culture">
                             <button>WHAT&#39;S IT LIKE IN TW?</button>
+                            </Link>
                         </div>
                     </div>
 
