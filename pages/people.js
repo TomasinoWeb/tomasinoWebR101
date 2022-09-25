@@ -60,13 +60,12 @@ const People = () => {
               alt="icon"
             />
             <img
-              src="/static/Juliana.jpg"
+              src="/static/Mika.jpg"
               className={styles["circle-image"]}
               alt="icon"
             />
-
             <img
-              src="/static/Mika.jpg"
+              src="/static/Juliana.jpg"
               className={styles["circle-image"]}
               alt="icon"
             />
