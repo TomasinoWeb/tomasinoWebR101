@@ -64,13 +64,14 @@ const People = () => {
               className={styles["circle-image"]}
               alt="icon"
             />
+
             <img
-              src="/static/Julius.jpg"
+              src="/static/Mika.jpg"
               className={styles["circle-image"]}
               alt="icon"
             />
             <img
-              src="/static/Mika.jpg"
+              src="/static/Julius.jpg"
               className={styles["circle-image"]}
               alt="icon"
             />
