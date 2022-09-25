@@ -73,7 +73,7 @@ function Header() {
                     <a className={headerStyles["nav-link"]}>FAQ</a>
                 </Link>
                 <a
-                    href='https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png'
+                    href='https://forms.gle/WyzZ99XBtZjVLPdH7'
                     target='_blank'
                     rel='noreferrer'
                     className={headerStyles["nav-link"]}>

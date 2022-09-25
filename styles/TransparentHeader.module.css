@@ -11,7 +11,9 @@
     z-index: 99;
     transition: 0.3s;
 }
-
+.colored { 
+    background-color: var(--primary);
+}
 .logo { 
     width: 288px;
     height: 99px;
@@ -30,6 +32,7 @@
     -webkit-text-stroke: 0.1px black;
     text-shadow: 1px 1px black;
     filter: drop-shadow(2px 18px 13px #000);
+    transition: 0.3s;
 }
 
 .nav-link:hover { 

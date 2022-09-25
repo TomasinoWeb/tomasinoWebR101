@@ -1,16 +1,31 @@
 import headerStyles from "../styles/TransparentHeader.module.css"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 
 function Header() {
     const [visible, setVisible] = useState(false)
+    const [colored, setColored] = useState(false)
+
+    const changeBackground = () => { 
+        if (window.scrollY) { 
+            setColored(false)
+        } else { 
+            setColored(true)
+        }
+    }
 
     const toggleVisible = () => {
         setVisible(!visible)
     }
+
+    useEffect(() => {
+        changeBackground()
+        window.addEventListener("scroll", changeBackground)
+    }, [])
+
     return (
-        <div className={headerStyles.header}>
+        <div className={colored ? headerStyles.header : `${headerStyles.header} ${headerStyles.colored}`}>
             <div className={headerStyles.brand}>
                 <Link href='/'>
                     <a>

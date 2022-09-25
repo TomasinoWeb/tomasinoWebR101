@@ -1,4 +1,5 @@
 .header { 
+    user-select: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,7 +30,8 @@
 }
 
 .nav-link { 
-    color: #141F28;
+    color: black;
+    transition: 0.3s;
 }
 
 .nav-link:hover { 

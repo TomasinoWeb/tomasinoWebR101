@@ -25,20 +25,18 @@
     flex-direction: column;
     gap: 15px;
 }
-.heading-wrapper {
-    text-shadow: 2px 2px black;
-    color: white;
-}
-.heading-wrapper > h1 { 
-    font-size: var(--fs-60px);
-}
-.paragraph-wrapper { 
-    color: white;
 
+.heading-wrapper > h1 { 
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: var(--fs-60px);
+    filter: drop-shadow(2px 18px 13px #000);
 }
 .paragraph-wrapper > p { 
+    color: white;
     font-size: var(--fs-24px);
     text-shadow: 2px 2px black;
+    filter: drop-shadow(2px 18px 13px #000);
 }
 .button-wrapper > button { 
     background-color: rgba(0, 0, 0, 0);
@@ -50,6 +48,7 @@
     border-radius: 60px;
     cursor: pointer;
     transition: 0.3s;
+    filter: drop-shadow(2px 18px 13px #000);
 }
 
 .button-wrapper > button:hover { 
