@@ -34,7 +34,8 @@ function ApplicationGroup() {
     },
     {
       question: "Is there membership fee?",
-      answer: "There is none as of the moment.",
+      answer:
+        "Yes. It's P250 per member but rest assured, you will absolutely get more than what you paid for.",
       tag: "application",
       open: false,
     },

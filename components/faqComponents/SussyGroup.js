@@ -6,7 +6,7 @@ function SussyGroup() {
     {
       question:
         "Did some members of the org ever get attached to a hardboiled egg?",
-      answer: "Yes. Yes, we did. Its name was TomWegg. (RIP TomWegg 🥚🙏)",
+      answer: "Yes, we did. Its name was TomWegg. (RIP TomWegg 🥚🙏)",
       tag: "sussybaka",
       open: false,
     },
@@ -18,7 +18,7 @@ function SussyGroup() {
     },
     {
       question: "Is it Tomasino Web, TomasinoWeb, or Tomasinoweb?",
-      answer: "This should give you the answer.",
+      answer: "TomasinoWeb.",
       tag: "sussybaka",
       open: false,
     },
