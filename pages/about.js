@@ -1,12 +1,9 @@
 import styles from "../styles/About.module.css"
-import Head from "next/head"
 import Link from "next/link"
-import Header from "../components/Header"
 
 const About = () => {
     return (
-        <>
-            <Header />
+        <div className={styles.About}>
             <div className={styles["container"]}>
                 <div className={styles["hero-container"]}>
                     <div id={styles["logo-container"]}>
@@ -34,7 +31,6 @@ const About = () => {
                             </h1>
                         </div>
                     </Link>
-
                     <Link href='/people'>
                         <div id={styles["people"]}>
                             <h1 className={styles["sub-heading"]}>
@@ -42,7 +38,6 @@ const About = () => {
                             </h1>
                         </div>
                     </Link>
-
                     <Link href='/culture'>
                         <div id={styles["culture"]}>
                             <h1 className={styles["sub-heading"]}>Culture</h1>
@@ -50,7 +45,7 @@ const About = () => {
                     </Link>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
