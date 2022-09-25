@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Header from "../components/Header"
 import styles from "../styles/Culture.module.css"
-
+import Link from "next/link"
+import Footer from '../components/Footer'
 const Culture = () => {
     return (
         <>
@@ -23,7 +24,7 @@ const Culture = () => {
                         </div>
                         <div className={styles["showcase-image-container"]}>
                             <img
-                                src='/static/org.png'
+                                src='/static/Shakeyhands.png'
                                 alt='hands'
                                 className={styles["showcase-image"]}
                             />
@@ -263,7 +264,7 @@ const Culture = () => {
                                     className={styles["card-image"]}
                                 />
                                 <div className={styles["card-title-container"]}>
-                                    <h3>Virtual Coverages</h3>
+                                    <h3>Virtual coverages</h3>
                                 </div>
                                 <div className={styles["card-text-container"]}>
                                     <p>
@@ -419,18 +420,26 @@ const Culture = () => {
 
                 <section className={styles["bottom-banner"]}>
                     <div className={styles["banner-text"]}>
-                        <h2>What do you say&#63;</h2>
+                        <h2>WHAT DO YOU SAY&#63;</h2>
                     </div>
                     <div className={styles["bottom-banner-buttons-container"]}>
                         <button className={styles["bottom-banner-buttons"]}>
-                            <a href=''>TAKE THE CHALLENGE</a>
+                            <a
+                                href='https://forms.gle/WyzZ99XBtZjVLPdH7'
+                                target='_blank'
+                                rel='noreferrer'>
+                                TAKE THE CHALLENGE
+                            </a>
                         </button>
-                        <button className={styles["bottom-banner-buttons"]}>
-                            <a href=''>HM&#44; WHERE DO I FIT&#63;</a>
-                        </button>
+                        <Link href='/departments'>
+                            <button className={styles["bottom-banner-buttons"]}>
+                                <a href=''>HM&#44; WHERE DO I FIT&#63;</a>
+                            </button>
+                        </Link>
                     </div>
                 </section>
             </div>
+            <Footer />
         </>
     )
 }
