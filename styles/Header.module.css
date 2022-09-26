@@ -9,11 +9,11 @@
     position: fixed;
     top: 0;
     z-index: 99;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .transparent { 
-    transition: 0.3s;
+    transition: 0.2s;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -31,7 +31,7 @@
 
 .nav-link { 
     color: black;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .nav-link:hover { 

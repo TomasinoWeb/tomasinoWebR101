@@ -51,11 +51,7 @@ const Departments = () => {
                                         styles["department-paragraph-wrapper"]
                                     }>
                                     <p>
-                                        Social development is at the heart of
-                                        the Community Development Department.
-                                        Together with the pursuit of social
-                                        transformation, the department helps the
-                                        partner communities of UST simbahayan
+                                        Social development is at the heart of the Community Department. Together with the pursuit of social transformation, the department helps the partner communities of UST Simbahayan.
                                     </p>
                                 </div>
                             </div>
@@ -110,12 +106,7 @@ const Departments = () => {
                                         styles["department-paragraph-wrapper"]
                                     }>
                                     <p>
-                                        Through the power of linkages and
-                                        partnerships, the External Affairs
-                                        department connects digital journalism
-                                        to people of various affiliations, as
-                                        well as managing it&#39;s brand identity
-                                        online
+                                        Through the power of linkages and partnerships, the External Affairs department connects digital journalism to people of various affliations, as well as managing it&#39;s brand identity online.
                                     </p>
                                 </div>
                             </div>
@@ -260,10 +251,7 @@ const Departments = () => {
                                         styles["department-paragraph-wrapper"]
                                     }>
                                     <p>
-                                        Efficient and adaptable, secretaries
-                                        ensure that documents and transactions
-                                        are kept and created through organized
-                                        systems
+                                        Efficient and adaptable, secretaries ensure that documents and transactions are kept and created through organized systems.
                                     </p>
                                 </div>
                             </div>

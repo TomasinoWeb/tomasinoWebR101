@@ -33,7 +33,7 @@
 
 .banner-wrapper > img { 
   width: 100%;
-  height: 400px;
+  height: 500px;
 }
 .bottom-hero-text-wrapper { 
   width: 80%;
@@ -72,9 +72,9 @@
 .css-typing h1:nth-child(3) {
   width: 10em;
   opacity: 0;
-  -webkit-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
-  animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
-  -webkit-animation-delay: 4s;
+  -webkit-animation: type2 2s steps(20, end);
+  animation: type2 2s steps(80, end);
+  -webkit-animation-delay: 2s;
   animation-delay: 4s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -113,7 +113,6 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  gap: 30px;
   padding: 30px 30px 0 30px;
 }
 .department-title-wrapper { 
@@ -129,15 +128,13 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  gap: 40px;
+  gap: 10px;
 }
 .department-paragraph-wrapper > p {
   font-size: var(--fs-35px);
 }
 .department-paragraph-wrapper > small {
   font-size: var(--fs-27px);
-  color: var(--secondary);
-  
 }
 
 
@@ -212,7 +209,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    gap: 0;
     padding: 0 30px 0 30px;
     position: sticky;
     background-color: white;
@@ -230,7 +226,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    gap: 15px;
   }
   .department-paragraph-wrapper > p {
     font-size: var(--fs-35px);
@@ -350,17 +345,17 @@
 
 @media screen and (max-width: 940px), screen and (max-height: 800px) {
   .Departments { 
-    --fs-55px: 40px;
-    --fs-48px: 30px;
+    --fs-55px: 35px;
+    --fs-48px: 27px;
     --fs-45px: 27px;
     --fs-35px: 21px;
-    --fs-27px: 17px;
+    --fs-27px: 14px;
     --fs-40px: 35px;
     --fs-24px: 19px;
  }
  .banner-wrapper > img { 
   width: 100%;
-  height: 250px;
+  height: 300px;
 }
  
 }

@@ -178,6 +178,7 @@ const People = () => {
                   <div className={styles["divider"]}></div>
                   <i>Dogshow version: msaya xia…</i>
                 </p>
+
                 <br />
                 <p className={styles["name-pos-right"]}>Rabin Bote</p>
                 <p className={styles["name-pos-right"]}>
