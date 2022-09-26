@@ -300,10 +300,13 @@
   cursor: pointer;
   font-size: var(--fs-24px);
   font-weight: 500;
+  transition: 0.3s;
 }
 .bottom-banner-button-wrapper button:hover { 
-  background-color: white;
-  opacity: 0.8;
+  transition: 0.3s;
+    background-color: #FFFD;
+    backdrop-filter: blur(10px) saturate(260%) contrast(180%);
+    transform: scale(1.1); 
 }
 
 

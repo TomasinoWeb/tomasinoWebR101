@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import Header from "../components/Header"
 import styles from "../styles/Culture.module.css"
 import Link from "next/link"
-import Footer from '../components/Footer'
+import Footer from "../components/Footer"
+
 const Culture = () => {
     return (
         <>
@@ -370,11 +370,8 @@ const Culture = () => {
                         <h2>
                             &#34;Who are the people behind the scenes&#63;&#34;
                         </h2>
-                        <Link href="people">
-                        <button>
-                            OUR COMMUNITY
-                        </button>
-                        
+                        <Link href='people'>
+                            <button>OUR COMMUNITY</button>
                         </Link>
                     </div>
                     <div className={styles["people-container"]}>

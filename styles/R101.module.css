@@ -1,13 +1,13 @@
 .R101 {
+  overflow-y: hidden;
   margin: auto;
   width: 90%;
-  min-height: 100vh;
+  min-height: calc(100vh - 105px - 57px);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 120px;
-  margin-top: 105px;
+  margin-top: 100px;
 }
 .r101-hero {
   width: 100%;
@@ -86,6 +86,29 @@
   color: #be7c0a;
 }
 
+@media (max-height: 800px) { 
+  .r101-hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 2.5em;
+    padding-bottom: 50px;
+    margin-top: 30px;
+  }
+
+  .r101-card-title {
+    font-size: 1.8em;
+    padding-bottom: 15px;
+  }
+
+  .r101-card-text { 
+    font-size: 0.8em;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .r101-card-container {
     flex-direction: column;
@@ -114,6 +137,8 @@
 @media only screen and (max-width: 600px) {
   .r101-hero {
     font-size: 2em;
+    justify-content: center;
+    align-items: center;
   }
 
   .r101-card-title {

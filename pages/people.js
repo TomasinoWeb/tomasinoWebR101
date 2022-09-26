@@ -23,9 +23,6 @@ const People = () => {
           </p>
         </div>
         <div className={styles["divider"]}></div>
-        {/* <h3 className={styles["insert-banner"]}>
-            INSERT SOMETHING HERE INSERT SOMETHING HERE
-          </h3> */}
         <div className={styles["divider"]}></div>
         <div className={styles["circle-section"]}>
           <div className={styles["image-section-1"]}>

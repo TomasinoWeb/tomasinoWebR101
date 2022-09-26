@@ -1,5 +1,5 @@
 .FaqPage { 
-    min-height: 100vh;
+    min-height: calc(100vh - 105px - 57px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,6 +61,7 @@
       border-radius: 20px;
       display: inline-block;
       padding: 10px 30px;
+      user-select: none;
     }
   
     .button-picker{
@@ -75,8 +76,21 @@
       cursor: pointer;
       min-width: fit-content;
       font-size: calc(15px + 2vmin);
+      user-select: none;
+      transition: 0.3s; 
     }
-  
+    .button-picker:hover {
+      transition: 0.3s; 
+      transform: scale(1.2);
+    }
+    
+    #nonepicker { 
+      cursor: default;
+    }
+    #nonepicker:hover { 
+      transform: none;
+    }
+
     .faq-icons {
       height: calc(15px + 2vmin);
     }
@@ -87,7 +101,7 @@
       font-weight: 500;
     }
 
-    /* QUESTION DIVS */
+
     
     .faqs {
       width: 100%;
