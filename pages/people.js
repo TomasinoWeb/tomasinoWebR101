@@ -2,6 +2,7 @@ import styles from "../styles/People.module.css"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Image from "next/image"
+import Link from "next/link"
 
 const People = () => {
     return (
@@ -268,21 +269,21 @@ const People = () => {
 
                     <div className={styles["alumni-img-section"]}>
                         <Image
-                            alt="icon"
+                            alt='icon'
                             width={500}
                             height={750}
                             src='/static/Zamora.png'
                             className={styles["alumni-image"]}
                         />
                         <Image
-                            alt="icon"
+                            alt='icon'
                             width={500}
                             height={750}
                             src='/static/Visaya.png'
                             className={styles["alumni-image"]}
                         />
                         <Image
-                            alt="icon"
+                            alt='icon'
                             width={500}
                             height={750}
                             src='/static/Isaac.png'
@@ -290,21 +291,21 @@ const People = () => {
                         />
 
                         <Image
-                            alt="icon"
+                            alt='icon'
                             width={500}
                             height={750}
                             src='/static/Garcia.png'
                             className={styles["alumni-image"]}
                         />
                         <Image
-                            alt="icon"
+                            alt='icon'
                             width={500}
                             height={750}
                             src='/static/Tuason.png'
                             className={styles["alumni-image"]}
                         />
                         <Image
-                            alt="icon"
+                            alt='icon'
                             width={500}
                             height={750}
                             src='/static/Baria.png'
@@ -406,8 +407,15 @@ const People = () => {
                                 WEB?
                             </p>
                             <div className={styles["button-cont"]}>
-                                <button>TAKE THE CHALLENGE</button>
-                                <button>HM, WHERE DO I FIT?</button>
+                                <a
+                                    href='https://forms.gle/WyzZ99XBtZjVLPdH7'
+                                    target='_blank'
+                                    rel='noreferrer'>
+                                    <button>TAKE THE CHALLENGE</button>
+                                </a>
+                                <Link href='/departments'>
+                                    <button>HM, WHERE DO I FIT?</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
