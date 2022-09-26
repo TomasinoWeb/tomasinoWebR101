@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-image: url("../public/static/GIF-\(Lighter\).gif");
     background-size: cover;
-    background-position: center;
+    background-position: left;
 
     display: flex;
     justify-content: flex-start;
