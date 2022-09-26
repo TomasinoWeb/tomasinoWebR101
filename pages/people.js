@@ -1,6 +1,7 @@
 import styles from "../styles/People.module.css"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Link from 'next/link'
 
 const People = () => {
     return (
@@ -66,12 +67,12 @@ const People = () => {
                             alt='icon'
                         />
                         <img
-                            src='/static/Julius.jpg'
+                            src='/static/julius.jpg'
                             className={styles["circle-image"]}
                             alt='icon'
                         />
                         <img
-                            src='/static/Mika.jpg'
+                            src='/static/Mika.JPG'
                             className={styles["circle-image"]}
                             alt='icon'
                         />
@@ -198,7 +199,9 @@ const People = () => {
                                     the organization again in a heartbeat.
                                     <div className={styles["divider"]}></div>
                                 </p>
-                                    <i className={styles["testimony-text"]}>Dogshow version: msaya xia…</i>
+                                <i className={styles["testimony-text"]}>
+                                    Dogshow version: msaya xia…
+                                </i>
 
                                 <br />
 
@@ -361,8 +364,15 @@ const People = () => {
                                 WEB?
                             </p>
                             <div className={styles["button-cont"]}>
-                                <button>TAKE THE CHALLENGE</button>
+                                <a
+                                    href='https://forms.gle/WyzZ99XBtZjVLPdH7'
+                                    target='_blank'
+                                    rel='noreferrer'>
+                                    <button>TAKE THE CHALLENGE</button>
+                                </a>
+                                <Link href="/departments">
                                 <button>HM, WHERE DO I FIT?</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
