@@ -166,6 +166,7 @@
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+    position: sticky;
   }
   #logo-container {
     width: 100%;
@@ -198,6 +199,8 @@
     flex-direction: column;
     width: 100%;
     height: auto;
+    position: absolute;
+    top: calc(100vh + 80px);
   }
   #departments {
     background-image: url("../public/static/thumbnail6.png");
@@ -209,6 +212,8 @@
     width: 100%;
     cursor: pointer;
     transition: 0.5s;
+    position: sticky;
+    top: 80px;
   }
   #people {
     background-image: url("../public/static/thumbnail1.png");
@@ -220,6 +225,8 @@
     width: 100%;
     cursor: pointer;
     transition: 0.5s;
+    position: sticky;
+    top: 180px;
   }
   #culture {
     transition: 0.5s;
@@ -227,9 +234,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: calc(80vh - 80px);
     padding: 28px 0px 0px 28px;
     width: 100%;
-    cursor: pointer;
+    position: sticky;
+    
+    z-index: 999;
+    cursor: pointer; 
+    
   }
 }
