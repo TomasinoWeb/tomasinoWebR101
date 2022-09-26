@@ -61,7 +61,7 @@ function Header() {
                     className={headerStyles["nav-link"]}>
                     APPLY
                 </a>
-                <a href='https://discord.com' target='_blank' rel='noreferrer' className={headerStyles["nav-link"]} id={headerStyles.discord}>
+                <a href='https://discord.gg/hTN7pd2hV8' target='_blank' rel='noreferrer' className={headerStyles["nav-link"]} id={headerStyles.discord}>
                     <FaDiscord />
                 </a>
             </div>
