@@ -19,18 +19,8 @@
   font-weight: bolder;
 }
 
-/* .circle-section {
-  background-color: cadetblue;
-} */
 
 .image-section-1 {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-left: 17%;
-  margin-right: 17%;   
-  background-color: aliceblue;*/
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   width: 70%;
@@ -41,14 +31,6 @@
 }
 
 .circle-image {
-  /* border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  justify-self: center;
-  
-  /* margin: 10px; 
-  object-fit: cover; */
-
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -85,11 +67,9 @@
   height: 420px;
   width: 310px;
   object-fit: cover;
-  box-shadow: 11px 10px 29px 1px rgba(0, 0, 0, 0.5);
 }
 
 .test-image {
-  box-shadow: 11px 10px 29px 1px rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   height: 130px;
   width: 130px;
@@ -144,11 +124,6 @@
   width: 100%;
 }
 
-/* .alumni-section {
-  background-color: bisque;
- 
-} */
-
 .alumni-title {
   text-align: center;
   font-size: 3.3em;
@@ -169,13 +144,10 @@
   column-gap: 20px;
   row-gap: 15px;
   margin: auto;
-  /* background-color: palegreen; */
 }
 
 .alumni-image {
   border-radius: 8%;
-  /* height: 490px;
-  width: 380px;  */
   width: 100%;
   height: 100%;
   justify-self: center;
@@ -233,37 +205,10 @@
   color: black;
 }
 
-@media only screen and (max-width: 1567px) {
-  /* .circle-image {
-    height: 130px;
-    width: 130px;
-    margin: 5px;
-  } */
-}
-
-@media only screen and (max-width: 1200px) {
-  /* .alumni-img-section {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);    
-    align-content: center;         
-  } */
-
-  /* .alumni-img-section {
-    background-color: palevioletred;
-  } */
-}
-
 @media only screen and (max-width: 1000px) {
   .front-text {
     font-size: 2em;
   }
-
-  /* .circle-image {
-    height: 110px;
-    width: 110px;
-    margin: 5px;
-  } */
 
   .count,
   .alumni-title {
@@ -354,12 +299,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  /* .circle-image {
-    height: 100px;
-    width: 100px;
-    margin: 1px;
-  } */
-
   .portrait-image {
     border-radius: 8%;
     height: 330px;
@@ -373,17 +312,6 @@
   .bottom-cont { 
     height: 50vh;
   }
-
-  /* .alumni-img-section {
-    /* padding-left: 18%;
-    padding-right: 18%; */
-  /* width: 51%; */
-  /* grid-template-columns: repeat(6, 1fr);    
-    justify-content: space-between; */
-  /* overflow-x: scroll;
-    column-gap: 10px;
-    margin: auto; 
-  } */
 
   .front-text {
     font-size: 1.8em;
@@ -424,12 +352,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-  /* .circle-image {
-    height: 100px;
-    width: 100px;
-    margin: 0.1px;
-  } */
-
+  
   .portrait-image {
     border-radius: 8%;
     height: 310px;
