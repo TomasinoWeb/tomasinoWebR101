@@ -207,7 +207,7 @@ const People = () => {
             <img src="/static/Isaac.png" className={styles["alumni-image"]} />
 
             <img src="/static/Garcia.png" className={styles["alumni-image"]} />
-            <img src="/static/Tuazon.png" className={styles["alumni-image"]} />
+            <img src="/static/Tuason.png" className={styles["alumni-image"]} />
             <img src="/static/Baria.png" className={styles["alumni-image"]} />
           </div>
         </div>

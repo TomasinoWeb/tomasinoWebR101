@@ -344,9 +344,9 @@ const Culture = () => {
                 alt="Brin"
               />
               <img
-                src="/static/Alejandrino.jpg"
+                src="/static/Paolo.jpg"
                 className={styles["people"]}
-                alt="Alejandrino"
+                alt="Paolo"
               />
               <img
                 src="/static/Genise.JPG"
