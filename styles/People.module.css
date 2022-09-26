@@ -20,20 +20,18 @@
 }
 
 .image-section-1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-left: 17%;
-  margin-right: 17%;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
 }
 
 .circle-image {
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  max-height: 100%;
+  max-width: 100%;
   justify-self: center;
-  /* margin: 10px; */
   object-fit: cover;
 }
 
@@ -118,7 +116,10 @@
   background-repeat: no-repeat;
   width: 100%;
 }
-
+.alumni-section { 
+  display: grid;
+  place-items: center;
+}
 .alumni-title {
   text-align: center;
   font-size: 3.3em;
@@ -131,11 +132,12 @@
 }
 
 .alumni-img-section {
+  width: 70%;
   display: grid;
-  justify-content: center;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
-  align-content: center;
-  gap: 10px;
+  gap: 0;
+  padding: 0;
 }
 
 .alumni-image {
@@ -201,13 +203,6 @@
   backdrop-filter: blur(10px) saturate(260%) contrast(180%);
   transform: scale(1.1); 
 }
-@media only screen and (max-width: 1567px) {
-  .circle-image {
-    height: 130px;
-    width: 130px;
-    margin: 5px;
-  }
-}
 @media only screen and (max-width: 1200px) {
   .alumni-img-section {
     display: grid;
@@ -215,16 +210,19 @@
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
   }
+  .image-section-1 { 
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+  }
+  .circle-image {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .front-text {
     font-size: 2em;
-  }
-
-  .circle-image {
-    height: 110px;
-    width: 110px;
-    margin: 5px;
   }
 
   .count,
@@ -310,28 +308,40 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .circle-image {
-    height: 100px;
-    width: 100px;
-    margin: 1px;
+  .image-section-1 { 
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
   }
-
   .portrait-image {
     border-radius: 8%;
     height: 330px;
     width: 220px;
     object-fit: cover;
   }
+  .bottom-title {
+    font-size: 1.5em;
+    padding: 0;
+  }
+  .bottom-cont { 
+    height: 50vh;
+  }
 
   .alumni-img-section {
-    /* padding-left: 18%;
-    padding-right: 18%; */
     width: 51%;
     grid-template-columns: repeat(6, 1fr);
     justify-content: space-between;
     overflow-x: scroll;
     column-gap: 10px;
     margin: auto;
+    
+  }
+  .alumni-img-section::-webkit-scrollbar {
+    height: 6px;
+    /* At least not zero */
+  }
+
+  .alumni-img-section::-webkit-scrollbar-thumb {
+    background-color: var(--secondary); /* Or any other instruction making the element visible */
   }
 
   .front-text {
@@ -368,12 +378,6 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .circle-image {
-    height: 100px;
-    width: 100px;
-    margin: 0.1px;
-  }
-
   .portrait-image {
     border-radius: 8%;
     height: 310px;
