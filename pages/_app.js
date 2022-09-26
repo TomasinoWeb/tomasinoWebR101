@@ -1,7 +1,12 @@
 import "../styles/globals.css"
+import '../styles/nprogress.css'
 import Head from "next/head"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import nProgress from 'nprogress'
+import Router from 'next/router'
+
+Router.events.on("routeChangeStart", nProgress.start)
+Router.events.on("routeChangeError", nProgress.done)
+Router.events.on("routeChangeComplete", nProgress.done)
 
 function MyApp({ Component, pageProps }) {
     return (
