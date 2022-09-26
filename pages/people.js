@@ -23,6 +23,7 @@ const People = () => {
           </p>
         </div>
         <div className={styles["divider"]}></div>
+
         <div className={styles["divider"]}></div>
         <div className={styles["circle-section"]}>
           <div className={styles["image-section-1"]}>

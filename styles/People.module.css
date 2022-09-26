@@ -19,22 +19,43 @@
   font-weight: bolder;
 }
 
+/* .circle-section {
+  background-color: cadetblue;
+} */
+
 .image-section-1 {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-left: 17%;
-  margin-right: 17%;
+  margin-right: 17%;   
+  background-color: aliceblue;*/
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 70%;
+  padding: 0;
+  column-gap: 20px;
+  row-gap: 15px;
+  margin: auto;
 }
 
 .circle-image {
-  border-radius: 50%;
+  /* border-radius: 50%;
   height: 150px;
   width: 150px;
   justify-self: center;
-  /* margin: 10px; */
+  
+  /* margin: 10px; 
+  object-fit: cover; */
+
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  justify-self: center;
+  margin-bottom: 15px;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .count {
@@ -116,8 +137,14 @@
 .gray-divide {
   background-image: url("/static/Banner 4.png");
   background-repeat: no-repeat;
+  object-fit: cover;
   width: 100%;
 }
+
+/* .alumni-section {
+  background-color: bisque;
+ 
+} */
 
 .alumni-title {
   text-align: center;
@@ -132,25 +159,32 @@
 
 .alumni-img-section {
   display: grid;
-  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
-  align-content: center;
-  gap: 10px;
+  width: 70%;
+  padding: 0;
+  column-gap: 20px;
+  row-gap: 15px;
+  margin: auto;
+  /* background-color: palegreen; */
 }
 
 .alumni-image {
   border-radius: 8%;
-  height: 490px;
+  /* height: 490px;
+  width: 380px;  */
+  width: 100%;
+  height: 100%;
   justify-self: center;
   margin-bottom: 15px;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .twphoto {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   opacity: 0.8;
   filter: blur(1px) brightness(0.8) contrast(1.2);
 }
@@ -173,7 +207,6 @@
   padding-right: 100px;
   margin-bottom: 20px;
   color: white;
-  filter: drop-shadow(2px 18px 13px #000);text-shadow: 2px 2px black;
 }
 
 .People button {
@@ -189,43 +222,44 @@
   cursor: pointer;
   font-size: 1.2em;
   font-weight: 500;
-  text-shadow: 2px 2px black;
-  filter: drop-shadow(2px 18px 13px #000);
-  transition: 0.3s;
 }
 
 .People button:hover {
   background-color: white;
-  transition: 0.3s;
-  background-color: #FFFD;
-  backdrop-filter: blur(10px) saturate(260%) contrast(180%);
-  transform: scale(1.1); 
+  color: black;
 }
+
 @media only screen and (max-width: 1567px) {
-  .circle-image {
+  /* .circle-image {
     height: 130px;
     width: 130px;
     margin: 5px;
-  }
+  } */
 }
+
 @media only screen and (max-width: 1200px) {
-  .alumni-img-section {
+  /* .alumni-img-section {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    align-content: center;
-  }
+    grid-template-columns: repeat(2, 1fr);    
+    align-content: center;         
+  } */
+
+  /* .alumni-img-section {
+    background-color: palevioletred;
+  } */
 }
+
 @media only screen and (max-width: 1000px) {
   .front-text {
     font-size: 2em;
   }
 
-  .circle-image {
+  /* .circle-image {
     height: 110px;
     width: 110px;
     margin: 5px;
-  }
+  } */
 
   .count,
   .alumni-title {
@@ -307,14 +341,20 @@
     width: 250px;
     object-fit: cover;
   }
+
+  .image-section-1 {
+    width: 90%;
+    column-gap: 2px;
+    row-gap: 2px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  .circle-image {
+  /* .circle-image {
     height: 100px;
     width: 100px;
     margin: 1px;
-  }
+  } */
 
   .portrait-image {
     border-radius: 8%;
@@ -323,16 +363,16 @@
     object-fit: cover;
   }
 
-  .alumni-img-section {
+  /* .alumni-img-section {
     /* padding-left: 18%;
     padding-right: 18%; */
-    width: 51%;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: space-between;
-    overflow-x: scroll;
+  /* width: 51%; */
+  /* grid-template-columns: repeat(6, 1fr);    
+    justify-content: space-between; */
+  /* overflow-x: scroll;
     column-gap: 10px;
-    margin: auto;
-  }
+    margin: auto; 
+  } */
 
   .front-text {
     font-size: 1.8em;
@@ -363,25 +403,26 @@
 
 @media only screen and (max-width: 600px) {
   .alumni-img-section {
-    width: 70%;
+    grid-template-columns: repeat(6, minmax(350px, 1fr));
+    overflow-x: scroll;
+  }
+
+  .alumni-image {
+    display: inline-block;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .circle-image {
+  /* .circle-image {
     height: 100px;
     width: 100px;
     margin: 0.1px;
-  }
+  } */
 
   .portrait-image {
     border-radius: 8%;
     height: 310px;
     width: 200px;
     object-fit: cover;
-  }
-
-  .alumni-img-section {
-    width: 76%;
   }
 }
