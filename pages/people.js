@@ -57,17 +57,17 @@ const People = () => {
               alt="icon"
             />
             <img
-              src="/static/Mika.jpg"
-              className={styles["circle-image"]}
-              alt="icon"
-            />
-            <img
               src="/static/Juliana.jpg"
               className={styles["circle-image"]}
               alt="icon"
             />
             <img
               src="/static/Julius.jpg"
+              className={styles["circle-image"]}
+              alt="icon"
+            />
+            <img
+              src="/static/Mika.jpg"
               className={styles["circle-image"]}
               alt="icon"
             />
@@ -190,8 +190,10 @@ const People = () => {
         <div className={styles["divider"]}></div>
         <div className={styles["divider"]}></div>
         <img src="/static/Banner 4.png" className={styles["gray-divide"]} />
+
         <div className={styles["divider"]}></div>
         <div className={styles["divider"]}></div>
+
         <div className={styles["alumni-section"]}>
           <p className={styles["alumni-title"]}>THE CORE GROUP</p>
           <p className={styles["alumni-desc"]}>The heads of TomasinoWeb</p>

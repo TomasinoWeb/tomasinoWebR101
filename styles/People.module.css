@@ -24,15 +24,15 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  width: 70%;
-  margin: 0 auto;
+  margin-left: 17%;
+  margin-right: 17%;
 }
 
 .circle-image {
   border-radius: 50%;
-  height: 420px;
-  width: 310px;
+  height: 150px;
+  width: 150px;
+  justify-self: center;
   /* margin: 10px; */
   object-fit: cover;
 }
@@ -88,7 +88,7 @@
   line-height: 1.2em;
 }
 
-.testimony-text i{
+.testimony-text i {
   font-weight: 500;
 }
 
@@ -119,12 +119,6 @@
   width: 100%;
 }
 
-.short-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .alumni-title {
   text-align: center;
   font-size: 3.3em;
@@ -137,21 +131,18 @@
 }
 
 .alumni-img-section {
-  /* justify-content: center;
   display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 15px; */
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  gap: 10px;
 }
 
 .alumni-image {
   border-radius: 8%;
-  height: 470px;
-  width: 360px;
-  margin: 5px;
+  height: 490px;
+  justify-self: center;
+  margin-bottom: 15px;
   object-fit: cover;
 }
 
@@ -210,7 +201,6 @@
   backdrop-filter: blur(10px) saturate(260%) contrast(180%);
   transform: scale(1.1); 
 }
-
 @media only screen and (max-width: 1567px) {
   .circle-image {
     height: 130px;
@@ -218,7 +208,14 @@
     margin: 5px;
   }
 }
-
+@media only screen and (max-width: 1200px) {
+  .alumni-img-section {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+  }
+}
 @media only screen and (max-width: 1000px) {
   .front-text {
     font-size: 2em;
@@ -329,10 +326,11 @@
   .alumni-img-section {
     /* padding-left: 18%;
     padding-right: 18%; */
-    width: 45%;
+    width: 51%;
+    grid-template-columns: repeat(6, 1fr);
     justify-content: space-between;
     overflow-x: scroll;
-    flex-wrap: nowrap;
+    column-gap: 10px;
     margin: auto;
   }
 
@@ -363,6 +361,12 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .alumni-img-section {
+    width: 70%;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .circle-image {
     height: 100px;
@@ -378,10 +382,6 @@
   }
 
   .alumni-img-section {
-    width: 70%;
-    justify-content: space-between;
-    overflow-x: scroll;
-    flex-wrap: nowrap;
-    margin: auto;
+    width: 76%;
   }
 }
