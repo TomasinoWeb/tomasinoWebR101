@@ -60,6 +60,7 @@
   line-height: 27px;
   color: white;
   padding-left: 110px;
+  padding-right: 30px;
   font-weight: 500;
 }
 
@@ -147,7 +148,7 @@
   transform: scale(1.05);
 }
 
-@media screen and (max-height: 900px) { 
+@media screen and (max-height: 1100px) { 
   #logo-container > img { 
     max-width: 180px;
     object-fit: contain;
@@ -180,6 +181,7 @@
   }
   .container p {
     padding: 0;
+
   }
   #statement-container {
     height: 70%;

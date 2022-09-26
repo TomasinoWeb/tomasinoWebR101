@@ -1,7 +1,6 @@
 import styles from "../styles/About.module.css"
 import Link from "next/link"
 import TransparentHeader from '../components/TransparentHeader'
-import Image from "next/image"
 
 const About = () => {
     return (
@@ -11,11 +10,9 @@ const About = () => {
                 <div className={styles["container"]}>
                     <div className={styles["hero-container"]}>
                         <div id={styles["logo-container"]}>
-                            <Image
+                            <img
                                 src='/static/logo.png'
                                 alt='TomasinoWeb logo'
-                                width={319}
-                                height={353}
                             />
                         </div>
                         <div id={styles["statement-container"]}>
