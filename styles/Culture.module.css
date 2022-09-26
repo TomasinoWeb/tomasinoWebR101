@@ -186,11 +186,12 @@
 .people-showcase { 
     min-height: 50vh;
     width: 90%;
-    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin: auto;
+    margin-bottom: 60px;
+    margin-top: 30px;
 }
 .people-text-container { 
     width: 40%;
