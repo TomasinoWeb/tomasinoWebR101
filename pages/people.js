@@ -1,5 +1,6 @@
 import styles from "../styles/People.module.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const People = () => {
   return (
@@ -182,7 +183,7 @@ const People = () => {
 
                 <p className={styles["name-pos-right"]}>Rabin Bote</p>
                 <p className={styles["name-pos-right"]}>
-                  Former President &#40;2019-2020&#41;
+                  Former President &#40;PY 2019-2020&#41;
                 </p>
               </div>
             </div>
@@ -299,6 +300,7 @@ const People = () => {
           </div>
         </center>
       </div>
+      <Footer />
     </>
   );
 };
