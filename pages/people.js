@@ -249,12 +249,10 @@ const People = () => {
                 </div>
                 <div className={styles["divider"]}></div>
                 <div className={styles["divider"]}></div>
-                <Image
+                <img
                     src='/static/Banner 4.png'
                     className={styles["gray-divide"]}
                     alt='icon'
-                    width={1440}
-                    height={268}
                 />
 
                 <div className={styles["divider"]}></div>
