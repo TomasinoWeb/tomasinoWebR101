@@ -10,8 +10,8 @@
 
 .departments-hero { 
   width: 100%;
-  max-height: calc(100vh + 105px);
-  margin-top: 105px;
+  max-height: calc(100vh + 80px);
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -82,7 +82,7 @@
 
 .departments-showcase-section-container { 
   position: absolute;
-  top: calc(100vh + 105px);
+  top: calc(100vh + 80px);
 }
 .departments-showcase-section { 
   position: sticky;

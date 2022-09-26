@@ -2,7 +2,7 @@
   overflow-y: hidden;
   margin: auto;
   width: 90%;
-  min-height: calc(100vh - 105px - 57px);
+  min-height: calc(100vh - 80px - 57px);
   display: flex;
   justify-content: flex-start;
   align-items: center;
