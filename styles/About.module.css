@@ -46,6 +46,9 @@
   display: grid;
   place-items: center;
 }
+#logo-container > img {
+  max-width: 270px;
+}
 .main-heading {
   font-size: var(--fs-48px);
   color: white;
@@ -148,7 +151,7 @@
   transform: scale(1.05);
 }
 
-@media screen and (max-height: 1100px) { 
+@media screen and (max-height: 960px) { 
   #logo-container > img { 
     max-width: 180px;
     object-fit: contain;
