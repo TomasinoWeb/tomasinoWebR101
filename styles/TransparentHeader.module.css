@@ -12,6 +12,7 @@
     transition: 0.3s;
 }
 .colored { 
+    transition: 0.3s;
     background-color: var(--primary);
 }
 .logo { 

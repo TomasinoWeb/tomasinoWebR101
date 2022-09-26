@@ -1,7 +1,7 @@
 import styles from "../styles/R101.module.css"
 import Head from "next/head"
 import Header from "../components/Header"
-
+import Footer from "../components/Footer"
 const R101 = () => {
     return (
         <>
@@ -37,7 +37,7 @@ const R101 = () => {
                             <p className={styles["r101-card-text"]}>
                                 Applicants must first accomplish the{" "}
                                 <a
-                                    href='https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png'
+                                    href='https://forms.gle/WyzZ99XBtZjVLPdH7'
                                     target='_blank'
                                     rel='noreferrer'>
                                     Google Forms
@@ -114,6 +114,7 @@ const R101 = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

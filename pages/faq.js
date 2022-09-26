@@ -7,6 +7,7 @@ import OrgGroup from "../components/faqComponents/OrgGroup"
 import ResultsGroup from "../components/faqComponents/ResultsGroup"
 import SussyGroup from "../components/faqComponents/SussyGroup"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 const FaqPage = () => {
   const [tag, setTag] = useState("selectTag");
@@ -99,7 +100,7 @@ const FaqPage = () => {
                 </button>
                 <div className={styles["faq-main-item"]}>
                   <img
-                    src="/static/Notepad.PNG"
+                    src="/static/Notepad.png"
                     className={styles["faq-icons"]}
                     alt="icon"
                   ></img>
@@ -115,7 +116,7 @@ const FaqPage = () => {
               </row>
 
               <row className={styles["faq-main-group"]}>
-                <button className={styles["button-picker"]}>
+                <button className={styles["button-picker"]} id={styles.nonepicker}>
                   <img
                     src="/static/Megaphone.PNG"
                     className={styles["faq-icons"]}
@@ -146,6 +147,7 @@ const FaqPage = () => {
           </pre>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
