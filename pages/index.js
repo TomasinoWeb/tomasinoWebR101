@@ -24,13 +24,13 @@ export default function Home() {
               <p>Do you have what it takes to be a TomWebber?</p>
             </div>
             <div className={styles["button-wrapper"]}>
-              <Link
+              <a
                 href="https://forms.gle/WyzZ99XBtZjVLPdH7"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 <button>TAKE THE CHALLENGE</button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

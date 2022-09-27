@@ -32,13 +32,13 @@
     font-size: var(--fs-60px);
     filter: drop-shadow(2px 18px 13px #000);
 }
-.paragraph-wrapper > p { 
+.paragraph-wrapper p { 
     color: white;
     font-size: var(--fs-24px);
     text-shadow: 2px 2px black;
     filter: drop-shadow(2px 18px 13px #000);
 }
-.button-wrapper > button { 
+.button-wrapper button { 
     background-color: rgba(0, 0, 0, 0);
     text-shadow: 2px 2px black;
     color: white;
@@ -51,7 +51,7 @@
     filter: drop-shadow(2px 18px 13px #000);
 }
 
-.button-wrapper > button:hover { 
+.button-wrapper button:hover { 
     transition: 0.3s;
     background-color: #FFFD;
     backdrop-filter: blur(10px) saturate(260%) contrast(180%);
