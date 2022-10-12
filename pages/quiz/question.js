@@ -1,7 +1,7 @@
 import { render } from "nprogress";
 import { useState } from "react";
 import questions from "../../data.json";
-import Result from "./result";
+import Result from "../../components/result";
 import styles from "../../styles/Question.module.css"
 import Header from '../../components/TransparentHeader'
 

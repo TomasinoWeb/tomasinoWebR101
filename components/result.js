@@ -1,5 +1,5 @@
-import styles from "../../styles/QuizResult.module.css"
-import Header from "../../components/TransparentHeader"
+import styles from "../styles/QuizResult.module.css"
+import Header from "./TransparentHeader"
 import Link from "next/link"
 
 const Result = ({ finalName, finalDesc, finalLink }) => {
