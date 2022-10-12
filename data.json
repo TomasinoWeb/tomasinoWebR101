@@ -1,0 +1,352 @@
+[
+    {
+        "questionText": "Saan masarap tumambay sa UST pagkatpos ng klase?",
+        "answerOptions": [
+            { 
+                "answerText": "Gazebo", 
+                "department": ["creatives", "writing"] },
+            {
+                "answerText": "Lover's Lane",
+                "department": ["externalAffairs", "photography"]
+            },
+            {
+                "answerText": "Miguel de Benavides Library",
+                "department": ["secretariat", "publicity"]
+            },
+            {
+                "answerText": "Botanical Garden",
+                "department": ["communityDevelopment"]
+            },
+            {
+                "answerText": "Harap ng Main Field",
+                "department": ["videography", "webTechnologies"]
+            },
+            {
+                "answerText": "Quadricentennial Park",
+                "department": ["humanResources"]
+            },
+            { 
+                "answerText": "Carpark", 
+                "department": ["finance"] }
+        ]
+    },
+    {
+        "questionText": "May deadline ka mamaya, anong una mong gagawin?",
+        "answerOptions": [
+            { 
+                "answerText": "Mag-procrastinate", 
+                "department": ["writing"] },
+            {
+                "answerText": "Manood ng palabas sa Netflix",
+                "department": ["finance"]
+            },
+            {
+                "answerText": "Mag-rant sa Twitter",
+                "department": ["secretariat", "humanResources"]
+            },
+            { 
+                "answerText": "Matulog", 
+                "department": ["creatives"] },
+            {
+                "answerText": "Matulog kasi tapos ka na",
+                "department": ["communityDevelopment"]
+            },
+            {
+                "answerText": "Mag-grind sa Valorant - Photography, Videography, Web Technologies",
+                "department": ["photography", "videography", "webTechnologies"]
+            },
+            {
+                "answerText": "Mag-chat sa kaklase kung tapos na siya",
+                "department": ["externalAffairs", "publicity"]
+            }
+        ]
+    },
+    {
+        "questionText": "Kapag gagala ng barkada, ikaw ang...?",
+        "answerOptions": [
+            { 
+                "answerText": "Naniningil ng bayad", 
+                "department": ["finance"] 
+            },
+            {
+                "answerText": "Nag-aaya ng mga kasama",
+                "department": ["humanResources"]
+            },
+            {
+                "answerText": "Nagpaplano",
+                "department": ["secretariat", "communityDevelopment"]
+            },
+            {
+                "answerText": "Naghahawak ng phone tuwing groufie",
+                "department": ["photography", "videography"]
+            },
+            {
+                "answerText": "May dalang tsismis",
+                "department": ["writing", "externalAffairs", "publicity"]
+            },
+            {
+                "answerText": "Hindi nagisi-seen ng group chat",
+                "department": ["webTechnologies"]
+            },
+            {
+                "answerText": "Hindi makakasama kasi hindi pinayagan",
+                "department": ["creatives"]
+            }
+        ]
+    },
+    {
+        "questionText": "Tuwing Paskuhan, ano ang inaabangan mo?",
+        "answerOptions": [
+            { 
+                "answerText": "Maka-date ang crush mo", 
+                "department": ["creatives", "writing"] 
+            },
+            {
+                "answerText": "Maka-bonding ang barkada mo sa klase",
+                "department": ["humanResources"]
+            },
+            {
+                "answerText": "Makakuha ng mga magagandang retrato",
+                "department": ["secretariat", "communityDevelopment"]
+            },
+            {
+                "answerText": "Iba't ibang food stall",
+                "department": ["communityDevelopment"]
+            },
+            {
+                "answerText": "Mga paborito mong banda",
+                "department": ["webTechnologies", "publicity"]
+            },
+            {
+                "answerText": "Maglabas ng payong kasi alam mong uulan",
+                "department": ["secretariat"]
+            },
+            {
+                "answerText": "Fireworks kasi tuition natin yan",
+                "department": ["finance", "videography"]
+            },
+            {
+                "answerText": "After Paskuhan party sa Dapitan",
+                "department": ["externalAffairs"]
+            }
+        ]
+    },
+    {
+        "questionText": "Sino ang \"lodi\" mo sa mga ito?",
+        "answerOptions": [
+            { 
+                "answerText": "Ezra Acayan", 
+                "department": ["photography"] 
+            },
+            {
+                "answerText": "Maria Ressa",
+                "department": ["creatives"]
+            },
+            {
+                "answerText": "Enzo Santos Razon",
+                "department": ["creatives"]
+            },
+            {
+                "answerText": "Leni Robredo",
+                "department": ["secretariat", "communityDevelopment", "humanResources"]
+            },
+            {
+                "answerText": "Chinkee Tan",
+                "department": ["finance"]
+            },
+            {
+                "answerText": "Kris Aquino",
+                "department": ["externalAffairs"]
+            },
+            {
+                "answerText": "Cong TV",
+                "department": ["videography", "webTechnologies"]
+            },
+            {
+                "answerText": "Angkas Social Media Manager",
+                "department": ["publicity"]
+            }
+        ]
+    },
+    {
+        "questionText": "Sa mga kantang OPM ngayon, alin dito ang vibe mo?",
+        "answerOptions": [
+            { 
+                "answerText": "Moira Dela Torre, Babalik sa'yo", 
+                "department": ["secretariat"] 
+            },
+            {
+                "answerText": "SB19, WYAT",
+                "department": ["creatives"]
+            },
+            {
+                "answerText": "Lo Ki, Kagome",
+                "department": ["webTechnologies"]
+            },
+            {
+                "answerText": "Ben&Ben, THe Ones We Once Loved",
+                "department": ["creatives", "communityDevelopment"]
+            },
+            {
+                "answerText": "Maymay Entrata, AMAKABOGERA",
+                "department": ["finance, photography"]
+            },
+            {
+                "answerText": "Al James, Pano",
+                "department": ["writing"]
+            },
+            {
+                "answerText": "Pwede bang sun and moon ni anees?",
+                "department": ["publicity"]
+            }
+        ]
+    },
+    {
+        "questionText": "May nakita kang multo sa org room, anong gagawin mo?",
+        "answerOptions": [
+            { 
+                "answerText": "Makikipagtitigan", 
+                "department": ["creatives, human resources"] 
+            },
+            {
+                "answerText": "Iiyak",
+                "department": ["communityDevelopment"]
+            },
+            {
+                "answerText": "Kakausapin",
+                "department": ["externalAffairs", "publicity"]
+            },
+            {
+                "answerText": "Tatakbo palabas",
+                "department": ["videography"]
+            },
+            {
+                "answerText": "kukunan ng larawan",
+                "department": ["photography", "webTechnologies"]
+            },
+            {
+                "answerText": "Magmme-message sa GC",
+                "department": ["secretariat", "writing"]
+            },
+            {
+                "answerText": "Magibibilang ng sampung segundo habang nakapikit",
+                "department": ["finance"]
+            }
+        ]
+    },
+    {
+        "questionText": "Ano ang ginagamit mo laging app sa phone?",
+        "answerOptions": [
+            { 
+                "answerText": "Camera", 
+                "department": ["photography", "videography"] 
+            },
+            {
+                "answerText": "Discord",
+                "department": ["webTechnologies"]
+            },
+            {
+                "answerText": "Email",
+                "department": ["externalAffairs"]
+            },
+            {
+                "answerText": "Facebook",
+                "department": ["finance", "humanResources"]
+            },
+            {
+                "answerText": "Instagram",
+                "department": ["communityDevelopment"]
+            },
+            {
+                "answerText": "Notes",
+                "department": ["secretariat"]
+            },
+            {
+                "answerText": "Pinterest",
+                "department": ["creatives"]
+            },
+            {
+                "answerText": "Twitter",
+                "department": ["writing", "publicity"]
+            }
+        ]
+    },
+    {
+        "questionText": "May mag jowwang naglalandian sa Lover's Lane.",
+        "answerOptions": [
+            { 
+                "answerText": "Dedma", 
+                "department": ["secretariat", "finance", "webTechnologies"] 
+            },
+            {
+                "answerText": "Dedma pero naiinggit",
+                "department": ["writing", "creatives"]
+            },
+            {
+                "answerText": "Kukuhaan sila ng larawan",
+                "department": ["photography"]
+            },
+            {
+                "answerText": "\"Sana all\"",
+                "department": ["communityDevelopment", "videography"]
+            },
+            {
+                "answerText": "Mag-rant sa Twitter",
+                "department": ["publicity"]
+            },
+            {
+                "answerText": "Binabash mo na sila sa isip mo",
+                "department": ["humanResources"]
+            },
+            {
+                "answerText": "Makiki-tsismis sa kanila",
+                "department": ["externalAffairs"]
+            }
+        ]
+    },
+    {
+        "questionText": "Ano ang gusto mong makamit ngayong taon?",
+        "answerOptions": [
+            { 
+                "answerText": "Jowa", 
+                "department": ["writing"] 
+            },
+            {
+                "answerText": "Maraming kaibigan",
+                "department": ["externalAffairs", "humanResources"]
+            },
+            {
+                "answerText": "Maraming pera",
+                "department": ["finance"]
+            },
+            {
+                "answerText": "Mag-trend sa TikTok",
+                "department": ["publicity"]
+            },
+            {
+                "answerText": "Makatulong sa kapwa",
+                "department": ["communityDevelopment"]
+            },
+            {
+                "answerText": "Maging isang sikat na vlogger",
+                "department": ["videography"]
+            },
+            {
+                "answerText": "'Unlimited' spaces sa camera",
+                "department": ["photography"]
+            },
+            {
+                "answerText": "Gumanda ang 'creative portfolio'",
+                "department": ["creatives"]
+            },
+            {
+                "answerText": "Mabilis na laptop",
+                "department": ["webTechnologies"]
+            },
+            {
+                "answerText": "Katahimikan sa buhay",
+                "department": ["secretariat"]
+            }
+        ]
+    }
+]
