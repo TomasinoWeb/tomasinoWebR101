@@ -15,7 +15,7 @@ const Quiz = () => {
                         na ito upang malaman kung saan sangay ng TomasinoWeb ka
                         nababagay
                     </p>
-                    <Link href='/quiz/question'>
+                    <Link href='/quiz/questions'>
                         <button>MAGSIMULA</button>
                     </Link>
                 </div>
