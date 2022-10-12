@@ -1,8 +1,9 @@
 import { render } from "nprogress";
 import { useState } from "react";
-import questions from "../data.json";
+import questions from "../../data.json";
+import styles from '../styles/Quiz.module.css' 
 
-const Quiz = () => {
+const Question = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [creativesScore, setCreativesScore] = useState(0);
   const [communityDevelopmentScore, setCommunityDevelopmentScore] = useState(0);
@@ -16,36 +17,6 @@ const Quiz = () => {
   const [webTechnologiesScore, setWebTechnologiesScore] = useState(0);
   const [writingScore, setWritingScore] = useState(0);
   const [result, setResult] = useState("");
-
-  let arrOfAllDepValues = [
-    creativesScore,
-    communityDevelopmentScore,
-    externalAffairsScore,
-    financeScore,
-    humanResourcesScore,
-    photographyScore,
-    publicityScore,
-    secretariatScore,
-    videographyScore,
-    webTechnologiesScore,
-    writingScore,
-  ];
-
-  //   let hashOfAllDepValues = [
-  //     [
-  //       ["Creatives", creativesScore],
-  //       ["Community Development", communityDevelopmentScore],
-  //       ["External Affairs", externalAffairsScore],
-  //       ["Finance", financeScore],
-  //       ["Human Resources", humanResourcesScore],
-  //       ["Photography", photographyScore],
-  //       ["Publicity", publicityScore],
-  //       ["Secretariat", secretariatScore],
-  //       ["Videography", videographyScore],
-  //       ["Web Technologies", webTechnologiesScore],
-  //       ["Writing", writingScore],
-  //     ],
-  //   ];
 
   let jsonOfAllDepValues = [
     {
@@ -195,4 +166,4 @@ const Quiz = () => {
   }
 };
 
-export default Quiz;
+export default Question;
