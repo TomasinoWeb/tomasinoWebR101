@@ -1,5 +1,6 @@
-import styles from "../../styles/Quiz.module.css";
+import styles from "../../styles/QuizResult.module.css";
 import Header from "../../components/TransparentHeader";
+import Image from "next/image";
 
 const Result = ({ finalName, finalDesc, finalLink }) => {
   return (
@@ -10,7 +11,12 @@ const Result = ({ finalName, finalDesc, finalLink }) => {
         <div className={styles.mainresult}>
           <h2>{finalName}</h2>
           <h3>{finalDesc}</h3>
-          <h3>{finalLink}</h3>
+          <Image 
+            src={finalLink}
+            width={300}
+            height={300}
+            alt="department image"
+          />
         </div>
       </div>
     </>

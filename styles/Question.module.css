@@ -80,6 +80,14 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+    .questionContainer { 
+        padding-top: 15px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
     .question { 
         --fs-70px: 40px;
         --fs-24px: 18px;
