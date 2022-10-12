@@ -81,16 +81,20 @@
 
 @media only screen and (max-width: 768px) {
 
+
     .questionContainer { 
         padding-top: 15px;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
     .question { 
         --fs-70px: 40px;
         --fs-24px: 18px;
+    }
+    .questionBtn { 
+        text-align: center;
     }
 
     .container {
@@ -105,15 +109,15 @@
     }
 
     .container {
-        padding: 100px 10px 0px 10px;
+        padding: 100px 30px 0px 30px;
     }
 }
 
-@media only screen and (max-width: 548px) {
+@media only screen and (max-width: 548px), screen and (max-height: 800px)  {
 
     .question { 
-        --fs-70px: 32px;
-        --fs-24px: 12px;
+        --fs-70px: 27px;
+        --fs-24px: 13px;
     }
 
    .questionBtn { 

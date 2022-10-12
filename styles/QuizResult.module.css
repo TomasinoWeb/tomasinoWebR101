@@ -127,7 +127,10 @@
     --fs-h1: 38px;
     --fs-h3: 16px;
       padding: 0 40px;
-      --lh-h3: 25px;
+      --lh-h3: 20px;
+    }
+    .result h1 { 
+      line-height: 40px;
     }
     .buttoncenter {
       text-align: center;
