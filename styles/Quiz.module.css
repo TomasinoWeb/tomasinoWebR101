@@ -44,7 +44,8 @@
     cursor: pointer;
     transition: 0.4s;
     backdrop-filter: blur(4px);
-    filter: drop-shadow(10px 18px 8px black);
+    filter: drop-shadow(10px 18px 13px black);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .main > button:hover { 
