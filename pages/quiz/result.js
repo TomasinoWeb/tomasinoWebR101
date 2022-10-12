@@ -1,4 +1,4 @@
-import styles from "../../styles/Quiz.module.css";
+import styles from "../../styles/QuizResult.module.css";
 import Header from "../../components/TransparentHeader";
 import Link from "next/link";
 
