@@ -62,7 +62,7 @@
         ]
     },
     {
-        "questionText": "Kapag gagala ng barkada, ikaw ang...?",
+        "questionText": "Kapag gagala ang barkada, ikaw ang...?",
         "answerOptions": [
             { 
                 "answerText": "Naniningil ng bayad", 
@@ -184,7 +184,7 @@
                 "department": ["webTechnologies"]
             },
             {
-                "answerText": "Ben&Ben, THe Ones We Once Loved",
+                "answerText": "Ben&Ben, The Ones We Once Loved",
                 "department": ["creatives", "communityDevelopment"]
             },
             {
@@ -221,7 +221,7 @@
                 "department": ["videography"]
             },
             {
-                "answerText": "kukunan ng larawan",
+                "answerText": "Kukunan ng larawan",
                 "department": ["photography", "webTechnologies"]
             },
             {
@@ -272,7 +272,7 @@
         ]
     },
     {
-        "questionText": "May mag jowwang naglalandian sa Lover's Lane.",
+        "questionText": "May mag jowang naglalandian sa Lover's Lane.",
         "answerOptions": [
             { 
                 "answerText": "Dedma", 
@@ -332,7 +332,7 @@
                 "department": ["videography"]
             },
             {
-                "answerText": "'Unlimited' spaces sa camera",
+                "answerText": "'Unlimited' space sa camera",
                 "department": ["photography"]
             },
             {

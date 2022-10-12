@@ -28,7 +28,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 51px;
+    gap: 25px;
 }
 
 .questionBtn { 
@@ -68,7 +68,7 @@
     border-radius: 30px;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1250px), screen and (max-height: 800px) {
     .question { 
         --fs-70px: 55px;
         --fs-24px: 22px;

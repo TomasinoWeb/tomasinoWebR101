@@ -123,6 +123,9 @@
   /* Extra small screen / phone */
   @media only screen and (max-width: 480px) {
     .result {
+    --fs-h4: 18px;
+    --fs-h1: 38px;
+    --fs-h3: 16px;
       padding: 0 40px;
       --lh-h3: 25px;
     }
