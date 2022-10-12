@@ -7,7 +7,7 @@ const Quiz = () => {
     return (
         <>
         <Head>
-            <meta property="og:image" content="https://www.cnnphilippines.com/.imaging/mte/demo-cnn-new/750x450/dam/cnn/2022/8/9/UST-new-tiger-statue-and-block-letters_CNNPH.jpg/jcr:content/UST-new-tiger-statue-and-block-letters_CNNPH.jpg" />
+            <meta property="og:image" content="/static/Header.png" />
         </Head>
             <Header />
             <div className={styles.quiz}>
