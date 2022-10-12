@@ -139,7 +139,8 @@
 
 .leftpanel h1 {
   font-size: var(--fs-h1);
-  padding: 10px 0px;
+  padding: 15px 0px;
+  line-height: 57px;
 }
 
 .leftpanel h3 {
