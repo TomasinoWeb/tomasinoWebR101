@@ -6,9 +6,6 @@ import Head from "next/head"
 const Quiz = () => {
     return (
         <>
-        <Head>
-            <meta property="og:image" content="https://i.imgur.com/gqT2roP.png" />
-        </Head>
             <Header />
             <div className={styles.quiz}>
                 <div className={styles.main}>
