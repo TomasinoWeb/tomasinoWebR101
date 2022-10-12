@@ -1,3 +1,4 @@
+import { render } from "nprogress";
 import { useState } from "react";
 import questions from "../data.json";
 
@@ -144,17 +145,18 @@ const Quiz = () => {
 
   var maxValue = highestCounter(jsonOfAllDepValues);
 
+  let arrOfMaxValues = []
+
   const renderList = jsonOfAllDepValues.map((department) => {
     //Checks if department score is equal to max value
     if (department.score == maxValue) {
-      return (
-        <ul type="disc">
-          <li>{department.name}</li>
-        </ul>
-      );
+      arrOfMaxValues.push(department.name)
     }
   });
 
+  const finalResultIndex = Math.floor(Math.random() * arrOfMaxValues.length)
+  const finalResult = arrOfMaxValues[finalResultIndex]
+  
   if (currentQuestion < questions.length) {
     return (
       <div>
@@ -186,7 +188,7 @@ const Quiz = () => {
         <h2>{maxValue}</h2>
 
         {/* renders the list with highest values */}
-        <h2>{renderList}</h2>
+        <h2>{finalResult}</h2>
         <div></div>
       </div>
     );
