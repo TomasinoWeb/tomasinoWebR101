@@ -2,7 +2,7 @@
     height: 100vh;
     --fs-80px: 80px;
     --fs-24px: 24px;
-    --fs-26px: 36px;
+    --fs-36px: 36px;
 }
 
 .main { 
@@ -14,12 +14,38 @@
     height: 100%;
     padding: 0 300px 0 300px;
     text-align: center;
+    background-image: url(/static/Home.png);
 }
 
 .main h1 { 
     font-size: var(--fs-80px);
+    color: white;
+    filter: drop-shadow(2px 18px 13px #000);
+}
+
+.main p { 
+    font-size: var(--fs-24px);
+    color: white;
+    filter: drop-shadow(2px 18px 13px #000);
 }
 
 .main > button { 
-    
+    font-weight: 500;
+    padding: 21px;
+    background-color: rgba(0, 0, 0, 0);
+    min-width: 235px;
+    min-height: 67px;
+    border-radius: 20px;
+    border: 3px solid var(--secondary);
+    color: var(--secondary);
+    font-size: var(--fs-36px);
+    cursor: pointer;
+    transition: 0.3s;
+    filter: drop-shadow(2px 18px 13px #000);
+}
+
+.main > button:hover { 
+    transition: 0.3s;
+    backdrop-filter: blur(2px) saturate(130%) contrast(120%);
+    transform: scale(1.1);   
 }

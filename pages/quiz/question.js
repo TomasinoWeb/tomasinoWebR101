@@ -1,7 +1,6 @@
 import { render } from "nprogress";
 import { useState } from "react";
 import questions from "../../data.json";
-import styles from '../styles/Quiz.module.css' 
 
 const Question = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
