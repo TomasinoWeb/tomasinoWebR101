@@ -5,7 +5,7 @@ import Result from "../../components/result";
 import styles from "../../styles/Question.module.css"
 import Header from '../../components/TransparentHeader'
 
-const Quiz = () => {
+const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [creativesScore, setCreativesScore] = useState(0);
   const [communityDevelopmentScore, setCommunityDevelopmentScore] = useState(0);
@@ -211,4 +211,4 @@ const Quiz = () => {
   }
 };
 
-export default Quiz;
+export default Questions;
