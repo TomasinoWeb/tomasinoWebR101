@@ -82,7 +82,11 @@ const FaqPage = () => {
                   interview
                 </button>
 
-                <a href="https://tomasinoweb.org" target="_blank">
+                <a
+                  href="https://tomasinoweb.org"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <div className={styles["faq-main-item"]}>
                     <img
                       src="/static/HandWriting.png"
@@ -102,7 +106,11 @@ const FaqPage = () => {
                   application
                 </button>
 
-                <a href="https://join.tomasinoweb.org/quiz" target="_blank">
+                <a
+                  href="https://join.tomasinoweb.org/quiz"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <div className={styles["faq-main-item"]}>
                     <img
                       src="/static/Notepad.png"
@@ -122,7 +130,11 @@ const FaqPage = () => {
               </row>
 
               <row className={styles["faq-main-group"]}>
-                <a href="https://youtu.be/m6fCTVsMmS8" target="_blank">
+                <a
+                  href="https://youtu.be/m6fCTVsMmS8"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <div className={styles["faq-main-item"]}>
                     <img
                       src="/static/Megaphone.PNG"
