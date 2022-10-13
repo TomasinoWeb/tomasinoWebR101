@@ -1,13 +1,15 @@
-import styles from "../styles/Faq.module.css"
-import Head from "next/head"
-import { useEffect, useState } from "react"
-import ApplicationGroup from "../components/faqComponents/ApplicationGroup"
-import InterviewGroup from "../components/faqComponents/InterviewGroup"
-import OrgGroup from "../components/faqComponents/OrgGroup"
-import ResultsGroup from "../components/faqComponents/ResultsGroup"
-import SussyGroup from "../components/faqComponents/SussyGroup"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import styles from "../styles/Faq.module.css";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
+import ApplicationGroup from "../components/faqComponents/ApplicationGroup";
+import InterviewGroup from "../components/faqComponents/InterviewGroup";
+import OrgGroup from "../components/faqComponents/OrgGroup";
+import ResultsGroup from "../components/faqComponents/ResultsGroup";
+import SussyGroup from "../components/faqComponents/SussyGroup";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const FaqPage = () => {
   const [tag, setTag] = useState("selectTag");
@@ -41,23 +43,23 @@ const FaqPage = () => {
     setTag(e.target.value);
   };
 
-    return (
-        <>
-            <Head>
-                <title>TomasinoWeb R101 FAQ</title>
-                <meta
-                    name='description'
-                    content='Frequently Asked Questions. What is TomasinoWeb?. Am I Eligible to Apply?  How Long Should I Wait For Results?'
-                />
-            </Head>
-            <Header />
-            <div className={styles["FaqPage"]}>
-                <div className={styles["picker-div"]}>
-                    <div className={styles["title-div"]}>
-                        <h1 className={styles["faq-head"]}>
-                            Frequently<br></br>Asked<br></br>Questions
-                        </h1>
-                    </div>
+  return (
+    <>
+      <Head>
+        <title>TomasinoWeb R101 FAQ</title>
+        <meta
+          name="description"
+          content="Frequently Asked Questions. What is TomasinoWeb?. Am I Eligible to Apply?  How Long Should I Wait For Results?"
+        />
+      </Head>
+      <Header />
+      <div className={styles["FaqPage"]}>
+        <div className={styles["picker-div"]}>
+          <div className={styles["title-div"]}>
+            <h1 className={styles["faq-head"]}>
+              Frequently<br></br>Asked<br></br>Questions
+            </h1>
+          </div>
 
           <div className={styles["selection-div"]}>
             <div className={styles["faq-main-holder"]}>
@@ -79,14 +81,15 @@ const FaqPage = () => {
                 >
                   interview
                 </button>
-
-                <div className={styles["faq-main-item"]}>
-                  <img
-                    src="/static/HandWriting.png"
-                    className={styles["faq-icons"]}
-                    alt="icon"
-                  ></img>
-                </div>
+                <Link href="https://tomasinoweb.org">
+                  <div className={styles["faq-main-item"]}>
+                    <img
+                      src="/static/HandWriting.png"
+                      className={styles["faq-icons"]}
+                      alt="icon"
+                    ></img>
+                  </div>
+                </Link>
               </row>
 
               <row className={styles["faq-main-group"]}>
@@ -98,13 +101,15 @@ const FaqPage = () => {
                 >
                   application
                 </button>
-                <div className={styles["faq-main-item"]}>
-                  <img
-                    src="/static/Notepad.png"
-                    className={styles["faq-icons"]}
-                    alt="icon"
-                  ></img>
-                </div>
+                <Link href="https://join.tomasinoweb.org/quiz">
+                  <div className={styles["faq-main-item"]}>
+                    <img
+                      src="/static/Notepad.png"
+                      className={styles["faq-icons"]}
+                      alt="icon"
+                    ></img>
+                  </div>
+                </Link>
                 <button
                   className={styles["button-picker"]}
                   value="results"
@@ -116,13 +121,15 @@ const FaqPage = () => {
               </row>
 
               <row className={styles["faq-main-group"]}>
-                <button className={styles["button-picker"]} id={styles.nonepicker}>
-                  <img
-                    src="/static/Megaphone.PNG"
-                    className={styles["faq-icons"]}
-                    alt="icon"
-                  ></img>
-                </button>
+                <Link href="https://youtu.be/m6fCTVsMmS8">
+                  <div className={styles["faq-main-item"]}>
+                    <img
+                      src="/static/Megaphone.PNG"
+                      className={styles["faq-icons"]}
+                      alt="icon"
+                    ></img>
+                  </div>
+                </Link>
 
                 <button
                   className={styles["button-picker"]}
