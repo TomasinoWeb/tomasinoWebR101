@@ -1,0 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Sailec Bold;
+  src: url("/fonts/sailec/Sailec Bold.otf") format("opentype");
+}
+
+h1 {
+  font-family: "Sailec Bold", sans-serif;
+  letter-spacing: -1px;
+}
