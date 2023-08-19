@@ -5,8 +5,53 @@
 }
 
 @font-face {
+  font-family: CarlaSans Semibold;
+  src: url("/fonts/carlasans/CARLASANS SEMIBOLD.OTF") format("opentype");
+}
+
+@font-face {
+  font-family: CarlaSans Bold;
+  src: url("/fonts/carlasans/CARLASANSBOLD.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: CarlaSans Light;
+  src: url("/fonts/carlasans/CARLASANSLIGHT.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: CarlaSans;
+  src: url("/fonts/carlasans/CARLASANSREGULAR.TTF") format("truetype");
+}
+
+@font-face {
   font-family: Sailec Bold;
   src: url("/fonts/sailec/Sailec Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Sailec Medium;
+  src: url("/fonts/sailec/Sailec Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Sailec;
+  src: url("/fonts/sailec/Sailec Regular.otf") format("opentype");
+}
+
+// add more fonts if needed
+
+:root {
+  --green: #a9cbaa; // Secretariat
+  --yellow: #fddaa6; // Finance
+  --purple: #d6badc; // ExtAff
+  --red: #a34855; // HR
+  --lightblue: #b9e6f9; // Writing
+  --black: #2a2628; // WebTech
+  --pink: #fbb3d1; // Creatives
+  --darkgray: #393939; // PubComm
+  --beige: #e0c9af; // Videography
+  --darkblue: #2d344e; // Photography
 }
 
 h1 {

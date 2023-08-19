@@ -1,12 +1,11 @@
 import { Layout } from "../components/Layout";
-import styles from "../styles/index.module.scss";
+import styles from "../styles/r101.module.scss";
 
 export default function () {
   return (
     <Layout>
       <div>
-        <h1>join.tomasinoweb.org</h1>
-        <h1 className={styles.red}>Landing Page</h1>
+        <h1 className={styles.red}>The Application Process</h1>
       </div>
     </Layout>
   );
