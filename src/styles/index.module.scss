@@ -1,3 +1,22 @@
 .red {
   color: red;
 }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroText {
+  font-size: 'CarlaSans light';
+  font-weight: 600;
+}
+
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
