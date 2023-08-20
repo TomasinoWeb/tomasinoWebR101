@@ -43,11 +43,13 @@
   border-bottom: 2px solid rgba($color: black, $alpha: 0);
   &:hover {
     border-bottom: 2px solid rgba($color: black, $alpha: 1);
-    transition: 200ms ease-in-out;
+    transition: 150ms ease-in-out;
   }
   &:active {
     background: #a3a3a3;
     background-blend-mode: multiply;
+    border-bottom: 2px solid rgba($color: black, $alpha: 0);
+
   }
 }
 .footerLink {
@@ -58,11 +60,13 @@
   border-bottom: 2px solid rgba($color: black, $alpha: 0);
   &:hover {
     border-bottom: 2px solid rgba($color: black, $alpha: 1);
-    transition: 200ms ease-in-out;
+    transition: 150ms ease-in-out;
   }
   &:active {
     background: #a3a3a3;
     background-blend-mode: multiply;
+    border-bottom: 2px solid rgba($color: black, $alpha: 0);
+
   }
 }
 .svgLinks {
