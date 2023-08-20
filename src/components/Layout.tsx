@@ -112,7 +112,7 @@ function Header() {
               fill="#393939"
             />
           </svg>
-          <div >
+          <div>
             <h3 className={styles.logo}>GET YOUR TICKETS NOW</h3>
           </div>
         </div>
