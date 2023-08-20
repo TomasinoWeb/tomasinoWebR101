@@ -1,0 +1,44 @@
+.cardContainer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+.cardImg {
+  border: 3px solid #393939;
+  border-bottom: none;
+  width: 300px;
+  height: 300px;
+  background-image: url("../assets/About-People.png");
+  background-size: cover;
+}
+.cardTextContainer {
+  display: flex;
+  padding: 30px 20px 20px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+  border: 3px solid #393939;
+  background: #a9cbaa;
+}
+.cardTitle {
+  width: 256px;
+  color: #393939;
+  font-family: Sailec bold, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.528px;
+}
+.cardText {
+  width: 256px;
+  color: #393939;
+  font-family: Sailec, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.352px;
+}
