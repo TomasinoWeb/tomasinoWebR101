@@ -201,7 +201,6 @@ function Footer() {
             </svg>
           </a>
         </li>
-
         <li>
           <a href="">
             <svg
@@ -266,7 +265,7 @@ function Footer() {
             </svg>
           </a>
         </li>
-        <li>
+        <li className={styles.backToTop}>
           <a href="">
             <svg
               xmlns="http://www.w3.org/2000/svg"
