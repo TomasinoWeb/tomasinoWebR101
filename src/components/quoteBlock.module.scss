@@ -1,0 +1,44 @@
+.quoteContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  width: 75%;
+}
+.quoteImg {
+  width: 25%;
+  height: 275px;
+  padding: 0;
+  background-image: url("../assets/Album-Placeholder.png");
+}
+.quoteTextContainer { 
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em;
+  gap: 22px;
+}
+.span {
+  color: #393939;
+  font-style: italic;
+  font-weight: 700;
+  font-family: Sailec Bold;
+}
+.quoteText {
+  color: #393939;
+  font-family: Sailec;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.4px;
+}
+.quoteAuthor {
+  color: #393939;
+  font-family: Sailec;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.4px;
+}
