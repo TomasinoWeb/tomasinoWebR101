@@ -1,5 +1,5 @@
 import { Layout } from "../../components/Layout";
-import styles from "../../styles/about/people.module.scss";
+import styles from "./people.module.scss";
 
 export default function () {
   return (

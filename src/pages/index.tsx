@@ -4,7 +4,7 @@ import { CultureCard } from "../components/CultureCard";
 import { Titles } from "../components/Titles";
 import { QuoteBlockLeft } from "../components/QuoteBlockLeft";
 import { QuoteBlockRight } from "../components/QuoteBlockRight";
-import styles from "../styles/index.module.scss";
+import styles from "./index.module.scss";
 
 export default function () {
   return (

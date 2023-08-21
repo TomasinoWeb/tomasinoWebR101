@@ -1,5 +1,5 @@
 import { Layout } from "../../components/Layout";
-import styles from "../../styles/index.module.scss";
+import styles from "./index.module.scss";
 
 export default function () {
   return (

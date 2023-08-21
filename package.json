@@ -16,6 +16,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.65.1",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "react-fontawesome": "^1.7.1"
   }
 }

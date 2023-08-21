@@ -1,5 +1,5 @@
 import { Layout } from "../components/Layout";
-import styles from "../styles/faq.module.scss";
+import styles from "./faq.module.scss";
 
 export default function () {
   return (
