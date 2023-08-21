@@ -54,6 +54,12 @@
   --darkblue: #2d344e; // Photography
 }
 
+// anchor tag style reset
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   font-family: "Sailec Bold", sans-serif;
   letter-spacing: -1px;
