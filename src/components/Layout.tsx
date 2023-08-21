@@ -11,6 +11,13 @@ export function Layout(props: { children: ReactNode }) {
   );
 }
 
+const goToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 function Header() {
   return (
     <header>
@@ -170,7 +177,7 @@ function Footer() {
       </ul>
       <ul className={styles.svgLinks}>
         <li>
-          <a href="">
+          <a href="https://www.facebook.com/TomasinoWeb">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -186,7 +193,7 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://twitter.com/TomasinoWeb">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -202,7 +209,7 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://www.instagram.com/tomasinoweb/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -218,7 +225,7 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://www.tiktok.com/@tomasinoweb">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -234,7 +241,7 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://www.youtube.com/@tomasinoweb">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -250,7 +257,7 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://tomasinoweb.org">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -266,7 +273,7 @@ function Footer() {
           </a>
         </li>
         <li className={styles.backToTop}>
-          <a href="">
+          <a onClick={goToTop}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
