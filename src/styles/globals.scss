@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html{
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: CarlaSans Semibold;
   src: url("/fonts/carlasans/CARLASANS SEMIBOLD.OTF") format("opentype");

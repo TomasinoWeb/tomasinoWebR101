@@ -1,5 +1,5 @@
 import ReactNode from "react";
-import styles from "./quoteBlock.module.scss";
+import styles from "./QuoteBlock.module.scss";
 
 export const QuoteBlockLeft = () => {
   return (
