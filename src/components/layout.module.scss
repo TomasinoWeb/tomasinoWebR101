@@ -1,3 +1,7 @@
+.layoutContainer{
+  position: relative;
+  min-height: 100vh;
+}
 .navbar {
   display: flex;
   flex-direction: row;
@@ -13,7 +17,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
 .logo {
   display: flex;
@@ -32,7 +36,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 72px;
-  gap: 20px;
+  gap: 40px;
   text-decoration: none;
 }
 .navbarLink {
@@ -49,7 +53,6 @@
     background: #a3a3a3;
     background-blend-mode: multiply;
     border-bottom: 2px solid rgba($color: black, $alpha: 0);
-
   }
 }
 .footerLink {
@@ -66,23 +69,27 @@
     background: #a3a3a3;
     background-blend-mode: multiply;
     border-bottom: 2px solid rgba($color: black, $alpha: 0);
-
   }
 }
 .svgLinks {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   list-style-type: none;
   gap: 12px;
 }
-.backToTop{
+.backToTop {
   margin-left: 24px;
+  cursor: pointer;
 }
 .footer {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0%;
   border-top: 1px solid #393939;
   background: #e5e5e5;
+  width: 100%;
   display: flex;
-  width: 100vw;
   padding: 5px 125px 5px 72px;
   justify-content: space-between;
   align-items: center;

@@ -4,17 +4,19 @@ import styles from "./layout.module.scss";
 export function Layout(props: { children: ReactNode }) {
   return (
     <>
+      <div className={styles.layoutContainer}>
       <Header />
       {props.children}
       <Footer />
+      </div>
     </>
   );
 }
 
 const goToTop = () => {
   window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+      top: 0,
+      behavior: 'smooth',
   });
 };
 
