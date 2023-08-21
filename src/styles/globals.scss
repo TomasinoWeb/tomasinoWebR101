@@ -60,6 +60,11 @@ a {
   color: inherit;
 }
 
+// list style reset
+ul {
+  list-style: none;
+}
+
 h1 {
   font-family: "Sailec Bold", sans-serif;
   letter-spacing: -1px;
