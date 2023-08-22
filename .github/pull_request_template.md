@@ -1,17 +1,30 @@
-## Issue Description
-- [Provide a brief and clear description of the issue]
+## What type of PR is this?
 
-## Expected Behavior
-- [Describe what the expected behavior should be]
+- - [ ] :bug: Bug Fix
+- - [ ] :package: Feature
+- - [ ] :file_folder: Documentation
+- - [ ] :rocket: Improvement
+- - [ ] :white_check_mark: Test
+- - [ ] :card_file_box: Database
 
-## Current Behavior
-- [Explain the current behavior, including any errors or issues]
+## Description
 
-## Steps to Reproduce
-1. [List step-by-step instructions to reproduce the issue]
-2. [Include any specific conditions or inputs required]
-3. [If applicable, provide screenshots or videos to demonstrate the problem]
+- Enter task description
+- If you have resolved any issues in this PR, add it here
 
-## Reminders
-- [Optional]
-- [Include any reminders or additional notes related to the issue here]
+## What did you do?
+
+### Sample Topic 1
+
+- Add some tasks here
+- You can also add sample pictures or videos here or create a new topic about it
+
+### Sample Topic 2
+
+- Add some tasks here
+
+## What to watch out for?
+
+- This is an OPTIONAL section
+- Enter any possible blockers in the future
+- Indicate if you have added any new packages here
