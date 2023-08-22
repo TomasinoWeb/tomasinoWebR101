@@ -11,8 +11,7 @@ import BannerGrid3 from "public/assets/about/people/BannerGrid3.png";
 
 import { Titles } from "../../components/Titles";
 import { Buttons } from "../../components/Buttons";
-import { QuoteBlockLeft } from "../../components/QuoteBlockLeft";
-import { QuoteBlockRight } from "../../components/QuoteBlockRight";
+import QuoteBlock from "../../components/QuoteBlock";
 
 const otherMembers = [
   {
@@ -140,9 +139,22 @@ export default function () {
     <Layout>
       <div className={styles.container}>
         <div className={styles.heading}>
+          <Titles title="The People">The Swifties</Titles>
           <div className={styles.componentContainer}>
-            <Titles />
-            <QuoteBlockLeft />
+            <QuoteBlock.Left
+              author="Mikaela Gabrielle De Castro"
+              position="Blogs Editor"
+              year="2021-2024"
+              image="/assets/components/Album-Placeholder.png"
+              textColor="black"
+            >
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me
+              develop my expertise and passion as I worked with diverse and like-minded
+              people who enthusiastically dabble in storytelling, community development,
+              civic engagement, and student leadership. With everyone's support and
+              initiative, it is always a thrill to work with them in pursuit of impactful
+              and moving conversations.”
+            </QuoteBlock.Left>
           </div>
         </div>
 
@@ -173,9 +185,23 @@ export default function () {
           <h1 className={styles.title}>
             16 years of innovation, passion, and dedication
           </h1>
-          <div className={styles.componentContainer}>
-            <QuoteBlockRight />
-          </div>
+        </div>
+
+        <div className={styles.componentContainer}>
+          <QuoteBlock.Right
+            author="Mikaela Gabrielle De Castro"
+            position="Blogs Editor"
+            year="2021-2024"
+            image="/assets/components/Album-Placeholder.png"
+            textColor="black"
+          >
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
+            my expertise and passion as I worked with diverse and like-minded people who
+            enthusiastically dabble in storytelling, community development, civic
+            engagement, and student leadership. With everyone's support and initiative, it
+            is always a thrill to work with them in pursuit of impactful and moving
+            conversations.”
+          </QuoteBlock.Right>
         </div>
       </div>
 
@@ -191,8 +217,23 @@ export default function () {
         </div>
       </div>
 
-      <div className={styles.componentContainer}>
-        <QuoteBlockLeft />
+      <div className={styles.container}>
+        <div className={styles.componentContainer}>
+          <QuoteBlock.Left
+            author="Mikaela Gabrielle De Castro"
+            position="Blogs Editor"
+            year="2021-2024"
+            image="/assets/components/Album-Placeholder.png"
+            textColor="black"
+          >
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
+            my expertise and passion as I worked with diverse and like-minded people who
+            enthusiastically dabble in storytelling, community development, civic
+            engagement, and student leadership. With everyone's support and initiative, it
+            is always a thrill to work with them in pursuit of impactful and moving
+            conversations.”
+          </QuoteBlock.Left>
+        </div>
       </div>
 
       <Image src={Banner} alt="Join TomasinoWeb Banner" className={styles.banner} />
@@ -231,8 +272,34 @@ export default function () {
         <h1 className={styles.title}>12 Months</h1>
         <p className={styles.subtitle}>of a challenging yet dynamic publication year</p>
         <div className={styles.componentContainer}>
-          <QuoteBlockLeft />
-          <QuoteBlockRight />
+          <QuoteBlock.Left
+            author="Mikaela Gabrielle De Castro"
+            position="Blogs Editor"
+            year="2021-2024"
+            image="/assets/components/Album-Placeholder.png"
+            textColor="white"
+          >
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
+            my expertise and passion as I worked with diverse and like-minded people who
+            enthusiastically dabble in storytelling, community development, civic
+            engagement, and student leadership. With everyone's support and initiative, it
+            is always a thrill to work with them in pursuit of impactful and moving
+            conversations.”
+          </QuoteBlock.Left>
+          <QuoteBlock.Right
+            author="Mikaela Gabrielle De Castro"
+            position="Blogs Editor"
+            year="2021-2024"
+            image="/assets/components/Album-Placeholder.png"
+            textColor="white"
+          >
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
+            my expertise and passion as I worked with diverse and like-minded people who
+            enthusiastically dabble in storytelling, community development, civic
+            engagement, and student leadership. With everyone's support and initiative, it
+            is always a thrill to work with them in pursuit of impactful and moving
+            conversations.”
+          </QuoteBlock.Right>
         </div>
       </div>
 
@@ -244,8 +311,8 @@ export default function () {
           </p>
           <h1 className={styles.title}>Are you ready for it?</h1>
           <div className={styles.buttons}>
-            <Buttons />
-            <Buttons />
+            <Buttons href="/">Let the games begin</Buttons>
+            <Buttons href="/">Where do I fit?</Buttons>
           </div>
         </div>
       </div>
