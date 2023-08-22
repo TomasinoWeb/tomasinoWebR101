@@ -1,10 +1,16 @@
 import ReactNode from "react";
 import styles from "./Titles.module.scss";
 
-export const Titles = () => {
+interface TitleProps {
+  title: string;
+  children: string;
+}
+
+export const Titles: React.FC<TitleProps> = ({ title, children }) => {
   return (
-    <h1 className={styles.mainTitle}>
-      FAQS<span className={styles.subTitle}>Can I ask you a question?</span>
-    </h1>
+    <div className={styles.titleContainer}>
+      <h1 className={styles.mainTitle}>{title}</h1>
+      <h1 className={styles.subTitle}>{children}</h1>
+    </div>
   );
 };

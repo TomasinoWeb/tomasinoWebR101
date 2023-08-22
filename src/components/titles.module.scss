@@ -1,24 +1,31 @@
-.mainTitle {
-  color: #f0f0f0;
-  text-align: center;
-  font-family: CarlaSans;
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -1.408px;
-  z-index: 1;
-}
-.subTitle {
-  bottom: -10px;
-  right: 20%;
+.titleContainer {
   position: relative;
-  color: #393939;
-  text-align: center;
-  font-family: Sailec;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: -1.056px;
-  z-index: 2;
+  height: 110px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .mainTitle {
+    position: absolute;
+    color: #f0f0f0;
+    text-align: center;
+    font-family: CarlaSans;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.408px;
+    z-index: 1;
+  }
+
+  .subTitle {
+    position: absolute;
+    bottom: 0;
+    color: var(--black);
+    font-size: 48px;
+    letter-spacing: -1.056px;
+    z-index: 2;
+  }
 }
