@@ -1,16 +1,19 @@
 import { ReactNode } from "react";
 import styles from "./culturecard.module.scss";
 
-export const CultureCard = () => {
+interface CultureCardProps {
+  text: string;
+  children: string;
+  image: string;
+}
+export const CultureCard: React.FC<CultureCardProps> = ({text, children, image}) => {
   return (
     <div className={styles.cardContainer}>
-      <div className={styles.cardImg}></div>
+      <div className={styles.cardImg} background-image={`url(${image})`}></div>
       <div className={styles.cardTextContainer}>
-        <h3 className={styles.cardTitle}>Post-Coverage hangouts</h3>
+        <h3 className={styles.cardTitle}>{text}</h3>
         <p className={styles.cardText}>
-          Where we discuss the most random of things from "Antonism" to Dating
-          App bios. Feel free to hop in whenever you see your orgmates hanging
-          out on one of the "tambay lang" channels.
+        {children}
         </p>
       </div>
     </div>
