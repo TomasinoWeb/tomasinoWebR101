@@ -2,9 +2,11 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Sailec", sans-serif;
+  color: var(--black);
 }
 
-html{
+html {
   overflow-x: hidden;
 }
 
@@ -43,6 +45,11 @@ html{
   src: url("/fonts/sailec/Sailec Regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: Sailec Italic;
+  src: url("/fonts/sailec/Sailec Regular Italic.otf") format("opentype");
+}
+
 // add more fonts if needed
 
 :root {
@@ -56,9 +63,19 @@ html{
   --darkgray: #393939; // PubComm
   --beige: #e0c9af; // Videography
   --darkblue: #2d344e; // Photography
+  --white: #ffffff;
 }
 
 h1 {
   font-family: "Sailec Bold", sans-serif;
-  letter-spacing: -1px;
+  letter-spacing: -2.2%;
+}
+
+p {
+  letter-spacing: -2.2%;
+}
+
+a,
+button {
+  cursor: pointer;
 }

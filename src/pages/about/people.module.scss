@@ -1,3 +1,243 @@
-.red {
-  color: red;
+$sectionGap: 80px;
+
+// For Components
+.componentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// General styles
+.title {
+  font-size: 48px;
+  text-align: center;
+}
+.subtitle {
+  font-size: 24px;
+  text-align: center;
+}
+
+// Container with padding
+.container {
+  width: 100%;
+  padding: 0 100px;
+
+  .title {
+    text-align: left;
+
+    .titleSmall {
+      font-family: "Sailec Italic", sans-serif;
+      font-size: 24px;
+    }
+  }
+
+  .heading {
+    .componentContainer {
+      gap: 50px;
+      margin-top: $sectionGap;
+      margin-bottom: $sectionGap;
+    }
+  }
+
+  .memberCount {
+    .grid {
+      margin-top: 32px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      flex: 0 0 calc(20%);
+      border-right: 3px solid var(--black);
+      border-bottom: 3px solid var(--black);
+      box-sizing: border-box;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .member:nth-child(5n) {
+      border-right: none;
+    }
+
+    .member:nth-last-child(-n + 5) {
+      border-bottom: none;
+    }
+  }
+
+  .yearCount {
+    margin-top: $sectionGap;
+    margin-bottom: $sectionGap;
+  }
+}
+
+.bannerGrid {
+  width: 100%;
+  margin-bottom: $sectionGap;
+  height: auto;
+  display: flex;
+
+  .imageContainer {
+    flex-grow: 1;
+    width: 33%;
+    aspect-ratio: 1;
+
+    .image {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  margin-top: $sectionGap;
+}
+
+.coreGroup {
+  margin-top: $sectionGap;
+
+  .gallery {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .member {
+      width: calc(100% / 13);
+      height: 385px;
+      position: relative;
+      transition: width 0.3s ease;
+
+      &.expanded {
+        width: 300px;
+        transition: width 0.3s ease;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          opacity: 0;
+          animation: fadeIn 0.3s 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+
+      .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-left: 1.5px solid var(--black);
+        border-right: 1.5px solid var(--black);
+      }
+
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+        opacity: 0.65;
+      }
+
+      .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+
+        display: none;
+
+        .name {
+          margin-top: auto;
+          font-size: 24px;
+          color: var(--white);
+        }
+
+        .position {
+          font-size: 14px;
+          text-transform: uppercase;
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+.otherTestimonies {
+  padding-top: $sectionGap;
+  padding-bottom: $sectionGap;
+  background-color: var(--black);
+  color: var(--white) !important;
+
+  .title,
+  .subtitle {
+    color: var(--white);
+  }
+}
+
+.otherInfo {
+  width: 100%;
+  height: 820px;
+  position: relative;
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title,
+    .subtitle {
+      color: var(--white);
+    }
+
+    .title {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+}
+
+.footerSpace {
+  width: 100%;
+  height: 40px;
 }
