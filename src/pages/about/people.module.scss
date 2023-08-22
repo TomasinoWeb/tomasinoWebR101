@@ -1,4 +1,4 @@
-$sectionGap: 120px;
+$sectionGap: 80px;
 
 // For Components
 .componentContainer {
@@ -30,6 +30,14 @@ $sectionGap: 120px;
     .titleSmall {
       font-family: "Sailec Italic", sans-serif;
       font-size: 24px;
+    }
+  }
+
+  .heading {
+    .componentContainer {
+      gap: 50px;
+      margin-top: $sectionGap;
+      margin-bottom: $sectionGap;
     }
   }
 
@@ -65,11 +73,13 @@ $sectionGap: 120px;
 
   .yearCount {
     margin-top: $sectionGap;
+    margin-bottom: $sectionGap;
   }
 }
 
 .bannerGrid {
   width: 100%;
+  margin-bottom: $sectionGap;
   height: auto;
   display: flex;
 
@@ -88,6 +98,7 @@ $sectionGap: 120px;
 .banner {
   width: 100%;
   height: auto;
+  margin-top: $sectionGap;
 }
 
 .coreGroup {

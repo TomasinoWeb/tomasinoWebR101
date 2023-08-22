@@ -139,9 +139,11 @@ export default function () {
   return (
     <Layout>
       <div className={styles.container}>
-        <div className={styles.componentContainer}>
-          <Titles />
-          <QuoteBlockLeft />
+        <div className={styles.heading}>
+          <div className={styles.componentContainer}>
+            <Titles />
+            <QuoteBlockLeft />
+          </div>
         </div>
 
         <div className={styles.memberCount}>
@@ -171,10 +173,9 @@ export default function () {
           <h1 className={styles.title}>
             16 years of innovation, passion, and dedication
           </h1>
-        </div>
-
-        <div className={styles.componentContainer}>
-          <QuoteBlockRight />
+          <div className={styles.componentContainer}>
+            <QuoteBlockRight />
+          </div>
         </div>
       </div>
 
