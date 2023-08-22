@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./culturecard.module.scss";
+import styles from "./CultureCard.module.scss";
 
 import Image from "next/image";
 

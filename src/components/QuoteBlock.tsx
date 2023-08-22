@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./quoteBlock.module.scss";
+import styles from "./QuoteBlock.module.scss";
 
 import Image from "next/image";
 
@@ -26,7 +26,7 @@ export const Left: React.FC<QuoteBlockProps> = ({
         <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
           {children}
         </p>
-        <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
+        <p className={styles.quoteAuthor} style={{ color: `var(--${textColor})` }}>
           - {author} ({position}, PY {year})
         </p>
       </div>
@@ -55,7 +55,7 @@ export const Right: React.FC<QuoteBlockProps> = ({
         <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
           {children}
         </p>
-        <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
+        <p className={styles.quoteAuthor} style={{ color: `var(--${textColor})` }}>
           - {author} ({position}, PY {year})
         </p>
       </div>

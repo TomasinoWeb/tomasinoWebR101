@@ -4,39 +4,37 @@
   gap: 0;
   width: 100%;
   padding: 35px;
-}
-.quoteImg {
-  width: auto;
-  height: 275px;
-  padding: 0;
-}
-.quoteTextContainer {
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 2em;
-  gap: 22px;
-}
-.span {
-  color: #393939;
-  font-style: italic;
-  font-weight: 700;
-  font-family: Sailec Bold;
-}
-.quoteText {
-  font-family: Sailec;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 150% */
-  letter-spacing: -0.4px;
-}
-.quoteAuthor {
-  font-family: Sailec;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 150% */
-  letter-spacing: -0.4px;
+
+  .quoteTextContainer {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2em;
+    gap: 22px;
+
+    .quoteText {
+      font-family: Sailec;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px; /* 150% */
+      letter-spacing: -0.4px;
+    }
+
+    .quoteAuthor {
+      font-family: Sailec;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px; /* 150% */
+      letter-spacing: -0.4px;
+    }
+  }
+
+  .quoteImg {
+    width: auto;
+    height: 275px;
+    padding: 0;
+  }
 }

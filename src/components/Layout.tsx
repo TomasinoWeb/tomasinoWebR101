@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./layout.module.scss";
+import styles from "./Layout.module.scss";
 
 export function Layout(props: { children: ReactNode }) {
   return (
