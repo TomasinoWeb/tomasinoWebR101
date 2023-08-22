@@ -10,14 +10,20 @@ export default function () {
   return (
     <Layout>
       <div>
-        <Titles />
+        <Titles title="FAQS">
+          <span>Can I ask you a question?</span>
+        </Titles>
         <h1>join.tomasinoweb.org</h1>
         <h1 className={styles.red}>Landing Page</h1>
         <div></div>
-        <Buttons />
+        <Buttons text="Hi!"></Buttons>
         <CultureCard />
-        <QuoteBlockLeft />
-        <QuoteBlockRight />
+        <QuoteBlockLeft
+          text="“I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community development, civic engagement, and student leadership. With everyone's support and initiative, it is always a thrill to work with them in pursuit of impactful and moving conversations.”"
+          children="- Mikaela Gabrielle De Castro (Blogs Editor, PY 2021-2024)"
+        />
+        <QuoteBlockRight text="“I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community development, civic engagement, and student leadership. With everyone's support and initiative, it is always a thrill to work with them in pursuit of impactful and moving conversations.”"
+          children="- Mikaela Gabrielle De Castro (Blogs Editor, PY 2021-2024)" />
       </div>
     </Layout>
   );

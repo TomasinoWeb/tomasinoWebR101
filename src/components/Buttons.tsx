@@ -1,6 +1,16 @@
-import ReactNode from "react";
+import React, { ReactNode } from 'react';
 import styles from "./buttons.module.scss";
 
-export const Buttons = () => {
-  return <button className={styles.buttonContainer}>Button</button>;
+interface ButtonProps {
+  text: string;
+  children: string;
+}
+
+export const Buttons: React.FC<ButtonProps> = ({ text, children }) => {
+  return (
+    <button className={styles.buttonContainer}>
+			{text}
+      {children}
+    </button>
+  );
 };

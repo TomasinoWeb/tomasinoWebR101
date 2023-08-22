@@ -5,9 +5,9 @@ export function Layout(props: { children: ReactNode }) {
   return (
     <>
       <div className={styles.layoutContainer}>
-      <Header />
-      {props.children}
-      <Footer />
+        <Header />
+        {props.children}
+        <Footer />
       </div>
     </>
   );
@@ -15,8 +15,8 @@ export function Layout(props: { children: ReactNode }) {
 
 const goToTop = () => {
   window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
+    top: 0,
+    behavior: "smooth",
   });
 };
 
