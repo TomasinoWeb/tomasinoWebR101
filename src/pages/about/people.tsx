@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Layout } from "../../components/Layout";
 import styles from "./people.module.scss";
 
@@ -23,36 +24,36 @@ const otherMembers = [
     image: "/assets/about/people/core/Vice President for Finance.png",
   },
   {
-    name: "Maria Celestine Guerrero",
-    image: "/assets/about/people/core/Secretary.png",
+    name: "Claire Ann Arce",
+    image: "/assets/about/people/core/Vice President for External Affairs.png",
   },
   {
-    name: "Berlice Cudia",
-    image: "/assets/about/people/core/Vice President for Finance.png",
+    name: "Aelijah Jolie Jacer",
+    image: "/assets/about/people/core/Vice President for Human Resources.png",
   },
   {
-    name: "Maria Celestine Guerrero",
-    image: "/assets/about/people/core/Secretary.png",
+    name: "Jan Carlo Zamora",
+    image: "/assets/about/people/core/President.png",
   },
   {
-    name: "Berlice Cudia",
-    image: "/assets/about/people/core/Vice President for Finance.png",
+    name: "Danial Dale Santos",
+    image: "/assets/about/people/core/Chief Technology Officer.png",
   },
   {
-    name: "Maria Celestine Guerrero",
-    image: "/assets/about/people/core/Secretary.png",
+    name: "Kyle Erimae Lopez",
+    image: "/assets/about/people/core/Creative Director.png",
   },
   {
-    name: "Berlice Cudia",
-    image: "/assets/about/people/core/Vice President for Finance.png",
+    name: "Eric Eugene Rosales",
+    image: "/assets/about/people/core/Executive Vice President.png",
   },
   {
-    name: "Maria Celestine Guerrero",
-    image: "/assets/about/people/core/Secretary.png",
+    name: "Reiniel Lawrence Razo",
+    image: "/assets/about/people/core/Chief Videographer.png",
   },
   {
-    name: "Berlice Cudia",
-    image: "/assets/about/people/core/Vice President for Finance.png",
+    name: "Miguel Angelo Sumalinog",
+    image: "/assets/about/people/core/Chief Photographer.png",
   },
 ];
 
@@ -63,14 +64,78 @@ const coreMembers = [
     image: "/assets/about/people/core/President.png",
   },
   {
-    name: "Jane Smith",
-    position: "Designer",
+    name: "Eric Eugene Rosales",
+    position: "Executive Vice President",
+    image: "/assets/about/people/core/Executive Vice President.png",
+  },
+  {
+    name: "Maria Celestine Guerrero",
+    position: "Executive Secretary",
+    image: "/assets/about/people/core/Secretary.png",
+  },
+  {
+    name: "Claire Ann Arce",
+    position: "VP for External Affairs",
+    image: "/assets/about/people/core/Vice President for External Affairs.png",
+  },
+  {
+    name: "Berlice Cudia",
+    position: "VP for Fincance",
     image: "/assets/about/people/core/Vice President for Finance.png",
   },
-  // ... Add more members here
+  {
+    name: "Aelijah Jolie Jacer",
+    position: "VP for Human Resources",
+    image: "/assets/about/people/core/Vice President for Human Resources.png",
+  },
+  {
+    name: "Miguel Angelo Sumalinog",
+    position: "Chief Photographer",
+    image: "/assets/about/people/core/Chief Photographer.png",
+  },
+  {
+    name: "Phillip Josef Perez",
+    position: "Asst. Chief Photographer",
+    image: "/assets/about/people/core/Assistant Chief Photographer.png",
+  },
+  {
+    name: "Reiniel Lawrence Razo",
+    position: "Chief Videographer",
+    image: "/assets/about/people/core/Chief Videographer.png",
+  },
+  {
+    name: "Kyle Erimae Lopez",
+    position: "Creative Director",
+    image: "/assets/about/people/core/Creative Director.png",
+  },
+  {
+    name: "Iris Mirzi Cardenas",
+    position: "Asst. Creative Director",
+    image: "/assets/about/people/core/Assistant Creative Director.png",
+  },
+  {
+    name: "Danial Dale Santos",
+    position: "Chief Technology Officer",
+    image: "/assets/about/people/core/Chief Technology Officer.png",
+  },
+  {
+    name: "Julia Melle Pascua",
+    position: "Asst. Chief Technology Officer",
+    image: "/assets/about/people/core/Assistant Chief Technology Officer.jpg",
+  },
 ];
 
 export default function () {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const handleMemberClick = (index: number) => {
+    if (expandedIndex === index) {
+      setExpandedIndex(null);
+    } else {
+      setExpandedIndex(index);
+    }
+  };
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -134,7 +199,31 @@ export default function () {
       <div className={styles.coreGroup}>
         <h1 className={styles.title}>The Core Group</h1>
         <p className={styles.subtitle}>The heads of TomasinoWeb</p>
-        <div className={styles.gallery}></div>
+        <div className={styles.gallery}>
+          {coreMembers.map((member, index) => (
+            <div
+              key={index}
+              className={`${styles.member} ${
+                expandedIndex === index ? styles.expanded : ""
+              }`}
+              onClick={() => handleMemberClick(index)}
+            >
+              <Image
+                src={member.image}
+                alt={`${member.name}'s Image`}
+                width={500}
+                height={500}
+                className={styles.image}
+              />
+              <div className={styles.overlay}></div>
+
+              <div className={styles.content}>
+                <h1 className={styles.name}>{member.name}</h1>
+                <p className={styles.position}>{member.position}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className={styles.otherTestimonies}>
