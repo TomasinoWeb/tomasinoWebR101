@@ -1,3 +1,162 @@
-.red {
-  color: red;
+$sectionGap: 120px;
+
+// For Components
+.componentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// General styles
+.title {
+  font-size: 48px;
+  text-align: center;
+}
+.subtitle {
+  font-size: 24px;
+  text-align: center;
+}
+
+// Container with padding
+.container {
+  width: 100%;
+  padding: 0 100px;
+
+  .title {
+    text-align: left;
+
+    .titleSmall {
+      font-family: "Sailec Italic", sans-serif;
+      font-size: 24px;
+    }
+  }
+
+  .memberCount {
+    .grid {
+      margin-top: 32px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      flex: 0 0 calc(20%);
+      border-right: 3px solid var(--black);
+      border-bottom: 3px solid var(--black);
+      box-sizing: border-box;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .member:nth-child(5n) {
+      border-right: none;
+    }
+
+    .member:nth-last-child(-n + 5) {
+      border-bottom: none;
+    }
+  }
+
+  .yearCount {
+    margin-top: $sectionGap;
+  }
+}
+
+.bannerGrid {
+  width: 100%;
+  height: auto;
+  display: flex;
+
+  .imageContainer {
+    flex-grow: 1;
+    width: 33%;
+    aspect-ratio: 1;
+
+    .image {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+.coreGroup {
+  margin-top: $sectionGap;
+
+  .gallery {
+    margin-top: 60px;
+    width: 100%;
+    height: 385px;
+    background-color: var(--green);
+  }
+}
+
+.otherTestimonies {
+  padding-top: $sectionGap;
+  padding-bottom: $sectionGap;
+  background-color: var(--black);
+  color: var(--white) !important;
+
+  .title,
+  .subtitle {
+    color: var(--white);
+  }
+}
+
+.otherInfo {
+  width: 100%;
+  height: 820px;
+  position: relative;
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title,
+    .subtitle {
+      color: var(--white);
+    }
+
+    .title {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+}
+
+.footerSpace {
+  width: 100%;
+  height: 40px;
 }
