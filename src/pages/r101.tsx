@@ -1,5 +1,5 @@
 import { Layout } from "../components/Layout";
-import styles from "../r101.module.scss";
+import styles from "./r101.module.scss";
 
 export default function () {
   return (

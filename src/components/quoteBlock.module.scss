@@ -2,14 +2,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0;
-  width: 75%;
+  width: 100%;
   padding: 35px;
 }
 .quoteImg {
-  width: 25%;
+  width: auto;
   height: 275px;
   padding: 0;
-  background-image: url("../assets/Album-Placeholder.png");
 }
 .quoteTextContainer {
   width: 75%;
@@ -26,7 +25,6 @@
   font-family: Sailec Bold;
 }
 .quoteText {
-  color: #393939;
   font-family: Sailec;
   font-size: 20px;
   font-style: normal;
@@ -35,7 +33,6 @@
   letter-spacing: -0.4px;
 }
 .quoteAuthor {
-  color: #393939;
   font-family: Sailec;
   font-size: 20px;
   font-style: normal;

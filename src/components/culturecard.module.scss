@@ -10,6 +10,12 @@
   width: 300px;
   height: 200px;
   background-size: cover;
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .cardTextContainer {
   display: flex;
@@ -20,11 +26,9 @@
   gap: 8px;
   flex: 1 0 0;
   border: 3px solid #393939;
-  background: #a9cbaa;
 }
 .cardTitle {
   width: 256px;
-  color: #393939;
   font-family: Sailec bold, sans-serif;
   font-size: 24px;
   font-style: normal;
@@ -34,11 +38,14 @@
 }
 .cardText {
   width: 256px;
-  color: #393939;
   font-family: Sailec, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
   letter-spacing: -0.352px;
+}
+
+.green {
+  background: var(--green);
 }
