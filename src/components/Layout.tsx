@@ -3,10 +3,11 @@ import styles from "./Layout.module.scss";
 
 interface LayoutProps {
   children: ReactNode;
-  departmentBackground: string;
+  departmentBackground?: string;
 }
 
 export function Layout(props: LayoutProps) {
+  const backgroundColor = props.departmentBackground || "#ffe9af";
   return (
     <>
       <div
