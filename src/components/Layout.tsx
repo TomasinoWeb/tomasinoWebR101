@@ -1,10 +1,18 @@
 import { ReactNode } from "react";
 import styles from "./Layout.module.scss";
 
-export function Layout(props: { children: ReactNode }) {
+interface LayoutProps {
+  children: ReactNode;
+  departmentBackground: string;
+}
+
+export function Layout(props: LayoutProps) {
   return (
     <>
-      <div className={styles.layoutContainer}>
+      <div
+        className={styles.layoutContainer}
+        style={{ backgroundColor: props.departmentBackground }}
+      >
         <Header />
         {props.children}
         <Footer />
