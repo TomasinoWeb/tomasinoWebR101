@@ -1,22 +1,71 @@
-.red {
-  color: red;
-}
-
 .center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .heroText {
-  font-size: 'CarlaSans light';
   font-weight: 600;
 }
 
-
 .links {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-family: 'CarlaSans';
+  font-weight: 600;
+  color: var(--darkgray);
+  a:hover {
+    text-decoration: underline;
+  }
+  text-align: center;
+}
+
+.linksContainer {
+  margin: 1.5rem auto;
+}
+
+.linkItem {
+  flex: 1;
+}
+
+.callToAction {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-family: 'CarlaSans';
+  color: var(--darkgray);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.callToAction:hover {
+  text-decoration: none;
+}
+
+.eroBlockContainerTop {
+  border: 1px solid black;
+  min-height: 10rem;
+  margin-bottom: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.eroBlockContainerBottom {
+  border: 1px solid black;
+  min-height: 10rem;
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.eroBlock {
+  border: 1px solid red;
+  background-color: aqua;
+  flex: 1;
 }
