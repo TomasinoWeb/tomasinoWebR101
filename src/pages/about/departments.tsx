@@ -22,21 +22,17 @@ export default function MyComponent() {
     }
   };
 
-  const ColoredText = ({ color, children }) => (
-    <span style={{ color }}>{children}</span>
-  );
-
   return (
-    <Layout departmentBackground={departmentBackground}>
+    <Layout departmentBackground={departmentBackground} textColor={textColor}>
       <div
         className={styles.componentContainer}
         style={{ backgroundColor: departmentBackground }}
       >
         <div className={styles.title}>
           <Titles title="Departments">
-            <ColoredText color={textColor}>
+            <span style={{ color: textColor }}>
               {selectedMember ? selectedMember.title : "Choose your era..."}
-            </ColoredText>
+            </span>
           </Titles>
           <p
             className={styles.description}
