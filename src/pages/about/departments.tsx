@@ -39,11 +39,12 @@ export default function MyComponent() {
             style={{
               color: textColor,
             }}
-          >
-            {selectedMember
-              ? selectedMember.description
-              : "Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation, passion, and dedication."}
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: selectedMember
+                ? selectedMember.description.replace(/\n/g, "<br>")
+                : "Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation, passion, and dedication.",
+            }}
+          ></p>
         </div>
 
         <div className={styles.memberCount}>

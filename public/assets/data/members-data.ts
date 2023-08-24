@@ -76,7 +76,7 @@ export const otherMembers = [
     image: "/assets/about/people/core/Chief Videographer.png",
     title: "Videography",
     description:
-      "Videographers tell stories through frames in motion and angles you've never seen before.",
+      "Videographers tell stories through frames in motion and angles you've never seen before.\n\nTEAMS: Offline Editors, Online Editors, and Videographers",
     background: "#C9AF96",
     foreground: "#393939",
   },
