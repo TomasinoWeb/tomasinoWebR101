@@ -1,4 +1,6 @@
 import { Layout } from "../components/Layout";
+import Title from "../assets/landing/TomasinoWeb Title.svg";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/index.module.scss";
 
@@ -10,29 +12,46 @@ export default function () {
       <div className={styles.center}>
         {/* TODO */}
         {/* * add era blocks component */}
-        <div className="era-block-container">
-
+        <div className={styles.eroBlockContainerTop}>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
         </div>
-        {/* TODO */}
-        {/* change font of hero title */}
-        <div className={styles.hero}>
-          <h1 className={styles.heroText}>TOMASINOWEB</h1>
-          <h1 className={styles.heroText}>THE R101 TOUR</h1>
-        </div>
-        {/* TODO */}
-        {/* adjust link styling */}
-        <div className="links">
-          <ul className={styles.links}>
-            <li><Link href="">ABOUT</Link></li>
-            <li><Link href="">R101</Link></li>
-            <li><Link href="">FAQ</Link></li>
-            <li><Link href="">THE POOL</Link></li>
-          </ul>
+        <div>
+          {/* TODO: Adjust image size for responsive design */}
+          <Image className={styles.titleImage} src={Title} alt="tomasino r101 title"></Image>
+          <div className={styles.linksContainer}>
+            <ul className={`${styles.links}`}>
+              <li className={styles.linkItem}><Link href="">ABOUT</Link></li>
+              <li className={styles.linkItem}><Link href="">R101</Link></li>
+              <li className={styles.linkItem}><Link href="">FAQ</Link></li>
+              <li className={styles.linkItem}><Link href="">THE POOL</Link></li>
+            </ul>
+          </div>
+          <div className={styles.center}>
+            <Link href="" className={`${styles.callToAction}`}>GET YOUR TICKETS NOW</Link>
+          </div>
         </div>
         {/* TODO */}
         {/* * add era blocks component */}
-        <Link href="">GET YOUR TICKETS NOW</Link>
-        <div className="era-block-container">
+        <div className={styles.eroBlockContainerBottom}>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
+          <div className={styles.eroBlock}>
+          </div>
         </div>
       </div>
     </Layout>
