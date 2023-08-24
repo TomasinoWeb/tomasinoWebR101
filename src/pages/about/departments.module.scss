@@ -1,7 +1,8 @@
 .componentContainer {
   min-height: 100vh;
-  height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -19,6 +20,8 @@
 
 .memberCount {
   width: 100%;
+  margin-top: auto;
+  margin-bottom: 40px;
 
   .grid {
     margin-top: 32px;
@@ -45,6 +48,15 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      cursor: pointer;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+
+      &:hover {
+        -webkit-filter: none;
+        filter: none;
+      }
     }
   }
 }
