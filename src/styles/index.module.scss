@@ -9,11 +9,18 @@
   font-weight: 600;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100vh;
+}
+
 .links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: 'CarlaSans';
   font-weight: 600;
@@ -25,7 +32,7 @@
 }
 
 .linksContainer {
-  margin: 1.5rem auto;
+  margin: 1.125rem auto;
 }
 
 .linkItem {
@@ -46,26 +53,25 @@
   text-decoration: none;
 }
 
-.eroBlockContainerTop {
-  border: 1px solid black;
-  min-height: 10rem;
-  margin-bottom: 5rem;
+.eroBlockContainer {
   width: 100%;
+  height: 16rem;
   display: flex;
   justify-content: space-evenly;
 }
 
-.eroBlockContainerBottom {
-  border: 1px solid black;
-  min-height: 10rem;
-  margin-top: 5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+.eroBlockContainerTop {
+  margin-bottom: 5rem;
 }
+
+.eroBlockContainerBottom {
+  margin-top: 5rem;
+}
+
 
 .eroBlock {
   border: 1px solid red;
   background-color: aqua;
+  aspect-ratio: 1/1;
   flex: 1;
 }

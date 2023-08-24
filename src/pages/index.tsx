@@ -9,10 +9,10 @@ export default function () {
     <Layout>
       {/* TODO */}
       {/* adjust hero text spacing */}
-      <div className={styles.center}>
+      <div className={styles.main}>
         {/* TODO */}
         {/* * add era blocks component */}
-        <div className={styles.eroBlockContainerTop}>
+        <div className={`${styles.eroBlockContainerTop} ${styles.eroBlockContainer}`}>
           <div className={styles.eroBlock}>
           </div>
           <div className={styles.eroBlock}>
@@ -41,7 +41,7 @@ export default function () {
         </div>
         {/* TODO */}
         {/* * add era blocks component */}
-        <div className={styles.eroBlockContainerBottom}>
+        <div className={`${styles.eroBlockContainerBottom} ${styles.eroBlockContainer}`}>
           <div className={styles.eroBlock}>
           </div>
           <div className={styles.eroBlock}>
