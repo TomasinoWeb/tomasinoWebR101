@@ -41,17 +41,17 @@ export default function () {
         </div>
         {/* TODO */}
         {/* * add era blocks component */}
-        <div className={`${styles.eroBlockContainerBottom} ${styles.eroBlockContainer}`}>
-          <div className={styles.eroBlock}>
-          </div>
-          <div className={styles.eroBlock}>
-          </div>
-          <div className={styles.eroBlock}>
-          </div>
-          <div className={styles.eroBlock}>
-          </div>
-          <div className={styles.eroBlock}>
-          </div>
+      </div>
+      <div className={`${styles.eroBlockContainerBottom} ${styles.eroBlockContainer}`}>
+        <div className={styles.eroBlock}>
+        </div>
+        <div className={styles.eroBlock}>
+        </div>
+        <div className={styles.eroBlock}>
+        </div>
+        <div className={styles.eroBlock}>
+        </div>
+        <div className={styles.eroBlock}>
         </div>
       </div>
     </Layout>
