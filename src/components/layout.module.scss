@@ -21,8 +21,7 @@
         display: flex;
         align-items: center;
         background: #ffe9af;
-        background-blend-mode: multiply;
-        color: var(--element-foreground-elements, #393939);
+        mix-blend-mode: multiply;
         font-family: CarlaSans;
         font-size: 16px;
         padding: 0 10px;
