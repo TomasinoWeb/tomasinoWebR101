@@ -33,7 +33,63 @@
     width: 100%;
     margin-top: 40px;
     background-color: black;
-   
+  }
+  .testimonial_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonial_mid{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height:400px;
+    width: 100%;
+    margin-top: 40px;
+    background-color: #2D344E;
+  }
+
+
+  .culture_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .culture_mid{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .margin_top_text{
+      margin-top: 40px;
+    }
+    .p_text{
+      margin-top: 0px;
+      margin-bottom: 40px;
+    }
+  }
+ .end_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .end_mid{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height:400px;
+    width: 100%;
+    margin-top: 40px;
+    background-color: #2D344E;
+
+    margin-bottom: 0px;
   }
   .stats_main{
     display: flex;

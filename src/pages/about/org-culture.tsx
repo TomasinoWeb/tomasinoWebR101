@@ -89,8 +89,48 @@ export default function () {
           </div>
           {/* stats_details */}
         </div>
+        <div className={styles.testimonial_section}>
+          <div className={styles.testimonial_mid}>
+            {/*  mid */} </div>
+          {/* section */}
+        </div>
+        <div className={styles.culture_section}>
+          <div className={styles.culture_mid}>
+            <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>
+            Magic, madness, heaven, sins
+            </h1>
+            <p className={styles.p_text}>
+            All the fun starts here
+            </p>
+            {/* mid */} </div>
+          {/*section */}
+        </div>
 
-        <div className={styles.last}></div>
+        <div className={styles.testimonial_section}>
+          <div className={styles.testimonial_mid}>
+            {/*  mid */} </div>
+          {/* section */}</div>
+
+          <div className={styles.culture_section}>
+          <div className={styles.culture_mid}>
+            <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>
+            We small-talk, work and the weather
+
+            </h1>
+            <p className={styles.p_text}>
+            And of course, the actual work
+            </p>
+            {/* mid */} </div>
+          {/*section */}
+        </div>
+
+   <div className={styles.end_section}>
+          <div className={styles.end_mid}>
+            {/*  mid */} </div>
+          {/* section */}</div>
+
+
+        {/* <div className={styles.last}></div> */}
         {/* end */}
       </div>
     </Layout>
