@@ -9,6 +9,7 @@ interface CultureCardProps {
   image: string;
   backgroundColor: string;
   textColor: string;
+  border?: string;
 }
 export const CultureCard: React.FC<CultureCardProps> = ({
   title,
@@ -16,10 +17,11 @@ export const CultureCard: React.FC<CultureCardProps> = ({
   image,
   backgroundColor,
   textColor,
+  border,
 }) => {
   return (
     <div className={styles.cardContainer}>
-      <div className={styles.cardImg}>
+      <div className={`${styles.cardImg} ${border == "none" ? styles.none : null}`}>
         <Image
           src={image}
           alt={title}
@@ -29,7 +31,7 @@ export const CultureCard: React.FC<CultureCardProps> = ({
         />
       </div>
       <div
-        className={styles.cardTextContainer}
+        className={`${styles.cardTextContainer} ${border == "none" ? styles.none : null}`}
         style={{ backgroundColor: `var(--${backgroundColor})` }}
       >
         <h3 className={styles.cardTitle} style={{ color: `var(--${textColor})` }}>

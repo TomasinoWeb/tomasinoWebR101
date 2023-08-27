@@ -1,5 +1,11 @@
-import { Layout } from "../../components/Layout";
 import styles from "./org-culture.module.scss";
+
+import { Layout } from "../../components/Layout";
+import QuoteBlock from "../../components/QuoteBlock";
+import { CultureCard } from "../../components/CultureCard";
+
+import Image from "next/image";
+import image from "public/assets/about/culture/calls.jpeg";
 
 export default function () {
   return (
@@ -82,8 +88,6 @@ export default function () {
               </div>
               {/* stats_main2 */}
             </div>
-        
-       
 
             {/* stats_main */}
           </div>
@@ -91,44 +95,166 @@ export default function () {
         </div>
         <div className={styles.testimonial_section}>
           <div className={styles.testimonial_mid}>
-            {/*  mid */} </div>
+            <QuoteBlock.Right
+              author="Mikaela Gabrielle De Castro"
+              position="Blogs Editor"
+              year="2021-2024"
+              image="/assets/components/Album-Placeholder.png"
+              textColor="white"
+            >
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped
+              me develop my expertise and passion as I worked with diverse and
+              like-minded people who enthusiastically dabble in storytelling,
+              community development, civic engagement, and student leadership.
+              With everyone's support and initiative, it is always a thrill to
+              work with them in pursuit of impactful and moving conversations.”
+            </QuoteBlock.Right>
+            {/*  mid */}{" "}
+          </div>
           {/* section */}
         </div>
         <div className={styles.culture_section}>
-          <div className={styles.culture_mid}>
+
             <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>
-            Magic, madness, heaven, sins
+              Magic, madness, heaven, sins
             </h1>
-            <p className={styles.p_text}>
-            All the fun starts here
-            </p>
-            {/* mid */} </div>
+            <p className={styles.p_text}>All the fun starts here</p>
+                      <div className={styles.culture_mid}>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="green"
+              textColor="black"
+              border="none"
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="green"
+              textColor="black"
+              border="none"
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="darkblue"
+              textColor="white"
+              border="none"
+
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="darkblue"
+              textColor="white"
+              
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+            {/* mid */}{" "}
+          </div>
           {/*section */}
         </div>
 
         <div className={styles.testimonial_section}>
           <div className={styles.testimonial_mid}>
-            {/*  mid */} </div>
-          {/* section */}</div>
+            <QuoteBlock.Left
+              author="Mikaela Gabrielle De Castro"
+              position="Blogs Editor"
+              year="2021-2024"
+              image="/assets/components/Album-Placeholder.png"
+              textColor="white"
+            >
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped
+              me develop my expertise and passion as I worked with diverse and
+              like-minded people who enthusiastically dabble in storytelling,
+              community development, civic engagement, and student leadership.
+              With everyone's support and initiative, it is always a thrill to
+              work with them in pursuit of impactful and moving conversations.”
+            </QuoteBlock.Left>
+            {/*  mid */}{" "}
+          </div>
+          {/* section */}
+        </div>
 
-          <div className={styles.culture_section}>
-          <div className={styles.culture_mid}>
+        <div className={styles.culture_section}>
+        
             <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>
-            We small-talk, work and the weather
-
+              We small-talk, work and the weather
             </h1>
-            <p className={styles.p_text}>
-            And of course, the actual work
-            </p>
-            {/* mid */} </div>
+
+            <p className={styles.p_text}>And of course, the actual work</p>
+            <div className={styles.culture_mid}>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="green"
+              textColor="black"
+              border="none"
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="green"
+              textColor="black"
+              border="none"
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="darkblue"
+              textColor="white"
+              border="none"
+
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+            <CultureCard
+              title="Post-Coverage hangouts"
+              image="/assets/components/Culture-PostCoverageHangout.png"
+              backgroundColor="darkblue"
+              textColor="white"
+              
+            >
+              Where we discuss the most random of things from Antonism to Dating
+              App bios. Feel free to hop in whenever you see your orgmates
+              hanging out on one of the tambay lang channels.
+            </CultureCard>
+
+
+            {/* mid */}{" "}
+          </div>
           {/*section */}
         </div>
 
-   <div className={styles.end_section}>
-          <div className={styles.end_mid}>
-            {/*  mid */} </div>
-          {/* section */}</div>
-
+        <div className={styles.end_section}>
+          <div className={styles.end_mid}>{/*  mid */} </div>
+          {/* section */}
+        </div>
 
         {/* <div className={styles.last}></div> */}
         {/* end */}
