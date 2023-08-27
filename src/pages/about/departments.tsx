@@ -6,14 +6,16 @@ import { otherMembers } from "../../../public/assets/data/members-data";
 import { useState } from "react";
 
 export default function MyComponent() {
-  const [departmentBackground, setDepartmentBackground] = useState(null);
-  const [textColor, setTextColor] = useState(null);
-  const [selectedMember, setSelectedMember] = useState(null);
+  const [departmentBackground, setDepartmentBackground] = useState<string | undefined>(
+    undefined
+  );
+  const [textColor, setTextColor] = useState<string | undefined>(undefined);
+  const [selectedMember, setSelectedMember] = useState<any | null>(null);
 
-  const handleImageClick = (member) => {
+  const handleImageClick = (member: any) => {
     if (departmentBackground === member.background) {
-      setDepartmentBackground(null);
-      setTextColor(null);
+      setDepartmentBackground(undefined);
+      setTextColor(undefined);
       setSelectedMember(null);
     } else {
       setDepartmentBackground(member.background);

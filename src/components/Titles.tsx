@@ -3,7 +3,7 @@ import styles from "./Titles.module.scss";
 
 interface TitleProps {
   title: string;
-  children: string;
+  children: React.ReactNode;
 }
 
 export const Titles: React.FC<TitleProps> = ({ title, children }) => {
