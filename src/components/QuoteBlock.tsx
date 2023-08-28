@@ -21,7 +21,7 @@ export const Left: React.FC<QuoteBlockProps> = ({
   textColor,
 }) => {
   return (
-    <div className={styles.quoteContainer} style={{ flexDirection: "row-reverse" }}>
+    <div className={styles.quoteContainerLeft}>
       <div className={styles.quoteTextContainer}>
         <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
           {children}
