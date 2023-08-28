@@ -2,7 +2,6 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Sailec", sans-serif;
   color: var(--darkgray);
 }
 
@@ -78,6 +77,7 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  font-family: "Sailec", sans-serif;
 }
 
 // anchor tag style reset
