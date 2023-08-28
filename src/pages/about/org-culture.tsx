@@ -7,6 +7,30 @@ import { CultureCard } from "../../components/CultureCard";
 import Image from "next/image";
 import image from "public/assets/about/culture/calls.jpeg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleDown, faQuestion,faArrowRight} from "@fortawesome/free-solid-svg-icons";
+
+// interface TinyBoxProps {
+//   border?: string;
+// }
+// export const TinyBox: React.FC<TinyBoxProps> = ({
+// }) => {
+// const TinyBox = () => {
+//   return <div className={styles.box}></div>;
+// };
+
+// }
+
+interface TinyBoxProps {
+  noRightBorder?: boolean;
+}
+
+const TinyBox: React.FC<TinyBoxProps> = ({ noRightBorder }) => {
+  const boxClass = `${styles.box} ${noRightBorder ? styles.none : null}`;
+
+  return <div className={boxClass}></div>;
+};
+
 export default function () {
   return (
     <Layout>
@@ -250,15 +274,25 @@ export default function () {
           </div>
           {/*section */}
         </div>
-
-        <div className={styles.end_section}>
-          <div className={styles.end_mid}>{/*  mid */} </div>
-          {/* section */}
+        <div className={styles.end_background}> 
+        <div className={styles.end_mid}>
+        <div className={styles.end_mid_align}>
+          
+        <h1 className={styles.end_header}>Nice to meet you, <br></br> where you been?</h1>
+        <p  className={styles.end_paragraph}>We could show you incredible thing →
+        </p>  </div> 
+        </div> 
+        <div className={styles.end_mid_box}>
+        <TinyBox noRightBorder={true} />
+        <TinyBox noRightBorder={true} />
+        <TinyBox noRightBorder={true} />
+        <TinyBox noRightBorder={true}/>
+        <TinyBox />
+        </div> 
         </div>
-
         {/* <div className={styles.last}></div> */}
         {/* end */}
       </div>
-    </Layout>
+    </Layout> 
   );
 }
