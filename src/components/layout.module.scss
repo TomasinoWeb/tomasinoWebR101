@@ -1,8 +1,61 @@
 @media screen and (max-width: 768px) {
+  
+
   .layoutContainer {
     position: relative;
     min-height: 100vh;
 
+    .hidden {
+      display: none;
+      visibility: hidden;
+    }
+  
+    .dropdown {
+      width: 2rem;
+      height: 2rem;
+    }
+    .mobileNavbar {
+      display: flex;
+      flex-direction: column;
+
+      .menu {
+        width: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        list-style: none;
+        border-bottom: 3px solid #393939;
+        padding: 0.625rem 0rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        background: #ffe9af;
+        mix-blend-mode: multiply;
+        font-family: CarlaSans;
+        font-size: 16px;
+        padding: 0 10px;
+      }
+      .menuLink {
+        text-decoration: none;
+        color: black;
+        font-family: CarlaSans, sans-serif;
+        font-size: 1rem;
+        border-bottom: 2px solid rgba($color: black, $alpha: 0);
+        &:hover {
+          border-bottom: 2px solid rgba($color: black, $alpha: 1);
+          transition: 150ms ease-in-out;
+        }
+        &:active {
+          background: #a3a3a3;
+          background-blend-mode: multiply;
+          border-bottom: 2px solid rgba($color: black, $alpha: 0);
+        }
+      }
+    }
     .navbar {
       display: flex;
       flex-direction: row;
@@ -11,12 +64,6 @@
       padding: 1.25rem 4.5rem;
       width: 100vh;
       height: 6.25rem;
-
-      .dropdown {
-        visibility: visible;
-        width: 2rem;
-        height: 2rem;
-      }
 
       .navbarTitles {
         display: flex;
@@ -46,7 +93,7 @@
       align-items: center;
       gap: 1.5rem;
       border-top: 1px solid #393939;
-      background: #E5E5E5;
+      background: #e5e5e5;
 
       .footerlinks {
         list-style: none;
@@ -100,6 +147,13 @@
     min-height: 100vh;
 
     .dropdown {
+      visibility: hidden;
+    }
+    .menu {
+      display: none;
+    }
+    .hidden {
+      display: none;
       visibility: hidden;
     }
 
