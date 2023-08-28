@@ -1,8 +1,5 @@
 import { Layout } from "../components/Layout";
-import Title from "../assets/landing/TomasinoWeb Title.svg";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "../styles/index.module.scss";
+import styles from "./index.module.scss";
 
 export default function () {
   return (

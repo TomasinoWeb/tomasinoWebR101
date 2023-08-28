@@ -2,6 +2,12 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Sailec", sans-serif;
+  color: var(--darkgray);
+}
+
+html {
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -39,6 +45,11 @@
   src: url("/fonts/sailec/Sailec Regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: Sailec Italic;
+  src: url("/fonts/sailec/Sailec Regular Italic.otf") format("opentype");
+}
+
 // add more fonts if needed
 
 :root {
@@ -52,6 +63,7 @@
   --darkgray: #393939; // PubComm
   --beige: #e0c9af; // Videography
   --darkblue: #2d344e; // Photography
+  --white: #ffffff;
 }
 
 /* Remove default margin */
@@ -81,5 +93,14 @@ ul {
 
 h1 {
   font-family: "Sailec Bold", sans-serif;
-  letter-spacing: -1px;
+  letter-spacing: -2.2%;
+}
+
+p {
+  letter-spacing: -2.2%;
+}
+
+a,
+button {
+  cursor: pointer;
 }

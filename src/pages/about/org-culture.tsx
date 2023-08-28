@@ -1,5 +1,5 @@
 import { Layout } from "../../components/Layout";
-import styles from "../../styles/about/index.module.scss";
+import styles from "./org-culture.module.scss";
 
 export default function () {
   return (
