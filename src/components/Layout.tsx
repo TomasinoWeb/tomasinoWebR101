@@ -10,7 +10,6 @@ interface LayoutProps {
 
 export function Layout(props: LayoutProps) {
   return (
-    <>
       <div
         className={styles.layoutContainer}
         style={{ backgroundColor: props.departmentBackground }}
@@ -19,7 +18,6 @@ export function Layout(props: LayoutProps) {
         {props.children}
         <Footer />
       </div>
-    </>
   );
 }
 
@@ -219,7 +217,7 @@ function Header(props: { textColor: any }) {
       {visible && (
         <ul className={styles.menu}>
           <li>
-            <h3 className={styles.logo} style={{ color: props.textColor }}>
+            <h3 className={styles.menuLogo} style={{ color: props.textColor }}>
               GET YOUR TICKETS NOW
             </h3>
           </li>
