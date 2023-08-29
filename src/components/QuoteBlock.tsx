@@ -23,10 +23,16 @@ export const Left: React.FC<QuoteBlockProps> = ({
   return (
     <div className={styles.quoteContainerLeft}>
       <div className={styles.quoteTextContainer}>
-        <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
+        <p
+          className={styles.quoteText}
+          style={{ color: `var(--${textColor})` }}
+        >
           {children}
         </p>
-        <p className={styles.quoteAuthor} style={{ color: `var(--${textColor})` }}>
+        <p
+          className={styles.quoteAuthor}
+          style={{ color: `var(--${textColor})` }}
+        >
           - {author} ({position}, PY {year})
         </p>
       </div>
@@ -52,10 +58,16 @@ export const Right: React.FC<QuoteBlockProps> = ({
   return (
     <div className={styles.quoteContainer}>
       <div className={styles.quoteTextContainer}>
-        <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
+        <p
+          className={styles.quoteText}
+          style={{ color: `var(--${textColor})` }}
+        >
           {children}
         </p>
-        <p className={styles.quoteAuthor} style={{ color: `var(--${textColor})` }}>
+        <p
+          className={styles.quoteAuthor}
+          style={{ color: `var(--${textColor})` }}
+        >
           - {author} ({position}, PY {year})
         </p>
       </div>

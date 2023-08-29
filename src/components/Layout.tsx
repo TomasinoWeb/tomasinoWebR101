@@ -10,14 +10,14 @@ interface LayoutProps {
 
 export function Layout(props: LayoutProps) {
   return (
-      <div
-        className={styles.layoutContainer}
-        style={{ backgroundColor: props.departmentBackground }}
-      >
-        <Header textColor={props.textColor} />
-        {props.children}
-        <Footer />
-      </div>
+    <div
+      className={styles.layoutContainer}
+      style={{ backgroundColor: props.departmentBackground }}
+    >
+      <Header textColor={props.textColor} />
+      {props.children}
+      <Footer />
+    </div>
   );
 }
 
