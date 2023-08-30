@@ -1,15 +1,28 @@
 .buttonContainer {
   display: inline-flex;
-  padding: 15px 30px;
+  padding: 0.9375rem 1.875rem;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
+  
   border: 3.5px solid #e5e5e5;
   background: #f5f5f5;
+
   font-family: Sailec bold, sans-serif;
   font-size: 1.25rem;
+  letter-spacing: -0.0275rem;
+  line-height: normal;
   &:hover {
     background-color: #e5e5e5;
     transition: 200ms ease-in-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0.45rem 0.81rem;
+    border: 1.55px solid #E5E5E5;
+    gap: 0.26894rem;
+    align-self: stretch;
+    font-size: 1rem;
+    letter-spacing: -0.01181rem;
   }
 }
