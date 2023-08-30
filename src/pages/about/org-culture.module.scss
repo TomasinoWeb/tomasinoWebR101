@@ -1,3 +1,4 @@
+
 .parent {
   display: flex;
 }
@@ -13,9 +14,12 @@
   align-items: center;
   width: 50%;
   text-align: center;
+
+  padding-top: 50px!important;
 }
 .p_text {
   margin-bottom: 4%;
+  margin-top: 60px;
 }
 .video_section {
   display: flex;
@@ -39,6 +43,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
 }
 .testimonial_mid {
   flex-direction: column;
@@ -72,6 +78,7 @@
   // text-align: center;
   .margin_top_text {
     margin-top: 40px;
+    text-align: center!important;
   }
   .p_text {
     margin-top: 0px;
@@ -80,6 +87,7 @@
   }
   .header_text {
    padding-bottom: 40px!important;
+   text-align: center!important;
   }
 }
 
@@ -193,6 +201,7 @@
   .culture_mid {
     width: 70%;
   }
+
 }
 @media only screen and (max-width: 1150px) {
   .stats_main2 {
@@ -221,20 +230,41 @@
       width: 80%;
     }
   }
+
 }
 
 @media only screen and (max-width: 1068px) {
+  .mid{
+    padding-top: 90px!important;
+  }
+ 
+  .stats_details {
+    width: 80%;
+  
+    .header_text {
+      font-size: 40px !important ;
+    }
+  }
+  .culture_section{
+    .header_text{
+      align-items: center;
+      text-align: center;
+    }
+  }
   .parent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+  
   }
   .mid {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .stats_main2 {
     flex-direction: column;
     .margin_left {
@@ -257,4 +287,33 @@
     justify-content: center;
     align-items: center;
   }
+  .testimonial_section {
+    width: 100%;
+  }
+  .testimonial_mid {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 568px) {
+// .body {
+//   width: 100vh;
+// }
+.box {
+  width: 100px!important;
+  height: 100px!important;
+}
+.mid{
+  width: 90%;
+}
+.video_section{
+  width:100%;
+}
+.testimonial_section{
+  width: 100%;
+}
+.end_background{
+  width: 100%;
+}
 }

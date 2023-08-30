@@ -35,7 +35,7 @@ const TinyBox: React.FC<TinyBoxProps> = ({ noRightBorder }) => {
 export default function () {
   return (
     <Layout>
-      <div>
+      <div className={styles.body}>
         <div className={styles.parent}>
           <div className={styles.mid}>
 
@@ -295,6 +295,7 @@ export default function () {
         {/* <div className={styles.last}></div> */}
         {/* end */}
       </div>
+      
     </Layout> 
   );
 }
