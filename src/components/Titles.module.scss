@@ -12,23 +12,23 @@
     color: #f0f0f0;
     text-align: center;
     font-family: CarlaSans;
-    font-size: 64px;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    letter-spacing: -1.408px;
+    letter-spacing: -0.088rem;
     z-index: 1;
     mix-blend-mode: multiply;
   }
 
   @media (max-width: 768px) {
     .mainTitle {
-      font-size: 48px;
+      font-size: 3rem;
     }
   }
   @media (max-width: 480px) {
     .mainTitle {
-      font-size: 32px;
+      font-size: 2rem;
     }
   }
 
@@ -36,21 +36,21 @@
     position: absolute;
     bottom: 0;
     color: var(--darkgray);
-    font-size: 48px;
-    letter-spacing: -1.056px;
+    font-size: 3rem;
+    letter-spacing: -0.066rem;
     z-index: 2;
   }
 
   @media (max-width: 768px) {
     .subTitle {
-      font-size: 36px;
-      bottom: 10px;
+      font-size: 2.25rem;
+      bottom: 0.625rem;
     }
   }
   @media (max-width: 480px) {
     .subTitle {
-      font-size: 24px;
-      bottom: 20px;
+      font-size: 1.5rem;
+      bottom: 1.25rem;
     }
   }
 }
