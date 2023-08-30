@@ -198,7 +198,7 @@ export default function () {
 
         <div className={styles.testimonial_section}>
           <div className={styles.testimonial_mid}>
-            <QuoteBlock.Left
+            <QuoteBlock.Right
               author="Mikaela Gabrielle De Castro"
               position="Blogs Editor"
               year="2021-2024"
@@ -211,7 +211,7 @@ export default function () {
               community development, civic engagement, and student leadership.
               With everyone's support and initiative, it is always a thrill to
               work with them in pursuit of impactful and moving conversations.”
-            </QuoteBlock.Left>
+            </QuoteBlock.Right>
             {/*  mid */}{" "}
           </div>
           {/* section */}
@@ -296,6 +296,6 @@ export default function () {
         {/* end */}
       </div>
       
-    </Layout> 
+  </Layout> 
   );
 }

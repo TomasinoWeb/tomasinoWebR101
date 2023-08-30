@@ -239,8 +239,8 @@
   }
  
   .stats_details {
-    width: 80%;
-  
+    width: 90%;
+    margin-left: 0px;
     .header_text {
       font-size: 40px !important ;
     }
@@ -300,20 +300,32 @@
 // .body {
 //   width: 100vh;
 // }
-.box {
-  width: 100px!important;
-  height: 100px!important;
-}
+
 .mid{
-  width: 90%;
-}
+  margin-top: 50px;
+  .p_text{
+  width: 100%;
+} }
 .video_section{
   width:100%;
-}
+}s
 .testimonial_section{
   width: 100%;
 }
 .end_background{
-  width: 100%;
+.end_mid_align{
+  width: 130%;
+  
+}.end_header{
+  font-size: 30px!important;
+  width: 100%; 
+}
+.end_mid_box{
+  width: 90%; 
+}
+.box {
+  width: 80px!important;
+  height: 80px!important;
+}
 }
 }
