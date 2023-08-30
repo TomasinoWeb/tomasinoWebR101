@@ -1,15 +1,17 @@
 .layoutContainer {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 
-  .hidden {
-    display: none;
-    visibility: hidden;
-  }
   .dropdown {
     width: 2rem;
     height: 2rem;
   }
+  .hidden {
+    display: none;
+    visibility: hidden;
+  }
+
   .mobileNavbar {
     display: flex;
     flex-direction: column;
@@ -17,7 +19,7 @@
 
     .menu {
       width: 100%;
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -61,7 +63,16 @@
     padding: 1.25rem 4.5rem;
     width: 100%;
     height: 6.25rem;
+
+    .navbarTitles {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      border: none;
+    }
   }
+  
   .logo {
     display: none;
   }
@@ -71,7 +82,6 @@
 
   .footer {
     margin-top: auto;
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,25 +129,26 @@
 
 @media screen and (min-width: 769px) {
   .layoutContainer {
-    min-height: 100vh;
-    max-width: 100%;
     margin: 0 auto;
+
     .dropdown {
       visibility: hidden;
     }
-    .menu {
-      display: none;
-    }
-    .hidden {
-      display: none;
-      visibility: hidden;
-    }
 
+    .mobileNavbar{
+      .menu {
+        display: none;
+        visibility: hidden;
+      }
+      .menuLink{
+        display: none;
+      }
+      .menuLogo{
+        display: none;
+      }
+    }
+    
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 72px;
       width: 100%;
       height: 100px;
 
@@ -175,41 +186,31 @@
           border-bottom: 2px solid rgba($color: black, $alpha: 0);
         }
       }
-    }
-
-    .links {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 5px 0;
-      gap: 40px;
-      text-decoration: none;
+      .links {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        gap: 40px;
+        text-decoration: none;
+      }
     }
 
     .footer {
-      width: 100%;
-      display: flex;
       flex-direction: row;
       justify-content: space-between;
       padding: 0.313rem 4rem;
       margin: 0 auto;
       bottom: 0%;
-
+      position: absolute;
       .footerlinks {
-        display: flex;
         flex-direction: row;
         gap: 1.5rem;
-        text-decoration: none;
       }
 
       .footerLink {
-        text-decoration: none;
-        color: black;
-        font-family: Sailec, sans-serif;
-        font-size: 1rem;
         white-space: nowrap;
-        border-bottom: 2px solid rgba($color: black, $alpha: 0);
         &:hover {
           border-bottom: 2px solid rgba($color: black, $alpha: 1);
           transition: 150ms ease-in-out;
@@ -220,19 +221,7 @@
           border-bottom: 2px solid rgba($color: black, $alpha: 0);
         }
       }
-
-      .svgLinks {
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        gap: 12px;
-
-        .backToTop {
-          margin-left: 1.5rem;
-          cursor: pointer;
-        }
-      }
     }
   }
 }
+
