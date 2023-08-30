@@ -1,0 +1,67 @@
+.quoteContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 0 35px;
+
+  .quoteTextContainer {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2em 0;
+    gap: 1.375rem;
+    font-family: Sailec;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem; /* 150% */
+    letter-spacing: -0.025rem;
+  }
+
+  .quoteImg {
+    width: auto;
+    height: 17.188rem;
+    padding: 0;
+  }
+}
+
+.quoteContainerLeft {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 35px;
+
+  .quoteTextContainer {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2em 0;
+    gap: 1.375rem;
+    font-family: Sailec;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem; /* 150% */
+    letter-spacing: -0.025rem;
+  }
+  .quoteImg {
+    width: auto;
+    height: 275px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .quoteContainer {
+    flex-direction: column-reverse;
+    justify-items: center;
+    gap: 1.5rem;
+  }
+  .quoteContainerLeft {
+    flex-direction: column-reverse;
+  }
+}
