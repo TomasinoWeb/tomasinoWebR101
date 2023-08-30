@@ -18,6 +18,18 @@
     line-height: normal;
     letter-spacing: -1.408px;
     z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  @media (max-width: 768px) {
+    .mainTitle {
+      font-size: 48px;
+    }
+  }
+  @media (max-width: 480px) {
+    .mainTitle {
+      font-size: 32px;
+    }
   }
 
   .subTitle {
@@ -27,5 +39,18 @@
     font-size: 48px;
     letter-spacing: -1.056px;
     z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    .subTitle {
+      font-size: 36px;
+      bottom: 10px;
+    }
+  }
+  @media (max-width: 480px) {
+    .subTitle {
+      font-size: 24px;
+      bottom: 20px;
+    }
   }
 }
