@@ -3,6 +3,7 @@ import styles from "./org-culture.module.scss";
 import { Layout } from "../../components/Layout";
 import QuoteBlock from "../../components/QuoteBlock";
 import { CultureCard } from "../../components/CultureCard";
+import { Titles } from "../../components/Titles";
 
 import Image from "next/image";
 import image from "public/assets/about/culture/calls.jpeg";
@@ -37,10 +38,11 @@ export default function () {
       <div>
         <div className={styles.parent}>
           <div className={styles.mid}>
-            <h1 className={styles.header_text}>Org Culture</h1>
-            <h1 className={styles.header_text}>
-              Get in the car, we're going to the mall
-            </h1>
+
+            <div className={styles.header_text}>
+            <Titles title="Org Culture" >  Get in the car, Betty</Titles>
+      </div>
+        
             <p className={styles.p_text}>
               Let's take a quick ride as to how TomWebbers yada yada yada Lorem
               ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
