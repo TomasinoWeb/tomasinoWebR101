@@ -88,7 +88,6 @@
 //   width: 20rem;
 // }
 
-
 .index {
   display: flex;
   flex-direction: column;
@@ -132,6 +131,15 @@
   width: 100%;
   font-weight: 500;
   justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.links > *:hover {
+  text-decoration: underline;
+}
+
+.links > * :nth-child(n + 2) {
+  list-style-type: disc;
 }
 
 .eroBlockContainer {
@@ -159,8 +167,46 @@
   background-color: aquamarine;
 }
 
+.eroBlock:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .callToAction {
   margin-top: 1rem;
   text-decoration: underline;
   font-weight: 600;
+}
+
+.callToAction:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .titleSection {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .titleSection {
+    width: 50%;
+  }
+
+  .eroBlockContainer > * {
+    aspect-ratio: 1/1;
+  }
+
+  .titleContainer {
+    padding: 6rem 0;
+  }
+
+  .links {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .callToAction {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
 }
