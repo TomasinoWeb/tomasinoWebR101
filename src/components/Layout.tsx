@@ -215,7 +215,8 @@ function Header(props: { textColor: any }) {
       </nav>
 
       {visible && (
-        <ul className={styles.menu}>
+        <ul className={styles.menu}
+        >
           <li>
             <h3 className={styles.menuLogo} style={{ color: props.textColor }}>
               GET YOUR TICKETS NOW
