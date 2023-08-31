@@ -129,6 +129,8 @@
 .links {
   display: flex;
   width: 100%;
+  font-size: 0.75rem;
+  line-height: 1rem;
   font-weight: 500;
   justify-content: space-between;
   margin: 1.5rem 0;
@@ -172,13 +174,18 @@
 }
 
 .callToAction {
-  margin-top: 1rem;
   text-decoration: underline;
+  font-size: 0.75rem;
+  line-height: 1rem;
   font-weight: 600;
 }
 
 .callToAction:hover {
   text-decoration: none;
+}
+
+.eroBlockContainerDesktop {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -191,14 +198,15 @@
   .titleSection {
     width: 50%;
   }
+  
+  .eroBlockContainer {
+    min-height: 18rem;
+  }
 
   .eroBlockContainer > * {
     aspect-ratio: 1/1;
   }
 
-  .titleContainer {
-    padding: 6rem 0;
-  }
 
   .links {
     font-size: 1.25rem;
@@ -208,5 +216,14 @@
   .callToAction {
     font-size: 1.25rem;
     line-height: 1.5rem;
+  }
+
+  .eroBlockContainerMobile {
+    display: none;
+  }
+
+  .eroBlockContainerDesktop {
+    display: flex;
+    width: 100%;
   }
 }
