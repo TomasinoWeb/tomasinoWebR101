@@ -11,6 +11,7 @@ export default function () {
         <div
           className={`${styles.eroBlockContainerTop} ${styles.eroBlockContainer}`}
         >
+          {/* TODO: Add eroblock images */}
           <div className={styles.eroBlock}></div>
           <div className={styles.eroBlock}></div>
           <div className={styles.eroBlock}></div>
@@ -28,11 +29,20 @@ export default function () {
               <li className={styles.linkItem}>
                 <Link href="">ABOUT</Link>
               </li>
+              <li className={styles.linkBullet}>
+                •
+              </li>
               <li className={styles.linkItem}>
                 <Link href="">R101</Link>
               </li>
+              <li className={styles.linkBullet}>
+                •
+              </li>
               <li className={styles.linkItem}>
                 <Link href="">FAQ</Link>
+              </li>
+              <li className={styles.linkBullet}>
+                •
               </li>
               <li className={styles.linkItem}>
                 <Link href="">THE POOL</Link>
@@ -48,6 +58,7 @@ export default function () {
         <div
           className={`${styles.eroBlockContainerMobile} ${styles.eroBlockContainer}`}
         >
+          {/* TODO: Add eroblock images */}
           <div className={styles.eroBlock}></div>
           <div className={styles.eroBlock}></div>
           <div className={styles.eroBlock}></div>
@@ -58,6 +69,7 @@ export default function () {
         <div
           className={`${styles.eroBlockContainerDesktop} ${styles.eroBlockContainer}`}
         >
+          {/* TODO: Add eroblock images */}
           <div className={styles.eroBlock}></div>
           <div className={styles.eroBlock}></div>
           <div className={styles.eroBlock}></div>

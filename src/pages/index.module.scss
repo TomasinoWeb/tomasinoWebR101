@@ -129,8 +129,8 @@
 .links {
   display: flex;
   width: 100%;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 12px;
+  line-height: 16px;
   font-weight: 500;
   justify-content: space-between;
   margin: 1.5rem 0;
@@ -140,10 +140,14 @@
   text-decoration: underline;
 }
 
-.links > * :nth-child(n + 2) {
-  list-style-type: disc;
+.linkBullet {
+  color: #D9D9D9;
+  font-size: 1.75rem;
 }
 
+.links > *:nth-child(n+2)::marker {
+  color: rgba($color: #D9D9D9, $alpha: 1);
+}
 .eroBlockContainer {
   display: flex;
   flex: 1;
