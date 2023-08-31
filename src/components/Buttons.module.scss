@@ -3,14 +3,14 @@
   padding: 0.9375rem 1.875rem;
   justify-content: center;
   align-items: center;
-  gap: 0.625rem;
+  gap: -10px;
   
   border: 3.5px solid #e5e5e5;
   background: #f5f5f5;
 
   font-family: Sailec bold, sans-serif;
-  font-size: 1.25rem;
-  letter-spacing: -0.0275rem;
+  font-size: 20px;
+  letter-spacing: -0.44px;
   line-height: normal;
   &:hover {
     background-color: #e5e5e5;
@@ -18,11 +18,11 @@
   }
 
   @media screen and (max-width: 768px) {
-    padding: 0.45rem 0.81rem;
+    padding: 7.2px 12.96px;
     border: 1.55px solid #E5E5E5;
-    gap: 0.26894rem;
+    gap: 4.30304px;
     align-self: stretch;
-    font-size: 1rem;
-    letter-spacing: -0.01181rem;
+    font-size: 16px;
+    letter-spacing: -0.18896px;
   }
 }
