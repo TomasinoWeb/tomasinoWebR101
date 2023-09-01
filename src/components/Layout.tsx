@@ -15,7 +15,7 @@ export function Layout(props: LayoutProps) {
       style={{ backgroundColor: props.departmentBackground }}
     >
       <Header textColor={props.textColor} />
-      {props.children}
+      <main className={styles.main}>{props.children}</main>
       <Footer />
     </div>
   );

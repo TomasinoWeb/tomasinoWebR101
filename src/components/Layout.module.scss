@@ -2,11 +2,18 @@
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  .main{
+    flex: 1;
+  }
 
   .dropdown {
     width: 32px;
     height: 32px;
   }
+  
   .hidden {
     display: none;
     visibility: hidden;
@@ -127,7 +134,7 @@
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1000px) {
   .layoutContainer {
     margin: 0 auto;
 
@@ -202,8 +209,7 @@
       justify-content: space-between;
       padding: 5.008px 64px;
       margin: 0 auto;
-      bottom: 0%;
-      position: absolute;
+
       .footerlinks {
         flex-direction: row;
         gap: 24px;
