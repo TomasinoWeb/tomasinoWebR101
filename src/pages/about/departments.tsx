@@ -13,6 +13,7 @@ export default function MyComponent() {
   const [selectedMember, setSelectedMember] = useState<any | null>(null);
 
   const handleImageClick = (member: any) => {
+    window.scrollTo({top: 0, behavior: "smooth", left: 0});
     if (departmentBackground === member.background) {
       setDepartmentBackground(undefined);
       setTextColor(undefined);

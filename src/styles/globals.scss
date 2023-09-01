@@ -64,6 +64,15 @@ html {
   --beige: #e0c9af; // Videography
   --darkblue: #2d344e; // Photography
   --white: #ffffff;
+  --header-size: 100px;
+  --footer-size: 43px;
+}
+
+@media screen and (max-width: 999px){
+  :root{
+    --header-size: 100px;
+    --footer-size: 288.5px;
+  }
 }
 
 h1 {

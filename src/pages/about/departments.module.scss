@@ -1,12 +1,17 @@
 .componentContainer {
-  min-height: 100vh;
-  height: auto;
+  min-height: calc(100vh - var(--header-size) - var(--footer-size));
   display: flex;
   flex-direction: column;
-  gap: 24px;
 
   .title {
-    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 32px;
+    flex: 1;
+    min-height: 240px; // prevents jumping around
     height: auto;
 
     .description {
@@ -33,10 +38,8 @@
 
   .memberCount {
     width: 100%;
-    margin-bottom: 40px;
 
     .grid {
-      margin-top: 32px;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
@@ -72,7 +75,7 @@
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 775px) {
       .member {
         flex: 0 0 calc(50%);
 
