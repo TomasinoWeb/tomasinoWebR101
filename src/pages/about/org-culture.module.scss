@@ -16,11 +16,15 @@
   text-align: center;
 
   padding-top: 50px!important;
+  .p_text_italic{
+    font-style: italic;
+  }
+  .p_text {
+    margin-bottom: 4%;
+    margin-top: 60px;
+  }
 }
-.p_text {
-  margin-bottom: 4%;
-  margin-top: 60px;
-}
+
 .video_section {
   display: flex;
   flex-direction: column;
@@ -45,6 +49,9 @@
   align-items: center;
 
   width: 100%;
+
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 .testimonial_mid {
   flex-direction: column;
@@ -54,13 +61,14 @@
 
   height: auto;
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  
+
+  padding-top: 90px;
+  padding-bottom: 90px;
+
   background-color: #2d344e;
   color: white;
 
-  padding-top: 60px;
-  padding-bottom: 60px;
 }
 
 .culture_section {
@@ -68,6 +76,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .p_text {
+    margin-bottom: 4%;
+  }
 }
 .culture_mid {
   display: flex;
@@ -155,17 +166,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.stats_details {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
 
-  margin-top: 80px;
-  .header_text {
-    font-size: 48px !important ;
+  margin-bottom: 80px;
+  width: 100%;
+
+  flex-wrap: wrap;
+  .stats_details {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:70%;
+  
+    margin-top: 80px;
+    .header_text {
+      font-size: 48px !important ;
+    }
+    flex-wrap: wrap;
   }
+  
 }
 
 .stats_main2 {
@@ -201,7 +219,9 @@
   .culture_mid {
     width: 70%;
   }
-
+  .stats_main {
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 1150px) {
   .stats_main2 {
@@ -212,6 +232,32 @@
     margin-top: 0px;
     .margin_left {
       margin-left: 0px;
+    }
+    .stats_details2{
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+   
+  }
+  .stats_main {
+   text-align: center;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+ 
+  .stats_main2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 0px!important;
+    width: 100%;
+    .header_text{
+      font-size: 38px !important;
+      text-align: center;
     }
   }
   .end_background {
@@ -230,22 +276,6 @@
       width: 80%;
     }
   }
-  .stats_main {
-   text-align: center;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-  }
-  .stats_main2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin-right: 0px!important;
-    width: 100%;
-  }
 }
 
 @media only screen and (max-width: 1068px) {
@@ -257,7 +287,7 @@
     width: 90%;
     margin-left: 0px;
     .header_text {
-      font-size: 40px !important ;
+      font-size: 28px !important ;
     }
   }
   .culture_section{
@@ -293,10 +323,14 @@
     align-items: center;
     //flex-wrap: wrap;
     width: 100%;
+    .p_text{
+      margin-bottom: 50px;
+    }
+    }
   }
   .culture_mid {
     display: flex;
-    width: 80%;
+    width: 90%;
     flex-wrap: wrap;
     //flex-direction: column;
     justify-content: center;
@@ -309,7 +343,6 @@
     width: 100%;
   }
 
-}
 
 @media only screen and (max-width: 568px) {
 // .body {
@@ -342,6 +375,13 @@
 .box {
   width: 80px!important;
   height: 80px!important;
+}
+}
+.stats_main {
+  .stats_details{
+  .header_text {
+   font-size: 28px !important ;
+ }
 }
 }
 }
