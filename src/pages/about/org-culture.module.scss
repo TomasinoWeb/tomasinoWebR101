@@ -230,7 +230,22 @@
       width: 80%;
     }
   }
+  .stats_main {
+   text-align: center;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+  }
+  .stats_main2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    margin-right: 0px!important;
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 1068px) {
@@ -257,7 +272,7 @@
     justify-content: center;
     align-items: center;
 
-  
+    text-align: center;
   }
   .mid {
     flex-direction: column;
@@ -302,7 +317,8 @@
 // }
 
 .mid{
-  margin-top: 50px;
+  width: 80%;
+  margin-top: 0px;
   .p_text{
   width: 100%;
 } }
