@@ -2,7 +2,6 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Sailec", sans-serif;
   color: var(--darkgray);
 }
 
@@ -78,6 +77,32 @@ html {
     --header-size: 100px;
     --footer-size: 288.5px;
   }
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-family: "Sailec", sans-serif;
+}
+
+// anchor tag style reset
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// list style reset
+ul {
+  list-style: none;
 }
 
 h1 {

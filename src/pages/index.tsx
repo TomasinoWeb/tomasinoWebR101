@@ -1,13 +1,69 @@
 import { Layout } from "../components/Layout";
+import Link from "next/link";
+import Image from "next/image";
+import Title from "../assets/landing/TomasinoWeb Title.svg";
 import styles from "./index.module.scss";
 
 export default function () {
   return (
-    <Layout>
-      <div>
-        <h1>join.tomasinoweb.org</h1>
-        <h1 className={styles.red}>Landing Page</h1> 
+    <div className={styles.index}>
+      <div className={styles.main}>
+        <div className={`${styles.eroBlockContainerTop} ${styles.eroBlockContainer}`}>
+          {/* TODO: Add eroblock images */}
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+        </div>
+        <div className={`${styles.center} ${styles.titleContainer}`}>
+          <div className={styles.titleSection}>
+            <Image
+              className={styles.titleImage}
+              src={Title}
+              alt="tomasino r101 title"
+            ></Image>
+            <ul className={`${styles.links}`}>
+              <li className={styles.linkItem}>
+                <Link href="">ABOUT</Link>
+              </li>
+              <li className={styles.linkBullet}>•</li>
+              <li className={styles.linkItem}>
+                <Link href="">R101</Link>
+              </li>
+              <li className={styles.linkBullet}>•</li>
+              <li className={styles.linkItem}>
+                <Link href="">FAQ</Link>
+              </li>
+              <li className={styles.linkBullet}>•</li>
+              <li className={styles.linkItem}>
+                <Link href="">THE POOL</Link>
+              </li>
+            </ul>
+            <div className={styles.center}>
+              <Link href="" className={`${styles.callToAction}`}>
+                GET YOUR TICKETS NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className={`${styles.eroBlockContainerMobile} ${styles.eroBlockContainer}`}>
+          {/* TODO: Add eroblock images */}
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+          <div className={styles.eroBlock}></div>
+        </div>
       </div>
-    </Layout>
+      <div className={`${styles.eroBlockContainerDesktop} ${styles.eroBlockContainer}`}>
+        {/* TODO: Add eroblock images */}
+        <div className={styles.eroBlock}></div>
+        <div className={styles.eroBlock}></div>
+        <div className={styles.eroBlock}></div>
+        <div className={styles.eroBlock}></div>
+        <div className={styles.eroBlock}></div>
+      </div>
+    </div>
   );
 }

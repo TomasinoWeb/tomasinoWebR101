@@ -1,3 +1,136 @@
-.red {
-  color: red;
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: CarlaSans;
+}
+
+.titleImage {
+  width: 100%;
+  height: auto;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleSection {
+  width: 80%;
+}
+
+.titleContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.links {
+  display: flex;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.links > *:hover {
+  text-decoration: underline;
+}
+
+.linkBullet {
+  color: #d9d9d9;
+  font-size: 28px;
+}
+
+.links > *:nth-child(n + 2)::marker {
+  color: rgba($color: #d9d9d9, $alpha: 1);
+}
+
+.eroBlockContainer {
+  display: flex;
+  min-height: 25%;
+}
+
+.eroBlockContainer:first-child {
+  border-bottom: 3px solid var(--darkgray);
+}
+
+.eroBlockContainer:last-child {
+  border-top: 3px solid var(--darkgray);
+}
+
+.eroBlockContainer > * {
+  flex-basis: 100%;
+}
+
+.eroBlockContainer > .eroBlock:not(:last-child) {
+  border-right: 3px solid var(--darkgray);
+}
+
+.eroBlock {
+  background-color: aquamarine;
+}
+
+.eroBlock:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.callToAction {
+  text-decoration: underline;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.callToAction:hover {
+  text-decoration: none;
+}
+
+.eroBlockContainerDesktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .titleSection {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .links {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .callToAction {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .eroBlockContainerMobile {
+    display: none;
+  }
+
+  .eroBlockContainerDesktop {
+    display: flex;
+    min-width: 100%;
+  }
+
+  .eroBlockContainer > * {
+    aspect-ratio: 1/1;
+  }
 }
