@@ -142,7 +142,7 @@ export default function () {
           <div className={styles.culture_mid}>
             <CultureCard
               title="Post-Coverage hangouts"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/Culture-PostCoverageHangout.png"
               backgroundColor="beige"
               textColor="black"
               border="none"
@@ -151,7 +151,7 @@ export default function () {
             </CultureCard>
             <CultureCard
               title="Random/Sponty Discord Calls"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/Culture-Meetings.png"
               backgroundColor="red"
               textColor="white"
               border="none"
@@ -161,7 +161,7 @@ export default function () {
             <CultureCard
               title="PowerPoint 
               Parties"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/Culture-PPT.png"
               backgroundColor="purple"
               textColor="black"
               border="none"
@@ -171,7 +171,7 @@ export default function () {
             <CultureCard
               title="General 
               Assemblies"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/Culture-GenAss.png"
               backgroundColor="darkgray"
               textColor="white"
             >
@@ -213,7 +213,7 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
             <CultureCard
               title="On-site 
               Coverages"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/OnSite.jpeg"
               backgroundColor="black"
               textColor="white"
               border="none"
@@ -223,7 +223,7 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
             <CultureCard
               title="Virtual 
               Coverages"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/VirtualCoverages.jpeg"
               backgroundColor="lightblue"
               textColor="black"
               border="none"
@@ -233,7 +233,7 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
             <CultureCard
               title="Interactive 
               Meetings"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/InteractiveMeetings.jpeg"
               backgroundColor="darkblue"
               textColor="white"
               border="none"
@@ -242,7 +242,7 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
             </CultureCard>
             <CultureCard
               title="Mentorship and Collaboration"
-              image="/assets/components/Culture-PostCoverageHangout.png"
+              image="/assets/about/culture/mentor.png"
               backgroundColor="green"
               textColor="black"
             >
