@@ -170,11 +170,10 @@ $mobileSectionGap: 40px;
         transition: width 0.3s ease;
 
         .content {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          opacity: 0;
-          animation: fadeIn 0.3s 0.3s ease forwards;
+          .innerContainer {
+            opacity: 0;
+            animation: fadeIn 0.3s 0.3s ease forwards;
+          }
         }
 
         @keyframes fadeIn {
@@ -184,6 +183,14 @@ $mobileSectionGap: 40px;
           100% {
             opacity: 1;
           }
+        }
+
+        .shadow {
+          opacity: 0;
+        }
+
+        .undershadow {
+          opacity: 0.4;
         }
       }
 
@@ -198,42 +205,62 @@ $mobileSectionGap: 40px;
         border-right: 1.5px solid var(--darkgray);
       }
 
-      .overlay {
+      .shadow,
+      .undershadow {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
-        opacity: 0.65;
-        transition: 0.3s ease;
+        opacity: 0;
+        transition: 0.1s ease-in all;
       }
 
-      .overlay:hover {
-        opacity: 0.8;
-        transition: 0.3s ease;
+      .shadow {
+        z-index: 11;
+      }
+      .undershadow {
+        z-index: 9;
+      }
+
+      .shadow:hover,
+      .undershadow:hover {
+        opacity: 0.4;
       }
 
       .content {
-        position: relative;
+        z-index: 10;
+
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         padding: 20px;
 
-        display: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
 
-        .name {
-          margin-top: auto;
-          font-size: 24px;
-        }
+        .innerContainer {
+          opacity: 0;
 
-        .position {
-          font-size: 14px;
-          text-transform: uppercase;
-        }
+          .name {
+            margin-top: auto;
+            font-size: 24px;
+          }
 
-        .name,
-        .position {
-          text-shadow: 2px 4px 4px rgba(57, 57, 57, 0.25);
-          color: var(--white);
+          .position {
+            font-size: 14px;
+            text-transform: uppercase;
+          }
+
+          .name,
+          .position {
+            text-shadow: 2px 4px 4px rgba(57, 57, 57, 0.25);
+            color: var(--white);
+          }
         }
       }
     }

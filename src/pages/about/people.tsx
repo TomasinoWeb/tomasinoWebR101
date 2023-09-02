@@ -12,6 +12,7 @@ import BannerGrid3 from "public/assets/about/people/BannerGrid3.png";
 import { Titles } from "../../components/Titles";
 import { Buttons } from "../../components/Buttons";
 import QuoteBlock from "../../components/QuoteBlock";
+import { HoverableImage } from "../../components/HoverableImage";
 
 const otherMembers = [
   {
@@ -61,66 +62,79 @@ const coreMembers = [
     name: "Jan Carlo Zamora",
     position: "President",
     image: "/assets/about/people/core/President.png",
+    hoverColor: "#B9E6F9",
   },
   {
     name: "Eric Eugene Rosales",
     position: "Executive Vice President",
     image: "/assets/about/people/core/Executive Vice President.png",
+    hoverColor: "#D0CBC5",
   },
   {
     name: "Maria Celestine Guerrero",
     position: "Executive Secretary",
     image: "/assets/about/people/core/Secretary.png",
+    hoverColor: "#B9D2B5",
   },
   {
     name: "Claire Ann Arce",
     position: "VP for External Affairs",
     image: "/assets/about/people/core/Vice President for External Affairs.png",
+    hoverColor: "#CEB2D2",
   },
   {
     name: "Berlice Cudia",
     position: "VP for Fincance",
     image: "/assets/about/people/core/Vice President for Finance.png",
+    hoverColor: "#F0C789",
   },
   {
     name: "Aelijah Jolie Jacer",
     position: "VP for Human Resources",
     image: "/assets/about/people/core/Vice President for Human Resources.png",
+    hoverColor: "#7C3545",
   },
   {
     name: "Miguel Angelo Sumalinog",
     position: "Chief Photographer",
     image: "/assets/about/people/core/Chief Photographer.png",
+    hoverColor: "#B9E6F9",
   },
   {
     name: "Phillip Josef Perez",
     position: "Asst. Chief Photographer",
     image: "/assets/about/people/core/Assistant Chief Photographer.png",
+    hoverColor: "#B9E6F9",
   },
   {
     name: "Reiniel Lawrence Razo",
     position: "Chief Videographer",
     image: "/assets/about/people/core/Chief Videographer.png",
+    hoverColor: "#C9AF96",
   },
   {
     name: "Kyle Erimae Lopez",
     position: "Creative Director",
     image: "/assets/about/people/core/Creative Director.png",
+    hoverColor: "#FCB1CF",
   },
   {
     name: "Iris Mirzi Cardenas",
     position: "Asst. Creative Director",
     image: "/assets/about/people/core/Assistant Creative Director.png",
+    hoverColor: "#FCB1CF",
   },
   {
     name: "Danial Dale Santos",
     position: "Chief Technology Officer",
     image: "/assets/about/people/core/Chief Technology Officer.png",
+    hoverColor: "#7D7779",
   },
   {
     name: "Julia Melle Pascua",
     position: "Asst. Chief Technology Officer",
     image: "/assets/about/people/core/Assistant Chief Technology Officer.jpg",
+    hoverColor: "#7D7779",
   },
 ];
 
@@ -148,12 +162,10 @@ export default function () {
               image="/assets/components/Album-Placeholder.png"
               textColor="black"
             >
-              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me
-              develop my expertise and passion as I worked with diverse and like-minded
-              people who enthusiastically dabble in storytelling, community development,
-              civic engagement, and student leadership. With everyone's support and
-              initiative, it is always a thrill to work with them in pursuit of impactful
-              and moving conversations.”
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as
+              I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+              development, civic engagement, and student leadership. With everyone's support and initiative, it is
+              always a thrill to work with them in pursuit of impactful and moving conversations.”
             </QuoteBlock.Left>
           </div>
         </div>
@@ -164,8 +176,7 @@ export default function () {
             <span className={styles.titleSmall}>and counting!</span>
           </h1>
           <p className={styles.subtitle}>
-            We're a bunch of sleep-deprived yet ambitious undergrads from different
-            colleges and faculties.
+            We're a bunch of sleep-deprived yet ambitious undergrads from different colleges and faculties.
           </p>
           <div className={styles.grid}>
             {otherMembers.map((member, index) => (
@@ -183,9 +194,7 @@ export default function () {
         </div>
 
         <div className={styles.yearCount}>
-          <h1 className={styles.title}>
-            16 years of innovation, passion, and dedication
-          </h1>
+          <h1 className={styles.title}>16 years of innovation, passion, and dedication</h1>
         </div>
 
         <div className={styles.componentContainer}>
@@ -196,12 +205,10 @@ export default function () {
             image="/assets/components/Album-Placeholder.png"
             textColor="black"
           >
-            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
-            my expertise and passion as I worked with diverse and like-minded people who
-            enthusiastically dabble in storytelling, community development, civic
-            engagement, and student leadership. With everyone's support and initiative, it
-            is always a thrill to work with them in pursuit of impactful and moving
-            conversations.”
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
+            worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+            development, civic engagement, and student leadership. With everyone's support and initiative, it is always
+            a thrill to work with them in pursuit of impactful and moving conversations.”
           </QuoteBlock.Right>
         </div>
       </div>
@@ -227,12 +234,10 @@ export default function () {
             image="/assets/components/Album-Placeholder.png"
             textColor="black"
           >
-            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
-            my expertise and passion as I worked with diverse and like-minded people who
-            enthusiastically dabble in storytelling, community development, civic
-            engagement, and student leadership. With everyone's support and initiative, it
-            is always a thrill to work with them in pursuit of impactful and moving
-            conversations.”
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
+            worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+            development, civic engagement, and student leadership. With everyone's support and initiative, it is always
+            a thrill to work with them in pursuit of impactful and moving conversations.”
           </QuoteBlock.Left>
         </div>
       </div>
@@ -246,24 +251,33 @@ export default function () {
           {coreMembers.map((member, index) => (
             <div
               key={index}
-              className={`${styles.member} ${
-                expandedIndex === index ? styles.expanded : ""
-              }`}
+              className={`${styles.member} ${expandedIndex === index ? styles.expanded : ""}`}
               onClick={() => handleMemberClick(index)}
             >
-              <Image
-                src={member.image}
+              <HoverableImage
                 alt={`${member.name}'s Image`}
+                image={member.image}
+                hoverColor={member.hoverColor}
+                active
+                monotoneAlways
+              />
+
+              <Image
+                alt={`${member.name}'s Image`}
+                src={member.image}
                 width={500}
                 height={500}
                 className={styles.image}
               />
-              <div className={styles.overlay}></div>
 
+              <div className={styles.shadow}></div>
               <div className={styles.content}>
-                <h1 className={styles.name}>{member.name}</h1>
-                <p className={styles.position}>{member.position}</p>
+                <div className={styles.innerContainer}>
+                  <h1 className={styles.name}>{member.name}</h1>
+                  <p className={styles.position}>{member.position}</p>
+                </div>
               </div>
+              <div className={styles.undershadow}></div>
             </div>
           ))}
         </div>
@@ -280,12 +294,10 @@ export default function () {
             image="/assets/components/Album-Placeholder.png"
             textColor="white"
           >
-            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
-            my expertise and passion as I worked with diverse and like-minded people who
-            enthusiastically dabble in storytelling, community development, civic
-            engagement, and student leadership. With everyone's support and initiative, it
-            is always a thrill to work with them in pursuit of impactful and moving
-            conversations.”
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
+            worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+            development, civic engagement, and student leadership. With everyone's support and initiative, it is always
+            a thrill to work with them in pursuit of impactful and moving conversations.”
           </QuoteBlock.Left>
           <QuoteBlock.Right
             author="Mikaela Gabrielle De Castro"
@@ -294,12 +306,10 @@ export default function () {
             image="/assets/components/Album-Placeholder.png"
             textColor="white"
           >
-            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop
-            my expertise and passion as I worked with diverse and like-minded people who
-            enthusiastically dabble in storytelling, community development, civic
-            engagement, and student leadership. With everyone's support and initiative, it
-            is always a thrill to work with them in pursuit of impactful and moving
-            conversations.”
+            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
+            worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+            development, civic engagement, and student leadership. With everyone's support and initiative, it is always
+            a thrill to work with them in pursuit of impactful and moving conversations.”
           </QuoteBlock.Right>
         </div>
       </div>
@@ -307,9 +317,7 @@ export default function () {
       <div className={styles.otherInfo}>
         <Image src={GroupPic} alt="TomasinoWeb Members" className={styles.image} />
         <div className={styles.content}>
-          <p className={styles.subtitle}>
-            TomasinoWeb continues to lead and innovate the modern web
-          </p>
+          <p className={styles.subtitle}>TomasinoWeb continues to lead and innovate the modern web</p>
           <h1 className={styles.title}>Are you ready for it?</h1>
           <div className={styles.buttons}>
             <Buttons href="/">Let the games begin</Buttons>
