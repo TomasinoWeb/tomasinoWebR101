@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import styles from "./layout.module.scss";
+import styles from "./Layout.module.scss";
+import { useState } from "react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,16 +10,14 @@ interface LayoutProps {
 
 export function Layout(props: LayoutProps) {
   return (
-    <>
-      <div
-        className={styles.layoutContainer}
-        style={{ backgroundColor: props.departmentBackground }}
-      >
-        <Header textColor={props.textColor} />
-        {props.children}
-        <Footer />
-      </div>
-    </>
+    <div
+      className={styles.layoutContainer}
+      style={{ backgroundColor: props.departmentBackground }}
+    >
+      <Header textColor={props.textColor} />
+      <main className={styles.main}>{props.children}</main>
+      <Footer />
+    </div>
   );
 }
 
@@ -30,8 +29,13 @@ const goToTop = () => {
 };
 
 function Header(props: { textColor: any }) {
+  const [visible, isVisible] = useState(false);
+
+  function handleMenuClick() {
+    isVisible(!visible);
+  }
   return (
-    <header>
+    <header className={visible ? styles.mobileNavbar : ""}>
       <nav className={styles.navbar}>
         <div className={styles.navbarTitles}>
           <a href="/">
@@ -132,13 +136,43 @@ function Header(props: { textColor: any }) {
               />
             </svg>
           </a>
-
           <div>
             <h3 className={styles.logo} style={{ color: props.textColor }}>
               GET YOUR TICKETS NOW
             </h3>
           </div>
         </div>
+        <a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            className={visible ? styles.hidden : styles.dropdown}
+            onClick={handleMenuClick}
+          >
+            <path
+              d="M2.5 3.33337H17.5V5.00004H2.5V3.33337ZM7.5 9.16671H17.5V10.8334H7.5V9.16671ZM2.5 15H17.5V16.6667H2.5V15Z"
+              fill="#393939"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="14"
+            viewBox="0 0 13 14"
+            fill="none"
+            className={visible ? styles.dropdown : styles.hidden}
+            onClick={handleMenuClick}
+          >
+            <path
+              d="M6.36398 5.5865L11.3137 0.636719L12.7279 2.05093L7.77818 7.0007L12.7279 11.9504L11.3137 13.3646L6.36398 8.4149L1.41421 13.3646L0 11.9504L4.94978 7.0007L0 2.05093L1.41421 0.636719L6.36398 5.5865Z"
+              fill="#393939"
+            />
+          </svg>
+        </a>
+
         <ul className={styles.links}>
           <li>
             <a
@@ -179,6 +213,54 @@ function Header(props: { textColor: any }) {
           </li>
         </ul>
       </nav>
+
+      {visible && (
+        <ul className={styles.menu}
+        >
+          <li>
+            <h3 className={styles.menuLogo} style={{ color: props.textColor }}>
+              GET YOUR TICKETS NOW
+            </h3>
+          </li>
+          <li>
+            <a
+              className={styles.menuLink}
+              href="/about"
+              style={{ color: props.textColor }}
+            >
+              ABOUT
+            </a>
+          </li>
+          <li>
+            <a
+              className={styles.menuLink}
+              href="/r101"
+              style={{ color: props.textColor }}
+            >
+              R101
+            </a>
+          </li>
+          <li>
+            <a
+              className={styles.menuLink}
+              href="/faq"
+              style={{ color: props.textColor }}
+            >
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a
+              className={styles.menuLink}
+              href="https://discord.gg/BHtvRaRr"
+              target="_blank"
+              style={{ color: props.textColor }}
+            >
+              THE POOL
+            </a>
+          </li>
+        </ul>
+      )}
     </header>
   );
 }
@@ -186,7 +268,7 @@ function Header(props: { textColor: any }) {
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <ul className={styles.links}>
+      <ul className={styles.footerlinks}>
         <li>
           <a className={styles.footerLink} href="/">
             © TomasinoWeb

@@ -49,6 +49,11 @@ html {
   src: url("/fonts/sailec/Sailec Regular Italic.otf") format("opentype");
 }
 
+@font-face {
+  font-family: Sailec Black;
+  src: url("/fonts/sailec/Sailec Black.otf") format("opentype");
+}
+
 // add more fonts if needed
 
 :root {
@@ -63,6 +68,15 @@ html {
   --beige: #e0c9af; // Videography
   --darkblue: #2d344e; // Photography
   --white: #ffffff;
+  --header-size: 100px;
+  --footer-size: 43px;
+}
+
+@media screen and (max-width: 999px) {
+  :root {
+    --header-size: 100px;
+    --footer-size: 288.5px;
+  }
 }
 
 /* Remove default margin */
@@ -93,11 +107,7 @@ ul {
 
 h1 {
   font-family: "Sailec Bold", sans-serif;
-  letter-spacing: -2.2%;
-}
-
-p {
-  letter-spacing: -2.2%;
+  letter-spacing: -2.056px;
 }
 
 a,

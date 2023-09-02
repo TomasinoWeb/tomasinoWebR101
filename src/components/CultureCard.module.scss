@@ -1,14 +1,38 @@
+@media screen and (max-width: 768px) {
+    .cardContainer{
+      max-width: 240px;
+      padding: 8px;
+      .cardImg{
+        height: 162px;
+      }
+      .cardTextContainer{
+        padding: 20.4px 16px 16px 16px;
+      }
+      .cardTitle{
+        font-size: 16px;    
+      }
+      .cardText{
+        font-size: 14px;
+      }
+    } 
+}
+
 .cardContainer {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
-
+  width: 304px;
+  
+  .none {
+    border-right: none !important;
+  }
+  
   .cardImg {
     border: 3px solid #393939;
     border-bottom: none;
-    width: 300px;
-    height: 200px;
+    width: 110%;
+    height: 240px;
+    flex-shrink: 0; 
     background-size: cover;
 
     .image {
@@ -20,8 +44,8 @@
 
   .cardTextContainer {
     display: flex;
-    width: 300px;
-    padding: 30px 20px 20px 20px;
+    width: 110%;
+    padding: 30px 24px 24px 24px;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
@@ -29,17 +53,15 @@
     border: 3px solid #393939;
 
     .cardTitle {
-      width: 256px;
       font-family: Sailec bold, sans-serif;
       font-size: 24px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      letter-spacing: -0.528px;
+      letter-spacing: 0.528px;
     }
 
     .cardText {
-      width: 256px;
       font-family: Sailec, sans-serif;
       font-size: 16px;
       font-style: normal;
@@ -47,5 +69,13 @@
       line-height: 24px; /* 150% */
       letter-spacing: -0.352px;
     }
-  }
+  } 
+  
+}
+
+@media only screen and (max-width: 1150px) {
+  .cardContainer {
+  .none {
+    border-right: 3px solid #393939!important;
+  }}
 }

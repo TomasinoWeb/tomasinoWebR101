@@ -65,7 +65,6 @@ export default function () {
           <div className={styles.eroBlock}></div>
           <div className={styles.eroBlock}></div>
         </div>
-      </div>
         <div
           className={`${styles.eroBlockContainerDesktop} ${styles.eroBlockContainer}`}
         >

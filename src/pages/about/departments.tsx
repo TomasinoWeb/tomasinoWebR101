@@ -4,43 +4,40 @@ import styles from "./departments.module.scss";
 import Image from "next/image";
 import { otherMembers } from "../../../public/assets/data/members-data";
 import { useState } from "react";
+import { HoverableImage } from "../../components/HoverableImage";
+
+type Member = {
+  name: string;
+  image: string;
+  title: string;
+  description: string;
+  background: string;
+  foreground: string;
+  hoverColor: string;
+};
 
 export default function MyComponent() {
-  const [departmentBackground, setDepartmentBackground] = useState<string | undefined>(
-    undefined
-  );
-  const [textColor, setTextColor] = useState<string | undefined>(undefined);
-  const [selectedMember, setSelectedMember] = useState<any | null>(null);
+  const [selectedMember, setSelectedMember] = useState<Member | null>(null);
 
-  const handleImageClick = (member: any) => {
-    if (departmentBackground === member.background) {
-      setDepartmentBackground(undefined);
-      setTextColor(undefined);
-      setSelectedMember(null);
-    } else {
-      setDepartmentBackground(member.background);
-      setTextColor(member.foreground);
-      setSelectedMember(member);
-    }
+  const handleImageClick = (member: Member) => {
+    window.scrollTo({ top: 0, behavior: "smooth", left: 0 });
+
+    if (selectedMember?.background === member.background) setSelectedMember(null);
+    else setSelectedMember(member);
   };
 
   return (
-    <Layout departmentBackground={departmentBackground} textColor={textColor}>
-      <div
-        className={styles.componentContainer}
-        style={{ backgroundColor: departmentBackground }}
-      >
+    <Layout departmentBackground={selectedMember?.background} textColor={selectedMember?.foreground}>
+      <div className={styles.componentContainer} style={{ backgroundColor: selectedMember?.background }}>
         <div className={styles.title}>
           <Titles title="Departments">
-            <span style={{ color: textColor }}>
+            <span style={{ color: selectedMember?.foreground }}>
               {selectedMember ? selectedMember.title : "Choose your era..."}
             </span>
           </Titles>
           <p
             className={styles.description}
-            style={{
-              color: textColor,
-            }}
+            style={{ color: selectedMember?.foreground }}
             dangerouslySetInnerHTML={{
               __html: selectedMember
                 ? selectedMember.description.replace(/\n/g, "<br>")
@@ -52,20 +49,12 @@ export default function MyComponent() {
         <div className={styles.memberCount}>
           <div className={styles.grid}>
             {otherMembers.map((member, index) => (
-              <div key={index} className={styles.member}>
-                <Image
-                  src={member.image}
-                  alt={`${member.name}'s Image`}
-                  width={500}
-                  height={500}
-                  onClick={() => handleImageClick(member)}
-                  className={styles.image}
-                  style={{
-                    backgroundColor:
-                      departmentBackground === member.background
-                        ? member.background
-                        : "transparent",
-                  }}
+              <div key={index} className={styles.member} onClick={() => handleImageClick(member)}>
+                <HoverableImage
+                  hoverColor={member.hoverColor}
+                  image={member.image}
+                  alt={`${member.name}'s image`}
+                  active={member.name === selectedMember?.name}
                 />
               </div>
             ))}

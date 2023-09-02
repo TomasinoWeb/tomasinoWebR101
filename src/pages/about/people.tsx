@@ -160,7 +160,8 @@ export default function () {
 
         <div className={styles.memberCount}>
           <h1 className={styles.title}>
-            xx TomWebbers <span className={styles.titleSmall}>and counting!</span>
+            <span className={styles.titleBig}>xx TomWebbers</span>{" "}
+            <span className={styles.titleSmall}>and counting!</span>
           </h1>
           <p className={styles.subtitle}>
             We're a bunch of sleep-deprived yet ambitious undergrads from different
@@ -212,7 +213,7 @@ export default function () {
         <div className={styles.imageContainer}>
           <Image src={BannerGrid2} alt="Image from Coverage" className={styles.image} />
         </div>
-        <div className={styles.imagimageContainere}>
+        <div className={styles.imageContainer}>
           <Image src={BannerGrid3} alt="Image from Coverage" className={styles.image} />
         </div>
       </div>
@@ -316,8 +317,6 @@ export default function () {
           </div>
         </div>
       </div>
-
-      <div className={styles.footerSpace}></div>
     </Layout>
   );
 }

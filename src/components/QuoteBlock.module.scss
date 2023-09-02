@@ -1,0 +1,66 @@
+.quoteContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 0 35px;
+
+  .quoteTextContainer {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0;
+    gap: 22px;
+    font-family: "Sailec", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+  }
+
+  .quoteImg {
+    width: auto;
+    height: 220px;
+    padding: 0;
+  }
+}
+
+.quoteContainerLeft {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 24px;
+  padding: 0 35px;
+
+  .quoteTextContainer {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0;
+    gap: 22px;
+    font-family: Sailec;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.4px;
+  }
+  .quoteImg {
+    width: auto;
+    height: 275px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .quoteContainer {
+    flex-direction: column-reverse;
+    justify-items: center;
+    gap: 24px;
+  }
+  .quoteContainerLeft {
+    flex-direction: column-reverse;
+  }
+}

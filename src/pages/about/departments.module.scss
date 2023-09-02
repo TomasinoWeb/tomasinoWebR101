@@ -1,61 +1,86 @@
 .componentContainer {
-  min-height: 100vh;
-  text-align: center;
+  min-height: calc(100vh - var(--header-size) - var(--footer-size));
   display: flex;
   flex-direction: column;
-}
 
-.title {
-  margin: 20px auto 60px;
-  height: 200px;
-
-  .description {
-    font-size: 20px;
-    font-weight: 400;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-}
-
-.memberCount {
-  width: 100%;
-  margin-top: auto;
-  margin-bottom: 40px;
-
-  .grid {
-    margin-top: 32px;
-    width: 100%;
+  .title {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 32px;
+    flex: 1;
+    min-height: 240px; // prevents jumping around
+    height: auto;
+
+    .description {
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 24px;
+    }
+
+    @media (max-width: 768px) {
+      .description {
+        font-size: 17px;
+        margin-top: 8px;
+      }
+    }
+    @media (max-width: 480px) {
+      .description {
+        font-size: 14px;
+        margin-top: 16px;
+      }
+    }
   }
 
-  .member {
-    flex: 0 0 calc(20%);
-    border-right: 3px solid var(--darkgray);
-    border-bottom: 3px solid var(--darkgray);
-    box-sizing: border-box;
+  .memberCount {
+    width: 100%;
 
-    &:nth-child(5n) {
-      border-right: none;
-    }
-
-    &:nth-last-child(-n + 5) {
-      border-bottom: none;
-    }
-
-    .image {
+    .grid {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
-      transition: filter 0.3s;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-      &:hover {
-        -webkit-filter: none;
-        filter: none;
+    .member {
+      flex: 0 0 calc(20%);
+      border-right: 3px solid var(--darkgray);
+      border-bottom: 3px solid var(--darkgray);
+      box-sizing: border-box;
+      position: relative;
+      cursor: pointer;
+
+      &:nth-child(5n) {
+        border-right: none;
+      }
+
+      &:nth-last-child(-n + 5) {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 775px) {
+      .member {
+        flex: 0 0 calc(50%);
+
+        &:nth-child(2n) {
+          border-right: none;
+        }
+
+        &:nth-child(5n) {
+          border-right: 3px solid var(--darkgray);
+        }
+
+        &:nth-last-child(-n + 5) {
+          border-bottom: 3px solid var(--darkgray);
+        }
+
+        &:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
       }
     }
   }
