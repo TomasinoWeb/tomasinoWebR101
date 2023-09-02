@@ -17,6 +17,7 @@ $mobileSectionGap: 40px;
   font-size: 48px;
   text-align: center;
 }
+
 .subtitle {
   font-size: 24px;
   text-align: center;
@@ -32,11 +33,13 @@ $mobileSectionGap: 40px;
 
     .titleBig {
       font-family: "Sailec Bold", sans-serif;
-      letter-spacing: -2.2%;
+      letter-spacing: -1.056px;
     }
 
     .titleSmall {
+      margin-left: 8px;
       font-family: "Sailec Italic", sans-serif;
+      font-weight: 400;
       font-size: 24px;
     }
   }
