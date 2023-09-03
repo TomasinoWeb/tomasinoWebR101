@@ -15,14 +15,13 @@ export default function About() {
           <div className={styles["statement-container"]}>
             <h1 className={styles["main-heading"]}>What is TomasinoWeb?</h1>
             <p className={styles["bot-statement"]}>
-              TomasinoWeb is the premier digital media organization of the University of
-              Santo Tomas joined by students who are immensely interested in multimedia
-              journalism.
+              TomasinoWeb is the premier digital media organization of the University of Santo Tomas joined by students
+              who are immensely interested in multimedia journalism.
             </p>
 
             <p className={styles["bot-statement"]}>
-              Its primary goal as a student publication is to deliver relevant information
-              to the Thomasian community through online media.
+              Its primary goal as a student publication is to deliver relevant information to the Thomasian community
+              through online media.
             </p>
           </div>
         </div>

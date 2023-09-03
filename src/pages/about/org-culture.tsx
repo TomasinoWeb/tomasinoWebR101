@@ -1,7 +1,7 @@
 import styles from "./org-culture.module.scss";
 
 import { Layout } from "../../components/Layout";
-import {QuoteBlock} from "../../components/QuoteBlock";
+import { QuoteBlock } from "../../components/QuoteBlock";
 import { CultureCard } from "../../components/CultureCard";
 import { Titles } from "../../components/Titles";
 
@@ -9,12 +9,7 @@ import Image from "next/image";
 import image from "public/assets/about/culture/calls.jpeg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowAltCircleDown,
-  faQuestion,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
-
+import { faArrowAltCircleDown, faQuestion, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 interface TinyBoxProps {
   noRightBorder?: boolean;
@@ -36,13 +31,11 @@ export default function () {
               <Titles title="Org Culture"> Get in the car, Betty</Titles>
             </div>
             <p className={styles.p_text}>
-              We're gonna take you to a quick ride of what TomasinoWeb is behind
-              the scenes. From doing org work to having fun, we've got it all
-              here in our own silly world. 
+              We're gonna take you to a quick ride of what TomasinoWeb is behind the scenes. From doing org work to
+              having fun, we've got it all here in our own silly world.
             </p>
-
             <p className={styles.p_text_italic}>
-            Don't blame us, org made us crazy, if it doesn't, you ain't doin' it right 
+              Don't blame us, org made us crazy, if it doesn't, you ain't doin' it right
             </p>
             {/* mid */}{" "}
           </div>
@@ -59,25 +52,18 @@ export default function () {
             <div className={styles.stats_main2}>
               <div className={styles.stats_details2}>
                 <h1 className={styles.header_text}>4 websites</h1>
-                <p className={styles.p_text}>
-                up and running for the Thomasian community
-                </p>
+                <p className={styles.p_text}>up and running for the Thomasian community</p>
 
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
                 <h1 className={styles.header_text}>21+</h1>
-                <p className={styles.p_text}>
-                delulus just hoping for a Paskuhan date
-
-                </p>
+                <p className={styles.p_text}>delulus just hoping for a Paskuhan date</p>
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
                 <h1 className={styles.header_text}>27</h1>
-                <p className={styles.p_text}>
-                awards from prestigious contest & globally recognized institutions
-                </p>
+                <p className={styles.p_text}>awards from prestigious contest & globally recognized institutions</p>
                 {/* stats_details2 */}
               </div>
               {/* stats_main2 */}
@@ -86,25 +72,19 @@ export default function () {
             <div className={styles.stats_main2}>
               <div className={styles.stats_details2}>
                 <h1 className={styles.header_text}>57+</h1>
-                <p className={styles.p_text}>
-                innovative, passionate, and dedicated members
-                </p>
+                <p className={styles.p_text}>innovative, passionate, and dedicated members</p>
 
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
                 <h1 className={styles.header_text}>165,402</h1>
-                <p className={styles.p_text}>
-                combined followers across all digital platforms                  
-                </p>
+                <p className={styles.p_text}>combined followers across all digital platforms</p>
                 {/* stats_details2 */}
               </div>
 
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
                 <h1 className={styles.header_text}>9,050,600</h1>
-                <p className={styles.p_text}>
-                X (formerly Twitter) impressions in the past year
-                </p>
+                <p className={styles.p_text}>X (formerly Twitter) impressions in the past year</p>
                 {/* stats_details2 */}
               </div>
               {/* stats_main2 */}
@@ -124,21 +104,17 @@ export default function () {
               textColor="white"
               side="right"
             >
-              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped
-              me develop my expertise and passion as I worked with diverse and
-              like-minded people who enthusiastically dabble in storytelling,
-              community development, civic engagement, and student leadership.
-              With everyone's support and initiative, it is always a thrill to
-              work with them in pursuit of impactful and moving conversations.”
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as
+              I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+              development, civic engagement, and student leadership. With everyone's support and initiative, it is
+              always a thrill to work with them in pursuit of impactful and moving conversations.”
             </QuoteBlock>
             {/*  mid */}{" "}
           </div>
           {/* section */}
         </div>
         <div className={styles.culture_section}>
-          <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>
-            Magic, madness, heaven, sins
-          </h1>
+          <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>Magic, madness, heaven, sins</h1>
           <p className={styles.p_text}>All the fun starts here</p>
           <div className={styles.culture_mid}>
             <CultureCard
@@ -148,7 +124,8 @@ export default function () {
               textColor="black"
               border="none"
             >
-           After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company.
+              After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day
+              off with good food [and drinks *wink wink*] with great company.
             </CultureCard>
             <CultureCard
               title="Random/Sponty Discord Calls"
@@ -157,7 +134,8 @@ export default function () {
               textColor="white"
               border="none"
             >
-             Where we discuss the most random of things from "Antonism" to Dating App bios. Feel free to hop in whenever you see your orgmates hanging out on one of the "tambay lang" channels.
+              Where we discuss the most random of things from "Antonism" to Dating App bios. Feel free to hop in
+              whenever you see your orgmates hanging out on one of the "tambay lang" channels.
             </CultureCard>
             <CultureCard
               title="PowerPoint 
@@ -167,7 +145,8 @@ export default function () {
               textColor="black"
               border="none"
             >
-           How do TomWebbers celebrate the festivities? By throwing PowerPoint Parties of course! Present the most random things and watch how your orgmates react to your content.
+              How do TomWebbers celebrate the festivities? By throwing PowerPoint Parties of course! Present the most
+              random things and watch how your orgmates react to your content.
             </CultureCard>
             <CultureCard
               title="General 
@@ -176,8 +155,9 @@ export default function () {
               backgroundColor="darkgray"
               textColor="white"
             >
-The official gathering of all TomWebbers - current and alumni! This is where we discuss where we are now, and of course, where we're headed.
-</CultureCard>
+              The official gathering of all TomWebbers - current and alumni! This is where we discuss where we are now,
+              and of course, where we're headed.
+            </CultureCard>
             {/* mid */}{" "}
           </div>
           {/*section */}
@@ -193,12 +173,10 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
               textColor="white"
               side="right"
             >
-              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped
-              me develop my expertise and passion as I worked with diverse and
-              like-minded people who enthusiastically dabble in storytelling,
-              community development, civic engagement, and student leadership.
-              With everyone's support and initiative, it is always a thrill to
-              work with them in pursuit of impactful and moving conversations.”
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as
+              I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+              development, civic engagement, and student leadership. With everyone's support and initiative, it is
+              always a thrill to work with them in pursuit of impactful and moving conversations.”
             </QuoteBlock>
             {/*  mid */}{" "}
           </div>
@@ -206,9 +184,7 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
         </div>
 
         <div className={styles.culture_section}>
-          <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>
-            We small-talk, work and the weather
-          </h1>
+          <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>We small-talk, work and the weather</h1>
 
           <p className={styles.p_text}>And of course, the actual work</p>
           <div className={styles.culture_mid}>
@@ -220,7 +196,8 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
               textColor="white"
               border="none"
             >
-             Never been to this place? Or have you already? TomasinoWeb often goes to onsite coverages where our publication reports everything on ground.
+              Never been to this place? Or have you already? TomasinoWeb often goes to onsite coverages where our
+              publication reports everything on ground.
             </CultureCard>
             <CultureCard
               title="Virtual 
@@ -230,7 +207,8 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
               textColor="black"
               border="none"
             >
-            But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom.
+              But what if you can't join physically? What if the event is impossible to get to? That's where we convene
+              in our virtual newsroom.
             </CultureCard>
             <CultureCard
               title="Interactive 
@@ -240,7 +218,8 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
               textColor="white"
               border="none"
             >
-          Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is.
+              Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the
+              case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is.
             </CultureCard>
             <CultureCard
               title="Mentorship and Collaboration"
@@ -248,7 +227,8 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
               backgroundColor="green"
               textColor="black"
             >
-            In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!
+              In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage
+              cross-department contributions. Expand your horizons with us!
             </CultureCard>
             {/* mid */}{" "}
           </div>
@@ -260,9 +240,7 @@ The official gathering of all TomWebbers - current and alumni! This is where we 
               <h1 className={styles.end_header}>
                 Nice to meet you, <br></br> where you been?
               </h1>
-              <p className={styles.end_paragraph}>
-                We could show you incredible thing →
-              </p>{" "}
+              <p className={styles.end_paragraph}>We could show you incredible thing →</p>{" "}
             </div>
           </div>
           <div className={styles.end_mid_box}>

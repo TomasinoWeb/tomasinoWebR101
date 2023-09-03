@@ -340,6 +340,3 @@ export default function () {
     </Layout>
   );
 }
-
-// update titles and subtitles to have the same style
-// remove footer space
