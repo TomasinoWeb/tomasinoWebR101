@@ -9,23 +9,20 @@ export default function About() {
       <div className={styles["container"]}>
         <div className={styles["hero-container"]}>
           <div className={styles["logo-container"]}>
-            <img
-              src="../assets/about/people/About-Logo.png"
-              alt="TomasinoWeb logo"
-            />
+            <img src="../assets/about/people/About-Logo.png" alt="TomasinoWeb logo" />
           </div>
 
           <div className={styles["statement-container"]}>
             <h1 className={styles["main-heading"]}>What is TomasinoWeb?</h1>
             <p className={styles["bot-statement"]}>
-              TomasinoWeb is the premier digital media organization of the
-              University of Santo Tomas joined by students who are immensely
-              interested in multimedia journalism.
+              TomasinoWeb is the premier digital media organization of the University of
+              Santo Tomas joined by students who are immensely interested in multimedia
+              journalism.
             </p>
 
             <p className={styles["bot-statement"]}>
-              Its primary goal as a student publication is to deliver relevant
-              information to the Thomasian community through online media.
+              Its primary goal as a student publication is to deliver relevant information
+              to the Thomasian community through online media.
             </p>
           </div>
         </div>
@@ -48,7 +45,7 @@ export default function About() {
             </div>
           </Link>
 
-          <Link href="about/culture">
+          <Link href="about/org-culture">
             <div className={styles["culture"]}>
               <div className={styles["culture-image"]}>
                 <div className={styles["image-description"]}>Image</div>
