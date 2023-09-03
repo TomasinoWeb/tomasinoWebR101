@@ -11,7 +11,7 @@ interface HoverableImageProps {
 
 export function HoverableImage(props: HoverableImageProps) {
   return (
-    <div className={styles.HoverableImage} title={props.alt}>
+    <div className={styles.HoverableImage}>
       <div
         className={styles.overlay + " " + (props.active === true ? styles.selected : "")}
         style={{
@@ -29,7 +29,29 @@ export function HoverableImage(props: HoverableImageProps) {
         }}
       />
 
-      <Image src={props.image} alt={`${props.alt}'s Image`} width={500} height={500} className={styles.image} />
+      <Image src={props.image} alt={props.alt} width={500} height={500} className={styles.image} />
+    </div>
+  );
+}
+
+interface HoverableImageFadeProps {
+  image: string;
+  hoveredImage: string;
+  alt: string;
+  active?: boolean;
+}
+
+export function HoverableImageFade(props: HoverableImageFadeProps) {
+  return (
+    <div className={styles.HoverableImage}>
+      <div
+        className={styles.overlay + " " + (props.active === true ? styles.selected : "")}
+        style={{ backgroundImage: `url("${props.hoveredImage}")` }}
+      />
+
+      <div className={styles.base} style={{ backgroundImage: `url("${props.image}")` }} />
+
+      <Image src={props.image} alt={props.alt} width={500} height={500} className={styles.image} />
     </div>
   );
 }
