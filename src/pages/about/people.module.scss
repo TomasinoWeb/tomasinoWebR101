@@ -8,8 +8,6 @@ $mobileSectionGap: 40px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: $sectionGap;
-  margin-bottom: $sectionGap;
 }
 
 // General styles
@@ -25,12 +23,11 @@ $mobileSectionGap: 40px;
 
 // Container with padding
 .container {
-  width: 100%;
-  padding: 0 72px;
+  max-width: 1720px;
+  margin: 0px auto;
+  padding: 0px 60px;
 
   .title {
-    text-align: left;
-
     .titleBig {
       font-family: "Sailec Bold", sans-serif;
       letter-spacing: -1.056px;
@@ -46,6 +43,7 @@ $mobileSectionGap: 40px;
 
   .heading {
     margin-top: $sectionGap;
+    margin-bottom: $sectionGap;
 
     .componentContainer {
       width: 100%;
@@ -55,7 +53,6 @@ $mobileSectionGap: 40px;
 
   .memberCount {
     width: 100%;
-    padding: 0 108px;
 
     .subtitle {
       text-align: left;
@@ -119,6 +116,7 @@ $mobileSectionGap: 40px;
 
     .title {
       text-align: center;
+      line-height: 1.2em;
     }
   }
 }
@@ -247,8 +245,10 @@ $mobileSectionGap: 40px;
           opacity: 0;
 
           .name {
+            line-height: 1em;
             margin-top: auto;
             font-size: 24px;
+            padding-bottom: 5px;
           }
 
           .position {
@@ -268,23 +268,23 @@ $mobileSectionGap: 40px;
 }
 
 .otherTestimonies {
-  padding: 120px 72px;
   background-color: var(--black);
   color: var(--white) !important;
+  padding: 130px 0px;
 
   .title,
   .subtitle {
     color: var(--white);
   }
 
-  .componentContainer {
-    gap: 50px;
+  .subtitle {
+    margin-bottom: 50px;
   }
 }
 
 .otherInfo {
   width: 100%;
-  height: 820px;
+  height: calc(100vh - var(--footer-size));
   position: relative;
 
   .image {
@@ -298,7 +298,9 @@ $mobileSectionGap: 40px;
   }
 
   .content {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 
@@ -328,14 +330,8 @@ $mobileSectionGap: 40px;
 // 990px (tablet) and 768px (mobile) - where margin or padding is adjusted
 @media only screen and (max-width: 990px) {
   .container {
-    padding: 0 36px;
-
     .memberCount {
       padding: 0px;
-
-      .title {
-        margin-bottom: 20px;
-      }
     }
 
     .yearCount {
@@ -345,11 +341,6 @@ $mobileSectionGap: 40px;
 }
 
 @media only screen and (max-width: 768px) {
-  .componentContainer {
-    margin-top: $mobileSectionGap;
-    margin-bottom: $mobileSectionGap;
-  }
-
   // General styles
   .title {
     font-size: 36px;
@@ -360,15 +351,8 @@ $mobileSectionGap: 40px;
 
   // Container with padding
   .container {
-    padding: 0px;
-
     .memberCount {
       padding: 0px;
-
-      .title,
-      .subtitle {
-        padding: 0 36px;
-      }
 
       .grid {
         margin-top: 36px;
@@ -386,10 +370,6 @@ $mobileSectionGap: 40px;
   .banner,
   .coreGroup {
     margin-top: $mobileSectionGap;
-  }
-
-  .otherTestimonies {
-    padding: 80px 36px;
   }
 
   .otherInfo {
@@ -411,6 +391,11 @@ $mobileSectionGap: 40px;
 
 // 640px and 550px - where font-size and flex-direction is changed
 @media only screen and (max-width: 640px) {
+  .otherTestimonies {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
   .bannerGrid {
     flex-direction: column;
 
@@ -418,6 +403,24 @@ $mobileSectionGap: 40px;
       min-width: 100%;
       width: 100%;
       height: 250px;
+    }
+  }
+
+  .container {
+    padding: 0 30px;
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      line-height: 1em;
+
+      .titleSmall {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
     }
   }
 
@@ -433,7 +436,7 @@ $mobileSectionGap: 40px;
 
         &.expanded {
           width: 100%;
-          height: 300px;
+          height: 400px;
           transition: height 0.3s ease;
 
           .content {
@@ -459,19 +462,8 @@ $mobileSectionGap: 40px;
   .title {
     font-size: 24px;
   }
+
   .subtitle {
     font-size: 16px;
-  }
-
-  // Container with padding
-  .container {
-    .title {
-      display: flex;
-      flex-direction: column;
-
-      .titleSmall {
-        font-size: 16px;
-      }
-    }
   }
 }

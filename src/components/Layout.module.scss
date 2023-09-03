@@ -4,8 +4,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  
-  .main{
+
+  .main {
     flex: 1;
   }
 
@@ -13,7 +13,7 @@
     width: 32px;
     height: 32px;
   }
-  
+
   .hidden {
     display: none;
     visibility: hidden;
@@ -79,7 +79,7 @@
       border: none;
     }
   }
-  
+
   .logo {
     display: none;
   }
@@ -142,19 +142,19 @@
       visibility: hidden;
     }
 
-    .mobileNavbar{
+    .mobileNavbar {
       .menu {
         display: none;
         visibility: hidden;
       }
-      .menuLink{
+      .menuLink {
         display: none;
       }
-      .menuLogo{
+      .menuLogo {
         display: none;
       }
     }
-    
+
     .navbar {
       width: 100%;
       height: 100px;
@@ -231,3 +231,9 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .layoutContainer .navbar {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

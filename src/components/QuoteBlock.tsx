@@ -10,81 +10,21 @@ interface QuoteBlockProps {
   children: string;
   image: string;
   textColor: string;
+  side: "left" | "right";
 }
 
-export const Left: React.FC<QuoteBlockProps> = ({
-  author,
-  position,
-  year,
-  children,
-  image,
-  textColor,
-}) => {
+export const QuoteBlock: React.FC<QuoteBlockProps> = ({ author, position, year, children, image, textColor, side }) => {
   return (
-    <div className={styles.quoteContainerLeft}>
+    <div className={styles.quoteContainer} style={{ flexDirection: side === "right" ? "row" : "row-reverse" }}>
       <div className={styles.quoteTextContainer}>
-        <p
-          className={styles.quoteText}
-          style={{ color: `var(--${textColor})` }}
-        >
+        <p className={styles.quoteText} style={{ color: `var(--${textColor})` }}>
           {children}
         </p>
-        <p
-          className={styles.quoteAuthor}
-          style={{ color: `var(--${textColor})` }}
-        >
+        <p className={styles.quoteAuthor} style={{ color: `var(--${textColor})` }}>
           - {author} ({position}, PY {year})
         </p>
       </div>
-      <Image
-        src={image}
-        alt={author}
-        width={500}
-        height={500}
-        className={styles.quoteImg}
-      />
+      <Image src={image} alt={author} width={500} height={500} className={styles.quoteImg} />
     </div>
   );
 };
-
-export const Right: React.FC<QuoteBlockProps> = ({
-  author,
-  position,
-  year,
-  children,
-  image,
-  textColor,
-}) => {
-  return (
-    <div className={styles.quoteContainer}>
-      <div className={styles.quoteTextContainer}>
-        <p
-          className={styles.quoteText}
-          style={{ color: `var(--${textColor})` }}
-        >
-          {children}
-        </p>
-        <p
-          className={styles.quoteAuthor}
-          style={{ color: `var(--${textColor})` }}
-        >
-          - {author} ({position}, PY {year})
-        </p>
-      </div>
-      <Image
-        src={image}
-        alt={author}
-        width={500}
-        height={500}
-        className={styles.quoteImg}
-      />
-    </div>
-  );
-};
-
-const QuoteBlock = {
-  Left,
-  Right,
-};
-
-export default QuoteBlock;

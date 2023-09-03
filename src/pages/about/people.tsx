@@ -11,7 +11,7 @@ import BannerGrid3 from "public/assets/about/people/BannerGrid3.png";
 
 import { Titles } from "../../components/Titles";
 import { Buttons } from "../../components/Buttons";
-import QuoteBlock from "../../components/QuoteBlock";
+import { QuoteBlock } from "../../components/QuoteBlock";
 import { HoverableImage } from "../../components/HoverableImage";
 
 const otherMembers = [
@@ -151,11 +151,15 @@ export default function () {
 
   return (
     <Layout>
-      <div className={styles.container}>
+      <div className={styles.container} style={{ marginBottom: "60px" }}>
         <div className={styles.heading}>
-          <Titles title="The People">The Swifties</Titles>
+          <div style={{ marginBottom: "30px" }}>
+            <Titles title="The People">The Swifties</Titles>
+          </div>
+
           <div className={styles.componentContainer}>
-            <QuoteBlock.Left
+            <QuoteBlock
+              side="left"
               author="Mikaela Gabrielle De Castro"
               position="Blogs Editor"
               year="2021-2024"
@@ -166,12 +170,12 @@ export default function () {
               I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
               development, civic engagement, and student leadership. With everyone's support and initiative, it is
               always a thrill to work with them in pursuit of impactful and moving conversations.”
-            </QuoteBlock.Left>
+            </QuoteBlock>
           </div>
         </div>
 
         <div className={styles.memberCount}>
-          <h1 className={styles.title}>
+          <h1 className={styles.title} style={{ textAlign: "left" }}>
             <span className={styles.titleBig}>xx TomWebbers</span>{" "}
             <span className={styles.titleSmall}>and counting!</span>
           </h1>
@@ -198,18 +202,19 @@ export default function () {
         </div>
 
         <div className={styles.componentContainer}>
-          <QuoteBlock.Right
+          <QuoteBlock
             author="Mikaela Gabrielle De Castro"
             position="Blogs Editor"
             year="2021-2024"
             image="/assets/components/Album-Placeholder.png"
             textColor="black"
+            side="right"
           >
             “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
             worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
             development, civic engagement, and student leadership. With everyone's support and initiative, it is always
             a thrill to work with them in pursuit of impactful and moving conversations.”
-          </QuoteBlock.Right>
+          </QuoteBlock>
         </div>
       </div>
 
@@ -227,18 +232,19 @@ export default function () {
 
       <div className={styles.container}>
         <div className={styles.componentContainer}>
-          <QuoteBlock.Left
+          <QuoteBlock
             author="Mikaela Gabrielle De Castro"
             position="Blogs Editor"
             year="2021-2024"
             image="/assets/components/Album-Placeholder.png"
             textColor="black"
+            side="left"
           >
             “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
             worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
             development, civic engagement, and student leadership. With everyone's support and initiative, it is always
             a thrill to work with them in pursuit of impactful and moving conversations.”
-          </QuoteBlock.Left>
+          </QuoteBlock>
         </div>
       </div>
 
@@ -284,33 +290,39 @@ export default function () {
       </div>
 
       <div className={styles.otherTestimonies}>
-        <h1 className={styles.title}>12 Months</h1>
-        <p className={styles.subtitle}>of a challenging yet dynamic publication year</p>
-        <div className={styles.componentContainer}>
-          <QuoteBlock.Left
-            author="Mikaela Gabrielle De Castro"
-            position="Blogs Editor"
-            year="2021-2024"
-            image="/assets/components/Album-Placeholder.png"
-            textColor="white"
-          >
-            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
-            worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
-            development, civic engagement, and student leadership. With everyone's support and initiative, it is always
-            a thrill to work with them in pursuit of impactful and moving conversations.”
-          </QuoteBlock.Left>
-          <QuoteBlock.Right
-            author="Mikaela Gabrielle De Castro"
-            position="Blogs Editor"
-            year="2021-2024"
-            image="/assets/components/Album-Placeholder.png"
-            textColor="white"
-          >
-            “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as I
-            worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
-            development, civic engagement, and student leadership. With everyone's support and initiative, it is always
-            a thrill to work with them in pursuit of impactful and moving conversations.”
-          </QuoteBlock.Right>
+        <div className={styles.container}>
+          <h1 className={styles.title}>12 Months</h1>
+          <p className={styles.subtitle}>of a challenging yet dynamic publication year</p>
+
+          <div className={styles.componentContainer}>
+            <QuoteBlock
+              author="Mikaela Gabrielle De Castro"
+              position="Blogs Editor"
+              year="2021-2024"
+              image="/assets/components/Album-Placeholder.png"
+              textColor="white"
+              side="left"
+            >
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as
+              I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+              development, civic engagement, and student leadership. With everyone's support and initiative, it is
+              always a thrill to work with them in pursuit of impactful and moving conversations.”
+            </QuoteBlock>
+
+            <QuoteBlock
+              author="Mikaela Gabrielle De Castro"
+              position="Blogs Editor"
+              year="2021-2024"
+              image="/assets/components/Album-Placeholder.png"
+              textColor="white"
+              side="right"
+            >
+              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as
+              I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
+              development, civic engagement, and student leadership. With everyone's support and initiative, it is
+              always a thrill to work with them in pursuit of impactful and moving conversations.”
+            </QuoteBlock>
+          </div>
         </div>
       </div>
 
