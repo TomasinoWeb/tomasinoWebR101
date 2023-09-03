@@ -5,6 +5,8 @@ import { QuoteBlock } from "../../components/QuoteBlock";
 import { CultureCard } from "../../components/CultureCard";
 import { Titles } from "../../components/Titles";
 
+import Link from "next/link";
+
 import Image from "next/image";
 import image from "public/assets/about/culture/calls.jpeg";
 
@@ -240,7 +242,9 @@ export default function () {
               <h1 className={styles.end_header}>
                 Nice to meet you, <br></br> where you been?
               </h1>
-              <p className={styles.end_paragraph}>We could show you incredible thing →</p>{" "}
+              <Link href="/about/people">
+                <span className={styles.end_paragraph}>We could show you incredible things →</span>
+              </Link>
             </div>
           </div>
           <div className={styles.end_mid_box}>
