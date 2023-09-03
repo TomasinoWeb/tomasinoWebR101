@@ -61,32 +61,30 @@
 }
 
 .eroBlockContainer {
+  width: 100%;
   display: flex;
-  min-height: 25%;
-}
-
-.eroBlockContainer:first-child {
-  border-bottom: 3px solid var(--darkgray);
-}
-
-.eroBlockContainer:last-child {
+  align-items: center;
+  position: relative;
   border-top: 3px solid var(--darkgray);
+  border-bottom: 3px solid var(--darkgray);
 }
 
 .eroBlockContainer > * {
   flex-basis: 100%;
 }
 
-.eroBlockContainer > .eroBlock:not(:last-child) {
+.eroBlockContainer > .eroBlock {
   border-right: 3px solid var(--darkgray);
 }
 
 .eroBlock {
-  background-color: aquamarine;
+  // background-color: aquamarine;
+  width: 20%;
+  position: relative;
 }
 
 .eroBlock:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  // background-color: rgba(0, 0, 0, 0.5);
 }
 
 .callToAction {

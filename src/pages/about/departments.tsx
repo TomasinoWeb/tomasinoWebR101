@@ -4,7 +4,7 @@ import styles from "./departments.module.scss";
 import Image from "next/image";
 import { otherMembers } from "../../../public/assets/data/members-data";
 import { useState } from "react";
-import { HoverableImage } from "../../components/HoverableImage";
+import { HoverableImage, HoverableImageFade } from "../../components/HoverableImage";
 
 type Member = {
   name: string;
@@ -13,7 +13,6 @@ type Member = {
   description: string;
   background: string;
   foreground: string;
-  hoverColor: string;
 };
 
 export default function MyComponent() {
@@ -50,9 +49,9 @@ export default function MyComponent() {
           <div className={styles.grid}>
             {otherMembers.map((member, index) => (
               <div key={index} className={styles.member} onClick={() => handleImageClick(member)}>
-                <HoverableImage
-                  hoverColor={member.hoverColor}
+                <HoverableImageFade
                   image={member.image}
+                  hoveredImage={member.hoveredImage}
                   alt={`${member.name}'s image`}
                   active={member.name === selectedMember?.name}
                 />
