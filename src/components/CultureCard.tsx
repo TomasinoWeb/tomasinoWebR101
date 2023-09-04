@@ -30,9 +30,9 @@ export const CultureCard: React.FC<CultureCardProps> = ({
           className={styles.image}
         />
       </div>
+      <div className={`${styles.cardWidth}  ${border == "none" ? styles.none : null}`}  style={{ backgroundColor: `var(--${backgroundColor})`}}>
       <div
-        className={`${styles.cardTextContainer} ${border == "none" ? styles.none : null}`}
-        style={{ backgroundColor: `var(--${backgroundColor})` }}
+        className={`${styles.cardTextContainer}`}
       >
         <h3 className={styles.cardTitle} style={{ color: `var(--${textColor})` }}>
           {title}
@@ -41,6 +41,6 @@ export const CultureCard: React.FC<CultureCardProps> = ({
           {children}
         </p>
       </div>
-    </div>
+    </div> </div>
   );
 };
