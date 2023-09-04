@@ -21,11 +21,12 @@ interface LayoutProps {
 }
 
 export function Layout(props: LayoutProps) {
+  const { showFooter = true } = props;
   return (
     <div className={styles.layoutContainer} style={{ backgroundColor: props.departmentBackground }}>
       <Header textColor={props.textColor} />
       <main className={styles.main}>{props.children}</main>
-      {props.showFooter && <Footer />}
+      {showFooter && <Footer />}
     </div>
   );
 }
