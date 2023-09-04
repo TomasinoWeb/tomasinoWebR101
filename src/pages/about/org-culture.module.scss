@@ -175,10 +175,10 @@
     width: 70%;
 
     margin-top: 80px;
-    .header_text {
-      font-size: 48px !important ;
-    }
     flex-wrap: wrap;
+  }
+  .header_text {
+    font-size: 48px !important ;
   }
 }
 
@@ -201,10 +201,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  .p_text {
-    margin-top: 0px;
-    width: 300px;
-  }
+
 }
 
 .last {
@@ -240,6 +237,11 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    .header_text {
+      font-size: 38px !important;
+      text-align: center;
+    }
   }
 
   .stats_main2 {
@@ -250,10 +252,6 @@
 
     margin-right: 0px !important;
     width: 100%;
-    .header_text {
-      font-size: 38px !important;
-      text-align: center;
-    }
   }
   .end_background {
     flex-direction: column;
@@ -281,9 +279,6 @@
   .stats_details {
     width: 90%;
     margin-left: 0px;
-    .header_text {
-      font-size: 28px !important ;
-    }
   }
   .culture_section {
     .header_text {
@@ -318,9 +313,6 @@
     align-items: center;
     //flex-wrap: wrap;
     width: 100%;
-    .p_text {
-      margin-bottom: 50px;
-    }
   }
 }
 .culture_mid {
@@ -370,13 +362,6 @@
     .box {
       width: 80px !important;
       height: 80px !important;
-    }
-  }
-  .stats_main {
-    .stats_details {
-      .header_text {
-        font-size: 28px !important ;
-      }
     }
   }
 }

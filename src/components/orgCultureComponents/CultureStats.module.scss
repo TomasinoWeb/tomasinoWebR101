@@ -1,0 +1,25 @@
+.header_text {
+  font-size: 48px !important ;
+}
+.p_text {
+  margin-top: 0px;
+  width: 300px;
+}
+@media only screen and (max-width: 1150px) {
+  .header_text {
+    font-size:40px !important;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  .p_text {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+      .header_text {
+        font-size: 38px !important ;
+      }
+    
+}
