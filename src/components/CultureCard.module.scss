@@ -1,25 +1,24 @@
 @media screen and (max-width: 768px) {
-    .cardContainer{
-      max-width: 280px;
-      padding: 8px;
-      .cardImg{
-        height: 162px;
-        width: 100%!important;
-      }
-      .cardTextContainer{
-        padding: 20.4px 16px 16px 16px;
-      }
-      .cardTitle{
-        font-size: 16px;    
-      }
-      .cardText{
-        font-size: 14px;
-      }
-      .cardWidth{
-        width: 100%!important;
-      }
-    } 
-    
+  .cardContainer {
+    max-width: 280px;
+    padding: 8px;
+    .cardImg {
+      height: 162px;
+      width: 100% !important;
+    }
+    .cardTextContainer {
+      padding: 20.4px 16px 16px 16px;
+    }
+    .cardTitle {
+      font-size: 16px;
+    }
+    .cardText {
+      font-size: 14px;
+    }
+    .cardWidth {
+      width: 100% !important;
+    }
+  }
 }
 
 .cardContainer {
@@ -27,17 +26,17 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 300px;
-  
+
   .none {
     border-right: none !important;
   }
-  
+
   .cardImg {
     border: 3px solid #393939;
     border-bottom: none;
     width: 100%;
     height: 240px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     background-size: cover;
 
     .image {
@@ -46,11 +45,11 @@
       object-fit: cover;
     }
   }
-.cardWidth{
-  width: 100%;
-  height:350px!important;
-border: 3px solid #393939;
-}
+  .cardWidth {
+    width: 100%;
+    height: 350px !important;
+    border: 3px solid #393939;
+  }
   .cardTextContainer {
     display: flex;
     width: 90%;
@@ -59,10 +58,11 @@ border: 3px solid #393939;
     align-items: flex-start;
     gap: 8px;
     flex: 1 0 0;
- 
 
     .cardTitle {
-      font-family: Sailec bold, sans-serif;
+      font-family:
+        Sailec bold,
+        sans-serif;
       font-size: 24px;
       font-style: normal;
       font-weight: 700;
@@ -78,18 +78,18 @@ border: 3px solid #393939;
       font-weight: 400;
       line-height: 24px; /* 150% */
       letter-spacing: -0.352px;
-      width: 100%!important;
+      width: 100% !important;
     }
-  } 
-  
+  }
 }
 
 @media only screen and (max-width: 1350px) {
   .cardContainer {
-  .none {
-    border-right: 3px solid #393939!important;
-  }}
-  .cardContainer{
+    .none {
+      border-right: 3px solid #393939 !important;
+    }
+  }
+  .cardContainer {
     padding: 2px;
   }
 }

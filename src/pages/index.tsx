@@ -63,7 +63,6 @@ export default function () {
     <div className={styles.index}>
       <div className={styles.main}>
         <div className={`${styles.eroBlockContainerTop} ${styles.eroBlockContainer}`}>
-          {/* TODO: Add eroblock images */}
           {People.slice(0, 5).map((str) => {
             return (
               <div className={styles.eroBlock} key={str.base}>
@@ -83,19 +82,19 @@ export default function () {
             <Image className={styles.titleImage} src={Title} alt="tomasino r101 title"></Image>
             <ul className={`${styles.links}`}>
               <li className={styles.linkItem}>
-                <Link href="">ABOUT</Link>
+                <Link href="/about">ABOUT</Link>
               </li>
               <li className={styles.linkBullet}>•</li>
               <li className={styles.linkItem}>
-                <Link href="">R101</Link>
+                <Link href="/r101">R101</Link>
               </li>
               <li className={styles.linkBullet}>•</li>
               <li className={styles.linkItem}>
-                <Link href="">FAQ</Link>
+                <Link href="/faq">FAQ</Link>
               </li>
               <li className={styles.linkBullet}>•</li>
               <li className={styles.linkItem}>
-                <Link href="">THE POOL</Link>
+                <Link href="https://discord.gg/BHtvRaRr">THE POOL</Link>
               </li>
             </ul>
             <div className={styles.center}>
@@ -106,7 +105,6 @@ export default function () {
           </div>
         </div>
         <div className={`${styles.eroBlockContainerMobile} ${styles.eroBlockContainer}`}>
-          {/* TODO: Add eroblock images */}
           {People.slice(5, 10).map((str) => {
             return (
               <div className={styles.eroBlock} key={str.base}>
@@ -122,7 +120,6 @@ export default function () {
         </div>
       </div>
       <div className={`${styles.eroBlockContainerDesktop} ${styles.eroBlockContainer}`}>
-        {/* TODO: Add eroblock images */}
         {People.slice(5, 10).map((str) => {
           return (
             <div className={styles.eroBlock} key={str.base}>

@@ -22,25 +22,21 @@ export const CultureCard: React.FC<CultureCardProps> = ({
   return (
     <div className={styles.cardContainer}>
       <div className={`${styles.cardImg} ${border == "none" ? styles.none : null}`}>
-        <Image
-          src={image}
-          alt={title}
-          width={500}
-          height={500}
-          className={styles.image}
-        />
+        <Image src={image} alt={title} width={500} height={500} className={styles.image} />
       </div>
-      <div className={`${styles.cardWidth}  ${border == "none" ? styles.none : null}`}  style={{ backgroundColor: `var(--${backgroundColor})`}}>
       <div
-        className={`${styles.cardTextContainer}`}
+        className={`${styles.cardWidth}  ${border == "none" ? styles.none : null}`}
+        style={{ backgroundColor: `var(--${backgroundColor})` }}
       >
-        <h3 className={styles.cardTitle} style={{ color: `var(--${textColor})` }}>
-          {title}
-        </h3>
-        <p className={styles.cardText} style={{ color: `var(--${textColor})` }}>
-          {children}
-        </p>
-      </div>
-    </div> </div>
+        <div className={`${styles.cardTextContainer}`}>
+          <h3 className={styles.cardTitle} style={{ color: `var(--${textColor})` }}>
+            {title}
+          </h3>
+          <p className={styles.cardText} style={{ color: `var(--${textColor})` }}>
+            {children}
+          </p>
+        </div>
+      </div>{" "}
+    </div>
   );
 };

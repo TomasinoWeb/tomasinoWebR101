@@ -263,14 +263,11 @@ export default function () {
           <p className={styles.subtitle}>TomasinoWeb continues to lead and innovate the modern web</p>
           <h1 className={styles.title}>Are you ready for it?</h1>
           <div className={styles.buttons}>
-            <Buttons href="/">Let the games begin</Buttons>
-            <Buttons href="/">Where do I fit?</Buttons>
+            <Buttons href="">Let the games begin</Buttons>
+            <Buttons href="/about/departments">Where do I fit?</Buttons>
           </div>
         </div>
       </div>
     </Layout>
   );
 }
-
-// update titles and subtitles to have the same style
-// remove footer space
