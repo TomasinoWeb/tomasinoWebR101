@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   gap: 70px;
-  height: auto;
+  min-height: calc(50vh - var(--header-size));
   padding: 14px 24px 60px;
 
   .logo {
