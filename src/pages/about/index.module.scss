@@ -1,224 +1,199 @@
-.About {
-  background-color: #151f28;
-  height: 100vh;
-}
-
 .container {
+  background-color: #151f28;
+  min-height: calc(100vh - var(--header-size));
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.hero-container {
+.hero {
   display: flex;
   justify-content: center;
-  gap: 75px;
-  height: calc(50vh - 70px);
-  margin-top: 70px;
+  gap: 70px;
+  height: auto;
+  padding: 14px 24px 60px;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+
+    img {
+      height: 250px;
+    }
+  }
+
+  .statement {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    max-width: 760px;
+    padding-right: 10px;
+
+    h1 {
+      color: white;
+      font-size: 48px;
+    }
+    p {
+      font-size: 20px;
+      color: white;
+    }
+  }
 }
 
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 10px;
-}
-
-.logo-container img {
-  height: 250px;
-}
-
-.statement-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-direction: column;
-  max-width: 760px;
-  padding-right: 10px;
-}
-
-.statement-container .main-heading {
-  color: white;
-  font-size: 50px;
-}
-
-.statement-container .bot-statement {
-  font-size: 20px;
-  color: white;
-}
-
-.redirect-container {
+.redirect {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: calc(50vh);
-}
-
-.redirect-container a {
-  text-decoration: none;
-}
-
-.departments,
-.people,
-.culture {
-  display: flex;
-  height: 50vh;
-  width: calc(100vw / 3);
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.departments-image {
-  height: 50vh;
-  width: calc(100vw / 3);
-  background-image: url("../../../public/assets/about/people/About-Departments.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  filter: grayscale(100%) brightness(0.4);
-  transition: filter 1s ease;
-}
-
-.people-image {
-  height: 50vh;
-  width: calc(100vw / 3);
-  background-image: url("../../../public/assets/about/people/About-People.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  filter: grayscale(100%) brightness(0.4);
-  transition: filter 1s ease;
-}
-
-.culture-image {
-  height: 50vh;
-  width: calc(100vw / 3);
-  background-image: url("../../../public/assets/about/people/About-Culture.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  filter: grayscale(100%) brightness(0.4);
-  transition: filter 1s ease;
-}
-
-.image-description {
-  display: none;
-}
-
-.departments:hover .departments-image,
-.people:hover .people-image,
-.culture:hover .culture-image {
-  filter: grayscale(0%);
-}
-
-.sub-heading {
-  font-size: 40px;
-  position: absolute;
-  top: 45%;
-  color: white;
-  font-weight: 100;
-}
-
-@media (max-width: 1200px) {
-  .statement-container .main-heading {
-    font-size: 40px;
-  }
-
-  .statement-container .bot-statement {
-    font-size: 17px;
-  }
-
-  .sub-heading {
-    font-size: 30px;
-  }
-
-  .logo-container img {
-    height: 200px;
-  }
-}
-
-//Mobile view
-@media (max-width: 768px) {
-  .About {
-    height: auto;
-  }
-
-  .hero-container {
-    flex-direction: column;
-    gap: 15px;
-    height: 60vh;
-  }
-
-  .logo-container {
-    padding: 0;
-  }
-
-  .statement-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 50px 20px 50px;
-  }
-
-  .statement-container .main-heading {
-    font-size: 30px;
-  }
-
-  .statement-container p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .redirect-container {
-    flex-direction: column;
-  }
 
   .departments,
   .people,
   .culture {
     display: flex;
+    height: 50vh;
+    width: calc(100vw / 3);
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
+
+    .img:hover {
+      filter: grayscale(0%);
+    }
+
+    .title {
+      font-size: 40px;
+      position: absolute;
+      top: 45%;
+      color: white;
+      font-weight: 100;
+    }
   }
 
-  .departments-image,
-  .people-image,
-  .culture-image {
-    width: 100vw;
+  .departments .img {
+    height: 50vh;
+    width: calc(100vw / 3);
+    background-image: url("../../../public/assets/about/people/About-Departments.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: grayscale(100%) brightness(0.4);
+    transition: filter 1s ease;
   }
 
-  .redirect-container {
+  .people .img {
+    height: 50vh;
+    width: calc(100vw / 3);
+    background-image: url("../../../public/assets/about/people/About-People.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: grayscale(100%) brightness(0.4);
+    transition: filter 1s ease;
+  }
+
+  .culture .img {
+    height: 50vh;
+    width: calc(100vw / 3);
+    background-image: url("../../../public/assets/about/people/About-Culture.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: grayscale(100%) brightness(0.4);
+    transition: filter 1s ease;
+  }
+}
+
+@media (max-width: 1200px) {
+  .logo img {
+    height: 200px;
+  }
+  .statement {
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+  }
+
+  .title {
+    font-size: 30px;
+  }
+}
+
+//Mobile view
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 15px;
     height: auto;
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .statement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px 20px 50px;
+
+    h1 {
+      font-size: 30px;
+    }
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .redirect {
+    height: auto;
+    flex-direction: column;
+
+    .departments,
+    .people,
+    .culture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+
+      .img {
+        width: 100vw;
+      }
+    }
   }
 }
 
 @media (max-width: 440px) {
-  .statement-container {
-    padding: 20px 20px 50px 20px;
-  }
-
-  .statement-container .main-heading {
-    font-size: 30px;
-  }
-
-  .statement-container .bot-statement {
-    font-size: 14px;
-  }
-
-  .sub-heading {
-    font-size: 25px;
-  }
-
-  .logo-container img {
+  .logo img {
     height: 150px;
+  }
+  .statement {
+    padding: 20px 20px 50px 20px;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .title {
+    font-size: 25px;
   }
 }
