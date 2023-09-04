@@ -1,4 +1,4 @@
-import styles from "../styles/faq.module.scss";
+import styles from "./faq.module.scss";
 import Head from "next/head";
 import { MouseEventHandler, useEffect, useState } from "react";
 import Link from "next/link";
@@ -51,7 +51,6 @@ const FaqPage = () => {
     color: "var(--darkgray)",
     backgroundColor: "white",
   };
-  
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -63,14 +62,11 @@ const FaqPage = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
 
   useEffect(() => {
     tag === "org" ? setOrgShown(true) : setOrgShown(false);
     tag === "interview" ? setInterviewShown(true) : setInterviewShown(false);
-    tag === "application"
-      ? setApplicationShown(true)
-      : setApplicationShown(false);
+    tag === "application" ? setApplicationShown(true) : setApplicationShown(false);
     tag === "results" ? setResultsShown(true) : setResultsShown(false);
     tag === "sussy" ? setSussyShown(true) : setSussyShown(false);
   }, [tag, buttonPressed, windowWidth]);
@@ -97,11 +93,7 @@ const FaqPage = () => {
               >
                 interview
               </button>
-              <a
-                href="https://tomasinoweb.org"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
                 <div className={styles["faq-main-item"]}>
                   <img
                     src="/static/HandWriting.png"
@@ -118,11 +110,7 @@ const FaqPage = () => {
                 application
               </button>
 
-              <a
-                href="https://join.tomasinoweb.org/quiz"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://join.tomasinoweb.org/quiz" target="_blank" rel="noreferrer">
                 <div className={styles["faq-main-item"]}>
                   <img
                     src="/static/slot-machine.png"
@@ -139,11 +127,7 @@ const FaqPage = () => {
                 results
               </button>
 
-              <a
-                href="https://youtu.be/m6fCTVsMmS8"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
                 <div className={styles["faq-main-item"]}>
                   <img
                     src="/static/clapper-board.png"
@@ -172,30 +156,16 @@ const FaqPage = () => {
                 </p>
               )}
             </div>
-            <div
-              className={`faq-answer ${
-                interviewShown ? "faq-answer-open" : ""
-              }`}
-            >
+            <div className={`faq-answer ${interviewShown ? "faq-answer-open" : ""}`}>
               {interviewShown && <InterviewGroup />}
             </div>
-            <div
-              className={`faq-answer ${
-                applicationShown ? "faq-answer-open" : ""
-              }`}
-            >
+            <div className={`faq-answer ${applicationShown ? "faq-answer-open" : ""}`}>
               {applicationShown && <ApplicationGroup />}
             </div>
-            <div
-              className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}
-            >
+            <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
               {resultsShown && <ResultsGroup />}
             </div>
-            <div
-              className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}
-            >
-              {sussyShown && <SussyGroup />}
-            </div>
+            <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>{sussyShown && <SussyGroup />}</div>
           </pre>
         </div>
       </div>
