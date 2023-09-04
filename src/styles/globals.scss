@@ -114,3 +114,16 @@ a,
 button {
   cursor: pointer;
 }
+
+.react-markdown {
+  color: inherit;
+  p,
+  em,
+  strong {
+    color: inherit;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}

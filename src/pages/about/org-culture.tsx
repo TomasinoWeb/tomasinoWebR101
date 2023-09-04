@@ -11,7 +11,8 @@ import Image from "next/image";
 import image from "public/assets/about/culture/calls.jpeg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown, faQuestion, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowAltCircleDown, faQuestion,faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { testimonials } from "../../../public/assets/data/testimonials";
 
 interface TinyBoxProps {
   noRightBorder?: boolean;
@@ -99,18 +100,10 @@ export default function () {
         <div className={styles.testimonial_section}>
           <div className={styles.testimonial_mid}>
             <QuoteBlock
-              author="Mikaela Gabrielle De Castro"
-              position="Blogs Editor"
-              year="2021-2024"
-              image="/assets/components/Album-Placeholder.png"
+              testimonial={testimonials[1]}
               textColor="white"
               side="right"
-            >
-              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as
-              I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
-              development, civic engagement, and student leadership. With everyone's support and initiative, it is
-              always a thrill to work with them in pursuit of impactful and moving conversations.”
-            </QuoteBlock>
+              />
             {/*  mid */}{" "}
           </div>
           {/* section */}
@@ -167,19 +160,7 @@ export default function () {
 
         <div className={styles.testimonial_section}>
           <div className={styles.testimonial_mid}>
-            <QuoteBlock
-              author="Mikaela Gabrielle De Castro"
-              position="Blogs Editor"
-              year="2021-2024"
-              image="/assets/components/Album-Placeholder.png"
-              textColor="white"
-              side="right"
-            >
-              “I was a wide-eyed freshman when I joined TomasinoWeb. They helped me develop my expertise and passion as
-              I worked with diverse and like-minded people who enthusiastically dabble in storytelling, community
-              development, civic engagement, and student leadership. With everyone's support and initiative, it is
-              always a thrill to work with them in pursuit of impactful and moving conversations.”
-            </QuoteBlock>
+            <QuoteBlock testimonial={testimonials[5]} textColor="white" side="right"/>
             {/*  mid */}{" "}
           </div>
           {/* section */}
