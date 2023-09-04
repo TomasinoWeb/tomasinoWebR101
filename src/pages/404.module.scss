@@ -1,0 +1,72 @@
+.container {
+  min-height: calc(100vh - var(--header-size) - var(--footer-size));
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  padding: 15vh 30px;
+
+  .inner {
+    text-align: center;
+
+    .tomwegg {
+      width: 150px;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 50px;
+    }
+
+    .pageNotFound,
+    .subheading {
+      font-size: 24px;
+      line-height: 1em;
+    }
+
+    .subheading {
+      font-family: "Inter Tight", sans-serif;
+    }
+
+    .heading {
+      font-family: "Sailec Bold Italic", sans-serif;
+
+      font-size: 40px;
+      line-height: 1em;
+      margin: 20px 0px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10vh 30px;
+
+    .inner {
+      .tomwegg {
+        width: 130px;
+        margin-bottom: 30px;
+      }
+
+      .pageNotFound,
+      .subheading {
+        font-size: 18px;
+      }
+
+      .heading {
+        font-size: 32px;
+        margin: 20px 0px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
