@@ -1,4 +1,4 @@
-export const people = [
+export const People = [
   {
     name: "secretariat",
     base: "/assets/landing/Departments-Secretariat-0.png",
