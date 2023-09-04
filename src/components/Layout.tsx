@@ -24,7 +24,7 @@ export function Layout(props: LayoutProps) {
   const { showFooter = true } = props;
   return (
     <div className={styles.layoutContainer} style={{ backgroundColor: props.departmentBackground }}>
-      <Header textColor={props.textColor} />
+      <Header textColor={props.textColor} departmentBackground={props.departmentBackground} />
       <main className={styles.main}>{props.children}</main>
       {showFooter && <Footer />}
     </div>
@@ -38,7 +38,7 @@ const goToTop = () => {
   });
 };
 
-function Header(props: { textColor: any }) {
+function Header(props: { textColor: any; departmentBackground: any }) {
   const [visible, isVisible] = useState(false);
 
   function handleMenuClick() {
@@ -51,15 +51,18 @@ function Header(props: { textColor: any }) {
           <a href="/">
             <Logo textColor={props.textColor} />
           </a>
-          <div>
-            <h3 className={styles.logo} style={{ color: props.textColor }}>
-              GET YOUR TICKETS NOW
-            </h3>
-          </div>
+          <a href="">
+            <div className={styles.ticket}>
+              <h3 className={styles.logo} style={{ color: props.textColor }}>
+                GET YOUR TICKETS NOW
+              </h3>
+              <div className={styles.background}></div>
+            </div>
+          </a>
         </div>
         <a>
-          <MenuBar visible={visible} handleMenuClick={handleMenuClick} />
-          <CloseButton visible={visible} handleMenuClick={handleMenuClick} />
+          <MenuBar visible={visible} fill={props.textColor} handleMenuClick={handleMenuClick} />
+          <CloseButton visible={visible} fill={props.textColor} handleMenuClick={handleMenuClick} />
         </a>
 
         <ul className={styles.links}>
@@ -92,24 +95,40 @@ function Header(props: { textColor: any }) {
       </nav>
 
       {visible && (
-        <ul className={styles.menu}>
+        <ul
+          className={styles.menu}
+          style={{ backgroundColor: props.departmentBackground ? props.departmentBackground : "#ffffff" }}
+        >
           <li>
-            <h3 className={styles.menuLogo} style={{ color: props.textColor }}>
-              GET YOUR TICKETS NOW
-            </h3>
+            <a href="">
+              <div className={styles.ticket}>
+                <h3 className={styles.logo} style={{ color: props.textColor }}>
+                  GET YOUR TICKETS NOW
+                </h3>
+                <div className={styles.background}></div>
+              </div>
+            </a>
           </li>
           <li>
-            <a className={styles.menuLink} href="/about" style={{ color: props.textColor }}>
+            <a
+              className={styles.menuLink}
+              href="/about"
+              style={{ color: props.textColor, borderColor: props.textColor }}
+            >
               ABOUT
             </a>
           </li>
           <li>
-            <a className={styles.menuLink} href="/r101" style={{ color: props.textColor }}>
+            <a
+              className={styles.menuLink}
+              href="/r101"
+              style={{ color: props.textColor, borderColor: props.textColor }}
+            >
               R101
             </a>
           </li>
           <li>
-            <a className={styles.menuLink} href="/faq" style={{ color: props.textColor }}>
+            <a className={styles.menuLink} href="/faq" style={{ color: props.textColor, borderColor: props.textColor }}>
               FAQ
             </a>
           </li>
@@ -118,7 +137,7 @@ function Header(props: { textColor: any }) {
               className={styles.menuLink}
               href="https://discord.gg/BHtvRaRr"
               target="_blank"
-              style={{ color: props.textColor }}
+              style={{ color: props.textColor, borderColor: props.textColor }}
             >
               THE POOL
             </a>

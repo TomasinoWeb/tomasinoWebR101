@@ -3,10 +3,11 @@ import styles from "../../components/Layout.module.scss";
 
 interface Props {
   visible: boolean;
+  fill: string;
   handleMenuClick: () => void;
 }
 
-function MenuBar({ visible, handleMenuClick }: Props) {
+function MenuBar({ visible, fill, handleMenuClick }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +20,7 @@ function MenuBar({ visible, handleMenuClick }: Props) {
     >
       <path
         d="M2.5 3.33337H17.5V5.00004H2.5V3.33337ZM7.5 9.16671H17.5V10.8334H7.5V9.16671ZM2.5 15H17.5V16.6667H2.5V15Z"
-        fill="#393939"
+        fill={fill ? `${fill}` : "#393939"}
       />
     </svg>
   );
