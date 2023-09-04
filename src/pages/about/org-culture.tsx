@@ -4,15 +4,10 @@ import { Layout } from "../../components/Layout";
 import { QuoteBlock } from "../../components/QuoteBlock";
 import { CultureCard } from "../../components/CultureCard";
 import { Titles } from "../../components/Titles";
-
 import Link from "next/link";
 
-import Image from "next/image";
-import image from "public/assets/about/culture/calls.jpeg";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown, faQuestion, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { testimonials } from "../../../public/assets/data/testimonials";
+import { cultureCards } from "../../../public/assets/data/culture-cards";
 
 interface TinyBoxProps {
   noRightBorder?: boolean;
@@ -108,47 +103,18 @@ export default function () {
           <h1 className={`${styles.header_text} ${styles.margin_top_text}`}>Magic, madness, heaven, sins</h1>
           <p className={styles.p_text}>All the fun starts here</p>
           <div className={styles.culture_mid}>
-            <CultureCard
-              title="Post-Coverage hangouts"
-              image="/assets/about/culture/Culture-PostCoverageHangout.png"
-              backgroundColor="beige"
-              textColor="black"
-              border="none"
-            >
-              After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day
-              off with good food [and drinks *wink wink*] with great company.
-            </CultureCard>
-            <CultureCard
-              title="Random/Sponty Discord Calls"
-              image="/assets/about/culture/Culture-Meetings.png"
-              backgroundColor="red"
-              textColor="white"
-              border="none"
-            >
-              Where we discuss the most random of things from "Antonism" to Dating App bios. Feel free to hop in
-              whenever you see your orgmates hanging out on one of the "tambay lang" channels.
-            </CultureCard>
-            <CultureCard
-              title="PowerPoint 
-              Parties"
-              image="/assets/about/culture/Culture-PPT.png"
-              backgroundColor="purple"
-              textColor="black"
-              border="none"
-            >
-              How do TomWebbers celebrate the festivities? By throwing PowerPoint Parties of course! Present the most
-              random things and watch how your orgmates react to your content.
-            </CultureCard>
-            <CultureCard
-              title="General 
-              Assemblies"
-              image="/assets/about/culture/Culture-GenAss.png"
-              backgroundColor="darkgray"
-              textColor="white"
-            >
-              The official gathering of all TomWebbers - current and alumni! This is where we discuss where we are now,
-              and of course, where we're headed.
-            </CultureCard>
+            {cultureCards.slice(0, 4).map((card, index) => (
+              <CultureCard
+                key={index}
+                title={card.title}
+                image={card.image}
+                backgroundColor={card.backgroundColor}
+                textColor={card.textColor}
+                border={card.border}
+              >
+                {card.content}
+              </CultureCard>
+            ))}
             {/* mid */}{" "}
           </div>
           {/*section */}
@@ -167,48 +133,18 @@ export default function () {
 
           <p className={styles.p_text}>And of course, the actual work</p>
           <div className={styles.culture_mid}>
-            <CultureCard
-              title="On-site 
-              Coverages"
-              image="/assets/about/culture/OnSite.jpeg"
-              backgroundColor="black"
-              textColor="white"
-              border="none"
-            >
-              Never been to this place? Or have you already? TomasinoWeb often goes to onsite coverages where our
-              publication reports everything on ground.
-            </CultureCard>
-            <CultureCard
-              title="Virtual 
-              Coverages"
-              image="/assets/about/culture/VirtualCoverages.jpeg"
-              backgroundColor="lightblue"
-              textColor="black"
-              border="none"
-            >
-              But what if you can't join physically? What if the event is impossible to get to? That's where we convene
-              in our virtual newsroom.
-            </CultureCard>
-            <CultureCard
-              title="Interactive 
-              Meetings"
-              image="/assets/about/culture/InteractiveMeetings.jpeg"
-              backgroundColor="darkblue"
-              textColor="white"
-              border="none"
-            >
-              Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the
-              case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is.
-            </CultureCard>
-            <CultureCard
-              title="Mentorship and Collaboration"
-              image="/assets/about/culture/mentor.png"
-              backgroundColor="green"
-              textColor="black"
-            >
-              In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage
-              cross-department contributions. Expand your horizons with us!
-            </CultureCard>
+            {cultureCards.slice(4).map((card, index) => (
+              <CultureCard
+                key={index}
+                title={card.title}
+                image={card.image}
+                backgroundColor={card.backgroundColor}
+                textColor={card.textColor}
+                border={card.border}
+              >
+                {card.content}
+              </CultureCard>
+            ))}
             {/* mid */}{" "}
           </div>
           {/*section */}
