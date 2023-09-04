@@ -17,6 +17,7 @@ interface LayoutProps {
   children: ReactNode;
   departmentBackground?: string;
   textColor?: string;
+  showFooter?: boolean;
 }
 
 export function Layout(props: LayoutProps) {
@@ -24,7 +25,7 @@ export function Layout(props: LayoutProps) {
     <div className={styles.layoutContainer} style={{ backgroundColor: props.departmentBackground }}>
       <Header textColor={props.textColor} />
       <main className={styles.main}>{props.children}</main>
-      <Footer />
+      {props.showFooter && <Footer />}
     </div>
   );
 }
