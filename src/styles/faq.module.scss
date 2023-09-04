@@ -1,0 +1,253 @@
+.FaqPage {
+  min-height: calc(100vh - 80px - 57px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.picker-div {
+  margin: 0% 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.faq-main-holder {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 50px;
+}
+
+.faq-main-item {
+  display: table-cell;
+}
+
+.button-picker {
+  display: flex;
+  align-items: center;
+}
+
+.faq-main-item,
+.button-picker {
+  font-size: 20px;
+  cursor: pointer;
+  min-width: fit-content;
+  font-size: 32px;
+  transition: 0.3s;
+  font-weight: 500;
+  text-align: center;
+  background-color: #ffffff;
+  border: 3.5px solid var(--darkgray);
+  display: inline-block;
+  padding: 10px 30px;
+  user-select: none;
+  height: 72px;
+}
+
+.mobile-cell1 {
+  grid-column: 1 / span 3;
+}
+.mobile-cell2 {
+  grid-column: 4 / span 3;
+}
+.mobile-cell3 {
+  grid-column: 7;
+}
+.mobile-cell4 {
+  grid-column: 1 / 5;
+}
+.mobile-cell5 {
+  grid-column: 5 / 5;
+}
+.mobile-cell6 {
+  grid-column: 6 / span 2;
+}
+.mobile-cell7 {
+  grid-column: 1;
+}
+.mobile-cell8 {
+  grid-column: 2 / span 6;
+}
+
+#nonepicker {
+  cursor: default;
+}
+#nonepicker:hover {
+  transform: none;
+}
+
+.faq-icons {
+  height: calc(15px + 2vmin);
+}
+
+.faq-head {
+  font-size: 48px;
+}
+
+.faqs {
+  width: 100%;
+  max-width: 80%;
+  margin: 0px auto 100px auto;
+  padding: 20px;
+}
+
+.faqs .faq {
+  margin: 10px;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  border: 2px solid #151f28;
+  cursor: pointer;
+}
+
+.faqs .faq.open {
+  background-color: #e5e5e5;
+}
+
+.faqs .faq .faq-question {
+  position: relative;
+  padding-right: 80px;
+  font-family: "Sailec Medium";
+  font-weight: medium;
+  font-size: 24px;
+
+  transition: all 0.4s ease;
+}
+
+.faqs .faq .faq-question::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  background-image: url(/assets/cross.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transition: all 0.4s ease-out;
+}
+
+.faqs .faq.open .faq-question {
+  margin-bottom: 15px;
+  font-family: "Sailec Medium";
+}
+
+.faqs .faq.open .faq-question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faqs .faq .faq-answer {
+  opacity: 0;
+  max-height: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  transition: opacity 0.4s ease, max-height 0.4s ease, font 0.4s ease;
+  font-family: "Sailec Regular";
+  font-size: 16px;
+}
+
+.faqs .faq.open .faq-answer {
+  opacity: 1;
+  max-height: 1000px;
+  font-family: "Sailec Regular";
+  transition: opacity 0.4s ease, max-height 0.4s ease, font 0.4s ease;
+}
+
+.faq-answer-open {
+  font-family: "Sailec Regular";
+  font-size: 16px;
+  transition: font-family 0.4s ease, font-size 0.4s ease;
+}
+
+.faq-answer-open p{
+  font-family: "Sailec Regular";
+  font-size: 16px;
+  margin: 0;
+}
+
+.FaqPage pre {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+@media only screen and (max-width: 770px) {
+  .faq-main-holder {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .mobile-cell1 {
+    grid-column: 1 / span 2;
+  }
+  .mobile-cell2 {
+    grid-column: 3 / span 3;
+  }
+  .mobile-cell3 {
+    grid-column: 1;
+  }
+  .mobile-cell4 {
+    grid-column: 2 / span 4;
+  }
+  .mobile-cell5 {
+    grid-column: 1;
+  }
+  .mobile-cell6 {
+    grid-column: 2 / span 4;
+  }
+  .mobile-cell7 {
+    grid-column: 1;
+  }
+  .mobile-cell8 {
+    grid-column: 2 / span 4;
+  }
+  .button-picker {
+    font-size: 16px;
+  }
+  .button-picker, .faq-main-item{
+    height: 63px;
+    border-width: 2px;
+  }
+  .faqs .faq.open .faq-answer {
+    transition: all 0.4s ease;
+    font-family: "Sailec Regular";
+    font-size: 14px;
+  }
+  .faqs .faq .faq-question {
+    font-size: 16px;
+    transition: all 0.4s ease;
+  }
+  .faq-head {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .button-picker{
+    padding: 5px 15px;
+  }
+  .button-picker, .faq-main-item{
+    height: 63px;
+    border-width: 2px;
+  }
+}

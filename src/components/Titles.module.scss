@@ -28,6 +28,7 @@
     font-size: 48px;
     letter-spacing: -1.056px;
     z-index: 2;
+    width: max-content;
   }
 
   @media (max-width: 768px) {
@@ -38,6 +39,7 @@
       font-size: 36px;
       bottom: 10px;
     }
+    
   }
   @media (max-width: 480px) {
     .mainTitle {
