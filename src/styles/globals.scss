@@ -61,6 +61,11 @@ html {
   src: url("/fonts/sailec/Sailec Bold Italic.otf") format("opentype");
 }
 
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/inter/Inter-Regular.ttf") format("truetype");
+}
+
 // add more fonts if needed
 
 :root {
@@ -92,13 +97,17 @@ h1,
 h2,
 h3,
 h4,
-p,
 figure,
 blockquote,
 dl,
 dd {
   margin: 0;
   font-family: "Sailec", sans-serif;
+}
+
+p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
 }
 
 // anchor tag style reset
@@ -132,5 +141,6 @@ button {
 
   p {
     margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
   }
 }

@@ -160,26 +160,32 @@
   overflow-y: hidden;
   overflow-x: hidden;
   overflow-wrap: break-word;
-  transition: opacity 0.4s ease, max-height 0.4s ease, font 0.4s ease;
-  font-family: "Sailec Regular";
+  transition:
+    opacity 0.4s ease,
+    max-height 0.4s ease,
+    font 0.4s ease;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
 }
 
 .faqs .faq.open .faq-answer {
   opacity: 1;
   max-height: 1000px;
-  font-family: "Sailec Regular";
-  transition: opacity 0.4s ease, max-height 0.4s ease, font 0.4s ease;
+  font-family: "Inter", sans-serif;
+  transition:
+    opacity 0.4s ease,
+    max-height 0.4s ease,
+    font 0.4s ease;
 }
 
 .faq-answer-open {
-  font-family: "Sailec Regular";
   font-size: 16px;
-  transition: font-family 0.4s ease, font-size 0.4s ease;
+  transition:
+    font-family 0.4s ease,
+    font-size 0.4s ease;
 }
 
-.faq-answer-open p{
-  font-family: "Sailec Regular";
+.faq-answer-open p {
   font-size: 16px;
   margin: 0;
 }
@@ -225,7 +231,8 @@
   .button-picker {
     font-size: 16px;
   }
-  .button-picker, .faq-main-item{
+  .button-picker,
+  .faq-main-item {
     height: 63px;
     border-width: 2px;
   }
@@ -243,10 +250,11 @@
   }
 }
 @media only screen and (max-width: 460px) {
-  .button-picker{
+  .button-picker {
     padding: 5px 15px;
   }
-  .button-picker, .faq-main-item{
+  .button-picker,
+  .faq-main-item {
     height: 63px;
     border-width: 2px;
   }

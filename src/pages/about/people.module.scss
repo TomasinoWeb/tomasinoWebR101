@@ -43,7 +43,9 @@ $mobileSectionGap: 40px;
 
   .heading {
     margin-top: $sectionGap;
-    margin-bottom: $sectionGap;
+    display: flex;
+    flex-direction: column;
+    gap: $sectionGap;
 
     .componentContainer {
       width: 100%;
@@ -162,6 +164,8 @@ $mobileSectionGap: 40px;
       position: relative;
       transition: width 0.3s ease;
       cursor: pointer;
+      border-left: 1.5px solid var(--darkgray);
+      border-right: 1.5px solid var(--darkgray);
 
       &.expanded {
         width: 300px;
@@ -199,8 +203,6 @@ $mobileSectionGap: 40px;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-left: 1.5px solid var(--darkgray);
-        border-right: 1.5px solid var(--darkgray);
       }
 
       .shadow,
@@ -271,6 +273,12 @@ $mobileSectionGap: 40px;
   background-color: var(--black);
   color: var(--white) !important;
   padding: 130px 0px;
+
+  .componentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
 
   .title,
   .subtitle {
@@ -399,6 +407,10 @@ $mobileSectionGap: 40px;
   .otherTestimonies {
     padding-top: 100px;
     padding-bottom: 60px;
+
+    .componentContainer {
+      gap: 20px;
+    }
   }
 
   .bannerGrid {
@@ -425,6 +437,10 @@ $mobileSectionGap: 40px;
         transition: height 0.3s ease;
         cursor: auto;
 
+        border-top: 3px solid var(--darkgray);
+        border-left: none;
+        border-right: none;
+
         &.expanded {
           width: 100%;
           height: 400px;
@@ -439,9 +455,6 @@ $mobileSectionGap: 40px;
         .image {
           position: absolute;
           object-position: 50% 35%;
-          border-top: 3px solid var(--darkgray);
-          border-left: none;
-          border-right: none;
         }
       }
     }
