@@ -40,6 +40,8 @@ const metatags = {
   },
 };
 
+const CANONICAL_URL = "https://r101-git-py16-tom-web-2.vercel.app/";
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const details = metatags[router.pathname as keyof typeof metatags] ?? metatags["/"];
@@ -52,6 +54,11 @@ export default function App({ Component, pageProps }: AppProps) {
         openGraph={{
           title: details.title,
           description: details.description,
+          images: [
+            {
+              url: `${CANONICAL_URL}meta.png`,
+            },
+          ],
         }}
         twitter={{
           handle: "@tomasinoweb",
