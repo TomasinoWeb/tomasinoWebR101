@@ -11,7 +11,7 @@ import Image from "next/image";
 import image from "public/assets/about/culture/calls.jpeg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown, faQuestion,faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowAltCircleDown, faQuestion, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { testimonials } from "../../../public/assets/data/testimonials";
 
 interface TinyBoxProps {
@@ -99,11 +99,7 @@ export default function () {
         </div>
         <div className={styles.testimonial_section}>
           <div className={styles.testimonial_mid}>
-            <QuoteBlock
-              testimonial={testimonials[1]}
-              textColor="white"
-              side="right"
-              />
+            <QuoteBlock testimonial={testimonials[1]} textColor="white" side="right" />
             {/*  mid */}{" "}
           </div>
           {/* section */}
@@ -160,7 +156,7 @@ export default function () {
 
         <div className={styles.testimonial_section}>
           <div className={styles.testimonial_mid}>
-            <QuoteBlock testimonial={testimonials[5]} textColor="white" side="right"/>
+            <QuoteBlock testimonial={testimonials[5]} textColor="white" side="right" />
             {/*  mid */}{" "}
           </div>
           {/* section */}
