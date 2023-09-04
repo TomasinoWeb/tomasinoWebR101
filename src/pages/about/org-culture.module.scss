@@ -59,10 +59,9 @@
   // text-align: center;
 
   height: auto;
-  width: 100%;
+  width: 80%;
 
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding: 90px;
 
   background-color: #2d344e;
   color: white;
@@ -207,10 +206,14 @@
 .last {
   height: 20vh;
 }
-
+@media screen and (max-width:1440px) {
+  .culture_mid {
+    width:60%;
+  }
+}
 @media only screen and (max-width: 1210px) {
   .culture_mid {
-    width: 70%;
+    width: 50%;
   }
   .stats_main {
     width: 50%;
@@ -317,7 +320,7 @@
 }
 .culture_mid {
   display: flex;
-  width: 90%;
+  width: 80%;
   flex-wrap: wrap;
   //flex-direction: column;
   justify-content: center;
