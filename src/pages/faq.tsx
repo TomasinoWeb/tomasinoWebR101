@@ -19,37 +19,51 @@ const FaqPage = () => {
   const [resultsShown, setResultsShown] = useState(false);
   const [sussyShown, setSussyShown] = useState(false);
   const [buttonPressed, setButtonPressed] = useState(false);
-  const buttonPressedStyle = buttonPressed ? styles["sailec-bold-text"] : "";
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const orgPicked = {
     backgroundColor: "#E0C9AF",
-    fontWeight: "bold",
+    fontFamily: "Sailec Bold",
   };
 
   const interviewPicked = {
     backgroundColor: "#B9E6F9",
-    fontWeight: "bold",
+    fontFamily: "Sailec Bold",
   };
 
   const applicationPicked = {
     backgroundColor: "#FDDAA6",
-    fontWeight: "bold",
+    fontFamily: "Sailec Bold",
   };
 
   const resultPicked = {
     backgroundColor: "#D6BADC",
-    fontWeight: "bold",
+    fontFamily: "Sailec Bold",
   };
 
   const sussyPicked = {
     backgroundColor: "#A9CBAA",
-    fontWeight: "bold",
+    fontFamily: "Sailec Bold",
   };
 
   const unpicked = {
-    color: "black",
+    fontFamily: windowWidth <= 770 ? "Sailec Bold" : "Sailec Medium",
+    color: "var(--darkgray)",
     backgroundColor: "white",
   };
+  
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  
 
   useEffect(() => {
     tag === "org" ? setOrgShown(true) : setOrgShown(false);
@@ -59,19 +73,17 @@ const FaqPage = () => {
       : setApplicationShown(false);
     tag === "results" ? setResultsShown(true) : setResultsShown(false);
     tag === "sussy" ? setSussyShown(true) : setSussyShown(false);
-  }, [tag]);
+  }, [tag, buttonPressed, windowWidth]);
 
   return (
     <Layout>
       <div className={styles["FaqPage"]}>
         <div className={styles["picker-div"]}>
-          <Titles title="FAQS">
-          Can I ask you a Question
-          </Titles>
+          <Titles title="FAQS">Can I ask you a Question</Titles>
           <div className={styles["selection-div"]}>
             <div className={styles["faq-main-holder"]}>
               <button
-                className={`${styles["button-picker"]} ${styles["mobile-cell1"]} ${buttonPressedStyle}`}
+                className={`${styles["button-picker"]} ${styles["mobile-cell1"]}`}
                 onClick={() => setTag("org")}
                 style={orgShown ? orgPicked : unpicked}
               >
@@ -79,7 +91,7 @@ const FaqPage = () => {
               </button>
 
               <button
-                className={`${styles["button-picker"]} ${styles["mobile-cell2"]}${buttonPressedStyle}`}
+                className={`${styles["button-picker"]} ${styles["mobile-cell2"]}`}
                 onClick={() => setTag("interview")}
                 style={interviewShown ? interviewPicked : unpicked}
               >
@@ -99,7 +111,7 @@ const FaqPage = () => {
                 </div>
               </a>
               <button
-                className={`${styles["button-picker"]} ${styles["mobile-cell4"]} ${buttonPressedStyle}`}
+                className={`${styles["button-picker"]} ${styles["mobile-cell4"]}`}
                 onClick={() => setTag("application")}
                 style={applicationShown ? applicationPicked : unpicked}
               >
@@ -120,7 +132,7 @@ const FaqPage = () => {
                 </div>
               </a>
               <button
-                className={`${styles["button-picker"]} ${styles["mobile-cell6"]} ${buttonPressedStyle}`}
+                className={`${styles["button-picker"]} ${styles["mobile-cell6"]}`}
                 onClick={() => setTag("results")}
                 style={resultsShown ? resultPicked : unpicked}
               >
@@ -141,7 +153,7 @@ const FaqPage = () => {
                 </div>
               </a>
               <button
-                className={`${styles["button-picker"]} ${styles["mobile-cell8"]} ${buttonPressedStyle}`}
+                className={`${styles["button-picker"]} ${styles["mobile-cell8"]}`}
                 onClick={() => setTag("sussy")}
                 style={sussyShown ? sussyPicked : unpicked}
               >
@@ -153,11 +165,37 @@ const FaqPage = () => {
         <br />
         <div className={styles["faqs"]}>
           <pre>
-            {orgShown && <OrgGroup />}
-            {interviewShown && <InterviewGroup />}
-            {applicationShown && <ApplicationGroup />}
-            {resultsShown && <ResultsGroup />}
-            {sussyShown && <SussyGroup />}
+            <div className={`faq-answer ${orgShown ? "faq-answer-open" : ""}`}>
+              {orgShown && (
+                <p>
+                  <OrgGroup />
+                </p>
+              )}
+            </div>
+            <div
+              className={`faq-answer ${
+                interviewShown ? "faq-answer-open" : ""
+              }`}
+            >
+              {interviewShown && <InterviewGroup />}
+            </div>
+            <div
+              className={`faq-answer ${
+                applicationShown ? "faq-answer-open" : ""
+              }`}
+            >
+              {applicationShown && <ApplicationGroup />}
+            </div>
+            <div
+              className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}
+            >
+              {resultsShown && <ResultsGroup />}
+            </div>
+            <div
+              className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}
+            >
+              {sussyShown && <SussyGroup />}
+            </div>
           </pre>
         </div>
       </div>

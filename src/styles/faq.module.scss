@@ -51,10 +51,11 @@
   font-weight: 500;
   text-align: center;
   background-color: #ffffff;
-  border: 3.5px solid #000000;
+  border: 3.5px solid var(--darkgray);
   display: inline-block;
   padding: 10px 30px;
   user-select: none;
+  height: 72px;
 }
 
 .mobile-cell1 {
@@ -159,26 +160,36 @@
   overflow-y: hidden;
   overflow-x: hidden;
   overflow-wrap: break-word;
-  transition: all 0.4s ease;
+  transition: opacity 0.4s ease, max-height 0.4s ease, font 0.4s ease;
+  font-family: "Sailec Regular";
+  font-size: 16px;
 }
 
 .faqs .faq.open .faq-answer {
   opacity: 1;
   max-height: 1000px;
-  transition: all 0.4s ease;
+  font-family: "Sailec Regular";
+  transition: opacity 0.4s ease, max-height 0.4s ease, font 0.4s ease;
+}
+
+.faq-answer-open {
   font-family: "Sailec Regular";
   font-size: 16px;
+  transition: font-family 0.4s ease, font-size 0.4s ease;
 }
+
+.faq-answer-open p{
+  font-family: "Sailec Regular";
+  font-size: 16px;
+  margin: 0;
+}
+
 .FaqPage pre {
   white-space: pre-wrap; /* Since CSS 2.1 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
   white-space: -pre-wrap; /* Opera 4-6 */
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
-}
-
-.sailec-bold-text {
-  font-family: "Sailec Bold";
 }
 
 @media only screen and (max-width: 770px) {
@@ -213,7 +224,6 @@
   }
   .button-picker {
     font-size: 16px;
-    font-family: "Sailec Bold";
   }
   .button-picker, .faq-main-item{
     height: 63px;
