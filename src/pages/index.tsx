@@ -5,6 +5,23 @@ import Title from "../assets/landing/TomasinoWeb Title.svg";
 import styles from "./index.module.scss";
 import { HoverableImageFade } from "../components/HoverableImage";
 
+import dynamic from "next/dynamic";
+
+const DynamicImage = dynamic(
+  Promise.resolve(({ str }: { str: (typeof People)[number] }) => {
+    const index = Math.floor(Math.random() * str.base.length);
+    const base = str.base[index];
+    const hovered = str.hovered[index];
+
+    return (
+      <div className={styles.eroBlock} key={str.name}>
+        <HoverableImageFade alt={`image for the ${str.name} department`} image={base} hoveredImage={hovered} active />
+      </div>
+    );
+  }),
+  { ssr: false }
+);
+
 const People = [
   {
     name: "secretariat",
@@ -63,22 +80,9 @@ export default function () {
     <div className={styles.index}>
       <div className={styles.main}>
         <div className={`${styles.eroBlockContainerTop} ${styles.eroBlockContainer}`}>
-          {People.slice(0, 5).map((str) => {
-            const index = Math.floor(Math.random() * str.base.length);
-            const base = str.base[index];
-            const hovered = str.hovered[index];
-
-            return (
-              <div className={styles.eroBlock} key={str.name}>
-                <HoverableImageFade
-                  alt={`image for the ${str.name} department`}
-                  image={base}
-                  hoveredImage={hovered}
-                  active
-                />
-              </div>
-            );
-          })}
+          {People.slice(0, 5).map((str) => (
+            <DynamicImage str={str} />
+          ))}
         </div>
 
         <div className={`${styles.center} ${styles.titleContainer}`}>
@@ -109,41 +113,15 @@ export default function () {
           </div>
         </div>
         <div className={`${styles.eroBlockContainerMobile} ${styles.eroBlockContainer}`}>
-          {People.slice(5, 10).map((str) => {
-            const index = Math.floor(Math.random() * str.base.length);
-            const base = str.base[index];
-            const hovered = str.hovered[index];
-
-            return (
-              <div className={styles.eroBlock} key={str.name}>
-                <HoverableImageFade
-                  alt={`image for the ${str.name} department`}
-                  image={base}
-                  hoveredImage={hovered}
-                  active
-                />
-              </div>
-            );
-          })}
+          {People.slice(5, 10).map((str) => (
+            <DynamicImage str={str} />
+          ))}
         </div>
       </div>
       <div className={`${styles.eroBlockContainerDesktop} ${styles.eroBlockContainer}`}>
-        {People.slice(5, 10).map((str) => {
-          const index = Math.floor(Math.random() * str.base.length);
-          const base = str.base[index];
-          const hovered = str.hovered[index];
-
-          return (
-            <div className={styles.eroBlock} key={str.name}>
-              <HoverableImageFade
-                alt={`image for the ${str.name} department`}
-                image={base}
-                hoveredImage={hovered}
-                active
-              />
-            </div>
-          );
-        })}
+        {People.slice(5, 10).map((str) => (
+          <DynamicImage str={str} />
+        ))}
       </div>
     </div>
   );
