@@ -42,7 +42,9 @@ export default function () {
               </li>
               <li className={styles.linkBullet}>•</li>
               <li className={styles.linkItem}>
-                <Link href="https://discord.gg/BHtvRaRr">THE POOL</Link>
+                <Link href="https://discord.gg/BHtvRaRr" target="_blank">
+                  THE POOL
+                </Link>
               </li>
             </ul>
             <div className={styles.center}>
