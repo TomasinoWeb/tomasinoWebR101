@@ -31,10 +31,7 @@ export default function () {
     <Layout>
       <div className={styles.container} style={{ marginBottom: "60px" }}>
         <div className={styles.heading}>
-          <div style={{ marginBottom: "30px" }}>
-            <Titles title="The People">The Swifties</Titles>
-          </div>
-
+          <Titles title="The People">The Swifties</Titles>
           <div className={styles.componentContainer}>
             <QuoteBlock side="left" textColor="black" testimonial={testimonials[0]} />
           </div>
@@ -112,14 +109,6 @@ export default function () {
                 image={member.image}
                 hoveredImage={member.image}
                 active
-              />
-
-              <Image
-                alt={`${member.name}'s Image`}
-                src={member.image}
-                width={500}
-                height={500}
-                className={styles.image}
               />
 
               <div className={styles.shadow}></div>
