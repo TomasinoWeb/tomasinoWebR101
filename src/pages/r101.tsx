@@ -23,10 +23,9 @@ export default function () {
               <h2 className={styles.title}>Formal Application</h2>
               <p className={styles.text}>
                 Applicants must first accomplish the{" "}
-                <a href="https://forms.gle/WyzZ99XBtZjVLPdH7" target="_blank" rel="noreferrer">
+                <a href="" target="_blank" rel="noreferrer">
                   Google Forms
-                </a>{" "}
-                for applicants.
+                </a>
               </p>
             </div>
           </div>
