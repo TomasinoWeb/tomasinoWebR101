@@ -16,6 +16,8 @@ import { faArrowAltCircleDown, faQuestion, faArrowRight } from "@fortawesome/fre
 import { testimonials } from "../../../public/assets/data/testimonials";
 import { statistics } from "../../../public/assets/data/statistics";
 
+import YouTubeThumbnail from '../../components/orgCultureComponents/YoutubeThumbnail';
+
 interface TinyBoxProps {
   noRightBorder?: boolean;
 }
@@ -47,7 +49,19 @@ export default function () {
           {/* parent */}
         </div>
         <div className={styles.video_section}>
-          <div className={styles.video_mid}>{/* video mid */} </div>
+          <div className={styles.video_mid}>
+            {/* <iframe
+              width="560"
+              height="100%"
+              src={`https://www.youtube.com/embed/m6fCTVsMmS8?si=3hORnKNYZmhen7xW?autoplay=1`}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe> */}
+             <YouTubeThumbnail videoId="m6fCTVsMmS8" />
+            {/* video mid */}{" "}
+          </div>
           {/* video_section */}
         </div>
         <div className={styles.stats_main}>
@@ -56,16 +70,16 @@ export default function () {
 
             <div className={styles.stats_main2}>
               <div className={styles.stats_details2}>
-                  <CultureStats statistics={statistics[0]}/>
+                <CultureStats statistics={statistics[0]} />
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-              <CultureStats statistics={statistics[1]}/>
+                <CultureStats statistics={statistics[1]} />
 
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-              <CultureStats statistics={statistics[2]}/>
+                <CultureStats statistics={statistics[2]} />
 
                 {/* stats_details2 */}
               </div>
@@ -74,16 +88,16 @@ export default function () {
 
             <div className={styles.stats_main2}>
               <div className={styles.stats_details2}>
-              <CultureStats statistics={statistics[3]}/>
+                <CultureStats statistics={statistics[3]} />
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-              <CultureStats statistics={statistics[4]}/>
+                <CultureStats statistics={statistics[4]} />
                 {/* stats_details2 */}
               </div>
-         
+
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-              <CultureStats statistics={statistics[5]}/>
+                <CultureStats statistics={statistics[5]} />
                 {/* stats_details2 */}
               </div>
               {/* stats_main2 */}
