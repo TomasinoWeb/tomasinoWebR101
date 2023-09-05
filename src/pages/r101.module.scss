@@ -19,57 +19,43 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 5%;
+  align-items: flex-start;
+  max-width: 1560px;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 50px;
+  padding-top: 10vh;
+  padding-bottom: 200px;
+
+  .content_container {
+    padding-right: 20px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 .card {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 25%;
-  height: 300px;
+  flex: 1;
 
   .icon_row {
-    width: 100%;
+    margin-bottom: 20px;
+    flex-direction: row;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
     .icon {
-      max-width: 50%;
-      max-height: 50%;
+      height: 100px;
+      width: auto;
+      object-fit: cover;
     }
 
     .arrow {
-      max-width: 50%;
-      max-height: 50%;
-    }
-  }
-
-  .content_container {
-    min-height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .title {
-      font-size: 1.5em;
-      padding-bottom: 15px;
-    }
-
-    .text {
-      font-weight: 500;
-
-      a {
-        font-weight: 500;
-        color: var(--secondary);
-
-        &:hover {
-          color: #be7c0a;
-        }
-      }
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
   }
 }
@@ -88,25 +74,35 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   .container {
     flex-direction: column;
+    max-width: 800px;
+    margin: 0px auto;
 
-    .card {
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
+    .content_container {
+      padding-right: 0px;
     }
 
-    .icon_row {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 60px;
+    .card {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
 
-      .arrow {
-        transform: rotate(90deg);
-        max-width: 40%;
+      .icon_row {
+        flex-direction: column;
+        width: min-content;
+
+        .icon {
+          width: 100px;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .arrow {
+          margin-top: 40px;
+          transform: rotate(90deg);
+        }
       }
     }
 
