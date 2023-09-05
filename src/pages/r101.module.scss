@@ -52,10 +52,13 @@
       object-fit: cover;
     }
 
-    .arrow {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+    .arrowContainer {
+      flex: 1;
+      .arrow {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
     }
   }
 }
