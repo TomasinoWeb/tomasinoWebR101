@@ -20,7 +20,9 @@ function CardRow(props: CardRowProps) {
     <div className={styles.card}>
       <div className={styles.icon_row}>
         <Image alt="icon for application step" src={props.image} className={styles.icon} />
-        {props.hasArrow && <img src="/static/arrow.png" alt="arrow" className={styles.arrow} />}
+        <div className={styles.arrowContainer}>
+          {props.hasArrow && <img src="/static/arrow.png" alt="arrow" className={styles.arrow} />}
+        </div>
       </div>
       <div className={styles.content_container}>
         <h2 className={styles.title}>{props.title}</h2>
