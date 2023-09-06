@@ -15,7 +15,7 @@ Fast forward to today, I’m now leading the organization as its president for t
   {
     name: "Daniel Cedrick Flores",
     position: "(External Affairs Staff, PY 2022-2024)",
-    image: "/assets/about/people/Zamora_Album.png",
+    image: "/assets/about/culture/Flores_Album.png",
     content: `It was the R101 of my third year when I was scrolling for good orgs to join and I saw ***TomasinoWeb***. I said to myself, "Wow this looks like a cool org to join and it looks fun!” At first, I was scared but I still went for it and picked a department that I think I can do well at. Fast forward a few months later, I instantly made a lot of new friends, everyone is very welcoming and super approachable. This is the only organization that I joined that you can truly feel that it's not just work, but also a family. The more I interact with people, the more friends I make. I'm glad I made the decision because every moment I spent in this org was very memorable.`,
   },
 
@@ -53,7 +53,7 @@ Working alongside fellow Thomasians on projects like Draft 143, Lamona, and the 
   {
     name: "Maria Juliana S. Rolluqui",
     position: "(Developer, PY 2021-2023)",
-    image: "/assets/about/people/Isaac_Album.png",
+    image: "/assets/about/culture/Rolluqui_Album.png",
     content: `I joined ***TomasinoWeb*** on a whim, with no thoughts, just pure ✨vibes ✨, and a lot of "Mhmm... let's see how we'll grow from here." It turned out to be one of the most rewarding risks I took during college. Those spontaneous footsteps led me to a world where creativity knows no bounds, and where I found not just a club, but a second family. `,
   },
 

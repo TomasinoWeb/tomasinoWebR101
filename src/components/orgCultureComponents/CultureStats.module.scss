@@ -1,25 +1,24 @@
 .header_text {
   font-size: 48px !important ;
 }
+
 .p_text {
-  margin-top: 0px;
-  width: 300px;
+  padding-right: 30px;
 }
-@media only screen and (max-width: 1150px) {
+
+@media only screen and (max-width: 1068px) {
   .header_text {
-    font-size:40px !important;
+    font-size: 40px !important;
     text-align: center;
   }
-}
-@media only screen and (max-width: 1068px) {
   .p_text {
+    padding-right: 0px;
     margin-bottom: 30px;
   }
 }
 
 @media only screen and (max-width: 568px) {
-      .header_text {
-        font-size: 38px !important ;
-      }
-    
+  .header_text {
+    font-size: 38px !important ;
+  }
 }
