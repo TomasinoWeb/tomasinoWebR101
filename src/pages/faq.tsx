@@ -75,7 +75,7 @@ const FaqPage = () => {
     <Layout>
       <div className={styles["FaqPage"]}>
         <div className={styles["picker-div"]}>
-          <Titles title="FAQS">Can I ask you a Question</Titles>
+          <Titles title="FAQS">Can I ask you a question?</Titles>
           <div className={styles["selection-div"]}>
             <div className={styles["faq-main-holder"]}>
               <button
