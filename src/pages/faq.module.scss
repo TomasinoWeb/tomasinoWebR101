@@ -235,6 +235,10 @@
     height: 63px;
     border-width: 2px;
   }
+  .faqs {
+    width: 100%;
+    padding: 0;
+  }
   .faqs .faq.open .faq-answer {
     transition: all 0.4s ease;
     font-family: "Sailec Regular";
