@@ -43,6 +43,11 @@ export const coreMembers = [
     image: "/assets/about/people/Core-Jaja.png",
   },
   {
+    name: "Alexandria Grace Magno",
+    position: "Managing Editor",
+    image: "/assets/about/people/Core-Alex.png",
+  },
+  {
     name: "Miguel Angelo Sumalinog",
     position: "Chief Photographer",
     image: "/assets/about/people/Core-Suma.png",

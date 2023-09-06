@@ -2,6 +2,7 @@
   position: relative;
   height: 110px;
   width: 100%;
+  margin-top: 10px;
 
   display: flex;
   flex-direction: column;
@@ -10,6 +11,7 @@
 
   .mainTitle {
     position: absolute;
+    top: -10px;
     color: #f0f0f0;
     text-align: center;
     font-family: CarlaSans;
@@ -21,14 +23,16 @@
     z-index: 1;
     mix-blend-mode: multiply;
   }
+
   .subTitle {
-    position: absolute;
-    bottom: 0;
+    white-space: pre-line;
+    text-align: center;
+    line-height: 1em;
+
     color: var(--darkgray);
     font-size: 48px;
     letter-spacing: -1.056px;
     z-index: 2;
-    width: max-content;
   }
 
   @media (max-width: 768px) {
@@ -39,7 +43,6 @@
       font-size: 36px;
       bottom: 10px;
     }
-    
   }
   @media (max-width: 480px) {
     .mainTitle {

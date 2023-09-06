@@ -73,10 +73,10 @@ export const otherMembers = [
     name: "Eric Eugene Rosales",
     image: "/assets/about/departments/Departments-PubComm-0.png",
     hoveredImage: "/assets/about/departments/Departments-PubComm-1.png",
-    title: "Publicity and Communications",
+    title: "Publicity and Communications / Community Development",
     description:
-      "Garnering a wide audience, publicists tackle the spread of projects, engagements, and content of the organization to reach every single member of the Thomasian community.",
-    background: "#D0CBC5",
+      "Publicity and Communications: Garnering a wide audience, publicists tackle the spread of projects, engagements, and content of the organization to reach every single member of the Thomasian community.\n\nCommunity Development: The team plans and organizes outreach activities that will benefit TomasinoWeb's partner communities.",
+    background: "#393939",
     foreground: "#FAFAFA",
   },
   {
@@ -96,7 +96,7 @@ export const otherMembers = [
     title: "Photography",
     description:
       "Photographers are able to tell a story beyond words, and capture the unseed facets of the dominant narratives from all angles and perspectives.\n\nTEAMS: Events, Sports, Portraits, and Photojournalism",
-    background: "#2D344E",
+    background: "#2A2628",
     foreground: "#FAFAFA",
   },
 ];

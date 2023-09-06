@@ -2,6 +2,7 @@
   min-height: calc(100vh - var(--header-size) - var(--footer-size));
   display: flex;
   flex-direction: column;
+  transition: background-color 100ms linear;
 
   .title {
     display: flex;
@@ -10,8 +11,12 @@
 
     margin-bottom: 32px;
     flex: 1;
-    min-height: 240px; // prevents jumping around
+    min-height: 300px; // prevents jumping around
     height: auto;
+
+    .mainHeading {
+      margin-bottom: 30px;
+    }
 
     .description {
       font-size: 20px;
