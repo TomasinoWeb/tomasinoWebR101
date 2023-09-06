@@ -2,12 +2,15 @@ import styles from "./org-culture.module.scss";
 
 import { Layout } from "../../components/Layout";
 import { QuoteBlock } from "../../components/QuoteBlock";
-import { CultureCard } from "../../components/CultureCard";
+import { CultureCard } from "../../components/orgCultureComponents/CultureCard";
+import { CultureStats } from "../../components/orgCultureComponents/CultureStats";
 import { Titles } from "../../components/Titles";
 import Link from "next/link";
 
 import { testimonials } from "../../../public/assets/data/testimonials";
 import { cultureCards } from "../../../public/assets/data/culture-cards";
+import { statistics } from "../../../public/assets/data/statistics";
+import YouTubeThumbnail from "../../components/orgCultureComponents/YoutubeThumbnail";
 
 interface TinyBoxProps {
   noRightBorder?: boolean;
@@ -40,7 +43,10 @@ export default function () {
           {/* parent */}
         </div>
         <div className={styles.video_section}>
-          <div className={styles.video_mid}>{/* video mid */} </div>
+          <div className={styles.video_mid}>
+            <YouTubeThumbnail videoId="m6fCTVsMmS8" />
+            {/* video mid */}{" "}
+          </div>
           {/* video_section */}
         </div>
         <div className={styles.stats_main}>
@@ -49,19 +55,17 @@ export default function () {
 
             <div className={styles.stats_main2}>
               <div className={styles.stats_details2}>
-                <h1 className={styles.header_text}>4 websites</h1>
-                <p className={styles.p_text}>up and running for the Thomasian community</p>
+                <CultureStats statistics={statistics[0]} />
+                {/* stats_details2 */}
+              </div>
+              <div className={`${styles.stats_details2} ${styles.margin_left}`}>
+                <CultureStats statistics={statistics[1]} />
 
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-                <h1 className={styles.header_text}>21+</h1>
-                <p className={styles.p_text}>delulus just hoping for a Paskuhan date</p>
-                {/* stats_details2 */}
-              </div>
-              <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-                <h1 className={styles.header_text}>27</h1>
-                <p className={styles.p_text}>awards from prestigious contest & globally recognized institutions</p>
+                <CultureStats statistics={statistics[2]} />
+
                 {/* stats_details2 */}
               </div>
               {/* stats_main2 */}
@@ -69,20 +73,16 @@ export default function () {
 
             <div className={styles.stats_main2}>
               <div className={styles.stats_details2}>
-                <h1 className={styles.header_text}>57+</h1>
-                <p className={styles.p_text}>innovative, passionate, and dedicated members</p>
-
+                <CultureStats statistics={statistics[3]} />
                 {/* stats_details2 */}
               </div>
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-                <h1 className={styles.header_text}>165,402</h1>
-                <p className={styles.p_text}>combined followers across all digital platforms</p>
+                <CultureStats statistics={statistics[4]} />
                 {/* stats_details2 */}
               </div>
 
               <div className={`${styles.stats_details2} ${styles.margin_left}`}>
-                <h1 className={styles.header_text}>9,050,600</h1>
-                <p className={styles.p_text}>X (formerly Twitter) impressions in the past year</p>
+                <CultureStats statistics={statistics[5]} />
                 {/* stats_details2 */}
               </div>
               {/* stats_main2 */}

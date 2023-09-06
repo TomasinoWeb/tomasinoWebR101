@@ -59,10 +59,9 @@
   // text-align: center;
 
   height: auto;
-  width: 100%;
+  width: 80%;
 
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding: 90px;
 
   background-color: #2d344e;
   color: white;
@@ -84,6 +83,8 @@
   align-items: center;
   flex-wrap: wrap;
   // text-align: center;
+
+  
   .margin_top_text {
     margin-top: 40px;
     text-align: center !important;
@@ -175,10 +176,10 @@
     width: 70%;
 
     margin-top: 80px;
-    .header_text {
-      font-size: 48px !important ;
-    }
     flex-wrap: wrap;
+  }
+  .header_text {
+    font-size: 48px !important ;
   }
 }
 
@@ -201,17 +202,13 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  .p_text {
-    margin-top: 0px;
-    width: 300px;
-  }
+
 }
 
 .last {
   height: 20vh;
 }
-
-@media only screen and (max-width: 1210px) {
+@media only screen and (max-width:1210px) {
   .culture_mid {
     width: 70%;
   }
@@ -219,6 +216,7 @@
     width: 50%;
   }
 }
+
 @media only screen and (max-width: 1150px) {
   .stats_main2 {
     display: flex;
@@ -240,6 +238,11 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    .header_text {
+      font-size: 38px !important;
+      text-align: center;
+    }
   }
 
   .stats_main2 {
@@ -250,10 +253,6 @@
 
     margin-right: 0px !important;
     width: 100%;
-    .header_text {
-      font-size: 38px !important;
-      text-align: center;
-    }
   }
   .end_background {
     flex-direction: column;
@@ -281,9 +280,6 @@
   .stats_details {
     width: 90%;
     margin-left: 0px;
-    .header_text {
-      font-size: 28px !important ;
-    }
   }
   .culture_section {
     .header_text {
@@ -318,14 +314,11 @@
     align-items: center;
     //flex-wrap: wrap;
     width: 100%;
-    .p_text {
-      margin-bottom: 50px;
-    }
   }
 }
 .culture_mid {
   display: flex;
-  width: 90%;
+  // width: 80%!important;
   flex-wrap: wrap;
   //flex-direction: column;
   justify-content: center;
@@ -342,7 +335,9 @@
   // .body {
   //   width: 100vh;
   // }
-
+  .culture_mid {
+    width: 100%;
+  }
   .mid {
     width: 80%;
     margin-top: 0px;
@@ -370,13 +365,6 @@
     .box {
       width: 80px !important;
       height: 80px !important;
-    }
-  }
-  .stats_main {
-    .stats_details {
-      .header_text {
-        font-size: 28px !important ;
-      }
     }
   }
 }
