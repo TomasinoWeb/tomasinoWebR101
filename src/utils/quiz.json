@@ -1,0 +1,150 @@
+[
+  {
+    "question": "Which variations of Barbie (or Ken) best describes you?",
+    "image": "/assets/quiz/barbie.jpg",
+    "imageCredit": "Photo from Barbie (2023)",
+    "answers": [
+      { "text": "Stereotypical Barbie", "departments": ["photography", "videography"] },
+      { "text": "President Barbie", "departments": ["secretariat", "finance"] },
+      { "text": "Writer Barbie", "departments": ["writing"] },
+      { "text": "Weird Barbie", "departments": ["webTechnologies", "creatives"] },
+      { "text": "Mermaid Barbie", "departments": ["humanResources", "communityDevelopment"] },
+      { "text": "Duplomat Barbie", "departments": ["externalAffairs", "publicity"] },
+      { "text": "I'm just Ken", "departments": [] }
+    ]
+  },
+  {
+    "question": "You were walking in Lover’s Lane when you saw your crush…",
+    "image": "/assets/quiz/lovers.jpg",
+    "imageCredit": "Photo by Justin Lorenz Rentoza/TomasinoWeb",
+    "answers": [
+      { "text": "Say \"hello!\"", "departments": ["externalAffairs", "humanResources"] },
+      { "text": "Have a small chat with them", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Small but no interactions", "departments": ["secretariat", "creatives"] },
+      { "text": "Chat it to your friends", "departments": ["writing"] },
+      { "text": "Think of it as a sign ;)", "departments": ["webTechnologies"] },
+      { "text": "*Bombastic side eye*", "departments": ["photography", "videography"] },
+      { "text": "Do nothing.", "departments": ["finance"] }
+    ]
+  },
+  {
+    "question": "First thing you do in the morning.",
+    "image": "/assets/quiz/morning.jpg",
+    "imageCredit": "Photo from Bliss (2017)",
+    "answers": [
+      {
+        "text": "Read notifications from Canvas.",
+        "departments": ["secretariat", "humanResources", "communityDevelopment"]
+      },
+      { "text": "Check out the teas you missed last night.", "departments": ["externalAffairs", "publicity"] },
+      { "text": "Drink coffee.", "departments": ["writing", "creatives"] },
+      { "text": "Sleep for another 5 minutes.", "departments": ["videography", "webTechnologies"] },
+      { "text": "Count your blessings.", "departments": ["finance"] },
+      { "text": "Take a selfie.", "departments": ["photography"] }
+    ]
+  },
+  {
+    "question": "Which Taylor Swift album are you?",
+    "image": "/assets/quiz/ts.png",
+    "imageCredit": "Photo by Jam Sta RosaIV/AFP via Getty Images",
+    "answers": [
+      { "text": "1989", "departments": ["writing"] },
+      { "text": "Speak Now", "departments": ["photography", "humanResources"] },
+      { "text": "Reputation", "departments": ["publicity"] },
+      { "text": "Midnights", "departments": ["videography"] },
+      { "text": "Folklore", "departments": ["webTechnologies"] },
+      { "text": "Evermore", "departments": ["creatives"] },
+      { "text": "Lover", "departments": ["externalAffairs"] },
+      { "text": "Fearless", "departments": ["finance"] },
+      { "text": "Red", "departments": ["communityDevelopment"] },
+      { "text": "Taylor Swift", "departments": ["secretariat"] }
+    ]
+  },
+  {
+    "question": "You have a deadline tonight at 11:59PM.",
+    "image": "/assets/quiz/deadlines.jpg",
+    "imageCredit": "Screenshot from Law School (2021)",
+    "answers": [
+      { "text": "Procrastinate", "departments": ["photography"] },
+      { "text": "Watch a series", "departments": ["finance"] },
+      { "text": "Cry", "departments": ["humanResources", "secretariat"] },
+      { "text": "Take a nap", "departments": ["creatives", "videography"] },
+      { "text": "What deadline? I'm done already.", "departments": ["writing", "communityDevelopment"] },
+      { "text": "One more game", "departments": ["webTechnologies"] },
+      { "text": "Ask your blockmates if they're done", "departments": ["externalAffairs", "publicity"] }
+    ]
+  },
+  {
+    "question": "It's been raining in Manila, what will you do?",
+    "image": "/assets/quiz/lola amour.jpg",
+    "imageCredit": "Screenshot from Lola Amour/Youtube",
+    "answers": [
+      { "text": "Romanticize the pouring rain.", "departments": ["writing"] },
+      {
+        "text": "Check Honey Lacuña’s Facebook page for suspension announcements.",
+        "departments": ["humanResources", "publicity"]
+      },
+      { "text": "It's bed weather!", "departments": ["videography", "creatives"] },
+      { "text": "Play online games.", "departments": ["webTechnologies"] },
+      { "text": "Take a photo outside.", "departments": ["photography"] },
+      { "text": "Text your ex.", "departments": ["communityDevelopment"] },
+      { "text": "Drink a hot beverage.", "departments": ["secretariat"] },
+      { "text": "Tell your loved ones to be safe.", "departments": ["externalAffairs"] }
+    ]
+  },
+  {
+    "question": "You'll be late in class and you're still on the road...",
+    "image": "/assets/quiz/late.jpg",
+    "imageCredit": "Photo by Mark David Alagos",
+    "answers": [
+      { "text": "Walk faster.", "departments": ["communityDevelopment", "finance"] },
+      { "text": "Don't just walk. *Run*", "departments": ["humanResources"] },
+      { "text": "Accept your fate.", "departments": ["videography"] },
+      { "text": "Text your blockmates.", "departments": ["externalAffairs", "secretariat", "creatives"] },
+      { "text": "I'm never late in class.", "departments": ["writing", "publicity"] },
+      { "text": "\"Wait, may pasok?\"", "departments": ["webTechnologies"] }
+    ]
+  },
+  {
+    "question": "You were walking and you saw your favorite UAAP athlete...",
+    "image": "/assets/quiz/uaap.png",
+    "imageCredit": "Photo from V-League",
+    "answers": [
+      { "text": "Take some pictures", "departments": ["photography", "communityDevelopment"] },
+      { "text": "Take a selfie with them.", "departments": ["externalAffairs"] },
+      { "text": "Chat with your friends about it", "departments": ["externalAffairs"] },
+      { "text": "Interview them.", "departments": ["writing", "videography"] },
+      { "text": "*Kilig*", "departments": ["secretariat", "finance"] },
+      { "text": "Continue walking.", "departments": ["humanResources", "webTechnologies", "creatives"] }
+    ]
+  },
+  {
+    "question": "Song that defines the first quarter of this academic year.",
+    "image": "/assets/quiz/first quarter.jpg",
+    "imageCredit": "Photo from Legally Blonde (2001)",
+    "answers": [
+      { "text": "Super Shy - NewJeans", "departments": ["photography", "secretariat"] },
+      { "text": "Umaasa - Calein", "departments": ["videography", "communityDevelopment"] },
+      { "text": "Uhaw (Tayong Lahat) - Dilaw", "departments": ["publicity"] },
+      { "text": "What Was I Made For? - Billie Eilish", "departments": ["writing", "secretariat"] },
+      { "text": "GENTO - SB19", "departments": ["webTechnologies", "externalAffairs"] },
+      { "text": "bad idea right? - Olivia Rodrigo", "departments": ["humanResources"] },
+      { "text": "august - Taylor Swift", "departments": ["creatives"] }
+    ]
+  },
+  {
+    "question": "What's your Christmas wish this year?",
+    "image": "/assets/quiz/christmas.png",
+    "imageCredit": "Screenshot from ABS-CBN Entertainment/Youtube",
+    "answers": [
+      { "text": "Love", "departments": ["writing"] },
+      { "text": "Money", "departments": ["finance"] },
+      { "text": "Dean's List", "departments": ["humanResources", "secretariat"] },
+      { "text": "New friends", "departments": ["communityDevelopment", "externalAffairs"] },
+      { "text": "Better computer specs", "departments": ["webTechnologies"] },
+      { "text": "To be famous on TikTok", "departments": ["publicity"] },
+      { "text": "Part-time gigs", "departments": ["photography", "videography", "creatives"] },
+      { "text": "To celebrate Anne Curtis' birthday", "departments": [] }
+    ]
+  }
+]
