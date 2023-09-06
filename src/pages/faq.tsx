@@ -110,7 +110,7 @@ const FaqPage = () => {
                 application
               </button>
 
-              <a href="https://join.tomasinoweb.org/quiz" target="_blank" rel="noreferrer">
+              <a href="/quiz" target="_blank" rel="noreferrer">
                 <div className={styles["faq-main-item"]}>
                   <img
                     src="/static/slot-machine.png"
