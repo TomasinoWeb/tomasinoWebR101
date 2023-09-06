@@ -1,12 +1,11 @@
 .FaqPage {
-  min-height: calc(100vh - 80px - 57px);
+  min-height: calc(100vh - var(--header-size) - var(--footer-size));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
   width: 100%;
-  margin-top: 100px;
 }
 
 .title-div {

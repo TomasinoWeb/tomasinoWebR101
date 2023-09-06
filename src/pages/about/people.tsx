@@ -3,11 +3,11 @@ import { Layout } from "../../components/Layout";
 import styles from "./people.module.scss";
 
 import Image from "next/image";
-import Banner from "public/assets/about/people/Banner.png";
+import Banner from "public/assets/about/people/ErasBanner.png";
 import GroupPic from "public/assets/about/people/MembersGroupPic.png";
-import BannerGrid1 from "public/assets/about/people/BannerGrid1.png";
-import BannerGrid2 from "public/assets/about/people/BannerGrid2.png";
-import BannerGrid3 from "public/assets/about/people/BannerGrid3.png";
+import BannerGrid1 from "public/assets/about/people/OrgWorkA.png";
+import BannerGrid2 from "public/assets/about/people/OrgWorkB.png";
+import BannerGrid3 from "public/assets/about/people/OrgWorkC.png";
 
 import { Titles } from "../../components/Titles";
 import { Buttons } from "../../components/Buttons";
@@ -52,13 +52,7 @@ export default function () {
         <div className={styles.grid}>
           {otherMembers.map((member, index) => (
             <div key={index} className={styles.member}>
-              <Image
-                src={member.image}
-                alt={`${member.name}'s Image`}
-                width={500}
-                height={500}
-                className={styles.image}
-              />
+              <Image src={member} alt={`featured member's image`} width={500} height={500} className={styles.image} />
             </div>
           ))}
         </div>
@@ -76,13 +70,13 @@ export default function () {
 
       <div className={styles.bannerGrid}>
         <div className={styles.imageContainer}>
-          <Image src={BannerGrid1} alt="Image from Coverage" className={styles.image} />
+          <Image src={BannerGrid1} alt="Image from Coverage" className={styles.image} width={600} />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={BannerGrid2} alt="Image from Coverage" className={styles.image} />
+          <Image src={BannerGrid2} alt="Org room" className={styles.image} width={600} />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={BannerGrid3} alt="Image from Coverage" className={styles.image} />
+          <Image src={BannerGrid3} alt="Creatives working" className={styles.image} width={600} />
         </div>
       </div>
 
