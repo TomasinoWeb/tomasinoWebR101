@@ -4,6 +4,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: background-color 100ms linear;
 
   .main {
     flex: 1;

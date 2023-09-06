@@ -29,11 +29,12 @@ export default function MyComponent() {
     <Layout departmentBackground={selectedMember?.background} textColor={selectedMember?.foreground}>
       <div className={styles.componentContainer} style={{ backgroundColor: selectedMember?.background }}>
         <div className={styles.title}>
-          <Titles title="Departments">
-            <span style={{ color: selectedMember?.foreground }}>
+          <div className={styles.mainHeading}>
+            <Titles title="Departments" color={selectedMember?.foreground}>
               {selectedMember ? selectedMember.title : "Choose your era..."}
-            </span>
-          </Titles>
+            </Titles>
+          </div>
+
           <p
             className={styles.description}
             style={{ color: selectedMember?.foreground }}
