@@ -40,7 +40,7 @@ const metatags = {
   },
 };
 
-const CANONICAL_URL = "https://r101-git-py16-tom-web-2.vercel.app/";
+const CANONICAL_URL = "https://join.tomasinoweb.org/";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
