@@ -9,7 +9,7 @@
       { "text": "Writer Barbie", "departments": ["writing"] },
       { "text": "Weird Barbie", "departments": ["webTechnologies", "creatives"] },
       { "text": "Mermaid Barbie", "departments": ["humanResources", "communityDevelopment"] },
-      { "text": "Duplomat Barbie", "departments": ["externalAffairs", "publicity"] },
+      { "text": "Diplomat Barbie", "departments": ["externalAffairs", "publicity"] },
       { "text": "I'm just Ken", "departments": [] }
     ]
   },
@@ -18,12 +18,12 @@
     "image": "/assets/quiz/lovers.jpg",
     "imageCredit": "Photo by Justin Lorenz Rentoza/TomasinoWeb",
     "answers": [
-      { "text": "Say \"hello!\"", "departments": ["externalAffairs", "humanResources"] },
-      { "text": "Have a small chat with them", "departments": ["publicity", "communityDevelopment"] },
-      { "text": "Small but no interactions", "departments": ["secretariat", "creatives"] },
-      { "text": "Chat it to your friends", "departments": ["writing"] },
-      { "text": "Think of it as a sign ;)", "departments": ["webTechnologies"] },
-      { "text": "*Bombastic side eye*", "departments": ["photography", "videography"] },
+      { "text": "Say \"hello!\".", "departments": ["externalAffairs", "humanResources"] },
+      { "text": "Have a small chat with them.", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Small but no interactions.", "departments": ["secretariat", "creatives"] },
+      { "text": "Chat it to your friends.", "departments": ["writing"] },
+      { "text": "Think of it as a sign ;).", "departments": ["webTechnologies"] },
+      { "text": "*Bombastic side eye*.", "departments": ["photography", "videography"] },
       { "text": "Do nothing.", "departments": ["finance"] }
     ]
   },
@@ -36,7 +36,7 @@
         "text": "Read notifications from Canvas.",
         "departments": ["secretariat", "humanResources", "communityDevelopment"]
       },
-      { "text": "Check out the teas you missed last night.", "departments": ["externalAffairs", "publicity"] },
+      { "text": "Check out the tea you missed last night.", "departments": ["externalAffairs", "publicity"] },
       { "text": "Drink coffee.", "departments": ["writing", "creatives"] },
       { "text": "Sleep for another 5 minutes.", "departments": ["videography", "webTechnologies"] },
       { "text": "Count your blessings.", "departments": ["finance"] },
@@ -65,9 +65,9 @@
     "image": "/assets/quiz/deadlines.jpg",
     "imageCredit": "Screenshot from Law School (2021)",
     "answers": [
-      { "text": "Procrastinate", "departments": ["photography"] },
-      { "text": "Watch a series", "departments": ["finance"] },
-      { "text": "Cry", "departments": ["humanResources", "secretariat"] },
+      { "text": "Procrastinate.", "departments": ["photography"] },
+      { "text": "Watch a series.", "departments": ["finance"] },
+      { "text": "Cry.", "departments": ["humanResources", "secretariat"] },
       { "text": "Take a nap", "departments": ["creatives", "videography"] },
       { "text": "What deadline? I'm done already.", "departments": ["writing", "communityDevelopment"] },
       { "text": "One more game", "departments": ["webTechnologies"] },
@@ -93,7 +93,7 @@
     ]
   },
   {
-    "question": "You'll be late in class and you're still on the road...",
+    "question": "You'll be late for class and you're still on the road...",
     "image": "/assets/quiz/late.jpg",
     "imageCredit": "Photo by Mark David Alagos",
     "answers": [
@@ -110,9 +110,9 @@
     "image": "/assets/quiz/uaap.png",
     "imageCredit": "Photo from V-League",
     "answers": [
-      { "text": "Take some pictures", "departments": ["photography", "communityDevelopment"] },
+      { "text": "Take some pictures.", "departments": ["photography", "communityDevelopment"] },
       { "text": "Take a selfie with them.", "departments": ["externalAffairs"] },
-      { "text": "Chat with your friends about it", "departments": ["externalAffairs"] },
+      { "text": "Chat with your friends about it.", "departments": ["externalAffairs"] },
       { "text": "Interview them.", "departments": ["writing", "videography"] },
       { "text": "*Kilig*", "departments": ["secretariat", "finance"] },
       { "text": "Continue walking.", "departments": ["humanResources", "webTechnologies", "creatives"] }
