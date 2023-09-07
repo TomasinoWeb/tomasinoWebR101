@@ -101,7 +101,7 @@
       { "text": "Don't just walk. *Run*", "departments": ["humanResources"] },
       { "text": "Accept your fate.", "departments": ["videography"] },
       { "text": "Text your blockmates.", "departments": ["externalAffairs", "secretariat", "creatives"] },
-      { "text": "I'm never late in class.", "departments": ["writing", "publicity"] },
+      { "text": "I'm never late for class.", "departments": ["writing", "publicity"] },
       { "text": "\"Wait, may pasok?\"", "departments": ["webTechnologies"] }
     ]
   },
