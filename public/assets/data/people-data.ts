@@ -34,7 +34,7 @@ export const coreMembers = [
   },
   {
     name: "Berlice Cudia",
-    position: "VP for Fincance",
+    position: "VP for Finance",
     image: "/assets/about/people/Core-Berlice.png",
   },
   {
