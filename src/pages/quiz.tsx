@@ -111,8 +111,8 @@ function RenderedFinished({ quizController }: { quizController: UseQuiz }) {
 function PageComponent() {
   const [hasLoaded, setHasLoaded] = useState(false);
   // const [hasLoaded, setHasLoaded] = useState(true);
-  if (hasLoaded == false) return <Intro load={() => setHasLoaded(true)} />;
   const quizController = useQuiz();
+  if (hasLoaded == false) return <Intro load={() => setHasLoaded(true)} />;
 
   return (
     <Layout>
