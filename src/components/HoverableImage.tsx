@@ -1,7 +1,7 @@
 import styles from "./HoverableImage.module.scss";
 import Image from "next/image";
 
-const nextifyImage = (src: string) => {
+export const nextifyImage = (src: string) => {
   return `/_next/image?url=${src}&w=640&q=75`;
 };
 

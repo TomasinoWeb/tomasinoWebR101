@@ -1,6 +1,9 @@
 import { Layout } from "../../components/Layout";
 import Link from "next/link";
 import styles from "./index.module.scss";
+import { nextifyImage } from "../../components/HoverableImage";
+import TomasinoWebLogo from "../../../public/assets/about/people/About-Logo.png";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -8,7 +11,7 @@ export default function About() {
       <div className={styles.container}>
         <div className={styles.hero}>
           <div className={styles.logo}>
-            <img src="../assets/about/people/About-Logo.png" alt="TomasinoWeb logo" />
+            <Image src={TomasinoWebLogo} alt="TomasinoWeb Logo" />
           </div>
 
           <div className={styles.statement}>
@@ -27,21 +30,36 @@ export default function About() {
         <div className={styles.redirect}>
           <Link href="about/departments">
             <div className={styles.departments}>
-              <div className={styles.img}></div>
+              <div
+                className={styles.img}
+                style={{
+                  backgroundImage: `url("${nextifyImage("/assets/about/people/About-Departments.png")}")`,
+                }}
+              />
               <h1 className={styles.title}>Departments</h1>
             </div>
           </Link>
 
           <Link href="about/people">
             <div className={styles.people}>
-              <div className={styles.img}></div>
+              <div
+                className={styles.img}
+                style={{
+                  backgroundImage: `url("${nextifyImage("/assets/about/people/About-People.png")}")`,
+                }}
+              />
               <h1 className={styles.title}>The People</h1>
             </div>
           </Link>
 
           <Link href="about/org-culture">
             <div className={styles.culture}>
-              <div className={styles.img}></div>
+              <div
+                className={styles.img}
+                style={{
+                  backgroundImage: `url("${nextifyImage("/assets/about/people/About-Culture.png")}")`,
+                }}
+              />
               <h1 className={styles.title}>Culture</h1>
             </div>
           </Link>

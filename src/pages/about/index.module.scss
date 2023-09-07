@@ -21,6 +21,8 @@
 
     img {
       height: 250px;
+      width: auto;
+      object-fit: cover;
     }
   }
 
@@ -76,7 +78,6 @@
   .departments .img {
     height: 50vh;
     width: calc(100vw / 3);
-    background-image: url("../../../public/assets/about/people/About-Departments.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -88,7 +89,6 @@
   .people .img {
     height: 50vh;
     width: calc(100vw / 3);
-    background-image: url("../../../public/assets/about/people/About-People.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -100,7 +100,6 @@
   .culture .img {
     height: 50vh;
     width: calc(100vw / 3);
-    background-image: url("../../../public/assets/about/people/About-Culture.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
