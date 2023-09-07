@@ -6,6 +6,7 @@ import { useState } from "react";
 import { UseQuiz, useQuiz } from "../utils/useQuiz";
 import { splitArrayIntoChunks } from "../utils/arrayUtils";
 import Image from "next/image";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 function Intro(props: { load: () => void }) {
   return (
@@ -84,7 +85,9 @@ function RenderedFinished({ quizController }: { quizController: UseQuiz }) {
           <p className={styles.lyric}>{department.lyric}</p>
           <p>Taylor Swift, {department.songName}</p>
 
-          <p className={styles.description}>{department.description}</p>
+          <p className={styles.description}>
+            <ReactMarkdown children={department.description} />
+          </p>
         </div>
 
         <div className={styles.right}>
