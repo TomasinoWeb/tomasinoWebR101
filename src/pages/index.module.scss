@@ -18,7 +18,7 @@
 }
 
 .titleSection {
-  width: 80%;
+  width: 40%;
 }
 
 .titleContainer {
@@ -39,12 +39,12 @@
 .links {
   display: flex;
   width: 100%;
-  font-size: 12px;
-  line-height: 16px;
   font-weight: 500;
   justify-content: space-between;
   align-items: center;
   margin: 24px 0;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .links > *:hover {
@@ -69,8 +69,12 @@
   border-bottom: 3px solid var(--darkgray);
 }
 
+.eroBlockContainerMobile {
+  display: none;
+}
+
 .eroBlockContainer > * {
-  flex-basis: 100%;
+  aspect-ratio: 1/1;
 }
 
 .eroBlockContainer > .eroBlock {
@@ -85,9 +89,9 @@
 
 .callToAction {
   text-decoration: underline;
-  font-size: 12px;
-  line-height: 16px;
   font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .callToAction:hover {
@@ -95,36 +99,44 @@
 }
 
 .eroBlockContainerDesktop {
-  display: none;
+  display: flex;
+  min-width: 100%;
 }
 
-@media (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .titleSection {
-    width: 40%;
+    width: 80%;
   }
 }
 
-@media (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .links {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .callToAction {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .eroBlockContainerMobile {
-    display: none;
+    display: flex;
+  }
+
+  .eroBlockContainerMobile,
+  .eroBlockContainer {
+    height: 30%;
+    .eroBlock {
+      height: 100%;
+    }
   }
 
   .eroBlockContainerDesktop {
-    display: flex;
-    min-width: 100%;
+    display: none;
   }
 
   .eroBlockContainer > * {
-    aspect-ratio: 1/1;
+    flex-basis: 100%;
   }
 }
