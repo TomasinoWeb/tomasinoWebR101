@@ -56,8 +56,8 @@ export const otherMembers = [
     title: "Web Technologies",
     description:
       "Web Technologists are the competitive game changers in the modern world. They innovate, lead, and evolve the way tell stories today.\n\nTEAMS: Front-end, Back-end, and UI/UX Design",
-    background: "#7D7779",
-    foreground: "#2A2628",
+    background: "#2A2628",
+    foreground: "#FAFAFA",
   },
   {
     name: "Kyle Erimae Lopez",
