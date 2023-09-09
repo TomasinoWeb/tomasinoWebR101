@@ -36,7 +36,7 @@ export const cultureCards = [
   },
   {
     title: "On-site Coverages",
-    image: "/assets/about/culture/OnSite.jpeg",
+    image: "/assets/about/culture/Culture-OnSiteCoverage.jpg",
     backgroundColor: "black",
     textColor: "white",
     border: "none",
@@ -45,7 +45,7 @@ export const cultureCards = [
   },
   {
     title: "Virtual Coverages",
-    image: "/assets/about/culture/VirtualCoverages.jpeg",
+    image: "/assets/about/culture/Culture-VirtualCoverage.png",
     backgroundColor: "lightblue",
     textColor: "black",
     border: "none",
@@ -54,7 +54,7 @@ export const cultureCards = [
   },
   {
     title: "Interactive Meetings",
-    image: "/assets/about/culture/InteractiveMeetings.jpeg",
+    image: "/assets/about/culture/Culture-InteractiveMeetings.png",
     backgroundColor: "darkblue",
     textColor: "white",
     border: "none",
@@ -63,7 +63,7 @@ export const cultureCards = [
   },
   {
     title: "Mentorship and Collaboration",
-    image: "/assets/about/culture/mentor.png",
+    image: "/assets/about/culture/Culture-Mentor.png",
     backgroundColor: "green",
     textColor: "black",
     content:
