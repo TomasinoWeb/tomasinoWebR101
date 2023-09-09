@@ -51,7 +51,7 @@ function Header(props: { textColor: any; departmentBackground: any }) {
           <a href="/">
             <Logo textColor={props.textColor} />
           </a>
-          <a href="">
+          <a href="/apply">
             <div className={styles.ticket}>
               <h3 className={styles.logo} style={{ color: props.textColor }}>
                 GET YOUR TICKETS NOW
@@ -82,12 +82,7 @@ function Header(props: { textColor: any; departmentBackground: any }) {
             </a>
           </li>
           <li>
-            <a
-              className={styles.navbarLink}
-              href="https://discord.gg/BHtvRaRr"
-              target="_blank"
-              style={{ color: props.textColor }}
-            >
+            <a className={styles.navbarLink} href="/discord" target="_blank" style={{ color: props.textColor }}>
               THE POOL
             </a>
           </li>
@@ -100,7 +95,7 @@ function Header(props: { textColor: any; departmentBackground: any }) {
           style={{ backgroundColor: props.departmentBackground ? props.departmentBackground : "#ffffff" }}
         >
           <li>
-            <a href="">
+            <a href="/apply">
               <div className={styles.ticket}>
                 <h3 className={styles.logo} style={{ color: props.textColor }}>
                   GET YOUR TICKETS NOW
@@ -135,7 +130,7 @@ function Header(props: { textColor: any; departmentBackground: any }) {
           <li>
             <a
               className={styles.menuLink}
-              href="https://discord.gg/BHtvRaRr"
+              href="/discord"
               target="_blank"
               style={{ color: props.textColor, borderColor: props.textColor }}
             >
@@ -163,7 +158,7 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a className={styles.footerLink} href="">
+          <a className={styles.footerLink} href="/discord">
             Application Form
           </a>
         </li>

@@ -4,8 +4,7 @@ import FAQ from "./FAQ";
 function SussyGroup() {
   const [faqs, setfaqs] = useState([
     {
-      question:
-        "Did some members of the org ever get attached to a hardboiled egg?",
+      question: "Did some members of the org ever get attached to a hardboiled egg?",
       answer: "Yes, we did. Its name was TomWegg. (RIP TomWegg 🥚🙏)",
       tag: "sussybaka",
       open: false,
@@ -30,8 +29,7 @@ function SussyGroup() {
     },
     {
       question: "Where should I contact you if I have more questions?",
-      answer:
-        "You may contact us using our Discord server or through join.tomweb15@gmail.com.",
+      answer: "You may contact us using our Discord server or through join@tomasinoweb.org.",
       tag: "sussybaka",
       open: false,
     },

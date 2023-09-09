@@ -49,13 +49,13 @@ export default function () {
               </li>
               <li className={styles.linkBullet}>•</li>
               <li className={styles.linkItem}>
-                <Link href="https://discord.gg/BHtvRaRr" target="_blank">
+                <Link href="/discord" target="_blank">
                   THE POOL
                 </Link>
               </li>
             </ul>
             <div className={styles.center}>
-              <Link href="" className={`${styles.callToAction}`}>
+              <Link href="/apply" className={`${styles.callToAction}`}>
                 GET YOUR TICKETS NOW
               </Link>
             </div>

@@ -24,17 +24,15 @@ function ApplicationGroup() {
       open: false,
     },
     {
-      question:
-        "To whom do we send our curriculum vitae and student registration form?",
+      question: "To whom do we send our curriculum vitae and student registration form?",
       answer:
-        "Please send your curriculum vitae to join.tomweb15@gmail.com with the subject “[DEPARTMENT] Your Whole Name”. Fill out the necessary fields, of course.",
+        "Please send your curriculum vitae to join@tomasinoweb.org with the subject “[DEPARTMENT] Your Whole Name”. Fill out the necessary fields, of course.",
       tag: "application",
       open: false,
     },
     {
       question: "Is there a membership fee?",
-      answer:
-        "Yes. It's P250 per member, but rest assured, you will absolutely get more than what you paid for.",
+      answer: "Yes. It's P250 per member, but rest assured, you will absolutely get more than what you paid for.",
       tag: "application",
       open: false,
     },
@@ -63,8 +61,3 @@ function ApplicationGroup() {
 }
 
 export default ApplicationGroup;
-
-
-
-
-
