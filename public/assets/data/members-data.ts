@@ -57,7 +57,7 @@ export const otherMembers = [
     description:
       "Web Technologists are the competitive game changers in the modern world. They innovate, lead, and evolve the way tell stories today.\n\nTEAMS: Front-end, Back-end, and UI/UX Design",
     background: "#7D7779",
-    foreground: "#FAFAFA",
+    foreground: "#2A2628",
   },
   {
     name: "Kyle Erimae Lopez",
@@ -96,7 +96,7 @@ export const otherMembers = [
     title: "Photography",
     description:
       "Photographers are able to tell a story beyond words, and capture the unseed facets of the dominant narratives from all angles and perspectives.\n\nTEAMS: Events, Sports, Portraits, and Photojournalism",
-    background: "#2A2628",
+    background: "#2D344E",
     foreground: "#FAFAFA",
   },
 ];
