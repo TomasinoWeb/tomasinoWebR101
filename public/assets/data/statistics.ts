@@ -9,7 +9,7 @@ export const statistics = [
   },
   {
     stats: "27",
-    content: `awards from prestigious contest & globally recognized institutions`,
+    content: `awards from prestigious contests & globally recognized institutions`,
   },
   {
     stats: "59",
