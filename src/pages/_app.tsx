@@ -56,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
           description: details.description,
           images: [
             {
-              url: `${CANONICAL_URL}meta.png`,
+              url: `${CANONICAL_URL}metav2.png`,
             },
           ],
         }}
