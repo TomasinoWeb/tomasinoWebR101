@@ -65,7 +65,7 @@ export const otherMembers = [
     hoveredImage: "/assets/about/departments/Departments-Creatives-1.png",
     title: "Creatives",
     description:
-      "Artists narrate stories through their impactful artworks. They draw, create, and make the impossible possible\n\nTEAMS: Graphic design and Illustration",
+      "Artists narrate stories through their impactful artworks. They draw, create, and make the impossible possible.\n\nTEAMS: Graphic design and Illustration",
     background: "#FCB1CF",
     foreground: "#393939",
   },
@@ -95,7 +95,7 @@ export const otherMembers = [
     hoveredImage: "/assets/about/departments/Departments-Photography-1.png",
     title: "Photography",
     description:
-      "Photographers are able to tell a story beyond words, and capture the unseed facets of the dominant narratives from all angles and perspectives.\n\nTEAMS: Events, Sports, Portraits, and Photojournalism",
+      "Photographers are able to tell a story beyond words, and capture the unseen facets of the dominant narratives from all angles and perspectives.\n\nTEAMS: Events, Sports, Portraits, and Photojournalism",
     background: "#2D344E",
     foreground: "#FAFAFA",
   },
