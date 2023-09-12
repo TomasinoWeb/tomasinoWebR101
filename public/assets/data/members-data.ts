@@ -40,9 +40,9 @@ export const otherMembers = [
     foreground: "#FAFAFA",
   },
   {
-    name: "Jan Carlo Zamora",
-    image: "/assets/about/departments/Departments-Writing-0.png",
-    hoveredImage: "/assets/about/departments/Departments-Writing-1.png",
+    name: "Alexandria Grace Magno",
+    image: "/assets/about/departments/Departments-Writing-0v1.png",
+    hoveredImage: "/assets/about/departments/Departments-Writing-1v1.png",
     title: "Writing",
     description:
       "Writing are not just limited to telling stories. They disturb the undisturbed, and take it upon themselves to make sure that the necessary truths see the light of day.\n\nSECTIONS: Reports, Stories (Features and Literary), Blogs, and Sports",

@@ -6,7 +6,7 @@ function ResultsGroup() {
     {
       question: "How long should I wait for the results?",
       answer:
-        "The maximum waiting period for the application results should be seven days. If you did not receive an email regarding the result of your application, please do not hesitate to follow up with us through join@tomasinoweb.org. ",
+        "The maximum waiting period for the application results should be seven days. If you did not receive an email regarding the result of your application, please do not hesitate to follow up with us through The Pool. ",
       tag: "results",
       open: false,
     },

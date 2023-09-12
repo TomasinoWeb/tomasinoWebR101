@@ -5,13 +5,13 @@ function SussyGroup() {
   const [faqs, setfaqs] = useState([
     {
       question: "Did some members of the org ever get attached to a hardboiled egg?",
-      answer: "Yes, we did. Its name was TomWegg. (RIP TomWegg 🥚🙏)",
+      answer: "Yes, we did. So much that we immortalized TomWegg to become the official mascot of Lamona! 🥚",
       tag: "sussybaka",
       open: false,
     },
     {
       question: "Do you all even sleep?",
-      answer: "Uh, next question!",
+      answer: "Uh, next question! But there’s a clue in epiphany at 2:34 😉",
       tag: "sussybaka",
       open: false,
     },
@@ -23,7 +23,7 @@ function SussyGroup() {
     },
     {
       question: "Will I finally meet the “one”?",
-      answer: "TWinder happened. Sort of. Apply now and find it out yourself! ",
+      answer: "Well, this is our place, we make the call~ Or if you want, go shoot your shot on Draft 143! ",
       tag: "sussybaka",
       open: false,
     },
