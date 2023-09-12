@@ -28,7 +28,7 @@ export const coreMembers = [
     image: "/assets/about/people/Core-Celes.png",
   },
   {
-    name: "Claire Ann Arce",
+    name: "Claire Anne Arce",
     position: "VP for External Affairs",
     image: "/assets/about/people/Core-Claire.png",
   },
