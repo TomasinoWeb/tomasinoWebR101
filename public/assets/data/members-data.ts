@@ -20,7 +20,7 @@ export const otherMembers = [
     foreground: "#393939",
   },
   {
-    name: "Claire Ann Arce",
+    name: "Claire Anne Arce",
     image: "/assets/about/departments/Departments-ExtAff-0.png",
     hoveredImage: "/assets/about/departments/Departments-ExtAff-1.png",
     title: "External Affairs",
