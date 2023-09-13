@@ -41,7 +41,7 @@ export default function () {
         <div className={styles.container}>
           <CardRow title="Formal Application" image={FormImage} hasArrow>
             Applicants must first accomplish the{" "}
-            <a href="" target="_blank" rel="noreferrer">
+            <a href="/apply" target="_blank" rel="noreferrer">
               Google Forms.
             </a>
           </CardRow>
