@@ -18,13 +18,13 @@
     "image": "/assets/quiz/lovers.jpg",
     "imageCredit": "Photo by Justin Lorenz Rentoza/TomasinoWeb",
     "answers": [
-      { "text": "Say \"hello!\".", "departments": ["externalAffairs", "humanResources"] },
-      { "text": "Have a small chat with them.", "departments": ["publicity", "communityDevelopment"] },
-      { "text": "Small but no interactions.", "departments": ["secretariat", "creatives"] },
-      { "text": "Chat it to your friends.", "departments": ["writing"] },
-      { "text": "Think of it as a sign ;).", "departments": ["webTechnologies"] },
-      { "text": "*Bombastic side eye*.", "departments": ["photography", "videography"] },
-      { "text": "Do nothing.", "departments": ["finance"] }
+      { "text": "Say \"hello!\"", "departments": ["externalAffairs", "humanResources"] },
+      { "text": "Have a small chat with them", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Smile but no interactions", "departments": ["secretariat", "creatives"] },
+      { "text": "Chat it to your friends", "departments": ["writing"] },
+      { "text": "Think of it as a sign ;)", "departments": ["webTechnologies"] },
+      { "text": "*Bombastic side eye*", "departments": ["photography", "videography"] },
+      { "text": "Do nothing", "departments": ["finance"] }
     ]
   },
   {
@@ -33,14 +33,14 @@
     "imageCredit": "Photo from Bliss (2017)",
     "answers": [
       {
-        "text": "Read notifications from Canvas.",
+        "text": "Read notifications from Canvas",
         "departments": ["secretariat", "humanResources", "communityDevelopment"]
       },
-      { "text": "Check out the tea you missed last night.", "departments": ["externalAffairs", "publicity"] },
-      { "text": "Drink coffee.", "departments": ["writing", "creatives"] },
-      { "text": "Sleep for another 5 minutes.", "departments": ["videography", "webTechnologies"] },
-      { "text": "Count your blessings.", "departments": ["finance"] },
-      { "text": "Take a selfie.", "departments": ["photography"] }
+      { "text": "Check out the tea you missed last night", "departments": ["externalAffairs", "publicity"] },
+      { "text": "Drink coffee", "departments": ["writing", "creatives"] },
+      { "text": "Sleep for another 5 minutes", "departments": ["videography", "webTechnologies"] },
+      { "text": "Count your blessings", "departments": ["finance"] },
+      { "text": "Take a selfie", "departments": ["photography"] }
     ]
   },
   {
@@ -65,11 +65,11 @@
     "image": "/assets/quiz/deadlines.jpg",
     "imageCredit": "Screenshot from Law School (2021)",
     "answers": [
-      { "text": "Procrastinate.", "departments": ["photography"] },
-      { "text": "Watch a series.", "departments": ["finance"] },
-      { "text": "Cry.", "departments": ["humanResources", "secretariat"] },
+      { "text": "Procrastinate", "departments": ["photography"] },
+      { "text": "Watch a series", "departments": ["finance"] },
+      { "text": "Cry", "departments": ["humanResources", "secretariat"] },
       { "text": "Take a nap", "departments": ["creatives", "videography"] },
-      { "text": "What deadline? I'm done already.", "departments": ["writing", "communityDevelopment"] },
+      { "text": "What deadline? I'm done already", "departments": ["writing", "communityDevelopment"] },
       { "text": "One more game", "departments": ["webTechnologies"] },
       { "text": "Ask your blockmates if they're done", "departments": ["externalAffairs", "publicity"] }
     ]
@@ -79,17 +79,17 @@
     "image": "/assets/quiz/lola amour.jpg",
     "imageCredit": "Screenshot from Lola Amour/Youtube",
     "answers": [
-      { "text": "Romanticize the pouring rain.", "departments": ["writing"] },
+      { "text": "Romanticize the pouring rain", "departments": ["writing"] },
       {
         "text": "Check Honey Lacuña’s Facebook page for suspension announcements.",
         "departments": ["humanResources", "publicity"]
       },
       { "text": "It's bed weather!", "departments": ["videography", "creatives"] },
-      { "text": "Play online games.", "departments": ["webTechnologies"] },
-      { "text": "Take a photo outside.", "departments": ["photography"] },
+      { "text": "Play online games", "departments": ["webTechnologies"] },
+      { "text": "Take a photo outside", "departments": ["photography"] },
       { "text": "Text your ex.", "departments": ["communityDevelopment"] },
-      { "text": "Drink a hot beverage.", "departments": ["secretariat"] },
-      { "text": "Tell your loved ones to be safe.", "departments": ["externalAffairs"] }
+      { "text": "Drink a hot beverage", "departments": ["secretariat"] },
+      { "text": "Tell your loved ones to be safe", "departments": ["externalAffairs"] }
     ]
   },
   {
@@ -97,11 +97,11 @@
     "image": "/assets/quiz/late.jpg",
     "imageCredit": "Photo by Mark David Alagos",
     "answers": [
-      { "text": "Walk faster.", "departments": ["communityDevelopment", "finance"] },
+      { "text": "Walk faster", "departments": ["communityDevelopment", "finance"] },
       { "text": "Don't just walk. *Run*", "departments": ["humanResources"] },
-      { "text": "Accept your fate.", "departments": ["videography"] },
-      { "text": "Text your blockmates.", "departments": ["externalAffairs", "secretariat", "creatives"] },
-      { "text": "I'm never late for class.", "departments": ["writing", "publicity"] },
+      { "text": "Accept your fate", "departments": ["videography"] },
+      { "text": "Text your blockmates", "departments": ["externalAffairs", "secretariat", "creatives"] },
+      { "text": "I'm never late for class", "departments": ["writing", "publicity"] },
       { "text": "\"Wait, may pasok?\"", "departments": ["webTechnologies"] }
     ]
   },
@@ -110,12 +110,12 @@
     "image": "/assets/quiz/uaap.png",
     "imageCredit": "Photo from V-League",
     "answers": [
-      { "text": "Take some pictures.", "departments": ["photography", "communityDevelopment"] },
-      { "text": "Take a selfie with them.", "departments": ["externalAffairs"] },
-      { "text": "Chat with your friends about it.", "departments": ["externalAffairs"] },
-      { "text": "Interview them.", "departments": ["writing", "videography"] },
+      { "text": "Take some pictures", "departments": ["photography", "communityDevelopment"] },
+      { "text": "Take a selfie with them", "departments": ["externalAffairs"] },
+      { "text": "Chat with your friends about it", "departments": ["externalAffairs"] },
+      { "text": "Interview them", "departments": ["writing", "videography"] },
       { "text": "*Kilig*", "departments": ["secretariat", "finance"] },
-      { "text": "Continue walking.", "departments": ["humanResources", "webTechnologies", "creatives"] }
+      { "text": "Continue walking", "departments": ["humanResources", "webTechnologies", "creatives"] }
     ]
   },
   {
