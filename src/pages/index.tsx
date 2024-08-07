@@ -1,5 +1,5 @@
-import { PublicLayoutFrontend } from "@/layouts/public/frontend";
-import { PublicLayoutBackend } from "@/layouts/public/static";
+import { PublicLayoutFrontend } from "../layouts/public/frontend";
+import { PublicLayoutBackend } from "../layouts/public/static";
 
 interface PageProps {}
 
