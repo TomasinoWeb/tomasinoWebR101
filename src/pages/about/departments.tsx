@@ -112,15 +112,15 @@ const departments = [
 ]
 
 export default function Page() {
-
-  // TODO: add layout
   return ( 
-    <div> 
+    <div
+      style={{display: "flex", flexDirection: "column", width:"100vw", overflowX: "hidden"}}
+    > 
+      {/* TODO: add proper layout */}
       <main className={styles.container}>
         <section
           className={styles.section}
         >
-          {/* could probably be a component */}
           <RepeatingHeader title="DEPARTMENTS"/>
           
           <p>
