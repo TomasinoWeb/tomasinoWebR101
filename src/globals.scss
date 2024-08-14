@@ -104,3 +104,9 @@ body {
   font-weight: 900;
   src: url("/fonts/Manrope/Manrope-ExtraBold.ttf") format("truetype");
 }
+
+.frontend {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
