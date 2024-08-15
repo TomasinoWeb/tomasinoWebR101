@@ -1,4 +1,3 @@
-import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import styles from "./departments.module.scss";
 import Image from "next/image";
 import { useState } from "react";
@@ -12,7 +11,7 @@ type Department = {
   branch: string
 }
 
-/* TODO: complete the rest of the departments, double check descriptions then move to another file */
+/* TODO: Double check departments then move to another file */
 
 // all the colors for reference
 // sec: "#D35C5F"
@@ -61,20 +60,28 @@ const departments = [
     color: "#BAA357"
   },
   {
-    image:"/assets/about/departments/writing.png",
-    branch:"Executive Affairs",
-    name: "Writing",
-    description:
-      "Writing are not just limited to telling stories. They disturb the undisturbed, and take it upon themselves to make sure that the necessary truths see the light of day.\n\nSECTIONS: Reports, Stories (Features and Literary), Blogs, and Sports",
-    color: "#333234"
-  },
-  {
     image:"/assets/about/departments/pubcomm.png",
     branch:"Executive Affairs",
     name: "Publicity and Communications",
     description:
       "Garnering a wide audience, publicists tackle the spread of projects, engagements, and content of the organization to reach every single member of the Thomasian community.",
     color: "#E59B99"
+  },
+  {
+    image:"/assets/about/departments/commdev.png",
+    branch:"Executive Affairs",
+    name: "Community Development",
+    description:
+      "The team plans and organizes outreach activities that will benefit TomasinoWeb's partner communities.",
+    color: "#15204B"
+  },
+  {
+    image:"/assets/about/departments/writing.png",
+    branch:"Publication",
+    name: "Writing",
+    description:
+      "Writing are not just limited to telling stories. They disturb the undisturbed, and take it upon themselves to make sure that the necessary truths see the light of day.\n\nSECTIONS: Reports, Stories (Features and Literary), Blogs, and Sports",
+    color: "#333234"
   },
   {
     image:"/assets/about/departments/videogs.png",
