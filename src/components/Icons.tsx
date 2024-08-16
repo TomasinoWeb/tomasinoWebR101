@@ -65,19 +65,19 @@ export const icons = {
         r="1"
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       />
     </svg>
   ),
   burgerMenu: (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 25" fill="none">
       <path d="M4 5.5H19V7.16667H4V5.5ZM9 11.3333H19V13H9V11.3333ZM4 17.1667H19V18.8333H4V17.1667Z" fill="#343332" />
     </svg>
   ),
   menuClose: (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 25" fill="none">
       <path
         d="M7.33366 18.3332L6.16699 17.1665L10.8337 12.4998L6.16699 7.83317L7.33366 6.6665L12.0003 11.3332L16.667 6.6665L17.8337 7.83317L13.167 12.4998L17.8337 17.1665L16.667 18.3332L12.0003 13.6665L7.33366 18.3332Z"
         fill="#343332"

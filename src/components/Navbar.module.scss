@@ -1,0 +1,154 @@
+$black: #000000;
+$white: #ffffff;
+$dark-grey: #343332;
+$light-grey: #dddddd;
+$light-yellow: #fff9e5;
+$pale-pink: #ffe1e2;
+$dark-green: #38504a;
+$dark-purple: #392b42;
+$aesthetic: "Aesthetic";
+$manrope: "Manrope", sans-serif;
+
+.container {
+  $max-width: 1300px;
+  $padding: 0.5rem;
+
+  width: min($max-width, 100% - $padding * 2);
+  margin-inline: auto;
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.black {
+  background-color: transparent;
+  color: $white;
+}
+
+.white {
+  background-color: $white;
+  color: $dark-grey;
+
+  .navButton {
+    border: 2px solid $dark-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    padding: auto;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: inherit;
+
+    &:hover {
+      background-color: $dark-grey;
+      color: $white;
+      border: 2px solid $white;
+    }
+  }
+}
+
+.header {
+  background-color: $white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  top: 0;
+}
+
+.navToggle {
+  display: none;
+}
+
+.navClose {
+  display: none;
+}
+
+.navButton {
+  padding: 24px;
+}
+
+.navLogo {
+  color: inherit;
+  text-align: center;
+  font-family: $aesthetic;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  column-gap: 2.5rem;
+  list-style-type: none;
+}
+
+.navItem {
+  padding: 3px;
+  font-family: $manrope;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navLink {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 2px solid $dark-grey;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .primaryNav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    inset: 3.7rem 0 auto;
+    background: $white;
+  }
+
+  .navList {
+    width: 100%;
+    flex-direction: column;
+
+    text-align: center;
+    row-gap: 1rem;
+    .navItem {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .navToggle {
+    display: block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .navItem {
+    font-size: 10px;
+  }
+
+  .navLogo {
+    font-size: 18px;
+  }
+}
+
+.opened {
+  display: block;
+}
