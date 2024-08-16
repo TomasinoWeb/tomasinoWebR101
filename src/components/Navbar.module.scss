@@ -11,7 +11,7 @@ $manrope: "Manrope", sans-serif;
 
 .container {
   $max-width: 1300px;
-  $padding: 0.5rem;
+  $padding: 24px;
 
   width: min($max-width, 100% - $padding * 2);
   margin-inline: auto;
@@ -34,16 +34,6 @@ $manrope: "Manrope", sans-serif;
 
   .navButton {
     border: 2px solid $dark-grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    text-align: center;
-    padding: auto;
-    width: 100%;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    color: inherit;
 
     &:hover {
       background-color: $dark-grey;
@@ -53,10 +43,22 @@ $manrope: "Manrope", sans-serif;
   }
 }
 
+.navButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  padding: auto;
+  width: 100%;
+  padding: 12px 24px;
+  color: inherit;
+}
+
 .header {
   background-color: $white;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 16px;
+  padding-bottom: 8px;
   top: 0;
 }
 
@@ -66,10 +68,6 @@ $manrope: "Manrope", sans-serif;
 
 .navClose {
   display: none;
-}
-
-.navButton {
-  padding: 24px;
 }
 
 .navLogo {
@@ -88,8 +86,8 @@ $manrope: "Manrope", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  column-gap: 2.5rem;
+  padding: 16px;
+  column-gap: 40px;
   list-style-type: none;
 }
 
@@ -110,12 +108,12 @@ $manrope: "Manrope", sans-serif;
   }
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 768px) {
   .primaryNav {
     display: none;
     position: fixed;
     width: 100%;
-    inset: 3.7rem 0 auto;
+    inset: 50px 0 auto;
     background: $white;
   }
 
@@ -124,7 +122,7 @@ $manrope: "Manrope", sans-serif;
     flex-direction: column;
 
     text-align: center;
-    row-gap: 1rem;
+    row-gap: 16px;
     .navItem {
       width: 100%;
       display: flex;
