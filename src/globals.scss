@@ -3,3 +3,60 @@
   padding: 0;
   margin: 0;
 }
+
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --dark-grey: #343332;
+  --light-grey: #DDDDDD;
+  --light-yellow: #FFF9E5;
+  --pale-pink: #FFE1E2;
+  --dark-green: #38504A;
+  --dark-purple: #392B42;
+  --olive-brown: #BAA357;
+  --light-cyan: #CCECE4;
+  --brick-red: #D35C5F;
+  --light-purple: #F1E6F8;
+  --glass-bg: #79A39E;
+}
+
+// add more font weights if needed
+
+@font-face {
+  font-family: Aesthetic;
+  src: url("/fonts/Aesthetic/AestheticRegular-Yzraq.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-Black;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-Regular;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Regular.otf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url("/fonts/Manrope/Manrope-Regular.ttf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Manrope-Bold;
+  src: url("/fonts/Manrope/Manrope-Bold.ttf") format("opentype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Manrope-Medium;
+  src: url("/fonts/Manrope/Manrope-Medium.ttf") format("opentype");
+  font-weight: 600;
+}
+
+
+h1, h2, h3 h4 {
+  font-family: Aesthetic;
+}
