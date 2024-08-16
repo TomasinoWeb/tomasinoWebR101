@@ -1,16 +1,23 @@
 .repeatTitle {
-    display: flex;
-    gap: 2em;
+  display: flex;
+  gap: clamp(10px, 2vw, 2em);
 }
 
 .title {
   font-size: 6rem; // this size could be adjusted later
-  font-weight: normal;
+  font-weight: lighter;
 }
 
 .title.highlighted {
-  font-weight: bold;
-  color: black;
+  color: black !important;
+}
+
+@supports(-webkit-text-stroke: 1px black){
+  .title:not(.highlighted){
+      color: white;
+      -webkit-text-stroke: 1px black;
+      text-shadow: none;
+  }
 }
 
 @media only screen and (max-width: 1000px) {

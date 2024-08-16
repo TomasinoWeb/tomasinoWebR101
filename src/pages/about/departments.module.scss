@@ -7,12 +7,14 @@
 
   p {
     width: 70%;
+    font-family: BeautiqueDisplay-Black;
+    font-size: 1.2rem;
   }
   
 }
 
 .section > *, .reel {
-  margin-bottom: 1em;
+  margin-bottom: 2.5em;
 }
 
 // contains all the department blocks
@@ -34,6 +36,10 @@
   
     cursor: pointer;
     border-top: 2px solid black;
+
+    .branch, .status {
+      font-family: Manrope-Medium;
+    }
 
     .branch {
       flex: 1;
@@ -71,6 +77,7 @@
       .description {
         text-wrap: wrap;
         transition: opacity var(--animation-speed) ease, max-height var(--animation-speed) ease;
+        font-family: Manrope, sans-serif;
       }
     }
   
