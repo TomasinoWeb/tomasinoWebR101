@@ -34,8 +34,8 @@ $light-grey: hsl(30, 2%, 30%);
   text-align: center;
 
   a {
-    font-size: 0.875rem; /* 14px */
-    line-height: 1.25rem;
+    font-size: 14px; /* 14px */
+    line-height: 20px;
     color: inherit;
     text-decoration: none;
     &:hover {
@@ -56,7 +56,7 @@ $light-grey: hsl(30, 2%, 30%);
   gap: 12px;
   color: inherit;
 
-  font-size: 0.5rem;
+  font-size: 8px;
 
   a {
     color: inherit;
