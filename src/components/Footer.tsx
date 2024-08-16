@@ -26,7 +26,6 @@ const Footer = (props: FooterProps) => {
           </li>
         </ul>
       </div>
-      {/* Social Media Links */}
       <div className="">
         <ul className={`${styles.socialIcons}`}>
           <li>
