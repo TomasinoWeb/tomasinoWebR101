@@ -121,9 +121,7 @@ const departments = [
 
 export default function Page() {
   return ( 
-    <div
-      style={{display: "flex", flexDirection: "column", width:"100vw", overflowX: "hidden"}}
-    > 
+    <div> 
       {/* TODO: add proper layout */}
       <main className={styles.container}>
         <section

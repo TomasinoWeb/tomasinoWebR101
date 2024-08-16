@@ -1,6 +1,9 @@
 .repeatTitle {
   display: flex;
   gap: clamp(10px, 2vw, 2em);
+  justify-content: center;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .title {
