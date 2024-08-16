@@ -2,6 +2,7 @@ import styles from "./departments.module.scss";
 import Image from "next/image";
 import { useState } from "react";
 import RepeatingHeader from "../../components/RepeatHeader";
+import Link from "next/link";
 
 type Department = {
   image: string
@@ -138,7 +139,7 @@ export default function Page() {
         <section className={styles.section}>
           <p>Still not sure which department is right for you? 
           Take our quick quiz to find your perfect fit!</p>
-          <button>Take Quiz</button>
+          <Link href="/quiz">Take Quiz</Link>
         </section>
       </main>
     </div>
