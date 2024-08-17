@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 import RepeatingHeader from "../../components/RepeatHeader";
 import Link from "next/link";
+import { PublicLayoutFrontend } from "../../layouts/public/frontend";
+import { PublicLayoutBackend } from "../../layouts/public/static";
 
 type Department = {
   image: string
@@ -10,6 +12,109 @@ type Department = {
   name: string
   description: string
   branch: string
+}
+
+interface PageProps {}
+
+export default PublicLayoutFrontend.use<PageProps>(() => {
+  return {
+    children: 
+    <div>
+      <main className={styles.container}>
+        <section
+          className={styles.section}
+        >
+          <RepeatingHeader title="DEPARTMENTS"/>
+          
+          <p>
+            Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation, passion, and dedication.
+          </p>
+        </section>
+        <DepartmentReel />
+        <section className={styles.section}>
+          <p>Still not sure which department is right for you? 
+          Take our quick quiz to find your perfect fit!</p>
+          <Link href="/quiz">Take Quiz</Link>
+        </section>
+      </main>
+    </div>,
+  };
+});
+
+export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+
+
+function DepartmentReel() {
+
+  const [selectedDepartment, changeDepartment] = useState<Department| null>(null)
+
+  const handleDepartmentChange = (department : Department) => {
+    console.log(department.name)
+
+    if (department.name === selectedDepartment?.name) 
+      changeDepartment(null)
+    else
+      changeDepartment(department)
+  }
+
+  return(
+    <div className={styles.reel}>
+        {
+          departments.map(
+            (department) => (
+              <div onClick={() => handleDepartmentChange(department)}>
+                <DepartmentBlock 
+                  color={department.color} 
+                  image={department.image} 
+                  branch={department.branch} 
+                  department={department.name} 
+                  description={department.description}
+                  isActive={selectedDepartment?.name === department.name}
+                />
+              </div>
+              
+            )
+          )
+        }
+      </div>
+  );
+}
+
+interface blockProps {
+  color: string,
+  image: string,
+  branch: string, // idk what this should be called
+  department: string,
+  description: string,
+  isActive?: boolean
+}
+
+function DepartmentBlock(props: blockProps) {
+  return(
+  <span className={styles.deptBlock}>
+    <h4 className={styles.branch}>{props.branch.toUpperCase()}</h4>
+    <div className={`${styles.imgContainer} ${props.isActive ? styles.expand : ""}`}>
+      <Image 
+        src={props.image} 
+        alt={props.department} 
+        width={395}
+        height={173}
+      />
+    </div>
+    
+
+    <span className={styles.textBlock} style={{color:props.color}}>
+      <h2 className={styles.name}> {props.department.toUpperCase()} </h2>
+      <p className={`${styles.description} ${props.isActive ? styles.visible : styles.notVisible}`}> 
+        {props.description} 
+      </p>
+    </span>  
+
+    <h4 className={styles.status}>
+      {props.isActive ? "CLOSE" : "OPEN"}
+    </h4>
+  </span>
+  )
 }
 
 /* TODO: Double check departments then move to another file */
@@ -118,103 +223,3 @@ const departments = [
       "Web Technologists are the competitive game changers in the modern world. They innovate, lead, and evolve the way we tell stories today.\n\nTEAMS: Front-end, Back-end, and UI/UX Design",
   }
 ]
-
-export default function Page() {
-  return ( 
-    <div> 
-      {/* TODO: add proper layout */}
-      <main className={styles.container}>
-        <section
-          className={styles.section}
-        >
-          <RepeatingHeader title="DEPARTMENTS"/>
-          
-          <p>
-            Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation, passion, and dedication.
-          </p>
-        </section>
-        <DepartmentReel />
-        <section className={styles.section}>
-          <p>Still not sure which department is right for you? 
-          Take our quick quiz to find your perfect fit!</p>
-          <Link href="/quiz">Take Quiz</Link>
-        </section>
-      </main>
-    </div>
-  );
-}
-
-
-function DepartmentReel() {
-
-  const [selectedDepartment, changeDepartment] = useState<Department| null>(null)
-
-  const handleDepartmentChange = (department : Department) => {
-    console.log(department.name)
-
-    if (department.name === selectedDepartment?.name) 
-      changeDepartment(null)
-    else
-      changeDepartment(department)
-  }
-
-  return(
-    <div className={styles.reel}>
-        {
-          departments.map(
-            (department) => (
-              <div onClick={() => handleDepartmentChange(department)}>
-                <DepartmentBlock 
-                  color={department.color} 
-                  image={department.image} 
-                  branch={department.branch} 
-                  department={department.name} 
-                  description={department.description}
-                  isActive={selectedDepartment?.name === department.name}
-                />
-              </div>
-              
-            )
-          )
-        }
-      </div>
-  );
-}
-
-interface blockProps {
-  color: string,
-  image: string,
-  branch: string, // idk what this should be called
-  department: string,
-  description: string,
-  isActive?: boolean
-}
-
-function DepartmentBlock(props: blockProps) {
-  return(
-  <span className={styles.deptBlock}>
-    <h4 className={styles.branch}>{props.branch.toUpperCase()}</h4>
-    <div className={`${styles.imgContainer} ${props.isActive ? styles.expand : ""}`}>
-      <Image 
-        src={props.image} 
-        alt={props.department} 
-        width={395}
-        height={173}
-      />
-    </div>
-    
-
-    <span className={styles.textBlock} style={{color:props.color}}>
-      <h2 className={styles.name}> {props.department.toUpperCase()} </h2>
-      <p className={`${styles.description} ${props.isActive ? styles.visible : styles.notVisible}`}> 
-        {props.description} 
-      </p>
-    </span>  
-
-    <h4 className={styles.status}>
-      {props.isActive ? "CLOSE" : "OPEN"}
-    </h4>
-  </span>
-  )
-}
-
