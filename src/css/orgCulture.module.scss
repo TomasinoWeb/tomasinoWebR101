@@ -1,0 +1,228 @@
+.org-culture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+// HEADER
+.side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden; /* Hide anything that goes beyond the container */
+  margin-top: 70px;
+  justify-content: center; /* Center items horizontally */
+}
+
+.title-page {
+  color: var(--dark-grey, #343332);
+  font-family: Aesthetic;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-shadow:
+    -2px 0 0 var(--dark-grey, #343332),
+    0 2px 0 var(--dark-grey, #343332),
+    2px 0 0 var(--dark-grey, #343332),
+    0 -2px 0 var(--dark-grey, #343332);
+  white-space: nowrap; /* Prevents text wrapping */
+  z-index: 2; /* Make sure it's above the outline */
+}
+
+.title-page-outline {
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: var(--dark-grey, #343332);
+  color: transparent; /* Ensure only the stroke is visible */
+  font-family: Aesthetic;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute; /* Position relative to parent */
+  white-space: nowrap; /* Prevents text wrapping */
+  z-index: 1; /* Behind the filled text */
+}
+
+/* Positioning for the left outline */
+.title-page-outline-left {
+  top: 50%;
+  left: -9%; /* Position more to the left on larger screens */
+  transform: translate(-50%, -50%);
+}
+
+/* Positioning for the right outline */
+.title-page-outline-right {
+  top: 50%;
+  left: 110%; /* Position more to the right on larger screens */
+  transform: translate(-50%, -50%);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1300px) {
+  .title-page,
+  .title-page-outline {
+    font-size: 100px; /* Reduce font size */
+  }
+
+  .title-page-outline-left {
+    left: -15%; /* Adjust positioning */
+  }
+
+  .title-page-outline-right {
+    left: 115%; /* Adjust positioning */
+  }
+}
+
+@media (max-width: 992px) {
+  .title-page,
+  .title-page-outline {
+    font-size: 80px; /* Reduce font size */
+  }
+
+  .title-page-outline-left {
+    left: -10%; /* Adjust positioning */
+  }
+
+  .title-page-outline-right {
+    left: 110%; /* Adjust positioning */
+  }
+}
+
+@media (max-width: 868px) {
+  .title-page,
+  .title-page-outline {
+    font-size: 60px; /* Reduce font size */
+  }
+
+  .title-page-outline {
+    -webkit-text-stroke-width: 2px; /* Decrease stroke width */
+    opacity: 0; /* Make the outline disappear */
+    pointer-events: none; /* Prevent interaction */
+  }
+
+  .title-page-outline-left,
+  .title-page-outline-right {
+    display: none; /* Hide the outlines on small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .title-page {
+    font-size: 40px; /* Further reduce font size for small screens */
+    left: 50%;
+  }
+}
+// END OF HEADER
+
+.title-caption {
+  font-size: 20px;
+  width: 80%;
+  font-style: normal;
+  font-weight: 400;
+  font-family: BeautiqueDisplay-Bold;
+  margin: 40px 0px;
+}
+// TOP CARDS SECTION
+/* Base styles */
+.text-3xl {
+  font-family: Aesthetic;
+  color: var(--dark-grey, #343332);
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: var(--dark-grey, #343332);
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.text-caption {
+  color: var(--dark-grey, #343332);
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 24px */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  gap: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .text-3xl {
+    font-size: 36px;
+  }
+
+  .text-caption {
+    font-size: 18px;
+  }
+
+  .row {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-3xl {
+    font-size: 28px;
+  }
+
+  .text-caption {
+    font-size: 16px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+/* GHIBLI ICONS */
+.ghibli-icons-layout {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden; /* Hide anything that goes beyond the container */
+  justify-content: center;
+  width: 100%;
+  margin: 0px;
+}
+
+.ghibli-icons {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+}
+// video
+.video {
+  margin: 40px;
+}
+.video-border {
+  padding: 20px;
+  border: #343332 1px solid;
+}
