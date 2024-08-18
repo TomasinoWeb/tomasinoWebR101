@@ -1,5 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+@font-face {
+  font-family: Aesthetic;
+  src: url("/fonts/Aesthetic/AestheticRegular-Yzraq.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-Black;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-BlackItalic;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-BlackItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: BeautiqueDisplay-Bold;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-BoldItalic;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-Italic;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-Light;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-LightItalic;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-Medium;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-MediumItalic;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BeautiqueDisplay-Regular;
+  src: url("/fonts/Beautique Display/BeautiqueDisplay-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Manrope-Bold;
+  src: url("/fonts/Manrope/Manrope-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Manrope-ExtraBold;
+  src: url("/fonts/Manrope/Manrope-ExtraBold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Manrope-ExtraLight;
+  src: url("/fonts/Manrope/Manrope-ExtraLight.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Manrope-Light;
+  src: url("/fonts/Manrope/Manrope-Light.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Manrope-Medium;
+  src: url("/fonts/Manrope/Manrope-Medium.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Manrope-Regular;
+  src: url("/fonts/Manrope/Manrope-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Manrope-SemiBold;
+  src: url("/fonts/Manrope/Manrope-SemiBold.ttf") format("opentype");
+}
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --light_gray: #dddddd;
+  --dark_grey: #343332;
+  --light-yellow: #fff9e5;
+  --pale-pink: #ffe1e2;
+  --dark-green: #38504a; //
+  --dark-purple: #392b42; //FINANCE
+  --olive-brown: #baa357; //HR
+  --light-cyan: #ccece4;
+  --brick-red: #d35c5f; //SEC
+  --light-purple: #f1e6f8;
+  --glass-bg: #79a39e;
+  // department colors
+  --webtech: #5e877d;
+  --extaff: #6b675c;
+  --pubcomm: #e59b99;
+  --commdev: #15204b;
+  --writing: #333234;
+  --photogs: #815e4c;
+  --videogs: #6991a7;
+  --creatives: #b0424b;
+  --sec: #d35c5f;
+  --hr: #baa357;
+  --finance: #392b42;
 }
