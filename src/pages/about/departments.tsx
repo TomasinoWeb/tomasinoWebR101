@@ -19,25 +19,23 @@ interface PageProps {}
 export default PublicLayoutFrontend.use<PageProps>(() => {
   return {
     children: 
-    <div>
-      <main className={styles.container}>
-        <section
-          className={styles.section}
-        >
-          <RepeatingHeader title="DEPARTMENTS"/>
-          
-          <p>
-            Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation, passion, and dedication.
-          </p>
-        </section>
-        <DepartmentReel />
-        <section className={styles.section}>
-          <p>Still not sure which department is right for you? 
-          Take our quick quiz to find your perfect fit!</p>
-          <Link href="/quiz">Take Quiz</Link>
-        </section>
-      </main>
-    </div>,
+    <main className={styles.container}>
+      <section
+        className={styles.section}
+      >
+        <RepeatingHeader title="DEPARTMENTS"/>
+        
+        <p>
+          Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation, passion, and dedication.
+        </p>
+      </section>
+      <DepartmentReel />
+      <section className={styles.section}>
+        <p>Still not sure which department is right for you? 
+        Take our quick quiz to find your perfect fit!</p>
+        <Link href="/quiz">Take Quiz</Link>
+      </section>
+    </main>,
   };
 });
 
