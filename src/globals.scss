@@ -94,3 +94,30 @@
   font-family: Manrope-SemiBold;
   src: url("/fonts/Manrope/Manrope-SemiBold.ttf") format("opentype");
 }
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --light_gray: #dddddd;
+  --dark_grey: #343332;
+  --light-yellow: #fff9e5;
+  --pale-pink: #ffe1e2;
+  --dark-green: #38504a; //
+  --dark-purple: #392b42; //FINANCE
+  --olive-brown: #baa357; //HR
+  --light-cyan: #ccece4;
+  --brick-red: #d35c5f; //SEC
+  --light-purple: #f1e6f8;
+  --glass-bg: #79a39e;
+  // department colors
+  --webtech: #5e877d;
+  --extaff: #6b675c;
+  --pubcomm: #e59b99;
+  --commdev: #15204b;
+  --writing: #333234;
+  --photogs: #815e4c;
+  --videogs: #6991a7;
+  --creatives: #b0424b;
+  --sec: #d35c5f;
+  --hr: #baa357;
+  --finance: #392b42;
+}
