@@ -42,7 +42,7 @@ $light-grey: hsl(30, 2%, 30%);
   text-align: center;
 
   a {
-    font-size: 14px; /* 14px */
+    font-size: 10px; /* 14px */
     line-height: 20px;
     color: inherit;
     text-decoration: none;
@@ -76,6 +76,12 @@ $light-grey: hsl(30, 2%, 30%);
   .footer {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .footerLinks {
+    a {
+      font-size: 14px;
+    }
   }
 
   .footerLinks {
