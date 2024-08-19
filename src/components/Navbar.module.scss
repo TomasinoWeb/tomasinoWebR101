@@ -23,14 +23,40 @@ $manrope: "Manrope", sans-serif;
   align-items: center;
 }
 
-.black {
+.transparent {
   background-color: transparent;
   color: $white;
+
+  .header {
+    background-color: transparent;
+  }
+  .navButton {
+    border: 2px solid $white;
+
+    &:hover {
+      background-color: rgba(60, 119, 136, 0.5);
+      color: $white;
+      border: 2px solid $white;
+    }
+  }
+
+  .navLink {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 2px solid $white;
+    }
+  }
 }
 
 .white {
   background-color: $white;
   color: $dark-grey;
+
+  .header {
+    background-color: $white;
+  }
 
   .navButton {
     border: 2px solid $dark-grey;
@@ -39,6 +65,14 @@ $manrope: "Manrope", sans-serif;
       background-color: $dark-grey;
       color: $white;
       border: 2px solid $white;
+    }
+  }
+  .navLink {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 2px solid $dark-grey;
     }
   }
 }
@@ -56,7 +90,6 @@ $manrope: "Manrope", sans-serif;
 }
 
 .header {
-  background-color: $white;
   padding-top: 16px;
   padding-bottom: 8px;
   top: 0;
@@ -97,15 +130,6 @@ $manrope: "Manrope", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-}
-
-.navLink {
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    border-bottom: 2px solid $dark-grey;
-  }
 }
 
 @media screen and (max-width: 768px) {
