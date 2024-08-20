@@ -1,0 +1,90 @@
+$manrope: "Manrope", sans-serif;
+$white: #ffffff;
+$dark-grey: #343332;
+$light-grey: hsl(30, 2%, 30%);
+
+.white {
+  background-color: $white;
+  color: $dark-grey;
+
+  a:hover {
+    border-bottom: 2px solid $dark-grey;
+  }
+}
+
+.black {
+  background-color: transparent;
+  color: $white;
+
+  a:hover {
+    border-bottom: 2px solid $white;
+  }
+}
+
+.footer {
+  font-family: $manrope;
+  font-style: bold;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  margin-top: auto;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+
+  a {
+    font-size: 10px; /* 14px */
+    line-height: 20px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+
+  font-size: 8px;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footerLinks {
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .footerLinks {
+    flex-direction: row;
+  }
+}
