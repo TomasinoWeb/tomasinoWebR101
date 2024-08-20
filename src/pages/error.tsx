@@ -8,7 +8,7 @@ const ErrorPage = PublicLayoutFrontend.use(() => {
       <div className={styles.errorPageContainer}>
         <div className={styles.errorPageContent}>
           <div className={styles.errorMessage}>
-            4<div className={styles.errorImg}></div>4
+            4<div className={styles.errorImg}>0</div>4
           </div>
           <div className={styles.errorText}>Looks like you are lost. The page you are for is not available.</div>
           <div className={styles.errorBtnContainer}>
