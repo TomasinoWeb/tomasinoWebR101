@@ -1,0 +1,31 @@
+/* Error page variables */
+$beautique-bold: "BeautiqueDisplay-Bold", sans-serif;
+$beautique-medium: "BeautiqueDisplay-Medium", sans-serif;
+$manrope: "Manrope-Regular", sans-serif;
+
+.errorPageContainer {
+  font-family: $manrope;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .errorPageContent {
+    height: 40%;
+  }
+
+  .errorMessage {
+    display: flex;
+    font-family: $beautique-bold;
+    font-size: 10rem;
+  }
+  .errorText {
+    text-align: center;
+    font-family: $beautique-medium;
+  }
+  .errorBtnContainer {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
