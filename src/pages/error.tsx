@@ -1,5 +1,6 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import "../components/ErrorPage.module.scss";
+import Buttons from "../components/Buttons";
 
 const ErrorPage = PublicLayoutFrontend.use(() => {
   return {
@@ -9,6 +10,10 @@ const ErrorPage = PublicLayoutFrontend.use(() => {
           4<div className="error-img"></div>4
         </div>
         <div className="error-text">Looks like you are lost. The page you are for is not available.</div>
+        <div className="error-btn-container">
+          <Buttons theme="secondary" text="Go to Home" />
+          <Buttons theme="secondary" text="About TomasinoWeb" />
+        </div>
       </div>
     ),
   };
