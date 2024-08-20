@@ -11,7 +11,7 @@ const ErrorPage = PublicLayoutFrontend.use(() => {
           <div className={styles.errorMessage}>
             4
             <div className={styles.errorImage}>
-              <Image src="/images/error-kitty.png" alt="Error Image" className={styles.errorImg} layout="" />
+              <Image src="/images/error-kitty.png" alt="Error Image" className={styles.errorImg} layout="fill" />
             </div>
             4
           </div>
