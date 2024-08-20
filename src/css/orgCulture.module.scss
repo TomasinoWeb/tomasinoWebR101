@@ -152,11 +152,10 @@
 
 .row {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 80%;
-  gap: 50px;
+  gap: 20px;
 }
 
 .column {
@@ -166,6 +165,10 @@
   text-align: left;
   justify-content: center;
   width: 100%;
+  margin-bottom: 50px;
+
+  flex: 1 1 calc(33.333% - 50px); /* Adjust for the gap */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
   margin-bottom: 50px;
 }
 
@@ -225,4 +228,134 @@
 .video-border {
   padding: 20px;
   border: #343332 1px solid;
+}
+
+// PROJECTS
+.row-projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.card-web {
+  display: flex;
+  padding: 20.904px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  /* top | right | bottom | left */
+  margin: 20px 20px 0px 20px;
+  width: 350px;
+
+  border: 2.09px solid var(--dark-grey, #343332);
+  background: var(--white, #fff);
+}
+.card-projects-text {
+  color: var(--dark-grey, #343332);
+  font-family: Manrope-Regular;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 110%; /* 22px */
+  text-transform: uppercase;
+}
+.card-web-image {
+  width: 350px;
+  height: 250px;
+  border: 2px solid var(--dark-grey, #343332);
+  border-top: 0px;
+  background-color: #343332;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .row-projects {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.header {
+  color: var(--dark-grey, #343332);
+  text-align: center;
+  -webkit-text-stroke-color: var(--dark-grey, #343332);
+  font-family: Aesthetic;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 65px; /* 81.25% */
+  text-transform: uppercase;
+  margin: 20px;
+}
+.sub-header {
+  color: var(--dark-grey, #343332);
+  font-family: "Beautique Display";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 43.2px */
+  letter-spacing: 0.72px;
+}
+
+// FUN STARTS HERE
+.fun {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: center;
+  margin: 60px 0px;
+}
+.fun-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: var(--light-grey, #ddd);
+}
+.layout-card-projects {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card-projects {
+  border: 2px solid var(--dark-green, #38504a);
+  background: var(--light-cyan, #ccece4);
+  margin: 20px;
+  width: 300px;
+  height: 450px;
+  text-align: center;
+  align-items: center;
+}
+.card-projects-image {
+  background-color: var(--dark-green, #38504a) !important;
+  width: 297px;
+  height: 200px;
+}
+.fun-text-title {
+  color: var(--brick-red, #d35c5f);
+  font-family: BeautiqueDisplay-Black;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: left;
+  padding: 10px;
+}
+.fun-text {
+  color: var(--dark-purple, #392b42);
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  text-align: left;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .fun {
+    align-items: center;
+  }
+  .layout-card-projects {
+    display: flex;
+    flex-direction: column;
+  }
 }
