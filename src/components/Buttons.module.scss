@@ -1,0 +1,156 @@
+$manrope: "Manrope", sans-serif;
+$white: #ffffff;
+$dark-grey: #343332;
+$light-grey: hsl(30, 2%, 30%);
+$dark-blue: #3c778880;
+
+.primary {
+  .buttonFrame {
+    display: flex;
+    width: 399px;
+    height: 81px;
+
+    padding: 24px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 2px solid var(--white, #fff);
+    background: var(--glass-bg, rgba(121, 163, 158, 0.5));
+
+    /* glassmorphism-blur */
+    backdrop-filter: blur(2px);
+  }
+
+  .buttonFrame:hover {
+    border: 2px solid var(--white, #fff);
+    background: rgba(60, 119, 136, 0.5);
+
+    /* glassmorphism-blur */
+    backdrop-filter: blur(2px);
+  }
+
+  .buttonText {
+    color: var(--white, #fff);
+    text-align: center;
+
+    /* 2px-text-shadow (25%) */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+    font-family: $manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1200px) {
+    .buttonFrame {
+      min-width: 180px;
+      height: 70px;
+      padding: 20px 0px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .buttonFrame {
+      min-width: 120px;
+      height: 60px;
+      padding: 16px 0px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .buttonFrame {
+      max-width: 80px;
+      height: 50px;
+      padding: 12px 0px;
+    }
+    .buttonText {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .buttonFrame {
+      max-width: 30px;
+      height: 40px;
+      padding: 8px 0px;
+    }
+    .buttonText {
+      font-size: 15px;
+    }
+  }
+}
+
+.secondary {
+  .buttonFrame {
+    display: inline-flex;
+    padding: 24px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border: 2px solid var(--dark-grey, #343332);
+    background: var(--white, #fff);
+
+    /* glassmorphism-blur */
+    backdrop-filter: blur(2px);
+  }
+
+  .buttonFrame:hover {
+    border: 2px solid var(--white, #fff);
+    background: var(--dark-grey, #343332);
+    /* glassmorphism-blur */
+    backdrop-filter: blur(2px);
+
+    .buttonText {
+      color: var(--white, #fff);
+    }
+  }
+
+  .buttonText {
+    color: var(--dark-grey, #343332);
+    text-align: center;
+    font-family: $manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1200px) {
+    .buttonFrame {
+      min-width: 180px;
+      height: 70px;
+      padding: 20px 0px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .buttonFrame {
+      min-width: 160px;
+      height: 60px;
+      padding: 16px 0px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .buttonFrame {
+      min-width: 140px;
+      height: 50px;
+      padding: 12px 0px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .buttonFrame {
+      max-width: 20px;
+      height: 40px;
+      padding: 8px 0px;
+    }
+    .buttonText {
+      font-size: 20px;
+    }
+  }
+}
