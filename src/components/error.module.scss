@@ -19,6 +19,12 @@ $manrope: "Manrope-Regular", sans-serif;
     justify-content: center;
     font-family: $beautique-bold;
     font-size: 10rem;
+
+    .errorImage {
+      position: relative;
+      width: 156px;
+      height: 191px;
+    }
   }
   .errorText {
     text-align: center;
