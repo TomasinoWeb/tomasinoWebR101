@@ -15,12 +15,14 @@ $manrope: "Manrope-Regular", sans-serif;
 
   .errorMessage {
     display: flex;
+    justify-content: center;
     font-family: $beautique-bold;
     font-size: 10rem;
   }
   .errorText {
     text-align: center;
     font-family: $beautique-medium;
+    font-size: 1.1rem;
   }
   .errorBtnContainer {
     margin-top: 3rem;
