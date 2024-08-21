@@ -55,7 +55,7 @@ const Navbar = (props: NavbarProps) => {
                 </a>
               </li>
               <li className={`${styles.navItem}`}>
-                <a href="" className={`${styles.navLink}`}>
+                <a href="/faq" className={`${styles.navLink}`}>
                   FAQ
                 </a>
               </li>
