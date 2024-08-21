@@ -12,27 +12,36 @@ interface QuoteProps {
 const Quote: React.FC<QuoteProps> = ({ imageUrl, author, position, testimonial, side }) => {
   const alignment = side === "left" ? styles.alignLeft : styles.alignRight;
   return (
-    <div className={`${styles.quoteBlock}`}>
-      <div className={`${styles.quoteContainer}`}>
-        <div className={`${styles.quoteImageContainer}`}>
-          <span className={`${styles.quoteImagePlantIcon}`}>
-            <svg width="58" height="59" viewBox="0 0 58 59" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M14.8367 58.7507L12.4788 55.0281C12.4788 55.0281 20.7067 44.772 31.2927 38.2385C41.8787 31.705 54.8226 28.8941 54.8226 28.8941L57.1806 32.6167L14.8367 58.7507ZM19.3176 22.5876C12.1789 16.8965 0.325122 26.5426 0.325122 26.5426C0.325122 26.5426 9.94472 40.7994 20.5979 31.1177C16.332 26.2426 12.213 26.7136 12.213 26.7136C18.1411 23.0548 22.5731 29.1219 22.5731 29.1219L27.9965 37.6839L32.2309 35.0705L27.2791 27.253C27.2791 27.253 22.681 19.9939 27.8536 14.2125C27.8536 14.2125 27.1562 22.4098 29.5142 26.1324C45.1599 18.2884 33.8415 0.419939 33.8415 0.419939C33.8415 0.419939 13.8195 10.1883 19.3176 22.5876Z"
-                fill="#60996D"
-              />
-            </svg>
-          </span>
-          <img src={imageUrl} alt="" className={`${styles.quoteImage}`} />
+    <div className={`${styles.quoteBlock} ${alignment}`}>
+      <div className="">
+        <div className={`${styles.quoteContainer}`}>
+          <div className={`${styles.quoteImageContainer}`}>
+            <img src={imageUrl} alt="" className={`${styles.quoteImage}`} />
+          </div>
         </div>
+        {/* <span className={`${styles.quoteImagePlant}`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="38" viewBox="0 0 36 38" fill="none">
+            <path
+              d="M9.59316 37.0357L8.13159 34.7283C8.13159 34.7283 13.2316 28.3712 19.7931 24.3215C26.3547 20.2718 34.3778 18.5295 34.3778 18.5295L35.8394 20.8369L9.59316 37.0357ZM12.3706 14.6205C7.94573 11.093 0.598345 17.072 0.598345 17.072C0.598345 17.072 6.5609 25.9088 13.1641 19.9077C10.5199 16.886 7.96685 17.1779 7.96685 17.1779C11.6413 14.9101 14.3884 18.6707 14.3884 18.6707L17.75 23.9777L20.3747 22.3578L17.3054 17.5123C17.3054 17.5123 14.4553 13.0129 17.6615 9.42935C17.6615 9.42935 17.2292 14.5103 18.6908 16.8177C28.3885 11.9558 21.373 0.880228 21.373 0.880228C21.373 0.880228 8.96263 6.93498 12.3706 14.6205Z"
+              fill="#60996D"
+            />
+          </svg>
+        </span> */}
       </div>
       <div className={`${styles.testimonialContainer}`}>
         <q className={`${styles.testimonialText}`}>{testimonial}</q>
-        <div className="">
-          <span></span>
+        <div className={`${styles.authorContainer}`}>
+          <span className={styles.quoteBox}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" fill="none" className={`${styles.quoteIcon}`}>
+              <path
+                d="M18.125 9.5H15V7C15 5.62109 16.1211 4.5 17.5 4.5H17.8125C18.332 4.5 18.75 4.08203 18.75 3.5625V1.6875C18.75 1.16797 18.332 0.75 17.8125 0.75H17.5C14.0469 0.75 11.25 3.54688 11.25 7V16.375C11.25 17.4102 12.0898 18.25 13.125 18.25H18.125C19.1602 18.25 20 17.4102 20 16.375V11.375C20 10.3398 19.1602 9.5 18.125 9.5ZM6.875 9.5H3.75V7C3.75 5.62109 4.87109 4.5 6.25 4.5H6.5625C7.08203 4.5 7.5 4.08203 7.5 3.5625V1.6875C7.5 1.16797 7.08203 0.75 6.5625 0.75H6.25C2.79688 0.75 0 3.54688 0 7V16.375C0 17.4102 0.839844 18.25 1.875 18.25H6.875C7.91016 18.25 8.75 17.4102 8.75 16.375V11.375C8.75 10.3398 7.91016 9.5 6.875 9.5Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
           <div className="">
-            <h4>{author}</h4>
-            <p>{position}</p>
+            <h4 className={styles.authorText}>{author}</h4>
+            <p className={styles.authorPosition}>{position}</p>
           </div>
         </div>
       </div>
