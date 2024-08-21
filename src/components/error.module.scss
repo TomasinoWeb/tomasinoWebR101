@@ -61,6 +61,7 @@ $dark-grey: #343332;
       .errorText {
         font-size: 1rem;
         max-width: 350px;
+        margin-bottom: 2rem;
       }
       .errorMessage {
         font-size: 8rem;
@@ -82,10 +83,6 @@ $dark-grey: #343332;
 @media screen and (max-width: 768px) {
   .errorPageContainer {
     .errorMain {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-
       .errorText {
         font-size: 0.95rem;
         max-width: 250px;
@@ -94,8 +91,9 @@ $dark-grey: #343332;
         font-size: 6rem;
 
         .errorImg {
-          width: 4rem;
-          height: 5rem;
+          width: 3.6rem;
+          margin: 0 0.75rem 1rem;
+          height: 4rem;
         }
       }
     }
