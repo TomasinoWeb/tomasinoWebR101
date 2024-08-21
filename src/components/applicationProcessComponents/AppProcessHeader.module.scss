@@ -1,0 +1,14 @@
+$aesthetic: "Aesthetic", sans-serif;
+$dark-grey: #343332;
+
+.appProcessHeader {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  .appProcessHeaderMain {
+    font-family: $aesthetic;
+    color: $dark-grey;
+    font-size: 5rem;
+  }
+}
