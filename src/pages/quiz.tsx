@@ -21,7 +21,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             </p>
           </div>
           {/* temporary button - replace with component */}
-          <button>Start the Quiz</button>
+          /*<button>Start the Quiz</button>*/
         </div>
       </div>
     ),
