@@ -1,0 +1,26 @@
+.repeatTitle {
+  display: flex;
+  gap: clamp(10px, 2vw, 2em);
+  justify-content: center;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: 3em;
+}
+
+.title {
+  font-size: clamp(1.25rem, 9.5vw, 8rem); // this size could be adjusted later
+  font-weight: lighter;
+  font-family: Aesthetic, serif;
+}
+
+.title.highlighted {
+  color: black !important;
+}
+
+@supports(-webkit-text-stroke: 1px black){
+  .title:not(.highlighted){
+      color: transparent;
+      -webkit-text-stroke: 1px black;
+      text-shadow: none;
+  }
+}
