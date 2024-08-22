@@ -7,10 +7,10 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
   layoutComponent({ internalProps, layoutProps }) {
     return (
       <div className={`frontend`}>
-        <header>
-          <Navbar type="full" backgroundColor="white" />
-        </header>
+        <Navbar type="full" color="white" />
+
         {layoutProps.children}
+
         <Footer theme="white" />
       </div>
     );

@@ -1,61 +1,28 @@
 import React, { useState } from "react";
 import styles from "./Footer.module.scss";
-import { icons } from "./Icons";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-interface FooterProps {
-  theme: string;
-}
+interface FooterProps {}
 
-const Footer = (props: FooterProps) => {
-  const theme = props.theme === "white" ? styles.white : styles.black;
+export default function Footer(props: FooterProps) {
   return (
-    <footer className={`${theme} ${styles.footer}`}>
-      <div className={`${theme}`}>
-        <ul className={`${styles.footerLinks}`}>
-          <li>
-            <a href="">&copy; TomasinoWeb {new Date().getFullYear()}</a>
-          </li>
-          <li>
-            <a href="">Departments</a>
-          </li>
-          <li>
-            <a href="">Application Form</a>
-          </li>
-          <li>
-            <a href="">Frequently Asked Questions</a>
-          </li>
-        </ul>
-      </div>
-      <div className="">
-        <ul className={`${styles.socialIcons}`}>
-          <li>
-            <a href="">{icons.facebook}</a>
-          </li>
-          <li>
-            <a href="">{icons.x}</a>
-          </li>
-          <li>
-            <a href="">{icons.instagram}</a>
-          </li>
-          <li>
-            <a href="">{icons.tiktok}</a>
-          </li>
-          <li>
-            <a href="">{icons.youtube}</a>
-          </li>
-          <li>
-            <a href="">{icons.web}</a>
-          </li>
-          <li>
-            <a href="">{icons.dot}</a>
-          </li>
-          <li>
-            <a href="">{icons.up}</a>
-          </li>
-        </ul>
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <div className={styles.left}>
+          <p>© TomasinoWeb 2024</p>
+          <Link href="/about/departments">Departments</Link>
+          <Link href="/apply">Application Form</Link>
+          <Link href="/faq">Frequently Asked Questions</Link>
+        </div>
+
+        <div className={styles.right}>
+          <Link href="https://facebook.com/tomasinoweb">
+            <FontAwesomeIcon icon={faFacebook} />
+          </Link>
+        </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
