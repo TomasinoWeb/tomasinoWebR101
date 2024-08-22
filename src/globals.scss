@@ -94,11 +94,7 @@
   font-family: Manrope-SemiBold;
   src: url("/fonts/Manrope/Manrope-SemiBold.ttf") format("opentype");
 }
-.frontend {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+
 :root {
   --black: #000000;
   --white: #ffffff;
