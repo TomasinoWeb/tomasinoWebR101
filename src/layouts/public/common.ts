@@ -1,5 +1,9 @@
-import {GenerateLayoutOptionsImpl} from "@scinorandex/layout";
+import { GenerateLayoutOptionsImpl } from "@scinorandex/layout";
 
 export interface PublicLayoutOptions extends GenerateLayoutOptionsImpl {
-  ClientSideLayoutProps: {};
+  ClientSideLayoutProps: {
+    is_transparent: boolean;
+    header: "full" | "centered";
+    footer_disable: boolean;
+  };
 }

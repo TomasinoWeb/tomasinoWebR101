@@ -11,38 +11,148 @@ $manrope: "Manrope", sans-serif;
 
 .header {
   width: 100%;
-  padding: 30px 20px;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
 
-  .nav {
+  p,
+  a,
+  svg {
+    text-shadow: var(--text-shadow);
+  }
+
+  .logo {
+    font-family: $aesthetic, sans-serif;
+    font-size: 24px;
+    line-height: 1em;
+    margin-bottom: -2px;
+    color: var(--foreground);
+  }
+
+  .inner {
+    padding: 30px 20px;
+
     margin: 0px auto;
     max-width: 1300px;
     display: flex;
+    align-items: center;
+
+    .right {
+      display: flex;
+    }
+  }
+
+  .jcsb {
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
     justify-content: center;
     gap: 60px;
 
     a {
-      font-family: Manrope-Bold, sans-serif;
+      font-family: Manrope-Medium, sans-serif;
       text-decoration: none;
-      color: black;
+      color: var(--foreground);
       padding-bottom: 2px;
       border-bottom: 2px solid transparent;
     }
+    p {
+      color: var(--foreground);
+    }
 
     a:hover {
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid var(--foreground);
+    }
+
+    .button {
+      padding: 10px 20px;
+      border: 2.5px solid var(--foreground);
+      background: none;
+    }
+  }
+
+  .collapsed {
+    flex-direction: column;
+    padding: 10px;
+
+    a {
+      width: 100%;
+      text-align: center;
+    }
+
+    a:hover {
+      border-bottom: 2px solid transparent;
+    }
+
+    .button {
+      text-align: center;
+      width: 100%;
+      border: 2.5px solid var(--foreground) !important;
     }
   }
 }
 
+.centered {
+  .inner {
+    justify-content: center;
+  }
+}
+
+.white_background {
+  background: var(--white);
+}
+
 @media screen and (max-width: 800px) {
+  .centered {
+    .inner {
+      padding: 40px 20px;
+    }
+  }
+
   .header {
-    padding: 40px 20px;
     .nav {
       gap: 20px;
     }
+  }
+
+  .isOpened {
+    background: var(--background);
+  }
+}
+
+.mobile {
+  display: none;
+  color: var(--foreground);
+  cursor: pointer;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    .inner {
+      .right {
+        .desktop {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .full {
+    .inner {
+      padding: 20px;
+    }
+  }
+
+  .mobile {
+    display: block;
   }
 }

@@ -1,22 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
 interface NavbarProps {
   type: "centered" | "full";
-  color: "white" | "transparent";
+  background_color: "white" | "transparent";
 }
 
-export default function Navbar(props: NavbarProps) {
-  return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
-        <Link href="/about"> ABOUT </Link>
-        <Link href="/r101"> R101 </Link>
-        <Link href="/faq"> FAQ </Link>
-        <Link href="/quiz"> QUIZ </Link>
-        <Link href="/discord"> THE POOL </Link>
-      </nav>
-    </header>
-  );
+const NavbarLinks = (props: { buttonedPool: boolean; collapsed: boolean }) => (
+  <nav className={styles.nav + " " + (props.collapsed ? styles.collapsed : "")}>
+    <Link href="/about"> ABOUT </Link>
+    <Link href="/r101"> R101 </Link>
+    <Link href="/faq"> FAQ </Link>
+    <Link href="/quiz"> QUIZ </Link>
+    <Link href="/discord" className={props.buttonedPool ? styles.button : ""}>
+      {props.buttonedPool ? "APPLY" : "THE POOL"}
+    </Link>
+  </nav>
+);
+
+export default function Navbar({ background_color: color, type }: NavbarProps) {
+  const [isOpened, setIsOpened] = useState(false);
+  const toggle = () => setIsOpened(!isOpened);
+  const headerClass = styles.header + " " + (color === "white" ? styles.white_background : styles);
+
+  // automatically close the mobile menu when the user navigates
+  const router = useRouter();
+  useEffect(() => {
+    router.events.on("routeChangeStart", () => {
+      setIsOpened(false);
+    });
+  });
+
+  if (type === "centered") {
+    return (
+      <header className={headerClass + " " + styles.centered}>
+        <div className={styles.inner}>
+          <NavbarLinks buttonedPool={false} collapsed={false} />
+        </div>
+      </header>
+    );
+  } else {
+    return (
+      <header className={(isOpened ? styles.isOpened : "") + " " + headerClass + " " + styles.full}>
+        <div className={styles.inner + " " + styles.jcsb}>
+          <h1 className={styles.logo}>STUDIO TOMWEB</h1>
+
+          <div className={styles.right}>
+            <div className={styles.desktop}>
+              <NavbarLinks buttonedPool collapsed={false} />
+            </div>
+
+            <div className={styles.mobile}>
+              <FontAwesomeIcon icon={isOpened ? faTimes : faBars} onClick={toggle} />
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.mobile}>{isOpened && <NavbarLinks buttonedPool collapsed={true} />}</div>
+      </header>
+    );
+  }
 }

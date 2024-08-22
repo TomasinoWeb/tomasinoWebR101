@@ -121,4 +121,11 @@
   --sec: #d35c5f;
   --hr: #baa357;
   --finance: #392b42;
+  --footer-height: 53px;
+}
+
+@media screen and (max-width: 850px) {
+  :root {
+    --footer-height: 212.5px;
+  }
 }
