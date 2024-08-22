@@ -1,4 +1,4 @@
-$manrope: "Manrope", sans-serif;
+$manrope: "Manrope-Bold", sans-serif;
 $white: #ffffff;
 $dark-grey: #343332;
 $light-grey: hsl(30, 2%, 30%);
@@ -6,6 +6,7 @@ $light-grey: hsl(30, 2%, 30%);
 .footer {
   height: var(--footer-height);
   padding: 16px 20px;
+  z-index: 10;
 
   p,
   a,
@@ -95,5 +96,12 @@ $light-grey: hsl(30, 2%, 30%);
         justify-content: center;
       }
     }
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .container {
+    flex-direction: column;
+    gap: 24px;
   }
 }
