@@ -6,9 +6,9 @@
     .titleContainer {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1em;
         border-bottom: 2px solid var(--dark_grey);
-        padding: 0.8em 0.8em;
+        padding: 0.8em 1em;
         text-wrap: nowrap;
         background-color: var(--white);
         
@@ -32,11 +32,18 @@
     }
 
     .primary > img {
+        transition: all 0.2s ease;
         display: block;
     }
 
     .icon > img {
         height: 1rem;
+    }
+}
+
+.container:hover {
+    .primary > img {
+        filter: brightness(80%);
     }
 }
 
@@ -48,3 +55,10 @@
     }
 }
 
+@media only screen and (max-width: 250px) {
+    .titleContainer {
+        svg {
+            display: none;
+        }
+    }
+}

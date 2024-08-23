@@ -9,7 +9,7 @@ const aboutBoxContents = [
     {
         iconURL: "/assets/GHIBLI ICONS/totoro.png",
         imageURL: "/assets/about/departments.jpg",
-        title: "Department",
+        title: "Departments",
         linkURL: "/about/departments"
     },
     {
@@ -22,7 +22,7 @@ const aboutBoxContents = [
         iconURL: "/assets/GHIBLI ICONS/susuwatari v2.png",
         imageURL: "/assets/about/culture.jpg",
         title: "Org Culture",
-        linkURL: "/about/org-culture" // double check nalang
+        linkURL: "/org" // double check nalang
     }
 ]
 
@@ -45,7 +45,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
         </section>
         
 
-        <section className={`${styles.flexCentered}`}>
+        <section className={`${styles.flexCentered} ${styles.flexColumn}`}>
             <h2 className={styles.title}>
                 <div className={styles.subtitle}>WHAT IS </div> TOMASINOWEB? {/* the formatting here is important*/}
             </h2>
@@ -57,7 +57,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             </p>
         </section>
 
-        <section className={`${styles.links} ${styles.grid}`}>
+        <section className={`${styles.links} ${styles.flexCentered}`}>
             {
                 aboutBoxContents.map(
                     (box) => (
