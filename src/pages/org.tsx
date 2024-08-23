@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import styles from "./orgCulture.module.scss";
 import Image from "next/image";
 import RepeatingHeader from "../components/RepeatHeader";
+import RepeatingIcons from "../components/RepeatingIcons";
 
 import { FaArrowRight } from "react-icons/fa";
 
@@ -16,58 +16,6 @@ const genAssembly = "/assets/orgCulture/fun/genAssembly.jpg";
 const postCoverage = "/assets/orgCulture/fun/postCoverageHangouts.png";
 const pptParties = "/assets/orgCulture/fun/pptParties.png";
 
-const icons = [
-  { src: "/assets/orgCulture/culture/GhibliIcon-5.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-6.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-7.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-8.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-9.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-10.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-11.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-12.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-13.png", width: 100, height: 100 },
-  { src: "/assets/orgCulture/culture/GhibliIcon-14.png", width: 100, height: 100 },
-];
-
-const generateIconsArray = (numIcons) => {
-  const repeatedIcons = [];
-  while (repeatedIcons.length < numIcons) {
-    repeatedIcons.push(...icons);
-  }
-  return repeatedIcons.slice(0, numIcons);
-};
-
-const useResponsiveIcons = () => {
-  const [numIconsToShow, setNumIconsToShow] = useState(() => {
-    // Initialize with a default value
-    return 10;
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      let newNumIcons;
-      if (window.innerWidth >= 1300) {
-        newNumIcons = 30; // for large screens
-      } else if (window.innerWidth >= 992) {
-        newNumIcons = 25; //  for medium screens
-      } else if (window.innerWidth >= 768) {
-        newNumIcons = 20; //  for small screens
-      } else {
-        newNumIcons = 15; // for extra small screens
-      }
-      setNumIconsToShow(newNumIcons);
-    };
-
-    handleResize(); // Set the initial value
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return generateIconsArray(numIconsToShow);
-};
 const projectCards = [
   {
     src: postCoverage,
@@ -75,9 +23,9 @@ const projectCards = [
     title: "Post-Coverage hangouts",
     description:
       "After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company.",
-    fontColor: "var(--dark-green, #38504a)", // Dark green
-    backgroundColor: "var(--light-cyan, #ccece4)", // Light cyan
-    borderColor: "var(--dark-green, #38504a)", // Dark green
+    fontColor: "var(--dark-green, #38504a)",
+    backgroundColor: "var(--light-cyan, #ccece4)",
+    borderColor: "var(--dark-green, #38504a)",
   },
   {
     src: dc,
@@ -85,9 +33,9 @@ const projectCards = [
     title: "Random/Sponty Discord Calls",
     description:
       "Where we discuss the most random of things from Antonism to Dating App bios. Feel free to hop in whenever you see your orgmates hanging out on one of the tambay lang channels.",
-    fontColor: "var(--dark-purple, #5a2d82)", // Dark purple
-    backgroundColor: "var(--light-purple, #d6c1e9)", // Light purple
-    borderColor: "var(--dark-purple, #5a2d82)", // Dark purple
+    fontColor: "var(--dark-purple, #5a2d82)",
+    backgroundColor: "var(--light-purple, #d6c1e9)",
+    borderColor: "var(--dark-purple, #5a2d82)",
   },
   {
     src: pptParties,
@@ -95,9 +43,9 @@ const projectCards = [
     title: "Powerpoint Parties",
     description:
       "How do TomWebbers celebrate the festivities? By throwing PowerPoint Parties of course! Present the most random things and watch how your orgmates react to your content.",
-    fontColor: "var(--brick-red, #b22222)", // Brick red
-    backgroundColor: "var(--pale-pink, #f4cccc)", // Pale pink
-    borderColor: "var(--brick-red, #b22222)", // Brick red
+    fontColor: "var(--brick-red, #b22222)",
+    backgroundColor: "var(--pale-pink, #f4cccc)",
+    borderColor: "var(--brick-red, #b22222)",
   },
   {
     src: genAssembly,
@@ -105,9 +53,9 @@ const projectCards = [
     title: "General Assemblies",
     description:
       "The official gathering of all TomWebbers - current and alumni! This is where we discuss where we are now, and of course, where we're headed.",
-    fontColor: "var(--olive-brown, #3c3421)", // Olive brown
-    backgroundColor: "var(--light-yellow, #fffacd)", // Light yellow
-    borderColor: "var(--olive-brown, #3c3421)", // Olive brown
+    fontColor: "var(--olive-brown, #3c3421)",
+    backgroundColor: "var(--light-yellow, #fffacd)",
+    borderColor: "var(--olive-brown, #3c3421)",
   },
 ];
 
@@ -126,7 +74,6 @@ const webProjects = [
 ];
 interface OrgPageProps {}
 export default PublicLayoutFrontend.use(() => {
-  const displayedIcons = useResponsiveIcons();
   return {
     children: (
       <div>
@@ -147,11 +94,7 @@ export default PublicLayoutFrontend.use(() => {
         </div>
         {/* END OF ORG CULTURE */}
         {/* VIDEO */}
-        <div className={styles["ghibli-icons-layout"]}>
-          {displayedIcons.map((icon, index) => (
-            <Image key={index} className={styles["ghibli-icons"]} src={icon} alt="Ghibli Icon" />
-          ))}
-        </div>
+        <RepeatingIcons />
         <div className={`${styles["org-culture"]} ${styles["video"]}`}>
           <iframe
             width="560"
@@ -165,11 +108,7 @@ export default PublicLayoutFrontend.use(() => {
             allowfullscreen
           ></iframe>
         </div>
-        <div className={styles["ghibli-icons-layout"]}>
-          {displayedIcons.map((icon, index) => (
-            <Image key={index} className={styles["ghibli-icons"]} src={icon} alt="Ghibli Icon" />
-          ))}
-        </div>
+        <RepeatingIcons />
         {/* END OF VIDEO */}
         {/* TESTIMONIALS */}
         <p>Testimonials</p>
