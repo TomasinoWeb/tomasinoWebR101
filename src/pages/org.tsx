@@ -4,21 +4,11 @@ import styles from "./orgCulture.module.scss";
 import Image from "next/image";
 import RepeatingHeader from "../components/RepeatHeader";
 import RepeatingIcons from "../components/RepeatingIcons";
-
+import ProjectCards from "../components/OCProjectCards";
 import { FaArrowRight } from "react-icons/fa";
-
-const lamona = "/assets/orgCulture/webProjects/lamona.png";
-const draft143 = "/assets/orgCulture/webProjects/draft143.png";
-const tw = "/assets/orgCulture/webProjects/tw.png";
-
-const dc = "/assets/orgCulture/fun/dc.png";
-const genAssembly = "/assets/orgCulture/fun/genAssembly.jpg";
-const postCoverage = "/assets/orgCulture/fun/postCoverageHangouts.png";
-const pptParties = "/assets/orgCulture/fun/pptParties.png";
-
 const projectCards = [
   {
-    src: postCoverage,
+    src: "/assets/orgCulture/fun/postCoverageHangouts.png",
     alt: "Post-Coverage hangouts",
     title: "Post-Coverage hangouts",
     description:
@@ -28,7 +18,7 @@ const projectCards = [
     borderColor: "var(--dark-green, #38504a)",
   },
   {
-    src: dc,
+    src: "/assets/orgCulture/fun/dc.png",
     alt: "Random/Sponty Discord Calls",
     title: "Random/Sponty Discord Calls",
     description:
@@ -38,7 +28,7 @@ const projectCards = [
     borderColor: "var(--dark-purple, #5a2d82)",
   },
   {
-    src: pptParties,
+    src: "/assets/orgCulture/fun/pptParties.png",
     alt: "Powerpoint Parties",
     title: "Powerpoint Parties",
     description:
@@ -48,7 +38,7 @@ const projectCards = [
     borderColor: "var(--brick-red, #b22222)",
   },
   {
-    src: genAssembly,
+    src: "/assets/orgCulture/fun/genAssembly.jpg",
     alt: "General Assemblies",
     title: "General Assemblies",
     description:
@@ -58,7 +48,48 @@ const projectCards = [
     borderColor: "var(--olive-brown, #3c3421)",
   },
 ];
-
+const actWorkCards = [
+  {
+    src: "/assets/orgCulture/actWork/onsite.png",
+    alt: "On-site Coverages",
+    title: "On-site Coverages",
+    description:
+      "Never been to this place? Or have you already? TomasinoWeb often goes to onsite coverages where our publication reports everything on ground.",
+    fontColor: "var(--dark-green, #38504a)",
+    backgroundColor: "var(--light-cyan, #ccece4)",
+    borderColor: "var(--dark-green, #38504a)",
+  },
+  {
+    src: "/assets/orgCulture/actWork/virtual.png",
+    alt: "Virtual Coverages",
+    title: "Virtual Coverages",
+    description:
+      "But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom.",
+    fontColor: "var(--dark-purple, #5a2d82)",
+    backgroundColor: "var(--light-purple, #d6c1e9)",
+    borderColor: "var(--dark-purple, #5a2d82)",
+  },
+  {
+    src: "/assets/orgCulture/actWork/interactive.png",
+    alt: "Interactive Meetings",
+    title: "Interactive Meetings",
+    description:
+      "Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is.",
+    fontColor: "var(--brick-red, #b22222)",
+    backgroundColor: "var(--pale-pink, #f4cccc)",
+    borderColor: "var(--brick-red, #b22222)",
+  },
+  {
+    src: "/assets/orgCulture/actWork/mentor.png",
+    alt: "Mentorship and Collaboration",
+    title: "Mentorship and Collaboration",
+    description:
+      "In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!",
+    fontColor: "var(--olive-brown, #3c3421)",
+    backgroundColor: "var(--light-yellow, #fffacd)",
+    borderColor: "var(--olive-brown, #3c3421)",
+  },
+];
 const data = [
   { title: "5 Websites", caption: "up and running for the Thomasian community" },
   { title: "21+", caption: "delulus just hoping for a Paskuhan date" },
@@ -68,10 +99,11 @@ const data = [
   { title: "9,050,600", caption: "X (formerly Twitter) impressions in the past year" },
 ];
 const webProjects = [
-  { name: "DRAFT 143", src: draft143, alt: "web projects" },
-  { name: "LAMONA", src: lamona, alt: "web projects" },
-  { name: "TomasinoWeb", src: tw, alt: "web projects" },
+  { name: "DRAFT 143", src: "/assets/orgCulture/webProjects/draft143.png", alt: "web projects" },
+  { name: "LAMONA", src: "/assets/orgCulture/webProjects/lamona.png", alt: "web projects" },
+  { name: "TomasinoWeb", src: "/assets/orgCulture/webProjects/tw.png", alt: "web projects" },
 ];
+
 interface OrgPageProps {}
 export default PublicLayoutFrontend.use(() => {
   return {
@@ -139,54 +171,43 @@ export default PublicLayoutFrontend.use(() => {
         {/* ALL THE FUN STARTS HERE */}
         <div className={`${styles["fun-layout"]} `}>
           <div className={`${styles["fun"]}`}>
-            <h1 className={`${styles["header"]}`}>ALL THE FUN STARTS HERE</h1>
-            <div className={styles["layout-card-projects"]}>
-              {projectCards.map((project, index) => (
-                <div
-                  className={styles["card-projects"]}
-                  key={index}
-                  style={{
-                    backgroundColor: project.backgroundColor,
-                    borderColor: project.borderColor,
-                  }}
-                >
-                  <Image
-                    className={styles["card-projects-image"]}
-                    src={project.src}
-                    alt={project.alt}
-                    width={300}
-                    height={200}
-                  />
-                  <h3
-                    className={styles["fun-text-title"]}
-                    style={{
-                      color: project.fontColor,
-                    }}
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    className={styles["fun-text"]}
-                    style={{
-                      color: project.fontColor,
-                    }}
-                  >
-                    {project.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <h1 className={`${styles["header"]}`}>ALL THE FUN STARTS HERE</h1>{" "}
+            <ProjectCards projectCards={projectCards} />
           </div>
         </div>
         {/* END OF ALL THE FUN STARTS HERE */}
         {/* TESTIMONIALS */}
         TESTIMONIALS
-        <div className={styles["org-culture"]}></div>
         {/* ACTUAL WORK */}
+        <div className={`${styles["fun-layout"]} `}>
+          <div className={`${styles["actWork"]}`}>
+            <h1 className={`${styles["header"]}`}>Then we have the actual work</h1>{" "}
+            <ProjectCards projectCards={actWorkCards} />
+          </div>
+        </div>
         {/* END OF ACTUAL WORK */}
-        {/* END OF MAIN */}
-        {/* BEHIND THE SCENES */}
+        {/* BEHIND THE SCENES */}{" "}
+        <div className={styles["org-culture"]}>
+          <div className={`${styles["behind-scene-row"]} `}>
+            <div className={`${styles["inside"]} `}>
+              <div className={`${styles["behind-scene-images"]} `}></div>
+              <div className={`${styles["behind-scene-images"]} `}></div>
+              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
+              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
+              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
+              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
+              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
+              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
+            </div>
+            <div className={`${styles["behind-scene-column"]} `}>
+              <h4 className={styles["behind-scene-text"]}>Who are the people behind the scenes?</h4>
+
+              <button className={` ${styles["behind-scene-button"]}`}>Meet our Community</button>
+            </div>
+          </div>
+        </div>
         {/* END OF BEHIND THE SCENES */}
+        {/* END OF MAIN */}
       </div>
     ),
   };

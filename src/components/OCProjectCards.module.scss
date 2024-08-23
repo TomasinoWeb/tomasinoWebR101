@@ -1,0 +1,46 @@
+.card-projects {
+  border: 2px solid var(--dark-green, #38504a);
+  background: var(--light-cyan, #ccece4);
+  margin: 20px;
+  width: 300px;
+  height: 450px;
+  text-align: center;
+  align-items: center;
+}
+.card-projects-image {
+  background-color: var(--dark-green, #38504a) !important;
+  width: 297px;
+  height: 200px;
+}
+.fun-text-title {
+  color: var(--brick-red, #d35c5f);
+  font-family: BeautiqueDisplay-Black;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: left;
+  padding: 10px;
+}
+.fun-text {
+  color: var(--dark-purple, #392b42);
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  text-align: left;
+  padding: 10px;
+}
+.layout-card-projects {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .fun {
+    align-items: center;
+  }
+  .layout-card-projects {
+    display: flex;
+    flex-direction: column;
+  }
+}
