@@ -7,24 +7,24 @@ const R101 = PublicLayoutFrontend.use(() => {
   const steps = [
     {
       step: 1,
-      title: "Application",
+      title: "APPLICATION",
       description: "Applicants must first accomplish the Google Form.",
     },
     {
       step: 2,
-      title: "Take The Exam",
+      title: "TAKE THE EXAM",
       description:
-        "The deparment examination will be sent by our Human Resources department. Skip this step if your department does not have an exam.",
+        "The department examination will be sent by our Human Resources department. Skip this step if your department does not have an exam.",
     },
     {
       step: 3,
-      title: "Interview",
+      title: "INTERVIEW",
       description:
         "After passing your requirements, the Human Resources department will send you a scheduling sheet for the interview.",
     },
     {
       step: 4,
-      title: "Results",
+      title: "RESULTS",
       description: "The results will be sent to you in less than a week by our Human Resources department.",
     },
   ];

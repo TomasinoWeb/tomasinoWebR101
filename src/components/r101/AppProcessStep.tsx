@@ -11,7 +11,15 @@ function AppProcessStep(props: AppProcessStepProps) {
     <div className={styles.appProcessStep}>
       <div className={styles.appProcessNum}>{props.step}</div>
       <div className={styles.appProcessTitle}>{props.title}</div>
-      <div className={styles.appProcessDescription}>{props.description}</div>
+      <div className={styles.appProcessDescription}>
+        {props.step === 1 ? (
+          <>
+            Applicants must first accomplish the <a href="#">Google Form</a>.
+          </>
+        ) : (
+          props.description
+        )}
+      </div>
     </div>
   );
 }
