@@ -1,30 +1,20 @@
-$dark-green: #38504a;
-$light-cyan: #ccece4;
-
-$dark-purple: #392b42;
-$light-purple: #f1e6f8;
-
-$brick-red: #d35c5f;
-$pale-pink: #ffe1e2;
-
-$olive-brown: #baa357;
-$light-yellow: #fff9e5;
-
 .appProcessStep {
   display: flex;
   flex-direction: column;
   font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
   width: 241px;
   align-items: center;
   gap: 1.5rem;
   text-align: center;
   padding: 2rem;
+  cursor: default;
 
   .appProcessNum,
   .appProcessTitle {
     font-size: 1.8rem;
     font-family: Aesthetic, serif;
-    font-weight: 700;
+    font-weight: 800;
   }
 
   .appProcessNum {
@@ -39,45 +29,57 @@ $light-yellow: #fff9e5;
   }
 }
 .step-1 {
-  border: 2px solid $dark-green;
-  background-color: $light-cyan;
-  color: $dark-green;
+  border: 2px solid var(--dark-green);
+  background-color: var(--light-cyan);
+  color: var(--dark-green);
 
   .appProcessNum {
-    border: 2px solid $dark-green;
+    border: 2px solid var(--dark-green);
     background-color: white;
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--dark-green);
+  }
+  a:after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 0.3px;
+    background: var(--dark-green);
   }
 }
 
 .step-2 {
-  border: 2px solid $dark-purple;
-  background-color: $light-purple;
-  color: $dark-purple;
+  border: 2px solid var(--dark-purple);
+  background-color: var(--light-purple);
+  color: var(--dark-purple);
 
   .appProcessNum {
-    border: 2px solid $dark-purple;
+    border: 2px solid var(--dark-purple);
     background-color: white;
   }
 }
 
 .step-3 {
-  border: 2px solid $brick-red;
-  background-color: $pale-pink;
-  color: $brick-red;
+  border: 2px solid var(--brick-red);
+  background-color: var(--pale-pink);
+  color: var(--brick-red);
 
   .appProcessNum {
-    border: 2px solid $brick-red;
+    border: 2px solid var(--brick-red);
     background-color: white;
   }
 }
 
 .step-4 {
-  border: 2px solid $olive-brown;
-  background-color: $light-yellow;
-  color: $olive-brown;
+  border: 2px solid var(--olive-brown);
+  background-color: var(--light-yellow);
+  color: var(--olive-brown);
 
   .appProcessNum {
-    border: 2px solid $olive-brown;
+    border: 2px solid var(--olive-brown);
     background-color: white;
   }
 }
