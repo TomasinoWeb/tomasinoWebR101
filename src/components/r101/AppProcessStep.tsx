@@ -7,8 +7,9 @@ interface AppProcessStepProps {
 }
 
 function AppProcessStep(props: AppProcessStepProps) {
+  const stepClass = `step-${props.step}`;
   return (
-    <div className={styles.appProcessStep}>
+    <div className={`${styles.appProcessStep} ${styles[stepClass]}`}>
       <div className={styles.appProcessNum}>{props.step}</div>
       <div className={styles.appProcessTitle}>{props.title}</div>
       <div className={styles.appProcessDescription}>

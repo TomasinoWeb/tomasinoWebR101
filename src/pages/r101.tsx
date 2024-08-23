@@ -34,9 +34,10 @@ const R101 = PublicLayoutFrontend.use(() => {
       <div className={styles.r101MainContainer}>
         <AppProcessHeader />
         <div className={styles.stepContainer}>
-          {steps.map((step, index) => (
-            <AppProcessStep key={index} step={step.step} title={step.title} description={step.description} />
-          ))}
+          <AppProcessStep {...steps[0]} />
+          <AppProcessStep {...steps[1]} />
+          <AppProcessStep {...steps[2]} />
+          <AppProcessStep {...steps[3]} />
         </div>
       </div>
     ),

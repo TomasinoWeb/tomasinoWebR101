@@ -1,3 +1,15 @@
+$dark-green: #38504a;
+$light-cyan: #ccece4;
+
+$dark-purple: #392b42;
+$light-purple: #f1e6f8;
+
+$brick-red: #d35c5f;
+$pale-pink: #ffe1e2;
+
+$olive-brown: #baa357;
+$light-yellow: #fff9e5;
+
 .appProcessStep {
   display: flex;
   flex-direction: column;
@@ -6,7 +18,6 @@
   align-items: center;
   gap: 1.5rem;
   text-align: center;
-  outline: 2px solid red;
   padding: 2rem;
 
   .appProcessNum,
@@ -21,10 +32,52 @@
     display: flex;
     width: 3rem;
     align-items: center;
-    padding-top: 3px;
+    padding-top: 4px;
     justify-content: center;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    border: 1px solid red;
+  }
+}
+.step-1 {
+  border: 2px solid $dark-green;
+  background-color: $light-cyan;
+  color: $dark-green;
+
+  .appProcessNum {
+    border: 2px solid $dark-green;
+    background-color: white;
+  }
+}
+
+.step-2 {
+  border: 2px solid $dark-purple;
+  background-color: $light-purple;
+  color: $dark-purple;
+
+  .appProcessNum {
+    border: 2px solid $dark-purple;
+    background-color: white;
+  }
+}
+
+.step-3 {
+  border: 2px solid $brick-red;
+  background-color: $pale-pink;
+  color: $brick-red;
+
+  .appProcessNum {
+    border: 2px solid $brick-red;
+    background-color: white;
+  }
+}
+
+.step-4 {
+  border: 2px solid $olive-brown;
+  background-color: $light-yellow;
+  color: $olive-brown;
+
+  .appProcessNum {
+    border: 2px solid $olive-brown;
+    background-color: white;
   }
 }
