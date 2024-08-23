@@ -17,7 +17,14 @@
   }
 
   .appProcessNum {
-    border: 1px solid red;
+    font-size: 2rem;
+    display: flex;
+    width: 3rem;
+    align-items: center;
+    padding-top: 3px;
+    justify-content: center;
+    aspect-ratio: 1/1;
     border-radius: 50%;
+    border: 1px solid red;
   }
 }
