@@ -6,6 +6,9 @@ import ErrorImage from "../../public/assets/404/error-img.webp";
 
 const ErrorPage = PublicLayoutFrontend.use(() => {
   return {
+    is_transparent: false,
+    header: "full",
+    footer_disable: false,
     children: (
       <div className={styles.errorPageContainer}>
         <div className={styles.errorPageContent}>
