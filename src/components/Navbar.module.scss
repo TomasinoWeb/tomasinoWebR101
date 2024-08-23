@@ -7,7 +7,7 @@ $pale-pink: #ffe1e2;
 $dark-green: #38504a;
 $dark-purple: #392b42;
 $aesthetic: "Aesthetic";
-$manrope: "Manrope", sans-serif;
+$manrope: "Manrope-Bold", sans-serif;
 
 .container {
   $max-width: 1300px;
@@ -223,7 +223,7 @@ $manrope: "Manrope", sans-serif;
     }
   }
 
-  .navlink:hover {
+  .navLink:hover {
     border-bottom: 2px solid $dark-grey;
   }
 }

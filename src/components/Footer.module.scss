@@ -1,4 +1,4 @@
-$manrope: "Manrope", sans-serif;
+$manrope: "Manrope-Bold", sans-serif;
 $white: #ffffff;
 $dark-grey: #343332;
 $light-grey: hsl(30, 2%, 30%);
@@ -22,6 +22,7 @@ $light-grey: hsl(30, 2%, 30%);
 }
 
 .footer {
+  width: 100%;
   font-family: $manrope;
   font-style: bold;
   font-weight: 700;
@@ -29,8 +30,18 @@ $light-grey: hsl(30, 2%, 30%);
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 24px;
+  padding: 24px 0;
   margin-top: auto;
+
+  .container {
+    $max-width: 1300px;
+    $padding: 24px;
+
+    width: min($max-width, 100% - $padding * 2);
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .footerLinks {
@@ -73,11 +84,6 @@ $light-grey: hsl(30, 2%, 30%);
 }
 
 @media screen and (min-width: 50em) {
-  .footer {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   .footerLinks {
     a {
       font-size: 14px;
@@ -86,5 +92,12 @@ $light-grey: hsl(30, 2%, 30%);
 
   .footerLinks {
     flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .container {
+    flex-direction: column;
+    gap: 24px;
   }
 }

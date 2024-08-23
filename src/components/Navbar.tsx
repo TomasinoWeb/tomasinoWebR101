@@ -9,8 +9,7 @@ import { icons } from "./Icons";
  */
 
 interface NavbarProps {
-  type: string;
-  backgroundColor: string;
+  isNavTransparent: boolean;
   withLogo: boolean;
 }
 
@@ -28,12 +27,12 @@ const Navbar = (props: NavbarProps) => {
     }
   };
 
-  const backgroundColor = props.backgroundColor === "white" ? styles.white : styles.transparent;
+  const backgroundColor = props.isNavTransparent === false ? styles.white : styles.transparent;
   const withLogo = props.withLogo === true ? styles.withLogo : styles.hideLogo;
 
   return (
     <header className={`${styles.header} ${backgroundColor}`}>
-      <div className={`${styles.container} ${styles.marginTop} ${withLogo}`}>
+      <div className={`${styles.container} ${withLogo}`}>
         <div className={`${styles.navWrapper}`}>
           <a href="" className={`${styles.navLogo}`}>
             STUDIO TOMWEB
