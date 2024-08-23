@@ -1,0 +1,229 @@
+$black: #000000;
+$white: #ffffff;
+$dark-grey: #343332;
+$light-grey: #dddddd;
+$light-yellow: #fff9e5;
+$pale-pink: #ffe1e2;
+$dark-green: #38504a;
+$dark-purple: #392b42;
+$aesthetic: "Aesthetic";
+$manrope: "Manrope-Bold", sans-serif;
+
+.container {
+  $max-width: 1300px;
+  $padding: 24px;
+
+  width: min($max-width, 100% - $padding * 2);
+  margin-inline: auto;
+}
+
+.header {
+  padding-top: 16px;
+  padding-bottom: 8px;
+  top: 0;
+}
+
+.navToggle {
+  display: none;
+}
+
+.navClose {
+  display: none;
+}
+
+.navItem {
+  font-size: 16px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navLogo {
+  font-size: 18px;
+}
+
+.navLogo {
+  color: inherit;
+  text-align: center;
+  font-family: $aesthetic;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  column-gap: 40px;
+  list-style-type: none;
+}
+
+.navItem {
+  padding: 3px;
+  font-family: $manrope;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navButton {
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  padding: auto;
+  width: 100%;
+  padding: 12px 24px;
+  color: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  .navLogo {
+    font-size: 18px;
+  }
+
+  .navItem {
+    font-size: 10px;
+  }
+}
+
+.withLogo {
+  .navLogo {
+    display: block;
+  }
+
+  .navWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navList {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .primaryNav {
+      display: none;
+      position: fixed;
+      width: 100%;
+      inset: 50px 0 auto;
+    }
+
+    .transparent {
+      .primaryNav {
+        background: transparent;
+      }
+    }
+
+    .white {
+      .primaryNav {
+        background: $white;
+      }
+    }
+
+    .navList {
+      width: 100%;
+      flex-direction: column;
+
+      text-align: center;
+      row-gap: 16px;
+      .navItem {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .navToggle {
+      display: block;
+      cursor: pointer;
+      background-color: transparent;
+      color: inherit;
+      border: 0;
+
+      span {
+        color: inherit;
+      }
+    }
+  }
+
+  .opened {
+    display: block;
+  }
+}
+
+.hideLogo {
+  .navLogo {
+    display: none;
+  }
+
+  .navWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navItem:last-child {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .navItem {
+      font-size: 10px;
+    }
+  }
+}
+
+.transparent {
+  background-color: transparent;
+  color: $white;
+
+  .header {
+    background-color: transparent;
+  }
+
+  .navButton {
+    border: 2px solid $white;
+
+    &:hover {
+      background-color: rgba(60, 119, 136, 0.5);
+      color: $white;
+    }
+  }
+
+  .navLink:hover {
+    border-bottom: 2px solid $white;
+  }
+}
+
+.white {
+  background-color: $white;
+  color: $dark-grey;
+
+  .header {
+    background-color: $white;
+  }
+
+  .navButton {
+    border: 2px solid $dark-grey;
+
+    &:hover {
+      background-color: $dark-grey;
+      color: $white;
+      border: 2px solid $white;
+    }
+  }
+
+  .navLink:hover {
+    border-bottom: 2px solid $dark-grey;
+  }
+}
