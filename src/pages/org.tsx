@@ -1,40 +1,32 @@
 import { useState, useEffect } from "react";
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
-import styles from "../css/orgCulture.module.scss";
+import styles from "./orgCulture.module.scss";
 import Image from "next/image";
-import ghibliIcon5 from "../../assets/orgCulture/GhibliIcon-5.png";
-import ghibliIcon6 from "../../assets/orgCulture/GhibliIcon-6.png";
-import ghibliIcon7 from "../../assets/orgCulture/GhibliIcon-7.png";
-import ghibliIcon8 from "../../assets/orgCulture/GhibliIcon-8.png";
-import ghibliIcon9 from "../../assets/orgCulture/GhibliIcon-9.png";
-import ghibliIcon10 from "../../assets/orgCulture/GhibliIcon-10.png";
-import ghibliIcon11 from "../../assets/orgCulture/GhibliIcon-11.png";
-import ghibliIcon12 from "../../assets/orgCulture/GhibliIcon-12.png";
-import ghibliIcon13 from "../../assets/orgCulture/GhibliIcon-13.png";
-import ghibliIcon14 from "../../assets/orgCulture/GhibliIcon-14.png";
+import RepeatingHeader from "../components/RepeatHeader";
+
 import { FaArrowRight } from "react-icons/fa";
 
-import lamona from "../../assets/webProjects/lamona.png";
-import draft143 from "../../assets/webProjects/draft143.png";
-import tw from "../../assets/webProjects/tw.png";
+const lamona = "/assets/orgCulture/webProjects/lamona.png";
+const draft143 = "/assets/orgCulture/webProjects/draft143.png";
+const tw = "/assets/orgCulture/webProjects/tw.png";
 
-import dc from "../../assets/fun/dc.png";
-import genAssembly from "../../assets/fun/genAssembly.jpg";
-import postCoverage from "../../assets/fun/postCoverageHangouts.png";
-import pptParties from "../../assets/fun/pptParties.png";
+const dc = "/assets/orgCulture/fun/dc.png";
+const genAssembly = "/assets/orgCulture/fun/genAssembly.jpg";
+const postCoverage = "/assets/orgCulture/fun/postCoverageHangouts.png";
+const pptParties = "/assets/orgCulture/fun/pptParties.png";
 
 const icons = [
-  ghibliIcon5,
-  ghibliIcon6,
-  ghibliIcon7,
-  ghibliIcon8,
-  ghibliIcon9,
-  ghibliIcon10,
-  ghibliIcon11,
-  ghibliIcon12,
-  ghibliIcon13,
-  ghibliIcon14,
+  { src: "/assets/orgCulture/culture/GhibliIcon-5.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-6.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-7.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-8.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-9.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-10.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-11.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-12.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-13.png", width: 100, height: 100 },
+  { src: "/assets/orgCulture/culture/GhibliIcon-14.png", width: 100, height: 100 },
 ];
 
 const generateIconsArray = (numIcons) => {
@@ -138,12 +130,7 @@ export default PublicLayoutFrontend.use(() => {
   return {
     children: (
       <div>
-        <div className={styles.side}>
-          {" "}
-          <h1 className={`${styles["title-page-outline-right"]} ${styles["title-page-outline"]}`}> Org Culture</h1>
-          <h1 className={`${styles["title-page"]}`}> Org Culture</h1>
-          <h1 className={`${styles["title-page-outline-left"]} ${styles["title-page-outline"]} `}> Org Culture</h1>
-        </div>
+        <RepeatingHeader title="ORG CULTURE" />
         <div className={styles["org-culture"]}>
           <h4 className={styles["title-caption"]}>
             We're gonna take you to a quick ride of what TomasinoWeb is behind the scenes. From doing org work to having
@@ -199,7 +186,13 @@ export default PublicLayoutFrontend.use(() => {
                   <p className={styles["card-projects-text"]}>{project.name}</p>
                   <FaArrowRight />
                 </div>
-                <Image className={styles["card-web-image"]} src={project.src} alt={project.alt} />
+                <Image
+                  className={styles["card-web-image"]}
+                  src={project.src}
+                  alt={project.alt}
+                  width={395}
+                  height={50}
+                />
               </div>
             ))}
           </div>
