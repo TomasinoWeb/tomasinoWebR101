@@ -1,8 +1,8 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
-import styles from "../components/error.module.scss";
+import styles from "./404.module.scss";
 import Buttons from "../components/Buttons";
 import Image from "next/image";
-import ErrorImage from "../../public/images/error-img.webp";
+import ErrorImage from "../../public/assets/404/error-img.webp";
 
 const ErrorPage = PublicLayoutFrontend.use(() => {
   return {
