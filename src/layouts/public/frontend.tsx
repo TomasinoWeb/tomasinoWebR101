@@ -2,37 +2,31 @@ import { implementLayoutFrontend } from "@scinorandex/layout";
 import { PublicLayoutOptions } from "./common";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import styles from "./styles.module.scss";
 
 export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>({
   layoutComponent({ internalProps, layoutProps }) {
-    const { isTransparent = false, withLogo = true, backgroundImage, children } = layoutProps;
-
-    const containerStyle = backgroundImage
-      ? {
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }
-      : {};
-
     return (
-      <div className="frontend" style={containerStyle}>
-        <Navbar isNavTransparent={isTransparent} withLogo={withLogo} />
-        <div
-          style={{
-            maxWidth: "1300px",
-            width: "100%",
-            marginLeft: "auto",
-            marginRight: "auto",
-            display: "flex",
-            flexDirection: "column",
-            flexGrow: 1,
-          }}
-        >
-          {children}
+      <div className={styles.root + " " + (layoutProps.is_transparent ? styles.transparent : styles.not_transparent)}>
+        <Navbar type={layoutProps.header} background_color={layoutProps.is_transparent ? "transparent" : "white"} />
+
+        <div className={styles.flex + " " + (layoutProps.header === "full" ? styles.full : styles.centered)}>
+          <main
+            className={
+              styles.main +
+              " " +
+              (layoutProps.is_transparent
+                ? !layoutProps.footer_disable
+                  ? styles.transparent_footer
+                  : ""
+                : styles.push_header)
+            }
+          >
+            {layoutProps.children}
+          </main>
+
+          {layoutProps.footer_disable === false && <Footer />}
         </div>
-        <Footer isFooterTransparent={isTransparent} />
       </div>
     );
   },
