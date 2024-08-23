@@ -27,11 +27,11 @@ $dark-grey: #343332;
       justify-content: center;
       align-items: center;
       font-family: $aesthetic;
-      font-size: 12rem;
+      font-size: 13rem;
 
       .errorImg {
-        width: 7rem;
-        height: 8rem;
+        width: 7.5rem;
+        height: 8.5rem;
         margin: 0 1rem 1.8rem;
         object-fit: contain;
       }
@@ -64,11 +64,11 @@ $dark-grey: #343332;
         margin-bottom: 2rem;
       }
       .errorMessage {
-        font-size: 8rem;
+        font-size: 9rem;
 
         .errorImg {
-          width: 5rem;
-          height: 6rem;
+          width: 5.5rem;
+          height: 6.5rem;
         }
       }
     }
