@@ -1,9 +1,14 @@
 .r101MainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .stepContainer {
     height: 60vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-end;
     gap: 2.3rem;
+    border-bottom: 1px solid black;
+    width: 85%;
   }
 }
