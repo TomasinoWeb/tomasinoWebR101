@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 100vh;
+
+  color: var(--dark_grey);
+
+  position: relative;
+}
+
+.loadingText {
+  text-align: center;
+  font-family: "Aesthetic", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.mascotIcon {
+  position: absolute;
+  top: calc(50% + 8px);
+}
+
+/* Spinner and animations */
+.spinner {
+  display: inline-block;
+  z-index: 20;
+  animation: loading-bar-spinner 1000ms linear infinite;
+}
+
+.spinnerIcon {
+  width: 60px;
+  height: 60px;
+  border: solid 4px transparent;
+  border-color: var(--light_gray);
+  border-left-color: var(--dark_grey);
+  border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
