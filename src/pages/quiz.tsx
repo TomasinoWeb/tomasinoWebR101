@@ -3,6 +3,7 @@ import { PublicLayoutBackend } from "../layouts/public/static";
 import styles from "./quiz.module.scss";
 import BackgroundImage from "../../public/assets/landing/background_ghibli_quiz.png";
 import Image from "next/image";
+import { Button } from "../components/Buttons";
 
 interface PageProps {}
 
@@ -30,8 +31,12 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                   you would like to apply for, answer this short quiz and may the odds be ever in your favor. ✨
                 </p>
               </div>
-              {/* temporary button - replace with component */}
-              <button>Start the Quiz</button>
+
+              <div className={styles.rail}>
+                <Button onClick={() => console.log("The quiz is being started")} theme="glass" maxWidth>
+                  START THE QUIZ
+                </Button>
+              </div>
             </div>
           </div>
         </div>
