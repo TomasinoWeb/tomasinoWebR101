@@ -1,15 +1,18 @@
-/* GHIBLI ICONS */
+// RepeatingIcons.module.scss
+
 .ghibli-icons-layout {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden; /* Hide anything that goes beyond the container */
-  justify-content: center;
-  width: 100%;
-  margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.ghibli-icons-scroller {
+  display: flex;
+  align-items: center;
 }
 
 .ghibli-icons {
-  margin: 10px;
-  width: 50px;
-  height: 50px;
+  display: inline-block;
+  margin-right: 10px; // Adjust spacing as needed
 }
