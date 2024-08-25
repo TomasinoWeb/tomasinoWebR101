@@ -17,7 +17,7 @@ interface PageProps {}
 const FaqPage = () => {};
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
-  const bgColor = "#CCECE4"
+  const bgColor = "#CCECE4";
   const [tag, setTag] = useState("selectTag");
   const [orgShown, setOrgShown] = useState(false);
   const [interviewShown, setInterviewShown] = useState(false);
@@ -37,7 +37,6 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
   const applicationPicked = {
     backgroundColor: bgColor,
-    fontFamily: "Manrope",
   };
 
   const resultPicked = {
@@ -49,7 +48,6 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   };
 
   const unpicked = {
-    fontFamily: "Manrope",
     color: "var(--darkgray)",
     backgroundColor: "white",
   };
@@ -73,17 +71,16 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     tag === "sussy" ? setSussyShown(true) : setSussyShown(false);
   }, [tag, buttonPressed, windowWidth]);
   return {
-
     children: (
-      <> 
+      <>
         <div className={styles["FaqPage"]}>
           <div className={styles["picker-div"]}>
-            <h1 className={styles["faq-title"]}>Frequently Asked Questions</h1>
+            <h1>FAQ</h1> 
             <div className={styles["selection-div"]}>
               <div className={styles["faq-main-holder"]}>
                 <button
                   className={`${styles["button-picker"]} ${styles["mobile-cell1"]}`}
-                  onClick={() => setTag("org")}
+                  onClick={() => setTag("org")} 
                   style={orgShown ? orgPicked : unpicked}
                 >
                   the org
@@ -99,7 +96,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
                   <div className={styles["faq-main-item"]}>
                     <img
-                      src="/static/HandWriting.png"
+                      src="/static/HandWriting.png" // change this to the correct icon
                       className={`${styles["faq-icons"]} ${styles["mobile-cell3"]}`}
                       alt="icon"
                     ></img>
@@ -116,7 +113,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="/quiz" target="_blank" rel="noreferrer">
                   <div className={styles["faq-main-item"]}>
                     <img
-                      src="/static/slot-machine.png"
+                      src="/static/slot-machine.png" // change this to the correct icon
                       className={`${styles["faq-icons"]} ${styles["mobile-cell5"]}`}
                       alt="icon"
                     ></img>
@@ -133,7 +130,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
                   <div className={styles["faq-main-item"]}>
                     <img
-                      src="/static/clapper-board.png"
+                      src="/static/clapper-board.png" // change this to the correct icon
                       className={`${styles["faq-icons"]} ${styles["mobile-cell7"]} `}
                       alt="icon"
                     ></img>
@@ -168,7 +165,9 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
                 {resultsShown && <ResultsGroup />}
               </div>
-              <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>{sussyShown && <SussyGroup />}</div>
+              <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>
+                {sussyShown && <SussyGroup />}
+              </div>
             </pre>
           </div>
         </div>

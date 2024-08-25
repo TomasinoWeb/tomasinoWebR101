@@ -3,6 +3,8 @@ $white: #ffffff;
 $dark-grey: #343332;
 $light-grey: hsl(30, 2%, 30%);
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap'); //idk why ayaw gumana ng font-family: "Manrope", sans-serif;
+
 .white {
   background-color: $white;
   color: $dark-grey;
