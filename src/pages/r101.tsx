@@ -2,6 +2,7 @@ import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import AppProcessHeader from "../components/r101/AppProcessHeader";
 import AppProcessStep from "../components/r101/AppProcessStep";
 import styles from "./r101.module.scss";
+import { useEffect, useState } from "react";
 
 const R101 = PublicLayoutFrontend.use(() => {
   const steps = [
@@ -29,6 +30,36 @@ const R101 = PublicLayoutFrontend.use(() => {
       description: "The results will be sent to you in less than a week by our Human Resources department.",
     },
   ];
+
+  // Hook for checking viewport width
+  function useViewportWidth(targetWidth: number) {
+    const [isWidthMet, setIsWidthMet] = useState(false);
+
+    useEffect(() => {
+      // Check if window is defined (i.e. not server-side rendering)
+      if (typeof window !== "undefined") {
+        const handleResize = () => {
+          setIsWidthMet(window.innerWidth >= targetWidth);
+        };
+
+        // Monitor window resize
+        window.addEventListener("resize", handleResize);
+
+        // Initial check for viewport width
+        handleResize();
+
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }
+    }, [targetWidth]);
+
+    return isWidthMet;
+  }
+
+  const isDesktop = useViewportWidth(1024);
+  const isTablet = useViewportWidth(992);
+  const isMobile = useViewportWidth(768);
 
   return {
     footer_disable: false,

@@ -1,6 +1,5 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import styles from "./404.module.scss";
-import Buttons from "../components/Buttons";
 import Image from "next/image";
 import ErrorImage from "../../public/assets/404/error-img.webp";
 
