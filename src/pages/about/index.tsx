@@ -30,6 +30,8 @@ interface PageProps {}
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
   return {
+    header: "full",
+    footer_disable: false,
     children: 
     <div className={styles.container}>
         <section>
