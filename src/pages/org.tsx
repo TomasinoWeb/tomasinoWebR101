@@ -1,11 +1,23 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import styles from "./orgCulture.module.scss";
-import Image from "next/image";
+
 import RepeatingHeader from "../components/RepeatHeader";
 import RepeatingIcons from "../components/RepeatingIcons";
+import BehindScene from "../components/BehindScene";
+import Projects from "../components/Projects";
 import ProjectCards from "../components/OCProjectCards";
-import { FaArrowRight } from "react-icons/fa";
+
+const imageUrls = [
+  "/assets/orgCulture/fun/dc.png",
+  "/assets/orgCulture/fun/dc.png",
+  "/assets/orgCulture/fun/dc.png",
+  "/assets/orgCulture/fun/dc.png",
+  "/assets/orgCulture/fun/dc.png",
+  "/assets/orgCulture/fun/dc.png",
+  "/assets/orgCulture/fun/dc.png",
+  "/assets/orgCulture/fun/pptParties.png",
+];
 const projectCards = [
   {
     src: "/assets/orgCulture/fun/postCoverageHangouts.png",
@@ -108,7 +120,7 @@ interface OrgPageProps {}
 export default PublicLayoutFrontend.use(() => {
   return {
     children: (
-      <div>
+      <div className={styles["body"]}>
         <RepeatingHeader title="ORG CULTURE" />
         <div className={styles["org-culture"]}>
           <h4 className={styles["title-caption"]}>
@@ -124,7 +136,6 @@ export default PublicLayoutFrontend.use(() => {
             ))}
           </div>
         </div>
-        {/* END OF ORG CULTURE */}
         {/* VIDEO */}
         <RepeatingIcons />
         <div className={`${styles["org-culture"]} ${styles["video"]}`}>
@@ -132,49 +143,32 @@ export default PublicLayoutFrontend.use(() => {
             width="560"
             className={`${styles["video-border"]}`}
             src="https://www.youtube.com/embed/-Naoomw8gO4?si=g_hRxQNjkgICh9ov"
+            frameBorder="0"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+            referrerPolicy="no-referrer"
+            allowFullScreen
+          />
         </div>
         <RepeatingIcons />
-        {/* END OF VIDEO */}
         {/* TESTIMONIALS */}
         <p>Testimonials</p>
-        {/* END OF TESTIMONIALS */}
         {/* PROJECTS */}
         <div className={styles["org-culture"]}>
-          <h1 className={`${styles["header"]}`}>PROJECTS</h1>
+          <h1 className={`${styles["header"]}`}>WEBSITES</h1>
           <h4 className={styles["sub-header"]}>Explore our work</h4>
           <div className={`${styles["row-projects"]}`}>
             {" "}
-            {webProjects.map((project, index) => (
-              <div key={index}>
-                <div className={styles["card-web"]}>
-                  <p className={styles["card-projects-text"]}>{project.name}</p>
-                  <FaArrowRight />
-                </div>
-                <Image
-                  className={styles["card-web-image"]}
-                  src={project.src}
-                  alt={project.alt}
-                  width={395}
-                  height={50}
-                />
-              </div>
-            ))}
+            <Projects webProjects={webProjects} />
           </div>
         </div>
         {/* ALL THE FUN STARTS HERE */}
         <div className={`${styles["fun-layout"]} `}>
-          <div className={`${styles["fun"]}`}>
-            <h1 className={`${styles["header"]}`}>ALL THE FUN STARTS HERE</h1>{" "}
+          <div className={`${styles["fun"]} ${styles["fun-text"]}`}>
+            <h1 className={`${styles["header"]} }`}>ALL THE FUN STARTS HERE</h1>{" "}
             <ProjectCards projectCards={projectCards} />
           </div>
         </div>
-        {/* END OF ALL THE FUN STARTS HERE */}
         {/* TESTIMONIALS */}
         TESTIMONIALS
         {/* ACTUAL WORK */}
@@ -184,28 +178,10 @@ export default PublicLayoutFrontend.use(() => {
             <ProjectCards projectCards={actWorkCards} />
           </div>
         </div>
-        {/* END OF ACTUAL WORK */}
         {/* BEHIND THE SCENES */}{" "}
         <div className={styles["org-culture"]}>
-          <div className={`${styles["behind-scene-row"]} `}>
-            <div className={`${styles["inside"]} `}>
-              <div className={`${styles["behind-scene-images"]} `}></div>
-              <div className={`${styles["behind-scene-images"]} `}></div>
-              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
-              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
-              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
-              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
-              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
-              <div className={`${styles["behind-scene-images"]} `}></div>{" "}
-            </div>
-            <div className={`${styles["behind-scene-column"]} `}>
-              <h4 className={styles["behind-scene-text"]}>Who are the people behind the scenes?</h4>
-
-              <button className={` ${styles["behind-scene-button"]}`}>Meet our Community</button>
-            </div>
-          </div>
+          <BehindScene images={imageUrls} />
         </div>
-        {/* END OF BEHIND THE SCENES */}
         {/* END OF MAIN */}
       </div>
     ),
