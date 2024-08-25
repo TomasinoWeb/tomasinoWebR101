@@ -1,8 +1,11 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
+import { useEffect, useState } from "react";
 import AppProcessHeader from "../components/r101/AppProcessHeader";
 import AppProcessStep from "../components/r101/AppProcessStep";
+import Image from "next/image";
+import Susuwatari1 from "../../public/assets/r101/susuwatarii1.webp";
+import Susuwatari2 from "../../public/assets/r101/susuwatarii2.webp";
 import styles from "./r101.module.scss";
-import { useEffect, useState } from "react";
 
 const R101 = PublicLayoutFrontend.use(() => {
   const steps = [
@@ -70,10 +73,22 @@ const R101 = PublicLayoutFrontend.use(() => {
       <div className={styles.r101MainContainer}>
         <AppProcessHeader />
         <div className={styles.stepContainer}>
-          <AppProcessStep {...steps[0]} />
-          <AppProcessStep {...steps[1]} />
-          <AppProcessStep {...steps[2]} />
-          <AppProcessStep {...steps[3]} />
+          <div className={styles.step1}>
+            <AppProcessStep {...steps[0]} />
+            {isDesktop && <Image src={Susuwatari1} alt="Susuwatari 1" className={styles.soot1} />}
+          </div>
+          <div className={styles.step2}>
+            {isDesktop && <Image src={Susuwatari2} alt="Susuwatari 2" className={styles.soot2} />}
+            <AppProcessStep {...steps[1]} />
+          </div>
+          <div className={styles.step3}>
+            <AppProcessStep {...steps[2]} />
+            {isDesktop && <Image src={Susuwatari1} alt="Susuwatari 1" className={styles.soot1} />}
+          </div>
+          <div className={styles.step4}>
+            {isDesktop && <Image src={Susuwatari2} alt="Susuwatari 2" className={styles.soot2} />}
+            <AppProcessStep {...steps[3]} />
+          </div>
         </div>
       </div>
     ),

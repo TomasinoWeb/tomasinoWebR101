@@ -11,5 +11,21 @@
     align-items: flex-end;
     gap: 2.3rem;
     border-bottom: 1px solid var(--dark_grey);
+
+    .step1,
+    .step3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .soot1 {
+        height: 53px;
+        width: 41.5px;
+      }
+    }
+    .soot2 {
+      width: 78px;
+      height: 40px;
+      margin-bottom: -5px;
+    }
   }
 }
