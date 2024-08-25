@@ -1,0 +1,154 @@
+/* Error page variables */
+$beautique-bold: "BeautiqueDisplay-Bold", sans-serif;
+$beautique-medium: "BeautiqueDisplay-Medium", sans-serif;
+$aesthetic: "Aesthetic", sans-serif;
+$manrope: "Manrope-Regular", sans-serif;
+$dark-grey: #343332;
+
+.errorPageContainer {
+  font-family: $manrope;
+  color: $dark-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 10vh 10vw;
+
+  .errorMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .errorMessage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: $aesthetic;
+      font-size: 13rem;
+
+      .errorImg {
+        width: 7.5rem;
+        height: 8.5rem;
+        margin: 0 1rem 1.8rem;
+        object-fit: contain;
+      }
+    }
+    .errorText {
+      align-self: center;
+      text-align: center;
+      font-family: $beautique-medium;
+      font-size: 1.3rem;
+      max-width: 400px;
+    }
+  }
+  .errorBtnContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    /* Temporary buttons */
+    button {
+      font-family: $manrope;
+      text-transform: uppercase;
+      padding: 24px 105px 24px 104px;
+      font-size: 24px;
+
+      border: 2px solid var(--dark-grey, #343332);
+      background: var(--white, #fff);
+
+      /* glassmorphism-blur */
+      backdrop-filter: blur(2px);
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .errorPageContainer {
+    .errorMain {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+
+      .errorText {
+        font-size: 1.2rem;
+        max-width: 350px;
+        margin-bottom: 2rem;
+      }
+      .errorMessage {
+        font-size: 9rem;
+
+        .errorImg {
+          width: 6rem;
+          height: 7rem;
+        }
+      }
+    }
+
+    .errorBtnContainer {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      /* Temporary buttons */
+      button {
+        width: 100%;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .errorPageContainer {
+    .errorMain {
+      .errorText {
+        font-size: 0.95rem;
+        max-width: 300px;
+      }
+      .errorMessage {
+        font-size: 6.5rem;
+
+        .errorImg {
+          width: 3.6rem;
+          margin: 0 0.75rem 1rem;
+          height: 4.3rem;
+        }
+      }
+    }
+
+    .errorBtnContainer {
+      /* Temporary buttons */
+      button {
+        font-size: 18px;
+        padding: 12px 36px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .errorPageContainer {
+    .errorMain {
+      .errorText {
+        font-size: 0.9rem;
+        max-width: 250px;
+      }
+      .errorMessage {
+        font-size: 5.5rem;
+
+        .errorImg {
+          width: 3rem;
+          height: 3.5rem;
+        }
+      }
+    }
+
+    .errorBtnContainer {
+      /* Temporary buttons */
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
