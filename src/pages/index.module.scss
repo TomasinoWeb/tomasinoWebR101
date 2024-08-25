@@ -1,0 +1,8 @@
+.image {
+  width: 100vw;
+  height: auto;
+  max-height: 100vh;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  object-fit: cover;
+  display: block;
+}
