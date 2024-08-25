@@ -21,8 +21,9 @@ const ErrorPage = PublicLayoutFrontend.use(() => {
             </div>
           </div>
           <div className={styles.errorBtnContainer}>
-            <Buttons theme="secondary" text="Back to Home" />
-            <Buttons theme="secondary" text="About TomasinoWeb" />
+            {/* temporary button - replace with component */}
+            <button>Back To Home</button>
+            <button>About TomasinoWeb</button>
           </div>
         </div>
       </div>
