@@ -130,7 +130,6 @@ export default PublicLayoutFrontend.use(() => {
         <div className={`${styles["org-culture"]} ${styles["video"]}`}>
           <iframe
             width="560"
-            height="315"
             className={`${styles["video-border"]}`}
             src="https://www.youtube.com/embed/-Naoomw8gO4?si=g_hRxQNjkgICh9ov"
             title="YouTube video player"
