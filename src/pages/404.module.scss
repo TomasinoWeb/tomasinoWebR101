@@ -12,7 +12,13 @@ $dark-grey: #343332;
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 10vh 10vw;
+  padding: 20px;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+
+  .errorPageContent {
+    width: 100%;
+    max-width: 700px;
+  }
 
   .errorMain {
     display: flex;
@@ -43,27 +49,27 @@ $dark-grey: #343332;
   }
   .errorBtnContainer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 36px;
 
-    /* Temporary buttons */
-    button {
-      font-family: $manrope;
-      text-transform: uppercase;
-      padding: 24px 105px 24px 104px;
-      font-size: 24px;
+    .button {
+      width: 100%;
+      flex: 1;
 
-      border: 2px solid var(--dark-grey, #343332);
-      background: var(--white, #fff);
-
-      /* glassmorphism-blur */
-      backdrop-filter: blur(2px);
+      p {
+        text-align: center;
+      }
     }
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 700px) {
   .errorPageContainer {
+    .errorPageContent {
+      max-width: 400px;
+    }
     .errorMain {
       display: flex;
       flex-direction: column-reverse;
@@ -98,7 +104,7 @@ $dark-grey: #343332;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .errorPageContainer {
     .errorMain {
       .errorText {

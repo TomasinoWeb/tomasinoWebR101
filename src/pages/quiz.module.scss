@@ -70,23 +70,10 @@
       }
     }
 
-    /* temporary button - replace with component */
-    button {
-      display: flex;
-      padding: 24px 105px 24px 104px;
-      justify-content: center;
-      align-items: center;
-
-      border: 2px solid var(--white, #fff);
-      background: rgba(121, 163, 158, 0.5);
-      backdrop-filter: blur(2px);
-
-      color: var(--white, #fff);
-      text-align: center;
-      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-      font-family: "Manrope-SemiBold", sans-serif;
-      font-size: 24px;
-      text-transform: uppercase;
+    .rail {
+      width: 400px;
+      max-width: 400px;
+      margin: 0px auto;
     }
   }
 }
