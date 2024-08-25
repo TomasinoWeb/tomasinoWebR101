@@ -12,11 +12,8 @@ $dark-grey: #343332;
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 0 10vw;
+  padding: 10vh 10vw;
 
-  .errorPageContent {
-    height: 40%;
-  }
   .errorMain {
     display: flex;
     flex-direction: column;
