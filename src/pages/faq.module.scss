@@ -1,6 +1,4 @@
 $manrope: "Manrope", sans-serif;
-
-
 .FaqPage {
   min-height: calc(100vh - var(--header-size) - var(--footer-size));
   display: flex;
@@ -9,7 +7,7 @@ $manrope: "Manrope", sans-serif;
   align-items: center;
   overflow-x: hidden;
   width: 100%;
-  font-family: $manrope;
+  
 }
 
 .title-div {
@@ -44,7 +42,6 @@ $manrope: "Manrope", sans-serif;
 .button-picker {
   display: flex;
   align-items: center;
-  font-family: "manrope";
 }
 
 .faq-main-item,
@@ -98,7 +95,7 @@ $manrope: "Manrope", sans-serif;
 }
 
 .faq-icons {
-  height: calc(15px + 2vmin);
+  height: calc(35px + 1vw);
 }
 
 .faq-head {
@@ -170,14 +167,14 @@ $manrope: "Manrope", sans-serif;
     opacity 0.4s ease,
     max-height 0.4s ease,
     font 0.4s ease;
-    font-family: $manrope;
+    font-family: "Manrope-Regular", sans-serif;
+    font-weight: 100;
     font-size: 16px;
 }
 
 .faqs .faq.open .faq-answer {
   opacity: 1;
   max-height: 1000px;
-  font-family: $manrope;
   transition:
     opacity 0.4s ease,
     max-height 0.4s ease,
@@ -251,7 +248,6 @@ $manrope: "Manrope", sans-serif;
   }
   .faqs .faq.open .faq-answer {
     transition: all 0.4s ease;
-    font-family: $manrope;
     font-size: 14px;
   }
   .faqs .faq .faq-question {

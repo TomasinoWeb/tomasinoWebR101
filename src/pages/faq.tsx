@@ -75,12 +75,12 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
       <>
         <div className={styles["FaqPage"]}>
           <div className={styles["picker-div"]}>
-            <h1>FAQ</h1> 
+            <h1>FAQ</h1>
             <div className={styles["selection-div"]}>
               <div className={styles["faq-main-holder"]}>
                 <button
                   className={`${styles["button-picker"]} ${styles["mobile-cell1"]}`}
-                  onClick={() => setTag("org")} 
+                  onClick={() => setTag("org")}
                   style={orgShown ? orgPicked : unpicked}
                 >
                   the org
@@ -96,7 +96,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
                   <div className={styles["faq-main-item"]}>
                     <img
-                      src="/static/HandWriting.png" // change this to the correct icon
+                      src="/assets/kodama.png" // change this to the correct icon
                       className={`${styles["faq-icons"]} ${styles["mobile-cell3"]}`}
                       alt="icon"
                     ></img>
@@ -113,7 +113,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="/quiz" target="_blank" rel="noreferrer">
                   <div className={styles["faq-main-item"]}>
                     <img
-                      src="/static/slot-machine.png" // change this to the correct icon
+                      src="/assets/no face v1.png" // change this to the correct icon
                       className={`${styles["faq-icons"]} ${styles["mobile-cell5"]}`}
                       alt="icon"
                     ></img>
@@ -130,7 +130,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
                   <div className={styles["faq-main-item"]}>
                     <img
-                      src="/static/clapper-board.png" // change this to the correct icon
+                      src="/assets/calcifer v1.png" // change this to the correct icon
                       className={`${styles["faq-icons"]} ${styles["mobile-cell7"]} `}
                       alt="icon"
                     ></img>
@@ -165,9 +165,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
                 {resultsShown && <ResultsGroup />}
               </div>
-              <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>
-                {sussyShown && <SussyGroup />}
-              </div>
+              <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>{sussyShown && <SussyGroup />}</div>
             </pre>
           </div>
         </div>
