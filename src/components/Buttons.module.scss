@@ -1,156 +1,70 @@
-$manrope: "Manrope", sans-serif;
-$white: #ffffff;
-$dark-grey: #343332;
-$light-grey: hsl(30, 2%, 30%);
-$dark-blue: #3c778880;
+.black_n_white {
+  --border-color: var(--dark_grey);
+  --foreground-color: var(--dark_grey);
+  --background-color: white;
 
-.primary {
-  .buttonFrame {
-    display: flex;
-    width: 399px;
-    height: 81px;
-
-    padding: 24px 0px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border: 2px solid var(--white, #fff);
-    background: var(--glass-bg, rgba(121, 163, 158, 0.5));
-
-    /* glassmorphism-blur */
-    backdrop-filter: blur(2px);
-  }
-
-  .buttonFrame:hover {
-    border: 2px solid var(--white, #fff);
-    background: rgba(60, 119, 136, 0.5);
-
-    /* glassmorphism-blur */
-    backdrop-filter: blur(2px);
-  }
-
-  .buttonText {
-    color: var(--white, #fff);
-    text-align: center;
-
-    /* 2px-text-shadow (25%) */
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-    font-family: $manrope;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-  }
-
-  @media (max-width: 1200px) {
-    .buttonFrame {
-      min-width: 180px;
-      height: 70px;
-      padding: 20px 0px;
-    }
-  }
-
-  @media (max-width: 992px) {
-    .buttonFrame {
-      min-width: 120px;
-      height: 60px;
-      padding: 16px 0px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .buttonFrame {
-      max-width: 80px;
-      height: 50px;
-      padding: 12px 0px;
-    }
-    .buttonText {
-      font-size: 20px;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .buttonFrame {
-      max-width: 30px;
-      height: 40px;
-      padding: 8px 0px;
-    }
-    .buttonText {
-      font-size: 15px;
-    }
-  }
+  --hover-border-color: white;
+  --hover-foreground-color: white;
+  --hover-background-color: var(--dark_grey);
+  --text-shadow: none;
+  --font-family: Manrope-Medium, sans-serif;
 }
 
-.secondary {
-  .buttonFrame {
-    display: inline-flex;
-    padding: 24px 32px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.glass {
+  --border-color: white;
+  --foreground-color: white;
+  --background-color: rgba(121, 163, 158, 0.5);
 
-    border: 2px solid var(--dark-grey, #343332);
-    background: var(--white, #fff);
+  --hover-border-color: white;
+  --hover-foreground-color: white;
+  --hover-background-color: rgba(60, 119, 136, 0.5);
+  --text-shadow: 2px 2px #00000040;
+  --font-family: Manrope-Bold, sans-serif;
+}
 
-    /* glassmorphism-blur */
-    backdrop-filter: blur(2px);
+.button {
+  height: 100%;
+  border: 2px solid var(--border-color);
+  width: fit-content;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: var(--text-shadow);
+  transition: 150ms ease-in-out all;
+
+  padding: 24px;
+  font-family: var(--font-family);
+  font-size: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: var(--hover-background-color);
+  color: var(--hover-foreground-color);
+  border-color: var(--hover-border-color);
+  transition: 150ms ease-in-out all;
+}
+
+.maxWidth {
+  width: 100%;
+}
+
+.small {
+  padding: 12px 24px;
+}
+
+@media screen and (max-width: 700px) {
+  .button {
+    padding: 16px 36px;
+    font-size: 18px;
   }
 
-  .buttonFrame:hover {
-    border: 2px solid var(--white, #fff);
-    background: var(--dark-grey, #343332);
-    /* glassmorphism-blur */
-    backdrop-filter: blur(2px);
-
-    .buttonText {
-      color: var(--white, #fff);
-    }
-  }
-
-  .buttonText {
-    color: var(--dark-grey, #343332);
-    text-align: center;
-    font-family: $manrope;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
-  }
-
-  @media (max-width: 1200px) {
-    .buttonFrame {
-      min-width: 180px;
-      height: 70px;
-      padding: 20px 0px;
-    }
-  }
-
-  @media (max-width: 992px) {
-    .buttonFrame {
-      min-width: 160px;
-      height: 60px;
-      padding: 16px 0px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .buttonFrame {
-      min-width: 140px;
-      height: 50px;
-      padding: 12px 0px;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .buttonFrame {
-      max-width: 20px;
-      height: 40px;
-      padding: 8px 0px;
-    }
-    .buttonText {
-      font-size: 20px;
-    }
+  .small {
+    padding: 12px 24px;
+    font-size: 14px;
   }
 }
