@@ -1,13 +1,14 @@
 $manrope: "Manrope-Bold", sans-serif;
 
 .FaqPage {
-  min-height: calc(100vh - var(--header-size) - var(--footer-size));
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
   width: 100%;
+  background-image: var(--repeated-svg);
 }
 
 .title-div {

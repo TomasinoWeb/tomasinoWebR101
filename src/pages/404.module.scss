@@ -14,6 +14,7 @@ $dark-grey: #343332;
   flex: 1;
   padding: 20px;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  background-image: var(--repeated-svg);
 
   .errorPageContent {
     width: 100%;
