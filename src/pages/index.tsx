@@ -1,3 +1,4 @@
+import { Button } from "../components/Buttons";
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import styles from "./index.module.scss";
@@ -11,11 +12,40 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
     children: (
       <div>
-        <div>
-          <img
-            className={styles.image}
-            src="https://images.unsplash.com/photo-1724250267025-08b545ab90dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
+        <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+          <div style={{ maxWidth: "500px", flex: 1 }}>
+            <Button href="/quiz" theme="black_n_white" maxWidth>
+              <p>QUIZ</p>
+            </Button>
+          </div>
+
+          <div style={{ maxWidth: "500px", flex: 1 }}>
+            <Button onClick={() => alert("Testing")} theme="glass" maxWidth>
+              <p>CLICK ME FOR ALERT</p>
+            </Button>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+          <div style={{ maxWidth: "500px", flex: 1 }}>
+            <Button href="/quiz" theme="black_n_white">
+              <p>QUIZ</p>
+            </Button>
+          </div>
+
+          <div style={{ maxWidth: "500px", flex: 1 }}>
+            <Button href="/quiz" theme="glass">
+              <p>QUIZ</p>
+            </Button>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+          <div style={{ maxWidth: "500px", flex: 1 }}>
+            <Button href="/quiz" theme="black_n_white" outline="small">
+              <p>QUIZ</p>
+            </Button>
+          </div>
         </div>
       </div>
     ),

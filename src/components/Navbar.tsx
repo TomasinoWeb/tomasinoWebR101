@@ -47,7 +47,9 @@ export default function Navbar({ background_color: color, type }: NavbarProps) {
     return (
       <header className={(isOpened ? styles.isOpened : "") + " " + headerClass + " " + styles.full}>
         <div className={styles.inner + " " + styles.jcsb}>
-          <h1 className={styles.logo}>STUDIO TOMWEB</h1>
+          <h1 className={styles.logo}>
+            <Link href="/">STUDIO TOMWEB</Link>
+          </h1>
 
           <div className={styles.right}>
             <div className={styles.desktop}>
