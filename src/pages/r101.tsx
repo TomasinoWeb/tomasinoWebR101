@@ -9,6 +9,7 @@ const R101 = PublicLayoutFrontend.use(() => {
       step: 1,
       title: "APPLICATION",
       description: "Applicants must first accomplish the Google Form.",
+      href: "/", // place link to form here
     },
     {
       step: 2,
@@ -30,6 +31,10 @@ const R101 = PublicLayoutFrontend.use(() => {
   ];
 
   return {
+    footer_disable: false,
+    header: "full",
+    is_transparent: false,
+
     children: (
       <div className={styles.r101MainContainer}>
         <AppProcessHeader />

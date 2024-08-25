@@ -1,9 +1,11 @@
+import Link from "next/link";
 import styles from "./AppProcessStep.module.scss";
 
 interface AppProcessStepProps {
   step: number;
   title: string;
   description: string;
+  href?: string; // link to the form
 }
 
 function AppProcessStep(props: AppProcessStepProps) {
@@ -15,7 +17,7 @@ function AppProcessStep(props: AppProcessStepProps) {
       <div className={styles.appProcessDescription}>
         {props.step === 1 ? (
           <>
-            Applicants must first accomplish the <a href="#">Google Form</a>.
+            Applicants must first accomplish the <Link href="#">Google Form</Link>.
           </>
         ) : (
           props.description
