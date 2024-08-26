@@ -7,6 +7,10 @@ import RepeatingIcons from "../components/RepeatingIcons";
 import BehindScene from "../components/BehindScene";
 import Projects from "../components/Projects";
 import ProjectCards from "../components/OCProjectCards";
+import AboutBox from "../components/AboutBox";
+import Arriety from "../../public/assets/GHIBLI ICONS/arriety clip.png";
+import Ootorisama from "../../public/assets/GHIBLI ICONS/ootori sama.png";
+import Jiji from "../../public/assets/GHIBLI ICONS/jiji.png";
 
 const imageUrls = [
   "/assets/orgCulture/fun/dc.png",
@@ -110,12 +114,26 @@ const data = [
   { title: "165,402", caption: "combined followers across all digital platforms" },
   { title: "9,050,600", caption: "X (formerly Twitter) impressions in the past year" },
 ];
-const webProjects = [
-  { name: "DRAFT 143", src: "/assets/orgCulture/webProjects/draft143.png", alt: "web projects" },
-  { name: "LAMONA", src: "/assets/orgCulture/webProjects/lamona.png", alt: "web projects" },
-  { name: "TomasinoWeb", src: "/assets/orgCulture/webProjects/tw.png", alt: "web projects" },
+const aboutBoxContents = [
+  {
+    icon: Arriety,
+    image: "/assets/orgCulture/webProjects/draft143.png",
+    title: "DRAFT 143",
+    linkURL: "https://draft143.com/",
+  },
+  {
+    icon: Ootorisama,
+    image: "/assets/orgCulture/webProjects/lamona.png",
+    title: "LAMONA",
+    linkURL: "https://www.lamona.lol/",
+  },
+  {
+    icon: Jiji,
+    image: "/assets/orgCulture/webProjects/tw.png",
+    title: "TomasinoWeb",
+    linkURL: "https://tomasinoweb.org/",
+  },
 ];
-
 interface OrgPageProps {}
 export default PublicLayoutFrontend.use(() => {
   return {
@@ -159,7 +177,11 @@ export default PublicLayoutFrontend.use(() => {
           <h4 className={styles["sub-header"]}>Explore our work</h4>
           <div className={`${styles["row-projects"]}`}>
             {" "}
-            <Projects webProjects={webProjects} />
+            {aboutBoxContents.map((box) => (
+              <div className={styles["card-responsive"]} key={box.title}>
+                <AboutBox icon={box.icon} image={box.image} title={box.title} linkURL={box.linkURL} />
+              </div>
+            ))}
           </div>
         </div>
         {/* ALL THE FUN STARTS HERE */}

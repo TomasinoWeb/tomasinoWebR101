@@ -34,7 +34,24 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
+@media (max-width: 1400px) {
+  .layout-card-projects {
+    width: 60%;
+  }
+  .card-projects {
+    margin: 20px 20px;
+  }
+}
+@media (max-width: 1140px) {
+  .layout-card-projects {
+    width: 80%;
+  }
+}
+@media (max-width: 850px) {
+  .layout-card-projects {
+    width: 90%;
+  }
+}
 @media (max-width: 768px) {
   .layout-card-projects {
     display: flex;
