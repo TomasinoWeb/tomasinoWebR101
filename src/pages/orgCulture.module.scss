@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   justify-content: center;
 }
 .fun,
@@ -15,10 +14,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   justify-content: center;
   background: var(--light-grey, #ddd);
-  padding: 40px 0px;
+  padding: 40px;
+  gap: 36px;
+
+  .header {
+    text-align: left;
+  }
 }
 .fun-text {
   display: flex;
@@ -26,8 +29,6 @@
   align-items: flex-start;
 }
 .actWork {
-  display: flex;
-  flex-direction: column;
   align-items: flex-end;
 }
 .title-caption {
@@ -35,6 +36,12 @@
   width: 80%;
   font-family: BeautiqueDisplay-Bold;
   margin: 40px 0;
+  text-align: center;
+}
+
+.quote {
+  max-width: 1300px;
+  margin: 100px 180px;
 }
 
 /* TOP CARDS SECTION */
@@ -50,7 +57,7 @@
 
 .text-caption {
   color: var(--dark-grey, #343332);
-  font-family: Manrope;
+  font-family: Manrope-Medium;
   font-size: 20px;
   font-weight: 500;
   line-height: 120%;
@@ -58,6 +65,7 @@
 
 .row,
 .layout-card-projects {
+  max-width: 1300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -71,31 +79,26 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   flex: 1 1 calc(33.333% - 50px);
+  gap: 4px;
   box-sizing: border-box;
   width: 100%;
   margin-bottom: 50px;
 }
 // PROJECTS
 .row-projects {
+  max-width: 1300px;
+  margin: 50px 100px 100px 100px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
   align-items: center;
   justify-content: center;
-  margin-bottom: 80px;
-  padding: 24px;
-}
-.card-responsive {
-  margin-bottom: 20px;
-  display: flex;
-  width: 387.77px;
-  height: 313.561px;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 24px;
+  flex-direction: row;
+  gap: 20px;
+
+  .card-responsive {
+    width: 100%;
+    flex: 1;
+  }
 }
 
 @media (max-width: 1400px) {
@@ -120,6 +123,13 @@
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .row-projects {
+    flex-direction: column;
+    margin: 50px 60px 80px 60px;
+  }
+}
+
 @media (max-width: 768px) {
   .text-3xl {
     font-size: 28px;
@@ -129,20 +139,22 @@
   }
   .row {
     flex-direction: column;
+    padding: 50px;
   }
-  .column,
   .fun,
   .actWork {
     width: 100%;
     align-items: center;
-  }
-  .row-projects {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 24px;
   }
 }
 
 @media (max-width: 480px) {
+  .row-projects {
+    flex-direction: column;
+    margin: 50px 30px 50px 30px;
+  }
+
   .header {
     font-size: 30px;
   }
@@ -171,17 +183,17 @@
 .header {
   color: var(--dark-grey, #343332);
   text-align: center;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--dark-grey, #343332);
   font-family: Aesthetic;
   font-size: 60px;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 20px;
 }
 
 .sub-header {
   color: var(--dark-grey, #343332);
-  font-family: "Beautique Display";
+  font-family: BeautiqueDisplay-Bold;
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 0.72px;

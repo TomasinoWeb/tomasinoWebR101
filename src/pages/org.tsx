@@ -5,12 +5,15 @@ import styles from "./orgCulture.module.scss";
 import RepeatingHeader from "../components/RepeatHeader";
 import RepeatingIcons from "../components/RepeatingIcons";
 import BehindScene from "../components/BehindScene";
-import Projects from "../components/Projects";
+import Quote from "../components/Quote";
 import ProjectCards from "../components/OCProjectCards";
 import AboutBox from "../components/AboutBox";
 import Arriety from "../../public/assets/GHIBLI ICONS/arriety clip.png";
 import Ootorisama from "../../public/assets/GHIBLI ICONS/ootori sama.png";
 import Jiji from "../../public/assets/GHIBLI ICONS/jiji.png";
+import Draft143 from "../../public/assets/orgCulture/webProjects/draft143.png";
+import Lamona from "../../public/assets/orgCulture/webProjects/lamona.png";
+import MainWebsite from "../../public/assets/orgCulture/webProjects/tw.png";
 
 const imageUrls = [
   "/assets/orgCulture/fun/dc.png",
@@ -107,36 +110,40 @@ const actWorkCards = [
   },
 ];
 const data = [
-  { title: "5 Websites", caption: "up and running for the Thomasian community" },
-  { title: "21+", caption: "delulus just hoping for a Paskuhan date" },
+  { title: "5", caption: "websites up and running for the Thomasian community" },
+  { title: "25+", caption: "members doing it with a broken heart" },
   { title: "27", caption: "awards from prestigious contest & globally recognized institutions" },
-  { title: "59", caption: "(and counting!) innovative, passionate, and dedicated members" },
-  { title: "165,402", caption: "combined followers across all digital platforms" },
-  { title: "9,050,600", caption: "X (formerly Twitter) impressions in the past year" },
+  { title: "84", caption: "(and counting!) innovative, passionate, and dedicated members" },
+  { title: "172,869", caption: "combined followers across all digital platforms" },
+  { title: "7,513,308", caption: "Facebook reach in the past year" },
 ];
 const aboutBoxContents = [
   {
     icon: Arriety,
-    image: "/assets/orgCulture/webProjects/draft143.png",
+    image: Draft143,
     title: "DRAFT 143",
     linkURL: "https://draft143.com/",
   },
   {
     icon: Ootorisama,
-    image: "/assets/orgCulture/webProjects/lamona.png",
+    image: Lamona,
     title: "LAMONA",
     linkURL: "https://www.lamona.lol/",
   },
   {
     icon: Jiji,
-    image: "/assets/orgCulture/webProjects/tw.png",
+    image: MainWebsite,
     title: "TomasinoWeb",
     linkURL: "https://tomasinoweb.org/",
   },
 ];
-interface OrgPageProps {}
-export default PublicLayoutFrontend.use(() => {
+
+const OrgCulturePage = PublicLayoutFrontend.use(() => {
   return {
+    is_transparent: false,
+    header: "full",
+    footer_disable: false,
+
     children: (
       <div className={styles["body"]}>
         <RepeatingHeader title="ORG CULTURE" />
@@ -169,12 +176,18 @@ export default PublicLayoutFrontend.use(() => {
           />
         </div>
         <RepeatingIcons />
-        {/* TESTIMONIALS */}
-        <p>Testimonials</p>
         {/* PROJECTS */}
         <div className={styles["org-culture"]}>
+          <div className={styles["quote"]}>
+            <Quote
+              author="Danial Dale Santos"
+              position="Chief Technology Officer, PY 2023-2024"
+              testimonial="One of the reasons why I joined TomasinoWeb was the wit of one of their videos–the one where two students struggle to decide what to eat. Fast forward to my time in the organization’s Web Technologies department, and one of the actresses from that video pitched the idea of a food and drink places repository. Thus, Lamona (and TomWegg) were born!  It’s an honor to create the website with equally passionate developers and designers. It feels incredible to see other Thomasians on campus using and enjoying the product of our hard work."
+              side="left"
+            />
+          </div>
           <h1 className={`${styles["header"]}`}>WEBSITES</h1>
-          <h4 className={styles["sub-header"]}>Explore our work</h4>
+          <h4 className={styles["sub-header"]}>Explore some of our work</h4>
           <div className={`${styles["row-projects"]}`}>
             {" "}
             {aboutBoxContents.map((box) => (
@@ -192,7 +205,16 @@ export default PublicLayoutFrontend.use(() => {
           </div>
         </div>
         {/* TESTIMONIALS */}
-        TESTIMONIALS
+        <div className={styles["org-culture"]}>
+          <div className={styles["quote"]}>
+            <Quote
+              author="Danial Dale Santos"
+              position="Chief Technology Officer, PY 2023-2024"
+              testimonial="One of the reasons why I joined TomasinoWeb was the wit of one of their videos–the one where two students struggle to decide what to eat. Fast forward to my time in the organization’s Web Technologies department, and one of the actresses from that video pitched the idea of a food and drink places repository. Thus, Lamona (and TomWegg) were born!  It’s an honor to create the website with equally passionate developers and designers. It feels incredible to see other Thomasians on campus using and enjoying the product of our hard work."
+              side="left"
+            />
+          </div>
+        </div>
         {/* ACTUAL WORK */}
         <div className={`${styles["fun-layout"]} `}>
           <div className={`${styles["actWork"]}`}>
@@ -210,4 +232,4 @@ export default PublicLayoutFrontend.use(() => {
   };
 });
 
-export const getStaticProps = PublicLayoutBackend.use<OrgPageProps>({});
+export default OrgCulturePage;

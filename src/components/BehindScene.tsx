@@ -1,7 +1,8 @@
 import React from "react";
+import { Button } from "../components/Buttons";
 import styles from "./behindscene.module.scss";
 
-const OrgCulture = ({ images }) => {
+const OrgCulture = ({ images }: { images: string[] }) => {
   const displayedImages = images.slice(0, 8);
 
   return (
@@ -17,7 +18,9 @@ const OrgCulture = ({ images }) => {
       </div>
       <div className={`${styles["behind-scene-column"]}`}>
         <h4 className={styles["behind-scene-text"]}>Who are the people behind the scenes?</h4>
-        <button className={` ${styles["behind-scene-button"]}`}>Meet our Community</button>
+        <Button href="/people" theme="black_n_white" outline="small">
+          MEET OUR COMMUNITY
+        </Button>
       </div>
     </div>
   );

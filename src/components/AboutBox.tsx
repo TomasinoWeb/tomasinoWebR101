@@ -11,10 +11,6 @@ interface aboutProps {
   image: StaticImport;
   title: string;
   linkURL: string;
-  iconWidth?: number;
-  iconHeight?: number;
-  imageWidth?: number;
-  imageHeight?: number;
 }
 
 export default function AboutBox(props: aboutProps) {
@@ -25,8 +21,8 @@ export default function AboutBox(props: aboutProps) {
           <Image
             alt="icon"
             src={props.icon}
-            width={props.iconWidth || 50} // Default width if not provided
-            height={props.iconHeight || 50} // Default height if not provided
+            width={50} // Default width if not provided
+            height={50} // Default height if not provided
           />
         </div>
         <strong className={styles.title}>{props.title.toUpperCase()}</strong>
@@ -34,7 +30,7 @@ export default function AboutBox(props: aboutProps) {
       </span>
 
       <div className={`${styles.imageContainer} ${styles.primary}`}>
-        <Image alt={props.title} src={props.image} width={props.imageWidth || 200} height={props.imageHeight || 200} />
+        <Image alt={props.title} src={props.image} width={500} height={200} />
       </div>
     </Link>
   );

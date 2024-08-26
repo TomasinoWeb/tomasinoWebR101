@@ -18,13 +18,13 @@
 }
 
 .title.highlighted {
-  color: black !important;
+  color: var(--dark_grey) !important;
 }
 
-@supports (-webkit-text-stroke: 1px black) {
+@supports (-webkit-text-stroke: 1px var(--dark_grey)) {
   .title:not(.highlighted) {
     color: transparent;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px var(--dark_grey);
     text-shadow: none;
   }
 }
