@@ -1,5 +1,6 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
+import Buttons from "../components/Buttons";
 import styles from "./quizResults.module.scss";
 
 interface PageProps {}
@@ -11,7 +12,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     children: (
       <div className={styles.intro_container}>
         <div className={styles.content}>
-          <img className = {`${styles.totoro}`}src="/assets/quiz/totoro.png" alt="External Affairs" />
+          <img className={`${styles.totoro}`} src="/assets/quiz/totoro.png" alt="External Affairs" />
           <h2>You should Join</h2>
           <h1>External Affairs</h1>
           <div className={styles.description}>
@@ -21,8 +22,10 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               breakfast, rather emails from various orgs.
             </p>
           </div>
-          {/* temporary button - replace with component */}
-          /*<button>Start the Quiz</button>*/
+          <div className={styles.buttonContainer}>
+            <Buttons text="Retake the quiz" theme="primary" />
+            <Buttons text="apply now" theme="primary" />
+          </div>
         </div>
       </div>
     ),
