@@ -1,13 +1,24 @@
 import styles from "./departments.module.scss";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import RepeatingHeader from "../../components/RepeatHeader";
-import Link from "next/link";
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import { PublicLayoutBackend } from "../../layouts/public/static";
+import { Button } from "../../components/Buttons";
+import CommDev from "../../../public/assets/about/departments/commdev.png";
+import Creatives from "../../../public/assets/about/departments/creatives.png";
+import ExtAff from "../../../public/assets/about/departments/extaff.png";
+import Finance from "../../../public/assets/about/departments/finance.png";
+import HR from "../../../public/assets/about/departments/hr.png";
+import Photogs from "../../../public/assets/about/departments/photogs.png";
+import PubComm from "../../../public/assets/about/departments/pubcomm.png";
+import Sec from "../../../public/assets/about/departments/sec.png";
+import Videogs from "../../../public/assets/about/departments/videogs.png";
+import WebTech from "../../../public/assets/about/departments/webtech.png";
+import Writing from "../../../public/assets/about/departments/writing.png";
 
 type Department = {
-  image: string;
+  image: StaticImageData;
   color: string;
   name: string;
   description: string;
@@ -26,15 +37,24 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
         <section className={styles.section}>
           <RepeatingHeader title="DEPARTMENTS" />
 
-          <p>
-            Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation,
-            passion, and dedication.
-          </p>
+          <div className={styles.text}>
+            <p>
+              Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation,
+              passion, and dedication.
+            </p>
+          </div>
         </section>
         <DepartmentReel />
+
         <section className={styles.section}>
-          <p>Still not sure which department is right for you? Take our quick quiz to find your perfect fit!</p>
-          <Link href="/quiz">Take Quiz</Link>
+          <div className={styles.text}>
+            <p>Still not sure which department is right for you?</p>
+            <p>Take our quick quiz to find your perfect fit!</p>
+          </div>
+
+          <Button href="/quiz" theme="black_n_white" outline="small">
+            <p>TAKE QUIZ</p>
+          </Button>
         </section>
       </main>
     ),
@@ -56,7 +76,7 @@ function DepartmentReel() {
   return (
     <div className={styles.reel}>
       {departments.map((department) => (
-        <div onClick={() => handleDepartmentChange(department)}>
+        <div onClick={() => handleDepartmentChange(department)} key={department.name}>
           <DepartmentBlock
             color={department.color}
             image={department.image}
@@ -73,7 +93,7 @@ function DepartmentReel() {
 
 interface blockProps {
   color: string;
-  image: string;
+  image: StaticImageData;
   branch: string; // idk what this should be called
   department: string;
   description: string;
@@ -85,7 +105,7 @@ function DepartmentBlock(props: blockProps) {
     <span className={styles.deptBlock}>
       <h4 className={styles.branch}>{props.branch.toUpperCase()}</h4>
       <div className={`${styles.imgContainer} ${props.isActive ? styles.expand : ""}`}>
-        <Image src={props.image} alt={props.department} width={395} height={173} />
+        <Image src={props.image} alt={props.department} />
       </div>
 
       <span className={styles.textBlock} style={{ color: props.color }}>
@@ -117,7 +137,7 @@ function DepartmentBlock(props: blockProps) {
 
 const departments = [
   {
-    image: "/assets/about/departments/sec.png",
+    image: Sec,
     color: "#D35C5F",
     branch: "Executive Affairs",
     name: "Secretariat",
@@ -125,7 +145,7 @@ const departments = [
       "Efficient and adaptable, secretaries ensure that documents and transactions are kept and created through organized systems.",
   },
   {
-    image: "/assets/about/departments/finance.png",
+    image: Finance,
     color: "#392B42", // to change later
     branch: "Executive Affairs",
     name: "Finance",
@@ -133,7 +153,7 @@ const departments = [
       "With great attention to detail and numbers, the Finance department manages the financial needs and demands of the premier digital media organization of the University.",
   },
   {
-    image: "/assets/about/departments/extaff.png",
+    image: ExtAff,
     branch: "Executive Affairs",
     color: "#6B675C",
     name: "External Affairs",
@@ -142,7 +162,7 @@ const departments = [
   },
   // fix image and branches from here, kulang pa pala ng isa lol
   {
-    image: "/assets/about/departments/hr.png",
+    image: HR,
     branch: "Executive Affairs",
     name: "Human Resources",
     description:
@@ -150,7 +170,7 @@ const departments = [
     color: "#BAA357",
   },
   {
-    image: "/assets/about/departments/pubcomm.png",
+    image: PubComm,
     branch: "Executive Affairs",
     name: "Publicity and Communications",
     description:
@@ -158,7 +178,7 @@ const departments = [
     color: "#E59B99",
   },
   {
-    image: "/assets/about/departments/commdev.png",
+    image: CommDev,
     branch: "Executive Affairs",
     name: "Community Development",
     description:
@@ -166,7 +186,7 @@ const departments = [
     color: "#15204B",
   },
   {
-    image: "/assets/about/departments/writing.png",
+    image: Writing,
     branch: "Publication",
     name: "Writing",
     description:
@@ -174,7 +194,7 @@ const departments = [
     color: "#333234",
   },
   {
-    image: "/assets/about/departments/videogs.png",
+    image: Videogs,
     branch: "Publication",
     name: "Videography",
     description:
@@ -182,7 +202,7 @@ const departments = [
     color: "#6991A7",
   },
   {
-    image: "/assets/about/departments/photogs.png",
+    image: Photogs,
     branch: "Executive Affairs",
     name: "Photography",
     description:
@@ -190,16 +210,15 @@ const departments = [
     color: "#815E4C",
   },
   {
-    image: "/assets/about/departments/creatives.png",
+    image: Creatives,
     branch: "Executive Affairs",
     name: "Creatives",
     description:
       "Artists narrate stories through their impactful artworks. They draw, create, and make the impossible possible.\n\nTEAMS: Graphic design and Illustration",
     color: "#B0424B",
   },
-  // webtech is fixed already
   {
-    image: "/assets/about/departments/webtech.png",
+    image: WebTech,
     color: "#5E877D",
     branch: "Web Technologies",
     name: "Web Technologies",
