@@ -30,11 +30,15 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projectCards }) => {
         >
           <Image
             className={styles["card-projects-image"]}
+            style={{
+              borderBottom: `2px solid ${project.borderColor}`,
+            }}
             src={project.src}
             alt={project.alt}
             width={300}
             height={200}
           />
+
           <h3
             className={styles["fun-text-title"]}
             style={{
