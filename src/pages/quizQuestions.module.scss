@@ -1,0 +1,16 @@
+.quizContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  
+  .quizQuestionContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+}

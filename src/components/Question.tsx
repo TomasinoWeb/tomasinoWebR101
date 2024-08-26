@@ -1,26 +1,24 @@
 import React, { useState } from "react";
 import styles from "./Question.module.scss";
+import Buttons from "./Buttons";
 
 interface QuestionProps {
   question: string;
-  choices: string[];
+  choices: React.ReactNode[];
+  image: string;
 }
 
 const Question = (props: QuestionProps) => {
-  const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
-
   return (
-    <div className={styles.question_container}>
-      <h1>{props.question}</h1>
-      <div className={styles.choices_container}>
+    <div>
+      <div className={styles.questionContainer}>
+        <img className={styles.questionImage} src={props.image} alt="Question Image" />
+        <h1 className={styles.questionText}>{props.question}</h1>
+        <p>Photo from Whisper of the Heart (1995)</p>
+      </div>
+      <div className={styles.choicesContainer}>
         {props.choices.map((choice, index) => (
-          <button
-            key={index}
-            className={selectedChoice === index ? styles.selected : ""}
-            onClick={() => setSelectedChoice(index)}
-          >
-            {choice}
-          </button>
+          <Buttons key={index} text={choice} theme="secondary" />
         ))}
       </div>
     </div>
