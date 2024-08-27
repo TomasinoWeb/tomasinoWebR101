@@ -5,6 +5,7 @@ import Link from "next/link";
 type ButtonProps = {
   children: React.ReactNode;
   maxWidth?: boolean;
+  customClasses?: string;
 } & ({ onClick: MouseEventHandler<HTMLButtonElement> | "submit" | "reset" } | { href: string }) &
   ({ theme: "black_n_white"; outline?: "small" | "large" } | { theme: "glass" });
 
@@ -36,7 +37,9 @@ export const Button = (props: ButtonProps) => {
     " " +
     styles.button +
     " " +
-    (props.maxWidth ? styles.maxWidth : "");
+    (props.maxWidth ? styles.maxWidth : "") +
+    " " +
+    props.customClasses;
 
   if ("href" in props)
     return (
