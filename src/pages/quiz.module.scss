@@ -29,6 +29,7 @@
     padding-bottom: var(--footer-height);
   }
 }
+
 .intro_container {
   flex-grow: 1;
   display: flex;
@@ -42,7 +43,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    max-width: 1000px;
+    width: 100%;
+
+    .resultIcon {
+      width: 150px;
+      height: auto;
+      object-fit: coer;
+      margin-bottom: 20px;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    h2 {
+      font-family: BeautiqueDisplay-Light, sans-serif;
+      text-align: center;
+      text-shadow: 3.5px 3.5px 0px rgba(0, 0, 0, 0.5);
+      font-size: 24px;
+    }
 
     h1 {
       font-family: "Aesthetic", sans-serif;
@@ -54,7 +77,12 @@
       text-transform: uppercase;
     }
 
+    .quizResultHeading {
+      font-size: 60px;
+    }
+
     .description {
+      margin: 60px 0px;
       width: 768px;
       display: flex;
       flex-direction: column;
@@ -70,23 +98,27 @@
       }
     }
 
-    /* temporary button - replace with component */
-    button {
+    .resultDescription {
+      margin: 40px 0px;
+    }
+
+    .rail {
+      width: 100%;
       display: flex;
-      padding: 24px 105px 24px 104px;
+      flex-wrap: wrap;
       justify-content: center;
+      column-gap: 30px;
+      row-gap: 15px;
       align-items: center;
 
-      border: 2px solid var(--white, #fff);
-      background: rgba(121, 163, 158, 0.5);
-      backdrop-filter: blur(2px);
+      .button {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
 
-      color: var(--white, #fff);
-      text-align: center;
-      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-      font-family: "Manrope-SemiBold", sans-serif;
-      font-size: 24px;
-      text-transform: uppercase;
+    .maxWidth {
+      max-width: 400px;
     }
   }
 }
@@ -94,10 +126,20 @@
 @media (max-width: 1024px) {
   .intro_container {
     .content {
-      gap: 50px;
+      .resultIcon {
+        width: 120px;
+      }
+
+      .header {
+        gap: 10px;
+      }
 
       h1 {
         font-size: 70px;
+      }
+
+      .quizResultHeading {
+        font-size: 48px;
       }
 
       .description {
@@ -116,36 +158,29 @@
     padding: 50px 32px;
 
     .content {
-      gap: 40px;
+      .resultIcon {
+        width: 100px;
+      }
 
       h1 {
         font-size: 60px;
         -webkit-text-stroke-width: 0;
       }
 
+      h2 {
+        font-size: 20px;
+      }
+
+      .quizResultHeading {
+        font-size: 32px;
+      }
+
       .description {
+        margin: 40px 0px;
+
         p {
           font-size: 14px;
         }
-      }
-
-      /* temporary button - replace with component */
-      button {
-        display: flex;
-        padding: 12px 36px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-
-        border: 1px solid var(--white, #fff);
-        background: rgba(121, 163, 158, 0.5);
-        backdrop-filter: blur(2px);
-
-        color: var(--white, #fff);
-        text-align: center;
-        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-        font-size: 14px;
-        text-transform: uppercase;
       }
     }
   }
@@ -156,6 +191,10 @@
     .content {
       h1 {
         font-size: 36px;
+      }
+
+      .quizResultHeading {
+        font-size: 32px;
       }
     }
   }

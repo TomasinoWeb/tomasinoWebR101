@@ -2,12 +2,14 @@ import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import styles from "./404.module.scss";
 import Image from "next/image";
 import ErrorImage from "../../public/assets/404/error-img.webp";
+import { Button } from "../components/Buttons";
 
 const ErrorPage = PublicLayoutFrontend.use(() => {
   return {
     is_transparent: false,
     header: "full",
     footer_disable: false,
+
     children: (
       <div className={styles.errorPageContainer}>
         <div className={styles.errorPageContent}>
@@ -19,10 +21,19 @@ const ErrorPage = PublicLayoutFrontend.use(() => {
               4<Image src={ErrorImage} alt="Error Image" className={styles.errorImg} />4
             </div>
           </div>
+
           <div className={styles.errorBtnContainer}>
-            {/* temporary button - replace with component */}
-            <button>Back To Home</button>
-            <button>About TomasinoWeb</button>
+            <div className={styles.button}>
+              <Button href="/" theme="black_n_white" maxWidth>
+                <p>BACK TO HOME</p>
+              </Button>
+            </div>
+
+            <div className={styles.button}>
+              <Button href="/about" theme="black_n_white" maxWidth>
+                <p>ABOUT TOMASINOWEB</p>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
