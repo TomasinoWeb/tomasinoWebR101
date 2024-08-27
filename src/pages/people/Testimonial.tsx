@@ -5,12 +5,14 @@ interface TestimonialProps {
   text: React.ReactNode;
   name: string;
   about: string;
+  invertOnLarge?: boolean;
 }
 
-const Testimonial = ({ imageSrc, text, name, about }: TestimonialProps) => {
+const Testimonial = ({ imageSrc, text, name, about, invertOnLarge }: TestimonialProps) => {
   return (
     <section className={styles.testimonialContainer}>
-      <div className={styles.testimonialImageContainer}>
+      {/* imagecontainer must be order last in large devices */}
+      <div className={`${styles.testimonialImageContainer} ${invertOnLarge ? styles.invertOnLarge : ""}`}>
         <svg
           className={styles.sprout}
           width="100"

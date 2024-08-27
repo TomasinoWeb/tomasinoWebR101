@@ -17,9 +17,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           During my stay in <span className={styles.tomWebBold}>TomasinoWeb</span>, I've had the biggest honor and
           privilege of making other “student leaders” and even “administrative officials” cry and, on some extreme
           instances, ousted because of their incompetence, mediocrity, and/or abuse of discretion. Good times. Would
-          recommend.During my stay in TomasinoWeb, I've had the biggest honor and privilege of making other “student
-          leaders” and even “administrative officials” cry and, on some extreme instances, ousted because of their
-          incompetence, mediocrity, and/or abuse of discretion. Good times. Would recommend.
+          recommend.
         </p>
       ),
       name: "Jan Carlo Zamora",
@@ -115,7 +113,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               <h2>84&nbsp;Tomwebbers</h2>
               <span className={styles.subHeading}>and counting!</span>
             </div>
-            <p style={{ marginTop: "10px" }}>
+            <p style={{ marginTop: "24px" }}>
               We're a bunch of sleep-deprived yet ambitious undergrads from different colleges and faculties.
             </p>
 
@@ -136,12 +134,12 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </section>
 
           {/* Testimonial 2 */}
-          <Testimonial {...testimonials[1]} />
+          <Testimonial {...testimonials[1]} invertOnLarge={true} />
         </div>
 
         {/* Year count */}
         <section>
-          <div className={styles.sectionHeadingWithSub} style={{ padding: "0 24px" }}>
+          <div className={`${styles.sectionHeadingWithSub} ${styles.yearsSection}`}>
             <h2>17 Years</h2>
             <span className={styles.subHeading}>of innovation, passion, and dedication</span>
           </div>
@@ -187,7 +185,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </section>
 
           {/* Testimonial 4 */}
-          <Testimonial {...testimonials[3]} />
+          <Testimonial {...testimonials[3]} invertOnLarge={true} />
 
           {/* Testimonial 5 */}
           <Testimonial {...testimonials[4]} />
@@ -197,8 +195,8 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
         <section className={styles.ctaContainer}>
           <div className={styles.ctaBody}>
             <p>Are you ready to innovate and lead the modern web?</p>
-            <Button href="/" theme="black_n_white">
-              What's it like in TW?
+            <Button href="/" theme="black_n_white" customClasses={styles.ctaButton}>
+              WHAT'S IT LIKE IN TW?
             </Button>
           </div>
 

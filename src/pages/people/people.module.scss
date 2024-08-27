@@ -59,7 +59,12 @@ $manrope-bold: "Manrope-Bold", sans-serif;
 .sectionHeadingWithSub {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end;
   gap: 10px;
+}
+
+.yearsSection {
+  padding: 0 24px;
 }
 
 span.subHeading {
@@ -75,10 +80,9 @@ span.subHeading {
 
 .imageGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 11px;
   width: 90%;
-  max-width: 1200px;
 
   margin: 24px auto 0;
 }
@@ -116,52 +120,181 @@ span.subHeading {
   padding: 0 24px;
   padding-bottom: 40px;
 
-  .ctaBody {
-    display: flex;
-    padding: 28px 24px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    border: 2px solid var(--dark_grey);
-    background: var(--light-yellow);
-  }
+  display: flex;
+  flex-direction: column;
 
   p {
     color: var(--dark_grey);
     text-align: center;
     font-family: "BeautiqueDisplay-Medium";
-    font-size: 1.5rem;
+    font-size: 1.5rem; // 24px
     font-weight: 700;
     line-height: 120%;
     letter-spacing: 0.48px;
   }
+}
 
-  .ctaImageContainer {
-    position: relative;
+.ctaBody {
+  display: flex;
+  padding: 28px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  border: 2px solid var(--dark_grey);
+  background: var(--light-yellow);
+}
+
+.ctaImageContainer {
+  position: relative;
+}
+
+.ctaImageContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 96%;
+  background-color: rgba(52, 51, 50, 0.2); /* Overlay color with 20% opacity */
+  pointer-events: none;
+}
+
+.ctaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(80%);
+  border: 2px solid var(--dark_grey);
+}
+
+// TABLET --------------------------------------------------
+@media screen and (min-width: 576px) {
+  .peoplePage {
+    h2 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+    }
+
+    strong {
+      font-size: 1.25rem;
+    }
   }
 
-  .ctaImageContainer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  .headerSection {
+    p {
+      text-align: center;
+      font-family: "BeautiqueDisplay-Regular";
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.28px;
+
+      margin-top: 32px;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }
+
+  .container {
+    padding: 100px 10%;
+    gap: 100px;
+  }
+
+  .yearsSection {
+    padding: 20px 10%;
+  }
+
+  span.subHeading {
+    font-size: 1.625rem;
+  }
+
+  .ctaContainer {
+    padding: 0 10%;
+    padding-bottom: 100px;
+
+    p {
+      font-size: 1.625rem;
+    }
+  }
+
+  .ctaBody {
+    padding: 40px 60px;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(3, 1fr);
+
     width: 100%;
-    height: 96%;
-    background-color: rgba(52, 51, 50, 0.2); /* Overlay color with 20% opacity */
-    pointer-events: none;
+    margin: 40px auto 0;
   }
 
-  .ctaImage {
-    margin-top: -2px;
-    filter: grayscale(100%) contrast(80%);
+  .showcaseImageContainer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .ctaButton {
+    height: auto !important;
+    font-size: 1rem !important;
+    padding: 12px 24px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .imageGrid {
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+  }
+
+  .showcaseImageContainer {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .showcaseImage {
     border: 2px solid var(--dark_grey);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 992px) {
   .imageGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 24px;
+  }
+
+  .ctaContainer {
+    flex-direction: row;
+
+    p {
+      text-align: left;
+    }
+  }
+
+  .ctaBody {
+    padding: 47px 38px;
+    flex-basis: 45%; /* Set the base size to 60% of the container */
+    flex-grow: 0; /* Don't allow the item to grow */
+    flex-shrink: 0; /* Don't allow the item to shrink */
+
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .ctaButton {
+    height: auto !important;
+    font-size: 1rem !important;
+    padding: 12px 24px !important;
+  }
+
+  .ctaImage {
+    flex-basis: 55%; /* Set the base size to 60% of the container */
+    flex-grow: 0; /* Don't allow the item to grow */
+    flex-shrink: 0; /* Don't allow the item to shrink */
   }
 }
