@@ -65,7 +65,7 @@ $manrope-bold: "Manrope-Bold", sans-serif;
 
 @media screen and (min-width: 576px) {
   .testimonialContainer {
-    gap: 7%;
+    gap: 36px;
   }
 
   .testimonialImageContainer {
@@ -99,6 +99,7 @@ $manrope-bold: "Manrope-Bold", sans-serif;
 @media screen and (min-width: 992px) {
   .testimonialContainer {
     flex-direction: row;
+    gap: 7%;
     align-items: center;
 
     // padding-left: 10%;
