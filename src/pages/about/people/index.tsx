@@ -1,89 +1,26 @@
-import { PublicLayoutFrontend } from "../../layouts/public/frontend";
-import { PublicLayoutBackend } from "../../layouts/public/static";
-import RepeatingHeader from "../../components/RepeatHeader";
-import Testimonial from "./Testimonial";
+import { PublicLayoutFrontend } from "../../../layouts/public/frontend";
+import { PublicLayoutBackend } from "../../../layouts/public/static";
+import RepeatingHeader from "../../../components/RepeatHeader";
 
 import styles from "./people.module.scss";
-import { Button } from "../../components/Buttons";
+import { Button } from "../../../components/Buttons";
+import { HoverableImageFade } from "../../../components/HoverableImageFade";
+import { useState } from "react";
+import { coreMembers, testimonials } from "../../../data";
+import Quote from "../../../components/Quote";
 
 interface PageProps {}
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
-  const testimonials = [
-    {
-      imageSrc: "/assets/people/zamora.png",
-      text: (
-        <p>
-          During my stay in <span className={styles.tomWebBold}>TomasinoWeb</span>, I've had the biggest honor and
-          privilege of making other “student leaders” and even “administrative officials” cry and, on some extreme
-          instances, ousted because of their incompetence, mediocrity, and/or abuse of discretion. Good times. Would
-          recommend.
-        </p>
-      ),
-      name: "Jan Carlo Zamora",
-      about: "President, PY 2022 - 2024",
-    },
-    {
-      imageSrc: "/assets/people/ocampo-kanav.png",
-      text: (
-        <p>
-          When I joined <span className={styles.tomWebBold}>TomasinoWeb</span> in 2013 as a freshman from the College of
-          Commerce, I was initially intimidated by the expertise and bold ideas of my fellow members across different
-          departments—from writing, creatives, and photography to web development and videography. But as I continued to
-          participate in the organization's events and activities, I eventually gained confidence and found my place
-          within the org. Reflecting now, I realized that as a business student, being part of TomWeb and surrounded by
-          TomWebbers fostered my creativity and tech-based problem-solving skills far more than any other organization
-          at UST could have.
-        </p>
-      ),
-      name: "Julia Colette C. Ocampo-Kanav",
-      about: "Executive Vice President, PY 2016 - 2017",
-    },
-    {
-      imageSrc: "/assets/people/mira.png",
-      text: (
-        <p>
-          I once wrote album reviews for BINI and Alamat when they each had fewer than 200,000 Spotify monthly
-          listeners. If you're a blogs writer who bleeds pop culture, whatever you write is instrumental to driving the
-          conversation forward.
-        </p>
-      ),
-      name: "Kurt Alec Mira",
-      about: "Executive Vice President , PY 2024 - 2025",
-    },
-    {
-      imageSrc: "/assets/people/giva.png",
-      text: (
-        <>
-          <p>
-            Last year I feared that joining <span className={styles.tomWebBold}>TomasinoWeb</span> would jeopardize my
-            academics. However, among the few organizations I've joined, TomWeb has been one where I was able to balance
-            my studies and organizational commitments.
-          </p>{" "}
-          <p>
-            I was intimidated by the prospect of working with highly skilled individuals. But as a member now, the
-            people and culture made me feel comfortable and encouraged to learn beyond my comfort zone. It fostered my
-            creativity, accountability, and most of all, humility. TomasinoWeb embodies professionalism with a heart.
-          </p>
-        </>
-      ),
-      name: "Zeandarra Gaile Giva",
-      about: "UI/UX Designer, PY 2023-2025",
-    },
-    {
-      imageSrc: "/assets/people/tria.png",
-      text: (
-        <p>
-          <span className={styles.tomWebBold}>TomasinoWeb</span> provided a platform for me to channel my passion for
-          storytelling through film. It was both a delight and an honor to capture Thomasian stories, filled with rich
-          narratives, context, and emotion. Without a doubt, TomWeb excels at connecting with and engaging audiences by
-          bringing their unique experiences to life.
-        </p>
-      ),
-      name: "Anthony Tria",
-      about: "Chief Videographer, PY 2021-2022",
-    },
-  ];
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const handleMemberClick = (index: number) => {
+    if (expandedIndex === index) {
+      setExpandedIndex(null);
+    } else {
+      setExpandedIndex(index);
+    }
+  };
 
   return {
     header: "full",
@@ -105,7 +42,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
         <div className={styles.container}>
           {/* Testimonial 1 */}
-          <Testimonial {...testimonials[0]} />
+          <Quote {...testimonials[0]} side="left" />
 
           {/* Member count and photos */}
           <section>
@@ -134,7 +71,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </section>
 
           {/* Testimonial 2 */}
-          <Testimonial {...testimonials[1]} invertOnLarge={true} />
+          <Quote {...testimonials[1]} side="right" />
         </div>
 
         {/* Year count */}
@@ -165,7 +102,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
         {/* Testimonial 3 */}
         <div className={styles.container}>
-          <Testimonial {...testimonials[2]} />
+          <Quote {...testimonials[2]} side="left" />
         </div>
 
         {/* The Core Group */}
@@ -173,6 +110,32 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           <div className={styles.headingContainer}>
             <h2>The Core Group</h2>
             <span className={styles.subHeading}>The heads of TomasinoWeb</span>
+          </div>
+
+          <div className={styles.gallery}>
+            {coreMembers.map((member, index) => (
+              <div
+                key={index}
+                className={`${styles.member} ${expandedIndex === index ? styles.expanded : ""}`}
+                onClick={() => handleMemberClick(index)}
+              >
+                <HoverableImageFade
+                  alt={`${member.name}'s Image`}
+                  image={"/assets/people/testimonial-bg.png"}
+                  hoveredImage={"/assets/people/testimonial-bg.png"}
+                  active
+                />
+
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <div className={styles.innerContainer}>
+                    <h1 className={styles.name}>{member.name}</h1>
+                    <p className={styles.position}>{member.position}</p>
+                  </div>
+                </div>
+                <div className={styles.undershadow}></div>
+              </div>
+            ))}
           </div>
 
           <div>{/* Core reel py16 branch */}</div>
@@ -185,10 +148,10 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </section>
 
           {/* Testimonial 4 */}
-          <Testimonial {...testimonials[3]} invertOnLarge={true} />
+          <Quote {...testimonials[3]} side="right" />
 
           {/* Testimonial 5 */}
-          <Testimonial {...testimonials[4]} />
+          <Quote {...testimonials[4]} side="left" />
         </div>
 
         {/* CTA - Call to action */}
