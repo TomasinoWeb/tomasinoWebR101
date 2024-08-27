@@ -1,0 +1,167 @@
+$manrope: "Manrope-Medium", sans-serif;
+$manrope-bold: "Manrope-Bold", sans-serif;
+
+.peoplePage {
+  background-image: var(--repeated-svg);
+
+  h2 {
+    color: var(--dark_grey);
+    font-family: "Aesthetic";
+    font-size: 2rem;
+    line-height: 80%;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--dark-grey, #343332);
+    font-family: $manrope;
+    font-size: 0.75rem;
+    font-style: normal;
+    line-height: 120%;
+  }
+
+  strong {
+    font-family: $manrope-bold;
+    font-size: 0.875rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.headerSection {
+  p {
+    text-align: center;
+    font-family: "BeautiqueDisplay-Regular";
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.28px;
+
+    margin-top: 40px;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+.container {
+  padding: 40px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.tomWebBold {
+  font-family: $manrope-bold;
+}
+
+.sectionHeadingWithSub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+span.subHeading {
+  color: var(--dark_grey);
+  font-family: "BeautiqueDisplay-Medium";
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.28px;
+
+  display: block;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 11px;
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 24px auto 0;
+}
+
+.imageBox {
+  background-color: #ccc;
+  aspect-ratio: 1/1;
+  border: 2px solid var(--dark_grey);
+  background: var(--light_gray);
+}
+
+.showcaseImageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.showcaseImage {
+  border: 1px solid var(--dark_grey);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.headingContainer {
+  text-align: center;
+  padding: 0 24px;
+
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+  }
+}
+
+.ctaContainer {
+  padding: 0 24px;
+  padding-bottom: 40px;
+
+  .ctaBody {
+    display: flex;
+    padding: 28px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border: 2px solid var(--dark_grey);
+    background: var(--light-yellow);
+  }
+
+  p {
+    color: var(--dark_grey);
+    text-align: center;
+    font-family: "BeautiqueDisplay-Medium";
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.48px;
+  }
+
+  .ctaImageContainer {
+    position: relative;
+  }
+
+  .ctaImageContainer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96%;
+    background-color: rgba(52, 51, 50, 0.2); /* Overlay color with 20% opacity */
+    pointer-events: none;
+  }
+
+  .ctaImage {
+    margin-top: -2px;
+    filter: grayscale(100%) contrast(80%);
+    border: 2px solid var(--dark_grey);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
