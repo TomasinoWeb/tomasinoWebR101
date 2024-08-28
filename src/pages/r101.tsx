@@ -14,7 +14,7 @@ const R101 = PublicLayoutFrontend.use(() => {
     children: (
       <div className={styles.r101MainContainer}>
         <AppProcessHeader />
-        <div className={styles.stepContainer}>
+        <div className={styles.mainStepContainer}>
           <div className={styles.step1}>
             <AppProcessStep {...steps[0]} susuwatari="1" />
           </div>
@@ -22,10 +22,10 @@ const R101 = PublicLayoutFrontend.use(() => {
             <AppProcessStep {...steps[1]} susuwatari="2-left" />
           </div>
           <div className={styles.step3}>
-            <AppProcessStep {...steps[2]} susuwatari="2-right" />
+            <AppProcessStep {...steps[2]} susuwatari="1" />
           </div>
           <div className={styles.step4}>
-            <AppProcessStep {...steps[3]} susuwatari="1" />
+            <AppProcessStep {...steps[3]} susuwatari="2-right" />
           </div>
         </div>
       </div>
