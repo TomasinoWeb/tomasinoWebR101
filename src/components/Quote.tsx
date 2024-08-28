@@ -1,9 +1,12 @@
 import React from "react";
+import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import styles from "./Quote.module.scss";
 import ReactMarkdown from "react-markdown";
 
+import styles from "./Quote.module.scss";
 interface QuoteProps {
-  imageUrl?: string;
+  imageUrl?: string | StaticImport;
   author: string;
   position: string;
   testimonial: string;
@@ -29,7 +32,13 @@ const Quote: React.FC<QuoteProps> = ({ imageUrl, author, position, testimonial, 
             fill="#60996D"
           />
         </svg>
-        <img className={styles.testimonialImage} src={imageUrl} alt={`Photo of ${author}`} />
+         <Image
+          alt={`Photo of ${author}`}
+          src={imageUrl}
+          className={`${styles.testimonialImage}`}
+          width={395} // Adjust width as needed
+          height={250}
+        />
       </div>
 
       <div className={`${styles.testimonialContainer}`}>

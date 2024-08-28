@@ -1,0 +1,18 @@
+// RepeatingIcons.module.scss
+
+.ghibli-icons-layout {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.ghibli-icons-scroller {
+  display: flex;
+  align-items: center;
+}
+
+.ghibli-icons {
+  display: inline-block;
+  margin-right: 10px; // Adjust spacing as needed
+}
