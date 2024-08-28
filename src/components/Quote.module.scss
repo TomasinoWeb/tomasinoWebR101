@@ -4,7 +4,7 @@
   font-family: Manrope-Regular;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 50px;
 }
 
 .quoteIcon {
@@ -62,6 +62,21 @@
   justify-content: center;
   gap: 16px;
   align-self: stretch;
+
+  article {
+    p {
+      margin-bottom: 20px;
+    }
+
+    em {
+      font-style: oblique 10deg;
+    }
+
+    strong {
+      font-family: Manrope-Bold, sans-serif;
+      font-size: 16px;
+    }
+  }
 }
 
 .quoteImage {
@@ -71,10 +86,41 @@
   flex-shrink: 0;
 }
 
-@media screen and (min-width: 768px) {
+.sprout {
+  position: absolute;
+  z-index: -1;
+  left: 8px;
+  top: -12px;
+
+  width: 36px;
+  height: 38px;
+}
+
+.testimonialImageContainer {
+  border: 5px solid var(--dark_grey);
+  border-radius: 100%;
+  // overflow: hidden;
+
+  margin: 0 auto;
+  max-width: 200px;
+  width: 100%;
+  aspect-ratio: 1/1;
+
+  background-image: url("/assets/people/testimonial-bg.png");
+  background-size: cover;
+  position: relative;
+}
+
+.testimonialImage {
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  bottom: 0;
+}
+
+@media screen and (min-width: 850px) {
   .quoteBlock {
     flex-direction: row;
-    gap: 74px;
   }
   .alignRight {
     flex-direction: row-reverse;
