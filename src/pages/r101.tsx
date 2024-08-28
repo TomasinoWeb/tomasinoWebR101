@@ -6,9 +6,9 @@ import styles from "./r101.module.scss";
 
 const R101 = PublicLayoutFrontend.use(() => {
   const isDesktop = useViewportWidth(1024);
-  const isMobile = useViewportWidth(530);
+  const isLargerThanMobile = useViewportWidth(570);
 
-  // Hook for checking viewport width
+  // Hook for checking if viewport width is greater than or equal to target width
   function useViewportWidth(targetWidth: number) {
     const [isWidthMet, setIsWidthMet] = useState(false);
 
@@ -43,8 +43,7 @@ const R101 = PublicLayoutFrontend.use(() => {
         <RepeatingHeader title="APPLICATION PROCESS" />
         <div className={styles.mainStepContainer}>
           <div className={styles.step1}>
-            {/*todo: fix bug where the wrong soot shows on mobile and viewports when using the useViewportWidth method*/}
-            <AppProcessStep {...steps[0]} susuwatari="1" />
+            <AppProcessStep {...steps[0]} susuwatari={!isLargerThanMobile ? "1-reversed" : "1"} />
           </div>
           <div className={styles.step2}>
             <AppProcessStep {...steps[1]} susuwatari="2-left" />

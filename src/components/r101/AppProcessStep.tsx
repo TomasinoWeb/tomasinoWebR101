@@ -17,7 +17,7 @@ function AppProcessStep(props: AppProcessStepProps) {
   const stepClass = `step${props.step}`;
   const sootClass = `soot-${props.susuwatari}`;
   const sootImg = props.susuwatari === "1" || props.susuwatari === "1-reversed" ? Susuwatari1 : Susuwatari2;
-  const sootImgClass = props.susuwatari === "1" ? styles.soot1 : styles.soot2;
+  const sootImgClass = props.susuwatari === "1" || props.susuwatari === "1-reversed" ? styles.soot1 : styles.soot2;
 
   return (
     <div className={`${styles.stepContainer} ${props.susuwatari === "1" ? styles.stepContainerReversed : ""}`}>

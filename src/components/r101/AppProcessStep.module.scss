@@ -112,6 +112,12 @@
   .soot-2-left {
     justify-content: flex-start;
   }
+  .soot-1-reversed {
+    .soot1 {
+      transform: rotateX(180deg);
+      margin-bottom: -2px;
+    }
+  }
 }
 .stepContainerReversed {
   flex-direction: column-reverse;
