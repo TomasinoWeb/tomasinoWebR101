@@ -1,0 +1,135 @@
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.1rem;
+  border-bottom: 1px solid #343332;
+
+  .appProcessStep {
+    display: flex;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    width: 241px;
+    height: max-content;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+    flex-shrink: 0;
+    cursor: default;
+
+    .appProcessNum,
+    .appProcessTitle {
+      font-size: 1.8rem;
+      font-family: Aesthetic, serif;
+      font-weight: 800;
+    }
+
+    .appProcessNum {
+      font-size: 2rem;
+      display: flex;
+      width: 3rem;
+      align-items: center;
+      padding-top: 5.5px;
+      justify-content: center;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
+  }
+  .step1 {
+    border: 2px solid var(--dark-green);
+    background-color: var(--light-cyan);
+    color: var(--dark-green);
+
+    .appProcessNum {
+      border: 2px solid var(--dark-green);
+      background-color: white;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--dark-green);
+    }
+    a:after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 0.3px;
+      background: var(--dark-green);
+    }
+  }
+
+  .step2 {
+    border: 2px solid var(--dark-purple);
+    background-color: var(--light-purple);
+    color: var(--dark-purple);
+
+    .appProcessNum {
+      border: 2px solid var(--dark-purple);
+      background-color: white;
+    }
+  }
+
+  .step3 {
+    border: 2px solid var(--brick-red);
+    background-color: var(--pale-pink);
+    color: var(--brick-red);
+
+    .appProcessNum {
+      border: 2px solid var(--brick-red);
+      background-color: white;
+    }
+  }
+
+  .step4 {
+    border: 2px solid var(--olive-brown);
+    background-color: var(--light-yellow);
+    color: var(--olive-brown);
+
+    .appProcessNum {
+      border: 2px solid var(--olive-brown);
+      background-color: white;
+    }
+  }
+  .sootContainer {
+    display: flex;
+    justify-content: center;
+
+    .soot1 {
+      height: 53px;
+      width: 42px;
+      margin-top: -2px;
+    }
+    .soot2 {
+      width: 78px;
+      height: 40px;
+      margin-bottom: -1px;
+    }
+  }
+  .soot-2-right {
+    justify-content: flex-end;
+  }
+  .soot-2-left {
+    justify-content: flex-start;
+  }
+  .soot-1-reversed {
+    .soot1 {
+      transform: rotateX(180deg);
+      margin-bottom: -2px;
+    }
+  }
+}
+.stepContainerReversed {
+  flex-direction: column-reverse;
+}
+@media screen and (max-width: 1024px) {
+  .stepContainer,
+  .stepContainerReversed {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .stepContainer {
+    border-bottom: none;
+  }
+}
