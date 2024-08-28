@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 0 1.1rem;
   border-bottom: 1px solid black;
+  flex-shrink: 0;
 
   .appProcessStep {
     display: flex;
