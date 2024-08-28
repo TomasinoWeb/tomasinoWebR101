@@ -28,3 +28,9 @@ $dark-grey: #343332;
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .mainStepContainer {
+    max-width: 500px;
+  }
+}

@@ -6,7 +6,7 @@ import styles from "./r101.module.scss";
 
 const R101 = PublicLayoutFrontend.use(() => {
   const isDesktop = useViewportWidth(1024);
-  const isLargerThanMobile = useViewportWidth(570);
+  const isLargerThanMobile = useViewportWidth(601);
 
   // Hook for checking if viewport width is greater than or equal to target width
   function useViewportWidth(targetWidth: number) {

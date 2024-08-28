@@ -9,7 +9,7 @@
     flex-direction: column;
     font-family: "Manrope", sans-serif;
     font-size: 1rem;
-    width: 250px;
+    width: 241px;
     height: max-content;
     align-items: center;
     gap: 1.5rem;
@@ -97,7 +97,7 @@
 
     .soot1 {
       height: 53px;
-      width: 41.5px;
+      width: 42px;
       margin-top: -2px;
     }
     .soot2 {
@@ -128,7 +128,7 @@
     margin-bottom: 2rem;
   }
 }
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 600px) {
   .stepContainer {
     border-bottom: none;
   }
