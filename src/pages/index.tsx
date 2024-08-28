@@ -21,8 +21,8 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           <div className={styles.slideBottom}>
             <div className="">
               <div className={styles.heroTextContainer}>
-                <h2 className={styles.heroText}>STUDIO TOMWEB</h2>
-                <p className={styles.heroMessage}>where innovation, passion, and dedication begins</p>
+                <h2 className={styles.heroMainText}>STUDIO TOMWEB</h2>
+                <p className={styles.heroSubText}>where innovation, passion, and dedication begins</p>
               </div>
             </div>
             <div className={styles.buttonContainer}>
@@ -34,39 +34,6 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               </Button>
             </div>
           </div>
-          {/* <div style={{ maxWidth: "500px", flex: 1 }}>
-            <Button href="/quiz" theme="black_n_white" maxWidth>
-              <p>QUIZ</p>
-            </Button>
-          </div>
-
-          <div style={{ maxWidth: "500px", flex: 1 }}>
-            <Button onClick={() => alert("Testing")} theme="glass" maxWidth>
-              <p>CLICK ME FOR ALERT</p>
-            </Button>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
-          <div style={{ maxWidth: "500px", flex: 1 }}>
-            <Button href="/quiz" theme="black_n_white">
-              <p>QUIZ</p>
-            </Button>
-          </div>
-
-          <div style={{ maxWidth: "500px", flex: 1 }}>
-            <Button href="/quiz" theme="glass">
-              <p>QUIZ</p>
-            </Button>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
-          <div style={{ maxWidth: "500px", flex: 1 }}>
-            <Button href="/quiz" theme="black_n_white" outline="small">
-              <p>QUIZ</p>
-            </Button>
-          </div> */}
         </div>
       </div>
     ),
