@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Susuwatari1 from "../../../public/assets/r101/susuwatarii1.webp";
-import Susuwatari2 from "../../../public/assets/r101/susuwatarii2.webp";
+import Susuwatari1 from "../../../public/assets/r101/susuwatari1.webp";
+import Susuwatari2 from "../../../public/assets/r101/susuwatari2.webp";
 import styles from "./AppProcessStep.module.scss";
 
 interface AppProcessStepProps {
