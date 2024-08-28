@@ -1,4 +1,6 @@
 .stepContainer {
+  display: flex;
+  flex-direction: column;
   padding: 0 1.1rem;
   border-bottom: 1px solid black;
 
@@ -110,4 +112,7 @@
   .soot-2-left {
     justify-content: flex-start;
   }
+}
+.stepContainerReversed {
+  flex-direction: column-reverse;
 }
