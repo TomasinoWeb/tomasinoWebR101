@@ -4,7 +4,6 @@ import Image from "next/image";
 import Susuwatari1 from "../../../public/assets/r101/susuwatarii1.webp";
 import Susuwatari2 from "../../../public/assets/r101/susuwatarii2.webp";
 import styles from "./AppProcessStep.module.scss";
-import { isDesktop, isMobile, isTablet } from "./checkWidth";
 
 interface AppProcessStepProps {
   step: number;

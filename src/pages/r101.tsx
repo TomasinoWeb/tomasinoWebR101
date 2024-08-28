@@ -3,9 +3,36 @@ import { useEffect, useState } from "react";
 import AppProcessHeader from "../components/r101/AppProcessHeader";
 import AppProcessStep from "../components/r101/AppProcessStep";
 import styles from "./r101.module.scss";
-import { isMobile, isDesktop, isTablet } from "../components/r101/checkWidth";
 
 const R101 = PublicLayoutFrontend.use(() => {
+  const isDesktop = useViewportWidth(1024);
+  const isMobile = useViewportWidth(530);
+
+  // Hook for checking viewport width
+  function useViewportWidth(targetWidth: number) {
+    const [isWidthMet, setIsWidthMet] = useState(false);
+
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        const handleResize = () => {
+          setIsWidthMet(window.innerWidth >= targetWidth);
+        };
+
+        // Initial check for viewport width
+        handleResize();
+
+        // Monitor window resize
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }
+    }, [targetWidth]);
+
+    return isWidthMet;
+  }
+
   return {
     footer_disable: false,
     header: "full",
@@ -22,10 +49,10 @@ const R101 = PublicLayoutFrontend.use(() => {
             <AppProcessStep {...steps[1]} susuwatari="2-left" />
           </div>
           <div className={styles.step3}>
-            <AppProcessStep {...steps[2]} susuwatari="1" />
+            <AppProcessStep {...steps[2]} susuwatari={isDesktop ? "1" : "2-right"} />
           </div>
           <div className={styles.step4}>
-            <AppProcessStep {...steps[3]} susuwatari="2-right" />
+            <AppProcessStep {...steps[3]} susuwatari={isDesktop ? "2-right" : "1"} />
           </div>
         </div>
       </div>

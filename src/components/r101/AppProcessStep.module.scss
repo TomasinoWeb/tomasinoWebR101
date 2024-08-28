@@ -3,14 +3,13 @@
   flex-direction: column;
   padding: 0 1.1rem;
   border-bottom: 1px solid black;
-  flex-shrink: 0;
 
   .appProcessStep {
     display: flex;
     flex-direction: column;
     font-family: "Manrope", sans-serif;
     font-size: 1rem;
-    max-width: 250px;
+    width: 250px;
     height: max-content;
     align-items: center;
     gap: 1.5rem;
@@ -116,4 +115,9 @@
 }
 .stepContainerReversed {
   flex-direction: column-reverse;
+}
+@media screen and (max-width: 570px) {
+  .stepContainer {
+    border-bottom: none;
+  }
 }
