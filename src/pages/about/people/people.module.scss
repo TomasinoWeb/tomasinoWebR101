@@ -22,7 +22,6 @@ $manrope-bold: "Manrope-Bold", sans-serif;
 
   strong {
     font-family: $manrope-bold;
-    font-size: 0.875rem;
   }
 
   img {
@@ -180,10 +179,6 @@ span.subHeading {
     p {
       font-size: 1.125rem;
     }
-
-    strong {
-      font-size: 1.25rem;
-    }
   }
 
   .headerSection {
@@ -297,5 +292,157 @@ span.subHeading {
     flex-basis: 55%; /* Set the base size to 60% of the container */
     flex-grow: 0; /* Don't allow the item to grow */
     flex-shrink: 0; /* Don't allow the item to shrink */
+  }
+}
+
+.gallery {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .member {
+    width: calc(100% / 14);
+    height: 385px;
+    position: relative;
+    transition: width 0.3s ease;
+    cursor: pointer;
+    border-left: 1.5px solid var(--darkgray);
+    border-right: 1.5px solid var(--darkgray);
+
+    &.expanded {
+      width: 300px;
+      transition: width 0.3s ease;
+
+      .content {
+        .innerContainer {
+          opacity: 0;
+          animation: fadeIn 0.3s 0.3s ease forwards;
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .shadow {
+        opacity: 0;
+      }
+
+      .undershadow {
+        opacity: 0.4;
+      }
+    }
+
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .shadow,
+    .undershadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+      opacity: 0;
+      transition: 0.1s ease-in all;
+    }
+
+    .shadow {
+      z-index: 11;
+    }
+    .undershadow {
+      z-index: 9;
+    }
+
+    .shadow:hover,
+    .undershadow:hover {
+      opacity: 0.4;
+    }
+
+    .content {
+      z-index: 10;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .innerContainer {
+        opacity: 0;
+
+        .name {
+          line-height: 1em;
+          margin-top: auto;
+          font-size: 24px;
+          padding-bottom: 5px;
+        }
+
+        .position {
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+
+        .name,
+        .position {
+          text-align: left;
+          font-family: Manrope-Bold;
+          text-shadow: 2px 4px 4px rgba(57, 57, 57, 0.25);
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gallery {
+    flex-direction: column;
+
+    .member {
+      width: 100%;
+      height: 150px;
+      transition: height 0.3s ease;
+      cursor: auto;
+
+      border-top: 3px solid var(--darkgray);
+      border-left: none;
+      border-right: none;
+
+      &.expanded {
+        width: 100%;
+        height: 400px;
+        transition: height 0.3s ease;
+
+        .content {
+          opacity: 1;
+          animation: none;
+        }
+      }
+
+      .image {
+        position: absolute;
+        object-position: 50% 35%;
+      }
+    }
   }
 }
