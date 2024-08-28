@@ -23,7 +23,6 @@
 }
 
 .button {
-  height: 100%;
   border: 2px solid var(--border-color);
   width: fit-content;
   background-color: var(--background-color);
@@ -56,6 +55,7 @@
 
 .small {
   padding: 12px 24px;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 700px) {

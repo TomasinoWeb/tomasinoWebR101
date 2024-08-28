@@ -1,8 +1,11 @@
 import React from "react";
+import Image from "next/image";
+import { StaticImageData, StaticImport } from "next/dist/shared/lib/get-img-props";
 import styles from "./Quote.module.scss";
+import ReactMarkdown from "react-markdown";
 
 interface QuoteProps {
-  imageUrl?: string;
+  imageUrl: string | StaticImageData;
   author: string;
   position: string;
   testimonial: string;
@@ -11,13 +14,38 @@ interface QuoteProps {
 
 const Quote: React.FC<QuoteProps> = ({ imageUrl, author, position, testimonial, side }) => {
   const alignment = side === "left" ? styles.alignLeft : styles.alignRight;
+
   return (
     <div className={`${styles.quoteBlock} ${alignment}`}>
-      <div className="">
-        <img src={imageUrl} alt="" className={`${styles.quoteImage}`} />
+      <div className={`${styles.testimonialImageContainer} ${side === "right" ? styles.invertOnLarge : ""}`}>
+        <svg
+          className={styles.sprout}
+          width="100"
+          height="100"
+          viewBox="0 0 36 38"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.59316 37.0357L8.13159 34.7283C8.13159 34.7283 13.2316 28.3712 19.7931 24.3215C26.3547 20.2718 34.3778 18.5295 34.3778 18.5295L35.8394 20.8369L9.59316 37.0357ZM12.3706 14.6205C7.94573 11.093 0.598345 17.072 0.598345 17.072C0.598345 17.072 6.5609 25.9088 13.1641 19.9077C10.5199 16.886 7.96685 17.1779 7.96685 17.1779C11.6413 14.9101 14.3884 18.6707 14.3884 18.6707L17.75 23.9777L20.3747 22.3578L17.3054 17.5123C17.3054 17.5123 14.4553 13.0129 17.6615 9.42935C17.6615 9.42935 17.2292 14.5103 18.6908 16.8177C28.3885 11.9558 21.373 0.880228 21.373 0.880228C21.373 0.880228 8.96263 6.93498 12.3706 14.6205Z"
+            fill="#60996D"
+          />
+        </svg>
+
+        <Image
+          alt={`Photo of ${author}`}
+          src={imageUrl}
+          className={`${styles.testimonialImage}`}
+          width={395} // Adjust width as needed
+          height={250}
+        />
       </div>
+
       <div className={`${styles.testimonialContainer}`}>
-        <q className={`${styles.testimonialText}`}>{testimonial}</q>
+        <article className={styles.testimonial}>
+          <ReactMarkdown children={testimonial} />
+        </article>
+
         <div className={`${styles.authorContainer}`}>
           <span className={styles.quoteBox}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" fill="none" className={`${styles.quoteIcon}`}>
@@ -27,6 +55,7 @@ const Quote: React.FC<QuoteProps> = ({ imageUrl, author, position, testimonial, 
               />
             </svg>
           </span>
+
           <div className="">
             <h4 className={styles.authorText}>{author}</h4>
             <p className={styles.authorPosition}>{position}</p>

@@ -18,14 +18,20 @@ export default function AboutBox(props: aboutProps) {
     <Link href={props.linkURL} className={styles.container}>
       <span className={styles.titleContainer}>
         <div className={`${styles.imageContainer} ${styles.icon}`}>
-          <Image alt="icon" src={props.icon} />
+          <Image
+            alt="icon"
+            src={props.icon}
+            width={50} // Default width if not provided
+            height={50} // Default height if not provided
+          />
         </div>
+
         <strong className={styles.title}>{props.title.toUpperCase()}</strong>
         <FontAwesomeIcon icon={faArrowRight} />
       </span>
 
       <div className={`${styles.imageContainer} ${styles.primary}`}>
-        <Image alt={props.title} src={props.image} />
+        <Image alt={props.title} src={props.image} width={500} height={200} />
       </div>
     </Link>
   );

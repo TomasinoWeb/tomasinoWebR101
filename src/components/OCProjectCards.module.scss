@@ -1,0 +1,74 @@
+.card-projects {
+  width: 300px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+.card-projects-image-container {
+  width: 100%;
+  height: 200px;
+  border: 2px solid;
+
+  .card-projects-image {
+    background-color: var(--dark-green, #38504a) !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.text {
+  padding: 24px;
+  flex: 1;
+  border: 2px solid;
+  border-top: none;
+}
+
+.fun-text-title {
+  color: var(--brick-red, #d35c5f);
+  font-family: BeautiqueDisplay-Black;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.fun-text {
+  color: var(--dark-purple, #392b42);
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  text-align: left;
+}
+.layout-card-projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@media (max-width: 1400px) {
+  .layout-card-projects {
+    width: 60%;
+  }
+}
+@media (max-width: 1140px) {
+  .layout-card-projects {
+    width: 80%;
+  }
+}
+@media (max-width: 850px) {
+  .layout-card-projects {
+    width: 90%;
+    height: 100%;
+  }
+}
+@media (max-width: 781px) {
+  .layout-card-projects {
+    display: flex;
+  }
+  .card-projects {
+    width: 100%;
+  }
+}
