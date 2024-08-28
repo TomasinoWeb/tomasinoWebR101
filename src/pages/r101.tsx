@@ -43,6 +43,7 @@ const R101 = PublicLayoutFrontend.use(() => {
         <AppProcessHeader />
         <div className={styles.mainStepContainer}>
           <div className={styles.step1}>
+            {/*todo: fix bug where the wrong soot shows on mobile and viewports when using the useViewportWidth method*/}
             <AppProcessStep {...steps[0]} susuwatari="1" />
           </div>
           <div className={styles.step2}>

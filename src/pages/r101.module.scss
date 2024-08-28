@@ -20,8 +20,9 @@ $dark-grey: #343332;
   }
 }
 
-@media screen and (max-width: 855px) {
+@media screen and (max-width: 1024px) {
   .mainStepContainer {
+    max-width: 818px;
     flex-wrap: wrap;
   }
 }
