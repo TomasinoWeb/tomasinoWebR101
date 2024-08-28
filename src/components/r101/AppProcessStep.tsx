@@ -10,7 +10,6 @@ interface AppProcessStepProps {
   title: string;
   description: string;
   susuwatari: "1" | "1-reversed" | "2-left" | "2-right";
-  href?: string; // link to the form
 }
 
 function AppProcessStep(props: AppProcessStepProps) {
@@ -30,7 +29,7 @@ function AppProcessStep(props: AppProcessStepProps) {
         <div className={styles.appProcessDescription}>
           {props.step === 1 ? (
             <>
-              Applicants must first accomplish the <Link href={`${props.href}`}>Google Form</Link>.
+              Applicants must first accomplish the <Link href="/apply">Google Form</Link>.
             </>
           ) : (
             props.description

@@ -65,7 +65,6 @@ const steps = [
     step: 1,
     title: "APPLICATION",
     description: "Applicants must first accomplish the Google Form.",
-    href: "/", // place link to form here
   },
   {
     step: 2,
