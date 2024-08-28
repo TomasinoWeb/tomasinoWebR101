@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Susuwatari1 from "../../public/assets/r101/susuwatarii1.webp";
-import Susuwatari2 from "../../public/assets/r101/susuwatarii2.webp";
+import Susuwatari1 from "../../../public/assets/r101/susuwatarii1.webp";
+import Susuwatari2 from "../../../public/assets/r101/susuwatarii2.webp";
 import styles from "./AppProcessStep.module.scss";
+import { isDesktop, isMobile, isTablet } from "./checkWidth";
 
 interface AppProcessStepProps {
   step: number;
@@ -13,53 +14,40 @@ interface AppProcessStepProps {
   href?: string; // link to the form
 }
 
-const isDesktop = useViewportWidth(1024);
-const isTablet = useViewportWidth(768);
-const isMobile = useViewportWidth(768);
-
-// Hook for checking viewport width
-export function useViewportWidth(targetWidth: number) {
-  const [isWidthMet, setIsWidthMet] = useState(false);
-
-  useEffect(() => {
-    // Check if window is defined (i.e. not server-side rendering)
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setIsWidthMet(window.innerWidth >= targetWidth);
-      };
-
-      // Monitor window resize
-      window.addEventListener("resize", handleResize);
-
-      // Initial check for viewport width
-      handleResize();
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, [targetWidth]);
-
-  return isWidthMet;
-}
-
 function AppProcessStep(props: AppProcessStepProps) {
   const stepClass = `step${props.step}`;
+  const sootClass = `soot-${props.susuwatari}`;
+
   return (
     <div className={styles.stepContainer}>
+      {(props.susuwatari === "2-left" || props.susuwatari === "2-right") && (
+        <div className={`${styles.sootContainer} ${styles[sootClass]}`}>
+          <Image src={Susuwatari2} alt="Susuwatari 2" className={styles.soot2} />
+        </div>
+      )}
+      {props.susuwatari === "1-reversed" && (
+        <div className={`${styles.sootContainer} ${styles[sootClass]}`}>
+          <Image src={Susuwatari1} alt="Susuwatari 1" className={styles.soot1} />
+        </div>
+      )}
       <div className={`${styles.appProcessStep} ${styles[stepClass]}`}>
         <div className={styles.appProcessNum}>{props.step}</div>
         <div className={styles.appProcessTitle}>{props.title}</div>
         <div className={styles.appProcessDescription}>
           {props.step === 1 ? (
             <>
-              Applicants must first accomplish the <Link href="#">Google Form</Link>.
+              Applicants must first accomplish the <Link href={`${props.href}`}>Google Form</Link>.
             </>
           ) : (
             props.description
           )}
         </div>
       </div>
+      {props.susuwatari === "1" && (
+        <div className={`${styles.sootContainer} ${styles[sootClass]}`}>
+          <Image src={Susuwatari1} alt="Susuwatari 1" className={styles.soot1} />
+        </div>
+      )}
     </div>
   );
 }

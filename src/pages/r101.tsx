@@ -3,12 +3,9 @@ import { useEffect, useState } from "react";
 import AppProcessHeader from "../components/r101/AppProcessHeader";
 import AppProcessStep from "../components/r101/AppProcessStep";
 import styles from "./r101.module.scss";
+import { isMobile, isDesktop, isTablet } from "../components/r101/checkWidth";
 
 const R101 = PublicLayoutFrontend.use(() => {
-  const isDesktop = useViewportWidth(1024);
-  const isTablet = useViewportWidth(768);
-  const isMobile = useViewportWidth(768);
-
   return {
     footer_disable: false,
     header: "full",
@@ -19,20 +16,16 @@ const R101 = PublicLayoutFrontend.use(() => {
         <AppProcessHeader />
         <div className={styles.stepContainer}>
           <div className={styles.step1}>
-            <AppProcessStep {...steps[0]} />
-            <Image src={Susuwatari1} alt="Susuwatari 1" className={styles.soot1} />
+            <AppProcessStep {...steps[0]} susuwatari="1" />
           </div>
           <div className={styles.step2}>
-            <Image src={Susuwatari2} alt="Susuwatari 2" className={styles.soot2} />
-            <AppProcessStep {...steps[1]} />
+            <AppProcessStep {...steps[1]} susuwatari="2-left" />
           </div>
           <div className={styles.step3}>
-            <AppProcessStep {...steps[2]} />
-            <Image src={Susuwatari1} alt="Susuwatari 1" className={styles.soot1} />
+            <AppProcessStep {...steps[2]} susuwatari="2-right" />
           </div>
           <div className={styles.step4}>
-            <Image src={Susuwatari2} alt="Susuwatari 2" className={styles.soot2} />
-            <AppProcessStep {...steps[3]} />
+            <AppProcessStep {...steps[3]} susuwatari="1" />
           </div>
         </div>
       </div>
@@ -65,31 +58,5 @@ const steps = [
     description: "The results will be sent to you in less than a week by our Human Resources department.",
   },
 ];
-
-// Hook for checking viewport width
-function useViewportWidth(targetWidth: number) {
-  const [isWidthMet, setIsWidthMet] = useState(false);
-
-  useEffect(() => {
-    // Check if window is defined (i.e. not server-side rendering)
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setIsWidthMet(window.innerWidth >= targetWidth);
-      };
-
-      // Monitor window resize
-      window.addEventListener("resize", handleResize);
-
-      // Initial check for viewport width
-      handleResize();
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, [targetWidth]);
-
-  return isWidthMet;
-}
 
 export default R101;
