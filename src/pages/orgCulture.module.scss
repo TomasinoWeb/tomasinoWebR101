@@ -22,6 +22,9 @@
   .header {
     text-align: left;
   }
+  .right-header {
+    text-align: right;
+  }
 }
 .fun-text {
   display: flex;
@@ -62,7 +65,16 @@
   font-weight: 500;
   line-height: 120%;
 }
-
+.row-cross {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+.cross {
+  width: 47px;
+  height: 47px;
+}
 .row,
 .layout-card-projects {
   max-width: 1300px;
@@ -123,10 +135,9 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
-  .row-projects {
-    flex-direction: column;
-    margin: 50px 60px 80px 60px;
+@media only screen and (max-width: 1100px) {
+  .row {
+    padding: 20px;
   }
 }
 
@@ -154,12 +165,16 @@
     flex-direction: column;
     margin: 50px 30px 50px 30px;
   }
-
+  .cross {
+    width: 30px;
+    height: 30px;
+  }
   .header {
-    font-size: 30px;
+    font-size: 24px;
+    margin-left: 15px;
   }
   .sub-header {
-    font-size: 18px;
+    font-size: 14px !important;
   }
   .card-responsive {
     /* top | right | bottom | left */
@@ -213,7 +228,10 @@
     font-size: 40px;
   }
   .sub-header {
-    font-size: 22px;
+    font-size: 18px;
+  }
+  .title-caption {
+    font-size: 14px;
   }
 }
 
@@ -235,9 +253,22 @@
   .card-responsive {
     margin: 20px 0px 40px 0px;
   }
+  .fun,
+  .actWork,
+  .fun-layout {
+    // top | right | bottom | left
+    padding: 20px 0px 20px 0px;
+  }
+  .header {
+    padding: 20px;
+  }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
   .card-responsive {
     margin-bottom: 20px;
+  }
+
+  .body {
+    width: 360px;
   }
 }
