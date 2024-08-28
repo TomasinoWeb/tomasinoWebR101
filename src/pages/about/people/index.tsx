@@ -8,8 +8,26 @@ import { HoverableImageFade } from "../../../components/HoverableImageFade";
 import { useState } from "react";
 import { coreMembers, testimonials } from "../../../data";
 import Quote from "../../../components/Quote";
+import Cross from "../../../../public/assets/cross.svg";
+import Suma from "../../../../public/assets/people/showcase-1.jpg";
+import MJ from "../../../../public/assets/people/showcase-2.jpg";
+import Art from "../../../../public/assets/people/showcase-3.jpg";
+import CtaImage from "../../../../public/assets/people/cta-image.png";
+import Image from "next/image";
+
+const MemberImages = [Suma, Suma, Suma, Suma, Suma, Suma, Suma, Suma, Suma, Suma];
+const ShowcaseImages = [Suma, MJ, Art];
 
 interface PageProps {}
+
+function Heading({ heading, subheading }: { heading: string; subheading: string }) {
+  return (
+    <header className={styles.headingComponent}>
+      <span className={styles.heading}>{heading}</span>
+      <span className={styles.subheading}>{subheading}</span>
+    </header>
+  );
+}
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -29,87 +47,65 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
     children: (
       <div className={styles.peoplePage}>
-        {/* Header Section */}
-        <section className={styles.headerSection}>
-          <header>
-            <RepeatingHeader title="The&nbsp;People" />
-          </header>
-          <p>
+        <header className={styles.header}>
+          <RepeatingHeader title="THE PEOPLE" />
+          <h1 className={styles.description}>
             Get to know the individuals who make it all happen. Together, they bring our ideas to life and drive our
-            mission forward with passion and dedication.
-          </p>
-        </section>
+            mission forward with passion and dedication
+          </h1>
+        </header>
 
-        <div className={styles.container}>
-          {/* Testimonial 1 */}
+        <div className={styles.quote}>
           <Quote {...testimonials[0]} side="left" />
+        </div>
 
-          {/* Member count and photos */}
-          <section>
-            <div className={styles.sectionHeadingWithSub}>
-              <h2>84&nbsp;Tomwebbers</h2>
-              <span className={styles.subHeading}>and counting!</span>
-            </div>
-            <p style={{ marginTop: "24px" }}>
-              We're a bunch of sleep-deprived yet ambitious undergrads from different colleges and faculties.
-            </p>
+        <div className={styles.member_feature}>
+          <Heading heading="84 TOMWEBBERS" subheading="and counting!" />
 
-            <div className={styles.imageGrid}>
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-              <div className={styles.imageBox} />
-            </div>
-          </section>
+          <p>We're a bunch of sleep-deprived yet ambitious undergrads from different colleges and faculties. </p>
 
-          {/* Testimonial 2 */}
+          <div className={styles.member_grid}>
+            {MemberImages.map((staticImage, index) => (
+              <div className={styles.member} key={index}>
+                <Image src={staticImage} alt="Image" className={styles.image} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.quote}>
           <Quote {...testimonials[1]} side="right" />
         </div>
 
-        {/* Year count */}
-        <section>
-          <div className={`${styles.sectionHeadingWithSub} ${styles.yearsSection}`}>
-            <h2>17 Years</h2>
-            <span className={styles.subHeading}>of innovation, passion, and dedication</span>
+        <div className={styles.showcase}>
+          <div className={styles.showcase_header}>
+            <Heading heading="17 YEARS" subheading="of innovation, passion, and dedication" />
           </div>
 
-          <div className={styles.showcaseImageContainer}>
-            <img
-              className={styles.showcaseImage}
-              src="/assets/people/showcase-1.jpg"
-              alt="Image of a man filming or capturing a moment"
-            />
-            <img
-              className={styles.showcaseImage}
-              src="/assets/people/showcase-2.jpg"
-              alt="Image of people in UST Paskuhan"
-            />
-            <img
-              className={styles.showcaseImage}
-              src="/assets/people/showcase-3.jpg"
-              alt="Image of a man talking to videography team"
-            />
+          <div className={styles.showcase_image_wrapper}>
+            <div className={styles.showcase_images}>
+              {ShowcaseImages.map((staticImage, index) => (
+                <div className={styles.showcase_image + " " + (index === 1 ? styles.center : "")} key={index}>
+                  <Image src={staticImage} className={styles.img} alt="Image" />
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
 
-        {/* Testimonial 3 */}
-        <div className={styles.container}>
+        <div className={styles.quote}>
           <Quote {...testimonials[2]} side="left" />
         </div>
 
-        {/* The Core Group */}
         <section className={styles.coreSection}>
           <div className={styles.headingContainer}>
-            <h2>The Core Group</h2>
-            <span className={styles.subHeading}>The heads of TomasinoWeb</span>
+            <div className={styles.sparkle}>
+              <Image src={Cross} alt="Cross" className={styles.svg} />
+              <h2>THE CORE GROUP</h2>
+              <Image src={Cross} alt="Cross" className={styles.svg} />
+            </div>
+
+            <span className={styles.subheading}>The heads of TomasinoWeb</span>
           </div>
 
           <div className={styles.gallery}>
@@ -137,40 +133,39 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               </div>
             ))}
           </div>
-
-          <div>{/* Core reel py16 branch */}</div>
         </section>
 
-        <div className={styles.container}>
-          <section className={styles.headingContainer}>
-            <h2>12 Months</h2>
-            <span className={styles.subHeading}>of a challenging yet dynamic publication year</span>
-          </section>
+        <div className={styles.headingContainer}>
+          <div className={styles.sparkle}>
+            <h2>12 MONTHS</h2>
+          </div>
 
-          {/* Testimonial 4 */}
+          <span className={styles.subheading}>of a challenging yet dynamic publication year</span>
+        </div>
+
+        <div className={styles.quote}>
           <Quote {...testimonials[3]} side="right" />
+        </div>
 
-          {/* Testimonial 5 */}
+        <div className={styles.quote}>
           <Quote {...testimonials[4]} side="left" />
         </div>
 
-        {/* CTA - Call to action */}
-        <section className={styles.ctaContainer}>
-          <div className={styles.ctaBody}>
-            <p>Are you ready to innovate and lead the modern web?</p>
-            <Button href="/" theme="black_n_white" customClasses={styles.ctaButton}>
-              WHAT'S IT LIKE IN TW?
-            </Button>
-          </div>
+        <div className={styles.cta_wrapper}>
+          <div className={styles.cta}>
+            <div className={styles.left}>
+              <h1>Are you ready to innovate and lead the modern web?</h1>
 
-          <div className={styles.ctaImageContainer}>
-            <img
-              className={styles.ctaImage}
-              src="/assets/people/cta-image.png"
-              alt="Group photo of TomasinoWeb members"
-            />
+              <Button href="/about/org-culture" theme="black_n_white" outline="small">
+                WHAT'S IT LIKE IN TW?
+              </Button>
+            </div>
+
+            <div className={styles.right}>
+              <Image src={CtaImage} alt="Call to action image" className={styles.cta_image} />
+            </div>
           </div>
-        </section>
+        </div>
       </div>
     ),
   };

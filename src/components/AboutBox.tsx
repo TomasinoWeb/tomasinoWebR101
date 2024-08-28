@@ -25,6 +25,7 @@ export default function AboutBox(props: aboutProps) {
             height={50} // Default height if not provided
           />
         </div>
+
         <strong className={styles.title}>{props.title.toUpperCase()}</strong>
         <FontAwesomeIcon icon={faArrowRight} />
       </span>

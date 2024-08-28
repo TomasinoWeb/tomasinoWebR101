@@ -1,23 +1,23 @@
-import { PublicLayoutFrontend } from "../layouts/public/frontend";
-import { PublicLayoutBackend } from "../layouts/public/static";
+import { PublicLayoutFrontend } from "../../layouts/public/frontend";
+import { PublicLayoutBackend } from "../../layouts/public/static";
 import styles from "./orgCulture.module.scss";
 import Image from "next/image";
 
-import RepeatingHeader from "../components/RepeatHeader";
-import RepeatingIcons from "../components/RepeatingIcons";
-import BehindScene from "../components/BehindScene";
-import Quote from "../components/Quote";
-import ProjectCards from "../components/OCProjectCards";
-import AboutBox from "../components/AboutBox";
-import Arriety from "../../public/assets/GHIBLI ICONS/arriety clip.png";
-import Ootorisama from "../../public/assets/GHIBLI ICONS/ootori sama.png";
-import Jiji from "../../public/assets/GHIBLI ICONS/jiji.png";
-import Draft143 from "../../public/assets/orgCulture/webProjects/draft143.png";
-import Lamona from "../../public/assets/orgCulture/webProjects/lamona.png";
-import MainWebsite from "../../public/assets/orgCulture/webProjects/tw.png";
-import Cross from "../../public/assets/cross.svg";
-import Dan from "../../public/assets/orgCulture/dan.png";
-import Brin from "../../public/assets/orgCulture/brin.png";
+import RepeatingHeader from "../../components/RepeatHeader";
+import RepeatingIcons from "../../components/RepeatingIcons";
+import BehindScene from "../../components/BehindScene";
+import Quote from "../../components/Quote";
+import ProjectCards from "../../components/OCProjectCards";
+import AboutBox from "../../components/AboutBox";
+import Arriety from "../../../public/assets/GHIBLI ICONS/arriety clip.png";
+import Ootorisama from "../../../public/assets/GHIBLI ICONS/ootori sama.png";
+import Jiji from "../../../public/assets/GHIBLI ICONS/jiji.png";
+import Draft143 from "../../../public/assets/orgCulture/webProjects/draft143.png";
+import Lamona from "../../../public/assets/orgCulture/webProjects/lamona.png";
+import MainWebsite from "../../../public/assets/orgCulture/webProjects/tw.png";
+import Cross from "../../../public/assets/cross.svg";
+import { testimonials } from "../../data";
+
 const imageUrls = [
   "/assets/orgCulture/fun/dc.png",
   "/assets/orgCulture/fun/dc.png",
@@ -120,6 +120,7 @@ const data = [
   { title: "172,869", caption: "combined followers across all digital platforms" },
   { title: "7,513,308", caption: "Facebook reach in the past year" },
 ];
+
 const aboutBoxContents = [
   {
     icon: Arriety,
@@ -182,19 +183,15 @@ const OrgCulturePage = PublicLayoutFrontend.use(() => {
         {/* PROJECTS */}
         <div className={styles["org-culture"]}>
           <div className={styles["quote"]}>
-            <Quote
-              imageUrl={Dan}
-              author="Danial Dale Santos"
-              position="Chief Technology Officer, PY 2023-2024"
-              testimonial="One of the reasons why I joined TomasinoWeb was the wit of one of their videos–the one where two students struggle to decide what to eat. Fast forward to my time in the organization’s Web Technologies department, and one of the actresses from that video pitched the idea of a food and drink places repository. Thus, Lamona (and TomWegg) were born!  It’s an honor to create the website with equally passionate developers and designers. It feels incredible to see other Thomasians on campus using and enjoying the product of our hard work."
-              side="left"
-            />
+            <Quote {...testimonials[5]} side="left" />
           </div>
+
           <div className={styles["row-cross"]}>
             <Image alt="icon" src={Cross} className={styles["cross"]} width={47} height={47} />
             <h1 className={`${styles["header"]}`}>WEBSITES</h1>
             <Image alt="icon" src={Cross} className={styles["cross"]} width={47} height={47} />
           </div>
+
           <h4 className={styles["sub-header"]}>Explore some of our work</h4>
           <div className={`${styles["row-projects"]}`}>
             {" "}
@@ -215,13 +212,7 @@ const OrgCulturePage = PublicLayoutFrontend.use(() => {
         {/* TESTIMONIALS */}
         <div className={styles["org-culture"]}>
           <div className={styles["quote"]}>
-            <Quote
-              imageUrl={Brin}
-              author="Brin Isaac"
-              position="President, PY 2020-2022"
-              testimonial="Hi TW thank you so mu–"
-              side="right"
-            />
+            <Quote {...testimonials[6]} side="right" />
           </div>
         </div>
         {/* ACTUAL WORK */}
