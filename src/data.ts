@@ -1,3 +1,11 @@
+import Giva from "../public/assets/testimonials/giva.png";
+import OcampoKanav from "../public/assets/testimonials/ocampo-kanav.png";
+import Isaac from "../public/assets/testimonials/isaac.png";
+import Mira from "../public/assets/testimonials/mira.png";
+import Santos from "../public/assets/testimonials/santos.png";
+import Tria from "../public/assets/testimonials/tria.png";
+import Zamora from "../public/assets/testimonials/zamora.png";
+
 export const coreMembers = [
   {
     name: "Jan Carlo Zamora",
@@ -73,7 +81,7 @@ export const coreMembers = [
 
 export const testimonials = [
   {
-    imageUrl: "/assets/people/zamora.png",
+    imageUrl: Zamora,
     testimonial: `During my stay in ***TomasinoWeb***, I've had the biggest honor and
         privilege of making other “student leaders” and even “administrative officials” cry and, on some extreme
         instances, ousted because of their incompetence, mediocrity, and/or abuse of discretion. Good times. Would
@@ -83,7 +91,7 @@ export const testimonials = [
     position: "President, PY 2022 - 2024",
   },
   {
-    imageUrl: "/assets/people/ocampo-kanav.png",
+    imageUrl: OcampoKanav,
     testimonial: `When I joined ***TomasinoWeb*** in 2013 as a freshman from the College of
         Commerce, I was initially intimidated by the expertise and bold ideas of my fellow members across different
         departments—from writing, creatives, and photography to web development and videography. But as I continued to
@@ -96,7 +104,7 @@ export const testimonials = [
     position: "Executive Vice President, PY 2016 - 2017",
   },
   {
-    imageUrl: "/assets/people/mira.png",
+    imageUrl: Mira,
     testimonial: `I once wrote album reviews for BINI and Alamat when they each had fewer than 200,000 Spotify monthly
         listeners. If you're a blogs writer who bleeds pop culture, whatever you write is instrumental to driving the
         conversation forward.
@@ -105,10 +113,10 @@ export const testimonials = [
     position: "Executive Vice President , PY 2024 - 2025",
   },
   {
-    imageUrl: "/assets/people/giva.png",
+    imageUrl: Giva,
     testimonial: `Last year I feared that joining ***TomasinoWeb*** would jeopardize my
           academics. However, among the few organizations I've joined, TomWeb has been one where I was able to balance
-          my studies and organizational commitments.\n\n\n\nI was intimidated by the prospect of working with highly skilled individuals. But as a member now, the
+          my studies and organizational commitments.\n\nI was intimidated by the prospect of working with highly skilled individuals. But as a member now, the
           people and culture made me feel comfortable and encouraged to learn beyond my comfort zone. It fostered my
           creativity, accountability, and most of all, humility. TomasinoWeb embodies professionalism with a heart.
           `,
@@ -116,7 +124,7 @@ export const testimonials = [
     position: "UI/UX Designer, PY 2023-2025",
   },
   {
-    imageUrl: "/assets/people/tria.png",
+    imageUrl: Tria,
     testimonial: `***TomasinoWeb*** provided a platform for me to channel my passion for
         storytelling through film. It was both a delight and an honor to capture Thomasian stories, filled with rich
         narratives, context, and emotion. Without a doubt, TomWeb excels at connecting with and engaging audiences by
@@ -124,5 +132,21 @@ export const testimonials = [
       `,
     author: "Anthony Tria",
     position: "Chief Videographer, PY 2021-2022",
+  },
+  {
+    imageUrl: Santos,
+    testimonial: `One of the reasons why I joined ***TomasinoWeb*** was the wit of one of their videos–the one where two students struggle to decide what to eat. 
+    Fast forward to my time in the organization’s Web Technologies department, and one of the actresses from that video pitched the idea of a food and drink places repository. 
+    Thus, Lamona (and TomWegg) were born! It’s an honor to create the website with equally passionate developers and designers. 
+    It feels incredible to see other Thomasians on campus using and enjoying the product of our hard work.
+      `,
+    author: "Danial Dale Santos",
+    position: "Chief Technolgoy Officer, PY 2023-2024",
+  },
+  {
+    imageUrl: Isaac,
+    testimonial: "Hi TW thank you so mu–",
+    author: "Brin Isaac",
+    position: "Preisdent, PY 2020-2022",
   },
 ];

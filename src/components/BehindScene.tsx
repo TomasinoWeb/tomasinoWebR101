@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../components/Buttons";
-import styles from "./behindscene.module.scss";
+import styles from "./BehindScene.module.scss";
 
 const OrgCulture = ({ images }: { images: string[] }) => {
   const displayedImages = images.slice(0, 8);

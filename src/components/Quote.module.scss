@@ -4,7 +4,8 @@
   font-family: Manrope-Regular;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
+  width: 100%;
 }
 
 .quoteIcon {
@@ -36,6 +37,7 @@
   font-style: normal;
   font-weight: 800;
   line-height: 120%; /* 16.8px */
+  font-family: Manrope-Medium, sans-serif;
 }
 
 .authorPosition {
@@ -44,11 +46,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: 120%; /* 14.4px */
+  font-family: Manrope-Medium, sans-serif;
 }
 
 .testimonialText {
   color: var(--dark-grey, #343332);
-  font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 120%; /* 14.4px */
@@ -66,10 +68,12 @@
   article {
     p {
       margin-bottom: 20px;
+      font-size: 18px;
+      font-family: Manrope-Medium, sans-serif;
     }
 
     em {
-      font-style: oblique 10deg;
+      font-style: normal;
     }
 
     strong {
@@ -116,11 +120,15 @@
   border-radius: 50%;
   left: 0;
   bottom: 0;
+  width: 100%;
+  object-fit: cover;
+  height: auto;
 }
 
 @media screen and (min-width: 850px) {
   .quoteBlock {
     flex-direction: row;
+    gap: 50px;
   }
   .alignRight {
     flex-direction: row-reverse;
@@ -157,5 +165,20 @@
     width: 250px;
     height: 250px;
     flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .testimonialContainer {
+    article {
+      p {
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      strong {
+        font-size: 14px;
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 .body {
   width: 100%;
+  background-image: var(--repeated-svg);
 }
 
 .org-culture {
@@ -44,7 +45,9 @@
 
 .quote {
   max-width: 1300px;
-  margin: 100px 180px;
+  margin: 100px auto;
+  width: 100%;
+  padding: 30px;
 }
 
 /* TOP CARDS SECTION */
