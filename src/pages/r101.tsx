@@ -1,6 +1,6 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { useEffect, useState } from "react";
-import AppProcessHeader from "../components/r101/AppProcessHeader";
+import RepeatingHeader from "../components/RepeatHeader";
 import AppProcessStep from "../components/r101/AppProcessStep";
 import styles from "./r101.module.scss";
 
@@ -40,7 +40,7 @@ const R101 = PublicLayoutFrontend.use(() => {
 
     children: (
       <div className={styles.r101MainContainer}>
-        <AppProcessHeader />
+        <RepeatingHeader title="APPLICATION PROCESS" />
         <div className={styles.mainStepContainer}>
           <div className={styles.step1}>
             {/*todo: fix bug where the wrong soot shows on mobile and viewports when using the useViewportWidth method*/}
