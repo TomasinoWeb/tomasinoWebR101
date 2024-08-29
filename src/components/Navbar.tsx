@@ -10,15 +10,19 @@ interface NavbarProps {
   background_color: "white" | "transparent";
 }
 
-const NavbarLinks = (props: { buttonedPool: boolean; collapsed: boolean }) => (
+const NavbarLinks = (props: { showApply: boolean; collapsed: boolean }) => (
   <nav className={styles.nav + " " + (props.collapsed ? styles.collapsed : "")}>
     <Link href="/about"> ABOUT </Link>
     <Link href="/r101"> R101 </Link>
     <Link href="/faq"> FAQ </Link>
     <Link href="/quiz"> QUIZ </Link>
-    <Link href="/discord" className={props.buttonedPool ? styles.button : ""}>
-      {props.buttonedPool ? "APPLY" : "THE POOL"}
-    </Link>
+    <Link href="/discord"> THE POOL </Link>
+
+    {props.showApply && (
+      <Link href="/apply" className={styles.button}>
+        APPLY
+      </Link>
+    )}
   </nav>
 );
 
@@ -39,7 +43,7 @@ export default function Navbar({ background_color: color, type }: NavbarProps) {
     return (
       <header className={headerClass + " " + styles.centered}>
         <div className={styles.inner}>
-          <NavbarLinks buttonedPool={false} collapsed={false} />
+          <NavbarLinks showApply={false} collapsed={false} />
         </div>
       </header>
     );
@@ -53,7 +57,7 @@ export default function Navbar({ background_color: color, type }: NavbarProps) {
 
           <div className={styles.right}>
             <div className={styles.desktop}>
-              <NavbarLinks buttonedPool collapsed={false} />
+              <NavbarLinks showApply collapsed={false} />
             </div>
 
             <div className={styles.mobile}>
@@ -62,7 +66,7 @@ export default function Navbar({ background_color: color, type }: NavbarProps) {
           </div>
         </div>
 
-        <div className={styles.mobile}>{isOpened && <NavbarLinks buttonedPool collapsed={true} />}</div>
+        <div className={styles.mobile}>{isOpened && <NavbarLinks showApply collapsed={true} />}</div>
       </header>
     );
   }

@@ -49,4 +49,3 @@ function OrgGroup() {
 }
 
 export default OrgGroup;
-

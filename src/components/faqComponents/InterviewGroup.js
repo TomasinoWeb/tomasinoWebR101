@@ -25,8 +25,7 @@ function InterviewGroup() {
     },
     {
       question: "Am I required to turn on my camera for the interview?",
-      answer:
-        "Yes, you are required to turn on your camera for the interview. Wear something you’re comfortable in!",
+      answer: "Yes, you are required to turn on your camera for the interview. Wear something you’re comfortable in!",
       tag: "interview",
       open: false,
     },
@@ -53,5 +52,3 @@ function InterviewGroup() {
 }
 
 export default InterviewGroup;
-
-
