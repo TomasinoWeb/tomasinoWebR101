@@ -3,7 +3,8 @@ import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import BackgroundImage from "../../public/assets/landing/background_ghibli_landing.png";
 import Image from "next/image";
-import styles from "./index.module.scss";
+
+import styles from "./home.module.scss";
 interface PageProps {}
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
