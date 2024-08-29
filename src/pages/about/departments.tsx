@@ -190,31 +190,30 @@ const departments = [
     branch: "Publication",
     name: "Writing",
     description:
-      "Writing are not just limited to telling stories. They disturb the undisturbed, and take it upon themselves to make sure that the necessary truths see the light of day.\n\nSECTIONS: Reports, Stories (Features and Literary), Blogs, and Sports",
+      "Writing are not just limited to telling stories. They disturb the undisturbed, and take it upon themselves to make sure that the necessary truths see the light of day.",
     color: "#333234",
   },
   {
     image: Videogs,
     branch: "Publication",
     name: "Videography",
-    description:
-      "Videographers tell stories through frames in motion and angles you've never seen before.\n\nTEAMS: Offline Editors, Online Editors, and Videographers",
+    description: "Videographers tell stories through frames in motion and angles you've never seen before.",
     color: "#6991A7",
   },
   {
     image: Photogs,
-    branch: "Executive Affairs",
+    branch: "Publication",
     name: "Photography",
     description:
-      "Photographers are able to tell a story beyond words, and capture the unseen facets of the dominant narratives from all angles and perspectives.\n\nTEAMS: Events, Sports, Portraits, and Photojournalism",
+      "Photographers are able to tell a story beyond words, and capture the unseen facets of the dominant narratives from all angles and perspectives.",
     color: "#815E4C",
   },
   {
     image: Creatives,
-    branch: "Executive Affairs",
+    branch: "Publication",
     name: "Creatives",
     description:
-      "Artists narrate stories through their impactful artworks. They draw, create, and make the impossible possible.\n\nTEAMS: Graphic design and Illustration",
+      "Artists narrate stories through their impactful artworks. They draw, create, and make the impossible possible.",
     color: "#B0424B",
   },
   {
@@ -223,6 +222,6 @@ const departments = [
     branch: "Web Technologies",
     name: "Web Technologies",
     description:
-      "Web Technologists are the competitive game changers in the modern world. They innovate, lead, and evolve the way we tell stories today.\n\nTEAMS: Front-end, Back-end, and UI/UX Design",
+      "Web Technologists are the competitive game changers in the modern world. They innovate, lead, and evolve the way we tell stories today.",
   },
 ];
