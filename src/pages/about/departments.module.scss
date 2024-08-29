@@ -7,6 +7,11 @@
   .reel {
     margin-bottom: 3.5em;
   }
+
+  > :last-child {
+    margin-bottom: 0;
+    padding-bottom: 3.5em;
+  }
 }
 
 .section {
@@ -39,7 +44,7 @@
 
   .deptBlock {
     --animation-speed: 0.6s;
-    --maximum-image-height: 10.812rem;
+    --maximum-image-height: 173px;
 
     display: flex;
     align-items: center;
@@ -57,20 +62,20 @@
     .branch {
       flex: 1;
       overflow: hidden;
-      // text-overflow: ellipsis;
       word-wrap: break-word;
     }
 
     .imgContainer {
       flex: 1.5;
       align-self: flex-start; // prevents bouncing bug
-      max-height: 6.25rem;
+      max-height: 100px;
       overflow: hidden;
       transition: max-height var(--animation-speed) ease;
 
       img {
         object-fit: cover;
         width: 100%;
+        height: auto;
       }
     }
 

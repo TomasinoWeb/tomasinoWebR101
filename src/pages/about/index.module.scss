@@ -14,8 +14,14 @@
   background-image: var(--repeated-svg);
   color: var(--dark_grey);
 
-  section {
+  section:not(:last-child) {
     margin-bottom: 4rem;
+  }
+
+  .bottom {
+    > :last-child {
+      padding-bottom: 4rem;
+    }
   }
 
   .title {
@@ -74,7 +80,6 @@
 
       flex-direction: row;
       gap: 20px;
-
       .about_box {
         width: 100%;
         flex: 1;
