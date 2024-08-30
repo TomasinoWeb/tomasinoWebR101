@@ -12,7 +12,7 @@ $manrope: "Manrope-Bold", sans-serif;
 .header {
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 999;
   top: 0;
   left: 0;
   backdrop-filter: blur(8px);

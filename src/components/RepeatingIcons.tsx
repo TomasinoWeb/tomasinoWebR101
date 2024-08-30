@@ -26,7 +26,7 @@ const icons = [
   { src: "/assets/orgCulture/culture/GhibliIcon-14.png", width: 100, height: 100 },
 ];
 
-const generateIconsArray = (numIcons) => {
+const generateIconsArray = (numIcons: number) => {
   const repeatedIcons = [];
   while (repeatedIcons.length < numIcons) {
     repeatedIcons.push(...icons);

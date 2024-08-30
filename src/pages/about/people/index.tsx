@@ -156,9 +156,11 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             <div className={styles.left}>
               <h1>Are you ready to innovate and lead the modern web?</h1>
 
-              <Button href="/about/org-culture" theme="black_n_white" outline="small">
-                WHAT'S IT LIKE IN TW?
-              </Button>
+              <div>
+                <Button href="/about/org-culture" theme="black_n_white" outline="small">
+                  WHAT'S IT LIKE IN TW?
+                </Button>
+              </div>
             </div>
 
             <div className={styles.right}>
