@@ -12,7 +12,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <div className={`loading-container ${hasLoaded ? "has-loaded" : ""}`}>{!hasLoaded && <Loading />}</div>
+      <div className={`loading-container ${hasLoaded ? "has-loaded" : ""}`}>
+        <Loading />
+      </div>
       <Component {...pageProps} />
     </>
   );

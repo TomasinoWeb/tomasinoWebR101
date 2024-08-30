@@ -139,11 +139,11 @@
   height: 100%;
   z-index: 1000;
   opacity: 1;
-  transition: 100ms ease-in-out;
+  transition: 400ms ease-in-out;
 }
 
 .has-loaded {
   opacity: 0;
-  transition: 100ms ease-in-out;
+  transition: 400ms ease-in-out;
   pointer-events: none;
 }
