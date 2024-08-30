@@ -1,13 +1,12 @@
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import { PublicLayoutBackend } from "../../layouts/public/static";
-import styles from "./orgCulture.module.scss";
+import styles from "./org-culture.module.scss";
+import peopleStyles from "./people/people.module.scss";
 import Image from "next/image";
 
 import RepeatingHeader from "../../components/RepeatHeader";
 import RepeatingIcons from "../../components/RepeatingIcons";
-import BehindScene from "../../components/BehindScene";
 import Quote from "../../components/Quote";
-import ProjectCards from "../../components/OCProjectCards";
 import AboutBox from "../../components/AboutBox";
 import Arriety from "../../../public/assets/GHIBLI ICONS/arriety clip.png";
 import Ootorisama from "../../../public/assets/GHIBLI ICONS/ootori sama.png";
@@ -17,8 +16,10 @@ import Lamona from "../../../public/assets/orgCulture/webProjects/lamona.png";
 import MainWebsite from "../../../public/assets/orgCulture/webProjects/tw.png";
 import Cross from "../../../public/assets/cross.svg";
 import { testimonials } from "../../data";
+import ReactMarkdown from "react-markdown";
+import { Button } from "../../components/Buttons";
 
-const imageUrls = [
+const memberPics = [
   "/assets/orgCulture/fun/dc.png",
   "/assets/orgCulture/fun/dc.png",
   "/assets/orgCulture/fun/dc.png",
@@ -28,7 +29,7 @@ const imageUrls = [
   "/assets/orgCulture/fun/dc.png",
   "/assets/orgCulture/fun/pptParties.png",
 ];
-const projectCards = [
+const funStartsHere = [
   {
     src: "/assets/orgCulture/fun/postCoverageHangouts.png",
     alt: "Post-Coverage hangouts",
@@ -70,6 +71,8 @@ const projectCards = [
     borderColor: "var(--olive-brown, #3c3421)",
   },
 ];
+
+type Project = (typeof funStartsHere)[number];
 const actWorkCards = [
   {
     src: "/assets/orgCulture/actWork/onsite.png",
@@ -106,17 +109,18 @@ const actWorkCards = [
     alt: "Mentorship and Collaboration",
     title: "Mentorship and Collaboration",
     description:
-      "In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!",
+      "In TomasinoWeb, we encourage collaboration. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!",
     fontColor: "var(--olive-brown, #3c3421)",
     backgroundColor: "var(--light-yellow, #fffacd)",
     borderColor: "var(--olive-brown, #3c3421)",
   },
 ];
-const data = [
+
+const statistics = [
   { title: "5", caption: "websites up and running for the Thomasian community" },
   { title: "25+", caption: "members doing it with a broken heart" },
   { title: "27", caption: "awards from prestigious contest & globally recognized institutions" },
-  { title: "84", caption: "(and counting!) innovative, passionate, and dedicated members" },
+  { title: "84", caption: "**(and counting!)** innovative, passionate, and dedicated members" },
   { title: "172,869", caption: "combined followers across all digital platforms" },
   { title: "7,513,308", caption: "Facebook reach in the past year" },
 ];
@@ -142,6 +146,21 @@ const aboutBoxContents = [
   },
 ];
 
+const Video = () => {
+  return (
+    <iframe
+      width="560"
+      className={styles.video_border}
+      src="https://www.youtube.com/embed/-Naoomw8gO4?si=g_hRxQNjkgICh9ov"
+      frameBorder="0"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="no-referrer"
+      allowFullScreen
+    />
+  );
+};
+
 const OrgCulturePage = PublicLayoutFrontend.use(() => {
   return {
     is_transparent: false,
@@ -149,87 +168,135 @@ const OrgCulturePage = PublicLayoutFrontend.use(() => {
     footer_disable: false,
 
     children: (
-      <div className={styles["body"]}>
+      <div className={styles.body}>
         <RepeatingHeader title="ORG CULTURE" />
-        <div className={styles["org-culture"]}>
-          <h4 className={styles["title-caption"]}>
+
+        <div className={styles.header}>
+          <h1>
             We're gonna take you to a quick ride of what TomasinoWeb is behind the scenes. From doing org work to having
             fun, we've got it all here in our own silly world.
-          </h4>{" "}
-          <div className={`${styles["row"]} ${styles["row-ach"]}`}>
-            {data.map((item, index) => (
-              <div className={styles["column"]} key={index}>
-                <h1 className={styles["text-3xl"]}>{item.title}</h1>
-                <h6 className={styles["text-caption"]}>{item.caption}</h6>
+          </h1>
+
+          <div className={styles.statistics}>
+            {statistics.map((stat, idx) => (
+              <div key={idx} className={styles.statistic}>
+                <h1>{stat.title}</h1>
+                <article className={styles.caption}>
+                  <ReactMarkdown children={stat.caption} />
+                </article>
               </div>
             ))}
           </div>
         </div>
-        {/* VIDEO */}
+
         <RepeatingIcons />
-        <div className={`${styles["org-culture"]} ${styles["video"]}`}>
-          <iframe
-            width="560"
-            className={`${styles["video-border"]}`}
-            src="https://www.youtube.com/embed/-Naoomw8gO4?si=g_hRxQNjkgICh9ov"
-            frameBorder="0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="no-referrer"
-            allowFullScreen
-          />
+        <div className={styles.video_container}>
+          <Video />
         </div>
         <RepeatingIcons />
-        {/* PROJECTS */}
-        <div className={styles["org-culture"]}>
-          <div className={styles["quote"]}>
-            <Quote {...testimonials[5]} side="left" />
+
+        <div className={styles.quote}>
+          <Quote side="left" {...testimonials[5]} />
+        </div>
+
+        <div className={styles.work}>
+          <div className={peopleStyles.headingContainer}>
+            <div className={peopleStyles.sparkle}>
+              <Image src={Cross} alt="Cross" className={peopleStyles.svg} />
+              <h2>WEBSITES</h2>
+              <Image src={Cross} alt="Cross" className={peopleStyles.svg} />
+            </div>
+
+            <span className={peopleStyles.subheading}>Explore some of our work</span>
           </div>
 
-          <div className={styles["row-cross"]}>
-            <Image alt="icon" src={Cross} className={styles["cross"]} width={47} height={47} />
-            <h1 className={`${styles["header"]}`}>WEBSITES</h1>
-            <Image alt="icon" src={Cross} className={styles["cross"]} width={47} height={47} />
-          </div>
-
-          <h4 className={styles["sub-header"]}>Explore some of our work</h4>
-          <div className={`${styles["row-projects"]}`}>
-            {" "}
-            {aboutBoxContents.map((box) => (
-              <div className={styles["card-responsive"]} key={box.title}>
-                <AboutBox icon={box.icon} image={box.image} title={box.title} linkURL={box.linkURL} />
+          <div className={styles.boxes}>
+            {aboutBoxContents.map((data, idx) => (
+              <div className={styles.box} key={idx}>
+                <AboutBox {...data} />
               </div>
             ))}
           </div>
         </div>
-        {/* ALL THE FUN STARTS HERE */}
-        <div className={`${styles["fun-layout"]} `}>
-          <div className={`${styles["fun"]} ${styles["fun-text"]}`}>
-            <h1 className={`${styles["header"]} }`}>ALL THE FUN STARTS HERE</h1>{" "}
-            <ProjectCards projectCards={projectCards} />
+
+        <div className={styles.fun}>
+          <div className={styles.inner}>
+            <div className={styles.heading}>
+              <h1>ALL THE FUN STARTS HERE</h1>
+            </div>
+
+            <div className={styles.boxes}>
+              {funStartsHere.map((fun, index) => (
+                <div className={styles.box} key={index}>
+                  <Project project={fun} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        {/* TESTIMONIALS */}
-        <div className={styles["org-culture"]}>
-          <div className={styles["quote"]}>
-            <Quote {...testimonials[6]} side="right" />
+
+        <div className={styles.quote}>
+          <Quote side="right" {...testimonials[6]} />
+        </div>
+
+        <div className={styles.fun}>
+          <div className={styles.inner}>
+            <div className={styles.heading + " " + styles.align_right}>
+              <h1>THEN WE HAVE THE ACTUAL WORK</h1>
+            </div>
+
+            <div className={styles.boxes}>
+              {actWorkCards.map((fun, index) => (
+                <div className={styles.box} key={index}>
+                  <Project project={fun} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        {/* ACTUAL WORK */}
-        <div className={`${styles["fun-layout"]} `}>
-          <div className={`${styles["actWork"]}`}>
-            <h1 className={`${styles["header"]} ${styles["right-header"]}`}>Then we have the actual work</h1>{" "}
-            <ProjectCards projectCards={actWorkCards} />
+
+        <div className={styles.cta_wrapper}>
+          <div className={styles.cta}>
+            <div className={styles.left}>
+              {memberPics.map((member) => (
+                <div className={styles.member_wrapper}>
+                  <Image src={member} alt="Picture of image" width={140} height={140} className={styles.img} />
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.right}>
+              <div className={styles.inner}>
+                <h1>Who are the people behind the scenes?</h1>
+                <div>
+                  <Button href="/about/people" theme="black_n_white" outline="small">
+                    MEET OUR COMMUNITY
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        {/* BEHIND THE SCENES */}{" "}
-        <div className={styles["org-culture"]}>
-          <BehindScene images={imageUrls} />
-        </div>
-        {/* END OF MAIN */}
       </div>
     ),
   };
 });
+
+function Project({ project }: { project: Project }) {
+  return (
+    <div
+      className={styles.project}
+      style={{ borderColor: project.borderColor, color: project.fontColor, backgroundColor: project.backgroundColor }}
+    >
+      <Image alt={project.alt} src={project.src} className={styles.image} width={300} height={250} />
+      <div className={styles.bottom}>
+        <div className={styles.innerContainer}>
+          <h1>{project.title}</h1>
+          <p>{project.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default OrgCulturePage;

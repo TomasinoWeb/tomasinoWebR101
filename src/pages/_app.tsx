@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import Loading from "../components/Loading";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(true);
 
   useEffect(() => {
     setTimeout(() => setHasLoaded(true), 2500);

@@ -137,11 +137,11 @@ export const testimonials = [
     imageUrl: Santos,
     testimonial: `One of the reasons why I joined ***TomasinoWeb*** was the wit of one of their videos–the one where two students struggle to decide what to eat. 
     Fast forward to my time in the organization’s Web Technologies department, and one of the actresses from that video pitched the idea of a food and drink places repository. 
-    Thus, Lamona (and TomWegg) were born! It’s an honor to create the website with equally passionate developers and designers. 
+    Thus, Lamona (and TomWegg) were born!\n\nIt’s an honor to create the website with equally passionate developers and designers. 
     It feels incredible to see other Thomasians on campus using and enjoying the product of our hard work.
       `,
     author: "Danial Dale Santos",
-    position: "Chief Technolgoy Officer, PY 2023-2024",
+    position: "Chief Technology Officer, PY 2023-2024",
   },
   {
     imageUrl: Isaac,
