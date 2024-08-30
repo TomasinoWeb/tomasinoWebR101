@@ -29,7 +29,7 @@ function SussyGroup() {
     },
     {
       question: "Where should I contact you if I have more questions?",
-      answer: "You may contact us using our Discord server or through join@tomasinoweb.org.",
+      answer: "You may contact us using our Discord server (The Pool) or through join@tomasinoweb.org.",
       tag: "sussybaka",
       open: false,
     },

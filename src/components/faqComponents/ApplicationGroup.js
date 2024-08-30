@@ -26,7 +26,7 @@ function ApplicationGroup() {
     {
       question: "To whom do we send our curriculum vitae and student registration form?",
       answer:
-        "Please send your curriculum vitae to join@tomasinoweb.org with the subject “[DEPARTMENT] Your Whole Name”. Fill out the necessary fields, of course.",
+        "After filling out the application form, please wait for an email from our Human Resources department. Send your CV and student registration form within the same email thread.",
       tag: "application",
       open: false,
     },

@@ -12,7 +12,8 @@ function ResultsGroup() {
     },
     {
       question: "What happens after I get accepted?",
-      answer: "The fun begins 🥳",
+      answer:
+        "The fun begins! Check out our Org Culture page to know more about the activities we do at TomasinoWeb 🥳",
       tag: "results",
       open: false,
     },
