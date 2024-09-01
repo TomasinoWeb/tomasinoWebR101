@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "../../pages/faq.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import Cross from "../../../public/assets/cross.svg";
+import Image from "next/image";
 
 function FAQ({ faq, index, toggleFAQ }) {
   return (
@@ -12,7 +14,8 @@ function FAQ({ faq, index, toggleFAQ }) {
     >
       <div className={styles["faq-header"]}>
         <div className={styles["faq-question"]}>{faq.question}</div>
-        <FontAwesomeIcon icon={faPlus} className={faq.open ? styles.open : styles.closed} />
+        {/* <FontAwesomeIcon icon={faPlus} className={faq.open ? styles.open : styles.closed} /> */}
+        <Image src={Cross} alt="Cross" className={`${styles["faq-icons"]} ${faq.open ? styles.open : styles.closed}`} />
       </div>
 
       <div className={styles["faq-answer"]}>{faq.answer}</div>
