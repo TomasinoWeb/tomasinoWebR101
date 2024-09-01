@@ -59,6 +59,8 @@ $manrope: "Manrope-Bold", sans-serif;
   padding: 16.5px 16px;
   user-select: none;
   height: 78px;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-cell1 {
@@ -94,7 +96,10 @@ $manrope: "Manrope-Bold", sans-serif;
 }
 
 .faq-icons {
-  height: calc(10px + 1vw);
+  height: calc(30px + 1vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .faq-head {
@@ -222,6 +227,9 @@ $manrope: "Manrope-Bold", sans-serif;
 }
 
 @media only screen and (max-width: 770px) {
+  .faq-icons {
+    height: calc(25px + 1vw);
+  }
   .faq-main-holder {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
