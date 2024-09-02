@@ -79,16 +79,16 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
     children: (
       <>
-        <div className={styles["FaqPage"]}>
+        <div className={styles.FaqPage}>
           <header>
             <RepeatingHeader title="FAQS" />
           </header>
 
-          <div className={styles["picker-div"]}>
-            <div className={styles["selection-div"]}>
-              <div className={styles["faq-main-holder"]}>
+          <div className={styles.picker_div}>
+            <div className={styles.selection_div}>
+              <div className={styles.faq_main_holder}>
                 <button
-                  className={`${styles["button-picker"]} ${styles["mobile-cell1"]}`}
+                  className={`${styles.button_picker} ${styles.mobile_cell1}`}
                   onClick={() => setTag("org")}
                   style={orgShown ? orgPicked : unpicked}
                 >
@@ -96,23 +96,23 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 </button>
 
                 <button
-                  className={`${styles["button-picker"]} ${styles["mobile-cell2"]}`}
+                  className={`${styles.button_picker} ${styles.mobile_cell2}`}
                   onClick={() => setTag("interview")}
                   style={interviewShown ? interviewPicked : unpicked}
                 >
                   interview
                 </button>
                 <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
-                  <div className={styles["faq-main-item"]}>
+                  <div className={styles.faq_main_item}>
                     <img
                       src="/assets/kodama.png" // change this to the correct icon
-                      className={`${styles["faq-icons"]} ${styles["mobile-cell3"]}`}
+                      className={`${styles.faq_icons} ${styles.mobile_cell3}`}
                       alt="icon"
                     ></img>
                   </div>
                 </a>
                 <button
-                  className={`${styles["button-picker"]} ${styles["mobile-cell4"]}`}
+                  className={`${styles.button_picker} ${styles.mobile_cell4}`}
                   onClick={() => setTag("application")}
                   style={applicationShown ? applicationPicked : unpicked}
                 >
@@ -120,16 +120,16 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 </button>
 
                 <a href="/quiz" target="_blank" rel="noreferrer">
-                  <div className={styles["faq-main-item"]}>
+                  <div className={styles.faq_main_item}>
                     <img
                       src="/assets/no face v1.png" // change this to the correct icon
-                      className={`${styles["faq-icons"]} ${styles["mobile-cell5"]}`}
+                      className={`${styles.faq_icons} ${styles.mobile_cell5}`}
                       alt="icon"
                     ></img>
                   </div>
                 </a>
                 <button
-                  className={`${styles["button-picker"]} ${styles["mobile-cell6"]}`}
+                  className={`${styles.button_picker} ${styles.mobile_cell6}`}
                   onClick={() => setTag("results")}
                   style={resultsShown ? resultPicked : unpicked}
                 >
@@ -137,16 +137,16 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 </button>
 
                 <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
-                  <div className={styles["faq-main-item"]}>
+                  <div className={styles.faq_main_item}>
                     <img
                       src="/assets/calcifer v1.png" // change this to the correct icon
-                      className={`${styles["faq-icons"]} ${styles["mobile-cell7"]} `}
+                      className={`${styles.faq_icons} ${styles.mobile_cell7} `}
                       alt="icon"
                     ></img>
                   </div>
                 </a>
                 <button
-                  className={`${styles["button-picker"]} ${styles["mobile-cell8"]}`}
+                  className={`${styles.button_picker} ${styles.mobile_cell8}`}
                   onClick={() => setTag("sussy")}
                   style={sussyShown ? sussyPicked : unpicked}
                 >
@@ -156,7 +156,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             </div>
           </div>
           <br />
-          <div className={styles["faqs"]}>
+          <div className={styles.faqs}>
             <pre>
               <div className={`faq-answer ${orgShown ? "faq-answer-open" : ""}`}>
                 {orgShown && (

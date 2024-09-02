@@ -10,16 +10,16 @@ interface ProjectsProps {
 
 const Projects = ({ webProjects }: ProjectsProps) => {
   return (
-    <div className={styles["row-projects"]}>
+    <div className={styles.row_projects}>
       {webProjects.map((project, index) => (
-        <div key={index} className={styles["card-responsive"]}>
-          <div className={styles["card-web"]}>
-            <p className={styles["card-projects-text"]}>{project.name}</p>
+        <div key={index} className={styles.card_responsive}>
+          <div className={styles.card_web}>
+            <p className={styles.card_projects_text}>{project.name}</p>
             <FontAwesomeIcon icon={faArrowRight} />
           </div>
 
           <Image
-            className={styles["card-web-image"]}
+            className={styles.card_web_image}
             src={project.src}
             alt={project.alt}
             width={395} // Adjust width as needed

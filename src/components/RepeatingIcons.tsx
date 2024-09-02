@@ -111,12 +111,12 @@ const RepeatingIcons = () => {
   });
 
   return (
-    <div className={styles["ghibli-icons-layout"]}>
-      <motion.div className={styles["ghibli-icons-scroller"]} style={{ x }}>
+    <div className={styles.ghibli_icons_layout}>
+      <motion.div className={styles.ghibli_icons_scroller} style={{ x }}>
         {displayedIcons.concat(displayedIcons).map((icon, index) => (
           <Image
             key={index}
-            className={styles["ghibli-icons"]}
+            className={styles.ghibli_icons}
             src={icon.src}
             alt="Ghibli Icon"
             width={icon.width}

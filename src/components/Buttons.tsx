@@ -43,7 +43,7 @@ export const Button = (props: ButtonProps) => {
 
   if ("href" in props)
     return (
-      <Link href={props.href} className={className}>
+      <Link href={props.href} className={styles.className}>
         {props.children}
       </Link>
     );
@@ -52,7 +52,7 @@ export const Button = (props: ButtonProps) => {
     <button
       onClick={typeof props.onClick === "function" ? props.onClick : undefined}
       type={typeof props.onClick === "function" ? "button" : props.onClick}
-      className={className}
+      className={styles.className}
     >
       {props.children}
     </button>
