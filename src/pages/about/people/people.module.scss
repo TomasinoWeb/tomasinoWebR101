@@ -116,7 +116,8 @@ $manrope-bold: "Manrope-Bold", sans-serif;
     margin: 0 auto;
     padding: 30px;
 
-    > p {
+    > p,
+    .member_feature_description {
       color: var(--dark-grey, #343332);
       font-family: Manrope-Medium, sans-serif;
       font-size: 20px;
@@ -128,15 +129,17 @@ $manrope-bold: "Manrope-Bold", sans-serif;
     }
 
     @media screen and (max-width: 750px) {
-      > p {
+      > p,
+      .member_feature_description {
         margin: 18px 0px 32px 0px;
         font-size: 18px;
       }
     }
 
     @media screen and (max-width: 600px) {
-      > p {
-        font-size: 14px;
+      > p,
+      .member_feature_description {
+        font-size: 16px;
       }
     }
 
@@ -332,6 +335,8 @@ $manrope-bold: "Manrope-Bold", sans-serif;
 }
 
 .headingContainer {
+  padding: 0px 20px;
+
   .sparkle {
     display: flex;
     gap: 20px;

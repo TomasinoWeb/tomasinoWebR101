@@ -9,6 +9,7 @@ import { useState } from "react";
 import { UseQuiz, useQuiz } from "../utils/useQuiz";
 import ReactMarkdown from "react-markdown";
 import dynamic from "next/dynamic";
+import { FadeIn } from "../components/FadeIn";
 
 interface PageProps {}
 
@@ -26,23 +27,25 @@ function Intro({ startQuiz }: { startQuiz: () => void }) {
 
         <div className={introStyles.overlay}>
           <div className={introStyles.intro_container}>
-            <div className={introStyles.content}>
-              <h1>Which TW department do you belong to?</h1>
-              <div className={introStyles.description}>
-                <p>R101 season is back! 🤩</p>
-                <p>
-                  It's the most wonderful time of the year to join TomasinoWeb (real), where you can meet awesome
-                  personalities and hang out with the best Tomasinos in town. If you're not yet sure which department
-                  you would like to apply for, answer this short quiz and may the odds be ever in your favor. ✨
-                </p>
-              </div>
+            <FadeIn>
+              <div className={introStyles.content}>
+                <h1>Which TW department do you belong to?</h1>
+                <div className={introStyles.description}>
+                  <p>R101 season is back! 🤩</p>
+                  <p>
+                    It's the most wonderful time of the year to join TomasinoWeb (real), where you can meet awesome
+                    personalities and hang out with the best Tomasinos in town. If you're not yet sure which department
+                    you would like to apply for, answer this short quiz and may the odds be ever in your favor. ✨
+                  </p>
+                </div>
 
-              <div className={introStyles.rail + " " + introStyles.maxWidth}>
-                <Button onClick={() => startQuiz()} theme="glass" maxWidth>
-                  START THE QUIZ
-                </Button>
+                <div className={introStyles.rail + " " + introStyles.maxWidth}>
+                  <Button onClick={() => startQuiz()} theme="glass" maxWidth>
+                    START THE QUIZ
+                  </Button>
+                </div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </div>
