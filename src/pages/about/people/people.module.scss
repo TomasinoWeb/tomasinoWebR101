@@ -116,7 +116,8 @@ $manrope-bold: "Manrope-Bold", sans-serif;
     margin: 0 auto;
     padding: 30px;
 
-    > p {
+    > p,
+    .member_feature_description {
       color: var(--dark-grey, #343332);
       font-family: Manrope-Medium, sans-serif;
       font-size: 20px;
@@ -332,6 +333,8 @@ $manrope-bold: "Manrope-Bold", sans-serif;
 }
 
 .headingContainer {
+  padding: 0px 20px;
+
   .sparkle {
     display: flex;
     gap: 20px;

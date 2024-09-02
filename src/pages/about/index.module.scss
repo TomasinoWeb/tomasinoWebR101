@@ -6,6 +6,8 @@
     width: 100%;
     height: auto;
     min-height: 250px;
+    max-height: 400px;
+    filter: grayscale(98%);
   }
 }
 
@@ -38,17 +40,6 @@
     }
   }
 
-  .flexCentered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-  }
-
-  .flexColumn {
-    flex-direction: column;
-  }
-
   .links {
     width: 90%;
     max-width: 1300px;
@@ -67,6 +58,11 @@
     padding: 0px 30px;
 
     .inner {
+      margin: 80px 0px;
+      .title {
+        margin-bottom: 20px;
+      }
+
       .texts {
         max-width: 800px;
         margin: 0px auto;
