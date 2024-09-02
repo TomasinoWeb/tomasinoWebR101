@@ -21,14 +21,14 @@ import { Button } from "../../components/Buttons";
 import { FadeIn } from "../../components/FadeIn";
 
 const memberPics = [
-  "/assets/orgCulture/fun/dc.png",
-  "/assets/orgCulture/fun/dc.png",
-  "/assets/orgCulture/fun/dc.png",
-  "/assets/orgCulture/fun/dc.png",
-  "/assets/orgCulture/fun/dc.png",
-  "/assets/orgCulture/fun/dc.png",
-  "/assets/orgCulture/fun/dc.png",
-  "/assets/orgCulture/fun/pptParties.png",
+  "/assets/members/bordas.png",
+  "/assets/members/bunyi.png",
+  "/assets/members/cabral.png",
+  "/assets/members/cajucom.png",
+  "/assets/members/cootauco.png",
+  "/assets/members/coronel.png",
+  "/assets/members/delacruz.png",
+  "/assets/members/entrata.png",
 ];
 const funStartsHere = [
   {
