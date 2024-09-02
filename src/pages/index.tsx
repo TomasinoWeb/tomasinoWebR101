@@ -3,36 +3,40 @@ import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import BackgroundImage from "../../public/assets/landing/background_ghibli_landing.png";
 import Image from "next/image";
+import styles from "./quiz.module.scss";
 
-import styles from "./index.module.scss";
 interface PageProps {}
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
   return {
     header: "full",
     is_transparent: true,
-    footer_disable: false,
+    footer_disable: true,
 
     children: (
-      <div className={`${styles.root}`}>
+      <div className={styles.root}>
         <div className={styles.background}>
-          <Image src={BackgroundImage} alt="Background Image of Landing" className={styles.bg_img}></Image>
+          <Image src={BackgroundImage} alt="Background image for landing" className={styles.bg_img} />
         </div>
+
         <div className={styles.overlay}>
-          <div className={styles.slideBottom}>
-            <div className="">
-              <div className={styles.heroTextContainer}>
-                <h2 className={styles.heroMainText}>STUDIO TOMWEB</h2>
-                <p className={styles.heroSubText}>where innovation, passion, and dedication begins</p>
+          <div className={styles.intro_container}>
+            <div className={styles.content}>
+              <h1 className={styles.largerHeading}>STUDIO TOMWEB</h1>
+              <h2 className={styles.subheading}>where innovation, passion, and dedication beings</h2>
+
+              <div className={styles.rail}>
+                <div className={styles.button}>
+                  <Button href="/apply" theme="glass" maxWidth>
+                    STEP INTO OUR WORLD
+                  </Button>
+                </div>
+                <div className={styles.button}>
+                  <Button href="/about" theme="glass" maxWidth>
+                    DISCOVER OUR STORY
+                  </Button>
+                </div>
               </div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <Button href="/" theme="glass" maxWidth>
-                <p>STEP INTO OUR WORLD</p>
-              </Button>
-              <Button href="/" theme="glass" maxWidth>
-                <p>DISCOVER OUR STORY</p>
-              </Button>
             </div>
           </div>
         </div>

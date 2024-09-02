@@ -7,7 +7,15 @@ import styles from "./styles.module.scss";
 export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>({
   layoutComponent({ internalProps, layoutProps }) {
     return (
-      <div className={styles.root + " " + (layoutProps.is_transparent ? styles.transparent : styles.not_transparent)}>
+      <div
+        className={
+          styles.root +
+          " " +
+          (layoutProps.is_transparent ? styles.transparent : styles.not_transparent) +
+          " " +
+          (layoutProps.footer_disable ? styles.disabled_footer : "")
+        }
+      >
         <Navbar type={layoutProps.header} background_color={layoutProps.is_transparent ? "transparent" : "white"} />
 
         <div className={styles.flex + " " + (layoutProps.header === "full" ? styles.full : styles.centered)}>

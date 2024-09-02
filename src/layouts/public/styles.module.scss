@@ -52,3 +52,7 @@
 .centered {
   --header-height: 86px;
 }
+
+.disabled_footer {
+  --footer-height: 0px !important;
+}
