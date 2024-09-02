@@ -21,14 +21,14 @@ import { Button } from "../../components/Buttons";
 import { FadeIn } from "../../components/FadeIn";
 
 const memberPics = [
-  "/assets/members/bordas.png",
-  "/assets/members/bunyi.png",
-  "/assets/members/cabral.png",
-  "/assets/members/cajucom.png",
-  "/assets/members/cootauco.png",
-  "/assets/members/coronel.png",
+  "/assets/members/villasis.png",
+  "/assets/members/hermosa.png",
+  "/assets/members/lagman.png",
   "/assets/members/delacruz.png",
-  "/assets/members/entrata.png",
+  "/assets/members/ruiz.png",
+  "/assets/members/sanajan.png",
+  "/assets/members/tanglao.png",
+  "/assets/members/trinidad.png",
 ];
 const funStartsHere = [
   {

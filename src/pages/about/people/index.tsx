@@ -11,23 +11,22 @@ import Quote from "../../../components/Quote";
 import Cross from "../../../../public/assets/cross.svg";
 import MJ from "../../../../public/assets/people/showcase-2.jpg";
 import Suma from "../../../../public/assets/people/showcase-1.jpg";
-import Hermosa from "../../../../public/assets/members/hermosa.png";
-import Lagman from "../../../../public/assets/members/lagman.png";
+import Bordas from "../../../../public/assets/members/bordas.png";
+import Bunyi from "../../../../public/assets/members/bunyi.png";
+import Cootauco from "../../../../public/assets/members/cootauco.png";
+import Cajucom from "../../../../public/assets/members/cajucom.png";
+import Entrata from "../../../../public/assets/members/entrata.png";
+import Cabral from "../../../../public/assets/members/cabral.png";
 import Palma from "../../../../public/assets/members/palma.png";
 import Pascua from "../../../../public/assets/members/pascua.png";
 import Perote from "../../../../public/assets/members/perote.png";
-import Ruiz from "../../../../public/assets/members/ruiz.png";
-import Sanajan from "../../../../public/assets/members/sanajan.png";
-import Tanglao from "../../../../public/assets/members/tanglao.png";
-import Trinidad from "../../../../public/assets/members/trinidad.png";
 import Villaescusa from "../../../../public/assets/members/villaescusa.png";
-import Villasis from "../../../../public/assets/members/villasis.png";
 import Art from "../../../../public/assets/people/showcase-3.jpg";
 import CtaImage from "../../../../public/assets/people/cta-image.png";
 import Image from "next/image";
 import { FadeIn } from "../../../components/FadeIn";
 
-const MemberImages = [Hermosa, Lagman, Palma, Pascua, Perote, Ruiz, Sanajan, Tanglao, Trinidad, Villaescusa];
+const MemberImages = [Bordas, Bunyi, Pascua, Cootauco, Cajucom, Entrata, Palma, Perote, Villaescusa, Cabral];
 const ShowcaseImages = [Suma, MJ, Art];
 
 interface PageProps {}
