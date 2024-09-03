@@ -74,16 +74,18 @@ $manrope: "Manrope-Bold", sans-serif;
     .button {
       padding: 10px 20px;
       border: 2.5px solid var(--foreground);
-      background: none;
-      transition: 200ms ease-in-out all;
-    }
+      background: linear-gradient(to bottom, var(--hover-background) 50%, transparent 50%);
+      background-size: 100% 200%;
+      background-position: left bottom;
+      transition: all ease 0.3s;
 
-    .button:hover {
-      border: 2.5px solid var(--foreground) !important;
-      background: var(--hover-background);
-      border-color: var(--border);
-      color: var(--hover-foreground);
-      transition: 200ms ease-in-out all;
+      &:hover {
+        border: 2.5px solid var(--foreground) !important;
+        background-position: right top;
+        border-color: var(--border);
+        color: var(--hover-foreground);
+        transition: all ease 0.3s;
+      }
     }
   }
 
