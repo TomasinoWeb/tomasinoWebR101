@@ -5,6 +5,7 @@ import BackgroundImage from "../../public/assets/landing/background_ghibli_landi
 import Image from "next/image";
 import styles from "./quiz.module.scss";
 import { FadeIn } from "../components/FadeIn";
+import Stairs from "../components/transition/Stairs";
 
 interface PageProps {}
 
@@ -15,35 +16,37 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     footer_disable: true,
 
     children: (
-      <div className={styles.root}>
-        <div className={styles.background}>
-          <Image src={BackgroundImage} alt="Background image for landing" className={styles.bg_img} />
-        </div>
+      <Stairs>
+        <div className={styles.root}>
+          <div className={styles.background}>
+            <Image src={BackgroundImage} alt="Background image for landing" className={styles.bg_img} />
+          </div>
 
-        <div className={styles.overlay}>
-          <div className={styles.intro_container}>
-            <FadeIn>
-              <div className={styles.content}>
-                <h1 className={styles.largerHeading}>STUDIO TOMWEB</h1>
-                <h2 className={styles.subheading}>where innovation, passion, and dedication beings</h2>
+          <div className={styles.overlay}>
+            <div className={styles.intro_container}>
+              <FadeIn>
+                <div className={styles.content}>
+                  <h1 className={styles.largerHeading}>STUDIO TOMWEB</h1>
+                  <h2 className={styles.subheading}>where innovation, passion, and dedication beings</h2>
 
-                <div className={styles.rail}>
-                  <div className={styles.button}>
-                    <Button href="/apply" theme="glass" maxWidth>
-                      STEP INTO OUR WORLD
-                    </Button>
-                  </div>
-                  <div className={styles.button}>
-                    <Button href="/about" theme="glass" maxWidth>
-                      DISCOVER OUR STORY
-                    </Button>
+                  <div className={styles.rail}>
+                    <div className={styles.button}>
+                      <Button href="/apply" theme="glass" maxWidth>
+                        STEP INTO OUR WORLD
+                      </Button>
+                    </div>
+                    <div className={styles.button}>
+                      <Button href="/about" theme="glass" maxWidth>
+                        DISCOVER OUR STORY
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </div>
-      </div>
+      </Stairs>
     ),
   };
 });

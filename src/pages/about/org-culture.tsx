@@ -1,5 +1,5 @@
+import React, { useEffect, useState } from "react";
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
-import { PublicLayoutBackend } from "../../layouts/public/static";
 import styles from "./org-culture.module.scss";
 import peopleStyles from "./people/people.module.scss";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import RepeatingHeader from "../../components/RepeatHeader";
 import RepeatingIcons from "../../components/RepeatingIcons";
 import Quote from "../../components/Quote";
 import AboutBox from "../../components/AboutBox";
+import { Randomizer } from "../../components/Randomizer";
 import Arriety from "../../../public/assets/GHIBLI ICONS/arriety clip.png";
 import Ootorisama from "../../../public/assets/GHIBLI ICONS/ootori sama.png";
 import Jiji from "../../../public/assets/GHIBLI ICONS/jiji.png";
@@ -19,16 +20,17 @@ import { testimonials } from "../../data";
 import ReactMarkdown from "react-markdown";
 import { Button } from "../../components/Buttons";
 import { FadeIn } from "../../components/FadeIn";
+import Stairs from "../../components/transition/Stairs";
 
 const memberPics = [
-  "/assets/members/bordas.png",
-  "/assets/members/bunyi.png",
-  "/assets/members/cabral.png",
-  "/assets/members/cajucom.png",
-  "/assets/members/cootauco.png",
-  "/assets/members/coronel.png",
+  "/assets/members/villasis.png",
+  "/assets/members/hermosa.png",
+  "/assets/members/lagman.png",
   "/assets/members/delacruz.png",
-  "/assets/members/entrata.png",
+  "/assets/members/ruiz.png",
+  "/assets/members/sanajan.png",
+  "/assets/members/tanglao.png",
+  "/assets/members/trinidad.png",
 ];
 const funStartsHere = [
   {
@@ -169,132 +171,134 @@ const OrgCulturePage = PublicLayoutFrontend.use(() => {
     footer_disable: false,
 
     children: (
-      <div className={styles.body}>
-        <RepeatingHeader title="ORG CULTURE" />
+      <Stairs>
+        <div className={styles.body}>
+          <RepeatingHeader title="ORG CULTURE" />
 
-        <FadeIn>
-          <div className={styles.header}>
-            <h1>
-              We're gonna take you to a quick ride of what TomasinoWeb is behind the scenes. From doing org work to
-              having fun, we've got it all here in our own silly world.
-            </h1>
+          <FadeIn>
+            <div className={styles.header}>
+              <h1>
+                We're gonna take you to a quick ride of what TomasinoWeb is behind the scenes. From doing org work to
+                having fun, we've got it all here in our own silly world.
+              </h1>
 
-            <div className={styles.statistics}>
-              {statistics.map((stat, idx) => (
-                <div key={idx} className={styles.statistic}>
-                  <h1>{stat.title}</h1>
-                  <article className={styles.caption}>
-                    <ReactMarkdown children={stat.caption} />
-                  </article>
-                </div>
-              ))}
+              <div className={styles.statistics}>
+                {statistics.map((stat, idx) => (
+                  <div key={idx} className={styles.statistic}>
+                    <Randomizer title={statistics[idx].title} />
+                    <article className={styles.caption}>
+                      <ReactMarkdown>{stat.caption}</ReactMarkdown>
+                    </article>
+                  </div>
+                ))}
+              </div>
             </div>
+          </FadeIn>
+
+          <RepeatingIcons />
+          <div className={styles.video_container}>
+            <FadeIn>
+              <Video />
+            </FadeIn>
           </div>
-        </FadeIn>
+          <RepeatingIcons />
 
-        <RepeatingIcons />
-        <div className={styles.video_container}>
-          <FadeIn>
-            <Video />
-          </FadeIn>
-        </div>
-        <RepeatingIcons />
+          <div className={styles.quote}>
+            <FadeIn>
+              <Quote side="left" {...testimonials[5]} />
+            </FadeIn>
+          </div>
 
-        <div className={styles.quote}>
-          <FadeIn>
-            <Quote side="left" {...testimonials[5]} />
-          </FadeIn>
-        </div>
-
-        <div className={styles.work}>
-          <FadeIn>
-            <div className={peopleStyles.headingContainer}>
-              <div className={peopleStyles.sparkle}>
-                <Image src={Cross} alt="Cross" className={peopleStyles.svg} />
-                <h2>WEBSITES</h2>
-                <Image src={Cross} alt="Cross" className={peopleStyles.svg} />
-              </div>
-
-              <span className={peopleStyles.subheading}>Explore some of our work</span>
-            </div>
-
-            <div className={styles.boxes}>
-              {aboutBoxContents.map((data, idx) => (
-                <div className={styles.box} key={idx}>
-                  <AboutBox {...data} />
+          <div className={styles.work}>
+            <FadeIn>
+              <div className={peopleStyles.headingContainer}>
+                <div className={peopleStyles.sparkle}>
+                  <Image src={Cross} alt="Cross" className={peopleStyles.svg} />
+                  <h2>WEBSITES</h2>
+                  <Image src={Cross} alt="Cross" className={peopleStyles.svg} />
                 </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
 
-        <div className={styles.fun}>
-          <FadeIn>
-            <div className={styles.inner}>
-              <div className={styles.heading}>
-                <h1>ALL THE FUN STARTS HERE</h1>
+                <span className={peopleStyles.subheading}>Explore some of our work</span>
               </div>
 
               <div className={styles.boxes}>
-                {funStartsHere.map((fun, index) => (
-                  <div className={styles.box} key={index}>
-                    <Project project={fun} />
+                {aboutBoxContents.map((data, idx) => (
+                  <div className={styles.box} key={idx}>
+                    <AboutBox {...data} />
                   </div>
                 ))}
               </div>
-            </div>
-          </FadeIn>
-        </div>
+            </FadeIn>
+          </div>
 
-        <div className={styles.quote}>
-          <FadeIn>
-            <Quote side="right" {...testimonials[6]} />
-          </FadeIn>
-        </div>
+          <div className={styles.fun}>
+            <FadeIn>
+              <div className={styles.inner}>
+                <div className={styles.heading}>
+                  <h1>ALL THE FUN STARTS HERE</h1>
+                </div>
 
-        <div className={styles.fun}>
-          <FadeIn>
-            <div className={styles.inner}>
-              <div className={styles.heading + " " + styles.align_right}>
-                <h1>THEN WE HAVE THE ACTUAL WORK</h1>
+                <div className={styles.boxes}>
+                  {funStartsHere.map((fun, index) => (
+                    <div className={styles.box} key={index}>
+                      <Project project={fun} />
+                    </div>
+                  ))}
+                </div>
               </div>
+            </FadeIn>
+          </div>
 
-              <div className={styles.boxes}>
-                {actWorkCards.map((fun, index) => (
-                  <div className={styles.box} key={index}>
-                    <Project project={fun} />
-                  </div>
-                ))}
+          <div className={styles.quote}>
+            <FadeIn>
+              <Quote side="right" {...testimonials[6]} />
+            </FadeIn>
+          </div>
+
+          <div className={styles.fun}>
+            <FadeIn>
+              <div className={styles.inner}>
+                <div className={styles.heading + " " + styles.align_right}>
+                  <h1>THEN WE HAVE THE ACTUAL WORK</h1>
+                </div>
+
+                <div className={styles.boxes}>
+                  {actWorkCards.map((fun, index) => (
+                    <div className={styles.box} key={index}>
+                      <Project project={fun} />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </FadeIn>
-        </div>
+            </FadeIn>
+          </div>
 
-        <div className={styles.cta_wrapper}>
-          <FadeIn>
-            <div className={styles.cta}>
-              <div className={styles.left}>
-                {memberPics.map((member, idx) => (
-                  <div className={styles.member_wrapper} key={idx}>
-                    <Image src={member} alt="Picture of image" width={140} height={140} className={styles.img} />
-                  </div>
-                ))}
-              </div>
+          <div className={styles.cta_wrapper}>
+            <FadeIn>
+              <div className={styles.cta}>
+                <div className={styles.left}>
+                  {memberPics.map((member, idx) => (
+                    <div className={styles.member_wrapper} key={idx}>
+                      <Image src={member} alt="Picture of image" width={140} height={140} className={styles.img} />
+                    </div>
+                  ))}
+                </div>
 
-              <div className={styles.right}>
-                <div className={styles.inner}>
-                  <h1>Who are the people behind the scenes?</h1>
-                  <div>
-                    <Button href="/about/people" theme="black_n_white" outline="small">
-                      MEET OUR COMMUNITY
-                    </Button>
+                <div className={styles.right}>
+                  <div className={styles.inner}>
+                    <h1>Who are the people behind the scenes?</h1>
+                    <div>
+                      <Button href="/about/people" theme="black_n_white" outline="small">
+                        MEET OUR COMMUNITY
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
-      </div>
+      </Stairs>
     ),
   };
 });

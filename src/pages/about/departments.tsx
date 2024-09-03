@@ -16,7 +16,7 @@ import Sec from "../../../public/assets/about/departments/sec.png";
 import Videogs from "../../../public/assets/about/departments/videogs.png";
 import WebTech from "../../../public/assets/about/departments/webtech.png";
 import Writing from "../../../public/assets/about/departments/writing.png";
-
+import Stairs from "../../components/transition/Stairs";
 type Department = {
   image: StaticImageData;
   color: string;
@@ -33,30 +33,32 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     header: "full",
     is_transparent: false,
     children: (
-      <main className={styles.container}>
-        <section className={styles.section}>
-          <RepeatingHeader title="DEPARTMENTS" />
+      <Stairs>
+        <main className={styles.container}>
+          <section className={styles.section}>
+            <RepeatingHeader title="DEPARTMENTS" />
 
-          <div className={styles.text}>
-            <p>
-              Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation,
-              passion, and dedication.
-            </p>
-          </div>
-        </section>
-        <DepartmentReel />
+            <div className={styles.text}>
+              <p>
+                Here are the departments that solidify TomasinoWeb in its pursuit to continue its legacy of innovation,
+                passion, and dedication.
+              </p>
+            </div>
+          </section>
+          <DepartmentReel />
 
-        <section className={styles.section}>
-          <div className={styles.text}>
-            <p>Still not sure which department is right for you?</p>
-            <p>Take our quick quiz to find your perfect fit!</p>
-          </div>
+          <section className={styles.section}>
+            <div className={styles.text}>
+              <p>Still not sure which department is right for you?</p>
+              <p>Take our quick quiz to find your perfect fit!</p>
+            </div>
 
-          <Button href="/quiz" theme="black_n_white" outline="small">
-            <p>TAKE QUIZ</p>
-          </Button>
-        </section>
-      </main>
+            <Button href="/quiz" theme="black_n_white" outline="small">
+              <p>TAKE QUIZ</p>
+            </Button>
+          </section>
+        </main>
+      </Stairs>
     ),
   };
 });

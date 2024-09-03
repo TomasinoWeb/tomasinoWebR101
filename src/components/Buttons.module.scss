@@ -26,12 +26,15 @@
   height: 100%;
   border: 2px solid var(--border-color);
   width: fit-content;
-  background-color: var(--background-color);
+  background: linear-gradient(to bottom, var(--hover-background-color) 50%, var(--background-color) 50%);
+  background-size: 100% 200%;
+  background-position: left bottom;
+
   color: var(--foreground-color);
   text-decoration: none;
   cursor: pointer;
   text-shadow: var(--text-shadow);
-  transition: 150ms ease-in-out all;
+  transition: all ease 0.3s;
 
   padding: 24px;
   font-family: var(--font-family);
@@ -41,13 +44,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-}
 
-.button:hover {
-  background-color: var(--hover-background-color);
-  color: var(--hover-foreground-color);
-  border-color: var(--hover-border-color);
-  transition: 150ms ease-in-out all;
+  &:hover {
+    background-position: right top;
+    color: var(--hover-foreground-color);
+  }
 }
 
 .maxWidth {

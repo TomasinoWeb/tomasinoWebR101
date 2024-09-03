@@ -12,6 +12,7 @@ import OrgGroup from "../components/faqComponents/OrgGroup";
 import ResultsGroup from "../components/faqComponents/ResultsGroup";
 import SussyGroup from "../components/faqComponents/SussyGroup";
 import RepeatingHeader from "../components/RepeatHeader";
+import Stairs from "../components/transition/Stairs";
 
 interface PageProps {}
 
@@ -79,105 +80,109 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
     children: (
       <>
-        <div className={styles.FaqPage}>
-          <header>
-            <RepeatingHeader title="FAQS" />
-          </header>
+        <Stairs>
+          <div className={styles.FaqPage}>
+            <header>
+              <RepeatingHeader title="FAQS" />
+            </header>
 
-          <div className={styles.picker_div}>
-            <div className={styles.selection_div}>
-              <div className={styles.faq_main_holder}>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell1}`}
-                  onClick={() => setTag("org")}
-                  style={orgShown ? orgPicked : unpicked}
-                >
-                  the org
-                </button>
+            <div className={styles.picker_div}>
+              <div className={styles.selection_div}>
+                <div className={styles.faq_main_holder}>
+                  <button
+                    className={`${styles.button_picker} ${styles.mobile_cell1}`}
+                    onClick={() => setTag("org")}
+                    style={orgShown ? orgPicked : unpicked}
+                  >
+                    the org
+                  </button>
 
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell2}`}
-                  onClick={() => setTag("interview")}
-                  style={interviewShown ? interviewPicked : unpicked}
-                >
-                  interview
-                </button>
-                <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
-                  <div className={styles.faq_main_item}>
-                    <img
-                      src="/assets/kodama.png" // change this to the correct icon
-                      className={`${styles.faq_icons} ${styles.mobile_cell3}`}
-                      alt="icon"
-                    ></img>
-                  </div>
-                </a>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell4}`}
-                  onClick={() => setTag("application")}
-                  style={applicationShown ? applicationPicked : unpicked}
-                >
-                  application
-                </button>
+                  <button
+                    className={`${styles.button_picker} ${styles.mobile_cell2}`}
+                    onClick={() => setTag("interview")}
+                    style={interviewShown ? interviewPicked : unpicked}
+                  >
+                    interview
+                  </button>
+                  <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
+                    <div className={styles.faq_main_item}>
+                      <img
+                        src="/assets/kodama.png" // change this to the correct icon
+                        className={`${styles.faq_icons} ${styles.mobile_cell3}`}
+                        alt="icon"
+                      ></img>
+                    </div>
+                  </a>
+                  <button
+                    className={`${styles.button_picker} ${styles.mobile_cell4}`}
+                    onClick={() => setTag("application")}
+                    style={applicationShown ? applicationPicked : unpicked}
+                  >
+                    application
+                  </button>
 
-                <a href="/quiz" target="_blank" rel="noreferrer">
-                  <div className={styles.faq_main_item}>
-                    <img
-                      src="/assets/no face v1.png" // change this to the correct icon
-                      className={`${styles.faq_icons} ${styles.mobile_cell5}`}
-                      alt="icon"
-                    ></img>
-                  </div>
-                </a>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell6}`}
-                  onClick={() => setTag("results")}
-                  style={resultsShown ? resultPicked : unpicked}
-                >
-                  results
-                </button>
+                  <a href="/quiz" target="_blank" rel="noreferrer">
+                    <div className={styles.faq_main_item}>
+                      <img
+                        src="/assets/no face v1.png" // change this to the correct icon
+                        className={`${styles.faq_icons} ${styles.mobile_cell5}`}
+                        alt="icon"
+                      ></img>
+                    </div>
+                  </a>
+                  <button
+                    className={`${styles.button_picker} ${styles.mobile_cell6}`}
+                    onClick={() => setTag("results")}
+                    style={resultsShown ? resultPicked : unpicked}
+                  >
+                    results
+                  </button>
 
-                <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
-                  <div className={styles.faq_main_item}>
-                    <img
-                      src="/assets/calcifer v1.png" // change this to the correct icon
-                      className={`${styles.faq_icons} ${styles.mobile_cell7} `}
-                      alt="icon"
-                    ></img>
-                  </div>
-                </a>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell8}`}
-                  onClick={() => setTag("sussy")}
-                  style={sussyShown ? sussyPicked : unpicked}
-                >
-                  thought you&apos;d never ask
-                </button>
+                  <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
+                    <div className={styles.faq_main_item}>
+                      <img
+                        src="/assets/calcifer v1.png" // change this to the correct icon
+                        className={`${styles.faq_icons} ${styles.mobile_cell7} `}
+                        alt="icon"
+                      ></img>
+                    </div>
+                  </a>
+                  <button
+                    className={`${styles.button_picker} ${styles.mobile_cell8}`}
+                    onClick={() => setTag("sussy")}
+                    style={sussyShown ? sussyPicked : unpicked}
+                  >
+                    thought you&apos;d never ask
+                  </button>
+                </div>
               </div>
             </div>
+            <br />
+            <div className={styles.faqs}>
+              <pre>
+                <div className={`faq-answer ${orgShown ? "faq-answer-open" : ""}`}>
+                  {orgShown && (
+                    <p>
+                      <OrgGroup />
+                    </p>
+                  )}
+                </div>
+                <div className={`faq-answer ${interviewShown ? "faq-answer-open" : ""}`}>
+                  {interviewShown && <InterviewGroup />}
+                </div>
+                <div className={`faq-answer ${applicationShown ? "faq-answer-open" : ""}`}>
+                  {applicationShown && <ApplicationGroup />}
+                </div>
+                <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
+                  {resultsShown && <ResultsGroup />}
+                </div>
+                <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>
+                  {sussyShown && <SussyGroup />}
+                </div>
+              </pre>
+            </div>
           </div>
-          <br />
-          <div className={styles.faqs}>
-            <pre>
-              <div className={`faq-answer ${orgShown ? "faq-answer-open" : ""}`}>
-                {orgShown && (
-                  <p>
-                    <OrgGroup />
-                  </p>
-                )}
-              </div>
-              <div className={`faq-answer ${interviewShown ? "faq-answer-open" : ""}`}>
-                {interviewShown && <InterviewGroup />}
-              </div>
-              <div className={`faq-answer ${applicationShown ? "faq-answer-open" : ""}`}>
-                {applicationShown && <ApplicationGroup />}
-              </div>
-              <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
-                {resultsShown && <ResultsGroup />}
-              </div>
-              <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>{sussyShown && <SussyGroup />}</div>
-            </pre>
-          </div>
-        </div>
+        </Stairs>
       </>
     ),
   };

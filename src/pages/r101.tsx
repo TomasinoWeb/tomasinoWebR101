@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import RepeatingHeader from "../components/RepeatHeader";
 import AppProcessStep from "../components/r101/AppProcessStep";
 import styles from "./r101.module.scss";
+import Stairs from "../components/transition/Stairs";
 
 const R101 = PublicLayoutFrontend.use(() => {
   const isDesktop = useViewportWidth(1024);
@@ -39,23 +40,25 @@ const R101 = PublicLayoutFrontend.use(() => {
     is_transparent: false,
 
     children: (
-      <div className={styles.r101MainContainer}>
-        <RepeatingHeader title="APPLICATION PROCESS" />
-        <div className={styles.mainStepContainer}>
-          <div className={styles.step1}>
-            <AppProcessStep {...steps[0]} susuwatari={!isLargerThanMobile ? "1-reversed" : "1"} />
-          </div>
-          <div className={styles.step2}>
-            <AppProcessStep {...steps[1]} susuwatari="2-left" />
-          </div>
-          <div className={styles.step3}>
-            <AppProcessStep {...steps[2]} susuwatari={isDesktop ? "1" : "2-right"} />
-          </div>
-          <div className={styles.step4}>
-            <AppProcessStep {...steps[3]} susuwatari={isDesktop ? "2-right" : "1"} />
+      <Stairs>
+        <div className={styles.r101MainContainer}>
+          <RepeatingHeader title="APPLICATION PROCESS" />
+          <div className={styles.mainStepContainer}>
+            <div className={styles.step1}>
+              <AppProcessStep {...steps[0]} susuwatari={!isLargerThanMobile ? "1-reversed" : "1"} />
+            </div>
+            <div className={styles.step2}>
+              <AppProcessStep {...steps[1]} susuwatari="2-left" />
+            </div>
+            <div className={styles.step3}>
+              <AppProcessStep {...steps[2]} susuwatari={isDesktop ? "1" : "2-right"} />
+            </div>
+            <div className={styles.step4}>
+              <AppProcessStep {...steps[3]} susuwatari={isDesktop ? "2-right" : "1"} />
+            </div>
           </div>
         </div>
-      </div>
+      </Stairs>
     ),
   };
 });
