@@ -11,7 +11,7 @@ $manrope: "Manrope-Bold", sans-serif;
   background-image: var(--repeated-svg);
 }
 
-.title-div {
+.title_div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -19,7 +19,7 @@ $manrope: "Manrope-Bold", sans-serif;
   margin-bottom: 30px;
 }
 
-.picker-div {
+.picker_div {
   margin: 0% 12%;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ $manrope: "Manrope-Bold", sans-serif;
   margin-top: 30px;
 }
 
-.faq-main-holder {
+.faq_main_holder {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 8px;
@@ -35,17 +35,17 @@ $manrope: "Manrope-Bold", sans-serif;
   margin-bottom: 50px;
 }
 
-.faq-main-item {
+.faq_main_tem {
   display: table-cell;
 }
 
-.button-picker {
+.button_picker {
   display: flex;
   align-items: center;
 }
 
-.faq-main-item,
-.button-picker {
+.faq_main_item,
+.button_picker {
   font-family: $manrope;
   cursor: pointer;
   min-width: fit-content;
@@ -63,28 +63,28 @@ $manrope: "Manrope-Bold", sans-serif;
   align-items: center;
 }
 
-.mobile-cell1 {
+.mobile_cell1 {
   grid-column: 1 / span 3;
 }
-.mobile-cell2 {
+.mobile_cell2 {
   grid-column: 4 / span 3;
 }
-.mobile-cell3 {
+.mobile_cell3 {
   grid-column: 7;
 }
-.mobile-cell4 {
+.mobile_cell4 {
   grid-column: 1 / 5;
 }
-.mobile-cell5 {
+.mobile_cell5 {
   grid-column: 5 / 5;
 }
-.mobile-cell6 {
+.mobile_cell6 {
   grid-column: 6 / span 2;
 }
-.mobile-cell7 {
+.mobile_cell7 {
   grid-column: 1;
 }
-.mobile-cell8 {
+.mobile_cell8 {
   grid-column: 2 / span 6;
 }
 
@@ -95,14 +95,14 @@ $manrope: "Manrope-Bold", sans-serif;
   transform: none;
 }
 
-.faq-icons {
-  height: calc(30px + 1vw);
+.faq_icons {
+  height: calc(30px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.faq-head {
+.faq_head {
   font-size: 48px;
 }
 
@@ -125,7 +125,7 @@ $manrope: "Manrope-Bold", sans-serif;
   background-color: #e5e5e5;
 }
 
-.faq-header {
+.faq_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,7 +146,7 @@ $manrope: "Manrope-Bold", sans-serif;
   }
 }
 
-.faqs .faq .faq-question {
+.faqs .faq .faq_question {
   position: relative;
   padding-right: 80px;
   font-family: $manrope;
@@ -155,7 +155,7 @@ $manrope: "Manrope-Bold", sans-serif;
   transition: all 0.4s ease;
 }
 
-.faqs .faq .faq-question::after {
+.faqs .faq .faq_question::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -173,16 +173,16 @@ $manrope: "Manrope-Bold", sans-serif;
   transition: all 0.4s ease-out;
 }
 
-.faqs .faq.open .faq-question {
+.faqs .faq.open .faq_question {
   margin-bottom: 15px;
   font-family: $manrope;
 }
 
-.faqs .faq.open .faq-question::after {
+.faqs .faq.open .faq_question::after {
   transform: translateY(-50%) rotate(45deg);
 }
 
-.faqs .faq .faq-answer {
+.faqs .faq .faq_answer {
   opacity: 0;
   max-height: 0;
   overflow-y: hidden;
@@ -197,7 +197,7 @@ $manrope: "Manrope-Bold", sans-serif;
   font-size: 16px;
 }
 
-.faqs .faq.open .faq-answer {
+.faqs .faq.open .faq_answer {
   opacity: 1;
   max-height: 1000px;
   transition:
@@ -206,14 +206,14 @@ $manrope: "Manrope-Bold", sans-serif;
     font 0.4s ease;
 }
 
-.faq-answer-open {
+.faq_answer_open {
   font-size: 16px;
   transition:
     font-family 0.4s ease,
     font-size 0.4s ease;
 }
 
-.faq-answer-open p {
+.faq_answer_open p {
   font-size: 16px;
   margin: 0;
 }
@@ -227,43 +227,43 @@ $manrope: "Manrope-Bold", sans-serif;
 }
 
 @media only screen and (max-width: 770px) {
-  .faq-icons {
+  .faq_icons {
     height: calc(25px + 1vw);
   }
-  .faq-main-holder {
+  .faq_main_holder {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
-  .mobile-cell1 {
+  .mobile_cell1 {
     grid-column: 1 / span 2;
   }
-  .mobile-cell2 {
+  .mobile_cell2 {
     grid-column: 3 / span 3;
   }
-  .mobile-cell3 {
+  .mobile_cell3 {
     grid-column: 1;
   }
-  .mobile-cell4 {
+  .mobile_cell4 {
     grid-column: 2 / span 4;
   }
-  .mobile-cell5 {
+  .mobile_cell5 {
     grid-column: 1;
   }
-  .mobile-cell6 {
+  .mobile_cell6 {
     grid-column: 2 / span 4;
   }
-  .mobile-cell7 {
+  .mobile_cell7 {
     grid-column: 1;
   }
-  .mobile-cell8 {
+  .mobile_cell8 {
     grid-column: 2 / span 4;
   }
-  .button-picker {
+  .button_picker {
     font-size: 16px;
   }
-  .button-picker,
-  .faq-main-item {
+  .button_picker,
+  .faq_main_item {
     height: 63px;
     border-width: 2px;
   }
@@ -274,24 +274,24 @@ $manrope: "Manrope-Bold", sans-serif;
   .faqs .faq {
     border: 2px solid #343332;
   }
-  .faqs .faq.open .faq-answer {
+  .faqs .faq.open .faq_answer {
     transition: all 0.4s ease;
     font-size: 14px;
   }
-  .faqs .faq .faq-question {
+  .faqs .faq .faq_question {
     font-size: 16px;
     transition: all 0.4s ease;
   }
-  .faq-head {
+  .faq_head {
     font-size: 24px;
   }
 }
 @media only screen and (max-width: 460px) {
-  .button-picker {
+  .button_picker {
     padding: 5px 15px;
   }
-  .button-picker,
-  .faq-main-item {
+  .button_picker,
+  .faq_main_item {
     height: 63px;
     border-width: 2px;
   }

@@ -8,17 +8,17 @@ import Image from "next/image";
 function FAQ({ faq, index, toggleFAQ }) {
   return (
     <div
-      className={faq.open ? `${styles["faq"]} ${styles["open"]}` : `${styles["faq"]}`}
+      className={faq.open ? `${styles.faq} ${styles.open}` : `${styles.faq}`}
       key={index}
       onClick={() => toggleFAQ(index)}
     >
-      <div className={styles["faq-header"]}>
-        <div className={styles["faq-question"]}>{faq.question}</div>
+      <div className={styles.faq_header}>
+        <div className={styles.faq_question}>{faq.question}</div>
         {/* <FontAwesomeIcon icon={faPlus} className={faq.open ? styles.open : styles.closed} /> */}
-        <Image src={Cross} alt="Cross" className={`${styles["faq-icons"]} ${faq.open ? styles.open : styles.closed}`} />
+        <Image src={Cross} alt="Cross" className={`${styles.faq_icons} ${faq.open ? styles.open : styles.closed}`} />
       </div>
 
-      <div className={styles["faq-answer"]}>{faq.answer}</div>
+      <div className={styles.faq_answer}>{faq.answer}</div>
     </div>
   );
 }
