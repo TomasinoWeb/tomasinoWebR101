@@ -79,7 +79,7 @@ function RenderQuestion({ quizController }: { quizController: UseQuiz }) {
               </div>
 
               <Image
-                src={"/assets/about/departments.jpg"}
+                src={quizController.currentQuestion.image}
                 alt={quizController.currentQuestion.question}
                 className={questionStyles.image}
                 width={1000}
@@ -118,15 +118,15 @@ function RenderFinished({ quizController }: { quizController: UseQuiz }) {
     children: (
       <div className={introStyles.root}>
         <div className={introStyles.background}>
-          <Image src={BackgroundImage} alt="Background image for landing" className={introStyles.bg_img} />
+          <img src={department.image} alt={`Background image for ${department.key}`} className={introStyles.bg_img} />
         </div>
 
         <div className={introStyles.overlay}>
           <div className={introStyles.intro_container}>
             <div className={introStyles.content}>
               <Image
-                src="/assets/quiz/results/icons/Totoro.png"
-                alt="Result image for Extaff"
+                src={department.icon}
+                alt={`Result image for ${department.key}`}
                 width={200}
                 height={200}
                 className={introStyles.resultIcon}
@@ -134,17 +134,13 @@ function RenderFinished({ quizController }: { quizController: UseQuiz }) {
 
               <div className={introStyles.header}>
                 <h2>You should join</h2>
-                <h1 className={introStyles.quizResultHeading}>External Affairs</h1>
+                <h1 className={introStyles.quizResultHeading}>{department.name}</h1>
               </div>
 
               <div className={introStyles.description + " " + introStyles.resultDescription}>
-                <p>
-                  You have a lot of friends from different faculties and colleges. Definitely, when you walk around
-                  campus, you greet someone every minute. When you're in External Affairs, you don’t eat death threats
-                  for breakfast, rather emails from various orgs.
-                </p>
+                <p>{department.description}</p>
 
-                <p>Photo from My Neighbor Totoro (1988)</p>
+                <p>{department.imageDescription}</p>
               </div>
 
               <div className={introStyles.rail}>
