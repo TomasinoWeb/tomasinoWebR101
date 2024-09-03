@@ -1,5 +1,5 @@
+import React, { useEffect, useState } from "react";
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
-import { PublicLayoutBackend } from "../../layouts/public/static";
 import styles from "./org-culture.module.scss";
 import peopleStyles from "./people/people.module.scss";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import RepeatingHeader from "../../components/RepeatHeader";
 import RepeatingIcons from "../../components/RepeatingIcons";
 import Quote from "../../components/Quote";
 import AboutBox from "../../components/AboutBox";
+import { Randomizer } from "../../components/Randomizer";
 import Arriety from "../../../public/assets/GHIBLI ICONS/arriety clip.png";
 import Ootorisama from "../../../public/assets/GHIBLI ICONS/ootori sama.png";
 import Jiji from "../../../public/assets/GHIBLI ICONS/jiji.png";
@@ -182,9 +183,9 @@ const OrgCulturePage = PublicLayoutFrontend.use(() => {
             <div className={styles.statistics}>
               {statistics.map((stat, idx) => (
                 <div key={idx} className={styles.statistic}>
-                  <h1>{stat.title}</h1>
+                  <Randomizer title={statistics[idx].title} />
                   <article className={styles.caption}>
-                    <ReactMarkdown children={stat.caption} />
+                    <ReactMarkdown>{stat.caption}</ReactMarkdown>
                   </article>
                 </div>
               ))}

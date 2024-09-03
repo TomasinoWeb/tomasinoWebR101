@@ -22,6 +22,7 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "18.2.7",
     "framer-motion": "^11.3.30",
+    "motion-number": "^0.1.7",
     "next": "13.4.16",
     "next-seo": "^6.1.0",
     "react": "18.2.0",
