@@ -3,6 +3,7 @@ import styles from "./404.module.scss";
 import Image from "next/image";
 import ErrorImage from "../../public/assets/404/error-img.webp";
 import { Button } from "../components/Buttons";
+import Stairs from "../components/transition/Stairs";
 
 const ErrorPage = PublicLayoutFrontend.use(() => {
   return {
@@ -11,32 +12,34 @@ const ErrorPage = PublicLayoutFrontend.use(() => {
     footer_disable: false,
 
     children: (
-      <div className={styles.errorPageContainer}>
-        <div className={styles.errorPageContent}>
-          <div className={styles.errorMain}>
-            <div className={styles.errorText}>
-              Looks like you are lost. The page you are looking for is not available.
-            </div>
-            <div className={styles.errorMessage}>
-              4<Image src={ErrorImage} alt="Error Image" className={styles.errorImg} />4
-            </div>
-          </div>
-
-          <div className={styles.errorBtnContainer}>
-            <div className={styles.button}>
-              <Button href="/" theme="black_n_white" maxWidth>
-                <p>BACK TO HOME</p>
-              </Button>
+      <Stairs>
+        <div className={styles.errorPageContainer}>
+          <div className={styles.errorPageContent}>
+            <div className={styles.errorMain}>
+              <div className={styles.errorText}>
+                Looks like you are lost. The page you are looking for is not available.
+              </div>
+              <div className={styles.errorMessage}>
+                4<Image src={ErrorImage} alt="Error Image" className={styles.errorImg} />4
+              </div>
             </div>
 
-            <div className={styles.button}>
-              <Button href="/about" theme="black_n_white" maxWidth>
-                <p>ABOUT TOMASINOWEB</p>
-              </Button>
+            <div className={styles.errorBtnContainer}>
+              <div className={styles.button}>
+                <Button href="/" theme="black_n_white" maxWidth>
+                  <p>BACK TO HOME</p>
+                </Button>
+              </div>
+
+              <div className={styles.button}>
+                <Button href="/about" theme="black_n_white" maxWidth>
+                  <p>ABOUT TOMASINOWEB</p>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Stairs>
     ),
   };
 });
