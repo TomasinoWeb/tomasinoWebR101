@@ -16,7 +16,8 @@
   }
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.2);
+    background: radial-gradient(98.88% 50% at 50% 50%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
     z-index: 1;
     width: 100vw;
     top: 0px;

@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 
 const metatags = {
   "/": {
-    title: "The  R101  by STUDIO TOMWEB",
+    title: "The R101 by STUDIO TOMWEB",
     description:
       "TomasinoWeb is back on track exploring around UST to look for innovative, passionate, and dedicated individuals who can bring our story to life! Will you be part of the story?",
   },
@@ -17,7 +17,7 @@ const metatags = {
       "The whispers say there's magic in the air! Discover TomasinoWeb, a world where every department is filled with vibrant souls and lively traditions.",
   },
   "/about/departments": {
-    title: "Departments: The  R101 by STUDIO TOMWEB",
+    title: "Departments: The R101 by STUDIO TOMWEB",
     description: "You cannot alter your fate. However, you can rise to meet it.?",
   },
   "/about/people": {
@@ -26,7 +26,7 @@ const metatags = {
       "Meet the visionaries behind all the content of TomasinoWeb, the premier digital media organization of the University of Santo Tomas.",
   },
   "/about/org-culture": {
-    title: "Org Culture: The R101  by STUDIO TOMWEB",
+    title: "Org Culture: The R101 by STUDIO TOMWEB",
     description: "We're all a little lost, but we're not alone. Explore what makes our org culture special.",
   },
   "/r101": {
