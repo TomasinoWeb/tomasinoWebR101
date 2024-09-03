@@ -121,12 +121,12 @@ const actWorkCards = [
 
 const statistics = [
   { title: "5", caption: "websites up and running for the Thomasian community" },
-  { title: "25+", caption: "members doing it with a broken heart" },
+  { title: "25", caption: "members doing it with a broken heart", RenderAfter: () => <>+</> },
   { title: "27", caption: "awards from prestigious contest & globally recognized institutions" },
   { title: "84", caption: "**(and counting!)** innovative, passionate, and dedicated members" },
   { title: "172,869", caption: "combined followers across all digital platforms" },
   { title: "7,513,308", caption: "Facebook reach in the past year" },
-];
+] as { title: string; caption: string; RenderAfter?: () => React.ReactNode }[];
 
 const aboutBoxContents = [
   {
@@ -183,14 +183,17 @@ const OrgCulturePage = PublicLayoutFrontend.use(() => {
               </h1>
 
               <div className={styles.statistics}>
-                {statistics.map((stat, idx) => (
-                  <div key={idx} className={styles.statistic}>
-                    <Randomizer title={statistics[idx].title} />
-                    <article className={styles.caption}>
-                      <ReactMarkdown>{stat.caption}</ReactMarkdown>
-                    </article>
-                  </div>
-                ))}
+                {statistics.map((stat, idx) => {
+                  return (
+                    <div key={idx} className={styles.statistic}>
+                      <Randomizer title={statistics[idx].title} RenderAfter={stat.RenderAfter} />
+
+                      <article className={styles.caption}>
+                        <ReactMarkdown>{stat.caption}</ReactMarkdown>
+                      </article>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </FadeIn>

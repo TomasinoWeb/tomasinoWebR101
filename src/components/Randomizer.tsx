@@ -4,6 +4,7 @@ import { easeOut } from "framer-motion";
 
 type RandomizerProps = {
   title: string;
+  RenderAfter?: () => React.ReactNode;
 };
 
 // Utility function to parse title string to number
@@ -47,6 +48,8 @@ export const Randomizer = (props: RandomizerProps) => {
   // Reconstruct the number from digits
   const reconstructedNumber = currentDigits.join("").padStart(finalDigits.length, "0");
 
+  const RenderAfter = props.RenderAfter ?? (() => <></>);
+
   return (
     <h1>
       <MotionNumber
@@ -57,6 +60,8 @@ export const Randomizer = (props: RandomizerProps) => {
           layout: { type: "spring", duration: 0.7, bounce: 0 },
         }}
       />
+
+      <RenderAfter />
     </h1>
   );
 };
