@@ -41,7 +41,7 @@ export default function Navbar({ background_color: color, type }: NavbarProps) {
 
   if (type === "centered") {
     return (
-      <header className={styles.headerClass + " " + styles.centered}>
+      <header className={headerClass + " " + styles.centered}>
         <div className={styles.inner}>
           <NavbarLinks showApply={false} collapsed={false} />
         </div>
@@ -49,7 +49,7 @@ export default function Navbar({ background_color: color, type }: NavbarProps) {
     );
   } else {
     return (
-      <header className={(styles.isOpened ? styles.isOpened : "") + " " + styles.headerClass + " " + styles.full}>
+      <header className={(styles.isOpened ? styles.isOpened : "") + " " + headerClass + " " + styles.full}>
         <div className={styles.inner + " " + styles.jcsb}>
           <h1 className={styles.logo}>
             <Link href="/">STUDIO TOMWEB</Link>
