@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-markdown": "^8.0.7",
+    "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.65.1",
     "typescript": "5.1.6"
   },
