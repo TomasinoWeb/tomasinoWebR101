@@ -166,6 +166,11 @@
     height: 250px;
     flex-shrink: 0;
   }
+
+  .quoteBox {
+    padding: 14px;
+    border: 2px solid var(--dark-grey, #343332);
+  }
 }
 
 @media screen and (max-width: 600px) {
