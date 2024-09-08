@@ -145,8 +145,8 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 >
                   <HoverableImageFade
                     alt={`${member.name}'s Image`}
-                    image={"/assets/people/testimonial-bg.png"}
-                    hoveredImage={"/assets/people/testimonial-bg.png"}
+                    image={member.image}
+                    hoveredImage={member.image}
                     active
                   />
 

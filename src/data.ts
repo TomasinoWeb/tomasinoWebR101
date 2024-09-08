@@ -10,72 +10,72 @@ export const coreMembers = [
   {
     name: "Miguel Angelo Sumalinog",
     position: "President",
-    image: "/assets/about/people/Core-JC.png",
+    image: "/assets/people/core/01 suma.png",
   },
   {
     name: "Kurt Alec Mira",
     position: "Executive Vice President",
-    image: "/assets/about/people/Core-Eric.png",
+    image: "/assets/people/core/02 kali.png",
   },
   {
     name: "Romeo B. Peralta III",
     position: "Executive Secretary",
-    image: "/assets/about/people/Core-Celes.png",
+    image: "/assets/people/core/03 roms.jpg",
   },
   {
     name: "Candice Anne Bago",
     position: "VP for Finance",
-    image: "/assets/about/people/Core-Berlice.png",
+    image: "/assets/people/core/04 ken.png",
   },
   {
     name: "Ferica Rodriguez",
     position: "VP for Human Resources",
-    image: "/assets/about/people/Core-Jaja.png",
+    image: "/assets/people/core/05 fei.jpg",
   },
   {
     name: "Ashley Manaog",
     position: "VP for Publicity and Communications",
-    image: "/assets/about/people/Core-Claire.png",
+    image: "/assets/people/core/06 ashley.jpg",
   },
   {
     name: "Mary Jade Jadormio",
     position: "Executive Editor",
-    image: "/assets/about/people/Core-Rein.png",
+    image: "/assets/people/core/07 mj.png",
   },
   {
     name: "Patricia Lumenario",
     position: "Managing Editor",
-    image: "/assets/about/people/Core-Alex.png",
+    image: "/assets/people/core/08 pat.jpg",
   },
   {
     name: "Lance Bernardino",
     position: "Chief Photographer",
-    image: "/assets/about/people/Core-Suma.png",
+    image: "/assets/people/core/09 lans b.png",
   },
   {
     name: "Charrise Suni",
     position: "Asst. Chief Photographer",
-    image: "/assets/about/people/Core-Philip.png",
+    image: "/assets/people/core/10 cha.jpg",
   },
   {
     name: "Erimae Lopez",
     position: "Creative Director",
-    image: "/assets/about/people/Core-Eri.png",
+    image: "/assets/people/core/11 eri.jpg",
   },
   {
     name: "Radiance Parayno",
     position: "Asst. Creative Director",
-    image: "/assets/about/people/Core-Iris.png",
+    image: "/assets/people/core/12 radi.png",
   },
   {
     name: "Andrea Dayo",
     position: "Chief Technology Officer",
-    image: "/assets/about/people/Core-Dan.png",
+    image: "/assets/people/core/13 dhea.png",
   },
   {
     name: "Lance Gulinao",
     position: "Asst. Chief Technology Officer",
-    image: "/assets/about/people/Core-Julia.png",
+    image: "/assets/people/core/14 lance g.png",
   },
 ];
 
