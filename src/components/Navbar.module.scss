@@ -1,0 +1,42 @@
+.nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: var(--neutral-white);
+
+  border: 2px solid black;
+  border-radius: 100px;
+  justify-content: space-around;
+  box-shadow: -4px 4px 0 0 var(--neutral-black, #1e1e1e);
+
+  a {
+    display: block;
+    margin: 15px 0px;
+    font-family: Groundnut, sans-serif;
+    color: black;
+    font-size: 16px;
+
+    border-bottom: 2px solid black;
+    border-color: transparent;
+    padding: 2px 10px;
+    text-decoration: none;
+    margin: 15px auto;
+  }
+
+  .selected,
+  a:hover {
+    border-color: black;
+  }
+
+  .special {
+    border: 3px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 100px;
+    margin: 0px;
+    height: 100%;
+    padding: 20px;
+    justify-self: right;
+  }
+}

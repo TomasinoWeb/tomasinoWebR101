@@ -1,0 +1,153 @@
+[
+  {
+    "question": "Your go-to sweet treat after a long day.",
+    "image": "/assets/quiz/questions/question1.png",
+    "imageCredit": "Photo from Kiki's Delivery Service (1989)",
+    "answers": [
+      { "text": "Barcollie’s blueberry cheesecake", "departments": ["finance", "externalAffairs"] },
+      { "text": "Mango Graham Shake", "departments": ["secretariat", "humanResources"] },
+      { "text": "Thick Milo", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Matcha latte", "departments": ["webTechnologies", "creatives"] },
+      { "text": "Baked goods from Tinapayan", "departments": ["webTechnologies"] },
+      { "text": "D’ Cream’s Golden Sun", "departments": ["creatives", "publicity"] },
+      { "text": "Banana rhuma from Mang Tootz", "departments": ["photography"] }
+    ]
+  },
+  {
+    "question": "Best meet-cute place in UST.",
+    "image": "/assets/quiz/questions/question2.png",
+    "imageCredit": "Photo from Spirited Away (2001)",
+    "answers": [
+      { "text": "Lover’s Lane", "departments": ["creatives", "photography"] },
+      { "text": "Gazebo", "departments": ["webTechnologies"] },
+      { "text": "Benavides Library", "departments": ["writing", "videography"] },
+      { "text": "UST Museum", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Plaza Mayor", "departments": ["communityDevelopment"] },
+      { "text": "Soccer Field", "departments": ["secretariat", "humanResources"] },
+      { "text": "Ruano Building", "departments": ["finance"] },
+      { "text": "Quadricentennial Park", "departments": ["externalAffairs"] }
+    ]
+  },
+  {
+    "question": "Which Studio Ghibli character resonates with you the most?",
+    "image": "/assets/quiz/questions/question3.png",
+    "imageCredit": "Photo from Ponyo (2008)",
+    "answers": [
+      { "text": "Ponyo", "departments": ["creatives", "externalAffairs"] },
+      { "text": "Howl Jenkins Pendragon", "departments": ["photography"] },
+      { "text": "Calcifer", "departments": ["webTechnologies"] },
+      { "text": "Chihiro Ogino", "departments": ["writing"] },
+      { "text": "Kiki", "departments": ["videography"] },
+      { "text": "Totoro", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Seiji Amasawa", "departments": ["communityDevelopment"] },
+      { "text": "Ursula", "departments": ["secretariat"] },
+      { "text": "Seita", "departments": ["humanResources"] },
+      { "text": "Arrietty", "departments": ["finance"] }
+    ]
+  },
+  {
+    "question": "Your school bag for this year but accessorized with anik-aniks…",
+    "image": "/assets/quiz/questions/question4.png",
+    "imageCredit": "Photo from My Neighbor Totoro (1988)",
+    "answers": [
+      { "text": "Smiski", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Sonny Angel", "departments": ["secretariat", "humanResources"] },
+      { "text": "Hirono", "departments": ["finance"] },
+      { "text": "Enamel and button pins", "departments": ["externalAffairs"] },
+      { "text": "Tiny squishmallows", "departments": ["writing", "videography"] },
+      { "text": "Matching beaded charms", "departments": ["webTechnologies"] },
+      { "text": "Statement patches", "departments": ["photography"] },
+      { "text": "Snoopy/Miffy plush keychain", "departments": ["creatives"] }
+    ]
+  },
+  {
+    "question": "What’s your main character aesthetic?",
+    "image": "/assets/quiz/questions/question5.png",
+    "imageCredit": "Photo from Whisper of the Heart (1995)",
+    "answers": [
+      { "text": "Coquette-core Sanrio lover", "departments": ["writing", "photography"] },
+      { "text": "Burned out overachiever", "departments": ["webTechnologies"] },
+      { "text": "Anime geek with an endless watchlist", "departments": ["finance", "humanResources"] },
+      { "text": "Pogi-typings rich clean boy", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Mysterious, unbothered athlete", "departments": ["communityDevelopment"] },
+      { "text": "Cinephile who enjoys reading reviews", "departments": ["secretariat"] },
+      { "text": "The love child of OA and nonchalant", "departments": ["videography"] },
+      { "text": "Cubao expo, trying hard indie", "departments": ["creatives"] },
+      { "text": "A golden retriever in human form", "departments": ["externalAffairs"] }
+    ]
+  },
+  {
+    "question": "Who’s your favorite Harry Potter character? (For non-potterheads, which one do you gravitate to the most)?",
+    "image": "/assets/quiz/questions/question6.png",
+    "imageCredit": "Photo from Ocean Waves (1993)",
+    "answers": [
+      { "text": "Harry Potter", "departments": ["externalAffairs", "publicity", "communityDevelopment"] },
+      { "text": "Hermione Granger", "departments": ["secretariat", "finance"] },
+      { "text": "Ron Weasley", "departments": ["humanResources", "photography"] },
+      { "text": "Cedric Diggory", "departments": ["communityDevelopment"] },
+      { "text": "Draco Malfoy", "departments": ["webTechnologies", "videography"] },
+      { "text": "Luna Lovegood", "departments": ["writing", "creatives"] }
+    ]
+  },
+  {
+    "question": "Which anime series would you add on your watch-list based on the key words?",
+    "image": "/assets/quiz/questions/question7.png",
+    "imageCredit": "Photo from When Marnie Was There (2015)",
+    "answers": [
+      { "text": "Nana (Heartbreak)", "departments": ["writing", "publicity", "communityDevelopment"] },
+      { "text": "Monster (Neurotic)", "departments": ["communityDevelopment", "finance"] },
+      { "text": "Ano Hana (Illusion)", "departments": ["creatives"] },
+      { "text": "Neon Genesis Evangelion (Lovecraftian)", "departments": ["secretariat", "videography"] },
+      { "text": "Kimi Ni Todoke (Affectionate)", "departments": ["humanResources", "externalAffairs"] },
+      { "text": "Noragami (Godlike)", "departments": ["webTechnologies", "photography"] }
+    ]
+  },
+  {
+    "question": "How do you wish your summer could’ve went?",
+    "image": "/assets/quiz/questions/question8.png",
+    "imageCredit": "Photo from The Wind Rises (2013)",
+    "answers": [
+      { "text": "My summer of movies and bed-rotting", "departments": ["writing", "creatives"] },
+      { "text": "Cute cafe hunting to romanticize", "departments": ["photography", "videography"] },
+      { "text": "Catch up with my untouched reading list", "departments": ["finance"] },
+      { "text": "Staycation with the whole fam", "departments": ["humanResources"] },
+      {
+        "text": "Road trip to the beaches with friends",
+        "departments": ["webTechnologies", "publicity", "communityDevelopment"]
+      },
+      { "text": "Stacking up my CV and portfolio", "departments": ["secretariat", "externalAffairs"] },
+      { "text": "Clean up my space after so long", "departments": ["communityDevelopment"] }
+    ]
+  },
+  {
+    "question": "Which film genre do you think best represents you?",
+    "image": "/assets/quiz/questions/question9.png",
+    "imageCredit": "Photo from The Secret World of Arrietty (2010)",
+    "answers": [
+      { "text": "A technicolor musical story", "departments": ["videography", "photography"] },
+      { "text": "From friends to lovers: fall romance", "departments": ["secretariat", "humanResources"] },
+      { "text": "Period piece with pastel gowns", "departments": ["creatives"] },
+      { "text": "Noir-esque horror murder case", "departments": ["externalAffairs", "finance"] },
+      { "text": "Spicy gossip in high school comedy", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Action-packed underground club", "departments": ["webTechnologies"] },
+      { "text": "Dark academia coming-of-age tale", "departments": ["writing"] }
+    ]
+  },
+  {
+    "question": "Song to listen to as you romanticize your daily commute.",
+    "image": "/assets/quiz/questions/question10.png",
+    "imageCredit": "Photo from Only Yesterday (1991)",
+    "answers": [
+      { "text": "Jellyfish - Sunset Rollercoaster", "departments": ["videography", "photography"] },
+      { "text": "End of Beginning - Djo", "departments": ["webTechnologies"] },
+      { "text": "How sweet - NewJeans", "departments": ["writing"] },
+      { "text": "Pink Pony Club - Chappell Roan", "departments": ["publicity", "communityDevelopment"] },
+      { "text": "Sexy To Someone - Clairo", "departments": ["externalAffairs"] },
+      { "text": "360 - Charli XCX", "departments": ["finance"] },
+      { "text": "I Know The End - Phoebe Bridgers", "departments": ["creatives"] },
+      { "text": "Espresso - Sabrina Carpenter", "departments": ["secretariat"] },
+      { "text": "Birds of A Feather - Billie Eilish", "departments": ["humanResources"] },
+      { "text": "Ribs - Lorde", "departments": ["communityDevelopment"] }
+    ]
+  }
+]
