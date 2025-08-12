@@ -1,7 +1,7 @@
 import _Link from "next/link";
 import styles from "./Navbar.module.scss";
 
-const Navbar = (props: { containsApply: boolean }) => {
+const Navbar = (props: { containsApply: boolean; containsResults: boolean }) => {
   const Link = (props: { href: string; children: string; special?: boolean }) => {
     return (
       <_Link href={props.href} className={props.special ? styles.special : ""}>
@@ -16,7 +16,7 @@ const Navbar = (props: { containsApply: boolean }) => {
       <Link href="/r101" children="R101" />
       <Link href="/faqs" children="FAQS" />
       <Link href="/quiz" children="QUIZ" />
-      <Link href="/results" children="RESULTS" />
+      {props.containsResults && <Link href="/results" children="RESULTS" />}
       <Link href="/discord" children="THE POOL" />
       {props.containsApply && <Link href="/apply" children="APPLY NOW" special />}
     </div>
