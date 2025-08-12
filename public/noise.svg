@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 700 700" width="700" height="700" style="--specularOpacity:0.0">
+  <defs>
+    <filter id="nnnoise-filter" x="-20%" y="-20%" width="140%" height="140%" 
+            filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" 
+            color-interpolation-filters="linearRGB">
+
+      <!-- Noise texture -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="4" seed="15" 
+                    stitchTiles="stitch" width="100%" height="100%" result="turbulence" />
+
+      <!-- Specular highlights -->
+      <feSpecularLighting in="turbulence" surfaceScale="15" specularConstant="0.75" 
+                          specularExponent="20" lighting-color="white"
+                          width="100%" height="100%" result="specularLighting">
+        <feDistantLight azimuth="3" elevation="100" />
+      </feSpecularLighting>
+
+      <!-- Use turbulence as alpha mask -->
+      <feComposite in="specularLighting" in2="turbulence" operator="in" result="specularWithAlpha" />
+
+      <!-- Fade using CSS variable -->
+      <feComponentTransfer in="specularWithAlpha" result="specularFaded">
+        <feFuncA type="linear" slope="var(--specularOpacity)" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Transparent base -->
+  <rect width="700" height="700" fill="transparent" />
+  
+  <!-- Layer with faded specular highlights -->
+  <rect width="700" height="700" fill="#ffffff" fill-opacity="0.2" filter="url(#nnnoise-filter)" />
+</svg>
