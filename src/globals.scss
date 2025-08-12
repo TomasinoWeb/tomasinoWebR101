@@ -133,6 +133,21 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Typography */
+:root {
+  /* Desktop */
+  --font-sizes-caption-label: 14px;
+  --font-sizes-secondary-base: 16px;
+  --font-sizes-base: 20px;
+  --font-sizes-p-lead: 24px;
+  --font-sizes-h3: 36px;
+  --font-sizes-h2: 48px;
+  --font-sizes-main-title: 64px;
+  --font-sizes-hero-title: 96px;
+
+  --header-height: 100px;
+  --footer-height: 53.3333px;
+}
 
 @media screen and (max-width: 850px) {
   :root {
@@ -167,22 +182,6 @@ table {
   --secondary-dark-cream: #d9b39f;
   --secondary-light-blue: #bfebff;
   --secondary-light-yellow: #fff1aa;
-}
-
-/* Typography */
-:root {
-  /* Desktop */
-  --font-sizes-caption-label: 14px;
-  --font-sizes-secondary-base: 16px;
-  --font-sizes-base: 20px;
-  --font-sizes-p-lead: 24px;
-  --font-sizes-h3: 36px;
-  --font-sizes-h2: 48px;
-  --font-sizes-main-title: 64px;
-  --font-sizes-hero-title: 96px;
-
-  --header-height: 100px;
-  --footer-height: 53.3333px;
 }
 
 @media screen and (max-width: 850px) {
