@@ -1,7 +1,7 @@
 import { GenerateLayoutOptionsImpl } from "@scinorandex/layout";
 import { Department } from "../../utils/departmentEnum";
 
-export type Result = { name: string; department: Department; team: string[] };
+export type Result = { name: string; department: Department; team: string | null };
 
 export interface PublicLayoutOptions extends GenerateLayoutOptionsImpl {
   ClientSideLayoutProps: {

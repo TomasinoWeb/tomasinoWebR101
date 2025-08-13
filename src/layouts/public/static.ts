@@ -6,7 +6,15 @@ const DOMAIN = "https://apply.tomasinoweb.org";
 const TESTING = true;
 export async function fetchResults() {
   if (TESTING)
-    return { success: true, results: [{ name: "test", department: "Web Technologies" as const, team: ["test"] }] };
+    return {
+      success: true,
+      results: [
+        { name: "Lance Owen Gulinao", department: "Web Technologies" as const, team: "Front-end" },
+        { name: "Neil Casas", department: "Web Technologies" as const, team: "Back-end" },
+        { name: "Zeandarra Giva", department: "Web Technologies" as const, team: "UI/UX" },
+        { name: "Winfrey De Vera", department: "Web Technologies" as const, team: "Front-end" },
+      ],
+    };
 
   try {
     const { data } = await axios.post(DOMAIN + "/api/trpc/public.results?batch=1", { 0: {} });

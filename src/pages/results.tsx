@@ -9,10 +9,10 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { departments, Department } from "../utils/departmentEnum";
 
+type DepartmentResults = { name: string; team: string | null }[];
+type ResultsObject = { [key in Department]: DepartmentResults };
 type Props = {
-  results: {
-    [key in Department]: { name: string; team: string | null }[];
-  };
+  results: ResultsObject;
 };
 
 export default PublicLayoutFrontend.use<Props>(({ results }) => {
@@ -37,8 +37,10 @@ export default PublicLayoutFrontend.use<Props>(({ results }) => {
           <Select
             className={styles.selector_inner}
             placeholder="Select your Department"
-            options={departments.map((department) => ({ value: department, label: department }))}
             onChange={(e) => setDepartment(e!.value)}
+            options={departments
+              .filter((d) => results[d].length > 0)
+              .map((department) => ({ value: department, label: department }))}
             styles={{
               control: (baseStyles, state) => ({
                 ...baseStyles,
@@ -51,25 +53,40 @@ export default PublicLayoutFrontend.use<Props>(({ results }) => {
         </div>
 
         <div className={styles.blocks}>
-          <Block />
-          <Block />
-          <Block />
-          <Block />
+          {department != null ? (
+            <Block key={department} results={results[department]} department={department} />
+          ) : (
+            departments.map(
+              (department) =>
+                results[department].length > 0 && (
+                  <Block key={department} results={results[department]} department={department} />
+                )
+            )
+          )}
         </div>
       </div>
     ),
   };
 });
 
-function Block() {
+function Block({ results, department }: { department: Department; results: DepartmentResults }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const sorted = results.sort((a, b) => {
+    if (a.team != null && b.team != null) {
+      const compared = a.team.localeCompare(b.team);
+      if (compared != 0) return compared;
+    }
+
+    return a.name.localeCompare(b.name);
+  });
 
   return (
     <div className={styles.block + " " + (isOpen ? styles.opened : "")} onClick={() => setIsOpen(!isOpen)}>
       <div className={styles.block_header}>
         <div className={styles.left}>
           <Image src={Placeholder} alt="placeholder" width={100} height={100} />
-          <h2>Web Technologies</h2>
+          <h2>{department}</h2>
         </div>
 
         <FontAwesomeIcon icon={faPlus} />
@@ -77,10 +94,12 @@ function Block() {
 
       <div className={styles.block_body}>
         <ol>
-          <li>Lance Owen Gulinao</li>
-          <li>Lance Owen Gulinao</li>
-          <li>Lance Owen Gulinao</li>
-          <li>Lance Owen Gulinao</li>
+          {sorted.map((result, idx) => (
+            <li key={idx}>
+              {result.name}
+              {result.team != null ? ` - ${result.team}` : ""}
+            </li>
+          ))}
         </ol>
       </div>
     </div>
@@ -91,6 +110,10 @@ export const getStaticProps = PublicLayoutBackend.use<Props>({
   async getStaticProps(ctx, { results }) {
     if (!results.success) return { notFound: true, revalidate: 900 };
 
-    return { props: {} as any };
+    const resultsObject = {} as ResultsObject;
+    for (const department of departments) resultsObject[department] = [];
+    for (const applicant of results.results) resultsObject[applicant.department].push(applicant);
+
+    return { props: { results: resultsObject } };
   },
 });
