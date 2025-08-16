@@ -1,0 +1,89 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageContainer {
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.hero {
+  .pageTitle {
+    color: var(--neutral-white, #fbf9f4);
+    text-align: center;
+    text-shadow: -3px 5px 0 #1e1e1e;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
+    font-family: Snoopy;
+    font-size: var(--font-sizes-hero-title, 96px);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -2px;
+  }
+
+  .description {
+  }
+}
+
+.notebook {
+  /*
+        Notebook styling from here:
+        https://codepen.io/designcouch/pen/bGvzKE?editors=0100
+    */
+
+  --notebook-margin-size: 30px;
+  --notebook-background-color: var(--neutral-cream, #fcebd1);
+
+  background: linear-gradient(
+    to bottom,
+    var(--notebook-background-color),
+    calc(var(--notebook-margin-size) - 0.8px),
+    rgba(30, 30, 30, 0.6) 0.8px
+  );
+  background-size: 100% 30px;
+  position: relative;
+  overflow: hidden;
+
+  -webkit-box-shadow:
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 0px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow:
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 0px 6px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow:
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 0px 6px rgba(0, 0, 0, 0.2);
+  -o-box-shadow:
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 0px 6px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 0px 6px rgba(0, 0, 0, 0.2);
+
+  p.notebook-text {
+    margin: 0 0 var(--notebook-margin-size) 0;
+  }
+}
+
+.speechBubble {
+  .bottom {
+    .imageContainer {
+      width: 128.387px;
+      height: 148px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.section {
+  width: 100%;
+  padding: 100px; /* could probably be adjusted */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
