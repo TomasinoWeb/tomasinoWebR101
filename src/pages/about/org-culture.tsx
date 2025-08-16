@@ -148,7 +148,7 @@ type StatProps = {
 const Stat = (props: StatProps) => {
   return (
     <div className={styles.stat}>
-      <span className={styles.statNumber}>{props.stat}</span>
+      <span className={styles.statValue}>{props.stat}</span>
       <span className={styles.statLabel}>{props.description}</span>
     </div>
   );
