@@ -6,27 +6,9 @@
 
 .imageContainer {
   img {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: auto;
-  }
-}
-
-.hero {
-  .pageTitle {
-    color: var(--neutral-white, #fbf9f4);
-    text-align: center;
-    text-shadow: -3px 5px 0 #1e1e1e;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
-    font-family: Snoopy;
-    font-size: var(--font-sizes-hero-title, 96px);
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: -2px;
-  }
-
-  .description {
   }
 }
 
@@ -80,6 +62,42 @@
   }
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid var(--neutral-black, #1e1e1e);
+  padding-bottom: 32px;
+
+  .pageTitle {
+    color: var(--neutral-white, #fbf9f4);
+    text-align: center;
+    text-shadow: -3px 5px 0 #1e1e1e;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
+    font-family: Snoopy;
+    font-size: var(--font-sizes-hero-title, 96px);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: normal;
+  }
+
+  .pageDescription {
+    width: 40%;
+    color: #393939;
+    text-align: center;
+    font-family: Inter;
+    font-size: var(--font-sizes-base, 20px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.4px;
+    line-break: auto;
+  }
+}
+
 .section {
   width: 100%;
   padding: 100px; /* could probably be adjusted */
@@ -121,6 +139,43 @@
         font-style: normal;
         font-weight: 400; /* This seems to be bugged? */
         letter-spacing: -0.44px;
+      }
+    }
+  }
+
+  .video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      width: clamp(50vw, 50vw, 770px);
+    }
+    .characters {
+      display: flex;
+      justify-content: center;
+      height: 90px;
+
+      .imageContainer {
+        display: block;
+        width: 100%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .videoContainer {
+      padding: 24px;
+      border: 2.409px solid var(--neutral-black, #1e1e1e);
+      background: var(--neutral-white, #fbf9f4);
+      height: 433px;
+
+      /* 12px-solid-shadow */
+      box-shadow: -12px 12px 0 0 #1e1e1e;
+      iframe {
+        width: 100%;
+        height: 100%;
       }
     }
   }

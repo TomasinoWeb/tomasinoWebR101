@@ -24,19 +24,27 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           <h2 className={styles.pageTitle}>ORG CULTURE</h2>
           <p className={styles.pageDescription}>
             Hop in for a quick ride behind the scenes of TomasinoWeb, where the work is real, the fun is louder, and the
-            world’s just a little sillier. It’s the crew that laughs, works, and doodles too!
+            world’s just a little sillier.
           </p>
+          <p className={styles.pageDescription}>It’s the crew that laughs, works, and doodles too!</p>
         </section>
         <section className={styles.section}>
-          <div className={styles.tv}>
+          <div className={styles.video}>
             <div className={`${styles.characters}`}>
               <span className={`${styles.imageContainer}`}>
                 <Image src={snoopyHorizontal} alt={"Snoopy Characters"} />
               </span>
             </div>
 
-            <div className={styles.tvBorder}>
-              <video className={styles.tvScreen}> {/* link=https://www.youtube.com/watch?v=-Naoomw8gO4 */}</video>
+            <div className={styles.videoContainer}>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/-Naoomw8gO4"
+                title="YouTube video player"
+                allow="accelerometer;  autoplay; clipboard-write; encrypted-media; gyroscope;  picture-in-picture; web-share"
+                className={styles.videoScreen}
+              />
             </div>
           </div>
         </section>
