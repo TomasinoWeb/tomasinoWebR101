@@ -1,13 +1,23 @@
 .button {
   font-family: Groundnut, sans-serif;
   font-size: var(--font-sizes-base, 1.25rem);
-  max-width: 100%;
   color: var(--neutral-black, #1e1e1e);
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
   line-height: normal;
   text-align: center;
+  text-decoration: none;
+  transition: 150ms ease-in-out all;
+  width: min-content;
+
+  &:hover {
+    transition: 150ms ease-in-out all;
+  }
+}
+
+.maxWidth {
+  width: 100%;
 }
 
 /* ==== VARIANTS ==== */

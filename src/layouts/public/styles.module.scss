@@ -68,6 +68,7 @@
   margin-top: var(--header-height);
   min-width: 100vw;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  z-index: 5;
 }
 
 .transparentHeader {
@@ -83,6 +84,7 @@
 .footer {
   background-color: var(--neutral-white, #fbf9f4);
   --footer-fg: var(--neutral-black, #1e1e1e);
+  z-index: 10;
 }
 
 .transparentFooter {

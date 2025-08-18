@@ -4,45 +4,33 @@ import styles from "./Button.module.scss";
 
 type CommonProps = {
   children: React.ReactNode;
-  variant?: "speech" | "pill" | "rectangle";
-  size?: "large" | "small";
+  variant: "speech" | "pill" | "rectangle";
   className?: string;
+  maxWidth?: boolean;
 };
 
 type ButtonElementProps = CommonProps & {
-  href?: never;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  type?: "submit" | "reset" | "button";
+  onClick: React.MouseEventHandler<HTMLButtonElement> | "submit" | "reset";
 };
 
 type LinkElementProps = CommonProps & {
   href: string;
-  onClick?: never;
-  type?: never;
 };
 
 type ButtonProps = ButtonElementProps | LinkElementProps;
 
-export const Button = ({
-  children,
-  variant = "rectangle",
-  size = "large",
-  href,
-  onClick,
-  type = "button",
-  className = "",
-}: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
   const classes = `
     ${styles.button} 
-    ${styles[variant]} 
-    ${styles[size]} 
-    ${className}
+    ${styles[props.variant]} 
+    ${props.className}
+    ${props.maxWidth ? styles.maxWidth : ""}
   `;
 
   const content = (
     <>
-      {children}
-      {variant === "speech" && (
+      {props.children}
+      {props.variant === "speech" && (
         <div className={styles.tail_wrapper}>
           <div className={styles.tail}>
             <div className={styles.inner_tail}>
@@ -54,16 +42,20 @@ export const Button = ({
     </>
   );
 
-  if (href) {
+  if ("href" in props) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={props.href} className={classes}>
         {content}
       </Link>
     );
   }
 
   return (
-    <button className={classes} onClick={onClick} type={type}>
+    <button
+      className={classes}
+      onClick={typeof props.onClick === "function" ? props.onClick : undefined}
+      type={typeof props.onClick === "string" ? props.onClick : "button"}
+    >
       {content}
     </button>
   );
