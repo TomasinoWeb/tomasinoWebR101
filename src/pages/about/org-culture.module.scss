@@ -199,7 +199,8 @@
   flex-direction: column;
   width: 100%;
   border-bottom: 1px solid var(--neutral-black, #1e1e1e);
-  padding-bottom: 32px;
+
+  padding: 32px 40px;
 
   .pageTitle {
     color: var(--neutral-white, #fbf9f4);
@@ -216,7 +217,7 @@
   }
 
   .pageDescription {
-    width: 40%;
+    width: clamp(330px, 60vw, 620px);
     color: #393939;
     text-align: center;
     font-family: Inter;
@@ -332,9 +333,6 @@
       width: 80%;
       justify-items: center;
     }
-  }
-
-  &.org-culture {
   }
 }
 

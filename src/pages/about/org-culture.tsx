@@ -20,7 +20,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
     children: (
       <div className={styles.root}>
         {/* Maybe we could make this a component? */}
-        <section className={styles.hero}>
+        <section className={`${styles.hero}`}>
           <h2 className={styles.pageTitle}>ORG CULTURE</h2>
           <p className={styles.pageDescription}>
             Hop in for a quick ride behind the scenes of TomasinoWeb, where the work is real, the fun is louder, and the
