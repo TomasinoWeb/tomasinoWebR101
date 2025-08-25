@@ -212,17 +212,26 @@ type CultureCardProps = {
 
 const CultureCard = (props: CultureCardProps) => {
   return (
-    <div className={styles.cardCard}>
-      <div className={styles.imageContainer}>
+    <div className={styles.cultureCard}>
+      <section className={styles.imageContainer}>
         <Image src={props.image} alt={props.title} className={styles.cardImage} />
-      </div>
+      </section>
 
-      <div className={`${styles.title}`}>
-        <h4 className={styles.cardTitle}>{props.title}</h4>
-      </div>
-      <div className={styles.notebook} style={{ "--notebook-background-color ": props.bgColor } as React.CSSProperties}>
-        <p className={styles.cardDescription}>{props.description}</p>
-      </div>
+      <section
+        className={styles.bottom}
+        style={{ "--notebook-background-color ": props.bgColor } as React.CSSProperties}
+      >
+        <section
+          className={styles.notebook}
+          style={{ "--notebook-background-color ": props.bgColor } as React.CSSProperties}
+        >
+          <div className={styles.cardTitle}>
+            <h4 className={styles.title}>{props.title}</h4>
+          </div>
+
+          <p className={`${styles.cardDescription} ${styles.notebookText}`}>{props.description}</p>
+        </section>
+      </section>
     </div>
   );
 };
