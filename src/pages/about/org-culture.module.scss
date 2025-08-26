@@ -329,6 +329,10 @@
     gap: 24px;
 
     @media screen and (max-width: 1000px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 720px) {
       grid-template-columns: 1fr;
       width: 80%;
       justify-items: center;
@@ -396,7 +400,7 @@
 
         /* hack to force two lines */
         @media screen and (max-width: 1000px) and (min-width: 650px) {
-          padding: 0 18%;
+          padding: 0;
         }
 
         .title {
@@ -405,7 +409,7 @@
           -webkit-box-orient: vertical; /* Ensures the box model is vertical */
           line-clamp: 2; /* Standard property for future compatibility */
           line-height: 1em;
-          font-size: clamp(18px, 1.6vw, var(--font-sizes-p-lead, 24px));
+          font-size: clamp(20px, 3vw, var(--font-sizes-p-lead, 24px));
 
           width: 100%;
           overflow: hidden;
@@ -419,10 +423,6 @@
           font-weight: 400;
 
           letter-spacing: -0.528px;
-
-          @media screen and (max-width: 1000px) {
-            font-size: var(--font-sizes-p-lead, 24px);
-          }
         }
       }
 
