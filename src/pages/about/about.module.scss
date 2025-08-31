@@ -3,15 +3,29 @@
   flex-direction: column;
 
   section {
-    display: flex;
+    align-self: center;
+    max-width: 1440px;
   }
 }
 
 .top {
   align-items: center;
   justify-content: center;
-  padding: 72px 159px;
+  padding: 14vh 9vw;
   gap: 70px;
+
+  display: flex;
+  flex-direction: column;
+
+  /* inverse */
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 57px 15vw 40px 15vw;
+    gap: 50px;
+  }
 
   .snoopyAndLogo {
     position: relative;
@@ -26,10 +40,19 @@
       margin-right: -35px; /* Make the divs hug each other */
       z-index: -2;
 
+      @media screen and (max-width: 600px) {
+        margin-right: -40px;
+      }
+
       .snoopy {
         width: 156px;
         height: 167px;
         z-index: 2; /* so snoopy goes on top of the scribble*/
+
+        @media screen and (max-width: 600px) {
+          width: 112px;
+          height: 120px;
+        }
       }
 
       .scribble {
@@ -55,10 +78,17 @@
 
       /* 4px-solid-shadow */
       box-shadow: -4px 4px 0 0 var(--neutral-black, #1e1e1e);
+
       img {
         width: 100%;
         height: 100%;
         object-fit: contain;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 137px;
+        height: 137px;
+        padding: 13.5px 18.5px;
       }
     }
   }
@@ -67,13 +97,18 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    .pageTitle {
+
+    .title {
       color: var(--neutral-black, #1e1e1e);
       text-align: left;
       font-family: Groundnut;
       font-size: var(--font-sizes-h2, 48px);
       font-weight: 400;
       letter-spacing: -1.056px;
+
+      @media screen and (max-width: 900px) {
+        text-align: center;
+      }
     }
 
     .description {
@@ -84,6 +119,70 @@
       font-weight: 400;
       line-height: 24px; /* 120% */
       letter-spacing: -0.4px;
+    }
+  }
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 51px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .aboutBox {
+    border: 2px solid var(--neutral-black, #1e1e1e);
+    background: var(--neutral-white, #fbf9f4);
+
+    .textSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      height: 124px;
+      padding: 12px 24px;
+
+      border: 2px solid var(--neutral-black, #1e1e1e);
+      background: var(--neutral-white, #fbf9f4);
+      box-shadow: -2px 4px 0 0 #1e1e1e;
+
+      .title {
+        color: var(--neutral-black, #1e1e1e);
+        font-family: Groundnut;
+        font-size: var(--font-sizes-base, 20px);
+        font-weight: 400;
+      }
+      .description {
+        color: var(--neutral-black, #1e1e1e);
+        font-family: "Helvetica Neue";
+        font-size: var(--font-sizes-secondary-base, 16px);
+        font-weight: 400;
+      }
+    }
+
+    .image {
+      padding: 20px;
+      background-color: var(--neutral-white);
+      border: 2px solid var(--neutral-black, #1e1e1e);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        &:hover {
+          filter: brightness(0.9);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 24px;
+    .aboutBox {
+      width: 80vw;
     }
   }
 }

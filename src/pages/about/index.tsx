@@ -9,6 +9,8 @@ import Scribbles from "../../../public/assets/about/snoopy scribbles.svg";
 import Logo from "../../../public/logo/insignia_yellow.png";
 import AboutBoxPlaceholder from "../../../public/assets/about/about_box_placeholder.png";
 
+import Link from "next/link";
+
 interface PageProps {}
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
@@ -38,7 +40,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </div>
 
           <div className={styles.pageDescription}>
-            <h2 className={styles.pageTitle}>What is Tomasinoweb?</h2>
+            <h2 className={styles.title}>What is Tomasinoweb?</h2>
             <p className={styles.description}>
               TomasinoWeb is the premier digital media organization of the University of Santo Tomas joined by students
               who are immensely interested in multimedia journalism.
@@ -49,21 +51,25 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             </p>
           </div>
         </section>
+
         <section className={styles.bottom}>
           <AboutBox
             title="Departments"
             description="Meet the amazing crews behind each department that power TomasinoWeb!"
             imageSrc={AboutBoxPlaceholder}
-          />
-          <AboutBox
-            title="The People"
-            description="More than just an org — it’s a culture of passion, purpose, and play."
-            imageSrc={AboutBoxPlaceholder}
+            href="about/departments"
           />
           <AboutBox
             title="The People"
             description="The heart of TomasinoWeb? It's the people."
             imageSrc={AboutBoxPlaceholder}
+            href="about/people"
+          />
+          <AboutBox
+            title="Org Culture"
+            description="More than just an org — it’s a culture of passion, purpose, and play."
+            imageSrc={AboutBoxPlaceholder}
+            href="about/org-culture"
           />
         </section>
       </div>
@@ -75,11 +81,12 @@ type AboutBoxProps = {
   title: string;
   description: string;
   imageSrc: StaticImageData | string;
+  href: string;
 };
 
 function AboutBox(props: AboutBoxProps) {
   return (
-    <div className={styles.aboutBox}>
+    <Link href={props.href} className={styles.aboutBox}>
       <section className={styles.textSection}>
         <h3 className={styles.title}>{props.title.toUpperCase()}</h3>
         <p className={styles.description}>{props.description}</p>
@@ -87,7 +94,7 @@ function AboutBox(props: AboutBoxProps) {
       <section className={styles.image}>
         <Image src={props.imageSrc} alt={props.title} />
       </section>
-    </div>
+    </Link>
   );
 }
 
