@@ -1,0 +1,86 @@
+[
+  {
+    "id": "secretariat",
+    "name": "Secretariat",
+    "description": "Efficient and adaptable, secretaries ensure that documents and trasnactions are kept and created through organized systems.",
+    "image": "../../assets/department-images/department-blocks-SEC.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-SEC.svg"
+  },
+  {
+    "id": "finance",
+    "name": "Finance",
+    "description": "With great attention to detail and numbers, the Finance department manages the financial needs and demands of the premier digital media organziation of the University.",
+    "image": "../../assets/department-images/department-blocks-FN.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-finance.svg"
+  },
+  {
+    "id": "external_affairs",
+    "name": "External Affairs",
+    "description": "Through the power of linkages and partnerships, the External Affairs department connects digital journalism to the people of various affiliations, as well as managing its brand identity online.",
+    "image": "../../assets/department-images/department-blocks-EA.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-EA.svg"
+  },
+  {
+    "id": "human_resources",
+    "name": "Human Resources",
+    "description": "Internal communication and development are two of the greatest assets of any organization. With the Human Resources department, members are assessed and empowered to grow as budding young professionals.",
+    "image": "../../assets/department-images/department-blocks-HR.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-HR.svg"
+  },
+  {
+    "id": "publicity_and_communications",
+    "name": "Publicity and Communications",
+    "description": "Garnering a wide audience, publicists tackle the spread of projects, engagements, and content of the organization to reach every single member of the Thomasian community.",
+    "image": "../../assets/department-images/department-blocks-PAC.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-PAC.svg"
+  },
+  {
+    "id": "community_development",
+    "name": "Community Development",
+    "description": "The team plans and organizes outreach activities that will benefit TomasinoWeb's partner communities.",
+    "image": "../../assets/department-images/department-blocks-CD.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-CD.svg"
+  },
+  {
+    "id": "writing",
+    "name": "Writing",
+    "description": "Writing is not just limited to telling stories. They disturb the indisturbed, and take it upon themselves to make sure that the necessary truths see the light of day.",
+    "image": "../../assets/department-images/department-blocks-WR.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-WR.svg"
+  },
+  {
+    "id": "photography",
+    "name": "Photography",
+    "description": "Photographers are able to tell a story beyond words, and capture the unseen facetsof the dominant narratives from all angles and perspectives.",
+    "image": "../../assets/department-images/department-blocks-PH.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-PH.svg"
+  },
+  {
+    "id": "videography",
+    "name": "Videography",
+    "description": "Videographers tell stories through frames in motion and angles you've never seen before.",
+    "image": "../../assets/department-images/department-blocks-VID.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-VID.svg"
+  },
+  {
+    "id": "creatives",
+    "name": "Creatives",
+    "description": "Artists narrate stories through their impactful artworks. They draw, create, and make the impossible possible.",
+    "image": "../../assets/department-images/department-blocks-CR.png",
+    "hoverImage": "../../assets/department-images/department-blocks-CR.png"
+  },
+  {
+    "id": "web_technologies",
+    "name": "Web Technologies",
+    "description": "Web Technologists are the competetive game changers in the modern world. They innovate, lead, and evolve the way we tell stories today.",
+    "image": "../../assets/department-images/department-blocks-WT.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-WT.svg"
+  },
+  {
+    "id": "cant_decide",
+    "name": "Can't Decide?",
+    "description": "Take our quiz to find your perfect fit!",
+    "image": "../../assets/department-images/department-blocks-DECIDE.svg",
+    "hoverImage": "../../assets/department-images/department-blocks-DECIDE.svg"
+  }
+]
