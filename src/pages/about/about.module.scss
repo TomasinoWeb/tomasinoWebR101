@@ -1,0 +1,89 @@
+.page {
+  display: flex;
+  flex-direction: column;
+
+  section {
+    display: flex;
+  }
+}
+
+.top {
+  align-items: center;
+  justify-content: center;
+  padding: 72px 159px;
+  gap: 70px;
+
+  .snoopyAndLogo {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    .snoopyScribble {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: -35px; /* Make the divs hug each other */
+      z-index: -2;
+
+      .snoopy {
+        width: 156px;
+        height: 167px;
+        z-index: 2; /* so snoopy goes on top of the scribble*/
+      }
+
+      .scribble {
+        margin-top: -10px; /* magic number so that the images are closer together */
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .logo {
+      border-radius: 50%;
+      /* the initial logo container should be 232 x 232 */
+      padding: 22.5px 32px;
+      width: 232px;
+      height: 232px;
+
+      border: 2px solid var(--neutral-black, #1e1e1e);
+      background: var(--neutral-white, #fbf9f4);
+
+      /* 4px-solid-shadow */
+      box-shadow: -4px 4px 0 0 var(--neutral-black, #1e1e1e);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .pageDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .pageTitle {
+      color: var(--neutral-black, #1e1e1e);
+      text-align: left;
+      font-family: Groundnut;
+      font-size: var(--font-sizes-h2, 48px);
+      font-weight: 400;
+      letter-spacing: -1.056px;
+    }
+
+    .description {
+      color: var(--neutral-black, #1e1e1e);
+      font-family: "Helvetica Neue";
+      font-size: var(--font-sizes-base, 20px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 120% */
+      letter-spacing: -0.4px;
+    }
+  }
+}
