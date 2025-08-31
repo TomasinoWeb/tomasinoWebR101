@@ -8,6 +8,7 @@ import { StaticImageData } from "next/image";
 import snoopyHorizontal from "../../../public/assets/about/org-culture/snoopy-horizontal.png";
 import sampleCultureImage from "../../../public/assets/about/org-culture/sample-culture.png";
 import snoopyImage from "../../../public/assets/about/org-culture/snoopy.png";
+import websiteLogo from "../../../public/assets/about/org-culture/tomweb logo.webp";
 
 interface PageProps {}
 
@@ -102,9 +103,38 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             secondaryText="Snoop around our websites"
             snoopyImage={snoopyImage}
           />
+          <div className={styles.otherWebsites}>
+            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+              <Image src={websiteLogo} alt="main website" />
+            </a>
+            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+              <Image src={websiteLogo} alt="main website" />
+            </a>
+            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+              <Image src={websiteLogo} alt="main website" />
+            </a>
+            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+              <Image src={websiteLogo} alt="main website" />
+            </a>
+          </div>
           {/* Testimonials here */}
-          <div></div>
-          <div></div>
+          {/* 
+          
+          <QuoteBlock 
+            imageSrc=?,
+            quoteText,
+            authorName,
+            authorDetails,
+            imagePosition = {"left"}
+          />
+          <QuoteBlock 
+            imageSrc=?,
+            quoteText,
+            authorName,
+            authorDetails,
+            imagePosition = {"right"}
+          />
+          */}
         </section>
 
         {/* Happy Dances */}

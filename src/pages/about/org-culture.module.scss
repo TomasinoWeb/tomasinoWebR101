@@ -56,12 +56,14 @@
     .bubbleContainer:first-child {
       position: absolute;
       transform: rotate(2.489deg);
+      opacity: 0.8;
     }
 
     .bubbleContainer:nth-child(3) {
       top: 0;
       position: absolute;
       transform: rotate(-2.489deg);
+      opacity: 0.8;
     }
 
     .bubbleContainer:nth-child(2) {
@@ -220,7 +222,7 @@
     width: clamp(330px, 60vw, 620px);
     color: #393939;
     text-align: center;
-    font-family: Inter;
+    font-family: "Helvetica Neue";
     font-size: var(--font-sizes-base, 20px);
     font-style: normal;
     font-weight: 400;
@@ -277,6 +279,10 @@
         font-weight: 400; /* This seems to be bugged? */
         letter-spacing: -0.44px;
       }
+    }
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @media screen and (max-width: 800px) {
@@ -336,6 +342,19 @@
       grid-template-columns: 1fr;
       width: 80%;
       justify-items: center;
+    }
+  }
+
+  .otherWebsites {
+    gap: 24px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    /* Could possibly be deleted if needed */
+    .website {
+      background-color: var(--neutral-white);
+      border: 2px solid var(--neutral-gray);
     }
   }
 }
