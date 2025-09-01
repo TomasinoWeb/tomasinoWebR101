@@ -255,6 +255,12 @@ table {
 
 @media screen and (max-width: 850px) {
   :root {
+    --header-height: 90px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  :root {
     --footer-height: 212.5px;
 
     --font-sizes-caption-label: 14px;

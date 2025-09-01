@@ -1,5 +1,6 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
+import { Button } from "../components/Button";
 
 interface PageProps {}
 
@@ -7,13 +8,9 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   return {
     header: "mini",
     footer: "transparent",
-    dots: "full",
+    dots: "subtle",
 
-    children: (
-      <>
-        <h2>Main</h2>
-      </>
-    ),
+    children: <>testing!</>,
   };
 });
 
