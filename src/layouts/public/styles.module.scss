@@ -50,10 +50,17 @@
       flex: 1;
       display: flex;
       max-width: 800px;
+
+      @media screen and (max-width: 1350px) {
+        max-width: 600px;
+      }
     }
   }
 
   border-bottom: 2px solid black;
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
 }
 
 .miniHeader {
@@ -64,13 +71,6 @@
   }
 }
 
-.main {
-  margin-top: var(--header-height);
-  min-width: 100vw;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
-  z-index: 5;
-}
-
 .transparentHeader {
   .main {
     margin-top: 0px;
@@ -79,6 +79,56 @@
   .header {
     background: transparent;
   }
+}
+
+.mobile {
+  display: none;
+  background-color: transparent;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: var(--header-height);
+
+  .inner {
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 850px) {
+    display: flex;
+  }
+}
+
+.overlappingMini {
+  .header {
+    @media screen and (max-width: 850px) {
+      --header-height: 100px;
+      display: block;
+    }
+    @media screen and (max-width: 670px) {
+      --header-height: 90px;
+      display: none;
+    }
+  }
+  .mobile {
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 670px) {
+      display: flex;
+    }
+  }
+}
+
+.main {
+  margin-top: var(--header-height);
+  min-width: 100vw;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  z-index: 5;
 }
 
 .footer {
