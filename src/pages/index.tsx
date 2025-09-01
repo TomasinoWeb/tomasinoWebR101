@@ -8,9 +8,9 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   return {
     header: "mini",
     footer: "transparent",
-    dots: "full",
+    dots: "subtle",
 
-    children: <></>,
+    children: <>testing!</>,
   };
 });
 

@@ -3,13 +3,13 @@ import { PublicLayoutOptions } from "./common";
 import { AnimatePresence } from "framer-motion";
 import styles from "./styles.module.scss";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import { MobileNavbar, Navbar } from "../../components/Navbar";
 
 export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>({
   layoutComponent({ internalProps, layoutProps }) {
     return (
       <div
-        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : styles.subtleDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""}`}
+        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : styles.subtleDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""}`}
       >
         <header className={styles.header + " " + (layoutProps.header === "mini" ? styles.miniHeader : "")}>
           <div className={styles.inner}>
@@ -22,6 +22,12 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
             <div className={styles.nav}>
               <Navbar containsApply={layoutProps.header !== "mini"} />
             </div>
+          </div>
+        </header>
+
+        <header className={styles.mobile}>
+          <div className={styles.inner}>
+            <MobileNavbar variant="mini" />
           </div>
         </header>
 

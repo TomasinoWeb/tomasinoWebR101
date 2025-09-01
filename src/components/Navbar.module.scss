@@ -21,6 +21,10 @@
     padding: 2px 10px;
     text-decoration: none;
     margin: 15px auto;
+
+    @media screen and (max-width: 1050px) {
+      padding: 2px 6px;
+    }
   }
 
   .selected,
@@ -38,5 +42,83 @@
     height: 100%;
     padding: 20px;
     justify-self: right;
+  }
+}
+
+.mobile {
+  flex: 1;
+  background: var(--neutral-white);
+
+  border: 2px solid black;
+  border-radius: 35px;
+  box-shadow: -4px 4px 0 0 var(--neutral-black, #1e1e1e);
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    .left {
+      .tomwebLogo {
+        width: 40px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .right {
+      svg {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bottom {
+    max-height: 0px;
+    transition: max-height 0.3s ease-in-out;
+    overflow-y: hidden;
+
+    .links {
+      border-top: 2px solid var(--neutral-black, #1e1e1e);
+      border-top-color: transparent;
+      transition: 150ms ease-in-out all;
+      padding-top: 10px;
+
+      a {
+        text-align: center;
+        display: block;
+        font-family: Groundnut, sans-serif;
+        color: black;
+        padding: 6px 10px;
+        font-size: 18px;
+        text-decoration: none;
+        margin: 5px 0px;
+      }
+
+      .special {
+        display: block;
+        margin: 0px;
+
+        border: 3px solid black;
+        border-top: 2px solid black;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+        border-radius: 100px;
+        height: 100%;
+        padding: 20px;
+      }
+    }
+  }
+
+  .opened {
+    max-height: 300px;
+    transition: max-height 0.3s ease-in-out;
+    .links {
+      border-top-color: var(--neutral-black, #1e1e1e);
+      transition: 150ms ease-in-out all;
+    }
   }
 }
