@@ -12,14 +12,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  --dot-size: 4px;
-  --dot-space: 10px;
-  background:
-    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center /
-      var(--dot-space) var(--dot-space),
-    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space)
-      var(--dot-space),
-    var(--dot-color);
+  --dot-size: 10px;
+  --dot-space: 20px;
+
+  background-image: radial-gradient(var(--dot-color) 3px, transparent 0px);
+  background-repeat: repeat; /* or omit this declaration */
+  background-size: 30px 30px;
+  background-position: center;
 
   main {
     flex: 1;

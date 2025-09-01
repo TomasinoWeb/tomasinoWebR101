@@ -20,7 +20,7 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
             )}
 
             <div className={styles.nav}>
-              <Navbar containsApply={layoutProps.header !== "mini"} />
+              <Navbar containsResults={internalProps.resultsAreOut} containsApply={layoutProps.header !== "mini"} />
             </div>
           </div>
         </header>

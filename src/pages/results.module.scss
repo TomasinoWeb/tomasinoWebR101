@@ -1,0 +1,249 @@
+.page {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 60px 30px;
+
+  .header {
+    color: var(--neutral-white, #fbf9f4);
+    text-align: center;
+    text-shadow: -3px 5px 0 #1e1e1e;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
+    font-family: Snoopy;
+    font-size: var(--font-sizes-hero-title, 96px);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -2px;
+  }
+
+  .description {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    > h2 {
+      color: var(--neutral-black, #1e1e1e);
+      text-align: center;
+      font-family: "Helvetica Neue";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 28.8px */
+      letter-spacing: -0.48px;
+
+      max-width: 650px;
+    }
+  }
+
+  .selector {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .selector_inner {
+      width: 100%;
+      max-width: 500px;
+      border: 2px solid var(--neutral-light-gray);
+      border-radius: 12px;
+      font-family: "Helvetica Neue";
+      font-weight: 500;
+    }
+  }
+
+  .blocks {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .block {
+      border: 2px solid var(--neutral-black, #1e1e1e);
+      background: var(--neutral-white, #fbf9f4);
+      padding: 18px 36px;
+      cursor: pointer;
+      max-height: 131.4px;
+      transition: all 0.25s ease-in-out;
+      overflow-y: hidden;
+
+      .block_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--neutral-black, #1e1e1e);
+        margin-bottom: 20px;
+        min-height: 113.4px;
+
+        .left {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 30px;
+        }
+
+        img {
+          width: 50px;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        h2 {
+          color: var(--neutral-black, #1e1e1e);
+          font-family: "Helvetica Neue";
+          font-size: var(--font-sizes-p-lead, 24px);
+          font-style: normal;
+          font-weight: 700;
+          line-height: 32px; /* 133.333% */
+        }
+
+        svg {
+          color: var(--neutral-black, #1e1e1e);
+          font-size: 24px;
+          transform: rotate(0deg);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      .block_body {
+        font-weight: 500;
+
+        ol {
+          list-style-type: decimal;
+          list-style-position: inside;
+
+          li {
+            color: var(--neutral-black, #1e1e1e);
+            font-family: "Helvetica Neue";
+            display: list-item;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .opened {
+      .block_header {
+        svg {
+          transform: rotate(45deg);
+          transform-origin: center;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      max-height: 1000px !important;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+  }
+
+  @media screen and (max-width: 850px) {
+    .header {
+      -webkit-text-stroke-width: 2px;
+    }
+
+    .description {
+      margin-top: 20px;
+
+      > h2 {
+        font-size: 18px;
+
+        max-width: 500px;
+      }
+    }
+
+    .selector {
+      margin-top: 40px;
+    }
+
+    .blocks {
+      .block {
+        padding: 14px 28px;
+        max-height: 123.4px;
+
+        .block_header {
+          .left {
+            img {
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .header {
+      line-height: 56px;
+    }
+
+    .description {
+      margin-top: 20px;
+
+      > h2 {
+        font-size: 18px;
+
+        max-width: 500px;
+      }
+    }
+
+    .selector {
+      margin-top: 40px;
+    }
+
+    .blocks {
+      .block {
+        padding: 7px 14px;
+        max-height: 83.4px;
+
+        .block_header {
+          min-height: 83.4px;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+
+          .left {
+            gap: 15px;
+
+            img {
+              width: 30px;
+            }
+
+            h2 {
+              font-size: 18px;
+            }
+          }
+        }
+
+        .block_body {
+          ol {
+            li {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .blocks {
+      .block {
+        max-height: 70px;
+
+        .block_header {
+          min-height: 0px;
+        }
+
+        .block_body {
+          ol {
+            li {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
