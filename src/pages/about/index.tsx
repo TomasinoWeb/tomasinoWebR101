@@ -33,9 +33,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             </div>
 
             <div className={styles.logo}>
-              {/* <div className={styles.logoContainer}> */}
               <Image src={Logo} alt="Snoopy" />
-              {/* </div> */}
             </div>
           </div>
 
@@ -57,19 +55,19 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             title="Departments"
             description="Meet the amazing crews behind each department that power TomasinoWeb!"
             imageSrc={AboutBoxPlaceholder}
-            href="about/departments"
+            href="/about/departments"
           />
           <AboutBox
             title="The People"
             description="The heart of TomasinoWeb? It's the people."
             imageSrc={AboutBoxPlaceholder}
-            href="about/people"
+            href="/about/people"
           />
           <AboutBox
             title="Org Culture"
             description="More than just an org — it’s a culture of passion, purpose, and play."
             imageSrc={AboutBoxPlaceholder}
-            href="about/org-culture"
+            href="/about/org-culture"
           />
         </section>
       </div>
