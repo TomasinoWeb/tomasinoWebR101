@@ -5,14 +5,31 @@ import styles from "./org-culture.module.scss";
 /* Image imports */
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import snoopyHorizontal from "../../../public/assets/about/org-culture/snoopy-horizontal.png";
-import sampleCultureImage from "../../../public/assets/about/org-culture/sample-culture.png";
+import snoopyHorizontal from "../../../public/assets/about/org-culture/snoopy_horizontal.png";
+import sampleCultureImage from "../../../public/assets/about/org-culture/sample_culture.png";
 import snoopyImage from "../../../public/assets/about/org-culture/snoopy.png";
-import websiteLogo from "../../../public/assets/about/org-culture/tomweb logo.webp";
+import websiteLogo from "../../../public/logo/insignia_yellow.png";
+import comicImage from "../../../public/assets/about/org-culture/test.png";
+import comicDots from "../../../public/assets/about/org-culture/dots.png";
+import memberFrame from "../../../public/assets/about/org-culture/member_frame.png";
+
+import Link from "next/link";
+import { Button } from "../../components/Button";
 
 interface PageProps {}
 
 const Page = PublicLayoutFrontend.use<PageProps>(() => {
+  /* 8 rn */
+  const stickerCardImages = [
+    memberFrame,
+    memberFrame,
+    memberFrame,
+    memberFrame,
+    memberFrame,
+    memberFrame,
+    memberFrame,
+    memberFrame,
+  ];
   return {
     header: "full_regular",
     footer: "regular",
@@ -104,18 +121,18 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             snoopyImage={snoopyImage}
           />
           <div className={styles.otherWebsites}>
-            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
               <Image src={websiteLogo} alt="main website" />
-            </a>
-            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+            </Link>
+            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
               <Image src={websiteLogo} alt="main website" />
-            </a>
-            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+            </Link>
+            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
               <Image src={websiteLogo} alt="main website" />
-            </a>
-            <a href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+            </Link>
+            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
               <Image src={websiteLogo} alt="main website" />
-            </a>
+            </Link>
           </div>
           {/* Testimonials here */}
           {/* 
@@ -172,11 +189,28 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           </span>
         </section>
 
-        <section className={styles.closing}></section>
+        <section className={`${styles.section} ${styles.comic}`} style={{ backgroundImage: `url(${comicImage.src})` }}>
+          <Image className={styles.comicImage} src={comicDots} alt={"tomweb cutie"}></Image>
+          <div className={styles.bgFilterOverlay} />
+          <div className={styles.stickerCard}>
+            <span className={styles.frames}>
+              {stickerCardImages.map((img, i) => (
+                <Image src={img} alt={"portrait"} key={`portrait_${i}`} />
+              ))}
+            </span>
+            <h1>Behind every great story, is a great crew</h1>
+            <Button className={styles.button} variant="rectangle" href={""}>
+              Meet the Dream Team
+            </Button>
+          </div>
+        </section>
       </div>
     ),
   };
 });
+
+/* Components */
+/* Might move this into separate files (if needed) */
 
 type StatProps = {
   stat: string;
