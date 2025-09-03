@@ -8,6 +8,10 @@ import Snoopy from "../../../public/assets/about/about-snoopy.png";
 import Scribbles from "../../../public/assets/about/snoopy scribbles.svg";
 import Logo from "../../../public/logo/insignia_yellow.png";
 import AboutBoxPlaceholder from "../../../public/assets/about/about_box_placeholder.png";
+import AboutBoxColor from "../../../public/assets/about/about_box_color.png";
+
+/* used in about box animation change */
+import { useState } from "react";
 
 import Link from "next/link";
 
@@ -54,19 +58,22 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           <AboutBox
             title="Departments"
             description="Meet the amazing crews behind each department that power TomasinoWeb!"
-            imageSrc={AboutBoxPlaceholder}
+            imageInitial={AboutBoxPlaceholder}
+            imageOnHover={AboutBoxColor}
             href="/about/departments"
           />
           <AboutBox
             title="The People"
             description="The heart of TomasinoWeb? It's the people."
-            imageSrc={AboutBoxPlaceholder}
+            imageInitial={AboutBoxPlaceholder}
+            imageOnHover={AboutBoxColor}
             href="/about/people"
           />
           <AboutBox
             title="Org Culture"
             description="More than just an org — it’s a culture of passion, purpose, and play."
-            imageSrc={AboutBoxPlaceholder}
+            imageInitial={AboutBoxPlaceholder}
+            imageOnHover={AboutBoxColor}
             href="/about/org-culture"
           />
         </section>
@@ -78,11 +85,14 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 type AboutBoxProps = {
   title: string;
   description: string;
-  imageSrc: StaticImageData | string;
+  imageInitial: StaticImageData | string;
+  imageOnHover: StaticImageData | string;
   href: string;
 };
 
 function AboutBox(props: AboutBoxProps) {
+  const [boxImage, setBoxImage] = useState(props.imageInitial);
+
   return (
     <Link href={props.href} className={styles.aboutBox}>
       <section className={styles.textSection}>
@@ -90,7 +100,16 @@ function AboutBox(props: AboutBoxProps) {
         <p className={styles.description}>{props.description}</p>
       </section>
       <section className={styles.image}>
-        <Image src={props.imageSrc} alt={props.title} />
+        <Image
+          src={boxImage}
+          alt={props.title}
+          onMouseEnter={() => {
+            setBoxImage(props.imageOnHover);
+          }}
+          onMouseLeave={() => {
+            setBoxImage(props.imageInitial);
+          }}
+        />
       </section>
     </Link>
   );
