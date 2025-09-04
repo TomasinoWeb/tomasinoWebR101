@@ -84,12 +84,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   margin-bottom: 3rem;
   font-family: 'Snoopy', Arial, sans-serif;
 
   @media screen and (max-width: 768px) {
-    gap: 1rem;
     margin-bottom: 2rem;
   }
 }
@@ -111,7 +109,6 @@
 .zero {
   font-size: calc(var(--font-sizes-hero-title) * 1.5);
   color: transparent;
-  background-color: var(--neutral-white);
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -121,20 +118,20 @@
   position: relative;
   overflow: visible;
   border: 24px solid var(--neutral-black);
-  z-index: 5;
+  z-index: 15;
 }
 
 .snoopyImage {
   position: absolute;
-  bottom: -60px;
+  top: 65%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 10;
-  width: 120px !important;
-  height: 120px !important;
+  width: 160px !important;
+  height: 160px !important;
   object-fit: cover;
-  object-position: center center;
-  clip-path: circle(50% at center);
+  object-position: center top;
+  clip-path: inset(0 0 30px 0);
 }
 
 .buttonContainer {
