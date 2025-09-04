@@ -8,7 +8,14 @@ import { StaticImageData } from "next/image";
 import snoopyHorizontal from "../../../public/assets/about/org-culture/snoopy_horizontal.png";
 import sampleCultureImage from "../../../public/assets/about/org-culture/sample_culture.png";
 import snoopyImage from "../../../public/assets/about/org-culture/snoopy.png";
+
+// other websites
 import websiteLogo from "../../../public/logo/insignia_yellow.png";
+import ThomScoreLogo from "../../../public/assets/about/org-culture/ThomScore_temp.jpg";
+import lamonaLogo from "../../../public/assets/about/org-culture/tomwegg_temp.png";
+import draft143Logo from "../../../public/assets/about/org-culture/draft143_temp.png";
+
+// for stickercard
 import comicImage from "../../../public/assets/about/org-culture/test.png";
 import comicDots from "../../../public/assets/about/org-culture/dots.png";
 import memberFrame from "../../../public/assets/about/org-culture/member_frame.png";
@@ -124,14 +131,14 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
               <Image src={websiteLogo} alt="main website" />
             </Link>
-            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={websiteLogo} alt="main website" />
+            <Link href={"https://lamona.lol"} className={`${styles.website} ${styles.imageContainer}`}>
+              <Image src={lamonaLogo} alt="lamona" />
             </Link>
-            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={websiteLogo} alt="main website" />
+            <Link href={"https://draft143.com"} className={`${styles.website} ${styles.imageContainer}`}>
+              <Image src={draft143Logo} alt="draft143" />
             </Link>
-            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={websiteLogo} alt="main website" />
+            <Link href={"https://uaap.tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+              <Image src={ThomScoreLogo} alt="Thomscore" />
             </Link>
           </div>
           {/* Testimonials here */}
@@ -195,7 +202,9 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           <div className={styles.stickerCard}>
             <span className={styles.frames}>
               {stickerCardImages.map((img, i) => (
-                <Image src={img} alt={"portrait"} key={`portrait_${i}`} />
+                <div className={styles.imageContainer}>
+                  <Image src={img} alt={"portrait"} key={`portrait_${i}`} />
+                </div>
               ))}
             </span>
             <h1>Behind every great story, is a great crew</h1>
@@ -220,7 +229,7 @@ type StatProps = {
 const Stat = (props: StatProps) => {
   return (
     <div className={styles.stat}>
-      <span className={styles.statValue}>{props.stat}</span>
+      <span className={styles.statValue}>{props.stat.toUpperCase()}</span>
       <span className={styles.statLabel}>{props.description}</span>
     </div>
   );
