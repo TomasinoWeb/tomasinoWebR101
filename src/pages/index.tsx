@@ -8,7 +8,7 @@ interface PageProps {}
 export default PublicLayoutFrontend.use<PageProps>(() => {
   return {
     header: "mini",
-    footer: "transparent",
+    footer: "disabled",
     dots: "subtle",
 
     children: (
@@ -25,9 +25,13 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <img className={styles.bird} alt="" src="/assets/landing/bird.png" />
               </div>
             </div>
-            <div className={styles.tomasinoweb}>TOMASINOWEB</div>
+            <div className={styles.tomasinoweb}>
+              TOMASINOWEB
+            </div>
           </div>
-          <div className={styles.titleSubtitle}>est. 2007</div>
+          <div className={styles.titleSubtitle}>
+            est. 2007
+          </div>
         </div>
         <div className={styles.heroButtons}>
           <Button href="" className={styles.heroButton} variant="speech">KNOW TOMASINOWEB'S STORY</Button>
