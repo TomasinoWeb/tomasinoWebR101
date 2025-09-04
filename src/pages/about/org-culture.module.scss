@@ -494,6 +494,7 @@
 .stickerCard {
   z-index: 2;
   padding: 36px;
+  max-width: 1177px;
 
   display: grid;
   grid-template-columns: 1.33fr 1fr;
@@ -506,19 +507,31 @@
   background: var(--neutral-white, #fbf9f4);
   box-shadow: -8px 8px 0 0 var(--neutral-black, #1e1e1e);
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1100px) {
     max-height: 370px;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1100px) {
+    max-width: 700px;
+    padding: 50px;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
 
+  @media screen and (max-width: 700px) {
+    max-width: 350px;
+    padding: 30px;
+  }
+
   h1 {
     font-family: Snoopy;
-    font-size: clamp(32px, 4vw, var(--font-sizes-main-title, 64px));
+    font-size: clamp(48px, 4vw, var(--font-sizes-main-title, 64px));
     line-height: 1em;
+    display: -webkit-box;
+
+    @media screen and (max-width: 800px) {
+      width: 75%;
+    }
   }
 
   a,
@@ -535,11 +548,11 @@
     grid-row: 1 / span 2;
     justify-self: center;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1100px) {
       grid-row: 2;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 700px) {
       grid-template-columns: 1fr 1fr;
     }
 

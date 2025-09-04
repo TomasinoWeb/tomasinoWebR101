@@ -190,7 +190,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
         </section>
 
         <section className={`${styles.section} ${styles.comic}`} style={{ backgroundImage: `url(${comicImage.src})` }}>
-          <Image className={styles.comicImage} src={comicDots} alt={"tomweb cutie"}></Image>
+          <Image className={styles.comicImage} src={comicDots} alt={"dot filter"}></Image>
           <div className={styles.bgFilterOverlay} />
           <div className={styles.stickerCard}>
             <span className={styles.frames}>
@@ -199,7 +199,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
               ))}
             </span>
             <h1>Behind every great story, is a great crew</h1>
-            <Button className={styles.button} variant="rectangle" href={""}>
+            <Button className={styles.button} variant="rectangle" href={"/about/people"}>
               Meet the Dream Team
             </Button>
           </div>
