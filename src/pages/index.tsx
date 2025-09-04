@@ -14,6 +14,12 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     children: (
       <div className={styles.heroSection}>
         <div className={styles.titleSection}>
+          <div className={styles.decorativeLines}>
+            <div className={styles.topHorizontalLine}></div>
+            <div className={styles.bottomHorizontalLine}></div>
+            <div className={styles.leftVerticalLine}></div>
+            <div className={styles.rightVerticalLine}></div>
+          </div>
           <div className={styles.titleSubtitle}>
             Welcome to
           </div>
