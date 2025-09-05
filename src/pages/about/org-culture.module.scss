@@ -1,0 +1,441 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.imageContainer {
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.notebook {
+  /*
+        Notebook styling from here:
+        https://codepen.io/designcouch/pen/bGvzKE?editors=0100
+    */
+
+  --notebook-margin-size: 40px;
+  --notebook-background-color: var(--neutral-cream, #fcebd1);
+
+  background: linear-gradient(
+    to bottom,
+    var(--notebook-background-color),
+    calc(var(--notebook-margin-size) - 0.8px),
+    rgba(30, 30, 30, 0.6) 0.8px
+  );
+  background-size: 100% var(--notebook-margin-size);
+  position: relative;
+  overflow: hidden;
+
+  p.notebookText {
+    margin: 0 0 var(--notebook-margin-size) 0;
+    line-height: var(--notebook-margin-size);
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  // width: 100%;
+  border-bottom: 1px solid var(--neutral-black, #1e1e1e);
+
+  padding: 32px 40px;
+
+  .pageTitle {
+    color: var(--neutral-white, #fbf9f4);
+    text-align: center;
+    text-shadow: -3px 5px 0 #1e1e1e;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
+    font-family: Snoopy;
+    font-size: var(--font-sizes-hero-title, 96px);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: normal;
+  }
+
+  .pageDescription {
+    width: clamp(330px, 60vw, 620px);
+    color: #393939;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: var(--font-sizes-base, 20px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.4px;
+    line-break: auto;
+  }
+}
+
+.section {
+  // width: 100%;
+  padding: 100px; /* could probably be adjusted */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  @media screen and (max-width: 1000px) {
+    padding: 60px;
+  }
+
+  @media screen and (max-width: 720px) {
+    padding: 40px;
+  }
+
+  .sectionTitle {
+    color: var(--neutral-black, #1e1e1e);
+    font-family: Snoopy;
+    font-size: var(--font-sizes-main-title, 64px);
+    font-weight: 400;
+    line-height: 1em;
+    letter-spacing: -1.408px;
+    text-transform: uppercase;
+
+    width: 100%;
+  }
+
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .statValue {
+        color: var(--neutral-black);
+        font-family: Snoopy;
+        font-size: var(--font-sizes-h2, 48px);
+        letter-spacing: -1.056px;
+      }
+      .statLabel {
+        color: var(--neutral-black, #1e1e1e);
+        font-family: "Helvetica Neue";
+        font-size: var(--font-sizes-base, 20px);
+        font-weight: 400; /* This seems to be bugged? */
+        letter-spacing: -0.44px;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .characters {
+      display: flex;
+      justify-content: center;
+      width: clamp(235px, 50vw, 530.556px);
+
+      .imageContainer {
+        display: block;
+        width: 100%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .videoContainer {
+      padding: 24px;
+      border: 2.409px solid var(--neutral-black, #1e1e1e);
+      background: var(--neutral-white, #fbf9f4);
+      height: 434px;
+      width: clamp(337px, 80vw, 771px);
+
+      /* 12px-solid-shadow */
+      box-shadow: -12px 12px 0 0 #1e1e1e;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media screen and (max-width: 820px) {
+        height: clamp(215px, 60vw, 350px);
+      }
+    }
+  }
+
+  .cultureCards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 720px) {
+      grid-template-columns: 1fr;
+      width: 80%;
+      justify-items: center;
+    }
+  }
+
+  .otherWebsites {
+    // width: 100%;
+    display: grid;
+    justify-content: center;
+    max-width: 1440px;
+    grid-template-columns: repeat(4, minmax(20vw, 292px));
+    gap: 1vw;
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5vw;
+    }
+
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+
+    /* Could possibly be deleted if needed */
+    .website {
+      background-color: var(--neutral-white);
+      border: 2px solid var(--neutral-black);
+
+      width: 100%;
+      height: minmax(20vw, 292px);
+      padding: 10%;
+
+      @media screen and (max-width: 1000px) {
+        height: 30vw;
+      }
+
+      @media screen and (max-width: 700px) {
+        height: 50vw;
+      }
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  &.comic {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .comicImage,
+    .bgFilterOverlay {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    /* Halftone overlay */
+    .bgFilterOverlay {
+      background: radial-gradient(
+        101.73% 101.73% at 47.71% 21.73%,
+        rgba(255, 212, 0, 0) 0%,
+        rgba(255, 212, 0, 0.48) 100%
+      );
+      background-blend-mode: plus-darker;
+    }
+  }
+}
+
+.cultureCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  .imageContainer {
+    border-bottom: 4px solid #1e1e1e;
+    // background:
+    //   url("../../../public/noise.svg") lightgray 20.312px 0px / 89.752% 100% no-repeat,
+    //   url("../../../public/noise.svg") lightgray -198.826px -226.705px / 236.356% 228.337% no-repeat,
+    //   url("../../../public/noise.svg") lightgray 50% / cover no-repeat;
+    background-blend-mode: overlay, normal, normal;
+    border: 4px solid var(--neutral-black, #1e1e1e);
+    box-shadow: -8px 8px 0 0 var(--neutral-black, #1e1e1e);
+
+    @media screen and (max-width: 1000px) {
+      max-height: 270px;
+    }
+  }
+
+  .bottom {
+    /* tweakable variables */
+    --title-height: 72px; /* Should be divisible by the notebook margin size */
+    --left-margin: 18px; /* This is a magic number */
+
+    padding-left: var(--left-margin);
+    background-color: var(--notebook-background-color);
+
+    border: 4px solid var(--neutral-black, #1e1e1e);
+    box-shadow: -8px 8px 0 0 var(--neutral-black, #1e1e1e);
+    display: flex;
+    flex: 1;
+
+    .notebook {
+      flex: 1;
+      --notebook-margin-size: 24px;
+      position: relative;
+      overflow: visible;
+      padding-right: 6px;
+
+      .cardTitle {
+        position: absolute;
+
+        margin-left: calc(-1 * var(--left-margin));
+        margin-top: -24px;
+        padding: 5%;
+
+        background-color: var(--neutral-white);
+        border: 2.208px solid var(--neutral-black, #1e1e1e);
+        box-shadow: -2.208px 4.417px 0 0 var(--neutral-black, #1e1e1e);
+
+        width: 90%;
+        height: var(--title-height);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .title {
+          display: -webkit-box; /* Required for -webkit-line-clamp to work */
+          -webkit-line-clamp: 2; /* Specifies the maximum number of lines */
+          -webkit-box-orient: vertical; /* Ensures the box model is vertical */
+          line-clamp: 2; /* Standard property for future compatibility */
+          line-height: 1em;
+          font-size: clamp(20px, 1.8vw, var(--font-sizes-p-lead, 24px));
+
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          color: var(--neutral-black, #1e1e1e);
+          text-align: center;
+          font-family: Groundnut;
+
+          font-style: normal;
+          font-weight: 400;
+
+          letter-spacing: -0.528px;
+        }
+      }
+
+      .cardDescription {
+        margin-top: var(--title-height);
+
+        color: var(--neutral-black, #1e1e1e);
+        font-family: "Helvetica Neue";
+        font-size: var(--font-sizes-secondary-base, 16px);
+        font-weight: 400;
+        letter-spacing: -0.352px;
+      }
+    }
+  }
+}
+
+.stickerCard {
+  z-index: 2;
+  padding: 36px;
+  max-width: 1177px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+
+  gap: 36px;
+
+  border: 2.792px solid var(--neutral-black, #1e1e1e);
+  background: var(--neutral-white, #fbf9f4);
+  box-shadow: -8px 8px 0 0 var(--neutral-black, #1e1e1e);
+
+  @media screen and (min-width: 1100px) {
+    max-height: 370px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    max-width: 700px;
+    padding: 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  @media screen and (max-width: 700px) {
+    max-width: 350px;
+    padding: 30px;
+  }
+
+  h1 {
+    font-family: Snoopy;
+    font-size: clamp(48px, 4vw, var(--font-sizes-main-title, 64px));
+    line-height: 1em;
+    display: -webkit-box;
+
+    @media screen and (max-width: 720px) {
+      width: 85%;
+    }
+  }
+
+  a,
+  button,
+  .button {
+    width: max-content;
+    height: min-content;
+    font-size: minmax(1rem, var(--font-sizes-base));
+    padding: 1em 2em;
+  }
+
+  .frames {
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(137px, 1fr));
+    grid-row: 1 / span 2;
+    justify-self: center;
+    width: 100%;
+
+    .imageContainer {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 1100px) {
+      grid-row: 2;
+    }
+
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+  }
+}
