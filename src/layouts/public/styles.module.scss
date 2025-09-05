@@ -107,6 +107,7 @@
       --header-height: 100px;
       display: block;
     }
+
     @media screen and (max-width: 670px) {
       --header-height: 90px;
       display: none;
@@ -145,4 +146,8 @@
     background-color: transparent;
     --footer-fg: var(--neutral-white, #fbf9f4);
   }
+}
+
+.disabledFooter {
+  --footer-height: 0px;
 }

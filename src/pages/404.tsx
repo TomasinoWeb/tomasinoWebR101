@@ -1,9 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
-import { Button } from '../components/Button';
-import { PublicLayoutFrontend } from '../layouts/public/frontend';
-import styles from './404.module.scss';
+import React from "react";
+import Head from "next/head";
+import Image from "next/image";
+import { Button } from "../components/Button";
+import { PublicLayoutFrontend } from "../layouts/public/frontend";
+import styles from "./404.module.scss";
+import { PublicLayoutBackend } from "../layouts/public/static";
 
 interface Props {}
 
@@ -41,8 +42,7 @@ export default PublicLayoutFrontend.use<Props>(() => {
                 />
               </div>
               <p className={styles.speechText}>
-                LOOKS LIKE YOU'RE LOST.
-                THE PAGE YOU ARE LOOKING FOR IS NOT AVAILABLE.
+                LOOKS LIKE YOU'RE LOST. THE PAGE YOU ARE LOOKING FOR IS NOT AVAILABLE.
               </p>
             </div>
 
@@ -62,24 +62,18 @@ export default PublicLayoutFrontend.use<Props>(() => {
             </div>
 
             <div className={styles.buttonContainer}>
-              <Button
-                variant="rectangle"
-                href="/"
-                className={styles.button404}
-              >
+              <Button variant="rectangle" href="/" className={styles.button404}>
                 BACK TO HOME
               </Button>
-              <Button
-                variant="rectangle"
-                href="/r101"
-                className={styles.button404}
-              >
+              <Button variant="rectangle" href="/r101" className={styles.button404}>
                 ABOUT TOMASINOWEB
               </Button>
             </div>
           </div>
         </div>
       </>
-    )
+    ),
   };
 });
+
+export const getStaticProps = PublicLayoutBackend.use<{}>({});

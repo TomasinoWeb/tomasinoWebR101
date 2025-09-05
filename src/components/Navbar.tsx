@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-export const Navbar = (props: { containsApply: boolean }) => {
+export const Navbar = (props: { containsApply: boolean; containsResults: boolean }) => {
   const Link = (props: { href: string; children: string; special?: boolean }) => {
     return (
       <_Link href={props.href} className={props.special ? styles.special : ""}>

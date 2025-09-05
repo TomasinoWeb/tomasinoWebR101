@@ -9,7 +9,7 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
   layoutComponent({ internalProps, layoutProps }) {
     return (
       <div
-        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : styles.subtleDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""}`}
+        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : styles.subtleDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""} ${layoutProps.footer === "disabled" ? styles.disabledFooter : ""}`}
       >
         <header className={styles.header + " " + (layoutProps.header === "mini" ? styles.miniHeader : "")}>
           <div className={styles.inner}>
