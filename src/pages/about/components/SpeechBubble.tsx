@@ -1,11 +1,12 @@
 import styles from "./SpeechBubble.module.scss";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import React from "react";
 
 type SpeechBubbleProps = {
-  primaryText: string;
-  secondaryText?: string;
-  snoopyImage: StaticImageData;
+  primaryText?: string;
+  secondaryText?: React.ReactNode;
+  snoopyImage?: StaticImageData;
 };
 
 const SpeechBubble = (props: SpeechBubbleProps) => {
@@ -15,9 +16,11 @@ const SpeechBubble = (props: SpeechBubbleProps) => {
         <SpeechBubbleInner />
         <SpeechBubbleInner primaryText={props.primaryText} secondaryText={props.secondaryText} />
         <SpeechBubbleInner />
-        <div className={styles.imageContainer}>
-          <Image src={props.snoopyImage} alt={props.primaryText} className={styles.cardImage} />
-        </div>
+        {props.snoopyImage && (
+          <div className={styles.imageContainer}>
+            <Image src={props.snoopyImage} alt={props.primaryText ?? "snoopy"} className={styles.cardImage} />
+          </div>
+        )}
       </section>
     </div>
   );
@@ -25,7 +28,7 @@ const SpeechBubble = (props: SpeechBubbleProps) => {
 
 type InnerSpeechBubbleProps = {
   primaryText?: string;
-  secondaryText?: string;
+  secondaryText?: React.ReactNode;
 };
 
 const SpeechBubbleInner = (props: InnerSpeechBubbleProps) => {
