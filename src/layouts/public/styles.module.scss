@@ -43,6 +43,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+
+    .logo {
+      img {
+        width: 225px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
 
     .nav {
       margin-left: 10px;

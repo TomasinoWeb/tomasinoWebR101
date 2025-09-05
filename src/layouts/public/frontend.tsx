@@ -4,6 +4,8 @@ import { AnimatePresence } from "framer-motion";
 import styles from "./styles.module.scss";
 import Footer from "../../components/Footer";
 import { MobileNavbar, Navbar } from "../../components/Navbar";
+import Image from "next/image";
+import PlantTomasinoWeb from "../../../public/assets/logos/WORDMARK_Ver1.png";
 
 export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>({
   layoutComponent({ internalProps, layoutProps }) {
@@ -15,7 +17,7 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
           <div className={styles.inner}>
             {layoutProps.header !== "mini" && (
               <div className={styles.logo}>
-                <h1>Planet TomasinoWeb</h1>
+                <Image src={PlantTomasinoWeb} alt="PlanetTomasinoWeb Logo" />
               </div>
             )}
 
