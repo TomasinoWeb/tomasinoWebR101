@@ -12,7 +12,7 @@ import OrgGroup from "../components/faqComponents/OrgGroup";
 import ResultsGroup from "../components/faqComponents/ResultsGroup";
 import SussyGroup from "../components/faqComponents/SussyGroup";
 
-import RepeatingHeader from "../components/RepeatHeader";
+// import RepeatingHeader from "../components/RepeatHeader";
 // import Layout from "../components/transition/Stairs";
 
 interface PageProps {}
@@ -30,28 +30,28 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   const [buttonPressed, setButtonPressed] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
 
+  // boxShadow: "-5px 5px 0 0 var(--neutral-black)"
   const orgPicked = {
-    backgroundColor: bgColor,
+    backgroundColor: "var(--secondary-light-yellow)",
   };
 
   const interviewPicked = {
-    backgroundColor: bgColor,
+    backgroundColor: "var(--secondary-light-blue)",
   };
 
   const applicationPicked = {
-    backgroundColor: bgColor,
+    backgroundColor: "var(--primary-lightbrown-yellow)",
   };
 
   const resultPicked = {
-    backgroundColor: bgColor,
+    backgroundColor: "var(--secondary-light-yellow)",
   };
 
   const sussyPicked = {
-    backgroundColor: bgColor,
+    backgroundColor: "var(--neutral-cream)",
   };
 
   const unpicked = {
-    color: "var(--darkgray)",
     backgroundColor: "white",
   };
 
@@ -83,9 +83,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
       <>
         {/* <Layout> */}
         <div className={styles.FaqPage}>
-          <header>
-            <RepeatingHeader title="FAQS" />
-          </header>
+          <header className={styles.header}>FAQS</header>
 
           <div className={styles.picker_div}>
             <div className={styles.selection_div}>
@@ -108,7 +106,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
                   <div className={styles.faq_main_item}>
                     <img
-                      src="/assets/kodama.png" // change this to the correct icon
+                      src="/assets/peanuts-icons-1.png" // change this to the correct icon
                       className={`${styles.faq_icons} ${styles.mobile_cell3}`}
                       alt="icon"
                     ></img>
@@ -125,7 +123,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="/quiz" target="_blank" rel="noreferrer">
                   <div className={styles.faq_main_item}>
                     <img
-                      src="/assets/no face v1.png" // change this to the correct icon
+                      src="/assets/peanuts-icons-2.png" // change this to the correct icon
                       className={`${styles.faq_icons} ${styles.mobile_cell5}`}
                       alt="icon"
                     ></img>
@@ -142,7 +140,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
                   <div className={styles.faq_main_item}>
                     <img
-                      src="/assets/calcifer v1.png" // change this to the correct icon
+                      src="/assets/peanuts-icons-3.png" // change this to the correct icon
                       className={`${styles.faq_icons} ${styles.mobile_cell7} `}
                       alt="icon"
                     ></img>

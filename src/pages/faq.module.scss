@@ -1,5 +1,3 @@
-$manrope: "Manrope-Bold", sans-serif;
-
 .FaqPage {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
@@ -8,9 +6,30 @@ $manrope: "Manrope-Bold", sans-serif;
   align-items: center;
   overflow-x: hidden;
   width: 100%;
-  //   background-image: var(--repeated-svg);
+  --light-cyan: #d9f1f0;
 }
 
+.FaqPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/Question-Mark-Overlay.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  opacity: 0.5; /* control background opacity */
+  z-index: -1;
+}
+
+.header {
+  margin-top: 100px;
+  font-family: Snoopy, sans-serif;
+  font-size: var(--font-sizes-hero-title);
+  color: white;
+  text-align: center;
+  text-shadow: -5px 5px 0 var(--neutral-black);
+  -webkit-text-stroke: 2px var(--neutral-black);
+}
 .title_div {
   display: flex;
   flex-direction: row;
@@ -20,7 +39,7 @@ $manrope: "Manrope-Bold", sans-serif;
 }
 
 .picker_div {
-  margin: 0% 40%;
+  margin: 0% 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,7 +65,7 @@ $manrope: "Manrope-Bold", sans-serif;
 
 .faq_main_item,
 .button_picker {
-  font-family: $manrope;
+  font-family: Groundnut;
   cursor: pointer;
   min-width: fit-content;
   font-size: 28px;
@@ -96,10 +115,11 @@ $manrope: "Manrope-Bold", sans-serif;
 }
 
 .faq_icons {
-  height: calc(30px);
+  width: calc(40px);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .faq_head {
@@ -115,14 +135,10 @@ $manrope: "Manrope-Bold", sans-serif;
 
 .faqs .faq {
   margin: 10px;
-  padding: 20px 30px;
+  padding: 30px 30px;
   background-color: #ffffff;
   border: 3px solid #343332;
   cursor: pointer;
-}
-
-.faqs .faq.open {
-  background-color: #e5e5e5;
 }
 
 .faq_header {
@@ -149,9 +165,8 @@ $manrope: "Manrope-Bold", sans-serif;
 .faqs .faq .faq_question {
   position: relative;
   padding-right: 80px;
-  font-family: $manrope;
+  font-family: "Groundnut", sans-serif;
   font-size: 24px;
-
   transition: all 0.4s ease;
 }
 
@@ -164,18 +179,16 @@ $manrope: "Manrope-Bold", sans-serif;
   width: 30px;
   height: 30px;
   cursor: pointer;
-
   background-image: url(/assets/cross.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
   transition: all 0.4s ease-out;
 }
 
 .faqs .faq.open .faq_question {
   margin-bottom: 15px;
-  font-family: $manrope;
+  font-family: "Groundnut", sans-serif;
 }
 
 .faqs .faq.open .faq_question::after {
@@ -192,8 +205,8 @@ $manrope: "Manrope-Bold", sans-serif;
     opacity 0.4s ease,
     max-height 0.4s ease,
     font 0.4s ease;
-  font-family: "Manrope-Regular", sans-serif;
-  font-weight: 100;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
   font-size: 16px;
 }
 

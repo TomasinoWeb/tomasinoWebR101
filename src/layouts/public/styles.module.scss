@@ -1,6 +1,6 @@
 .fullDots {
   --dot-bg: #fbf9f4;
-  --dot-color: #aea69d50;
+  --dot-color: #aea69d34;
 }
 
 .subtleDots {
@@ -12,12 +12,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  --dot-size: 10px;
-  --dot-space: 20px;
 
-  background-image: radial-gradient(var(--dot-color) 3px, transparent 0px);
+  background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
   background-repeat: repeat; /* or omit this declaration */
-  background-size: 30px 30px;
+  background-size: 8px 8px;
   background-position: center;
 
   main {
@@ -43,6 +41,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+
+    .logo {
+      img {
+        width: 200px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
 
     .nav {
       margin-left: 10px;
@@ -107,6 +114,7 @@
       --header-height: 100px;
       display: block;
     }
+
     @media screen and (max-width: 670px) {
       --header-height: 90px;
       display: none;
@@ -145,4 +153,8 @@
     background-color: transparent;
     --footer-fg: var(--neutral-white, #fbf9f4);
   }
+}
+
+.disabledFooter {
+  --footer-height: 0px;
 }
