@@ -2,7 +2,7 @@ import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import introStyles from "./quiz.module.scss";
 import questionStyles from "./quizBody.module.scss";
-import BackgroundImage from "../../public/assets/landing/placeholder.png";
+import BackgroundImage from "../../public/assets/landing/background.png";
 import Image from "next/image";
 import { MouseEventHandler, useState } from "react";
 import { UseQuiz, useQuiz } from "../utils/useQuiz";
