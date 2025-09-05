@@ -8,7 +8,7 @@ $manrope: "Manrope-Bold", sans-serif;
   align-items: center;
   overflow-x: hidden;
   width: 100%;
-  background-image: var(--repeated-svg);
+  //   background-image: var(--repeated-svg);
 }
 
 .title_div {
@@ -20,7 +20,7 @@ $manrope: "Manrope-Bold", sans-serif;
 }
 
 .picker_div {
-  margin: 0% 12%;
+  margin: 0% 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
