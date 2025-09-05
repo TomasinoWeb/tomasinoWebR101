@@ -21,39 +21,17 @@ const QuoteBlock: React.FC<QuoteBlockProps> = ({
   return (
     <div className={`${styles.quoteBlockContainer} ${isImageLeft ? styles.imageLeft : styles.imageRight}`}>
       <div className={styles.quoteContent}>
-        {isImageLeft && (
-          <div className={styles.imageWrapper}>
-            <img
-              src={imageSrc}
-              alt={`${authorName}'s picture`}
-              className={styles.quoteImage}
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = "https://placehold.co/150x150/ff7f7f/333333?text=User";
-              }}
-            />
-          </div>
-        )}
+        <div className={styles.imageWrapper}>
+          <img src={imageSrc} alt={`${authorName}'s picture`} className={styles.quoteImage} />
+        </div>
+
         <div className={styles.textContainer}>
           <p className={styles.quoteText}>{quoteText}</p>
           <div className={styles.authorInfo}>
             <img src="../../assets/pencil-icon-vector 1.svg" alt="Signature pen" className={styles.signatureImage} />
-            <span className={styles.authorDetails}>{`${authorName} (${authorDetails})`}</span>
+            <span className={styles.authorDetails}>{` — ${authorName} (${authorDetails})`}</span>
           </div>
         </div>
-        {!isImageLeft && (
-          <div className={styles.imageWrapper}>
-            <img
-              src={imageSrc}
-              alt={`${authorName}'s picture`}
-              className={styles.quoteImage}
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = "https://placehold.co/150x150/ff7f7f/333333?text=User";
-              }}
-            />
-          </div>
-        )}
       </div>
     </div>
   );

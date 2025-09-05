@@ -5,6 +5,8 @@
   flex-direction: column;
   position: relative;
   margin-bottom: 2vh;
+  width: 100%;
+  max-width: 1000px;
 
   .bubbleOval {
     background-color: var(--neutral-white, #fbf9f4);
@@ -18,6 +20,7 @@
 
   .bubble {
     position: relative;
+    width: 100%;
 
     .bubbleContainer:first-child {
       position: absolute;
@@ -53,11 +56,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: clamp(700px, 60vw, 900px);
-
-    @media screen and (max-width: 720px) {
-      width: clamp(370px, 90vw, 760px);
-    }
+    width: 100%;
 
     .textContainer {
       display: flex;
@@ -83,7 +82,12 @@
         font-weight: 400;
         letter-spacing: -1.056px;
         text-transform: uppercase;
+
+        @media screen and (max-width: 500px) {
+          font-size: 32px;
+        }
       }
+
       .secondaryText {
         color: var(--neutral-black, #1e1e1e);
         text-align: center;

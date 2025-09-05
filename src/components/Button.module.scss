@@ -96,6 +96,7 @@
   border: 4.412px solid var(--neutral-black, #1e1e1e);
   background: var(--neutral-white, #fbf9f4);
   box-shadow: -5.085px 5.085px 0 0 #1e1e1e;
+  width: fit-content;
 
   &:hover {
     background: var(--secondary-light-yellow, #fff1aa);

@@ -81,7 +81,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           </p>
           <p className={styles.pageDescription}>It’s the crew that laughs, works, and doodles too!</p>
         </section>
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.spacer}`}>
           <div className={styles.video}>
             <div className={`${styles.characters}`}>
               <span className={`${styles.imageContainer}`}>
@@ -100,56 +100,56 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
               />
             </div>
           </div>
-        </section>
 
-        <section className={styles.section}>
           <h3 className={styles.sectionTitle}>TomasinoWeb in numbers</h3>
           <div className={styles.statsGrid}>
-            <Stat stat="4 websites" description="up and running for the Thomasian community" />
+            <Stat stat="6 websites" description="up and running for the Thomasian community" />
             <Stat stat="21+" description="delulus just hoping for a Paskuhan date" />
-            <Stat stat={"27"} description="awards from prestigious contest & globally recognized institutions" />
-            <Stat stat={"59"} description="(and counting!) innovative, passionate, and dedicated members" />
-            <Stat stat={"165,402"} description="(and counting!) innovative, passionate, and dedicated members" />
-            <Stat stat={"9,050,600"} description="X (formerly Twitter) impressions in the past year" />
+            <Stat stat="27" description="awards from prestigious contest & globally recognized institutions" />
+            <Stat stat="81" description="(and counting!) innovative, passionate, and dedicated members" />
+            <Stat stat="194,000+" description="combined followers across all digital platforms" />
+            <Stat stat="9,050,600" description="X (formerly Twitter) impressions in the past year" />
           </div>
         </section>
 
         {/* Happy Dances */}
-        <section className={`${styles.section} ${styles.notebook}`}>
-          <SpeechBubble
-            primaryText="Cue the happy dances..."
-            secondaryText="All the fun starts here!"
-            snoopyImage={snoopyImage}
-          />
-          <span className={styles.cultureCards}>
-            <CultureCard
-              title="Post-Coverage Hangouts"
-              description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
-              image={sampleCultureImage}
-              bgColor="var(--neutral-white)"
+        <div className={`${styles.notebook} ${styles.spacer}`}>
+          <section className={`${styles.section}`}>
+            <SpeechBubble
+              primaryText="Cue the happy dances..."
+              secondaryText="All the fun starts here!"
+              snoopyImage={snoopyImage}
             />
-            <CultureCard
-              title="Virtual Coverages"
-              description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
-              image={sampleCultureImage}
-              bgColor="var(--secondary-light-blue, #BFEBFF)"
-            />
-            <CultureCard
-              title="Interactive Meetings"
-              description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
-              image={sampleCultureImage}
-              bgColor="var(--secondary-light-yellow)"
-            />
-            <CultureCard
-              title="Mentorship and Collaboration"
-              description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
-              image={sampleCultureImage}
-              bgColor="var(--primary-lightbrown-yellow)"
-            />
-          </span>
-        </section>
+            <span className={styles.cultureCards}>
+              <CultureCard
+                title="Post-Coverage Hangouts"
+                description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
+                image={sampleCultureImage}
+                bgColor="var(--neutral-white)"
+              />
+              <CultureCard
+                title="Virtual Coverages"
+                description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
+                image={sampleCultureImage}
+                bgColor="var(--secondary-light-blue, #BFEBFF)"
+              />
+              <CultureCard
+                title="Interactive Meetings"
+                description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
+                image={sampleCultureImage}
+                bgColor="var(--secondary-light-yellow)"
+              />
+              <CultureCard
+                title="Mentorship and Collaboration"
+                description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
+                image={sampleCultureImage}
+                bgColor="var(--primary-lightbrown-yellow)"
+              />
+            </span>
+          </section>
+        </div>
 
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.spacer}`}>
           <SpeechBubble
             primaryText="Our Little Masterpieces"
             secondaryText="Snoop around our websites"
@@ -172,74 +172,93 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           {/* Testimonials here */}
           {/* These could be converted to an iterator if it needs to be a lot */}
 
-          <QuoteBlock
-            imageSrc={Testimonials[0].imageSrc}
-            quoteText={Testimonials[0].quoteText}
-            authorName={Testimonials[0].authorName}
-            authorDetails={Testimonials[0].authorDetails}
-            imagePosition={"left"}
-          />
+          <div className={styles.testimonial}>
+            <QuoteBlock
+              imageSrc={Testimonials[0].imageSrc}
+              quoteText={Testimonials[0].quoteText}
+              authorName={Testimonials[0].authorName}
+              authorDetails={Testimonials[0].authorDetails}
+              imagePosition={"left"}
+            />
+          </div>
 
-          <QuoteBlock
-            imageSrc={Testimonials[1].imageSrc}
-            quoteText={Testimonials[1].quoteText}
-            authorName={Testimonials[1].authorName}
-            authorDetails={Testimonials[1].authorDetails}
-            imagePosition={"right"}
-          />
-        </section>
-
-        <section className={`${styles.section} ${styles.notebook}`}>
-          <SpeechBubble
-            primaryText="NEXT UP: MAKING THINGS HAPPEN"
-            secondaryText="Of course, the actual work..."
-            snoopyImage={snoopyNext}
-          />
-          <span className={styles.cultureCards}>
-            <CultureCard
-              title="Post-Coverage Hangouts"
-              description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
-              image={sampleCultureImage}
-              bgColor="var(--neutral-white)"
+          <div className={styles.testimonial}>
+            <QuoteBlock
+              imageSrc={Testimonials[1].imageSrc}
+              quoteText={Testimonials[1].quoteText}
+              authorName={Testimonials[1].authorName}
+              authorDetails={Testimonials[1].authorDetails}
+              imagePosition={"right"}
             />
-            <CultureCard
-              title="Virtual Coverages"
-              description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
-              image={sampleCultureImage}
-              bgColor="var(--secondary-light-blue, #BFEBFF)"
-            />
-            <CultureCard
-              title="Interactive Meetings"
-              description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
-              image={sampleCultureImage}
-              bgColor="var(--secondary-light-yellow)"
-            />
-            <CultureCard
-              title="Mentorship and Collaboration"
-              description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
-              image={sampleCultureImage}
-              bgColor="var(--primary-lightbrown-yellow)"
-            />
-          </span>
-        </section>
-
-        <section className={`${styles.section} ${styles.comic}`} style={{ backgroundImage: `url(${comicImage.src})` }}>
-          <Image className={styles.comicImage} src={comicDots} alt={"dot filter"}></Image>
-          <div className={styles.bgFilterOverlay} />
-          <div className={styles.stickerCard}>
-            <span className={styles.frames}>
-              {stickerCardImages.map((img, i) => (
-                <div className={styles.imageContainer} key={`portrait_${i}`}>
-                  <Image src={img} alt={"portrait"} />
-                </div>
-              ))}
-            </span>
-            <h1>Behind every great story, is a great crew</h1>
-            <Button className={styles.button} variant="rectangle" href={"/about/people"}>
-              Meet the Dream Team
-            </Button>
           </div>
         </section>
+
+        <div className={`${styles.notebook} ${styles.spacer}`}>
+          <section className={`${styles.section}`}>
+            <SpeechBubble
+              primaryText="NEXT UP: MAKING THINGS HAPPEN"
+              secondaryText="Of course, the actual work..."
+              snoopyImage={snoopyNext}
+            />
+            <span className={styles.cultureCards}>
+              <CultureCard
+                title="Post-Coverage Hangouts"
+                description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
+                image={sampleCultureImage}
+                bgColor="var(--neutral-white)"
+              />
+              <CultureCard
+                title="Virtual Coverages"
+                description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
+                image={sampleCultureImage}
+                bgColor="var(--secondary-light-blue, #BFEBFF)"
+              />
+              <CultureCard
+                title="Interactive Meetings"
+                description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
+                image={sampleCultureImage}
+                bgColor="var(--secondary-light-yellow)"
+              />
+              <CultureCard
+                title="Mentorship and Collaboration"
+                description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
+                image={sampleCultureImage}
+                bgColor="var(--primary-lightbrown-yellow)"
+              />
+            </span>
+          </section>
+        </div>
+
+        <div className={styles.comic}>
+          <Image className={styles.bruh} src={comicImage} alt={"comic"} />
+          <Image className={styles.overdots} src={comicDots} alt={"dot filter"} />
+
+          <div className={styles.ctaOverlay}>
+            <section className={`${styles.cta}`}>
+              <h1 className={styles.mobile}>Behind every great story, is a great crew</h1>
+
+              <div className={styles.left}>
+                <span className={styles.frames}>
+                  {stickerCardImages.map((img, i) => (
+                    <div className={styles.member} key={`portrait_${i}`}>
+                      <Image src={img} alt={"portrait"} />
+                    </div>
+                  ))}
+                </span>
+              </div>
+
+              <div className={styles.right}>
+                <h1>Behind every great story, is a great crew</h1>
+
+                <div className={styles.rail}>
+                  <Button className={styles.button} variant="rectangle" href={"/about/people"}>
+                    Meet the Dream Team
+                  </Button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     ),
   };
