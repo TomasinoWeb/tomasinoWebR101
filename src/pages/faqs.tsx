@@ -12,9 +12,6 @@ import OrgGroup from "../components/faqComponents/OrgGroup";
 import ResultsGroup from "../components/faqComponents/ResultsGroup";
 import SussyGroup from "../components/faqComponents/SussyGroup";
 
-// import RepeatingHeader from "../components/RepeatHeader";
-// import Layout from "../components/transition/Stairs";
-
 interface PageProps {}
 
 const FaqPage = () => {};
@@ -30,25 +27,30 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   const [buttonPressed, setButtonPressed] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
 
-  // boxShadow: "-5px 5px 0 0 var(--neutral-black)"
+  //
   const orgPicked = {
     backgroundColor: "var(--secondary-light-yellow)",
+    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
   };
 
   const interviewPicked = {
     backgroundColor: "var(--secondary-light-blue)",
+    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
   };
 
   const applicationPicked = {
     backgroundColor: "var(--primary-lightbrown-yellow)",
+    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
   };
 
   const resultPicked = {
     backgroundColor: "var(--secondary-light-yellow)",
+    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
   };
 
   const sussyPicked = {
     backgroundColor: "var(--neutral-cream)",
+    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
   };
 
   const unpicked = {
@@ -156,6 +158,8 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               </div>
             </div>
           </div>
+          <br />
+          <div className={styles.sleepy_snoopy}></div>
           <br />
           <div className={styles.faqs}>
             <pre>

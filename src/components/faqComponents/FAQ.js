@@ -15,7 +15,13 @@ function FAQ({ faq, index, toggleFAQ }) {
       <div className={styles.faq_header}>
         <div className={styles.faq_question}>{faq.question}</div>
         {/* <FontAwesomeIcon icon={faPlus} className={faq.open ? styles.open : styles.closed} /> */}
-        {/* <Image src={Cross} alt="Cross" className={`${styles.faq_icons} ${faq.open ? styles.open : styles.closed}`} /> */}
+        <Image
+          src="/assets/crossmark.svg"
+          alt="Cross"
+          width="20"
+          height="20"
+          className={`${styles.faq_icons} ${faq.open ? styles.open : styles.closed}`}
+        />
         {/* TODO: ADD IMPORT */}
       </div>
 
