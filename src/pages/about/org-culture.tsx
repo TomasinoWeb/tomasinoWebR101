@@ -20,23 +20,48 @@ import comicImage from "../../../public/assets/about/org-culture/test.png";
 import comicDots from "../../../public/assets/about/org-culture/dots.png";
 import memberFrame from "../../../public/assets/about/org-culture/member_frame.png";
 
+/* Other component files */
+import SpeechBubble from "./components/SpeechBubble";
+
 import Link from "next/link";
 import { Button } from "../../components/Button";
+
+/* Quote integration */
+import QuoteBlock from "../../components/QuoteBlock";
+import QuoteBlockImage from "../../../public/assets/about/org-culture/stamp.png";
+
+/* 8 rn */
+const stickerCardImages = [
+  memberFrame,
+  memberFrame,
+  memberFrame,
+  memberFrame,
+  memberFrame,
+  memberFrame,
+  memberFrame,
+  memberFrame,
+];
+
+const Testimonials = [
+  {
+    imageSrc: QuoteBlockImage.src,
+    quoteText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    authorName: "Lorem Ipsum",
+    authorDetails: "President",
+  },
+  {
+    imageSrc: QuoteBlockImage.src,
+    quoteText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    authorName: "Lorem Ipsum",
+    authorDetails: "President",
+  },
+];
 
 interface PageProps {}
 
 const Page = PublicLayoutFrontend.use<PageProps>(() => {
-  /* 8 rn */
-  const stickerCardImages = [
-    memberFrame,
-    memberFrame,
-    memberFrame,
-    memberFrame,
-    memberFrame,
-    memberFrame,
-    memberFrame,
-    memberFrame,
-  ];
   return {
     header: "full_regular",
     footer: "regular",
@@ -142,23 +167,23 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             </Link>
           </div>
           {/* Testimonials here */}
-          {/* 
-          
-          <QuoteBlock 
-            imageSrc=?,
-            quoteText,
-            authorName,
-            authorDetails,
-            imagePosition = {"left"}
+          {/* These could be converted to an iterator if it needs to be a lot */}
+
+          <QuoteBlock
+            imageSrc={Testimonials[0].imageSrc}
+            quoteText={Testimonials[0].quoteText}
+            authorName={Testimonials[0].authorName}
+            authorDetails={Testimonials[0].authorDetails}
+            imagePosition={"left"}
           />
-          <QuoteBlock 
-            imageSrc=?,
-            quoteText,
-            authorName,
-            authorDetails,
-            imagePosition = {"right"}
+
+          <QuoteBlock
+            imageSrc={Testimonials[1].imageSrc}
+            quoteText={Testimonials[1].quoteText}
+            authorName={Testimonials[1].authorName}
+            authorDetails={Testimonials[1].authorDetails}
+            imagePosition={"right"}
           />
-          */}
         </section>
 
         {/* Happy Dances */}
@@ -202,8 +227,8 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           <div className={styles.stickerCard}>
             <span className={styles.frames}>
               {stickerCardImages.map((img, i) => (
-                <div className={styles.imageContainer}>
-                  <Image src={img} alt={"portrait"} key={`portrait_${i}`} />
+                <div className={styles.imageContainer} key={`portrait_${i}`}>
+                  <Image src={img} alt={"portrait"} />
                 </div>
               ))}
             </span>
@@ -231,47 +256,6 @@ const Stat = (props: StatProps) => {
     <div className={styles.stat}>
       <span className={styles.statValue}>{props.stat.toUpperCase()}</span>
       <span className={styles.statLabel}>{props.description}</span>
-    </div>
-  );
-};
-
-// Speech Bubbles!
-
-type SpeechBubbleProps = {
-  primaryText: string;
-  secondaryText?: string;
-  snoopyImage: StaticImageData;
-};
-
-const SpeechBubble = (props: SpeechBubbleProps) => {
-  return (
-    <div className={styles.speechBubble}>
-      <section className={`${styles.bubble}`}>
-        <SpeechBubbleInner />
-        <SpeechBubbleInner primaryText={props.primaryText} secondaryText={props.secondaryText} />
-        <SpeechBubbleInner />
-        <div className={styles.imageContainer}>
-          <Image src={props.snoopyImage} alt={props.primaryText} className={styles.cardImage} />
-        </div>
-      </section>
-    </div>
-  );
-};
-
-type InnerSpeechBubbleProps = {
-  primaryText?: string;
-  secondaryText?: string;
-};
-
-const SpeechBubbleInner = (props: InnerSpeechBubbleProps) => {
-  return (
-    <div className={styles.bubbleContainer}>
-      <div className={`${styles.textContainer} ${styles.bubbleOval}`}>
-        <h4 className={styles.primaryText}>{props.primaryText ? props.primaryText : ""}</h4>
-        <p className={styles.secondaryText}>{props.secondaryText ? props.secondaryText : ""}</p>
-      </div>
-      <div className={`${styles.bubbleTail} ${styles.bubbleOval}`} />
-      <div className={`${styles.bubbleExcess} ${styles.bubbleOval}`} />
     </div>
   );
 };
