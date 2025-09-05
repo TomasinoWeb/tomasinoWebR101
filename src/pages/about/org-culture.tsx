@@ -31,6 +31,7 @@ import { Button } from "../../components/Button";
 /* Quote integration */
 import QuoteBlock from "../../components/QuoteBlock";
 import QuoteBlockImage from "../../../public/assets/about/org-culture/stamp.png";
+import { PublicLayoutBackend } from "../../layouts/public/static";
 
 /* 8 rn */
 const stickerCardImages = [
@@ -295,3 +296,5 @@ const CultureCard = (props: CultureCardProps) => {
 };
 
 export default Page;
+
+export const getStaticProps = PublicLayoutBackend.use<PageProps>({});

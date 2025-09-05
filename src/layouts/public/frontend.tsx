@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import { MobileNavbar, Navbar } from "../../components/Navbar";
 import Image from "next/image";
 import PlantTomasinoWeb from "../../../public/assets/logos/WORDMARK_Ver1.png";
+import Link from "next/link";
 
 export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>({
   layoutComponent({ internalProps, layoutProps }) {
@@ -16,9 +17,9 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
         <header className={styles.header + " " + (layoutProps.header === "mini" ? styles.miniHeader : "")}>
           <div className={styles.inner}>
             {layoutProps.header !== "mini" && (
-              <div className={styles.logo}>
+              <Link className={styles.logo} href="/">
                 <Image src={PlantTomasinoWeb} alt="PlanetTomasinoWeb Logo" />
-              </div>
+              </Link>
             )}
 
             <div className={styles.nav}>

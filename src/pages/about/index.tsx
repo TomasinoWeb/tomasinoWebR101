@@ -1,6 +1,5 @@
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import { PublicLayoutBackend } from "../../layouts/public/static";
-import { Button } from "../../components/Button";
 import styles from "./about.module.scss";
 
 import Image, { StaticImageData } from "next/image";
@@ -9,9 +8,6 @@ import Scribbles from "../../../public/assets/about/snoopy scribbles.svg";
 import Logo from "../../../public/logo/insignia_yellow.png";
 import AboutBoxPlaceholder from "../../../public/assets/about/about_box_placeholder.png";
 import AboutBoxColor from "../../../public/assets/about/about_box_color.png";
-
-/* used in about box animation change */
-import { useState } from "react";
 
 import Link from "next/link";
 
@@ -91,25 +87,17 @@ type AboutBoxProps = {
 };
 
 function AboutBox(props: AboutBoxProps) {
-  const [boxImage, setBoxImage] = useState(props.imageInitial);
-
   return (
     <Link href={props.href} className={styles.aboutBox}>
       <section className={styles.textSection}>
         <h3 className={styles.title}>{props.title.toUpperCase()}</h3>
         <p className={styles.description}>{props.description}</p>
       </section>
-      <section className={styles.image}>
-        <Image
-          src={boxImage}
-          alt={props.title}
-          onMouseEnter={() => {
-            setBoxImage(props.imageOnHover);
-          }}
-          onMouseLeave={() => {
-            setBoxImage(props.imageInitial);
-          }}
-        />
+      <section className={styles.imageContainer}>
+        <div className={styles.inside}>
+          <Image src={props.imageOnHover} alt={props.title} className={styles.after} />
+          <Image src={props.imageInitial} alt={props.title} className={styles.initial} />
+        </div>
       </section>
     </Link>
   );

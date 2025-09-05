@@ -1,6 +1,6 @@
 .fullDots {
   --dot-bg: #fbf9f4;
-  --dot-color: #aea69d50;
+  --dot-color: #aea69d34;
 }
 
 .subtleDots {
@@ -12,12 +12,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  --dot-size: 10px;
-  --dot-space: 20px;
 
-  background-image: radial-gradient(var(--dot-color) 3px, transparent 0px);
+  background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
   background-repeat: repeat; /* or omit this declaration */
-  background-size: 30px 30px;
+  background-size: 8px 8px;
   background-position: center;
 
   main {
@@ -47,7 +45,7 @@
 
     .logo {
       img {
-        width: 225px;
+        width: 200px;
         height: auto;
         object-fit: cover;
       }
