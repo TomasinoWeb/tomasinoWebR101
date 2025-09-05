@@ -8,6 +8,8 @@ import { StaticImageData } from "next/image";
 import snoopyHorizontal from "../../../public/assets/about/org-culture/snoopy_horizontal.png";
 import sampleCultureImage from "../../../public/assets/about/org-culture/sample_culture.png";
 import snoopyImage from "../../../public/assets/about/org-culture/snoopy.png";
+import snoopyHeart from "../../../public/assets/about/org-culture/snoopy heart.png";
+import snoopyNext from "../../../public/assets/about/org-culture/snoopy spit.png";
 
 // other websites
 import websiteLogo from "../../../public/logo/insignia_yellow.png";
@@ -150,7 +152,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           <SpeechBubble
             primaryText="Our Little Masterpieces"
             secondaryText="Snoop around our websites"
-            snoopyImage={snoopyImage}
+            snoopyImage={snoopyHeart}
           />
           <div className={styles.otherWebsites}>
             <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
@@ -186,12 +188,11 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           />
         </section>
 
-        {/* Happy Dances */}
         <section className={`${styles.section} ${styles.notebook}`}>
           <SpeechBubble
             primaryText="NEXT UP: MAKING THINGS HAPPEN"
             secondaryText="Of course, the actual work..."
-            snoopyImage={snoopyImage}
+            snoopyImage={snoopyNext}
           />
           <span className={styles.cultureCards}>
             <CultureCard

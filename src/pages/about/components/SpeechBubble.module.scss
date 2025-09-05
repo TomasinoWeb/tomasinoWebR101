@@ -10,6 +10,10 @@
     background-color: var(--neutral-white, #fbf9f4);
     border-radius: 100px;
     border: 4px solid #1e1e1e;
+
+    @media screen and (max-width: 720px) {
+      border-width: 3px;
+    }
   }
 
   .bubble {
@@ -52,7 +56,7 @@
     width: clamp(700px, 60vw, 900px);
 
     @media screen and (max-width: 720px) {
-      width: clamp(360px, 90vw, 760px);
+      width: clamp(370px, 90vw, 760px);
     }
 
     .textContainer {
@@ -68,7 +72,7 @@
       }
 
       @media screen and (max-width: 720px) {
-        height: 110px;
+        height: 115px;
       }
 
       .primaryText {
@@ -89,6 +93,10 @@
         line-height: 30px; /* 150% */
         letter-spacing: -0.4px;
         z-index: 10;
+
+        @media screen and (max-width: 550px) {
+          font-size: 16px; /* had to force it since the variables are inconsistent (it's font-size-base is 20 but it's supposed to be 16) */
+        }
       }
     }
 
@@ -147,7 +155,8 @@
   /* Snoopy */
   .imageContainer {
     position: absolute;
-    top: 40%;
+    // top: 40%;
+    bottom: 0%;
     left: 12.5%;
     z-index: 999;
 
@@ -159,14 +168,6 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-    }
-
-    @media screen and (max-width: 1000px) {
-      top: 40%;
-    }
-
-    @media screen and (max-width: 550px) {
-      top: 50%;
     }
   }
 }
