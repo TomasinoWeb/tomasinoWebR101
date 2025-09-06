@@ -19,35 +19,19 @@ interface PageProps {}
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
   const bgColor = "#CCECE4";
-  const [tag, setTag] = useState("selectTag");
-  const [orgShown, setOrgShown] = useState(false);
-  const [interviewShown, setInterviewShown] = useState(false);
-  const [applicationShown, setApplicationShown] = useState(false);
-  const [resultsShown, setResultsShown] = useState(false);
-  const [sussyShown, setSussyShown] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [tag, _setTag] = useState("selectTag");
+  const setTag = (tag: string) => {
+    _setTag(tag);
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.getElementById("scroll-target")!.offsetTop,
+        behavior: "smooth",
+      });
+    }, 50);
+  };
 
   const picked = { backgroundColor: bgColor };
   const unpicked = { color: "var(--darkgray)", backgroundColor: "white" };
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    tag === "org" ? setOrgShown(true) : setOrgShown(false);
-    tag === "interview" ? setInterviewShown(true) : setInterviewShown(false);
-    tag === "application" ? setApplicationShown(true) : setApplicationShown(false);
-    tag === "results" ? setResultsShown(true) : setResultsShown(false);
-    tag === "sussy" ? setSussyShown(true) : setSussyShown(false);
-  }, [tag, windowWidth]);
 
   return {
     dots: "full",
@@ -71,7 +55,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell1}`}
                   onClick={() => setTag("org")}
-                  style={orgShown ? picked : unpicked}
+                  style={tag === "org" ? picked : unpicked}
                 >
                   the org
                 </button>
@@ -79,7 +63,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell2}`}
                   onClick={() => setTag("interview")}
-                  style={interviewShown ? picked : unpicked}
+                  style={tag === "interview" ? picked : unpicked}
                 >
                   interview
                 </button>
@@ -93,7 +77,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell4}`}
                   onClick={() => setTag("application")}
-                  style={applicationShown ? picked : unpicked}
+                  style={tag === "application" ? picked : unpicked}
                 >
                   application
                 </button>
@@ -108,7 +92,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell6}`}
                   onClick={() => setTag("results")}
-                  style={resultsShown ? picked : unpicked}
+                  style={tag === "results" ? picked : unpicked}
                 >
                   results
                 </button>
@@ -128,7 +112,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell8}`}
                   onClick={() => setTag("sussy")}
-                  style={sussyShown ? picked : unpicked}
+                  style={tag === "sussy" ? picked : unpicked}
                 >
                   thought you&apos;d never ask
                 </button>
@@ -142,20 +126,22 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </div>
 
           {tag !== "selectTag" && (
-            <div className={styles.faqs}>
+            <div className={styles.faqs} id="scroll-target">
               <pre>
-                <div className={`faq-answer ${orgShown ? "faq-answer-open" : ""}`}>{orgShown && <OrgGroup />}</div>
-                <div className={`faq-answer ${interviewShown ? "faq-answer-open" : ""}`}>
-                  {interviewShown && <InterviewGroup />}
+                <div className={`faq-answer ${tag === "org" ? "faq-answer-open" : ""}`}>
+                  {tag === "org" && <OrgGroup />}
                 </div>
-                <div className={`faq-answer ${applicationShown ? "faq-answer-open" : ""}`}>
-                  {applicationShown && <ApplicationGroup />}
+                <div className={`faq-answer ${tag === "interview" ? "faq-answer-open" : ""}`}>
+                  {tag === "interview" && <InterviewGroup />}
                 </div>
-                <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
-                  {resultsShown && <ResultsGroup />}
+                <div className={`faq-answer ${tag === "application" ? "faq-answer-open" : ""}`}>
+                  {tag === "application" && <ApplicationGroup />}
                 </div>
-                <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>
-                  {sussyShown && <SussyGroup />}
+                <div className={`faq-answer ${tag === "results" ? "faq-answer-open" : ""}`}>
+                  {tag === "results" && <ResultsGroup />}
+                </div>
+                <div className={`faq-answer ${tag === "sussy" ? "faq-answer-open" : ""}`}>
+                  {tag === "sussy" && <SussyGroup />}
                 </div>
               </pre>
             </div>
