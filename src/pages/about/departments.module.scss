@@ -1,0 +1,210 @@
+.page {
+  // max-width: 1300px;
+  // margin: 0px auto;
+  // padding: 60px 30px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  // width: 100%;
+  border-bottom: 1px solid var(--neutral-black, #1e1e1e);
+
+  padding: 32px 40px;
+
+  .pageTitle {
+    color: var(--neutral-white, #fbf9f4);
+    text-align: center;
+    text-shadow: -3px 5px 0 #1e1e1e;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
+    font-family: Snoopy;
+    font-size: var(--font-sizes-hero-title, 96px);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -2px;
+
+    @media screen and (max-width: 1000px) {
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  .pageDescription {
+    width: clamp(330px, 60vw, 620px);
+    color: #393939;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: var(--font-sizes-base, 20px);
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+    line-height: 1.3em;
+    letter-spacing: -0.4px;
+    line-break: auto;
+  }
+}
+
+.section {
+  max-width: 1300px;
+  margin: 0px auto;
+  padding: 60px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+
+  .left {
+    flex: 4;
+    .title {
+      font-family: Groundnut, sans-serif;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-family: Groundnut, sans-serif;
+      font-size: 48px;
+      text-align: center;
+    }
+
+    .defaultImage {
+      width: 100%;
+      height: auto;
+      display: block;
+
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .disclaimer {
+      font-family: "Helvetica Neue", sans-serif;
+      font-size: 20px;
+      // font-weight: 300;
+    }
+
+    .rail {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 650px) {
+      .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      .disclaimer {
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        // font-weight: 300;
+      }
+    }
+  }
+
+  .right {
+    flex: 6;
+
+    .blocks {
+      border: 2px solid var(--neutral-black, #1e1e1e);
+      --gap-size: 0px;
+      --elements-per-row: 3;
+
+      display: flex;
+      justify-content: space-between;
+      gap: var(--gap-size);
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      .block {
+        width: calc(calc(100% - calc(var(--gap-size) * calc(var(--elements-per-row) - 1))) / var(--elements-per-row));
+        border: 2px solid var(--neutral-black, #1e1e1e);
+        cursor: pointer;
+
+        position: relative;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          display: block;
+          aspect-ratio: 1/1;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 3;
+          width: min-content;
+
+          background-color: white;
+          box-shadow: -4px 4px 0 0 var(--neutral-black, #1e1e1e);
+          border: 2px solid var(--neutral-black, #1e1e1e);
+          padding: 6px 10px;
+
+          font-family: Groundnut, sans-serif;
+          font-size: 16px;
+
+          @media screen and (max-width: 650px) {
+            font-size: 14px;
+            padding: 4px 8px;
+          }
+        }
+
+        .inactiveImage {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          opacity: 1;
+          transition: 0.3s ease-in-out all;
+        }
+
+        .activeImage {
+          z-index: 1;
+        }
+      }
+
+      .selectedBlock {
+        .inactiveImage {
+          opacity: 0;
+          transition: 0.3s ease-in-out all;
+        }
+      }
+
+      .block:hover {
+        .inactiveImage {
+          opacity: 0;
+          transition: 0.3s ease-in-out all;
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        --elements-per-row: 2;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+
+    .left,
+    .right {
+      flex: unset;
+      width: 100%;
+    }
+
+    .left {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+}
