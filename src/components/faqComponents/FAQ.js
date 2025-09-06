@@ -12,7 +12,7 @@ function FAQ({ faq, index, toggleFAQ }) {
       onClick={() => toggleFAQ(index)}
     >
       <div className={styles.faq_header}>
-        <div className={styles.faq_question}>{faq.question}</div>
+        <div className={styles.faq_question}>{faq.question.toUpperCase()}</div>
         <FontAwesomeIcon icon={faPlus} className={faq.open ? styles.open : styles.closed} />
         {/* <Image
           src="/assets/crossmark.svg"

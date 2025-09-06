@@ -19,7 +19,7 @@ function InterviewGroup() {
     {
       question: "How do I schedule an interview?",
       answer:
-        "Upon accomplishing the interview prerequisites, the Human Resources department will send you a scheduling sheet. They will send you a confirmation email once they have taken note of your interview schedule.",
+        "Upon accomplishing the interview prerequisites, you can schedule your interview within the MeReserve Web Application. The HR department will send you a confirmation email once they have taken note of your interview schedule.",
       tag: "interview",
       open: false,
     },
