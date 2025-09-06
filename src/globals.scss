@@ -259,10 +259,14 @@ table {
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
   :root {
     --footer-height: 212.5px;
+  }
+}
 
+@media screen and (max-width: 850px) {
+  :root {
     --font-sizes-caption-label: 12px;
     --font-sizes-secondary-base: 14px;
     --font-sizes-base: 16px;
@@ -294,7 +298,7 @@ table {
   --secondary-light-yellow: #fff1aa;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
   :root {
     --footer-height: 192px;
   }

@@ -126,12 +126,12 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.inner}>
-            <h2 className={styles.pageTitle}>ORG CULTURE</h2>
+            <h2 className={styles.pageTitle}>THE PEOPLE</h2>
             <p className={styles.pageDescription}>
-              Hop in for a quick ride behind the scenes of TomasinoWeb, where the work is real, the fun is louder, and
-              the world’s just a little sillier.
+              Behind every brilliant idea, fun design, and witty caption is a bunch of dreamers with big hearts and
+              bigger imaginations. Say hello to the lovable cast behind our little universe.
             </p>
-            <p className={styles.pageDescription}>It’s the crew that laughs, works, and doodles too!</p>
+            {/* <p className={styles.pageDescription}>It’s the crew that laughs, works, and doodles too!</p> */}
           </div>
         </section>
 
