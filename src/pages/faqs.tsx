@@ -1,10 +1,13 @@
 import styles from "./faq.module.scss";
-import Head from "next/head";
 import { MouseEventHandler, useEffect, useState } from "react";
 import Link from "next/link";
 
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
+import Image from "next/image";
+import Overlay from "../../public/assets/faq/Question-Mark-Overlay.png";
+import SleepyD from "../../public/assets/faq/sleepy-snoopy-d.png";
+import SleepyM from "../../public/assets/faq/sleepy-snoopy-m.png";
 
 import ApplicationGroup from "../components/faqComponents/ApplicationGroup";
 import InterviewGroup from "../components/faqComponents/InterviewGroup";
@@ -14,8 +17,6 @@ import SussyGroup from "../components/faqComponents/SussyGroup";
 
 interface PageProps {}
 
-const FaqPage = () => {};
-
 export default PublicLayoutFrontend.use<PageProps>(() => {
   const bgColor = "#CCECE4";
   const [tag, setTag] = useState("selectTag");
@@ -24,38 +25,10 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   const [applicationShown, setApplicationShown] = useState(false);
   const [resultsShown, setResultsShown] = useState(false);
   const [sussyShown, setSussyShown] = useState(false);
-  const [buttonPressed, setButtonPressed] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
 
-  //
-  const orgPicked = {
-    backgroundColor: "var(--secondary-light-yellow)",
-    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
-  };
-
-  const interviewPicked = {
-    backgroundColor: "var(--secondary-light-blue)",
-    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
-  };
-
-  const applicationPicked = {
-    backgroundColor: "var(--primary-lightbrown-yellow)",
-    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
-  };
-
-  const resultPicked = {
-    backgroundColor: "var(--secondary-light-yellow)",
-    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
-  };
-
-  const sussyPicked = {
-    backgroundColor: "var(--neutral-cream)",
-    boxShadow: "-5px 5px 0 0 var(--neutral-black)",
-  };
-
-  const unpicked = {
-    backgroundColor: "white",
-  };
+  const picked = { backgroundColor: bgColor };
+  const unpicked = { color: "var(--darkgray)", backgroundColor: "white" };
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -74,7 +47,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     tag === "application" ? setApplicationShown(true) : setApplicationShown(false);
     tag === "results" ? setResultsShown(true) : setResultsShown(false);
     tag === "sussy" ? setSussyShown(true) : setSussyShown(false);
-  }, [tag, buttonPressed, windowWidth]);
+  }, [tag, windowWidth]);
 
   return {
     dots: "full",
@@ -82,10 +55,15 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     footer: "regular",
 
     children: (
-      <>
-        {/* <Layout> */}
+      <div className={styles.page}>
+        <div className={styles.underlay}>
+          <Image src={Overlay} alt="Overlay" className={styles.image} />
+        </div>
+
         <div className={styles.FaqPage}>
-          <header className={styles.header}>FAQS</header>
+          <header>
+            <h1>FAQS</h1>
+          </header>
 
           <div className={styles.picker_div}>
             <div className={styles.selection_div}>
@@ -93,7 +71,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell1}`}
                   onClick={() => setTag("org")}
-                  style={orgShown ? orgPicked : unpicked}
+                  style={orgShown ? picked : unpicked}
                 >
                   the org
                 </button>
@@ -101,90 +79,89 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell2}`}
                   onClick={() => setTag("interview")}
-                  style={interviewShown ? interviewPicked : unpicked}
+                  style={interviewShown ? picked : unpicked}
                 >
                   interview
                 </button>
-                <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer">
-                  <div className={styles.faq_main_item}>
-                    <img
-                      src="/assets/peanuts-icons-1.png" // change this to the correct icon
-                      className={`${styles.faq_icons} ${styles.mobile_cell3}`}
-                      alt="icon"
-                    ></img>
-                  </div>
+                <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer" className={styles.faq_main_item}>
+                  <img
+                    src="/assets/faq/peanuts-icons-1.png" // change this to the correct icon
+                    className={`${styles.faq_icons} ${styles.mobile_cell3}`}
+                    alt="icon"
+                  ></img>
                 </a>
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell4}`}
                   onClick={() => setTag("application")}
-                  style={applicationShown ? applicationPicked : unpicked}
+                  style={applicationShown ? picked : unpicked}
                 >
                   application
                 </button>
 
-                <a href="/quiz" target="_blank" rel="noreferrer">
-                  <div className={styles.faq_main_item}>
-                    <img
-                      src="/assets/peanuts-icons-2.png" // change this to the correct icon
-                      className={`${styles.faq_icons} ${styles.mobile_cell5}`}
-                      alt="icon"
-                    ></img>
-                  </div>
+                <a href="/quiz" target="_blank" rel="noreferrer" className={styles.faq_main_item}>
+                  <img
+                    src="/assets/faq/peanuts-icons-2.png" // change this to the correct icon
+                    className={`${styles.faq_icons} ${styles.mobile_cell5}`}
+                    alt="icon"
+                  ></img>
                 </a>
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell6}`}
                   onClick={() => setTag("results")}
-                  style={resultsShown ? resultPicked : unpicked}
+                  style={resultsShown ? picked : unpicked}
                 >
                   results
                 </button>
 
-                <a href="https://youtu.be/m6fCTVsMmS8" target="_blank" rel="noreferrer">
-                  <div className={styles.faq_main_item}>
-                    <img
-                      src="/assets/peanuts-icons-3.png" // change this to the correct icon
-                      className={`${styles.faq_icons} ${styles.mobile_cell7} `}
-                      alt="icon"
-                    ></img>
-                  </div>
+                <a
+                  href="https://youtu.be/m6fCTVsMmS8"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.faq_main_item}
+                >
+                  <img
+                    src="/assets/faq/peanuts-icons-3.png" // change this to the correct icon
+                    className={`${styles.faq_icons} ${styles.mobile_cell7} `}
+                    alt="icon"
+                  ></img>
                 </a>
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell8}`}
                   onClick={() => setTag("sussy")}
-                  style={sussyShown ? sussyPicked : unpicked}
+                  style={sussyShown ? picked : unpicked}
                 >
                   thought you&apos;d never ask
                 </button>
               </div>
             </div>
           </div>
-          <br />
-          <div className={styles.sleepy_snoopy}></div>
-          <br />
-          <div className={styles.faqs}>
-            <pre>
-              <div className={`faq-answer ${orgShown ? "faq-answer-open" : ""}`}>
-                {orgShown && (
-                  <p>
-                    <OrgGroup />
-                  </p>
-                )}
-              </div>
-              <div className={`faq-answer ${interviewShown ? "faq-answer-open" : ""}`}>
-                {interviewShown && <InterviewGroup />}
-              </div>
-              <div className={`faq-answer ${applicationShown ? "faq-answer-open" : ""}`}>
-                {applicationShown && <ApplicationGroup />}
-              </div>
-              <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
-                {resultsShown && <ResultsGroup />}
-              </div>
-              <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>{sussyShown && <SussyGroup />}</div>
-            </pre>
+
+          <div className={styles.sleepy_snoopy}>
+            <Image src={SleepyD} alt="Sleepy Snoopy" className={styles.desktop} />
+            <Image src={SleepyM} alt="Sleepy Snoopy" className={styles.mobile} />
           </div>
+
+          {tag !== "selectTag" && (
+            <div className={styles.faqs}>
+              <pre>
+                <div className={`faq-answer ${orgShown ? "faq-answer-open" : ""}`}>{orgShown && <OrgGroup />}</div>
+                <div className={`faq-answer ${interviewShown ? "faq-answer-open" : ""}`}>
+                  {interviewShown && <InterviewGroup />}
+                </div>
+                <div className={`faq-answer ${applicationShown ? "faq-answer-open" : ""}`}>
+                  {applicationShown && <ApplicationGroup />}
+                </div>
+                <div className={`faq-answer ${resultsShown ? "faq-answer-open" : ""}`}>
+                  {resultsShown && <ResultsGroup />}
+                </div>
+                <div className={`faq-answer ${sussyShown ? "faq-answer-open" : ""}`}>
+                  {sussyShown && <SussyGroup />}
+                </div>
+              </pre>
+            </div>
+          )}
         </div>
-        {/* </Layout> */}
-      </>
+      </div>
     ),
   };
 });
