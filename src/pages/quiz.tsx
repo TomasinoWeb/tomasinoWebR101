@@ -2,7 +2,7 @@ import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import introStyles from "./quiz.module.scss";
 import questionStyles from "./quizBody.module.scss";
-import BackgroundImage from "../../public/assets/landing/background.png";
+import BackgroundImage from "../../public/assets/landing/BACKGROUND_VER 1.png";
 import Image from "next/image";
 import { MouseEventHandler, useState } from "react";
 import { UseQuiz, useQuiz } from "../utils/useQuiz";
@@ -175,11 +175,7 @@ function RenderFinished({ quizController }: { quizController: UseQuiz }) {
     children: (
       <div className={introStyles.root}>
         <div className={introStyles.background}>
-          <img
-            src="/assets/landing/placeholder.png"
-            alt={`Background image for ${department.key}`}
-            className={introStyles.bg_img}
-          />
+          <Image src={BackgroundImage} alt={`Background image for ${department.key}`} className={introStyles.bg_img} />
         </div>
 
         <div className={introStyles.overlay}>
