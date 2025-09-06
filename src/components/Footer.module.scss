@@ -27,8 +27,8 @@ $light-grey: hsl(30, 2%, 30%);
       display: flex;
       gap: 24px;
 
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: 14px;
+      font-family: "Groundnut", sans-serif;
+      font-size: var(--font-sizes-secondary-base);
 
       p {
         color: var(--footer-fg);
@@ -50,6 +50,7 @@ $light-grey: hsl(30, 2%, 30%);
       display: flex;
       gap: 12px;
       align-items: center;
+      font-size: 20px;
 
       color: var(--footer-fg);
 
@@ -61,11 +62,6 @@ $light-grey: hsl(30, 2%, 30%);
         background: none;
         border: none;
         cursor: pointer;
-
-        svg {
-          width: 16px;
-          height: 16px;
-        }
       }
     }
   }
