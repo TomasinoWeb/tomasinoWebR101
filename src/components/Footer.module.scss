@@ -27,8 +27,8 @@ $light-grey: hsl(30, 2%, 30%);
       display: flex;
       gap: 24px;
 
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: 14px;
+      font-family: "Groundnut", sans-serif;
+      font-size: var(--font-sizes-secondary-base);
 
       p {
         color: var(--footer-fg);
