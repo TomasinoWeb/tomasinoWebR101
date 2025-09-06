@@ -3,7 +3,6 @@ import styles from "../../pages/faq.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 // import Cross from "../../../public/assets/cross.svg";
-import Image from "next/image";
 
 function FAQ({ faq, index, toggleFAQ }) {
   return (
