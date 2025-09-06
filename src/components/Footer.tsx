@@ -12,10 +12,10 @@ export default function Footer(props: FooterProps) {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <p>© TomasinoWeb 2025</p>
+          <p>(c) TomasinoWeb 2025</p>
           <Link href="/about/departments">Departments</Link>
           <Link href="/apply">Application Form</Link>
-          <Link href="/faq">Frequently Asked Questions</Link>
+          <Link href="/faq">FREQUENTLY ASKED QUESTIONS</Link>
         </div>
 
         <div className={styles.right}>
