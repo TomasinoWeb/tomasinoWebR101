@@ -36,11 +36,11 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
             <div className={styles.rail}>
               <div className={styles.inner}>
-                <Button href="/r101" variant="speech" maxWidth>
+                <Button href="/about" variant="speech" maxWidth>
                   KNOW TOMASINOWEB'S STORY
                 </Button>
 
-                <Button href="/r101" variant="speech" maxWidth>
+                <Button href="/apply" variant="speech" maxWidth>
                   JOIN THE CREW
                 </Button>
               </div>
