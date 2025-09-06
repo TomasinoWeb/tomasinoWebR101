@@ -28,7 +28,11 @@ const QuoteBlock: React.FC<QuoteBlockProps> = ({
         <div className={styles.textContainer}>
           <p className={styles.quoteText}>{quoteText}</p>
           <div className={styles.authorInfo}>
-            <img src="../../assets/pencil-icon-vector 1.svg" alt="Signature pen" className={styles.signatureImage} />
+            <img
+              src="../../assets/faq/pencil-icon-vector 1.svg"
+              alt="Signature pen"
+              className={styles.signatureImage}
+            />
             <span className={styles.authorDetails}>{` — ${authorName} (${authorDetails})`}</span>
           </div>
         </div>

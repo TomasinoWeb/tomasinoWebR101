@@ -45,7 +45,7 @@ const stickerCardImages = [
   memberFrame,
 ];
 
-const Testimonials = [
+export const Testimonials = [
   {
     imageSrc: QuoteBlockImage.src,
     quoteText:
@@ -81,6 +81,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           </p>
           <p className={styles.pageDescription}>It’s the crew that laughs, works, and doodles too!</p>
         </section>
+
         <section className={`${styles.section} ${styles.spacer}`}>
           <div className={styles.video}>
             <div className={`${styles.characters}`}>

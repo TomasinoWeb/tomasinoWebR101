@@ -16,10 +16,6 @@
   }
 }
 
-.maxWidth {
-  width: 100%;
-}
-
 /* ==== VARIANTS ==== */
 
 .speech {
@@ -149,3 +145,7 @@
 //     font-size: 0.875rem;
 //   }
 // }
+
+.maxWidth {
+  width: 100% !important;
+}
