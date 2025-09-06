@@ -1,0 +1,68 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // People project colors
+        'cream': '#fbf9f2',
+        'cream-light': '#fbf9f4',
+        'dark-grey': '#343332',
+        'text-grey': '#393939',
+        'black': '#1e1e1e',
+        'yellow': '#ffd400',
+        'yellow-dark': '#e4bc04',
+        'blue': '#728cc7',
+        'blue-light': '#60b0e3',
+        'orange': '#e95412',
+        'orange-light': '#fac170',
+        'teal': '#3aaa9a',
+        'beige': '#fcebd1',
+        'grey-light': '#ddd0c8',
+        // Existing project colors (mapped from CSS variables)
+        'neutral-black': '#1e1e1e',
+        'neutral-cream': '#fcebd1',
+        'neutral-gray': '#cecccc',
+        'neutral-dark-gray': '#343332',
+        'neutral-light-gray': '#dddddd',
+        'neutral-white': '#fbf9f4',
+        'primary-blue': '#60b0e3',
+        'primary-blue-green': '#3aaa9a',
+        'primary-blue-violet': '#728cc7',
+        'primary-green': '#8ec21f',
+        'primary-lightbrown-yellow': '#fac170',
+        'primary-red-orange': '#e95412',
+        'primary-yellow': '#ffd400',
+        'secondary-dark-cream': '#d9b39f',
+        'secondary-light-blue': '#bfebff',
+        'secondary-light-yellow': '#fff1aa',
+      },
+      fontFamily: {
+        'snoopy': ['Snoopy', 'sans-serif'],
+        'helvetica': ['Helvetica Neue', 'sans-serif'],
+        'groundnut': ['Groundnut', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'manrope': ['Manrope', 'sans-serif'],
+      },
+      fontSize: {
+        'caption-label': 'var(--font-sizes-caption-label)',
+        'secondary-base': 'var(--font-sizes-secondary-base)',
+        'base': 'var(--font-sizes-base)',
+        'p-lead': 'var(--font-sizes-p-lead)',
+        'h3': 'var(--font-sizes-h3)',
+        'h2': 'var(--font-sizes-h2)',
+        'main-title': 'var(--font-sizes-main-title)',
+        'hero-title': 'var(--font-sizes-hero-title)',
+      },
+      backgroundImage: {
+        'screentone': "url('/assets/people/background.svg')",
+      },
+    },
+  },
+  plugins: [],
+}

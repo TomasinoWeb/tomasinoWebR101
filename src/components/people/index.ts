@@ -1,0 +1,9 @@
+export { default as PeopleCallToAction } from "./PeopleCallToAction";
+export { default as PeopleComicsSection } from "./PeopleComicsSection";
+export { default as PeopleCoreGroup } from "./PeopleCoreGroup";
+export { default as PeopleDepartmentCard } from "./PeopleDepartmentCard";
+export { default as PeopleDepartmentGrid } from "./PeopleDepartmentGrid";
+export { default as PeopleHeroSection } from "./PeopleHeroSection";
+export { default as PeoplePhotoCollage } from "./PeoplePhotoCollage";
+export { default as PeopleQuoteBlock } from "./PeopleQuoteBlock";
+export { default as PeopleStickerCard } from "./PeopleStickerCard";

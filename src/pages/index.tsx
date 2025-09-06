@@ -1,10 +1,7 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import { Button } from "../components/Button";
-import BackgroundImage from "../../public/assets/landing/BACKGROUND_VER 1.png";
-import Logo from "../../public/assets/logos/WORDMARK_Ver1.png";
 import styles from "./index.module.scss";
-import Image from "next/image";
 
 interface PageProps {}
 
@@ -15,37 +12,43 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
     dots: "subtle",
 
     children: (
-      <div className={styles.root}>
-        <div className={styles.background}>
-          <Image src={BackgroundImage} alt="Background image for landing" className={styles.bg_img} />
-        </div>
-
-        <div className={styles.overlay}>
-          <div className={styles.page}>
-            <div className={styles.top}>
-              <div className={styles.left}>
-                <h1>WELCOME TO</h1>
-              </div>
-              <div className={styles.center}>
-                <Image src={Logo} alt="Logo" className={styles.tomwebLogo} />
-              </div>
-              <div className={styles.right}>
-                <h1>EST. 2007</h1>
+      <div className={styles.heroSection}>
+        <div className={styles.titleSection}>
+          <div className={styles.decorativeLines}>
+            <div className={styles.topHorizontalLine}></div>
+            <div className={styles.bottomHorizontalLine}></div>
+            <div className={styles.leftVerticalLine}></div>
+            <div className={styles.rightVerticalLine}></div>
+          </div>
+          <div className={styles.titleSubtitle}>
+            Welcome to
+          </div>
+          <div className={styles.logo}>
+            <div className={styles.planetContainer}>
+              <div className={styles.planet}>PLANET</div>
+              <div className={styles.snoopyContainer}>
+                <img className={styles.sleepingSnoopy} alt="" src="/assets/landing/snoopy.png" />
+                <img className={styles.bird} alt="" src="/assets/landing/bird.png" />
               </div>
             </div>
-
-            <div className={styles.rail}>
-              <div className={styles.inner}>
-                <Button href="/r101" variant="speech" maxWidth>
-                  KNOW TOMASINOWEB'S STORY
-                </Button>
-
-                <Button href="/r101" variant="speech" maxWidth>
-                  JOIN THE CREW
-                </Button>
-              </div>
+            <div className={styles.tomasinoweb}>
+              TOMASINOWEB
             </div>
           </div>
+          <div className={styles.titleSubtitle}>
+            est. 2007
+          </div>
+        </div>
+        <div className={styles.heroButtons}>
+          <Button href="" className={styles.heroButton} variant="speech">KNOW TOMASINOWEB'S STORY</Button>
+          <Button href="" className={styles.heroButton} variant="speech">JOIN THE CREW</Button>
+        </div>
+        <div className={styles.characters}>
+          <img className={styles.characterOne} alt="" src="/assets/landing/one.png" />
+          <img className={styles.characterTwo} alt="" src="/assets/landing/two.png" />
+          <img className={styles.characterThree} alt="" src="/assets/landing/three.png" />
+          <img className={styles.characterFour} alt="" src="/assets/landing/four.png" />
+          <img className={styles.characterFive} alt="" src="/assets/landing/five.png" />
         </div>
       </div>
     ),

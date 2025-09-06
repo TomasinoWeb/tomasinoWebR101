@@ -2,10 +2,9 @@ import { implementLayoutStatic } from "@scinorandex/layout";
 import { PublicLayoutOptions, Result } from "./common";
 import axios from "axios";
 
+const DOMAIN = "https://apply.tomasinoweb.org";
 // TODO: set to false in prod
 const TESTING = true;
-const DOMAIN = "https://apply.tomasinoweb.org";
-
 export async function fetchResults() {
   if (TESTING)
     return {

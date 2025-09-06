@@ -33,8 +33,7 @@
   border-radius: 24px;
   border: 2px solid var(--border-color);
   box-shadow: calc(-1 * var(--shadow-offset)) var(--shadow-offset) 0 0 var(--border-color);
-
-  padding: 30px;
+  padding: 1rem 2rem;
   color: #1e1e1e;
   display: block;
 
@@ -43,7 +42,7 @@
   .tail_wrapper {
     filter: drop-shadow(-3px 2px 0px var(--border-color));
     position: absolute;
-    // z-index: -1;
+    z-index: -1;
     bottom: 0;
     right: 0;
     transform-origin: center;
@@ -96,7 +95,6 @@
   border: 4.412px solid var(--neutral-black, #1e1e1e);
   background: var(--neutral-white, #fbf9f4);
   box-shadow: -5.085px 5.085px 0 0 #1e1e1e;
-  width: fit-content;
 
   &:hover {
     background: var(--secondary-light-yellow, #fff1aa);
@@ -144,8 +142,12 @@
   font-size: 0.875rem;
 }
 
-// @media (max-width: 768px) {
-//   .button {
-//     font-size: 0.875rem;
-//   }
-// }
+.button {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 0.875rem;
+  }
+}

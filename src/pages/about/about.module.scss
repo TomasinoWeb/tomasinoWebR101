@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  > section {
+  section {
     align-self: center;
     max-width: 1440px;
   }
@@ -11,15 +11,19 @@
 .top {
   align-items: center;
   justify-content: center;
-  padding: 10vh 9vw;
+  padding: 14vh 9vw;
   gap: 70px;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  /* inverse */
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
 
   @media screen and (max-width: 900px) {
-    flex-direction: column;
-    padding: 57px 30px 40px 30px;
+    padding: 57px 15vw 40px 15vw;
     gap: 50px;
   }
 
@@ -108,7 +112,6 @@
     }
 
     .description {
-      margin-top: 10px;
       color: var(--neutral-black, #1e1e1e);
       font-family: "Helvetica Neue";
       font-size: var(--font-sizes-base, 20px);
@@ -123,8 +126,6 @@
 .bottom {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  padding: 0px 30px;
   padding-bottom: 51px;
 
   a {
@@ -141,7 +142,7 @@
       justify-content: center;
       gap: 16px;
       height: 124px;
-      padding: 12px 20px;
+      padding: 12px 24px;
 
       border: 2px solid var(--neutral-black, #1e1e1e);
       background: var(--neutral-white, #fbf9f4);
@@ -159,66 +160,29 @@
         font-size: var(--font-sizes-secondary-base, 16px);
         font-weight: 400;
       }
-
-      @media screen and (max-width: 850px) {
-        height: unset;
-        padding: 16px 16px;
-        gap: 8px;
-      }
     }
 
-    .imageContainer {
+    .image {
       padding: 20px;
       background-color: var(--neutral-white);
       border: 2px solid var(--neutral-black, #1e1e1e);
-
-      .inside {
-        position: relative;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-
-        .after {
-          z-index: 2;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          transition: opacity 0.15s ease-in-out;
-        }
-
-        .initial {
-          z-index: 1;
-        }
-
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         &:hover {
-          .after {
-            opacity: 1;
-            transition: opacity 0.15s ease-in-out;
-          }
+          filter: brightness(0.98);
         }
-      }
-
-      @media screen and (max-width: 850px) {
-        height: unset;
-        padding: 16px 16px;
       }
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 720px) {
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 24px;
-    width: 100%;
-
     .aboutBox {
-      width: 100%;
+      width: 80vw;
     }
   }
 }

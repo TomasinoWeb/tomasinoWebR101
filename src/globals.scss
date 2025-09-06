@@ -1,3 +1,10 @@
+/* postcss-custom-properties */
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
 @font-face {
   font-family: Snoopy;
   src: url("/fonts/snoopy/Snoopy.ttf");
@@ -201,6 +208,7 @@ video {
   vertical-align: baseline;
   box-sizing: border-box;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -215,17 +223,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -233,10 +245,12 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 /* Typography */
 :root {
   /* Desktop */
@@ -263,11 +277,11 @@ table {
   :root {
     --footer-height: 212.5px;
 
-    --font-sizes-caption-label: 12px;
-    --font-sizes-secondary-base: 14px;
-    --font-sizes-base: 16px;
-    --font-sizes-p-lead: 20px;
-    --font-sizes-h3: 24px;
+    --font-sizes-caption-label: 14px;
+    --font-sizes-secondary-base: 16px;
+    --font-sizes-base: 20px;
+    --font-sizes-p-lead: 24px;
+    --font-sizes-h3: 28px;
     --font-sizes-h2: 36px;
     --font-sizes-main-title: 48px;
     --font-sizes-hero-title: 64px;
@@ -315,4 +329,58 @@ table {
   opacity: 0;
   transition: 400ms ease-in-out;
   pointer-events: none;
+}
+
+/* People project specific styles */
+.text-shadow-black {
+  text-shadow: -2px 4px 0px #1e1e1e;
+}
+
+.text-shadow-black-thick {
+  text-shadow:
+    -4px 6px 0px #1e1e1e,
+    -2px 3px 0px #1e1e1e,
+    -6px 9px 0px rgba(30, 30, 30, 0.3);
+}
+
+.text-outline-black {
+  -webkit-text-stroke: 3px #1e1e1e;
+}
+
+.text-cream-with-outline {
+  color: #fbf9f4;
+  -webkit-text-stroke: 3px #1e1e1e;
+  text-shadow:
+    -4px 6px 0px #1e1e1e,
+    -2px 3px 0px #1e1e1e;
+}
+
+.text-shadow-small {
+  text-shadow: -0.814px 1.357px 0px #1e1e1e;
+}
+
+/* Ensure images load properly */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for transparent images */
+.photo-frame img {
+  background-color: transparent;
+  opacity: 1;
+}
+
+/* Improve image rendering quality */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+}
+
+/* Mobile grid fix for department grid */
+@media (max-width: 768px) {
+  [data-grid-area] {
+    grid-area: auto !important;
+  }
 }
