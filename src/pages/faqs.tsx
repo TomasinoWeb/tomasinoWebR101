@@ -82,13 +82,13 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
                   application
                 </button>
 
-                <a href="/quiz" target="_blank" rel="noreferrer" className={styles.faq_main_item}>
+                <Link href="/quiz" target="_blank" rel="noreferrer" className={styles.faq_main_item}>
                   <img
                     src="/assets/faq/peanuts-icons-2.png" // change this to the correct icon
                     className={`${styles.faq_icons} ${styles.mobile_cell5}`}
                     alt="icon"
                   ></img>
-                </a>
+                </Link>
                 <button
                   className={`${styles.button_picker} ${styles.mobile_cell6}`}
                   onClick={() => setTag("results")}
