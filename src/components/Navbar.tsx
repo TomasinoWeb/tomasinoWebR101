@@ -42,7 +42,9 @@ export function MobileNavbar({ variant }: { variant: "mini" | "full" }) {
     <div className={styles.mobile}>
       <div className={styles.top}>
         <div className={styles.left}>
-          <Image src={YellowInsignia} alt="Yellow insignia" width={100} height={100} className={styles.tomwebLogo} />
+          <_Link href="/">
+            <Image src={YellowInsignia} alt="Yellow insignia" width={100} height={100} className={styles.tomwebLogo} />
+          </_Link>
         </div>
 
         <div className={styles.right}>
