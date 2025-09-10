@@ -100,7 +100,7 @@
           font-size: var(--font-sizes-p-lead, 24px);
           font-style: normal;
           font-weight: 700;
-          line-height: 32px; /* 133.333% */
+          // line-height: 32px; /* 133.333% */
         }
 
         svg {
@@ -142,9 +142,6 @@
     }
   }
 
-  @media screen and (max-width: 1100px) {
-  }
-
   @media screen and (max-width: 850px) {
     .header {
       -webkit-text-stroke-width: 2px;
@@ -168,14 +165,6 @@
       .block {
         padding: 14px 28px;
         max-height: 123.4px;
-
-        .block_header {
-          .left {
-            img {
-              width: 50px;
-            }
-          }
-        }
       }
     }
   }
@@ -190,7 +179,6 @@
 
       > h2 {
         font-size: 18px;
-
         max-width: 500px;
       }
     }
@@ -210,10 +198,14 @@
           margin-bottom: 10px;
 
           .left {
-            gap: 15px;
+            gap: 5px;
+
+            .image_wrapper {
+              min-width: 80px;
+            }
 
             img {
-              width: 30px;
+              height: 50px;
             }
 
             h2 {
@@ -245,7 +237,7 @@
         .block_body {
           ol {
             li {
-              font-size: 14px;
+              // font-size: 14px;
             }
           }
         }
