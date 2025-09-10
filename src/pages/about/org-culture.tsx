@@ -36,7 +36,7 @@ import { Button } from "../../components/Button";
 /* Quote integration */
 import QuoteBlock from "../../components/QuoteBlock";
 import { PublicLayoutBackend } from "../../layouts/public/static";
-import { testimonials } from "../testimonials";
+import { testimonials } from "../../data/testimonials";
 import ToraTomwegg from "../../../public/assets/tomweggs/ToraTomweggVer1.png";
 import Dancing from "../../../public/assets/tomweggs/Dancing.png";
 import Love from "../../../public/assets/tomweggs/Love.png";

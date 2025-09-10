@@ -16,7 +16,7 @@ import comicDots from "../../../public/assets/about/org-culture/dots.png";
 import { HoverableImageFade } from "../../components/HoverableImageFade";
 import { useState } from "react";
 import { Button } from "../../components/Button";
-import { testimonials } from "../testimonials";
+import { testimonials } from "../../data/testimonials";
 
 interface PageProps {}
 
