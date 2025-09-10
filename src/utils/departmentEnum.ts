@@ -1,4 +1,4 @@
-export const departments = [
+export const departmentsEnum = [
   "Human Resources",
   "Finance",
   "Publicity and Communications",
@@ -15,4 +15,4 @@ export const departments = [
   "Executive Assistant to the Executive Vice President",
   "Executive Assistant to the Executive Editor",
 ] as const;
-export type Department = (typeof departments)[number];
+export type Department = (typeof departmentsEnum)[number];

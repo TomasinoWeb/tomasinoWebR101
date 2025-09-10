@@ -59,7 +59,7 @@ const metatags = {
 const CANONICAL_URL = "https://join.tomasinoweb.org/";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [hasLoaded, setHasLoaded] = useState(true); // set this to false before we launch
+  const [hasLoaded, setHasLoaded] = useState(false); // set this to false before we launch
   const router = useRouter();
 
   useEffect(() => {
