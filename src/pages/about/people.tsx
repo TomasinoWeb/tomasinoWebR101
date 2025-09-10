@@ -17,6 +17,7 @@ import { HoverableImageFade } from "../../components/HoverableImageFade";
 import { useState } from "react";
 import { Button } from "../../components/Button";
 import { testimonials } from "../../data/testimonials";
+import { FadeIn } from "../../components/FadeIn";
 
 interface PageProps {}
 
@@ -176,21 +177,23 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             <QuoteBlock testimonial={testimonials[0]} />
           </div>
 
-          <p>This comic is presented to you by...</p>
-          <div className={styles.comics}>
-            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={MWRLogo} alt="main website" />
-            </Link>
-            <Link href={"https://lamona.lol"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={LamonaLogo} alt="lamona" />
-            </Link>
-            <Link href={"https://draft143.com"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={Draft143Logo} alt="draft143" />
-            </Link>
-            <Link href={"https://uaap.tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={ThomScoreLogo} alt="Thomscore" />
-            </Link>
-          </div>
+          <FadeIn>
+            <p className={styles.p}>This comic is presented to you by...</p>
+            <div className={styles.comics}>
+              <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={MWRLogo} alt="main website" />
+              </Link>
+              <Link href={"https://lamona.lol"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={LamonaLogo} alt="lamona" />
+              </Link>
+              <Link href={"https://draft143.com"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={Draft143Logo} alt="draft143" />
+              </Link>
+              <Link href={"https://uaap.tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={ThomScoreLogo} alt="Thomscore" />
+              </Link>
+            </div>
+          </FadeIn>
         </section>
 
         <section className={styles.coreSection}>
@@ -236,13 +239,16 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               <p>of a challenging yet dynamic publication year</p>
             </div>
 
-            <div className={styles.testimonial}>
-              <QuoteBlock testimonial={testimonials[3]} imagePosition="right" />
-            </div>
-
-            <div className={styles.testimonial} style={{ marginBottom: 0 }}>
-              <QuoteBlock testimonial={testimonials[6]} />
-            </div>
+            <FadeIn>
+              <div className={styles.testimonial}>
+                <QuoteBlock testimonial={testimonials[3]} imagePosition="right" />
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <div className={styles.testimonial} style={{ marginBottom: 0 }}>
+                <QuoteBlock testimonial={testimonials[6]} />
+              </div>
+            </FadeIn>
           </div>
         </div>
 

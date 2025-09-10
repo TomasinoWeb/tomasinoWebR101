@@ -41,6 +41,7 @@ import ToraTomwegg from "../../../public/assets/tomweggs/ToraTomweggVer1.png";
 import Dancing from "../../../public/assets/tomweggs/Dancing.png";
 import Love from "../../../public/assets/tomweggs/Love.png";
 import Tongue from "../../../public/assets/tomweggs/Tongue.png";
+import { FadeIn } from "../../components/FadeIn";
 
 /* 8 rn */
 const stickerCardImages = [
@@ -94,15 +95,17 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             </div>
           </div>
 
-          <h3 className={styles.sectionTitle}>TomasinoWeb in numbers</h3>
-          <div className={styles.statsGrid}>
-            <Stat stat="6 websites" description="up and running for the Thomasian community" />
-            <Stat stat="21+" description="delulus just hoping for a Paskuhan date" />
-            <Stat stat="27" description="awards from prestigious contest & globally recognized institutions" />
-            <Stat stat="81" description="(and counting!) innovative, passionate, and dedicated members" />
-            <Stat stat="194,000+" description="combined followers across all digital platforms" />
-            <Stat stat="9,050,600" description="X (formerly Twitter) impressions in the past year" />
-          </div>
+          <FadeIn>
+            <h3 className={styles.sectionTitle}>TomasinoWeb in numbers</h3>
+            <div className={styles.statsGrid}>
+              <Stat stat="6 websites" description="up and running for the Thomasian community" />
+              <Stat stat="21+" description="delulus just hoping for a Paskuhan date" />
+              <Stat stat="27" description="awards from prestigious contest & globally recognized institutions" />
+              <Stat stat="81" description="(and counting!) innovative, passionate, and dedicated members" />
+              <Stat stat="194,000+" description="combined followers across all digital platforms" />
+              <Stat stat="9,050,600" description="X (formerly Twitter) impressions in the past year" />
+            </div>
+          </FadeIn>
         </section>
 
         {/* Happy Dances */}
@@ -113,32 +116,34 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
               secondaryText="All the fun starts here!"
               snoopyImage={Dancing}
             />
-            <span className={styles.cultureCards}>
-              <CultureCard
-                title="Post-Coverage hangouts"
-                description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
-                image={ImagePostCoverage}
-                bgColor="var(--neutral-white)"
-              />
-              <CultureCard
-                title="Random/Sponty Discord Calls"
-                description="Where we discuss the most random of things from Antonism to Dating App bios. Feel free to hop in whenever you see your orgmates hanging out on one of the tambay lang channels."
-                image={ImageDiscord}
-                bgColor="var(--secondary-light-blue, #BFEBFF)"
-              />
-              <CultureCard
-                title="PowerPoint Parties"
-                description="How do TomWebbers celebrate the festivities? By throwing PowerPoint Parties of course! Present the most random things and watch how your orgmates react to your content."
-                image={ImagePPT}
-                bgColor="var(--secondary-light-yellow)"
-              />
-              <CultureCard
-                title="General Assemblies"
-                description="The official gathering of all TomWebbers - current and alumni! This is where we discuss where we are now, and of course, where we're headed."
-                image={ImageGeneralAssembly}
-                bgColor="var(--primary-lightbrown-yellow)"
-              />
-            </span>
+            <FadeIn>
+              <span className={styles.cultureCards}>
+                <CultureCard
+                  title="Post-Coverage hangouts"
+                  description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
+                  image={ImagePostCoverage}
+                  bgColor="var(--neutral-white)"
+                />
+                <CultureCard
+                  title="Random/Sponty Discord Calls"
+                  description="Where we discuss the most random of things from Antonism to Dating App bios. Feel free to hop in whenever you see your orgmates hanging out on one of the tambay lang channels."
+                  image={ImageDiscord}
+                  bgColor="var(--secondary-light-blue, #BFEBFF)"
+                />
+                <CultureCard
+                  title="PowerPoint Parties"
+                  description="How do TomWebbers celebrate the festivities? By throwing PowerPoint Parties of course! Present the most random things and watch how your orgmates react to your content."
+                  image={ImagePPT}
+                  bgColor="var(--secondary-light-yellow)"
+                />
+                <CultureCard
+                  title="General Assemblies"
+                  description="The official gathering of all TomWebbers - current and alumni! This is where we discuss where we are now, and of course, where we're headed."
+                  image={ImageGeneralAssembly}
+                  bgColor="var(--primary-lightbrown-yellow)"
+                />
+              </span>
+            </FadeIn>
           </section>
         </div>
 
@@ -148,30 +153,34 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             secondaryText="Snoop around our websites"
             snoopyImage={Love}
           />
-          <div className={styles.otherWebsites}>
-            <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={MWRLogo} alt="main website" />
-            </Link>
-            <Link href={"https://lamona.lol"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={LamonaLogo} alt="lamona" />
-            </Link>
-            <Link href={"https://draft143.com"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={Draft143Logo} alt="draft143" />
-            </Link>
-            <Link href={"https://uaap.tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={ThomScoreLogo} alt="Thomscore" />
-            </Link>
-          </div>
-          {/* Testimonials here */}
-          {/* These could be converted to an iterator if it needs to be a lot */}
+          <FadeIn>
+            <div className={styles.otherWebsites}>
+              <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={MWRLogo} alt="main website" />
+              </Link>
+              <Link href={"https://lamona.lol"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={LamonaLogo} alt="lamona" />
+              </Link>
+              <Link href={"https://draft143.com"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={Draft143Logo} alt="draft143" />
+              </Link>
+              <Link href={"https://uaap.tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
+                <Image src={ThomScoreLogo} alt="Thomscore" />
+              </Link>
+            </div>
+          </FadeIn>
 
-          <div className={styles.testimonial}>
-            <QuoteBlock testimonial={testimonials[2]} />
-          </div>
+          <FadeIn>
+            <div className={styles.testimonial}>
+              <QuoteBlock testimonial={testimonials[2]} />
+            </div>
+          </FadeIn>
 
-          <div className={styles.testimonial}>
-            <QuoteBlock testimonial={testimonials[1]} imagePosition="right" />
-          </div>
+          <FadeIn>
+            <div className={styles.testimonial}>
+              <QuoteBlock testimonial={testimonials[1]} imagePosition="right" />
+            </div>
+          </FadeIn>
         </section>
 
         <div className={`${styles.notebook} ${styles.spacer}`}>
@@ -181,32 +190,34 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
               secondaryText="Of course, the actual work..."
               snoopyImage={Tongue}
             />
-            <span className={styles.cultureCards}>
-              <CultureCard
-                title="On-site Coverages"
-                description="Never been to this place? Or have you already? TomasinoWeb often goes to onsite coverages where our publication reports everything on ground."
-                image={ImageOnsite}
-                bgColor="var(--neutral-white)"
-              />
-              <CultureCard
-                title="Virtual Coverages"
-                description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
-                image={ImageVirtual}
-                bgColor="var(--secondary-light-blue, #BFEBFF)"
-              />
-              <CultureCard
-                title="Interactive Meetings"
-                description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
-                image={ImageInteractive}
-                bgColor="var(--secondary-light-yellow)"
-              />
-              <CultureCard
-                title="Mentorship and Collaboration"
-                description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
-                image={ImageMentor}
-                bgColor="var(--primary-lightbrown-yellow)"
-              />
-            </span>
+            <FadeIn>
+              <span className={styles.cultureCards}>
+                <CultureCard
+                  title="On-site Coverages"
+                  description="Never been to this place? Or have you already? TomasinoWeb often goes to onsite coverages where our publication reports everything on ground."
+                  image={ImageOnsite}
+                  bgColor="var(--neutral-white)"
+                />
+                <CultureCard
+                  title="Virtual Coverages"
+                  description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
+                  image={ImageVirtual}
+                  bgColor="var(--secondary-light-blue, #BFEBFF)"
+                />
+                <CultureCard
+                  title="Interactive Meetings"
+                  description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
+                  image={ImageInteractive}
+                  bgColor="var(--secondary-light-yellow)"
+                />
+                <CultureCard
+                  title="Mentorship and Collaboration"
+                  description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
+                  image={ImageMentor}
+                  bgColor="var(--primary-lightbrown-yellow)"
+                />
+              </span>
+            </FadeIn>
           </section>
         </div>
 
@@ -278,11 +289,11 @@ const CultureCard = (props: CultureCardProps) => {
 
       <section
         className={styles.bottom}
-        style={{ "--notebook-background-color ": props.bgColor } as React.CSSProperties}
+        style={{ "--notebook-background-color": props.bgColor } as React.CSSProperties}
       >
         <section
           className={styles.notebook}
-          style={{ "--notebook-background-color ": props.bgColor } as React.CSSProperties}
+          style={{ "--notebook-background-color": props.bgColor } as React.CSSProperties}
         >
           <div className={styles.cardTitle}>
             <h4 className={styles.title}>{props.title}</h4>

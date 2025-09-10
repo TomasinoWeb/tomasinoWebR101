@@ -8,6 +8,7 @@ import Image from "next/image";
 import PlantTomasinoWeb from "../../../public/assets/logos/WORDMARK_Ver1.png";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Stairs from "../../components/Stairs";
 
 const useScroll = () => {
   const [data, setData] = useState({ x: 0, y: 0, lastX: 0, lastY: 0 });
@@ -76,7 +77,9 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
         </header>
 
         <AnimatePresence mode="wait">
-          <main className={`${styles.main}`}>{layoutProps.children}</main>
+          <Stairs>
+            <main className={`${styles.main}`}>{layoutProps.children}</main>
+          </Stairs>
         </AnimatePresence>
 
         {layoutProps.footer !== "disabled" && (
