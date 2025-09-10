@@ -15,7 +15,7 @@ export default function Footer(props: FooterProps) {
           <p>(c) TomasinoWeb 2025</p>
           <Link href="/about/departments">Departments</Link>
           <Link href="/apply">Application Form</Link>
-          <Link href="/faq">FREQUENTLY ASKED QUESTIONS</Link>
+          <Link href="/faqs">FREQUENTLY ASKED QUESTIONS</Link>
         </div>
 
         <div className={styles.right}>
