@@ -90,6 +90,7 @@
 
       .secondaryText {
         color: var(--neutral-black, #1e1e1e);
+        padding: 0px 20px;
         text-align: center;
         font-family: "Groundnut", "GroundnutTW";
         font-size: var(--font-sizes-base);
@@ -100,6 +101,7 @@
 
         @media screen and (max-width: 550px) {
           font-size: 16px; /* had to force it since the variables are inconsistent (it's font-size-base is 20 but it's supposed to be 16) */
+          line-height: 20px;
         }
       }
     }
