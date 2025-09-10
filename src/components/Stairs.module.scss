@@ -1,0 +1,36 @@
+.stairs {
+  .transitionContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 99999;
+
+    div {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background-color: #dddddd;
+
+      --dot-bg: #fbf9f4;
+      --dot-color: #aea69d34;
+      background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
+      background-repeat: repeat; /* or omit this declaration */
+      background-size: 8px 8px;
+      background-position: center;
+    }
+  }
+  .transitionBackground {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--neutral-cream);
+    z-index: 1;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+  }
+}

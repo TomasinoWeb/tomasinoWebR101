@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 100vh;
+
+  color: var(--dark_grey);
+
+  position: relative;
+
+  background-color: white;
+  --dot-bg: #fbf9f4;
+  --dot-color: #aea69d34;
+
+  background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
+  background-repeat: repeat; /* or omit this declaration */
+  background-size: 8px 8px;
+  background-position: center;
+}
+
+.loadingText {
+  text-align: center;
+  font-family: "Snoopy", sans-serif;
+  letter-spacing: -2px;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.mascotIcon {
+  position: absolute;
+  width: 51px;
+  height: auto;
+  top: calc(50% + 12px);
+}
+
+/* Spinner and animations */
+.spinner {
+  display: inline-block;
+  z-index: 20;
+  animation: loading-bar-spinner 1000ms linear infinite;
+}
+
+.spinnerIcon {
+  width: 100px;
+  height: 100px;
+  border: solid 7px transparent;
+  border-color: var(--neutral-light-gray);
+  border-left-color: var(--neutral-dark-gray);
+  border-radius: 100%;
+}
+
+@keyframes loading-bar-spinner {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
