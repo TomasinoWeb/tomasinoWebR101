@@ -58,14 +58,14 @@
   .left {
     flex: 4;
     .title {
-      font-family: Groundnut, sans-serif;
+      font-family: "Groundnut", "GroundnutTW", sans-serif;
       font-size: 20px;
       text-align: center;
       margin-bottom: 20px;
     }
 
     .subtitle {
-      font-family: Groundnut, sans-serif;
+      font-family: "Groundnut", "GroundnutTW", sans-serif;
       font-size: 48px;
       text-align: center;
     }
@@ -150,7 +150,7 @@
           border: 2px solid var(--neutral-black, #1e1e1e);
           padding: 6px 10px;
 
-          font-family: Groundnut, sans-serif;
+          font-family: "Groundnut", "GroundnutTW", sans-serif;
           font-size: 16px;
 
           @media screen and (max-width: 650px) {

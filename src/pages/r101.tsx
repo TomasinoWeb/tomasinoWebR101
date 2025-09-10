@@ -1,7 +1,7 @@
 import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import styles from "./r101.module.scss";
-import Snoopy from "../../public/snoopy_r101_placeholder.png";
+import TomWegg from "../../public/assets/tomweggs/WithShades.png";
 import Image from "next/image";
 import { ReactNode } from "react";
 import Link from "next/link";
@@ -42,7 +42,7 @@ export default PublicLayoutFrontend.use<Props>(() => {
 
         <div className={styles.blocks}>
           <div className={styles.img}>
-            <Image src={Snoopy} alt="snoopy" width={1000} height={500} />
+            <Image src={TomWegg} alt="snoopy" width={1000} height={500} />
           </div>
 
           <Block title="Application" number={1}>

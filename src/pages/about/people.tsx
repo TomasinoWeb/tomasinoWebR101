@@ -1,93 +1,98 @@
 import QuoteBlock from "../../components/QuoteBlock";
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import { PublicLayoutBackend } from "../../layouts/public/static";
-import { Testimonials } from "./org-culture";
 import styles from "./people.module.scss";
 import Left from "../../../public/assets/about/the-people/Left.png";
 import Center from "../../../public/assets/about/the-people/Center.png";
 import Right from "../../../public/assets/about/the-people/Right.png";
 import Image from "next/image";
 import Link from "next/link";
-import websiteLogo from "../../../public/logo/insignia_yellow.png";
-import ThomScoreLogo from "../../../public/assets/about/org-culture/ThomScore_temp.jpg";
-import lamonaLogo from "../../../public/assets/about/org-culture/tomwegg_temp.png";
-import draft143Logo from "../../../public/assets/about/org-culture/draft143_temp.png";
+import ThomScoreLogo from "../../../public/assets/about/org-culture/thomscore.png";
+import LamonaLogo from "../../../public/assets/about/org-culture/lamona.png";
+import Draft143Logo from "../../../public/assets/about/org-culture/draft143.png";
+import MWRLogo from "../../../public/assets/about/org-culture/tw.png";
 import comicImage from "../../../public/assets/about/org-culture/test.png";
 import comicDots from "../../../public/assets/about/org-culture/dots.png";
 import { HoverableImageFade } from "../../components/HoverableImageFade";
 import { useState } from "react";
 import { Button } from "../../components/Button";
+import { testimonials } from "../testimonials";
 
 interface PageProps {}
 
 const coreMembers = [
   {
-    name: "Miguel Angelo Sumalinog",
+    name: "Charisse Suni",
     position: "President",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Kurt Alec Mira",
-    position: "Executive Vice President",
-    image: "/assets/about/the-people/expanded.png",
-  },
-  {
-    name: "Romeo B. Peralta III",
+    name: "Jessica Siega",
     position: "Executive Secretary",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Candice Anne Bago",
+    name: "Florian Venturina",
     position: "VP for Finance",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Ferica Rodriguez",
+    name: "Andrea Figarola",
     position: "VP for Human Resources",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Ashley Manaog",
-    position: "VP for Publicity and Communications",
+    name: "Paula Martinez",
+    position: "VP for Community Development",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Mary Jade Jadormio",
+    name: "Liana Ortega",
     position: "Executive Editor",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Patricia Lumenario",
+    name: "Elisse Arzadon",
     position: "Managing Editor",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Lance Bernardino",
+    name: "Joaquin Balolong",
     position: "Chief Photographer",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Charrise Suni",
+    name: "Shuhei De Belen",
     position: "Asst. Chief Photographer",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Erimae Lopez",
+    name: "Candice Samonte",
+    position: "Chief Videographer",
+    image: "/assets/about/the-people/expanded.png",
+  },
+  {
+    name: "James Romero",
+    position: "Asst. Chief Videographer",
+    image: "/assets/about/the-people/expanded.png",
+  },
+  {
+    name: "Rayven Laurel",
     position: "Creative Director",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Radiance Parayno",
+    name: "Danielle Mantes",
     position: "Asst. Creative Director",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Andrea Dayo",
+    name: "Lance Gulinao",
     position: "Chief Technology Officer",
     image: "/assets/about/the-people/expanded.png",
   },
   {
-    name: "Lance Gulinao",
+    name: "Zeandarra Giva",
     position: "Asst. Chief Technology Officer",
     image: "/assets/about/the-people/expanded.png",
   },
@@ -136,13 +141,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
         </section>
 
         <section className={styles.section}>
-          <QuoteBlock
-            imageSrc={Testimonials[0].imageSrc}
-            quoteText={Testimonials[0].quoteText}
-            authorName={Testimonials[0].authorName}
-            authorDetails={Testimonials[0].authorDetails}
-            imagePosition={"left"}
-          />
+          <QuoteBlock testimonial={testimonials[5]} />
 
           <div className={styles.members}>
             <div className={styles.rail}>
@@ -155,7 +154,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             <div className={styles.pictures}>
               {pictures.map((p, i) => (
                 <div className={styles.picture} key={i}>
-                  <img src={p} alt={`Picture ${i}`} className={styles.pictureImage} />
+                  <Image src={p} alt={`Picture ${i}`} width={256} height={256} className={styles.pictureImage} />
                 </div>
               ))}
             </div>
@@ -164,13 +163,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           <h2>18 years of innovation, passion, and dedication</h2>
 
           <div className={styles.first}>
-            <QuoteBlock
-              imageSrc={Testimonials[0].imageSrc}
-              quoteText={Testimonials[0].quoteText}
-              authorName={Testimonials[0].authorName}
-              authorDetails={Testimonials[0].authorDetails}
-              imagePosition={"right"}
-            />
+            <QuoteBlock testimonial={testimonials[4]} imagePosition="right" />
           </div>
 
           <div className={styles.org_images}>
@@ -180,25 +173,19 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </div>
 
           <div className={styles.testimonial}>
-            <QuoteBlock
-              imageSrc={Testimonials[0].imageSrc}
-              quoteText={Testimonials[0].quoteText}
-              authorName={Testimonials[0].authorName}
-              authorDetails={Testimonials[0].authorDetails}
-              imagePosition={"left"}
-            />
+            <QuoteBlock testimonial={testimonials[0]} />
           </div>
 
           <p>This comic is presented to you by...</p>
           <div className={styles.comics}>
             <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={websiteLogo} alt="main website" />
+              <Image src={MWRLogo} alt="main website" />
             </Link>
             <Link href={"https://lamona.lol"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={lamonaLogo} alt="lamona" />
+              <Image src={LamonaLogo} alt="lamona" />
             </Link>
             <Link href={"https://draft143.com"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={draft143Logo} alt="draft143" />
+              <Image src={Draft143Logo} alt="draft143" />
             </Link>
             <Link href={"https://uaap.tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
               <Image src={ThomScoreLogo} alt="Thomscore" />
@@ -250,23 +237,11 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             </div>
 
             <div className={styles.testimonial}>
-              <QuoteBlock
-                imageSrc={Testimonials[0].imageSrc}
-                quoteText={Testimonials[0].quoteText}
-                authorName={Testimonials[0].authorName}
-                authorDetails={Testimonials[0].authorDetails}
-                imagePosition={"left"}
-              />
+              <QuoteBlock testimonial={testimonials[3]} imagePosition="right" />
             </div>
 
             <div className={styles.testimonial} style={{ marginBottom: 0 }}>
-              <QuoteBlock
-                imageSrc={Testimonials[0].imageSrc}
-                quoteText={Testimonials[0].quoteText}
-                authorName={Testimonials[0].authorName}
-                authorDetails={Testimonials[0].authorDetails}
-                imagePosition={"right"}
-              />
+              <QuoteBlock testimonial={testimonials[6]} />
             </div>
           </div>
         </div>

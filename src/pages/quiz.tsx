@@ -136,7 +136,7 @@ function RenderQuestion({ quizController }: { quizController: UseQuiz }) {
               </div>
 
               <Image
-                src={"/assets/landing/placeholder.png"}
+                src={quizController.currentQuestion.image}
                 alt={quizController.currentQuestion.question}
                 className={questionStyles.image}
                 width={1000}

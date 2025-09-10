@@ -64,6 +64,9 @@
   }
 
   border-bottom: 2px solid black;
+  transform: translateY(0%);
+  transition: 300ms all ease-in-out;
+
   @media screen and (max-width: 850px) {
     display: none;
   }
@@ -157,4 +160,9 @@
 
 .disabledFooter {
   --footer-height: 0px;
+}
+
+.nav-bar--hidden {
+  transform: translateY(-150%);
+  transition: 300ms all ease-in-out;
 }

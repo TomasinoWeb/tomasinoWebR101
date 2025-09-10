@@ -4,8 +4,14 @@
 }
 
 @font-face {
-  font-family: Groundnut;
+  font-family: "Groundnut";
   src: url("/fonts/groundnut/Groundnut.otf");
+}
+
+@font-face {
+  font-family: "GroundnutTW";
+  src: url("/fonts/groundnut/GroundnutTW-Regular.ttf");
+  size-adjust: 125%;
 }
 
 @font-face {
@@ -319,4 +325,8 @@ table {
   opacity: 0;
   transition: 400ms ease-in-out;
   pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -5,17 +5,22 @@ import styles from "./org-culture.module.scss";
 /* Image imports */
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import snoopyHorizontal from "../../../public/assets/about/org-culture/snoopy_horizontal.png";
-import sampleCultureImage from "../../../public/assets/about/org-culture/sample_culture.png";
-import snoopyImage from "../../../public/assets/about/org-culture/snoopy.png";
-import snoopyHeart from "../../../public/assets/about/org-culture/snoopy heart.png";
-import snoopyNext from "../../../public/assets/about/org-culture/snoopy spit.png";
 
 // other websites
-import websiteLogo from "../../../public/logo/insignia_yellow.png";
-import ThomScoreLogo from "../../../public/assets/about/org-culture/ThomScore_temp.jpg";
-import lamonaLogo from "../../../public/assets/about/org-culture/tomwegg_temp.png";
-import draft143Logo from "../../../public/assets/about/org-culture/draft143_temp.png";
+import ThomScoreLogo from "../../../public/assets/about/org-culture/thomscore.png";
+import LamonaLogo from "../../../public/assets/about/org-culture/lamona.png";
+import Draft143Logo from "../../../public/assets/about/org-culture/draft143.png";
+import MWRLogo from "../../../public/assets/about/org-culture/tw.png";
+
+import ImageInteractive from "../../../public/assets/about/org-culture/actWork/interactive.png";
+import ImageMentor from "../../../public/assets/about/org-culture/actWork/mentor.png";
+import ImageOnsite from "../../../public/assets/about/org-culture/actWork/onsite.png";
+import ImageVirtual from "../../../public/assets/about/org-culture/actWork/virtual.png";
+
+import ImageDiscord from "../../../public/assets/about/org-culture/fun/dc.png";
+import ImageGeneralAssembly from "../../../public/assets/about/org-culture/fun/genAssembly.jpg";
+import ImagePostCoverage from "../../../public/assets/about/org-culture/fun/postCoverageHangouts.png";
+import ImagePPT from "../../../public/assets/about/org-culture/fun/pptParties.png";
 
 // for stickercard
 import comicImage from "../../../public/assets/about/org-culture/test.png";
@@ -30,8 +35,12 @@ import { Button } from "../../components/Button";
 
 /* Quote integration */
 import QuoteBlock from "../../components/QuoteBlock";
-import QuoteBlockImage from "../../../public/assets/about/org-culture/stamp.png";
 import { PublicLayoutBackend } from "../../layouts/public/static";
+import { testimonials } from "../testimonials";
+import ToraTomwegg from "../../../public/assets/tomweggs/ToraTomweggVer1.png";
+import Dancing from "../../../public/assets/tomweggs/Dancing.png";
+import Love from "../../../public/assets/tomweggs/Love.png";
+import Tongue from "../../../public/assets/tomweggs/Tongue.png";
 
 /* 8 rn */
 const stickerCardImages = [
@@ -43,23 +52,6 @@ const stickerCardImages = [
   memberFrame,
   memberFrame,
   memberFrame,
-];
-
-export const Testimonials = [
-  {
-    imageSrc: QuoteBlockImage.src,
-    quoteText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    authorName: "Lorem Ipsum",
-    authorDetails: "President",
-  },
-  {
-    imageSrc: QuoteBlockImage.src,
-    quoteText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    authorName: "Lorem Ipsum",
-    authorDetails: "President",
-  },
 ];
 
 interface PageProps {}
@@ -86,7 +78,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           <div className={styles.video}>
             <div className={`${styles.characters}`}>
               <span className={`${styles.imageContainer}`}>
-                <Image src={snoopyHorizontal} alt={"Snoopy Characters"} />
+                <Image src={ToraTomwegg} alt={"Snoopy Characters"} />
               </span>
             </div>
 
@@ -119,31 +111,31 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             <SpeechBubble
               primaryText="Cue the happy dances..."
               secondaryText="All the fun starts here!"
-              snoopyImage={snoopyImage}
+              snoopyImage={Dancing}
             />
             <span className={styles.cultureCards}>
               <CultureCard
-                title="Post-Coverage Hangouts"
+                title="Post-Coverage hangouts"
                 description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
-                image={sampleCultureImage}
+                image={ImagePostCoverage}
                 bgColor="var(--neutral-white)"
               />
               <CultureCard
-                title="Virtual Coverages"
-                description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
-                image={sampleCultureImage}
+                title="Random/Sponty Discord Calls"
+                description="Where we discuss the most random of things from Antonism to Dating App bios. Feel free to hop in whenever you see your orgmates hanging out on one of the tambay lang channels."
+                image={ImageDiscord}
                 bgColor="var(--secondary-light-blue, #BFEBFF)"
               />
               <CultureCard
-                title="Interactive Meetings"
-                description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
-                image={sampleCultureImage}
+                title="PowerPoint Parties"
+                description="How do TomWebbers celebrate the festivities? By throwing PowerPoint Parties of course! Present the most random things and watch how your orgmates react to your content."
+                image={ImagePPT}
                 bgColor="var(--secondary-light-yellow)"
               />
               <CultureCard
-                title="Mentorship and Collaboration"
-                description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
-                image={sampleCultureImage}
+                title="General Assemblies"
+                description="The official gathering of all TomWebbers - current and alumni! This is where we discuss where we are now, and of course, where we're headed."
+                image={ImageGeneralAssembly}
                 bgColor="var(--primary-lightbrown-yellow)"
               />
             </span>
@@ -154,17 +146,17 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           <SpeechBubble
             primaryText="Our Little Masterpieces"
             secondaryText="Snoop around our websites"
-            snoopyImage={snoopyHeart}
+            snoopyImage={Love}
           />
           <div className={styles.otherWebsites}>
             <Link href={"https://tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={websiteLogo} alt="main website" />
+              <Image src={MWRLogo} alt="main website" />
             </Link>
             <Link href={"https://lamona.lol"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={lamonaLogo} alt="lamona" />
+              <Image src={LamonaLogo} alt="lamona" />
             </Link>
             <Link href={"https://draft143.com"} className={`${styles.website} ${styles.imageContainer}`}>
-              <Image src={draft143Logo} alt="draft143" />
+              <Image src={Draft143Logo} alt="draft143" />
             </Link>
             <Link href={"https://uaap.tomasinoweb.org/"} className={`${styles.website} ${styles.imageContainer}`}>
               <Image src={ThomScoreLogo} alt="Thomscore" />
@@ -174,23 +166,11 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
           {/* These could be converted to an iterator if it needs to be a lot */}
 
           <div className={styles.testimonial}>
-            <QuoteBlock
-              imageSrc={Testimonials[0].imageSrc}
-              quoteText={Testimonials[0].quoteText}
-              authorName={Testimonials[0].authorName}
-              authorDetails={Testimonials[0].authorDetails}
-              imagePosition={"left"}
-            />
+            <QuoteBlock testimonial={testimonials[2]} />
           </div>
 
           <div className={styles.testimonial}>
-            <QuoteBlock
-              imageSrc={Testimonials[1].imageSrc}
-              quoteText={Testimonials[1].quoteText}
-              authorName={Testimonials[1].authorName}
-              authorDetails={Testimonials[1].authorDetails}
-              imagePosition={"right"}
-            />
+            <QuoteBlock testimonial={testimonials[1]} imagePosition="right" />
           </div>
         </section>
 
@@ -199,31 +179,31 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             <SpeechBubble
               primaryText="NEXT UP: MAKING THINGS HAPPEN"
               secondaryText="Of course, the actual work..."
-              snoopyImage={snoopyNext}
+              snoopyImage={Tongue}
             />
             <span className={styles.cultureCards}>
               <CultureCard
-                title="Post-Coverage Hangouts"
-                description="After a fulfilling day of taking pictures, writing stories, and taking interviews, we always top the day off with good food [and drinks *wink wink*] with great company."
-                image={sampleCultureImage}
+                title="On-site Coverages"
+                description="Never been to this place? Or have you already? TomasinoWeb often goes to onsite coverages where our publication reports everything on ground."
+                image={ImageOnsite}
                 bgColor="var(--neutral-white)"
               />
               <CultureCard
                 title="Virtual Coverages"
                 description="But what if you can't join physically? What if the event is impossible to get to? That's where we convene in our virtual newsroom."
-                image={sampleCultureImage}
+                image={ImageVirtual}
                 bgColor="var(--secondary-light-blue, #BFEBFF)"
               />
               <CultureCard
                 title="Interactive Meetings"
                 description="Have you ever been in a meeting where all you had to do was say yes, no, and goodbye? That won't be the case in TomasinoWeb. Your decisions and thoughts matter, no matter what meeting it is."
-                image={sampleCultureImage}
+                image={ImageInteractive}
                 bgColor="var(--secondary-light-yellow)"
               />
               <CultureCard
                 title="Mentorship and Collaboration"
                 description="In TomasinoWeb, we encourage collaborations. Though it doesn't stop there! We even encourage cross-department contributions. Expand your horizons with us!"
-                image={sampleCultureImage}
+                image={ImageMentor}
                 bgColor="var(--primary-lightbrown-yellow)"
               />
             </span>

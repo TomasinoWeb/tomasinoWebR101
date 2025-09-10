@@ -4,7 +4,8 @@ import YellowInsignia from "../../public/logo/insignia_yellow.png";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export const Navbar = (props: { containsApply: boolean; containsResults: boolean }) => {
   const Link = (props: { href: string; children: string; special?: boolean }) => {
@@ -37,6 +38,14 @@ export function MobileNavbar({ variant }: { variant: "mini" | "full" }) {
       </_Link>
     );
   };
+
+  // automatically close the mobile menu when the user navigates
+  const router = useRouter();
+  useEffect(() => {
+    router.events.on("routeChangeStart", () => {
+      setIsOpened(false);
+    });
+  }, []);
 
   return (
     <div className={styles.mobile}>

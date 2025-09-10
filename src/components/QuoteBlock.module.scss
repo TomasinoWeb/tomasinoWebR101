@@ -8,7 +8,7 @@
   .quoteContent {
     display: flex;
     align-items: flex-start;
-    gap: 36px;
+    gap: 48px;
     flex-wrap: wrap;
 
     .imageWrapper {
@@ -20,6 +20,7 @@
         width: 100%;
         height: auto;
         display: block;
+        transform: rotate(-8deg);
       }
     }
   }
@@ -35,6 +36,10 @@
 .imageRight {
   .quoteContent {
     flex-direction: row-reverse;
+
+    .quoteImage {
+      transform: rotate(8deg);
+    }
   }
 }
 
@@ -55,6 +60,13 @@
     letter-spacing: -0.4px;
     align-self: stretch;
     text-align: justify;
+
+    em {
+      font-style: italic;
+    }
+    strong {
+      font-weight: bold;
+    }
   }
 
   .authorInfo {

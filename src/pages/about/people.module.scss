@@ -55,7 +55,7 @@
 
     .rail {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 20px;
 
       h1 {
@@ -67,6 +67,12 @@
         font-family: "Helvetica Neue", sans-serif;
         font-style: oblique;
         font-size: 20px;
+      }
+
+      @media screen and (max-width: 900px) {
+        h1 {
+          font-size: 48px;
+        }
       }
     }
 
@@ -216,7 +222,7 @@
   }
 
   > p {
-    font-family: Groundnut, sans-serif;
+    font-family: "Groundnut", "GroundnutTW", sans-serif;
     font-size: 24px;
   }
 
@@ -225,7 +231,7 @@
     width: 100%;
 
     --gap-size: 20px;
-    --elements-per-row: 4;
+    --elements-per-row: 2;
 
     display: flex;
     justify-content: space-between;
@@ -238,12 +244,16 @@
       width: calc(calc(100% - calc(var(--gap-size) * calc(var(--elements-per-row) - 1))) / var(--elements-per-row));
       background-color: var(--neutral-white);
       border: 2px solid var(--neutral-black);
+      display: block;
 
       img {
-        object-fit: contain;
+        object-fit: cover;
         width: 100%;
+        min-width: 100%;
         height: auto;
-        aspect-ratio: 1/1;
+        max-height: 270px;
+        // aspect-ratio: 1/1;
+        display: block;
       }
     }
 
@@ -252,7 +262,7 @@
       --gap-size: 10px;
     }
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 600px) {
       --elements-per-row: 1;
     }
   }
@@ -401,7 +411,7 @@
         .name,
         .position {
           text-align: left;
-          font-family: Groundnut, sans-serif;
+          font-family: "Groundnut", "GroundnutTW", sans-serif;
           text-shadow: -2px 2px 0px var(--neutral-black);
           // -webkit-text-stroke: 1px var(--neutral-black);
 

@@ -3,7 +3,7 @@ import { PublicLayoutBackend } from "../../layouts/public/static";
 import styles from "./about.module.scss";
 
 import Image, { StaticImageData } from "next/image";
-import Snoopy from "../../../public/assets/about/about-snoopy.png";
+import Wacky from "../../../public/assets/tomweggs/Wacky.png";
 import Scribbles from "../../../public/assets/about/snoopy scribbles.svg";
 import Logo from "../../../public/logo/insignia_yellow.png";
 import AboutBoxPlaceholder from "../../../public/assets/about/about_box_placeholder.png";
@@ -25,7 +25,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           <div className={styles.snoopyAndLogo}>
             <div className={styles.snoopyScribble}>
               <div className={styles.snoopy}>
-                <Image src={Snoopy} alt="Snoopy" />
+                <Image src={Wacky} alt="Wacky TomWegg" />
               </div>
               <div className={styles.scribble}>
                 <Image src={Scribbles} alt="." />
