@@ -50,10 +50,18 @@
     width: 100%;
 
     .resultIcon {
-      width: 150px;
-      height: auto;
-      object-fit: coer;
+      width: auto;
+      height: 275px;
+      object-fit: cover;
       margin-bottom: 20px;
+
+      @media screen and (max-width: 800px) {
+        height: 200px;
+      }
+
+      @media screen and (max-width: 500px) {
+        height: 175px;
+      }
     }
 
     .header {
@@ -110,6 +118,14 @@
 
     .resultDescription {
       margin: 40px 0px;
+
+      @media screen and (max-width: 800px) {
+        margin: 20px 0px !important;
+      }
+
+      p {
+        white-space: pre-line;
+      }
     }
 
     .rail {
@@ -150,7 +166,7 @@
   .intro_container {
     .content {
       .resultIcon {
-        width: 120px;
+        // width: 120px;
       }
 
       .header {
@@ -182,7 +198,7 @@
 
     .content {
       .resultIcon {
-        width: 100px;
+        // width: 100px;
       }
 
       h1 {
@@ -191,7 +207,7 @@
       }
 
       h2 {
-        font-size: 20px;
+        font-size: 32px;
       }
 
       .subheading {
@@ -199,7 +215,7 @@
       }
 
       .quizResultHeading {
-        font-size: 32px;
+        font-size: 48px;
       }
 
       .description {
@@ -305,9 +321,9 @@
   font-size: 16px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .button {
     padding: 12px 24px;
-    font-size: 14px;
+    font-size: 16px;
   }
 }

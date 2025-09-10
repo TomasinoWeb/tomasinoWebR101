@@ -25,6 +25,7 @@
 
 .header {
   background-color: var(--neutral-white, #fbf9f4);
+  backdrop-filter: blur(8px);
   position: fixed;
   top: 0;
   left: 0;

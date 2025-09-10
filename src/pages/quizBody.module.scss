@@ -42,7 +42,7 @@
       top: 0;
       height: 10px;
       width: 0%;
-      background-color: var(--neutral-dark-gray);
+      background-color: var(--primary-red-orange);
       transition: width 300ms ease-in-out;
     }
 
@@ -124,6 +124,10 @@
         font-family: "Helvetica Neue", sans-serif;
       }
     }
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 30px 20px;
   }
 }
 
@@ -253,6 +257,8 @@
           .inner {
             h1 {
               font-size: 24px;
+              text-shadow: -2px 2px 0 var(--neutral-black, #1e1e1e);
+              -webkit-text-stroke-width: unset;
             }
           }
         }

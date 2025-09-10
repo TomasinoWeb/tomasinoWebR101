@@ -8,6 +8,7 @@ import { MouseEventHandler, useState } from "react";
 import { UseQuiz, useQuiz } from "../utils/useQuiz";
 import dynamic from "next/dynamic";
 import { FadeIn } from "../components/FadeIn";
+import { Button } from "../components/Button";
 
 interface PageProps {}
 
@@ -40,7 +41,7 @@ type ButtonProps = {
  * To use small variant of BnW button: Pass "small" as outline prop
  * @returns A button component
  */
-export const Button = (props: ButtonProps) => {
+export const QuestionButton = (props: ButtonProps) => {
   const className =
     introStyles[props.theme] +
     " " +
@@ -97,7 +98,7 @@ function Intro({ startQuiz }: { startQuiz: () => void }) {
                 </div>
 
                 <div className={introStyles.rail + " " + introStyles.maxWidth}>
-                  <Button onClick={() => startQuiz()} theme="glass" maxWidth>
+                  <Button onClick={() => startQuiz()} variant="rectangle" maxWidth>
                     START THE QUIZ
                   </Button>
                 </div>
@@ -151,9 +152,9 @@ function RenderQuestion({ quizController }: { quizController: UseQuiz }) {
             {quizController.currentQuestion.answers.map((answer, idx) => {
               return (
                 <div className={questionStyles.answer}>
-                  <Button theme="black_n_white" maxWidth onClick={() => quizController.answer(idx)}>
+                  <QuestionButton theme="black_n_white" maxWidth onClick={() => quizController.answer(idx)}>
                     {answer.text}
-                  </Button>
+                  </QuestionButton>
                 </div>
               );
             })}
@@ -182,10 +183,10 @@ function RenderFinished({ quizController }: { quizController: UseQuiz }) {
           <div className={introStyles.intro_container}>
             <div className={introStyles.content}>
               <Image
-                src={"/assets/landing/peanut.png"}
+                src={department.image}
                 alt={`Result image for ${department.key}`}
-                width={200}
-                height={200}
+                width={512}
+                height={512}
                 className={introStyles.resultIcon}
               />
 
@@ -197,18 +198,18 @@ function RenderFinished({ quizController }: { quizController: UseQuiz }) {
               <div className={introStyles.description + " " + introStyles.resultDescription}>
                 <p>{department.description}</p>
 
-                <p>{department.imageDescription}</p>
+                {/* <p>{department.imageDescription}</p> */}
               </div>
 
               <div className={introStyles.rail}>
                 <div className={introStyles.button}>
-                  <Button onClick={() => quizController.reset()} theme="glass" maxWidth>
+                  <Button onClick={() => quizController.reset()} variant="rectangle" maxWidth>
                     RETAKE THE QUIZ
                   </Button>
                 </div>
 
                 <div className={introStyles.button}>
-                  <Button href="/apply" theme="glass" maxWidth>
+                  <Button href="/apply" variant="rectangle" maxWidth>
                     APPLY NOW
                   </Button>
                 </div>

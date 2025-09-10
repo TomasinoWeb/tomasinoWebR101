@@ -32,7 +32,8 @@ export function useQuiz() {
       }
     });
 
-    const departmentKey = departmentWithHighestMode[Math.floor(Math.random() * departmentWithHighestMode.length)];
+    // const departmentKey = departmentWithHighestMode[Math.floor(Math.random() * departmentWithHighestMode.length)];
+    const departmentKey = departmentWithHighestMode[0];
     const department = departments.find((result) => result.key === departmentKey)!;
     return department;
   }
