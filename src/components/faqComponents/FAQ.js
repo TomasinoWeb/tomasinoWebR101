@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../../pages/faq.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 // import Cross from "../../../public/assets/cross.svg";
 
 function FAQ({ faq, index, toggleFAQ }) {
@@ -24,7 +26,15 @@ function FAQ({ faq, index, toggleFAQ }) {
         {/* TODO: ADD IMPORT */}
       </div>
 
-      <div className={styles.faq_answer}>{faq.answer}</div>
+      <div className={styles.faq_answer}>
+        <ReactMarkdown
+          components={{
+            a: ({ node, ...props }) => <Link {...props} />,
+          }}
+        >
+          {faq.answer}
+        </ReactMarkdown>
+      </div>
     </div>
   );
 }

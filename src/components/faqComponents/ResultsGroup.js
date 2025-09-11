@@ -6,14 +6,14 @@ function ResultsGroup() {
     {
       question: "How long should I wait for the results?",
       answer:
-        "The maximum waiting period for the application results should be seven days. If you did not receive an email regarding the result of your application, please do not hesitate to follow up with us through The Pool. ",
+        "The maximum waiting period for the application results should be seven days. You can also periodically check the [results section](/results) of this website to see if your name shows up.\n\nIf you did not receive an email regarding the result of your application, please do not hesitate to follow up with us through [The Pool](/discord). ",
       tag: "results",
       open: false,
     },
     {
       question: "What happens after I get accepted?",
       answer:
-        "The fun begins! Check out our Org Culture page to know more about the activities we do at TomasinoWeb 🥳",
+        "The fun begins! Check out our [Org Culture page](/about/org-culture) to know more about the activities we do at TomasinoWeb 🥳",
       tag: "results",
       open: false,
     },
@@ -24,8 +24,9 @@ function ResultsGroup() {
       open: false,
     },
     {
-      question: "Can I shift to another department after I get accepted?",
-      answer: "You can shift to another department after a semester if you pass the departmental exam and interview.",
+      question: "Can I shift to different department after I get accepted?",
+      answer:
+        "You can shift to different department after a semester, but you'll have to take and pass the its exam and interview.",
       tag: "results",
       open: false,
     },

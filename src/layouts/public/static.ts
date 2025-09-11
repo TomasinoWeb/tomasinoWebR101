@@ -3,7 +3,7 @@ import { PublicLayoutOptions, Result } from "./common";
 import axios from "axios";
 
 // TODO: set to false in prod
-const TESTING = true;
+const TESTING = false;
 const DOMAIN = "https://apply.tomasinoweb.org";
 
 export async function fetchResults() {

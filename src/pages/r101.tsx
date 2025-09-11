@@ -50,13 +50,12 @@ export default PublicLayoutFrontend.use<Props>(() => {
           </Block>
 
           <Block title="Take the Exam" number={2} backgroundColor="var(--secondary-light-blue)">
-            The department examination will be sent by our Human Resources department. Skip this step if your department
+            The department exam will be sent through TomWeb's recruitment platform. Skip this step if your department
             does not have an exam.
           </Block>
 
           <Block title="Interview" number={3} backgroundColor="var(--secondary-light-yellow)">
-            After passing your requirements, the Human Resources department will send you a scheduling sheet for the
-            interview.
+            After passing your requirements, you will be asked to schedule your interview on the recruitment platform.
           </Block>
 
           <Block title="Results" number={4} backgroundColor="var(--primary-lightbrown-yellow)">

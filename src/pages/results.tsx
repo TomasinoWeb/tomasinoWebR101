@@ -12,62 +12,74 @@ import { departments } from "../utils/departments";
 type DepartmentResults = { name: string; team: string | null }[];
 type ResultsObject = { [key in Department]: DepartmentResults };
 type Props = {
-  results: ResultsObject;
+  results: { public: true; data: ResultsObject } | { public: false };
 };
 
 export default PublicLayoutFrontend.use<Props>(({ results }) => {
-  const [department, setDepartment] = useState<Department | null>(null);
-
   return {
     header: "full_regular",
     footer: "regular",
     dots: "full",
-    children: (
-      <div className={styles.page}>
-        <h1 className={styles.header}>RESULTS</h1>
-
-        <div className={styles.description}>
-          <h2>
-            Welcome to Planet TomasinoWeb! <br /> Go ahead, scroll through and see if your name made the list. <br />
-            Whether you're smiling wide or crossing fingers, we're proud of you for taking the leap.
-          </h2>
-        </div>
-
-        <div className={styles.selector}>
-          <Select
-            className={styles.selector_inner}
-            placeholder="Select your Department"
-            onChange={(e) => setDepartment(e!.value)}
-            options={departmentsEnum
-              .filter((d) => results[d].length > 0)
-              .map((department) => ({ value: department, label: department }))}
-            styles={{
-              control: (baseStyles, state) => ({
-                ...baseStyles,
-                width: "100%",
-                padding: "5px 10px",
-                borderRadius: "12px",
-              }),
-            }}
-          />
-        </div>
-
-        <div className={styles.blocks}>
-          {department != null ? (
-            <Block key={department} results={results[department]} department={department} />
-          ) : (
-            departmentsEnum.map(
-              (department) =>
-                results[department].length > 0 && (
-                  <Block key={department} results={results[department]} department={department} />
-                )
-            )
-          )}
-        </div>
-      </div>
-    ),
+    children: <GoodResultPage results={results} />,
   };
 });
+
+function GoodResultPage({ results }: Props) {
+  const [department, setDepartment] = useState<Department | null>(null);
+
+  return (
+    <div className={styles.page}>
+      <h1 className={styles.header}>RESULTS</h1>
+
+      <div className={styles.description}>
+        <h2>
+          Welcome to Planet TomasinoWeb! <br /> Go ahead, scroll through and see if your name made the list. <br />
+          Whether you're smiling wide or crossing fingers, we're proud of you for taking the leap.
+        </h2>
+      </div>
+
+      {!results.public || Object.values(results.data).every((d) => d.length == 0) ? (
+        <div className={styles.na}>
+          <h1>Results are not available yet.</h1>
+        </div>
+      ) : (
+        <>
+          <div className={styles.selector}>
+            <Select
+              className={styles.selector_inner}
+              placeholder="Select your Department"
+              onChange={(e) => setDepartment(e!.value)}
+              options={departmentsEnum
+                .filter((d) => results.data[d].length > 0)
+                .map((department) => ({ value: department, label: department }))}
+              styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  width: "100%",
+                  padding: "5px 10px",
+                  borderRadius: "12px",
+                }),
+              }}
+            />
+          </div>
+
+          <div className={styles.blocks}>
+            {department != null ? (
+              <Block key={department} results={results.data[department]} department={department} />
+            ) : (
+              departmentsEnum.map(
+                (department) =>
+                  results.data[department].length > 0 && (
+                    <Block key={department} results={results.data[department]} department={department} />
+                  )
+              )
+            )}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 function Block({ results, department }: { department: Department; results: DepartmentResults }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -112,12 +124,12 @@ function Block({ results, department }: { department: Department; results: Depar
 
 export const getStaticProps = PublicLayoutBackend.use<Props>({
   async getStaticProps(ctx, { results }) {
-    if (!results.success) return { notFound: true, revalidate: 900 };
+    if (!results.success) return { props: { results: { public: false } }, revalidate: 600 };
 
     const resultsObject = {} as ResultsObject;
     for (const department of departmentsEnum) resultsObject[department] = [];
     for (const applicant of results.results) resultsObject[applicant.department].push(applicant);
 
-    return { props: { results: resultsObject } };
+    return { props: { results: { public: true, data: resultsObject } } };
   },
 });
