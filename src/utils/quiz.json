@@ -19,7 +19,7 @@
       { "text": "Plaza Mayor", "departments": ["writing", "photography"] },
       { "text": "In front of Roque Ruano Building", "departments": ["finance", "externalAffairs", "webTechnologies"] },
       { "text": "Lover’s Lane", "departments": ["secretariat", "videography"] },
-      { "text": "Gazebo in Beato Angelio Building", "departments": ["publicity", "creatives"] },
+      { "text": "Gazebo in Beato Angelico Building", "departments": ["publicity", "creatives"] },
       { "text": "Quadricentennial Park", "departments": ["humanResources", "communityDevelopment"] }
     ]
   },
