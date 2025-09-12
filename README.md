@@ -6,4 +6,3 @@
 - Install the packages using `npm install` or `yarn`
 - Start the development server using `npm run dev` or `yarn dev`
 
-
