@@ -385,7 +385,7 @@
       @media screen and (max-width: 1000px) {
         .left {
           .frames {
-            --gap-size: 20px;
+            --gap-size: 16px;
           }
         }
 
@@ -393,9 +393,10 @@
         padding: 20px;
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
         align-items: start;
+        gap: 20px;
 
         .mobile {
           display: block;
@@ -423,7 +424,7 @@
         }
       }
 
-      @media screen and (max-width: 450px) {
+      @media screen and (max-width: 600px) {
         .left {
           .frames {
             --elements-per-row: 2;

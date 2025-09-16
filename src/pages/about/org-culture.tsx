@@ -25,7 +25,6 @@ import ImagePPT from "../../../public/assets/about/org-culture/fun/pptParties.pn
 // for stickercard
 import comicImage from "../../../public/assets/about/org-culture/test.png";
 import comicDots from "../../../public/assets/about/org-culture/dots.png";
-import memberFrame from "../../../public/assets/about/org-culture/member_frame.png";
 
 /* Other component files */
 import SpeechBubble from "./components/SpeechBubble";
@@ -43,18 +42,16 @@ import Love from "../../../public/assets/tomweggs/Love.png";
 import Tongue from "../../../public/assets/tomweggs/Tongue.png";
 import { FadeIn } from "../../components/FadeIn";
 
-/* 8 rn */
 const stickerCardImages = [
-  memberFrame,
-  memberFrame,
-  memberFrame,
-  memberFrame,
-  memberFrame,
-  memberFrame,
-  memberFrame,
-  memberFrame,
+  "/assets/featuredMembers/member-frame-2.png",
+  "/assets/featuredMembers/member-frame-6.png",
+  "/assets/featuredMembers/member-frame-7.png",
+  "/assets/featuredMembers/member-frame-11.png",
+  "/assets/featuredMembers/member-frame-9.png",
+  "/assets/featuredMembers/member-frame-10.png",
+  "/assets/featuredMembers/member-frame-8.png",
+  "/assets/featuredMembers/member-frame-12.png",
 ];
-
 interface PageProps {}
 
 const Page = PublicLayoutFrontend.use<PageProps>(() => {
@@ -233,7 +230,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
                 <span className={styles.frames}>
                   {stickerCardImages.map((img, i) => (
                     <div className={styles.member} key={`portrait_${i}`}>
-                      <Image src={img} alt={"portrait"} />
+                      <Image src={img} alt={"portrait"} width={512} height={512} />
                     </div>
                   ))}
                 </span>

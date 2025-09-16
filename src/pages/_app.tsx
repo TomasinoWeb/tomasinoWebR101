@@ -31,7 +31,7 @@ const metatags = {
     tags: "TomasinoWeb, R101, UST",
   },
   "/about/org-culture": {
-    title: "Org Culture| Planet TomasinoWeb",
+    title: "Org Culture | Planet TomasinoWeb",
     description:
       "Experience TomasinoWeb's supportive culture where students grow together as innovators and leaders, just like Charlie Brown's lovable gang of misfits!",
     tags: "TomasinoWeb, R101, UST, tomasinoweb.org",
