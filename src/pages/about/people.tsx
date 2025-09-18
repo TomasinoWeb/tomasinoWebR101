@@ -58,11 +58,6 @@ const coreMembers = [
     image: "/assets/about/the-people/core/maned.png",
   },
   {
-    name: "James Romero",
-    position: "Asst. Chief Videographer",
-    image: "/assets/about/the-people/core/acv.png",
-  },
-  {
     name: "Joaquin Balolong",
     position: "Chief Photographer",
     image: "/assets/about/the-people/core/cp.png",
@@ -76,6 +71,11 @@ const coreMembers = [
     name: "Candice Samonte",
     position: "Chief Videographer",
     image: "/assets/about/the-people/core/cv.png",
+  },
+  {
+    name: "James Romero",
+    position: "Asst. Chief Videographer",
+    image: "/assets/about/the-people/core/acv.png",
   },
   {
     name: "Rayven Laurel",
