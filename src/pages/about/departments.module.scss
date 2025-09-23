@@ -165,7 +165,7 @@
           left: 0;
           z-index: 2;
           opacity: 1;
-          transition: 0.3s ease-in-out all;
+          transition: 0.2s ease-in-out all;
         }
 
         .activeImage {
@@ -176,14 +176,14 @@
       .selectedBlock {
         .inactiveImage {
           opacity: 0;
-          transition: 0.3s ease-in-out all;
+          transition: 0.2s ease-in-out all;
         }
       }
 
       .block:hover {
         .inactiveImage {
           opacity: 0;
-          transition: 0.3s ease-in-out all;
+          transition: 0.2s ease-in-out all;
         }
       }
 

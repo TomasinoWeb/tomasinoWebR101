@@ -80,7 +80,7 @@ function DepartmentPage() {
                 </div>
                 <Image
                   // make this cleaner
-                  src={`/assets/about/departments/${id === "Random" ? "Random" : "Webtech"}-inactive.png`}
+                  src={`/assets/about/departments/${id === "Random" ? "Random" : id}-inactive.png`}
                   alt={id}
                   width={500}
                   height={500}
@@ -88,7 +88,7 @@ function DepartmentPage() {
                 />
 
                 <Image
-                  src={`/assets/about/departments/${id === "Random" ? "Random" : "Webtech"}-active.png`}
+                  src={`/assets/about/departments/${id === "Random" ? "Random" : id}-active.png`}
                   alt={id}
                   width={500}
                   height={500}

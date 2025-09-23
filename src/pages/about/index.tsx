@@ -6,8 +6,12 @@ import Image, { StaticImageData } from "next/image";
 import Wacky from "../../../public/assets/tomweggs/Wacky.png";
 import Scribbles from "../../../public/assets/about/snoopy scribbles.svg";
 import Logo from "../../../public/logo/insignia_yellow.png";
-import AboutBoxPlaceholder from "../../../public/assets/about/about_box_placeholder.png";
-import AboutBoxColor from "../../../public/assets/about/about_box_color.png";
+import Departments from "../../../public/assets/about/departments.png";
+import DepartmentsColor from "../../../public/assets/about/departments-hovered.png";
+import People from "../../../public/assets/about/people.png";
+import PeopleColor from "../../../public/assets/about/people-hovered.png";
+import Culture from "../../../public/assets/about/org-culture.png";
+import CultureColor from "../../../public/assets/about/org-culture-hovered.png";
 
 import Link from "next/link";
 
@@ -54,22 +58,22 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           <AboutBox
             title="Departments"
             description="Meet the amazing crews behind each department that power TomasinoWeb!"
-            imageInitial={AboutBoxPlaceholder}
-            imageOnHover={AboutBoxColor}
+            imageInitial={Departments}
+            imageOnHover={DepartmentsColor}
             href="/about/departments"
           />
           <AboutBox
             title="The People"
             description="The heart of TomasinoWeb? It's the people."
-            imageInitial={AboutBoxPlaceholder}
-            imageOnHover={AboutBoxColor}
+            imageInitial={People}
+            imageOnHover={PeopleColor}
             href="/about/people"
           />
           <AboutBox
             title="Org Culture"
             description="More than just an org — it’s a culture of passion, purpose, and play."
-            imageInitial={AboutBoxPlaceholder}
-            imageOnHover={AboutBoxColor}
+            imageInitial={Culture}
+            imageOnHover={CultureColor}
             href="/about/org-culture"
           />
         </section>

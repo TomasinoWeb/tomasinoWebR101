@@ -11,7 +11,7 @@ const nextConfig = {
       },
       {
         source: "/apply",
-        destination: "https://forms.gle/VnVQ1gQnveYnmS1B8",
+        destination: "https://forms.gle/wgz9xC8Q4F2WfRMt7",
         permanent: false,
       },
     ];
