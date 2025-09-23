@@ -2,9 +2,8 @@ import { implementLayoutStatic } from "@scinorandex/layout";
 import { PublicLayoutOptions, Result } from "./common";
 import axios from "axios";
 
-// TODO: set to false in prod
 const TESTING = false;
-const DOMAIN = "https://apply.tomasinoweb.org";
+const DOMAIN = "https://mereserve-git-main-tw-webtechs-projects.vercel.app";
 
 export async function fetchResults() {
   if (TESTING)
