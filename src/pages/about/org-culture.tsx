@@ -97,7 +97,7 @@ const Page = PublicLayoutFrontend.use<PageProps>(() => {
             <div className={styles.statsGrid}>
               <Stat stat="6 websites" description="up and running for the Thomasian community" />
               <Stat stat="21+" description="delulus just hoping for a Paskuhan date" />
-              <Stat stat="29" description="awards from prestigious contess & globally recognized institutions" />
+              <Stat stat="29" description="awards from prestigious contests & globally recognized institutions" />
               <Stat stat="81" description="(and counting!) innovative, passionate, and dedicated members" />
               <Stat stat="194,000+" description="combined followers across all digital platforms" />
               <Stat stat="9,050,600" description="X (formerly Twitter) impressions in the past year" />
