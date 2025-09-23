@@ -68,7 +68,7 @@ const coreMembers = [
     image: "/assets/about/the-people/core/acp.png",
   },
   {
-    name: "Candice Samonte",
+    name: "Candice Villasis",
     position: "Chief Videographer",
     image: "/assets/about/the-people/core/cv.png",
   },
