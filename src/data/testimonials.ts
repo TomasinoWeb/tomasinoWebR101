@@ -34,7 +34,7 @@ export const testimonials = [
     quoteText: `Full of fear and doubt, I was a starry-eyed sophomore when I joined ***TomasinoWeb***. The blogs section was my avenue for creativity and introspection — a wholesome experience that transformed me as a writer and as a person. My time here motivated me to be on top of my game, writing commentaries and essays in hopes for meaningful conversations on pop culture, girlhood, or anything under the sun!`,
   },
   {
-    authorDetails: "(President, 2016 - 2019)",
+    authorDetails: "(President, 2016 - 2018)",
     authorName: "Julius Renomeron Jr.",
     imageSrc: Renomeron,
     quoteText: `I consider my entire stay in ***TomasinoWeb*** truly life-changing. I witnessed it grow from just a handful of members into a respected and influential organization in the university. I owe much of my knowledge in creative work and project management to the years I spent collaborating with such talented and passionate individuals here. It is inspiring to see how our optimism and vision for what ***TomasinoWeb*** could become have taken shape over the years. Being hands-on in establishing the organization’s branding and helping build a culture of storytelling that challenges dominant narratives, both inside and outside the university, taught me adaptability and curiosity—skills I later carried into my career as a storyteller in advertising and filmmaking.`,
