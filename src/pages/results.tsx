@@ -38,6 +38,8 @@ function GoodResultPage({ results }: Props) {
         </h2>
       </div>
 
+      <h3>This list is updated as new applicants are accepted.</h3>
+
       {!results.public || Object.values(results.data).every((d) => d.length == 0) ? (
         <div className={styles.na}>
           <h1>Results are not available yet.</h1>

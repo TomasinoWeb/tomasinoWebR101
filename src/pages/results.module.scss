@@ -35,6 +35,18 @@
     }
   }
 
+  > h3 {
+    color: var(--neutral-black, #1e1e1e);
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: -0.48px;
+    margin-top: 25px;
+  }
+
   .na {
     text-align: center;
     h1 {
@@ -165,6 +177,10 @@
 
         max-width: 500px;
       }
+    }
+
+    > h3 {
+      font-size: 16px;
     }
 
     .selector {
