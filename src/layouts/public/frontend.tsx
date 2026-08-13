@@ -9,6 +9,7 @@ import PlantTomasinoWeb from "../../../public/assets/logos/WORDMARK_Ver1.png";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Stairs from "../../components/Stairs";
+import { GlobalNavigator } from "../../components/GlobalNavigator";
 
 const useScroll = () => {
   const [data, setData] = useState({ x: 0, y: 0, lastX: 0, lastY: 0 });
@@ -81,6 +82,8 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
             <main className={`${styles.main}`}>{layoutProps.children}</main>
           </Stairs>
         </AnimatePresence>
+
+        <GlobalNavigator containsResults={internalProps.resultsAreOut} />
 
         {layoutProps.footer !== "disabled" && (
           <div className={styles.footer}>

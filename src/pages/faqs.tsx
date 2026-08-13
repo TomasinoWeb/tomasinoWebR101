@@ -1,4 +1,6 @@
 import React from 'react';
+import { PublicLayoutFrontend } from '../layouts/public/frontend';
+import { PublicLayoutBackend } from '../layouts/public/static';
 import styles from './faq.module.scss';
 
 interface FAQItem {
@@ -53,7 +55,16 @@ const faqData: FAQItem[] = [
   }
 ];
 
-export default function FAQsPage() {
+export default PublicLayoutFrontend.use(() => {
+  return {
+    header: 'full_regular',
+    footer: 'regular',
+    dots: 'full',
+    children: <FAQsPageContent />,
+  };
+});
+
+function FAQsPageContent() {
   return (
     <main className={styles.faqPage}>
       <div className={styles.dashboardContainer}>
@@ -107,3 +118,5 @@ export default function FAQsPage() {
     </main>
   );
 }
+
+export const getStaticProps = PublicLayoutBackend.use({});

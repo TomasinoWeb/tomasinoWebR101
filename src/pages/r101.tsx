@@ -1,70 +1,161 @@
-import { PublicLayoutFrontend } from "../layouts/public/frontend";
-import { PublicLayoutBackend } from "../layouts/public/static";
-import styles from "./r101.module.scss";
-import TomWegg from "../../public/assets/tomweggs/WithShades.png";
-import Image from "next/image";
-import { ReactNode } from "react";
-import Link from "next/link";
+import React, { useState } from 'react';
+import { PublicLayoutFrontend } from '../layouts/public/frontend';
+import { PublicLayoutBackend } from '../layouts/public/static';
+import styles from './r101.module.scss';
 
-interface Props {}
-
-interface BlockProps {
+interface ApplicationStep {
+  id: string;
   title: string;
-  children: ReactNode;
-  number: number;
-  backgroundColor?: string;
+  description: string;
+  actionButtonText?: string;
+  badgeText?: string;
 }
 
-function Block({ title, children, number, backgroundColor }: BlockProps) {
+interface SupportItem {
+  id: string;
+  title: string;
+  description: string;
+}
+
+const applicationSteps: ApplicationStep[] = [
+  {
+    id: "1.",
+    title: "Application Form",
+    description: "Submit the online R101 form",
+    actionButtonText: "Submit Form >>"
+  },
+  {
+    id: "2.",
+    title: "Departmental Exam",
+    description: "Take the department-specific test.",
+    badgeText: "Exams are sent via email after applying!"
+  },
+  {
+    id: "3.",
+    title: "Interview",
+    description: "A brief, friendly chat with HR and Department Heads."
+  },
+  {
+    id: "4.",
+    title: "The Results",
+    description: "Reveal on the official Results page."
+  }
+];
+
+const supportItems: SupportItem[] = [
+  {
+    id: "A.",
+    title: "Check Spam / Junk Email Folder",
+    description: "Exams are sent automatically via email. Please allow up to 24 hours."
+  },
+  {
+    id: "B.",
+    title: "Verify Email Address on R101 Form",
+    description: "Ensure your UST Google Account email was entered correctly."
+  }
+];
+
+export default PublicLayoutFrontend.use(() => {
+  return {
+    header: 'full_regular',
+    footer: 'regular',
+    dots: 'full',
+    children: <R101PageContent />,
+  };
+});
+
+function R101PageContent() {
+  const [activeSubTab, setActiveSubTab] = useState<'steps' | 'support'>('support');
+
   return (
-    <div className={styles.block} style={{ backgroundColor: backgroundColor }}>
-      <div className={styles.number}>
-        <h1>{number}</h1>
-      </div>
+    <div className={styles.pageWrapper}>
+      {/* Main Container */}
+      <main className={styles.mainContainer}>
+        <section className={styles.processCard}>
+          {/* Title Bar */}
+          <div className={styles.cardTitleBar}>
+            R101 Process
+          </div>
 
-      <h1 className={styles.title}>{title}</h1>
+          {/* Sub-Tabs Control */}
+          <div className={styles.tabBar}>
+            <div className={styles.segmentedControl}>
+              <button
+                type="button"
+                className={`${styles.tabButton} ${activeSubTab === 'steps' ? styles.activeTab : ''}`}
+                onClick={() => setActiveSubTab('steps')}
+              >
+                Application Steps
+              </button>
+              <button
+                type="button"
+                className={`${styles.tabButton} ${activeSubTab === 'support' ? styles.activeTab : ''}`}
+                onClick={() => setActiveSubTab('support')}
+              >
+                Help &amp; Support
+              </button>
+            </div>
+          </div>
 
-      <p className={styles.description}>{children}</p>
+          {/* Tab Content Area */}
+          <div className={styles.tabContent}>
+            {activeSubTab === 'steps' ? (
+              applicationSteps.map((step) => (
+                <div key={step.id} className={styles.itemRow}>
+                  <div className={styles.itemContent}>
+                    <div className={styles.itemHeader}>
+                      <span className={styles.itemIndex}>{step.id}</span>
+                      <span className={styles.itemTitle}>{step.title}</span>
+                    </div>
+                    <p className={styles.itemDesc}>{step.description}</p>
+                  </div>
+
+                  {step.actionButtonText && (
+                    <button type="button" className={styles.actionButton}>
+                      {step.actionButtonText}
+                    </button>
+                  )}
+
+                  {step.badgeText && (
+                    <div className={styles.infoBadge}>
+                      {step.badgeText}
+                    </div>
+                  )}
+                </div>
+              ))
+            ) : (
+              <>
+                <div className={styles.supportBanner}>
+                  <div className={styles.bannerTitle}>
+                    HAVEN&apos;T RECEIVED YOUR DEPARTMENTAL EXAM WITHIN 24 HOURS?
+                  </div>
+                  <div className={styles.bannerDesc}>
+                    First, please check your Spam / Junk email folder. If your exam email is still missing after 24 hours of submitting your R101 form, send an email to help@tomasinoweb.org or contact our HR team directly on Discord!
+                  </div>
+                  <button type="button" className={styles.supportCta}>
+                    Contact Support &gt;&gt;
+                  </button>
+                </div>
+
+                {supportItems.map((item) => (
+                  <div key={item.id} className={styles.itemRow}>
+                    <div className={styles.itemContent}>
+                      <div className={styles.itemHeader}>
+                        <span className={styles.itemIndex}>{item.id}</span>
+                        <span className={styles.itemTitle}>{item.title}</span>
+                      </div>
+                      <p className={styles.itemDesc}>{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </>
+            )}
+          </div>
+        </section>
+      </main>
+
     </div>
   );
 }
 
-export default PublicLayoutFrontend.use<Props>(() => {
-  return {
-    header: "full_regular",
-    footer: "regular",
-    dots: "full",
-    children: (
-      <div className={styles.page}>
-        <h1 className={styles.header}>
-          THE <br /> APPLICATION PROCESS
-        </h1>
-
-        <div className={styles.blocks}>
-          <div className={styles.img}>
-            <Image src={TomWegg} alt="snoopy" width={1000} height={500} />
-          </div>
-
-          <Block title="Application" number={1}>
-            Applicants must first accomplish the <Link href="/apply">Google Form</Link>.
-          </Block>
-
-          <Block title="Take the Exam" number={2} backgroundColor="var(--secondary-light-blue)">
-            The department exam will be sent through TomWeb's recruitment platform. Skip this step if your department
-            does not have an exam.
-          </Block>
-
-          <Block title="Interview" number={3} backgroundColor="var(--secondary-light-yellow)">
-            After passing your requirements, you will be asked to schedule your interview on the recruitment platform.
-          </Block>
-
-          <Block title="Results" number={4} backgroundColor="var(--primary-lightbrown-yellow)">
-            The results will be sent to you in less than a week by our Human Resources department.
-          </Block>
-        </div>
-      </div>
-    ),
-  };
-});
-
-export const getStaticProps = PublicLayoutBackend.use<Props>({});
+export const getStaticProps = PublicLayoutBackend.use({});

@@ -12,6 +12,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-bottom: 90px;
 
   background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
   background-repeat: repeat; /* or omit this declaration */
