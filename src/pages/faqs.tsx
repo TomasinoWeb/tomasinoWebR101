@@ -1,155 +1,109 @@
-import styles from "./faq.module.scss";
-import { MouseEventHandler, useEffect, useState } from "react";
-import Link from "next/link";
+import React from 'react';
+import styles from './faq.module.scss';
 
-import { PublicLayoutFrontend } from "../layouts/public/frontend";
-import { PublicLayoutBackend } from "../layouts/public/static";
-import Image from "next/image";
-import Overlay from "../../public/assets/faq/Question-Mark-Overlay.png";
-import SleepyD from "../../public/assets/faq/sleepy-snoopy-d.png";
-import SleepyM from "../../public/assets/faq/sleepy-snoopy-m.png";
+interface FAQItem {
+  id: number;
+  notes: number;
+  question: string;
+  answer: string;
+}
 
-import ApplicationGroup from "../components/faqComponents/ApplicationGroup";
-import InterviewGroup from "../components/faqComponents/InterviewGroup";
-import OrgGroup from "../components/faqComponents/OrgGroup";
-import ResultsGroup from "../components/faqComponents/ResultsGroup";
-import SussyGroup from "../components/faqComponents/SussyGroup";
+const faqData: FAQItem[] = [
+  {
+    id: 1,
+    notes: 37,
+    question: "What is TomasinoWeb and who can join?",
+    answer: "TomasinoWeb is the premier digital media organization of the University of Santo Tomas. Any enrolled Thomasian student passionate about web dev, design, journalism, or media can apply!"
+  },
+  {
+    id: 2,
+    notes: 74,
+    question: "Do I need prior technical experience to apply?",
+    answer: "Not at all! While basic interest helps, we offer extensive mentorship programs for web developers, designers, and creatives during your stay."
+  },
+  {
+    id: 3,
+    notes: 111,
+    question: "How do I submit my R101 application form?",
+    answer: "Simply visit our R101 portal, complete the online application form, and submit your Google Form response before the deadline."
+  },
+  {
+    id: 4,
+    notes: 148,
+    question: "Can I apply to multiple departments?",
+    answer: "You may specify a primary and secondary department choice on your R101 application form."
+  },
+  {
+    id: 5,
+    notes: 185,
+    question: "What should I prepare for the HR interview?",
+    answer: "Our interviews are brief and friendly! Just be ready to talk about your interests, availability, and why you want to join TomasinoWeb."
+  },
+  {
+    id: 6,
+    notes: 222,
+    question: "When will departmental exams be emailed?",
+    answer: "Departmental exams are sent via email within 24 hours of submitting your application form. Check your Spam folder if missing!"
+  },
+  {
+    id: 7,
+    notes: 259,
+    question: "Where can I view official recruitment results?",
+    answer: "Official results will be published on the R101 Results page and announced on our official Facebook and Twitter accounts."
+  }
+];
 
-interface PageProps {}
+export default function FAQsPage() {
+  return (
+    <main className={styles.faqPage}>
+      <div className={styles.dashboardContainer}>
+        {/* Main Feed Section */}
+        <section className={styles.feed}>
+          {/* Top Quick Bar */}
+          <div className={styles.actionHeader}>
+            <div className={styles.avatarPlaceholder} />
+            <div className={styles.navBar}>
+              <div className={styles.navItem}><span>Profile</span></div>
+              <div className={styles.navItem}><span>Department</span></div>
+              <div className={styles.navItem}><span>People</span></div>
+              <div className={styles.navItem}><span>Apply</span></div>
+            </div>
+          </div>
 
-export default PublicLayoutFrontend.use<PageProps>(() => {
-  const bgColor = "#CCECE4";
-  const [tag, _setTag] = useState("selectTag");
-  const setTag = (tag: string) => {
-    _setTag(tag);
-    setTimeout(() => {
-      window.scrollTo({
-        top: document.getElementById("scroll-target")!.offsetTop,
-        behavior: "smooth",
-      });
-    }, 50);
-  };
-
-  const picked = { backgroundColor: bgColor };
-  const unpicked = { color: "var(--darkgray)", backgroundColor: "white" };
-
-  return {
-    dots: "full",
-    header: "full_regular",
-    footer: "regular",
-
-    children: (
-      <div className={styles.page}>
-        <div className={styles.underlay}>
-          <Image src={Overlay} alt="Overlay" className={styles.image} />
-        </div>
-
-        <div className={styles.FaqPage}>
-          <header>
-            <h1>FAQS</h1>
-          </header>
-
-          <div className={styles.picker_div}>
-            <div className={styles.selection_div}>
-              <div className={styles.faq_main_holder}>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell1}`}
-                  onClick={() => setTag("org")}
-                  style={tag === "org" ? picked : unpicked}
-                >
-                  the org
-                </button>
-
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell2}`}
-                  onClick={() => setTag("interview")}
-                  style={tag === "interview" ? picked : unpicked}
-                >
-                  interview
-                </button>
-                <a href="https://tomasinoweb.org" target="_blank" rel="noreferrer" className={styles.faq_main_item}>
-                  <img
-                    src="/assets/faq/peanuts-icons-1.png" // change this to the correct icon
-                    className={`${styles.faq_icons} ${styles.mobile_cell3}`}
-                    alt="icon"
-                  ></img>
-                </a>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell4}`}
-                  onClick={() => setTag("application")}
-                  style={tag === "application" ? picked : unpicked}
-                >
-                  application
-                </button>
-
-                <Link href="/quiz" target="_blank" rel="noreferrer" className={styles.faq_main_item}>
-                  <img
-                    src="/assets/faq/peanuts-icons-2.png" // change this to the correct icon
-                    className={`${styles.faq_icons} ${styles.mobile_cell5}`}
-                    alt="icon"
-                  ></img>
-                </Link>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell6}`}
-                  onClick={() => setTag("results")}
-                  style={tag === "results" ? picked : unpicked}
-                >
-                  results
-                </button>
-
-                <a
-                  href="https://youtu.be/m6fCTVsMmS8"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.faq_main_item}
-                >
-                  <img
-                    src="/assets/faq/peanuts-icons-3.png" // change this to the correct icon
-                    className={`${styles.faq_icons} ${styles.mobile_cell7} `}
-                    alt="icon"
-                  ></img>
-                </a>
-                <button
-                  className={`${styles.button_picker} ${styles.mobile_cell8}`}
-                  onClick={() => setTag("sussy")}
-                  style={tag === "sussy" ? picked : unpicked}
-                >
-                  thought you&apos;d never ask
-                </button>
+          {/* Mapped FAQ Posts */}
+          {faqData.map((faq) => (
+            <article key={faq.id} className={styles.postCard}>
+              <div className={styles.avatarPlaceholder} />
+              <div className={styles.cardBody}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.username}>[username]</span>
+                  <div className={styles.stats}>
+                    <span className={styles.noteBadge}>{faq.notes}</span>
+                  </div>
+                </div>
+                <h3 className={styles.question}>{faq.question}</h3>
+                <p className={styles.answer}>{faq.answer}</p>
               </div>
-            </div>
+            </article>
+          ))}
+        </section>
+
+        {/* Sidebar Widgets */}
+        <aside className={styles.sidebar}>
+          <div className={styles.statWidget}>
+            <div className={styles.statRow}><span>Websites</span><span className={styles.badge}>6</span></div>
+            <div className={styles.statRow}><span>Members</span><span className={styles.badge}>81+</span></div>
+            <div className={styles.statRow}><span>Awards</span><span className={styles.badge}>29</span></div>
           </div>
 
-          <div className={styles.sleepy_snoopy}>
-            <Image src={SleepyD} alt="Sleepy Snoopy" className={styles.desktop} />
-            <Image src={SleepyM} alt="Sleepy Snoopy" className={styles.mobile} />
-          </div>
-
-          {tag !== "selectTag" && (
-            <div className={styles.faqs} id="scroll-target">
-              <pre>
-                <div className={`faq-answer ${tag === "org" ? "faq-answer-open" : ""}`}>
-                  {tag === "org" && <OrgGroup />}
-                </div>
-                <div className={`faq-answer ${tag === "interview" ? "faq-answer-open" : ""}`}>
-                  {tag === "interview" && <InterviewGroup />}
-                </div>
-                <div className={`faq-answer ${tag === "application" ? "faq-answer-open" : ""}`}>
-                  {tag === "application" && <ApplicationGroup />}
-                </div>
-                <div className={`faq-answer ${tag === "results" ? "faq-answer-open" : ""}`}>
-                  {tag === "results" && <ResultsGroup />}
-                </div>
-                <div className={`faq-answer ${tag === "sussy" ? "faq-answer-open" : ""}`}>
-                  {tag === "sussy" && <SussyGroup />}
-                </div>
-              </pre>
+          <div className={styles.featuredWidget}>
+            <div className={styles.photoBox}>FEATURED PHOTO</div>
+            <div className={styles.widgetFooter}>
+              <span>TomasinoWeb 2026 R101</span>
             </div>
-          )}
-        </div>
+          </div>
+        </aside>
       </div>
-    ),
-  };
-});
-
-export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+    </main>
+  );
+}
