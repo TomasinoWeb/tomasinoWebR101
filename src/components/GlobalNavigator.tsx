@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './GlobalNavigator.module.scss';
+import { Home, User, ClipboardList, MessageSquare, Briefcase, ClipboardCheck } from 'lucide-react';
 
 export interface NavTabItem {
   id: string;
@@ -23,6 +24,15 @@ const defaultTabs: NavTabItem[] = [
   { id: 'RESULT', label: 'RESULT', href: '/results' }
 ];
 
+const tabIcons: { [key: string]: React.ComponentType<{ className?: string; size?: number }> } = {
+  HOME: Home,
+  ABOUT: User,
+  R101: ClipboardList,
+  FAQS: MessageSquare,
+  APPLY: Briefcase,
+  RESULT: ClipboardCheck,
+};
+
 const isTabActive = (pathname: string, href: string) => {
   if (href === '/') return pathname === '/';
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -34,18 +44,21 @@ export const GlobalNavigator: React.FC<GlobalNavigatorProps> = ({ tabs = default
 
   return (
     <nav className={styles.globalNavigator}>
-      {visibleTabs.map((tab) => (
-        <Link
-          key={tab.id}
-          href={tab.href}
-          className={`${styles.navTab} ${
-            isTabActive(router.pathname, tab.href) ? styles.activeNavTab : ''
-          }`}
-        >
-          <div className={styles.iconBox} />
-          <span>{tab.label}</span>
-        </Link>
-      ))}
+      {visibleTabs.map((tab) => {
+        const IconComponent = tabIcons[tab.id] || Home;
+        return (
+          <Link
+            key={tab.id}
+            href={tab.href}
+            className={`${styles.navTab} ${
+              isTabActive(router.pathname, tab.href) ? styles.activeNavTab : ''
+            }`}
+          >
+            <IconComponent className={styles.icon} size={24} />
+            <span>{tab.label}</span>
+          </Link>
+        );
+      })}
     </nav>
   );
 };
