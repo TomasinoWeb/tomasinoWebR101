@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './GlobalNavigator.module.scss';
-import { Home, User, ClipboardList, MessageSquare, Briefcase, ClipboardCheck } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faUser, faClipboardList, faComment, faBriefcase, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
 
 export interface NavTabItem {
   id: string;
@@ -24,13 +25,13 @@ const defaultTabs: NavTabItem[] = [
   { id: 'RESULT', label: 'RESULT', href: '/results' }
 ];
 
-const tabIcons: { [key: string]: React.ComponentType<{ className?: string; size?: number }> } = {
-  HOME: Home,
-  ABOUT: User,
-  R101: ClipboardList,
-  FAQS: MessageSquare,
-  APPLY: Briefcase,
-  RESULT: ClipboardCheck,
+const tabIcons: { [key: string]: any } = {
+  HOME: faHouse,
+  ABOUT: faUser,
+  R101: faClipboardList,
+  FAQS: faComment,
+  APPLY: faBriefcase,
+  RESULT: faClipboardCheck,
 };
 
 const isTabActive = (pathname: string, href: string) => {
@@ -45,7 +46,7 @@ export const GlobalNavigator: React.FC<GlobalNavigatorProps> = ({ tabs = default
   return (
     <nav className={styles.globalNavigator}>
       {visibleTabs.map((tab) => {
-        const IconComponent = tabIcons[tab.id] || Home;
+        const IconComponent = tabIcons[tab.id] || faHouse;
         return (
           <Link
             key={tab.id}
@@ -54,7 +55,7 @@ export const GlobalNavigator: React.FC<GlobalNavigatorProps> = ({ tabs = default
               isTabActive(router.pathname, tab.href) ? styles.activeNavTab : ''
             }`}
           >
-            <IconComponent className={styles.icon} size={24} />
+            <FontAwesomeIcon icon={IconComponent} className={styles.icon} />
             <span>{tab.label}</span>
           </Link>
         );
