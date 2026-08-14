@@ -58,16 +58,8 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
             navClassList.join(" ")
           }
         >
-          <div className={styles.inner}>
-            {layoutProps.header !== "mini" && (
-              <Link className={styles.logo} href="/">
-                <Image src={PlantTomasinoWeb} alt="PlanetTomasinoWeb Logo" />
-              </Link>
-            )}
-
-            <div className={styles.nav}>
-              <Navbar containsResults={internalProps.resultsAreOut} containsApply={layoutProps.header !== "mini"} />
-            </div>
+          <div className={styles.centeredBrand}>
+            <Link href="/">TomasinoWeb</Link>
           </div>
         </header>
 
