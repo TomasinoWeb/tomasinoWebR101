@@ -38,3 +38,6 @@ yarn.lock
 package-lock.json
 
 .idea/
+
+# local design/codebase specs
+tomasinoweb_r101_website_spec.md
