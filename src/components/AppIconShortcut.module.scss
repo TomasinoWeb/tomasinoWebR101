@@ -31,6 +31,12 @@
   align-items: center;
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+  }
+
   @media screen and (max-width: 1023px) {
     width: 64px;
     height: 64px;
@@ -47,6 +53,10 @@
 .icon {
   font-size: 44px;
   color: #ffffff;
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    font-size: 36px;
+  }
 
   @media screen and (max-width: 1023px) {
     font-size: 24px;
@@ -66,6 +76,11 @@
   text-align: center;
   letter-spacing: -0.1px;
   white-space: nowrap;
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    font-size: 11px;
+    margin-top: 6px;
+  }
 
   @media screen and (max-width: 1023px) {
     font-size: 10px;

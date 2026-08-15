@@ -17,13 +17,18 @@
 }
 
 .container {
+  --grid-row-gap: 24px;
   max-width: 1600px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 24px; /* Separation between top row and bottom row */
+  gap: var(--grid-row-gap); /* Separation between top row and bottom row */
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    --grid-row-gap: 16px;
+  }
 }
 
 .rowGroupGrid {
@@ -31,10 +36,17 @@
   grid-template-columns: 2fr 6fr 2fr; /* Columns 1-2 (width 2), 3-8 (width 6), 9-10 (width 2) */
   gap: 20px;
   width: 100%;
-  height: 310px; /* Standardized height for perfect card proportions and tight app gaps */
+  height: calc((100% - var(--grid-row-gap)) / 2);
+  max-height: 310px; /* Standardized height for perfect card proportions and tight app gaps */
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    gap: 12px;
+  }
 
   @media screen and (max-width: 1023px) {
     height: auto;
+    max-height: none;
+    gap: 16px;
   }
 }
 
