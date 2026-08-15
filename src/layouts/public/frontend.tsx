@@ -47,7 +47,7 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
 
     return (
       <div
-        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : styles.subtleDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""} ${layoutProps.footer === "disabled" ? styles.disabledFooter : ""}`}
+        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : layoutProps.dots === "subtle" ? styles.subtleDots : styles.disabledDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""} ${layoutProps.footer === "disabled" ? styles.disabledFooter : ""}`}
       >
         <header
           className={

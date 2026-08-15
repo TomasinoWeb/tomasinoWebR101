@@ -8,6 +8,11 @@
   --dot-color: #aea69d20;
 }
 
+.disabledDots {
+  --dot-bg: transparent;
+  --dot-color: transparent;
+}
+
 .root {
   min-height: 100vh;
   display: flex;
