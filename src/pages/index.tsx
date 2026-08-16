@@ -109,13 +109,13 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               <div className={styles.centerAppsGrid}>
                 <AppIconShortcut label="Website" icon={faGlobe} href="https://tomasinoweb.org" external />
                 <AppIconShortcut label="Facebook" icon={faFacebook} href="https://facebook.com/tomasinoweb" external />
-                <AppIconShortcut label="[Draft 143]" icon={faNewspaper} href="/draft143" />
-                <AppIconShortcut label="Lamona" icon={faLemon} href="/lamona" />
+                <AppIconShortcut label="[Draft 143]" icon={faNewspaper} href="https://draft143.com" external />
+                <AppIconShortcut label="Lamona" icon={faLemon} href="https://lamona.lol/" external />
                 
                 <AppIconShortcut label="Instagram" icon={faInstagram} href="https://instagram.com/tomasinoweb" external />
                 <AppIconShortcut label="Youtube" icon={faYoutube} href="https://youtube.com/tomasinoweb" external />
                 <AppIconShortcut label="X" icon={faXTwitter} href="https://x.com/tomasinoweb" external />
-                <AppIconShortcut label="Thomscore" icon={faChartColumn} href="/thomscore" />
+                <AppIconShortcut label="Thomscore" icon={faChartColumn} href="https://uaap.tomasinoweb.org/" external />
               </div>
             </div>
 
