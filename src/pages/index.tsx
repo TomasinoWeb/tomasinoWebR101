@@ -2,6 +2,7 @@ import { PublicLayoutFrontend } from "../layouts/public/frontend";
 import { PublicLayoutBackend } from "../layouts/public/static";
 import { DashboardWidget } from "../components/DashboardWidget";
 import { AppIconShortcut } from "../components/AppIconShortcut";
+import Footer from "../components/Footer";
 import styles from "./index.module.scss";
 import Image from "next/image";
 import ToraTomwegg from "../../public/assets/tomweggs/ToraTomweggVer2.png";
@@ -125,6 +126,8 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
               </DashboardWidget>
             </div>
           </div>
+
+          <Footer className={styles.homeFooter} />
 
         </div>
       </div>

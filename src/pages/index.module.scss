@@ -1,4 +1,5 @@
 .root {
+  position: relative;
   height: calc(100vh - var(--header-height) - 70px);
   width: 100%;
   box-sizing: border-box;
@@ -13,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 5%;
+  padding: 20px 5% 58px 5%; /* Reserved 58px bottom padding for the 48px Figma absolute footer */
 }
 
 .container {
@@ -36,8 +37,7 @@
   grid-template-columns: 2fr 6fr 2fr; /* Columns 1-2 (width 2), 3-8 (width 6), 9-10 (width 2) */
   gap: 20px;
   width: 100%;
-  height: calc((100% - var(--grid-row-gap)) / 2);
-  max-height: 310px; /* Standardized height for perfect card proportions and tight app gaps */
+  height: 270px; /* Adjusted height to accommodate the footer bar without scrolling */
 
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
     gap: 12px;
@@ -45,7 +45,6 @@
 
   @media screen and (max-width: 1023px) {
     height: auto;
-    max-height: none;
     gap: 16px;
   }
 }
@@ -85,25 +84,47 @@
 .appsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto;
-  align-content: space-between;
+  grid-template-rows: 1fr 1fr; /* Equal height cell rows */
+  row-gap: 20px; /* Explicit minimum vertical gap between rows */
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   justify-items: center;
   padding: 0;
+
+  & > * {
+    /* Align first row to top */
+    &:nth-child(-n+2) {
+      align-self: start;
+    }
+    /* Align second row to bottom */
+    &:nth-child(n+3) {
+      align-self: end;
+    }
+  }
 }
 
 .centerAppsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto;
-  align-content: space-between;
+  grid-template-rows: 1fr 1fr; /* Equal height cell rows */
+  row-gap: 20px; /* Explicit minimum vertical gap between rows */
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   justify-items: center;
   padding: 0;
+
+  & > * {
+    /* Align first row to top */
+    &:nth-child(-n+4) {
+      align-self: start;
+    }
+    /* Align second row to bottom */
+    &:nth-child(n+5) {
+      align-self: end;
+    }
+  }
 }
 
 .gridCell {
@@ -140,4 +161,68 @@
   color: #451632;
   text-align: center;
   letter-spacing: -0.1px;
+}
+
+.homeFooter {
+  position: absolute !important;
+  bottom: 0 !important; /* Rest exactly flush at the bottom of the content container */
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 36px !important; /* Compact 38px height */
+  background-color: #ffffff !important; /* Solid white background */
+  border-top: 0.5px solid #D9D9D9 !important; /* Hairline 0.5px top border */
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0 !important; /* Full width screen container */
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  z-index: 100 !important;
+  --footer-max-width: 100% !important; /* Stretch inner container to full width */
+  font-family: "Inter", "SF Pro Display", sans-serif !important;
+
+  * {
+    font-family: "Inter", "SF Pro Display", sans-serif !important;
+  }
+
+  & > div {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  p, a, span, button {
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    color: #343332 !important;
+    text-decoration: none !important;
+    margin: 0 !important; /* Reset default browser margins */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  p {
+    font-weight: 700 !important; /* Make copyright bold */
+  }
+
+  svg {
+    font-size: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+    color: #343332 !important;
+    display: block !important; /* Prevent line-height shifts on SVGs */
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #713458 !important;
+    }
+  }
+
+  a:hover {
+    color: #713458 !important;
+  }
 }
