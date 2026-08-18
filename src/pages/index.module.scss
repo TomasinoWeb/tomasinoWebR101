@@ -1,123 +1,143 @@
 .root {
-  position: relative;
+  height: calc(100vh - var(--header-height) - 70px);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    90deg,
+    #f1f3f7,
+    #f1f3f7 12px,
+    #ffffff 12px,
+    #ffffff 24px
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 5%;
+}
 
-  .background {
-    position: absolute;
-    z-index: -1;
-    height: 100%;
+.container {
+  --grid-row-gap: 24px;
+  max-width: 1600px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--grid-row-gap); /* Separation between top row and bottom row */
 
-    .bg_img {
-      display: block;
-      width: 100vw;
-      height: 100%;
-      object-fit: cover;
-      min-height: 100vh;
-    }
-  }
-
-  .overlay {
-    background:
-      radial-gradient(98.88% 50% at 50% 50%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%),
-      linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-    z-index: 1;
-    width: 100vw;
-    top: 0px;
-    left: 0px;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--header-height);
-    padding-bottom: var(--footer-height);
-    // margin-bottom: calc(var(--footer-height) * -1);
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    --grid-row-gap: 16px;
   }
 }
 
-.page {
-  max-width: 1260px;
+.rowGroupGrid {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr; /* Columns 1-2 (width 2), 3-8 (width 6), 9-10 (width 2) */
+  gap: 20px;
   width: 100%;
-  margin: 0px auto;
-  padding: 0px 30px;
+  height: calc((100% - var(--grid-row-gap)) / 2);
+  max-height: 310px; /* Standardized height for perfect card proportions and tight app gaps */
 
-  .top {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    justify-content: space-between;
-
-    .left,
-    .right {
-      font-family: "Groundnut", "GroundnutTW", sans-serif;
-      font-size: 24px;
-      min-width: fit-content;
-
-      @media screen and (max-width: 670px) {
-        font-size: 20px;
-      }
-
-      @media screen and (max-width: 500px) {
-        font-size: 16px;
-      }
-    }
-
-    .center {
-      width: 100%;
-
-      h1 {
-        font-family: "Snoopy", sans-serif;
-        font-size: 84px;
-        letter-spacing: -2px;
-      }
-
-      .tomwebLogo {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-    }
-
-    @media screen and (max-width: 1000px) {
-      flex-direction: column;
-      align-items: start;
-      justify-content: unset;
-      gap: 20px;
-    }
-
-    @media screen and (max-width: 670px) {
-      gap: 10px;
-    }
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    gap: 12px;
   }
 
-  .rail {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-
-    .inner {
-      max-width: 800px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-
-      @media screen and (max-width: 670px) {
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
-
-    @media screen and (max-width: 1000px) {
-      margin-top: 80px;
-
-      justify-content: start;
-      .inner {
-        max-width: unset;
-      }
-    }
-
-    @media screen and (max-width: 800px) {
-      margin-top: 40px;
-    }
+  @media screen and (max-width: 1023px) {
+    height: auto;
+    max-height: none;
+    gap: 16px;
   }
+}
+
+.groupCard {
+  border: 3px solid #713458; /* Thick outer border for the groups */
+  background-color: rgba(113, 52, 88, 0.02);
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 24px rgba(113, 52, 88, 0.08);
+  }
+}
+
+.subGrid {
+  display: grid;
+  gap: 12px;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.widgetCell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.appsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  align-content: space-between;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  justify-items: center;
+  padding: 0;
+}
+
+.centerAppsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  align-content: space-between;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  justify-items: center;
+  padding: 0;
+}
+
+.gridCell {
+  border: 1px dashed rgba(113, 52, 88, 0.35); /* Dashed cell borders */
+  background-color: rgba(113, 52, 88, 0.03);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #713458;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+
+  .cellLabel {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .subtext {
+    font-size: 8px;
+    font-weight: 500;
+    color: #451632;
+    margin-top: 2px;
+  }
+}
+
+.groupHeader {
+  margin-top: 10px;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #451632;
+  text-align: center;
+  letter-spacing: -0.1px;
 }

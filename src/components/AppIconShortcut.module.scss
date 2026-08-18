@@ -1,0 +1,94 @@
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: fit-content;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    .iconBox {
+      transform: translateY(-2px);
+      background-color: #9fa7b8;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .label {
+      color: #000000;
+      font-weight: 600;
+    }
+  }
+}
+
+.iconBox {
+  width: 110px;
+  height: 110px;
+  background-color: #b0b7c7;
+  border-radius: 26px; /* Squircle corner approximation */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+}
+
+.icon {
+  font-size: 44px;
+  color: #ffffff;
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    font-size: 36px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+  }
+}
+
+.label {
+  margin-top: 8px;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #343332;
+  text-align: center;
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 8px;
+    margin-top: 4px;
+  }
+}

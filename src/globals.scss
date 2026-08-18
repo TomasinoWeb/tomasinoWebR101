@@ -255,13 +255,13 @@ table {
   --font-sizes-main-title: 64px;
   --font-sizes-hero-title: 96px;
 
-  --header-height: 60px;
+  --header-height: 50px;
   --footer-height: 53.3333px;
 }
 
 @media screen and (max-width: 850px) {
   :root {
-    --header-height: 60px;
+    --header-height: 50px;
   }
 }
 

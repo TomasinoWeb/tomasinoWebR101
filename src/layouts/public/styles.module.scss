@@ -8,11 +8,16 @@
   --dot-color: #aea69d20;
 }
 
+.disabledDots {
+  --dot-bg: transparent;
+  --dot-color: transparent;
+}
+
 .root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
   overflow-x: hidden;
 
   background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
@@ -36,8 +41,8 @@
   height: var(--header-height);
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding: 0 100px 12px 100px;
+  align-items: center;
+  padding: 0 5%;
 
   transform: translateY(0%);
   transition: 300ms all ease-in-out;
@@ -156,4 +161,15 @@
 .nav-bar--hidden {
   transform: translateY(-150%);
   transition: 300ms all ease-in-out;
+}
+
+.nonScrollable {
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  
+  main {
+    height: calc(100vh - var(--header-height) - 70px);
+    overflow: hidden;
+  }
 }
