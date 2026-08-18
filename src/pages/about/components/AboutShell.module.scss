@@ -191,9 +191,6 @@
 
 
 @media (max-width: 768px) {
-  .shell {
-    padding: 16px 12px 48px;
-  }
 
   .profile {
     margin-inline: clamp(12px, 5vw, 32px);
@@ -201,6 +198,7 @@
 
   .container {
     margin-inline: clamp(12px , 5vw, 32px);
+    padding: 24px;
   }
 
   .tab span {
