@@ -9,6 +9,14 @@
   display: flex;
   z-index: 1100;
 
+  @media screen and (min-width: 1920px) {
+    height: 85px; /* Taller bottom nav bar on monitors */
+  }
+
+  @media screen and (min-width: 2550px) {
+    height: 105px; /* Even taller bottom nav bar on QHD/2K monitors */
+  }
+
   .navTab {
     flex: 1;
     background: linear-gradient(180deg, #292929 0%, #121212 100%);
@@ -26,11 +34,33 @@
     outline: none;
     text-decoration: none;
 
+    @media screen and (min-width: 1920px) {
+      font-size: 13px; /* Larger text on 1920px+ monitors */
+      gap: 4px;
+    }
+
+    @media screen and (min-width: 2550px) {
+      font-size: 16px; /* Even larger text on QHD/2K monitors */
+      gap: 6px;
+    }
+
     .icon {
       width: 20px;
       height: 20px;
       transition: all 0.2s ease;
       margin-bottom: 2px;
+
+      @media screen and (min-width: 1920px) {
+        width: 26px; /* Larger icons on 1920px+ monitors */
+        height: 26px;
+        margin-bottom: 4px;
+      }
+
+      @media screen and (min-width: 2550px) {
+        width: 34px; /* Even larger icons on QHD/2K monitors */
+        height: 34px;
+        margin-bottom: 6px;
+      }
     }
 
     &.activeNavTab {

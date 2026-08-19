@@ -20,6 +20,14 @@
   padding-bottom: 70px;
   overflow-x: hidden;
 
+  @media screen and (min-width: 1920px) {
+    --header-height: 64px !important; /* Increase header height globally on 1920px+ monitors */
+  }
+
+  @media screen and (min-width: 2550px) {
+    --header-height: 80px !important; /* Taller header height globally on 2K/QHD monitors */
+  }
+
   background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
   background-repeat: repeat; /* or omit this declaration */
   background-size: 8px 8px;
@@ -60,6 +68,14 @@
       text-decoration: none;
       letter-spacing: 0.5px;
       transition: opacity 0.2s ease;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 34px; /* Larger header logo text on 1920px+ monitors */
+      }
+
+      @media screen and (min-width: 2550px) {
+        font-size: 44px; /* Even larger header logo text on QHD/2K monitors */
+      }
 
       &:hover {
         opacity: 0.8;
@@ -171,5 +187,13 @@
   main {
     height: calc(100vh - var(--header-height) - 70px);
     overflow: hidden;
+
+    @media screen and (min-width: 1920px) {
+      height: calc(100vh - var(--header-height) - 85px); /* Subtract 85px bottom nav height on wide monitors */
+    }
+
+    @media screen and (min-width: 2550px) {
+      height: calc(100vh - var(--header-height) - 105px); /* Subtract 105px bottom nav height on 2K/QHD monitors */
+    }
   }
 }
