@@ -14,22 +14,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 70px 15% 70px 15%; /* Symmetrical top and bottom padding for vertical centering on desktop */
+  padding: 40px 15% 90px 15%; /* Side padding set to 15% on large monitors */
 
   @media screen and (min-width: 1920px) {
     height: calc(100vh - var(--header-height) - 85px); /* Subtract 85px bottom nav height on wide monitors */
-    padding-top: 70px; /* Symmetrical top padding for perfect vertical centering on large monitors */
-    padding-bottom: 70px; /* Symmetrical bottom padding */
-  }
-
-  @media screen and (min-width: 2550px) {
-    height: calc(100vh - var(--header-height) - 105px); /* Subtract 105px bottom nav height on QHD/2K monitors */
-    padding-top: 120px; /* Larger symmetrical top padding for 2K screens */
-    padding-bottom: 120px; /* Larger symmetrical bottom padding */
+    padding-top: 70px; /* Symmetrical top padding for perfect vertical centering */
+    padding-bottom: 70px; /* Symmetrical bottom padding (still leaves clearance for 48px footer) */
   }
 
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    padding: 60px 12% 60px 12%; /* Symmetrical padding on laptop screens */
+    padding: 40px 12% 90px 12%; /* Increased laptop horizontal edge spacing to 12% */
   }
 }
 
@@ -48,11 +42,6 @@
     max-width: 1700px; /* Wider container bounds on 1920px+ monitors */
   }
 
-  @media screen and (min-width: 2550px) {
-    --grid-row-gap: 130px; /* Even larger gap on QHD/2K monitors */
-    max-width: 2200px; /* Even wider container bounds on QHD/2K monitors */
-  }
-
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
     --grid-row-gap: 40px; /* Laptop vertical gap of 40px */
   }
@@ -67,11 +56,6 @@
 
   @media screen and (min-width: 1920px) {
     height: 300px; /* Taller widgets on 1920px+ monitors */
-  }
-
-  @media screen and (min-width: 2550px) {
-    height: 360px; /* Even taller widgets on QHD/2K monitors */
-    gap: 80px; /* Wider gap between widget columns on 2550px+ screens */
   }
 
   /* Symmetrically compress the side columns (Left and Right) to reduce the inner app gaps */
@@ -132,10 +116,6 @@
     @media screen and (min-width: 1920px) {
       font-size: 17px !important;
     }
-
-    @media screen and (min-width: 2550px) {
-      font-size: 22px !important; /* Even larger caption text on QHD/2K monitors */
-    }
   }
 }
 
@@ -170,16 +150,6 @@
       }
     }
 
-    @media screen and (min-width: 2550px) {
-      width: 165px !important; /* Even larger app icons on QHD/2K monitors */
-      height: 165px !important;
-      border-radius: 40px !important;
-
-      svg {
-        font-size: 64px !important; /* Scale up icon symbol size further */
-      }
-    }
-
     @media screen and (max-width: 1440px), screen and (max-height: 850px) {
       width: 92px !important; /* Increased icon box size by 8px on laptop */
       height: 92px !important;
@@ -202,10 +172,6 @@
 
         @media screen and (min-width: 1920px) {
           font-size: 14px !important; /* Larger text on 1920px+ monitors */
-        }
-
-        @media screen and (min-width: 2550px) {
-          font-size: 18px !important; /* Even larger text on QHD/2K monitors */
         }
 
         @media screen and (max-width: 1440px), screen and (max-height: 850px) {
@@ -247,16 +213,6 @@
       }
     }
 
-    @media screen and (min-width: 2550px) {
-      width: 165px !important; /* Even larger app icons on QHD/2K monitors */
-      height: 165px !important;
-      border-radius: 40px !important;
-
-      svg {
-        font-size: 64px !important; /* Scale up icon symbol size further */
-      }
-    }
-
     @media screen and (max-width: 1440px), screen and (max-height: 850px) {
       width: 92px !important; /* Increased icon box size by 8px on laptop */
       height: 92px !important;
@@ -279,10 +235,6 @@
 
         @media screen and (min-width: 1920px) {
           font-size: 14px !important; /* Larger text on 1920px+ monitors */
-        }
-
-        @media screen and (min-width: 2550px) {
-          font-size: 18px !important; /* Even larger text on QHD/2K monitors */
         }
 
         @media screen and (max-width: 1440px), screen and (max-height: 850px) {
@@ -342,10 +294,6 @@
     height: 48px !important; /* Taller footer bar on monitors */
   }
 
-  @media screen and (min-width: 2550px) {
-    height: 60px !important; /* Even taller footer bar on QHD/2K monitors */
-  }
-
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
     padding: 10px 4% !important; /* Maintain near-edge positioning on laptop screens */
   }
@@ -388,10 +336,6 @@
     @media screen and (min-width: 1920px) {
       font-size: 14px !important; /* Larger text on 1920px+ monitors */
     }
-
-    @media screen and (min-width: 2550px) {
-      font-size: 18px !important; /* Even larger text on QHD/2K monitors */
-    }
   }
 
   p {
@@ -410,12 +354,6 @@
       font-size: 20px !important; /* Larger social icons on 1920px+ monitors */
       width: 20px !important;
       height: 20px !important;
-    }
-
-    @media screen and (min-width: 2550px) {
-      font-size: 26px !important; /* Even larger social icons on QHD/2K monitors */
-      width: 26px !important;
-      height: 26px !important;
     }
 
     &:hover {

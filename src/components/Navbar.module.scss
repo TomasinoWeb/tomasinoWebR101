@@ -50,81 +50,205 @@
   }
 }
 
-.mobile {
-  flex: 1;
-  background: var(--neutral-white);
+.mobileNavContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
 
-  border: 2px solid black;
-  border-radius: 35px;
-  box-shadow: -4px 4px 0 0 var(--neutral-black, #1e1e1e);
+.headerBar {
+  width: 100%;
+  height: 56px;
+  background: linear-gradient(180deg, #713458 0%, #451632 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-  .top {
+  .logoText {
+    color: #ffffff;
+    font-family: "Inter", "SF Pro Display", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+
+  .hamburgerBtn {
+    position: absolute;
+    right: 16px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    justify-content: center;
+    padding: 6px;
+    transition: opacity 0.2s ease;
 
-    .left {
-      .tomwebLogo {
-        width: 40px;
-        height: auto;
-        object-fit: cover;
-      }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.popupWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 4px solid #713458; /* Premium thick pink border around the menu modal */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.popupHeader {
+  height: 64px;
+  background: linear-gradient(180deg, #713458 0%, #451632 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 16px;
+  border-bottom: 2px solid #713458;
+
+  .logoText {
+    color: #ffffff;
+    font-family: "Inter", "SF Pro Display", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background-color: #a83268; /* Pink block background for the close button */
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.menuLinksList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.menuLinkItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 18px 24px;
+  text-decoration: none;
+  background-color: #f5f6f8; /* Light off-white background */
+  border-bottom: 1.5px solid #d9dce1; /* Hairline separator */
+  transition: all 0.2s ease;
+
+  .linkLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .linkIcon {
+      font-size: 20px;
+      color: #7c8896; /* Gray/blue-gray icon color */
+      width: 24px;
+      text-align: center;
     }
 
-    .right {
-      svg {
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-      }
+    .linkLabel {
+      font-family: "Inter", "SF Pro Display", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #7c8896; /* Gray/blue-gray label text */
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
   }
 
-  .bottom {
-    max-height: 0px;
-    transition: max-height 0.3s ease-in-out;
-    overflow-y: hidden;
+  .chevronIcon {
+    font-size: 14px;
+    color: #7c8896;
+  }
 
-    .links {
-      border-top: 2px solid var(--neutral-black, #1e1e1e);
-      border-top-color: transparent;
-      transition: 150ms ease-in-out all;
-      padding-top: 10px;
+  /* Active state */
+  &.activeLinkItem {
+    background: #5c1037; /* Dark pink background for active link */
+    border-bottom-color: #5c1037;
 
-      a {
-        text-align: center;
-        display: block;
-        font-family: "Groundnut", "GroundnutTW", sans-serif;
-        color: black;
-        padding: 6px 10px;
-        font-size: 18px;
-        text-decoration: none;
-        margin: 5px 0px;
+    .linkLeft {
+      .linkIcon {
+        color: #ff69b4; /* Active icon color */
       }
 
-      .special {
-        display: block;
-        margin: 0px;
-
-        border: 3px solid black;
-        border-top: 2px solid black;
-        border-bottom: 1px solid black;
-        border-right: 1px solid black;
-        border-radius: 100px;
-        height: 100%;
-        padding: 20px;
-        background-color: var(--primary-yellow);
+      .linkLabel {
+        color: #ffffff; /* Active label text color */
       }
+    }
+
+    .chevronIcon {
+      color: #ffffff;
     }
   }
 
-  .opened {
-    max-height: 300px;
-    transition: max-height 0.3s ease-in-out;
-    .links {
-      border-top-color: var(--neutral-black, #1e1e1e);
-      transition: 150ms ease-in-out all;
-    }
+  &:hover:not(.activeLinkItem) {
+    background-color: #eceff2;
+  }
+}
+
+.popupFooter {
+  height: 48px;
+  background-color: #121212; /* Dark footer bar background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  span {
+    color: #a1a1a1;
+    font-family: "Inter", "SF Pro Display", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
   }
 }
