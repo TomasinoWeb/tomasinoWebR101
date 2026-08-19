@@ -25,6 +25,11 @@
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
     padding: 40px 12% 90px 12%; /* Increased laptop horizontal edge spacing to 12% */
   }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 1.5% !important; /* Move layout closer to screen borders on 1024px displays */
+    padding-right: 1.5% !important;
+  }
 }
 
 .container {
@@ -74,6 +79,16 @@
     }
   }
 
+  @media screen and (max-width: 1024px) {
+    height: 220px; /* Reduced widget height to 220px on 1024px displays */
+    gap: 10px; /* Reduced gap between cells to 10px */
+
+    & > div:first-child,
+    & > div:last-child {
+      padding: 0 24px; /* Set padding to 24px to narrow cell width and restore middle gaps between shortcuts */
+    }
+  }
+
   @media screen and (max-width: 1023px) {
     height: auto;
     gap: 16px;
@@ -116,6 +131,10 @@
     @media screen and (min-width: 1920px) {
       font-size: 17px !important;
     }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 12px !important; /* Scale down widget caption on 1024px displays */
+    }
   }
 }
 
@@ -155,6 +174,12 @@
       height: 92px !important;
       border-radius: 21px !important;
     }
+
+    @media screen and (max-width: 1024px) {
+      width: 86px !important; /* Scaled down app icons on 1024px displays */
+      height: 86px !important;
+      border-radius: 20px !important;
+    }
   }
 
   & > * {
@@ -176,6 +201,10 @@
 
         @media screen and (max-width: 1440px), screen and (max-height: 850px) {
           margin-top: 10px !important; /* Adjusted margin for laptop */
+        }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 10px !important; /* Scale down shortcut label on 1024px displays */
         }
       }
     }
@@ -218,6 +247,12 @@
       height: 92px !important;
       border-radius: 21px !important;
     }
+
+    @media screen and (max-width: 1024px) {
+      width: 86px !important; /* Scaled down app icons on 1024px displays */
+      height: 86px !important;
+      border-radius: 20px !important;
+    }
   }
 
   & > * {
@@ -239,6 +274,10 @@
 
         @media screen and (max-width: 1440px), screen and (max-height: 850px) {
           margin-top: 10px !important; /* Adjusted margin for laptop */
+        }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 10px !important; /* Scale down shortcut label on 1024px displays */
         }
       }
     }
@@ -297,6 +336,11 @@
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
     padding: 10px 4% !important; /* Maintain near-edge positioning on laptop screens */
   }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 1.5% !important; /* Move layout closer to the screen borders on 1024px displays */
+    padding-right: 1.5% !important;
+  }
   
   background-color: #ffffff !important; /* Solid white background */
   border-top: 0.5px solid #D9D9D9 !important; /* Hairline 0.5px top border */
@@ -335,6 +379,10 @@
 
     @media screen and (min-width: 1920px) {
       font-size: 14px !important; /* Larger text on 1920px+ monitors */
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 10px !important; /* Scale down footer text on 1024px displays */
     }
   }
 
