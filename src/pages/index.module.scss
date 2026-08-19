@@ -14,11 +14,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 5% 58px 5%; /* Reserved 58px bottom padding for the 48px Figma absolute footer */
+  padding: 40px 15% 90px 15%; /* Side padding set to 15% on large monitors */
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    padding: 40px 12% 90px 12%; /* Increased laptop horizontal edge spacing to 12% */
+  }
 }
 
 .container {
-  --grid-row-gap: 24px;
+  --grid-row-gap: 72px; /* Balanced vertical gap of 48px to prevent overlap while maintaining compact layout centering */ 
   max-width: 1600px;
   width: 100%;
   height: 100%;
@@ -28,19 +32,31 @@
   gap: var(--grid-row-gap); /* Separation between top row and bottom row */
 
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    --grid-row-gap: 16px;
+    --grid-row-gap: 40px; /* Laptop vertical gap of 40px */
   }
 }
 
 .rowGroupGrid {
   display: grid;
-  grid-template-columns: 2fr 6fr 2fr; /* Columns 1-2 (width 2), 3-8 (width 6), 9-10 (width 2) */
-  gap: 20px;
+  grid-template-columns: 1fr 2fr 1fr; /* 4-column layout (Left: 1, Center: 2, Right: 1) */
+  gap: 48px; /* Increased horizontal gap between widgets/cells to 48px on monitors */
   width: 100%;
-  height: 270px; /* Adjusted height to accommodate the footer bar without scrolling */
+  height: 270px; /* Increased height to 270px to make widgets and apps larger on desktop monitors */
+
+  /* Symmetrically compress the side columns (Left and Right) to reduce the inner app gaps */
+  & > div:first-child,
+  & > div:last-child {
+    padding: 0 12px; /* Reduced from 24px to 12px to make widgets and apps wider */
+  }
 
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    gap: 12px;
+    gap: 16px; /* Reduced gap between widget cells on laptop to 16px */
+    height: 223px; /* Increased row height by 8px (from 215px to 223px) on laptop */
+
+    & > div:first-child,
+    & > div:last-child {
+      padding: 0 32px;
+    }
   }
 
   @media screen and (max-width: 1023px) {
@@ -83,14 +99,31 @@
 
 .appsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto auto;
   grid-template-rows: 1fr 1fr; /* Equal height cell rows */
   row-gap: 20px; /* Explicit minimum vertical gap between rows */
+  justify-content: space-between; /* Spread columns symmetrically to the container edges */
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  justify-items: center;
-  padding: 0;
+  padding: 0; /* Align exactly flush with the card border below */
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    row-gap: 12px; /* Reduced vertical gap on laptop to fit in 215px cell height */
+  }
+
+  /* Scale app icon box size on monitor viewport vs laptop viewport */
+  & > * > div {
+    width: 122px !important;
+    height: 122px !important;
+    border-radius: 30px !important;
+
+    @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+      width: 92px !important; /* Increased icon box size by 8px on laptop */
+      height: 92px !important;
+      border-radius: 21px !important;
+    }
+  }
 
   & > * {
     /* Align first row to top */
@@ -100,20 +133,46 @@
     /* Align second row to bottom */
     &:nth-child(n+3) {
       align-self: end;
+
+      /* Push the squircle box up by increasing label top margin to align with card bottom borders */
+      span {
+        margin-top: 12px !important;
+
+        @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+          margin-top: 10px !important; /* Adjusted margin for laptop */
+        }
+      }
     }
   }
 }
 
 .centerAppsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, auto);
   grid-template-rows: 1fr 1fr; /* Equal height cell rows */
   row-gap: 20px; /* Explicit minimum vertical gap between rows */
+  justify-content: space-between; /* Spread columns symmetrically to the container edges */
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  justify-items: center;
-  padding: 0;
+  padding: 0; /* Align exactly flush with the card border above */
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    row-gap: 12px; /* Reduced vertical gap on laptop to fit in 215px cell height */
+  }
+
+  /* Scale app icon box size on monitor viewport vs laptop viewport */
+  & > * > div {
+    width: 122px !important;
+    height: 122px !important;
+    border-radius: 30px !important;
+
+    @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+      width: 92px !important; /* Increased icon box size by 8px on laptop */
+      height: 92px !important;
+      border-radius: 21px !important;
+    }
+  }
 
   & > * {
     /* Align first row to top */
@@ -123,6 +182,15 @@
     /* Align second row to bottom */
     &:nth-child(n+5) {
       align-self: end;
+
+      /* Push the squircle box up by increasing label top margin to align with card bottom borders */
+      span {
+        margin-top: 12px !important;
+
+        @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+          margin-top: 10px !important; /* Adjusted margin for laptop */
+        }
+      }
     }
   }
 }
@@ -170,6 +238,12 @@
   right: 0 !important;
   width: 100% !important;
   height: 36px !important; /* Compact 38px height */
+  padding: 10px 4% !important; /* Position footer contents near the screen edges with a small safe margin */
+
+  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
+    padding: 10px 4% !important; /* Maintain near-edge positioning on laptop screens */
+  }
+  
   background-color: #ffffff !important; /* Solid white background */
   border-top: 0.5px solid #D9D9D9 !important; /* Hairline 0.5px top border */
   border-bottom: none !important;
