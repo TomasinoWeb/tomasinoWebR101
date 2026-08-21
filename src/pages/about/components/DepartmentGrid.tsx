@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import { departments } from "../../../data/departments";
-import { SocialPostCard } from "./SocialPostCard";
+import { DepartmentPostCard } from "./DepartmentPostCard";
 import { Modal } from "./Modal";
 import styles from "./DepartmentGrid.module.scss";
 
 const sampleComments = [
-  { username: "dep_head", text: "Include here the dep_head/dep officers encouraging short message for applicants." },
-  { username: "thomasino_dev", text: "Can't wait to submit my application!" },
+  { username: "Dep_head", text: "Include here the dep_head/dep officers encouraging short message for applicants." },
+  { username: "Thomasino_dev", text: "Can't wait to submit my application!" },
 ];
 
 export function DepartmentGrid() {
@@ -30,15 +30,18 @@ export function DepartmentGrid() {
         ))}
       </div>
 
-      <Modal isOpen={openDepartment != null} onClose={() => setOpenId(null)}>
+      <Modal isOpen={openDepartment != null} onClose={() => setOpenId(null)} size="wide">
         {openDepartment && (
-          <SocialPostCard
+          <DepartmentPostCard
             avatar="/logo/insignia_yellow.png"
             name="tomasinoweb"
             images={openDepartment.images}
             likes="1,464,381"
             caption={openDepartment.description}
             offeredPositions={openDepartment.offeredPositions}
+            hashtags="#TomasinoWeb #TWRecruitment2026 #JoinTW #UST"
+            date="AUGUST 2026"
+            commentsCount="232,375"
             comments={sampleComments}
           />
         )}

@@ -1,0 +1,153 @@
+.post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "media header"
+    "media body";
+  background: var(--about-neutral-white, #fff);
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.media {
+  grid-area: media;
+  min-width: 0;
+  position: relative;
+  background: var(--about-neutral-light, #D9D9D9);
+}
+
+.bodyWrap {
+  grid-area: body;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid var(--about-neutral-light, #e4e2e6);
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--about-neutral-black, #1e1e1e);
+}
+
+.following {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #A83268 0%, #713458 100%);
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+
+.more {
+  margin-left: auto;
+  color: var(--about-neutral-mid, #999);
+}
+
+.body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.likes {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.captionName {
+  font-weight: 700;
+}
+
+.caption {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--about-neutral-black, #1e1e1e);
+  margin: 0;
+}
+
+.positions {
+  font-size: 0.8rem;
+
+  .positionsTitle {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 18px;
+    margin: 0;
+  }
+}
+
+.hashtags {
+  color: #1d9bf0;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.date {
+  font-size: 0.625rem;
+  color: var(--about-neutral-mid, #999);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.comments {
+  border-top: 1px solid var(--about-neutral-light, #e4e2e6);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.625rem;
+}
+
+.viewAll {
+  font-size: 0.75rem;
+  color: var(--about-neutral-mid, #999);
+  margin: 0 0 4px;
+}
+
+.comment {
+  font-size: 0.8rem;
+  margin: 0;
+  color: var(--about-neutral-black, #1e1e1e);
+}
+
+.commentName {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .post {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "header"
+      "media"
+      "body";
+    min-height: 0;
+  }
+
+  .media {
+    aspect-ratio: 1 / 1;
+  }
+}

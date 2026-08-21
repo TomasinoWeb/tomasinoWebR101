@@ -8,15 +8,16 @@ import styles from "./ImageCarousel.module.scss";
 interface ImageCarouselProps {
   images: string[];
   alt: string;
+  variant?: "square" | "fill";
 }
 
-export function ImageCarousel({ images, alt }: ImageCarouselProps) {
+export function ImageCarousel({ images, alt, variant = "square" }: ImageCarouselProps) {
   const [index, setIndex] = useState(0);
 
   const goTo = (next: number) => setIndex((next + images.length) % images.length);
 
   return (
-    <div className={styles.carousel}>
+    <div className={`${styles.carousel} ${variant === "fill" ? styles.fill : ""}`}>
       <div className={styles.frame}>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div

@@ -1,11 +1,11 @@
 .post {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   background: var(--about-neutral-white, #fff);
-  border-radius: 12px;
-  padding: 12px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin-inline: auto;
+  border-radius: 12px;
 }
 
 .header {
@@ -45,7 +45,7 @@
   font-size: 0.813rem;
 }
 
-.captionContainer{
+.container{
   display: flex;
   flex-direction: column;
   padding: 12px;
@@ -89,4 +89,8 @@
 .comment {
   font-size: 0.8rem;
   color: var(--about-neutral-black, #1e1e1e);
+}
+
+@media (max-width: 768px) {
+  
 }

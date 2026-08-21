@@ -22,16 +22,18 @@ interface SocialPostCardProps {
 export function SocialPostCard({ avatar, name, images, likes, caption, offeredPositions, comments }: SocialPostCardProps) {
   return (
     <article className={styles.post}>
-      <header className={styles.header}>
-        <Image src={avatar} alt={`${name} avatar`} width={36} height={36} className={styles.avatar} />
-        <span className={styles.name}>{name}</span>
-        <span className={styles.following}>Following</span>
-        <FontAwesomeIcon icon={faEllipsis} className={styles.more} />
-      </header>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <Image src={avatar} alt={`${name} avatar`} width={36} height={36} className={styles.avatar} />
+          <span className={styles.name}>{name}</span>
+          <span className={styles.following}>Following</span>
+          <FontAwesomeIcon icon={faEllipsis} className={styles.more} />
+        </header>
+      </div>
 
       <ImageCarousel images={images} alt={name} />
 
-      <div className={styles.captionContainer}>
+      <div className={styles.container}>
         <div className={styles.likes}>{likes} likes</div>
         <p className={styles.caption}>
           <span className={styles.captionName}>{name}</span> {caption}

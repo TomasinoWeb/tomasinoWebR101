@@ -1,8 +1,27 @@
 .whoWeAre {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 1040px;
+  margin-inline: auto;
+  background: #F2F2F2;
+  padding: 40px;
+  flex: 1;
+  width: 100%;
 }
 
 .hashtags {
   color: #1d9bf0;
+}
+
+.theDepartments {
+  padding: 40px 100px;
+}
+
+
+@media (max-width: 768px) {
+  .whoWeAre {
+    padding: 24px;
+  }
+
+  .theDepartments {
+    padding: 20px;
+  }
 }

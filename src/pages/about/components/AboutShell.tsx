@@ -24,7 +24,7 @@ export function AboutShell({ children }: AboutShellProps) {
 
   return (
     <div className={`${styles.shell} ${inter.variable}`}> 
-      <div className={`${styles.main} ${inter.variable}`}>
+      <div className={`${styles.header} ${inter.variable}`}>
         <div className={styles.profile}>
           <div className={styles.avatar}>
             <Image
@@ -80,10 +80,9 @@ export function AboutShell({ children }: AboutShellProps) {
             </Link>
           ))}
         </nav>
-
-        <div className={styles.container}>
-          <div className={styles.content}>{children}</div>
-        </div>
+      </div>
+      <div className={styles.container}>
+        <div className={styles.content}>{children}</div>
       </div>
     </div>
   );

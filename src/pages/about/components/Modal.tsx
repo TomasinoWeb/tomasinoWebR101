@@ -1,16 +1,15 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Modal.module.scss";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  size?: "default" | "wide";
 }
 
-export function Modal({ isOpen, onClose, children }: ModalProps) {
+export function Modal({ isOpen, onClose, children, size = "default" }: ModalProps) {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -39,16 +38,13 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
           onClick={onClose}
         >
           <motion.div
-            className={styles.content}
+            className={`${styles.content} ${size === "wide" ? styles.wide : ""}`}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.15 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button type="button" className={styles.close} onClick={onClose} aria-label="Close">
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
             {children}
           </motion.div>
         </motion.div>

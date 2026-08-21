@@ -34,6 +34,6 @@ export const departments: DepartmentEntry[] = departmentDescriptions
     name: d.name as Department,
     description: d.description,
     offeredPositions: offeredPositionsByName[d.name as Department] ?? [],
-    images: [`/assets/about/departments/${d.id}-active.png`, `/assets/about/departments/${d.id}-inactive.png`],
-    icon: `/assets/about/departments/${d.id}-active.png`,
+    images: [`/logo/logo_yellow.png`],
+    icon: `/logo/insignia_yellow.png`,
   }));

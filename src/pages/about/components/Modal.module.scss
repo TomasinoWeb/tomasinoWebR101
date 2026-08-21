@@ -16,23 +16,9 @@
   max-height: 90vh;
   overflow-y: auto;
   background: var(--about-neutral-white, #fff);
-  border-radius: 16px;
-  padding: 8px;
+  border-radius: 12px;
 }
 
-.close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 1;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.content.wide {
+  max-width: 900px;
 }
