@@ -13,6 +13,10 @@
     height: 85px; /* Taller bottom nav bar on monitors */
   }
 
+  @media screen and (min-width: 2400px) {
+    height: 100px; /* Scaled bottom nav bar height on 2560px+ displays */
+  }
+
   .navTab {
     flex: 1;
     background: linear-gradient(180deg, #292929 0%, #121212 100%);
@@ -35,6 +39,11 @@
       gap: 4px;
     }
 
+    @media screen and (min-width: 2400px) {
+      font-size: 15px; /* Scaled text on 2560px+ displays */
+      gap: 6px;
+    }
+
     .icon {
       width: 20px;
       height: 20px;
@@ -45,6 +54,12 @@
         width: 26px; /* Larger icons on 1920px+ monitors */
         height: 26px;
         margin-bottom: 4px;
+      }
+
+      @media screen and (min-width: 2400px) {
+        width: 32px; /* Scaled icons on 2560px+ displays */
+        height: 32px;
+        margin-bottom: 6px;
       }
     }
 

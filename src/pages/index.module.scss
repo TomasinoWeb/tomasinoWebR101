@@ -14,21 +14,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 15% 90px 15%; /* Side padding set to 15% on large monitors */
+  padding: 15px 15% 85px 15%;
 
   @media screen and (min-width: 1920px) {
     height: calc(100vh - var(--header-height) - 85px); /* Subtract 85px bottom nav height on wide monitors */
-    padding-top: 70px; /* Symmetrical top padding for perfect vertical centering */
-    padding-bottom: 70px; /* Symmetrical bottom padding (still leaves clearance for 48px footer) */
+    padding-top: 15px !important; /* Reduced top clearance to nudge container higher */
+    padding-bottom: 95px !important; /* Increased bottom clearance from footer */
+  }
+
+  @media screen and (min-width: 2400px) {
+    height: calc(100vh - var(--header-height) - 100px); /* Subtract 100px bottom nav height on 2560px displays */
+    padding-top: 15px !important; /* Reduced top clearance to nudge container higher */
+    padding-bottom: 110px !important; /* Increased bottom clearance from footer */
   }
 
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    padding: 40px 12% 90px 12%; /* Increased laptop horizontal edge spacing to 12% */
+    padding-top: 15px !important;
+    padding-bottom: 75px !important;
+    padding-left: 12%;
+    padding-right: 12%;
   }
 
   @media screen and (max-width: 1024px) {
     padding-left: 1.5% !important; /* Move layout closer to screen borders on 1024px displays */
     padding-right: 1.5% !important;
+  }
+
+  @media screen and (max-width: 850px) {
+    padding-left: 2% !important; /* Near-edge spacing on tablet landscape viewports */
+    padding-right: 2% !important;
   }
 }
 
@@ -47,6 +61,11 @@
     max-width: 1700px; /* Wider container bounds on 1920px+ monitors */
   }
 
+  @media screen and (min-width: 2400px) {
+    --grid-row-gap: 110px;
+    max-width: 2200px; /* Scaled container width to fill 2560px screen width nicely */
+  }
+
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
     --grid-row-gap: 40px; /* Laptop vertical gap of 40px */
   }
@@ -61,6 +80,10 @@
 
   @media screen and (min-width: 1920px) {
     height: 300px; /* Taller widgets on 1920px+ monitors */
+  }
+
+  @media screen and (min-width: 2400px) {
+    height: 380px; /* Taller widget height for 2560px+ ultrawide displays */
   }
 
   /* Symmetrically compress the side columns (Left and Right) to reduce the inner app gaps */
@@ -86,6 +109,16 @@
     & > div:first-child,
     & > div:last-child {
       padding: 0 24px; /* Set padding to 24px to narrow cell width and restore middle gaps between shortcuts */
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    height: 175px !important; /* Compact 175px height to make widgets smaller and landscaped on 768px tablet displays */
+    gap: 10px;
+
+    & > div:first-child,
+    & > div:last-child {
+      padding: 0 4px !important; /* Expand side column content width so side cards become landscaped */
     }
   }
 
@@ -132,28 +165,41 @@
       font-size: 17px !important;
     }
 
+    @media screen and (min-width: 2400px) {
+      font-size: 21px !important; /* Scaled widget caption text for 2560px displays */
+    }
+
     @media screen and (max-width: 1024px) {
       font-size: 12px !important; /* Scale down widget caption on 1024px displays */
+    }
+
+    @media screen and (max-width: 850px) {
+      font-size: 11px !important; /* Scale down widget caption on 768px tablet displays */
     }
   }
 }
 
 .appsGrid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr; /* Equal height cell rows */
   row-gap: 20px; /* Explicit minimum vertical gap between rows */
-  justify-content: space-between; /* Spread columns symmetrically to the container edges */
+  column-gap: 12%; /* Dynamic percentage column-gap on desktop */
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding: 0; /* Align exactly flush with the card border below */
 
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    row-gap: 12px; /* Reduced vertical gap on laptop to fit in 215px cell height */
+    row-gap: 12px; /* Reduced vertical gap on laptop */
+    column-gap: 10%; /* Percentage column-gap on laptop */
   }
 
-  /* Scale app icon box size on monitor viewport vs laptop viewport */
+  @media screen and (max-width: 1024px) {
+    column-gap: 8%; /* Percentage column-gap on tablet */
+  }
+
+  /* Keep fixed squircle box size to prevent icons from shrinking into circles */
   & > * > div {
     width: 122px !important;
     height: 122px !important;
@@ -169,8 +215,18 @@
       }
     }
 
+    @media screen and (min-width: 2400px) {
+      width: 168px !important; /* Larger app squircle icons on 2560px displays */
+      height: 168px !important;
+      border-radius: 40px !important;
+
+      svg {
+        font-size: 64px !important; /* Scaled SVG icons */
+      }
+    }
+
     @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-      width: 92px !important; /* Increased icon box size by 8px on laptop */
+      width: 92px !important; /* Icon box size on laptop */
       height: 92px !important;
       border-radius: 21px !important;
     }
@@ -180,9 +236,27 @@
       height: 86px !important;
       border-radius: 20px !important;
     }
+
+    @media screen and (max-width: 850px) {
+      width: 74px !important; /* Smaller app icons on 768px tablet displays */
+      height: 74px !important;
+      border-radius: 18px !important;
+
+      svg {
+        font-size: 32px !important;
+      }
+    }
   }
 
   & > * {
+    /* Align left column items to start and right column items to end */
+    &:nth-child(odd) {
+      justify-self: start;
+    }
+    &:nth-child(even) {
+      justify-self: end;
+    }
+
     /* Align first row to top */
     &:nth-child(-n+2) {
       align-self: start;
@@ -199,12 +273,22 @@
           font-size: 14px !important; /* Larger text on 1920px+ monitors */
         }
 
+        @media screen and (min-width: 2400px) {
+          font-size: 17px !important; /* Scaled shortcut labels for 2560px displays */
+          margin-top: 16px !important;
+        }
+
         @media screen and (max-width: 1440px), screen and (max-height: 850px) {
           margin-top: 10px !important; /* Adjusted margin for laptop */
         }
 
         @media screen and (max-width: 1024px) {
           font-size: 10px !important; /* Scale down shortcut label on 1024px displays */
+        }
+
+        @media screen and (max-width: 850px) {
+          font-size: 9px !important; /* Scale down shortcut label on 768px tablet displays */
+          margin-top: 6px !important;
         }
       }
     }
@@ -213,20 +297,21 @@
 
 .centerAppsGrid {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr; /* Equal height cell rows */
   row-gap: 20px; /* Explicit minimum vertical gap between rows */
-  justify-content: space-between; /* Spread columns symmetrically to the container edges */
+  column-gap: 5%; /* Dynamic percentage column-gap on desktop */
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding: 0; /* Align exactly flush with the card border above */
 
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    row-gap: 12px; /* Reduced vertical gap on laptop to fit in 215px cell height */
+    row-gap: 12px; /* Reduced vertical gap on laptop */
+    column-gap: 4%; /* Percentage column-gap on laptop & tablet */
   }
 
-  /* Scale app icon box size on monitor viewport vs laptop viewport */
+  /* Keep fixed squircle box size to prevent icons from shrinking into circles */
   & > * > div {
     width: 122px !important;
     height: 122px !important;
@@ -242,8 +327,18 @@
       }
     }
 
+    @media screen and (min-width: 2400px) {
+      width: 168px !important; /* Larger app squircle icons on 2560px displays */
+      height: 168px !important;
+      border-radius: 40px !important;
+
+      svg {
+        font-size: 64px !important; /* Scaled SVG icons */
+      }
+    }
+
     @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-      width: 92px !important; /* Increased icon box size by 8px on laptop */
+      width: 92px !important; /* Icon box size on laptop */
       height: 92px !important;
       border-radius: 21px !important;
     }
@@ -253,9 +348,31 @@
       height: 86px !important;
       border-radius: 20px !important;
     }
+
+    @media screen and (max-width: 850px) {
+      width: 74px !important; /* Smaller app icons on 768px tablet displays */
+      height: 74px !important;
+      border-radius: 18px !important;
+
+      svg {
+        font-size: 32px !important;
+      }
+    }
   }
 
   & > * {
+    /* Symmetrically align 4 columns across the container width */
+    &:nth-child(4n+1) {
+      justify-self: start;
+    }
+    &:nth-child(4n+2),
+    &:nth-child(4n+3) {
+      justify-self: center;
+    }
+    &:nth-child(4n) {
+      justify-self: end;
+    }
+
     /* Align first row to top */
     &:nth-child(-n+4) {
       align-self: start;
@@ -272,12 +389,22 @@
           font-size: 14px !important; /* Larger text on 1920px+ monitors */
         }
 
+        @media screen and (min-width: 2400px) {
+          font-size: 17px !important; /* Scaled shortcut labels for 2560px displays */
+          margin-top: 16px !important;
+        }
+
         @media screen and (max-width: 1440px), screen and (max-height: 850px) {
           margin-top: 10px !important; /* Adjusted margin for laptop */
         }
 
         @media screen and (max-width: 1024px) {
           font-size: 10px !important; /* Scale down shortcut label on 1024px displays */
+        }
+
+        @media screen and (max-width: 850px) {
+          font-size: 9px !important; /* Scale down shortcut label on 768px tablet displays */
+          margin-top: 6px !important;
         }
       }
     }
@@ -333,6 +460,10 @@
     height: 48px !important; /* Taller footer bar on monitors */
   }
 
+  @media screen and (min-width: 2400px) {
+    height: 56px !important; /* Taller footer bar on 2560px+ displays */
+  }
+
   @media screen and (max-width: 1440px), screen and (max-height: 850px) {
     padding: 10px 4% !important; /* Maintain near-edge positioning on laptop screens */
   }
@@ -340,6 +471,11 @@
   @media screen and (max-width: 1024px) {
     padding-left: 1.5% !important; /* Move layout closer to the screen borders on 1024px displays */
     padding-right: 1.5% !important;
+  }
+
+  @media screen and (max-width: 850px) {
+    padding-left: 2% !important; /* Near-edge spacing on tablet landscape viewports */
+    padding-right: 2% !important;
   }
   
   background-color: #ffffff !important; /* Solid white background */
@@ -381,6 +517,10 @@
       font-size: 14px !important; /* Larger text on 1920px+ monitors */
     }
 
+    @media screen and (min-width: 2400px) {
+      font-size: 16px !important; /* Scaled footer text on 2560px+ displays */
+    }
+
     @media screen and (max-width: 1024px) {
       font-size: 10px !important; /* Scale down footer text on 1024px displays */
     }
@@ -402,6 +542,12 @@
       font-size: 20px !important; /* Larger social icons on 1920px+ monitors */
       width: 20px !important;
       height: 20px !important;
+    }
+
+    @media screen and (min-width: 2400px) {
+      font-size: 24px !important; /* Scaled social icons on 2560px+ displays */
+      width: 24px !important;
+      height: 24px !important;
     }
 
     &:hover {

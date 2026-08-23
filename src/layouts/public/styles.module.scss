@@ -24,6 +24,10 @@
     --header-height: 64px !important; /* Increase header height globally on 1920px+ monitors */
   }
 
+  @media screen and (min-width: 2400px) {
+    --header-height: 76px !important; /* Scaled header height for 2560px+ displays */
+  }
+
   background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
   background-repeat: repeat; /* or omit this declaration */
   background-size: 8px 8px;
@@ -67,6 +71,10 @@
 
       @media screen and (min-width: 1920px) {
         font-size: 34px; /* Larger header logo text on 1920px+ monitors */
+      }
+
+      @media screen and (min-width: 2400px) {
+        font-size: 42px; /* Scaled header logo text for 2560px+ displays */
       }
 
       &:hover {
