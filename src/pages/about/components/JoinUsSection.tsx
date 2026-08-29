@@ -18,9 +18,8 @@ export function JoinUsSection() {
   const [featured, ...rest] = testimonials;
 
   return (
-    <section className={styles.section}>
+    <div className={styles.section}>
       <div className={styles.banner}>
-        <h2>Want to join the us?</h2>
         <Button href="/apply" variant="pill">
           Register now
         </Button>
@@ -49,6 +48,6 @@ export function JoinUsSection() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

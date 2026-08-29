@@ -14,13 +14,7 @@ const coreMembers = [
 
 export function ThePeopleSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles.header}>
-        <h2>The People</h2>
-        <p>Meet a small cut of our published work — from viral campaigns to on-site coverages, every output tells a story.</p>
-      </div>
-
-      <div className={styles.layout}>
+    <div className={styles.layout}>
         {/* Collage art is a pending Figma asset (checklist 3.5.1) — placeholder box until it's exported. */}
         <div className={styles.collage} />
 
@@ -34,7 +28,6 @@ export function ThePeopleSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+    </div>
   );
 }

@@ -32,13 +32,7 @@ const items = [
 
 export function GlimpseOfWorkSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles.header}>
-        <h2>A Glimpse of the Work!</h2>
-        <p>Here&apos;s a look at some of our published work — from virtual campaigns to on-site coverages, every output tells a story.</p>
-      </div>
-
-      <div className={styles.grid}>
+    <div className={styles.grid}>
         {items.map((item) => (
           <div className={styles.card} key={item.label}>
             <div className={styles.imageWrapper}>
@@ -50,7 +44,6 @@ export function GlimpseOfWorkSection() {
             <p className={styles.description}>{item.description}</p>
           </div>
         ))}
-      </div>
-    </section>
+    </div>
   );
 }

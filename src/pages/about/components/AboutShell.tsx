@@ -82,7 +82,7 @@ export function AboutShell({ children }: AboutShellProps) {
         </nav>
       </div>
       <div className={styles.container}>
-        <div className={styles.content}>{children}</div>
+        {children}
       </div>
     </div>
   );

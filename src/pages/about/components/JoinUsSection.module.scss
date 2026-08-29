@@ -5,19 +5,9 @@
 }
 
 .banner {
-  background: #4b7a4f;
-  color: #fff;
-  border-radius: 12px;
-  padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-
-  h2 {
-    font-size: 1rem;
-    font-weight: 700;
-  }
+  justify-content: center;
 }
 
 .grid {

@@ -12,8 +12,28 @@
 }
 
 .theDepartments {
-  padding: 40px 100px;
+  max-width: 1171px;
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(20px, 5vw, 40px) clamp(20px, 5vw, 100px);
 }
+
+
+.life {
+  max-width: 1240px;
+  margin-inline: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 40px;
+}
+
+.peopleGroup {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 @media (max-width: 768px) {
@@ -21,7 +41,8 @@
     padding: 24px;
   }
 
-  .theDepartments {
+  .life{
     padding: 20px;
   }
+
 }
