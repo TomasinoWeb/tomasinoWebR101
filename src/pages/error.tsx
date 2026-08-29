@@ -1,0 +1,39 @@
+import React from "react";
+import Image from "next/image";
+import { Button } from "../components/Button";
+import { PublicLayoutFrontend } from "../layouts/public/frontend";
+import styles from "./error_components/error.module.scss";
+import { PublicLayoutBackend } from "../layouts/public/static";
+import TomWegg from "../../public/assets/tomweggs/Idk.png";
+import SpeechBubble from "./about/components/SpeechBubble";
+import Window from "./error_components/Window";
+import Link from "next/link";
+
+interface Props {}
+
+export default PublicLayoutFrontend.use<Props>(() => {
+  return {
+    header: "full_regular",
+    footer: "regular",
+    dots: "disabled",
+    children: (
+      <>
+        <div className={styles.container}>
+          <div className={styles.content}>
+            <Window />
+            <div className={styles.buttonGroup}>
+              <Link href="/">
+                <button className={styles.button}>Back to Home</button>
+              </Link>
+              <Link href="/about">
+                <button className={styles.button}>About Tomasinoweb</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
+    ),
+  };
+});
+
+export const getStaticProps = PublicLayoutBackend.use<{}>({});
