@@ -1,505 +1,431 @@
+/* ---------------------------------------------------------------------------
+   Home dashboard geometry
+
+   The whole page is driven by one number: --app-unit, the side of a single
+   square app icon. Everything else is derived from it, so squares stay square
+   and column edges always line up:
+
+     side column width  = 2u + gap-app-side   (2 icons across, or 1 square card)
+     middle column width = 4u + 3 * gap-app-mid  (4 icons across, or 1 card)
+     row height          = side column width + caption block
+
+   Because a square card in a side column is exactly as wide as the 2 icons
+   above it, and the middle card is exactly as wide as the 4 icons below it,
+   the left/right borders align at every viewport size.
+
+   Gaps and text blocks are fixed lengths (they never shrink while resizing);
+   only --app-unit scales. It is solved from whichever axis runs out first, so
+   the layout fits without scrolling and without ever going rectangular.
+
+   Portrait phones and tablets swap to a 4-unit-wide stack (see $portrait at
+   the bottom of .root) using the same unit maths, so the two layouts stay
+   visually consistent.
+--------------------------------------------------------------------------- */
+
+/* Portrait phones and tablets. Keyed off orientation rather than width alone
+   so tablets in portrait get the stacked layout while the same device in
+   landscape keeps the three-column dashboard.
+
+   Phones use a 4-unit-wide stack; portrait tablets use a 6-unit-wide, 3-row
+   arrangement instead. A 4-wide stack is inherently about 1:2, so on a tablet
+   it can only fill roughly half the width before running out of height. The
+   6-wide version is about 1:1 and fills the width with much larger tiles. */
+$portrait: "(orientation: portrait) and (max-width: 1280px)";
+/* Comfortably above the widest portrait phone (~430px) and below the narrowest
+   portrait tablet / unfolded foldable (~670px). */
+$tablet-min: 620px;
+$portrait-tablet: "#{$portrait} and (min-width: #{$tablet-min})";
+
 .root {
-  position: relative;
-  height: calc(100vh - var(--header-height) - 70px);
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-  background: repeating-linear-gradient(
-    90deg,
-    #f1f3f7,
-    #f1f3f7 12px,
-    #ffffff 12px,
-    #ffffff 24px
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 15% 85px 15%;
+  --gap-col: 48px; /* between the three columns */
+  --gap-app-mid: 28px; /* between icons in the 4-wide middle grid */
+  --gap-app-side: 48px; /* between icons in the 2-wide side grid */
+  --gap-row: 36px; /* between the top and bottom row groups */
+  --caption-h: 30px; /* fixed text block under a widget card */
+  --app-label-h: 26px; /* fixed text block under an app icon */
+  --app-unit-min: 30px;
+  --app-unit-max: 190px;
+  --side-pad: 6vw;
+  --pad-y: 14px;
+  --home-footer-h: 36px;
+  --grid-max-w: 1600px;
 
   @media screen and (min-width: 1920px) {
-    height: calc(100vh - var(--header-height) - 85px); /* Subtract 85px bottom nav height on wide monitors */
-    padding-top: 15px !important; /* Reduced top clearance to nudge container higher */
-    padding-bottom: 95px !important; /* Increased bottom clearance from footer */
+    --gap-col: 60px;
+    --gap-app-mid: 34px;
+    --gap-app-side: 58px;
+    --gap-row: 48px;
+    --caption-h: 36px;
+    --app-label-h: 30px;
+    --app-unit-max: 215px;
+    --home-footer-h: 48px;
+    --grid-max-w: 1700px;
   }
 
   @media screen and (min-width: 2400px) {
-    height: calc(100vh - var(--header-height) - 100px); /* Subtract 100px bottom nav height on 2560px displays */
-    padding-top: 15px !important; /* Reduced top clearance to nudge container higher */
-    padding-bottom: 110px !important; /* Increased bottom clearance from footer */
-  }
-
-  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    padding-top: 15px !important;
-    padding-bottom: 75px !important;
-    padding-left: 14% !important; /* Increased horizontal gap from screen edges to 14% */
-    padding-right: 14% !important;
+    --gap-col: 72px;
+    --gap-app-mid: 40px;
+    --gap-app-side: 70px;
+    --gap-row: 56px;
+    --caption-h: 44px;
+    --app-label-h: 36px;
+    --app-unit-max: 260px;
+    --home-footer-h: 56px;
+    --grid-max-w: 2200px;
   }
 
   @media screen and (max-width: 1024px) {
-    padding-left: 1.5% !important; /* Move layout closer to screen borders on 1024px displays */
-    padding-right: 1.5% !important;
+    --gap-col: 26px;
+    --gap-app-mid: 16px;
+    --gap-app-side: 28px;
+    --gap-row: 20px;
+    --caption-h: 24px;
+    --app-label-h: 21px;
+    --side-pad: 4vw;
+    --pad-y: 12px;
+    --home-footer-h: 32px;
   }
 
   @media screen and (max-width: 850px) {
-    padding-left: 2% !important; /* Near-edge spacing on tablet landscape viewports */
-    padding-right: 2% !important;
+    --gap-col: 16px;
+    --gap-app-mid: 12px;
+    --gap-app-side: 20px;
+    --gap-row: 16px;
+    --caption-h: 21px;
+    --app-label-h: 18px;
+    --side-pad: 3vw;
+    --pad-y: 10px;
+    --home-footer-h: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    --gap-col: 10px;
+    --gap-app-mid: 8px;
+    --gap-app-side: 18px;
+    --gap-row: 16px;
+    --caption-h: 18px;
+    --app-label-h: 15px;
+    --side-pad: 2.5vw;
+    --pad-y: 8px;
+    --home-footer-h: 28px;
+  }
+
+  /* Space the grid may occupy on each axis. */
+  --avail-w: min(var(--grid-max-w), calc(100vw - 2 * var(--side-pad)));
+  --avail-h: calc(
+    100dvh - var(--header-height) - var(--nav-h) - var(--home-footer-h) - 2 * var(--pad-y)
+  );
+
+  /* Solve the unit on each axis, then take whichever is tighter.
+     width:  8u + 2*gap-col + 3*gap-app-mid + 2*gap-app-side = avail-w
+     height: 2 * (2u + gap-app-side + caption-h) + gap-row   = avail-h */
+  --unit-from-w: calc(
+    (var(--avail-w) - 2 * var(--gap-col) - 3 * var(--gap-app-mid) - 2 * var(--gap-app-side)) / 8
+  );
+  --unit-from-h: calc(
+    (var(--avail-h) - var(--gap-row) - 2 * var(--gap-app-side) - 2 * var(--caption-h)) / 4
+  );
+  --app-unit: clamp(
+    var(--app-unit-min),
+    min(var(--unit-from-w), var(--unit-from-h)),
+    var(--app-unit-max)
+  );
+
+  --col-side-w: calc(2 * var(--app-unit) + var(--gap-app-side));
+  --col-mid-w: calc(4 * var(--app-unit) + 3 * var(--gap-app-mid));
+  --row-h: calc(var(--col-side-w) + var(--caption-h));
+
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - var(--header-height) - var(--nav-h));
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--pad-y) var(--side-pad) calc(var(--home-footer-h) + var(--pad-y));
+  background: repeating-linear-gradient(90deg, #f1f3f7, #f1f3f7 12px, #ffffff 12px, #ffffff 24px);
+
+  /* ---- Portrait -------------------------------------------------------
+     Four rows stacked in a grid that is 4 app icons wide:
+
+       1  square widget (2 cols)  +  2x2 app grid (2 cols)
+       2  wide widget   (4 cols)
+       3  4x2 app grid  (4 cols)
+       4  square widget (2 cols)  +  square widget (2 cols)
+
+     One shared gap (--gap-app) separates both the columns and the icons, so
+     every card edge lands on a column line. Must stay last in this rule so it
+     outranks the landscape token blocks above. */
+  @media screen and #{$portrait} {
+    --gap-app: 10px;
+    --caption-h: 16px;
+    --app-label-h: 13px;
+    --m-inner-gap: 6px;
+    --gap-row: 8px;
+    --side-pad: 10px;
+    --pad-y: 4px;
+    --home-footer-h: 96px;
+    --app-unit-min: 26px;
+    --app-unit-max: 200px;
+
+    @media screen and (min-width: #{$tablet-min}) {
+      --gap-app: 26px;
+      --caption-h: 28px;
+      --app-label-h: 20px;
+      --m-inner-gap: 16px;
+      --gap-row: 28px;
+      --pad-y: 14px;
+      /* Two centred rows (links, then icons). Tall enough that the content
+         cannot spill into the bottom nav. */
+      --home-footer-h: 64px;
+
+      @media screen and (min-width: 820px) {
+        --home-footer-h: 76px;
+      }
+
+      /* Squarish portrait windows are height-bound, so trim the fixed
+         overhead to let the tiles grow toward the screen edges. */
+      @media screen and (max-height: 900px) {
+        --gap-app: 22px;
+        --caption-h: 24px;
+        --app-label-h: 18px;
+        --m-inner-gap: 12px;
+        --gap-row: 20px;
+      }
+    }
+
+    /* Short handsets: trim the fixed overhead so the unit stays above its
+       floor instead of clamping and overflowing. */
+    @media screen and (max-height: 700px) {
+      --gap-app: 10px;
+      --caption-h: 16px;
+      --app-label-h: 13px;
+      --m-inner-gap: 6px;
+      --gap-row: 8px;
+      --home-footer-h: 76px;
+    }
+
+    @media screen and (max-height: 600px) {
+      --gap-app: 10px;
+      --caption-h: 14px;
+      --app-label-h: 11px;
+      --m-inner-gap: 6px;
+      --gap-row: 8px;
+      --pad-y: 8px;
+      --home-footer-h: 76px;
+    }
+
+    /* width:  4u + 3 * gap-app                                   = avail-w
+       height: 3 * (2u + gap-app + caption-h)   [3 widget rows]
+             + 2u + 2 * label-h + inner-gap     [the 4x2 app row]
+             + 3 * gap-row                                        = avail-h */
+    --unit-from-w: calc((var(--avail-w) - 3 * var(--gap-app)) / 4);
+    --unit-from-h: calc(
+      (
+          var(--avail-h) - 3 * var(--gap-app) - 3 * var(--caption-h) - 2 * var(--app-label-h) -
+            var(--m-inner-gap) - 3 * var(--gap-row)
+        ) / 8
+    );
+
+    --m-card: calc(2 * var(--app-unit) + var(--gap-app));
+    --m-widget-row-h: calc(var(--m-card) + var(--caption-h));
+    --m-apps-row-h: calc(2 * var(--app-unit) + 2 * var(--app-label-h) + var(--m-inner-gap));
+    --m-grid-w: calc(4 * var(--app-unit) + 3 * var(--gap-app));
+
+    /* Tablets: 6 columns over 3 equal rows. Must sit after the phone solve
+       above to override it.
+         width:  6u + 5 * gap-app                          = avail-w
+         height: 3 * (2u + gap-app + caption-h) + 2 * gap-row = avail-h */
+    @media screen and (min-width: #{$tablet-min}) {
+      --unit-from-w: calc((var(--avail-w) - 5 * var(--gap-app)) / 6);
+      --unit-from-h: calc(
+        (var(--avail-h) - 3 * var(--gap-app) - 3 * var(--caption-h) - 2 * var(--gap-row)) / 6
+      );
+      --m-grid-w: calc(6 * var(--app-unit) + 5 * var(--gap-app));
+    }
   }
 }
 
 .container {
-  --grid-row-gap: 72px; /* Balanced vertical gap of 48px to prevent overlap while maintaining compact layout centering */ 
-  max-width: 1600px;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: var(--grid-row-gap); /* Separation between top row and bottom row */
-
-  @media screen and (min-width: 1920px) {
-    --grid-row-gap: 90px; /* Larger gap on wide screens */
-    max-width: 1700px; /* Wider container bounds on 1920px+ monitors */
-  }
-
-  @media screen and (min-width: 2400px) {
-    --grid-row-gap: 110px;
-    max-width: 2200px; /* Scaled container width to fill 2560px screen width nicely */
-  }
-
-  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    --grid-row-gap: 40px; /* Laptop vertical gap of 40px */
-  }
+  gap: var(--gap-row);
+  width: 100%;
+  height: 100%;
 }
 
 .rowGroupGrid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* 4-column layout (Left: 1, Center: 2, Right: 1) */
-  gap: 48px; /* Increased horizontal gap between widgets/cells to 48px on monitors */
-  width: 100%;
-  height: 270px; /* Increased height to 270px to make widgets and apps larger on desktop monitors */
-
-  @media screen and (min-width: 1920px) {
-    height: 300px; /* Taller widgets on 1920px+ monitors */
-  }
-
-  @media screen and (min-width: 2400px) {
-    height: 380px; /* Taller widget height for 2560px+ ultrawide displays */
-  }
-
-  /* Symmetrically compress the side columns (Left and Right) to reduce the inner app gaps */
-  & > div:first-child,
-  & > div:last-child {
-    padding: 0 12px; /* Reduced from 24px to 12px to make widgets and apps wider */
-  }
-
-  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    gap: 16px; /* Reduced gap between widget cells on laptop to 16px */
-    height: 223px; /* Increased row height by 8px (from 215px to 223px) on laptop */
-
-    & > div:first-child,
-    & > div:last-child {
-      padding: 0 32px;
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    height: 220px; /* Reduced widget height to 220px on 1024px displays */
-    gap: 10px; /* Reduced gap between cells to 10px */
-
-    & > div:first-child,
-    & > div:last-child {
-      padding: 0 24px; /* Set padding to 24px to narrow cell width and restore middle gaps between shortcuts */
-    }
-  }
-
-  @media screen and (max-width: 850px) {
-    height: 175px !important; /* Compact 175px height to make widgets smaller and landscaped on 768px tablet displays */
-    gap: 10px;
-
-    & > div:first-child,
-    & > div:last-child {
-      padding: 0 4px !important; /* Expand side column content width so side cards become landscaped */
-    }
-  }
-
-  @media screen and (max-width: 1023px) {
-    height: auto;
-    gap: 16px;
-  }
-}
-
-.groupCard {
-  border: 3px solid #713458; /* Thick outer border for the groups */
-  background-color: rgba(113, 52, 88, 0.02);
-  border-radius: 24px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 8px 24px rgba(113, 52, 88, 0.08);
-  }
-}
-
-.subGrid {
-  display: grid;
-  gap: 12px;
-  flex: 1;
-  width: 100%;
-  height: 100%;
+  grid-template-columns: var(--col-side-w) var(--col-mid-w) var(--col-side-w);
+  column-gap: var(--gap-col);
+  height: var(--row-h);
+  flex: 0 0 auto;
 }
 
 .widgetCell {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   height: 100%;
-  box-sizing: border-box;
+}
 
-  /* Increase caption text size on large monitors */
-  span {
-    @media screen and (min-width: 1920px) {
-      font-size: 17px !important;
-    }
-
-    @media screen and (min-width: 2400px) {
-      font-size: 21px !important; /* Scaled widget caption text for 2560px displays */
-    }
-
-    @media screen and (max-width: 1024px) {
-      font-size: 12px !important; /* Scale down widget caption on 1024px displays */
-    }
-
-    @media screen and (max-width: 850px) {
-      font-size: 11px !important; /* Scale down widget caption on 768px tablet displays */
-    }
-  }
+/* Fixed-width tracks plus space-between: the first icon's left edge and the
+   last icon's right edge land exactly on the column edges, which is what keeps
+   them flush with the widget card in the same column. */
+.appsGrid,
+.centerAppsGrid {
+  display: grid;
+  grid-auto-rows: auto;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
 .appsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr; /* Equal height cell rows */
-  row-gap: 20px; /* Explicit minimum vertical gap between rows */
-  column-gap: 12%; /* Dynamic percentage column-gap on desktop */
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 0; /* Align exactly flush with the card border below */
-
-  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    row-gap: 12px; /* Reduced vertical gap on laptop */
-    column-gap: 10%; /* Percentage column-gap on laptop */
-  }
-
-  @media screen and (max-width: 1024px) {
-    column-gap: 8%; /* Percentage column-gap on tablet */
-  }
-
-  /* Keep fixed squircle box size to prevent icons from shrinking into circles */
-  & > * > div {
-    width: 122px !important;
-    height: 122px !important;
-    border-radius: 30px !important;
-
-    @media screen and (min-width: 1920px) {
-      width: 135px !important; /* Larger app icons on 1920px+ monitors */
-      height: 135px !important;
-      border-radius: 32px !important;
-
-      svg {
-        font-size: 52px !important; /* Scale up icon symbol size */
-      }
-    }
-
-    @media screen and (min-width: 2400px) {
-      width: 168px !important; /* Larger app squircle icons on 2560px displays */
-      height: 168px !important;
-      border-radius: 40px !important;
-
-      svg {
-        font-size: 64px !important; /* Scaled SVG icons */
-      }
-    }
-
-    @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-      width: 100px !important; /* Scaled app icon box size for laptop displays */
-      height: 100px !important;
-      border-radius: 24px !important;
-
-      svg {
-        font-size: 42px !important;
-      }
-    }
-
-    @media screen and (max-width: 1024px) {
-      width: 86px !important; /* Scaled down app icons on 1024px displays */
-      height: 86px !important;
-      border-radius: 20px !important;
-    }
-
-    @media screen and (max-width: 850px) {
-      width: 74px !important; /* Smaller app icons on 768px tablet displays */
-      height: 74px !important;
-      border-radius: 18px !important;
-
-      svg {
-        font-size: 32px !important;
-      }
-    }
-  }
-
-  & > * {
-    /* Align left column items to start and right column items to end */
-    &:nth-child(odd) {
-      justify-self: start;
-    }
-    &:nth-child(even) {
-      justify-self: end;
-    }
-
-    /* Align first row to top */
-    &:nth-child(-n+2) {
-      align-self: start;
-    }
-    /* Align second row to bottom */
-    &:nth-child(n+3) {
-      align-self: end;
-
-      /* Push the squircle box up by increasing label top margin to align with card bottom borders */
-      span {
-        margin-top: 12px !important;
-
-        @media screen and (min-width: 1920px) {
-          font-size: 14px !important; /* Larger text on 1920px+ monitors */
-        }
-
-        @media screen and (min-width: 2400px) {
-          font-size: 17px !important; /* Scaled shortcut labels for 2560px displays */
-          margin-top: 16px !important;
-        }
-
-        @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-          margin-top: 10px !important; /* Adjusted margin for laptop */
-        }
-
-        @media screen and (max-width: 1024px) {
-          font-size: 10px !important; /* Scale down shortcut label on 1024px displays */
-        }
-
-        @media screen and (max-width: 850px) {
-          font-size: 9px !important; /* Scale down shortcut label on 768px tablet displays */
-          margin-top: 6px !important;
-        }
-      }
-    }
-  }
+  grid-template-columns: repeat(2, var(--app-unit));
 }
 
 .centerAppsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr; /* Equal height cell rows */
-  row-gap: 20px; /* Explicit minimum vertical gap between rows */
-  column-gap: 5%; /* Dynamic percentage column-gap on desktop */
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 0; /* Align exactly flush with the card border above */
+  grid-template-columns: repeat(4, var(--app-unit));
+}
 
-  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    row-gap: 12px; /* Reduced vertical gap on laptop */
-    column-gap: 4%; /* Percentage column-gap on laptop & tablet */
+/* Portrait re-places the same six cells into the stacked arrangement. The DOM
+   order is kept for landscape, so the cells are positioned explicitly here
+   rather than reordered in the markup. */
+@media screen and #{$portrait} {
+  .container {
+    max-height: 100%;
+    overflow: hidden;
   }
 
-  /* Keep fixed squircle box size to prevent icons from shrinking into circles */
-  & > * > div {
-    width: 122px !important;
-    height: 122px !important;
-    border-radius: 30px !important;
+  .rowGroupGrid {
+    grid-template-columns: repeat(4, var(--app-unit));
+    column-gap: 0;
+    row-gap: var(--gap-row);
+    justify-content: space-between;
+    width: var(--m-grid-w);
+    height: auto;
+  }
 
-    @media screen and (min-width: 1920px) {
-      width: 135px !important; /* Larger app icons on 1920px+ monitors */
-      height: 135px !important;
-      border-radius: 32px !important;
+  .topRow {
+    grid-template-rows: var(--m-widget-row-h) var(--m-widget-row-h);
 
-      svg {
-        font-size: 52px !important; /* Scale up icon symbol size */
-      }
+    & > .widgetCell:nth-child(1) {
+      grid-area: 1 / 1 / 2 / 3; /* square widget */
     }
-
-    @media screen and (min-width: 2400px) {
-      width: 168px !important; /* Larger app squircle icons on 2560px displays */
-      height: 168px !important;
-      border-radius: 40px !important;
-
-      svg {
-        font-size: 64px !important; /* Scaled SVG icons */
-      }
+    & > .widgetCell:nth-child(2) {
+      grid-area: 2 / 1 / 3 / 5; /* wide widget */
     }
-
-    @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-      width: 100px !important; /* Scaled app icon box size for laptop displays */
-      height: 100px !important;
-      border-radius: 24px !important;
-
-      svg {
-        font-size: 42px !important;
-      }
-    }
-
-    @media screen and (max-width: 1024px) {
-      width: 86px !important; /* Scaled down app icons on 1024px displays */
-      height: 86px !important;
-      border-radius: 20px !important;
-    }
-
-    @media screen and (max-width: 850px) {
-      width: 74px !important; /* Smaller app icons on 768px tablet displays */
-      height: 74px !important;
-      border-radius: 18px !important;
-
-      svg {
-        font-size: 32px !important;
-      }
+    & > .widgetCell:nth-child(3) {
+      grid-area: 1 / 3 / 2 / 5; /* 2x2 app grid */
     }
   }
 
-  & > * {
-    /* Symmetrically align 4 columns across the container width */
-    &:nth-child(4n+1) {
-      justify-self: start;
+  .bottomRow {
+    grid-template-rows: var(--m-apps-row-h) var(--m-widget-row-h);
+
+    & > .widgetCell:nth-child(1) {
+      grid-area: 2 / 1 / 3 / 3; /* square widget */
     }
-    &:nth-child(4n+2),
-    &:nth-child(4n+3) {
-      justify-self: center;
+    & > .widgetCell:nth-child(2) {
+      grid-area: 1 / 1 / 2 / 5; /* 4x2 app grid */
     }
-    &:nth-child(4n) {
-      justify-self: end;
-    }
-
-    /* Align first row to top */
-    &:nth-child(-n+4) {
-      align-self: start;
-    }
-    /* Align second row to bottom */
-    &:nth-child(n+5) {
-      align-self: end;
-
-      /* Push the squircle box up by increasing label top margin to align with card bottom borders */
-      span {
-        margin-top: 12px !important;
-
-        @media screen and (min-width: 1920px) {
-          font-size: 14px !important; /* Larger text on 1920px+ monitors */
-        }
-
-        @media screen and (min-width: 2400px) {
-          font-size: 17px !important; /* Scaled shortcut labels for 2560px displays */
-          margin-top: 16px !important;
-        }
-
-        @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-          margin-top: 10px !important; /* Adjusted margin for laptop */
-        }
-
-        @media screen and (max-width: 1024px) {
-          font-size: 10px !important; /* Scale down shortcut label on 1024px displays */
-        }
-
-        @media screen and (max-width: 850px) {
-          font-size: 9px !important; /* Scale down shortcut label on 768px tablet displays */
-          margin-top: 6px !important;
-        }
-      }
+    & > .widgetCell:nth-child(3) {
+      grid-area: 2 / 3 / 3 / 5; /* square widget */
     }
   }
 }
 
-.gridCell {
-  border: 1px dashed rgba(113, 52, 88, 0.35); /* Dashed cell borders */
-  background-color: rgba(113, 52, 88, 0.03);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #713458;
-  font-family: "Inter", "Helvetica Neue", sans-serif;
-  height: 100%;
-  box-sizing: border-box;
+/* Tablet portrait packs the same six cells into 6 columns x 3 equal rows:
 
-  .cellLabel {
-    font-size: 11px;
-    font-weight: 700;
+     1  [ 2026 ] [ 2x2 apps ] [ Application Process ]
+     2  [           R101 full width               ]
+     3  [      4x2 socials      ] [ Application Period ]
+
+   The six cells occupy 2, 2, 2 / 6 / 4, 2 columns, so all three rows run the
+   full width with no empty slot. Rows mix cells from both row groups, so the
+   two wrappers collapse with display: contents and every cell is placed on the
+   container grid instead. */
+@media screen and #{$portrait-tablet} {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(6, var(--app-unit));
+    grid-template-rows: repeat(3, var(--m-widget-row-h));
+    justify-content: space-between;
+    align-content: center;
+    column-gap: 0;
+    row-gap: var(--gap-row);
+    width: var(--m-grid-w);
+    height: 100%;
   }
 
-  .subtext {
-    font-size: 8px;
-    font-weight: 500;
-    color: #451632;
-    margin-top: 2px;
+  .rowGroupGrid {
+    display: contents;
   }
-}
 
-.groupHeader {
-  margin-top: 10px;
-  font-family: "Inter", "Helvetica Neue", sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #451632;
-  text-align: center;
-  letter-spacing: -0.1px;
+  .topRow {
+    & > .widgetCell:nth-child(1) {
+      grid-area: 1 / 1 / 2 / 3; /* 2026 is the new 2016! */
+    }
+    & > .widgetCell:nth-child(2) {
+      grid-area: 2 / 1 / 3 / 7; /* TomasinoWeb R101 */
+    }
+    & > .widgetCell:nth-child(3) {
+      grid-area: 1 / 3 / 2 / 5; /* 2x2 app grid */
+    }
+  }
+
+  .bottomRow {
+    & > .widgetCell:nth-child(1) {
+      grid-area: 1 / 5 / 2 / 7; /* Application Process */
+    }
+    & > .widgetCell:nth-child(2) {
+      grid-area: 3 / 1 / 4 / 5; /* 4x2 socials */
+    }
+    & > .widgetCell:nth-child(3) {
+      grid-area: 3 / 5 / 4 / 7; /* Application Period */
+    }
+  }
 }
 
 .homeFooter {
   position: absolute !important;
-  bottom: 0 !important; /* Rest exactly flush at the bottom of the content container */
+  bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
-  height: 36px !important; /* Compact 38px height */
-  padding: 10px 4% !important; /* Position footer contents near the screen edges with a small safe margin */
-
-  @media screen and (min-width: 1920px) {
-    height: 48px !important; /* Taller footer bar on monitors */
-  }
-
-  @media screen and (min-width: 2400px) {
-    height: 56px !important; /* Taller footer bar on 2560px+ displays */
-  }
-
-  @media screen and (max-width: 1440px), screen and (max-height: 850px) {
-    padding: 10px 4% !important; /* Maintain near-edge positioning on laptop screens */
-  }
+  height: var(--home-footer-h) !important;
+  overflow: hidden !important;
+  padding: 0 4% !important;
 
   @media screen and (max-width: 1024px) {
-    padding-left: 1.5% !important; /* Move layout closer to the screen borders on 1024px displays */
+    padding-left: 1.5% !important;
     padding-right: 1.5% !important;
   }
 
   @media screen and (max-width: 850px) {
-    padding-left: 2% !important; /* Near-edge spacing on tablet landscape viewports */
+    padding-left: 2% !important;
     padding-right: 2% !important;
   }
-  
-  background-color: #ffffff !important; /* Solid white background */
-  border-top: 0.5px solid #D9D9D9 !important; /* Hairline 0.5px top border */
+
+  background-color: #ffffff !important;
+  border-top: 0.5px solid #d9d9d9 !important;
   border-bottom: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-radius: 0 !important; /* Full width screen container */
+  border-radius: 0 !important;
   box-shadow: none !important;
   box-sizing: border-box !important;
   z-index: 100 !important;
-  --footer-max-width: 100% !important; /* Stretch inner container to full width */
-  font-family: "Inter", "SF Pro Display", sans-serif !important;
+  --footer-max-width: 100% !important;
+  font-family: var(--font-ui) !important;
 
   * {
-    font-family: "Inter", "SF Pro Display", sans-serif !important;
+    font-family: var(--font-ui) !important;
   }
 
   & > div {
@@ -508,42 +434,44 @@
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
-    height: 100% !important; /* Ensure vertical centering in the parent height */
+    height: 100% !important;
 
-    & > div {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
+    & > div:first-child {
+      gap: 20px !important;
+
+      @media screen and (max-width: 1024px) {
+        gap: 12px !important;
+      }
+    }
+
+    & > div:last-child {
+      gap: 10px !important;
+
+      @media screen and (max-width: 1024px) {
+        gap: 8px !important;
+      }
     }
   }
 
-  p, a, span, button {
+  p,
+  a,
+  span,
+  button {
     text-transform: uppercase !important;
-    font-size: 11px !important;
-    font-weight: 600 !important;
+    font-size: var(--type-footer) !important;
+    font-weight: var(--type-weight-regular) !important;
     letter-spacing: 0.05em !important;
     color: #343332 !important;
     text-decoration: none !important;
-    margin: 0 !important; /* Reset default browser margins */
+    margin: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-
-    @media screen and (min-width: 1920px) {
-      font-size: 14px !important; /* Larger text on 1920px+ monitors */
-    }
-
-    @media screen and (min-width: 2400px) {
-      font-size: 16px !important; /* Scaled footer text on 2560px+ displays */
-    }
-
-    @media screen and (max-width: 1024px) {
-      font-size: 10px !important; /* Scale down footer text on 1024px displays */
-    }
+    white-space: nowrap !important;
   }
 
   p {
-    font-weight: 700 !important; /* Make copyright bold */
+    font-weight: var(--type-weight-bold) !important;
   }
 
   svg {
@@ -551,19 +479,25 @@
     width: 14px !important;
     height: 14px !important;
     color: #343332 !important;
-    display: block !important; /* Prevent line-height shifts on SVGs */
+    display: block !important;
     transition: color 0.2s ease;
 
     @media screen and (min-width: 1920px) {
-      font-size: 20px !important; /* Larger social icons on 1920px+ monitors */
+      font-size: 20px !important;
       width: 20px !important;
       height: 20px !important;
     }
 
     @media screen and (min-width: 2400px) {
-      font-size: 24px !important; /* Scaled social icons on 2560px+ displays */
+      font-size: 24px !important;
       width: 24px !important;
       height: 24px !important;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 12px !important;
+      width: 12px !important;
+      height: 12px !important;
     }
 
     &:hover {
@@ -573,5 +507,158 @@
 
   a:hover {
     color: #713458 !important;
+  }
+}
+
+/* Portrait stacks the footer into centred rows. Placed after .homeFooter so it
+   outranks the equally-specific !important rules above.
+
+   Tablet overrides are nested and use a doubled class so they still win if the
+   bundler reorders media queries — a sibling query was losing to the phone
+   column stack, which clipped the icons under the bottom nav. */
+@media screen and #{$portrait} {
+  .homeFooter {
+    height: var(--home-footer-h) !important;
+    padding: 8px 4% !important;
+
+    & > div {
+      flex-direction: column !important;
+      justify-content: center !important;
+      gap: 7px !important;
+
+      & > div:first-child {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 5px !important;
+      }
+
+      & > div:last-child {
+        justify-content: center !important;
+        gap: 12px !important;
+      }
+    }
+
+    p,
+    a,
+    span,
+    button {
+      font-size: var(--type-footer) !important;
+      letter-spacing: 0.04em !important;
+    }
+
+    svg {
+      font-size: 13px !important;
+      width: 13px !important;
+      height: 13px !important;
+    }
+
+    /* Short handsets reserve less height for the bar, so shrink the stack to
+       match. Tablets never reach here: portrait means height > width, so a
+       viewport this short is always narrower than the tablet breakpoint. */
+    @media screen and (max-height: 700px) {
+      padding: 6px 4% !important;
+
+      & > div {
+        gap: 5px !important;
+
+        & > div:first-child {
+          gap: 4px !important;
+        }
+
+        & > div:last-child {
+          gap: 10px !important;
+        }
+      }
+
+      p,
+      a,
+      span,
+      button {
+        font-size: var(--type-footer) !important;
+      }
+
+      svg {
+        font-size: 11px !important;
+        width: 11px !important;
+        height: 11px !important;
+      }
+    }
+
+  }
+
+  /* Doubled class beats the phone column stack (0,4,1 vs 0,3,1) even if
+     media queries are emitted in a different order. */
+  .homeFooter.homeFooter {
+    @media screen and (min-width: #{$tablet-min}) {
+      padding: 10px 3% !important;
+
+      & > div {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+
+        & > div:first-child,
+        & > div:nth-child(1) {
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          justify-content: center !important;
+          align-items: center !important;
+          gap: 16px !important;
+        }
+
+        & > div:last-child,
+        & > div:nth-child(2) {
+          flex-direction: row !important;
+          justify-content: center !important;
+          gap: 16px !important;
+        }
+      }
+
+      p,
+      a,
+      span,
+      button {
+        font-size: var(--type-footer) !important;
+        letter-spacing: 0.03em !important;
+      }
+
+      svg {
+        font-size: 15px !important;
+        width: 15px !important;
+        height: 15px !important;
+      }
+
+      @media screen and (min-width: 820px) {
+        padding: 12px 3% !important;
+
+        & > div {
+          gap: 10px !important;
+
+          & > div:first-child,
+          & > div:nth-child(1) {
+            gap: 22px !important;
+          }
+
+          & > div:last-child,
+          & > div:nth-child(2) {
+            gap: 18px !important;
+          }
+        }
+
+        p,
+        a,
+        span,
+        button {
+          font-size: var(--type-footer) !important;
+        }
+
+        svg {
+          font-size: 17px !important;
+          width: 17px !important;
+          height: 17px !important;
+        }
+      }
+    }
   }
 }
