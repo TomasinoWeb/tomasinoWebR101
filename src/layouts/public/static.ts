@@ -42,3 +42,5 @@ export const PublicLayoutBackend = implementLayoutStatic<PublicLayoutOptions>({
     };
   },
 });
+
+export const createPublicStaticProps = PublicLayoutBackend.use;

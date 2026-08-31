@@ -1,5 +1,5 @@
-import { PublicLayoutFrontend } from "../../layouts/public/frontend";
-import { PublicLayoutBackend } from "../../layouts/public/static";
+import { createPublicPage } from "../../layouts/public/frontend";
+import { createPublicStaticProps } from "../../layouts/public/static";
 import styles from "./about.module.scss";
 
 import Image, { StaticImageData } from "next/image";
@@ -17,7 +17,7 @@ import Link from "next/link";
 
 interface PageProps {}
 
-export default PublicLayoutFrontend.use<PageProps>(() => {
+export default createPublicPage<PageProps>(() => {
   return {
     header: "full_regular",
     footer: "regular",
@@ -107,4 +107,4 @@ function AboutBox(props: AboutBoxProps) {
   );
 }
 
-export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+export const getStaticProps = createPublicStaticProps<PageProps>({});

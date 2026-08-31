@@ -1,6 +1,6 @@
 import QuoteBlock from "../../components/QuoteBlock";
-import { PublicLayoutFrontend } from "../../layouts/public/frontend";
-import { PublicLayoutBackend } from "../../layouts/public/static";
+import { createPublicPage } from "../../layouts/public/frontend";
+import { createPublicStaticProps } from "../../layouts/public/static";
 import styles from "./people.module.scss";
 import Left from "../../../public/assets/about/the-people/Left.png";
 import Center from "../../../public/assets/about/the-people/Center.png";
@@ -112,7 +112,7 @@ const pictures = [
   "/assets/featuredMembers/member-frame-13.png",
 ];
 
-export default PublicLayoutFrontend.use<PageProps>(() => {
+export default createPublicPage<PageProps>(() => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const handleMemberClick = (index: number) => {
@@ -277,4 +277,4 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   };
 });
 
-export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+export const getStaticProps = createPublicStaticProps<PageProps>({});

@@ -1,5 +1,5 @@
-import { PublicLayoutFrontend } from "../layouts/public/frontend";
-import { PublicLayoutBackend } from "../layouts/public/static";
+import { createPublicPage } from "../layouts/public/frontend";
+import { createPublicStaticProps } from "../layouts/public/static";
 import { DashboardWidget } from "../components/DashboardWidget";
 import { AppIconShortcut } from "../components/AppIconShortcut";
 import Footer from "../components/Footer";
@@ -28,7 +28,7 @@ import {
 
 interface PageProps {}
 
-export default PublicLayoutFrontend.use<PageProps>(() => {
+export default createPublicPage<PageProps>(() => {
   return {
     header: "full_regular",
     footer: "disabled",
@@ -100,4 +100,4 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   };
 });
 
-export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+export const getStaticProps = createPublicStaticProps<PageProps>({});

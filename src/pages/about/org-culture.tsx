@@ -1,5 +1,5 @@
 import React from "react";
-import { PublicLayoutFrontend } from "../../layouts/public/frontend";
+import { createPublicPage } from "../../layouts/public/frontend";
 import styles from "./org-culture.module.scss";
 
 /* Image imports */
@@ -34,7 +34,7 @@ import { Button } from "../../components/Button";
 
 /* Quote integration */
 import QuoteBlock from "../../components/QuoteBlock";
-import { PublicLayoutBackend } from "../../layouts/public/static";
+import { createPublicStaticProps } from "../../layouts/public/static";
 import { testimonials } from "../../data/testimonials";
 import ToraTomwegg from "../../../public/assets/tomweggs/ToraTomweggVer1.png";
 import Dancing from "../../../public/assets/tomweggs/Dancing.png";
@@ -54,7 +54,7 @@ const stickerCardImages = [
 ];
 interface PageProps {}
 
-const Page = PublicLayoutFrontend.use<PageProps>(() => {
+const Page = createPublicPage<PageProps>(() => {
   return {
     header: "full_regular",
     footer: "regular",
@@ -305,4 +305,4 @@ const CultureCard = (props: CultureCardProps) => {
 
 export default Page;
 
-export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+export const getStaticProps = createPublicStaticProps<PageProps>({});

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { PublicLayoutFrontend } from "../layouts/public/frontend";
-import { PublicLayoutBackend } from "../layouts/public/static";
+import { createPublicPage } from "../layouts/public/frontend";
+import { createPublicStaticProps } from "../layouts/public/static";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./results.module.scss";
 import Select from "react-select";
@@ -15,7 +15,7 @@ type Props = {
   results: { public: true; data: ResultsObject } | { public: false };
 };
 
-export default PublicLayoutFrontend.use<Props>(({ results }) => {
+export default createPublicPage<Props>(({ results }) => {
   return {
     header: "full_regular",
     footer: "regular",
@@ -124,7 +124,7 @@ function Block({ results, department }: { department: Department; results: Depar
   );
 }
 
-export const getStaticProps = PublicLayoutBackend.use<Props>({
+export const getStaticProps = createPublicStaticProps<Props>({
   async getStaticProps(ctx, { results }) {
     if (!results.success) return { props: { results: { public: false } }, revalidate: 600 };
 

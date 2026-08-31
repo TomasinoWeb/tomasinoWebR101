@@ -1,6 +1,6 @@
 import React from 'react';
-import { PublicLayoutFrontend } from '../layouts/public/frontend';
-import { PublicLayoutBackend } from '../layouts/public/static';
+import { createPublicPage } from '../layouts/public/frontend';
+import { createPublicStaticProps } from '../layouts/public/static';
 import styles from './faq.module.scss';
 
 interface FAQItem {
@@ -55,7 +55,7 @@ const faqData: FAQItem[] = [
   }
 ];
 
-export default PublicLayoutFrontend.use(() => {
+export default createPublicPage(() => {
   return {
     header: 'full_regular',
     footer: 'regular',
@@ -122,4 +122,4 @@ function FAQsPageContent() {
   );
 }
 
-export const getStaticProps = PublicLayoutBackend.use({});
+export const getStaticProps = createPublicStaticProps({});
