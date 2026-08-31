@@ -63,7 +63,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    setTimeout(() => setHasLoaded(true), 2500);
+    const id = setTimeout(() => setHasLoaded(true), 2500);
+    return () => clearTimeout(id);
   }, []);
 
   const details = metatags[router.pathname as keyof typeof metatags] ?? metatags["/"];
