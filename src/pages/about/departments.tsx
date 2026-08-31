@@ -69,10 +69,10 @@ function DepartmentPage() {
 
         <div className={styles.right}>
           <div className={styles.blocks}>
-            {departmentsData.map(({ id, name }, idx) => (
+            {departmentsData.map(({ id, name }) => (
               <div
                 className={`${styles.block} ${selectedDepartment?.id === id ? styles.selectedBlock : ""}`}
-                key={idx}
+                key={id}
                 onClick={() => handleBlockClick(id)}
               >
                 <div className={styles.overlay}>

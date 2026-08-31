@@ -228,8 +228,8 @@ const Page = createPublicPage<PageProps>(() => {
 
               <div className={styles.left}>
                 <span className={styles.frames}>
-                  {stickerCardImages.map((img, i) => (
-                    <div className={styles.member} key={`portrait_${i}`}>
+                  {stickerCardImages.map((img) => (
+                    <div className={styles.member} key={img}>
                       <Image src={img} alt={"portrait"} width={512} height={512} />
                     </div>
                   ))}

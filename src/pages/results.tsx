@@ -112,8 +112,8 @@ function Block({ results, department }: { department: Department; results: Depar
 
       <div className={styles.block_body}>
         <ol>
-          {sorted.map((result, idx) => (
-            <li key={idx}>
+          {sorted.map((result) => (
+            <li key={`${result.name}-${result.team ?? department}`}>
               {result.name}
               {result.team != null ? ` - ${result.team}` : ""}
             </li>

@@ -153,9 +153,9 @@ export default createPublicPage<PageProps>(() => {
             <h2>We're a bunch of sleep-deprived yet ambitious undergrads from different colleges and faculties.</h2>
 
             <div className={styles.pictures}>
-              {pictures.map((p, i) => (
-                <div className={styles.picture} key={i}>
-                  <Image src={p} alt={`Picture ${i}`} width={256} height={256} className={styles.pictureImage} />
+              {pictures.map((p) => (
+                <div className={styles.picture} key={p}>
+                  <Image src={p} alt="Member portrait" width={256} height={256} className={styles.pictureImage} />
                 </div>
               ))}
             </div>
@@ -208,7 +208,7 @@ export default createPublicPage<PageProps>(() => {
           <div className={styles.gallery}>
             {coreMembers.map((member, index) => (
               <div
-                key={index}
+                key={member.name}
                 className={`${styles.member} ${expandedIndex === index ? styles.expanded : ""}`}
                 onClick={() => handleMemberClick(index)}
               >
