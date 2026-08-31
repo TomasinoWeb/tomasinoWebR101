@@ -22,11 +22,11 @@
 
 .loadingText {
   text-align: center;
-  font-family: "Snoopy", sans-serif;
-  letter-spacing: -2px;
-  font-size: 48px;
+  font-family: var(--font-ui);
+  letter-spacing: -0.4px;
+  font-size: var(--type-about-life-h1);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--type-weight-bold);
   line-height: normal;
   text-transform: uppercase;
 }
