@@ -45,10 +45,14 @@ export function MobileNavbar({ variant }: { variant: "mini" | "full" }) {
 
   // automatically close the mobile menu when the user navigates
   useEffect(() => {
-    router.events.on("routeChangeStart", () => {
+    const onRouteChangeStart = () => {
       setIsOpened(false);
-    });
-  }, []);
+    };
+    router.events.on("routeChangeStart", onRouteChangeStart);
+    return () => {
+      router.events.off("routeChangeStart", onRouteChangeStart);
+    };
+  }, [router]);
 
   const menuItems = [
     { href: "/", label: "HOME", icon: faHome },
