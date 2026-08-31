@@ -70,6 +70,9 @@ function FAQsPageContent() {
       <div className={styles.dashboardContainer}>
         {/* Main Feed Section */}
         <section className={styles.feed}>
+          {/* Page Title */}
+          <h1 className={styles.pageTitle}>FAQs</h1>
+
           {/* Top Quick Bar */}
           <div className={styles.actionHeader}>
             <div className={styles.avatarPlaceholder} />
