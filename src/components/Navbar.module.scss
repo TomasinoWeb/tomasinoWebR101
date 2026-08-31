@@ -12,9 +12,10 @@
   a {
     display: block;
     margin: 15px 0px;
-    font-family: "Groundnut", "GroundnutTW", sans-serif;
+    font-family: var(--font-ui);
     color: black;
-    font-size: 16px;
+    font-size: var(--type-section-tab);
+    font-weight: var(--type-weight-regular);
 
     border-bottom: 2px solid black;
     border-color: transparent;
@@ -70,11 +71,16 @@
   padding: 0 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
+  @media screen and (max-width: 1024px) {
+    height: 48px !important; /* Scaled down header height for tablet landscape */
+    padding: 0 16px !important;
+  }
+
   .logoText {
     color: #ffffff;
-    font-family: "Inter", "SF Pro Display", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: var(--type-header);
+    font-weight: var(--type-weight-bold);
     letter-spacing: -0.2px;
   }
 
@@ -92,6 +98,11 @@
     justify-content: center;
     padding: 6px;
     transition: opacity 0.2s ease;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 18px !important; /* Scaled down hamburger icon size for tablet landscape */
+      right: 16px !important;
+    }
 
     &:hover {
       opacity: 0.8;
@@ -138,9 +149,9 @@
 
   .logoText {
     color: #ffffff;
-    font-family: "Inter", "SF Pro Display", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: var(--type-header);
+    font-weight: var(--type-weight-bold);
   }
 
   .closeBtn {
@@ -198,9 +209,9 @@
     }
 
     .linkLabel {
-      font-family: "Inter", "SF Pro Display", sans-serif;
-      font-size: 15px;
-      font-weight: 700;
+      font-family: var(--font-ui);
+      font-size: var(--type-section-tab);
+      font-weight: var(--type-weight-regular);
       color: #7c8896; /* Gray/blue-gray label text */
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -223,6 +234,7 @@
       }
 
       .linkLabel {
+        font-weight: var(--type-weight-semibold);
         color: #ffffff; /* Active label text color */
       }
     }
@@ -247,8 +259,8 @@
 
   span {
     color: #a1a1a1;
-    font-family: "Inter", "SF Pro Display", sans-serif;
-    font-size: 12px;
-    font-weight: 500;
+    font-family: var(--font-ui);
+    font-size: var(--type-footer);
+    font-weight: var(--type-weight-regular);
   }
 }

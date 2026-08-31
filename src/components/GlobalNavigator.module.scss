@@ -3,19 +3,11 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 70px;
+  height: var(--nav-h);
   background-color: #000000;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
   display: flex;
   z-index: 1100;
-
-  @media screen and (min-width: 1920px) {
-    height: 85px; /* Taller bottom nav bar on monitors */
-  }
-
-  @media screen and (min-width: 2400px) {
-    height: 100px; /* Scaled bottom nav bar height on 2560px+ displays */
-  }
 
   .navTab {
     flex: 1;
@@ -28,21 +20,12 @@
     gap: 2px;
     cursor: pointer;
     color: #a1a1a1;
-    font-size: 10px;
-    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: var(--type-nav);
+    font-weight: var(--type-weight-regular);
     transition: all 0.2s ease;
     outline: none;
     text-decoration: none;
-
-    @media screen and (min-width: 1920px) {
-      font-size: 13px; /* Larger text on 1920px+ monitors */
-      gap: 4px;
-    }
-
-    @media screen and (min-width: 2400px) {
-      font-size: 15px; /* Scaled text on 2560px+ displays */
-      gap: 6px;
-    }
 
     .icon {
       width: 20px;
@@ -61,6 +44,18 @@
         height: 32px;
         margin-bottom: 6px;
       }
+
+      @media screen and (max-width: 1024px) {
+        width: 19px !important; /* Increased icon size for tablet landscape */
+        height: 19px !important;
+        margin-bottom: 2px !important;
+      }
+
+      @media screen and (max-width: 850px) {
+        width: 16px !important;
+        height: 16px !important;
+        margin-bottom: 1px !important;
+      }
     }
 
     &.activeNavTab {
@@ -68,7 +63,7 @@
       border-color: #a83268;
       box-shadow: inset 0px 0px 15px rgba(198, 155, 61, 0.3);
       color: #f1d6e2;
-      font-weight: 700;
+      font-weight: var(--type-weight-semibold);
 
       .icon {
         filter: drop-shadow(0px 0px 8px #b5124f);

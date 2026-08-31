@@ -17,7 +17,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 70px;
+  padding-bottom: var(--nav-h);
   overflow-x: hidden;
 
   @media screen and (min-width: 1920px) {
@@ -26,6 +26,10 @@
 
   @media screen and (min-width: 2400px) {
     --header-height: 76px !important; /* Scaled header height for 2560px+ displays */
+  }
+
+  @media screen and (max-width: 1024px) {
+    --header-height: 48px !important; /* Scaled down header height for tablet landscape */
   }
 
   background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
@@ -61,21 +65,13 @@
 
   .centeredBrand {
     a {
-      font-family: "Helvetica Neue", sans-serif;
-      font-weight: 700;
+      font-family: var(--font-ui);
+      font-weight: var(--type-weight-bold);
       color: white;
-      font-size: 26px;
+      font-size: var(--type-header);
       text-decoration: none;
       letter-spacing: 0.5px;
       transition: opacity 0.2s ease;
-
-      @media screen and (min-width: 1920px) {
-        font-size: 34px; /* Larger header logo text on 1920px+ monitors */
-      }
-
-      @media screen and (min-width: 2400px) {
-        font-size: 42px; /* Scaled header logo text for 2560px+ displays */
-      }
 
       &:hover {
         opacity: 0.8;
@@ -181,16 +177,12 @@
 }
 
 .nonScrollable {
-  height: 100vh;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   overflow: hidden;
-  
-  main {
-    height: calc(100vh - var(--header-height) - 70px);
-    overflow: hidden;
 
-    @media screen and (min-width: 1920px) {
-      height: calc(100vh - var(--header-height) - 85px); /* Subtract 85px bottom nav height on wide monitors */
-    }
+  main {
+    height: calc(100dvh - var(--header-height) - var(--nav-h));
+    overflow: hidden;
   }
 }
