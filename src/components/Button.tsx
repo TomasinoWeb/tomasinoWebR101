@@ -54,7 +54,9 @@ export const Button = (props: ButtonProps) => {
     <button
       className={classes}
       onClick={typeof props.onClick === "function" ? props.onClick : undefined}
-      type={typeof props.onClick === "string" ? props.onClick : "button"}
+      type={
+        props.onClick === "submit" ? "submit" : props.onClick === "reset" ? "reset" : "button"
+      }
     >
       {content}
     </button>

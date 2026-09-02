@@ -1,6 +1,6 @@
 import QuoteBlock from "../../components/QuoteBlock";
-import { PublicLayoutFrontend } from "../../layouts/public/frontend";
-import { PublicLayoutBackend } from "../../layouts/public/static";
+import { createPublicPage } from "../../layouts/public/frontend";
+import { createPublicStaticProps } from "../../layouts/public/static";
 import styles from "./people.module.scss";
 import Left from "../../../public/assets/about/the-people/Left.png";
 import Center from "../../../public/assets/about/the-people/Center.png";
@@ -112,7 +112,7 @@ const pictures = [
   "/assets/featuredMembers/member-frame-13.png",
 ];
 
-export default PublicLayoutFrontend.use<PageProps>(() => {
+export default createPublicPage<PageProps>(() => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const handleMemberClick = (index: number) => {
@@ -153,9 +153,9 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             <h2>We're a bunch of sleep-deprived yet ambitious undergrads from different colleges and faculties.</h2>
 
             <div className={styles.pictures}>
-              {pictures.map((p, i) => (
-                <div className={styles.picture} key={i}>
-                  <Image src={p} alt={`Picture ${i}`} width={256} height={256} className={styles.pictureImage} />
+              {pictures.map((p) => (
+                <div className={styles.picture} key={p}>
+                  <Image src={p} alt="Member portrait" width={256} height={256} className={styles.pictureImage} />
                 </div>
               ))}
             </div>
@@ -208,7 +208,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           <div className={styles.gallery}>
             {coreMembers.map((member, index) => (
               <div
-                key={index}
+                key={member.name}
                 className={`${styles.member} ${expandedIndex === index ? styles.expanded : ""}`}
                 onClick={() => handleMemberClick(index)}
               >
@@ -277,4 +277,4 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
   };
 });
 
-export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+export const getStaticProps = createPublicStaticProps<PageProps>({});

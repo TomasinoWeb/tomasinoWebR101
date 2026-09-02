@@ -7,9 +7,14 @@ import { MobileNavbar, Navbar } from "../../components/Navbar";
 import Image from "next/image";
 import PlantTomasinoWeb from "../../../public/assets/logos/WORDMARK_Ver1.png";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Stairs from "../../components/Stairs";
 import { GlobalNavigator } from "../../components/GlobalNavigator";
+
+type PublicLayoutViewProps = {
+  internalProps: PublicLayoutOptions["ServerSideLayoutProps"];
+  layoutProps: PublicLayoutOptions["ClientSideLayoutProps"] & { children: ReactNode };
+};
 
 const useScroll = () => {
   const [data, setData] = useState({ x: 0, y: 0, lastX: 0, lastY: 0 });
@@ -31,21 +36,20 @@ const useScroll = () => {
   return data;
 };
 
-export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>({
-  layoutComponent({ internalProps, layoutProps }) {
-    const [navClassList, setNavClassList] = useState<string[]>([]);
-    const scroll = useScroll();
-    useEffect(() => {
-      const _classList: string[] = [];
+function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps) {
+  const [navClassList, setNavClassList] = useState<string[]>([]);
+  const scroll = useScroll();
+  useEffect(() => {
+    const _classList: string[] = [];
 
-      if (scroll.y > 150 && scroll.y - scroll.lastY > 0) {
-        _classList.push(styles["nav-bar--hidden"]);
-      }
+    if (scroll.y > 150 && scroll.y - scroll.lastY > 0) {
+      _classList.push(styles["nav-bar--hidden"]);
+    }
 
-      setNavClassList(_classList);
-    }, [scroll.y, scroll.lastY]);
+    setNavClassList(_classList);
+  }, [scroll.y, scroll.lastY]);
 
-    return (
+  return (
       <div
         className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : layoutProps.dots === "subtle" ? styles.subtleDots : styles.disabledDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""} ${layoutProps.footer === "disabled" ? styles.disabledFooter : ""} ${layoutProps.nonScrollable ? styles.nonScrollable : ""}`}
       >
@@ -84,5 +88,10 @@ export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>
         )}
       </div>
     );
-  },
+}
+
+export const PublicLayoutFrontend = implementLayoutFrontend<PublicLayoutOptions>({
+  layoutComponent: PublicLayoutView,
 });
+
+export const createPublicPage = PublicLayoutFrontend.use;

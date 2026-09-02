@@ -5,10 +5,15 @@ $light-grey: hsl(30, 2%, 30%);
 .footer {
   height: var(--footer-height);
   padding: 16px 20px;
-  z-index: 10;
+  z-index: 100;
   backdrop-filter: blur(8px);
   color: var(--footer-fg);
   border-top: 2px solid var(--footer-fg);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: var(--type-footer);
+  font-weight: var(--type-weight-regular);
 
   p,
   a,
@@ -17,28 +22,29 @@ $light-grey: hsl(30, 2%, 30%);
   }
 
   .inner {
-    max-width: 1300px;
+    max-width: var(--footer-max-width, 1300px);
     margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Vertically center left and right groups */
+    width: 100%;
 
     .left {
       display: flex;
       gap: 24px;
-
-      font-family: "Groundnut", "GroundnutTW", sans-serif;
-      font-size: var(--font-sizes-secondary-base);
+      align-items: center; /* Vertically center copyright and text links */
+      font-family: var(--font-ui);
+      font-size: var(--type-footer);
+      font-weight: var(--type-weight-regular);
 
       p {
         color: var(--footer-fg);
+        font-weight: var(--type-weight-bold);
       }
 
       a {
         color: var(--footer-fg);
         text-decoration: none;
-        padding-bottom: 0px;
-        border-bottom: 2px solid transparent;
       }
 
       a:hover {
@@ -67,7 +73,7 @@ $light-grey: hsl(30, 2%, 30%);
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
   .footer {
     height: var(--footer-height);
     padding: 10px;

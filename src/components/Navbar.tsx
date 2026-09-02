@@ -3,7 +3,17 @@ import styles from "./Navbar.module.scss";
 import YellowInsignia from "../../public/logo/insignia_yellow.png";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import { 
+  faBars, 
+  faClose, 
+  faHome, 
+  faUser, 
+  faClipboardList, 
+  faQuestionCircle, 
+  faCheckSquare, 
+  faBriefcase, 
+  faChevronRight 
+} from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -31,47 +41,77 @@ export const Navbar = (props: { containsApply: boolean; containsResults: boolean
 
 export function MobileNavbar({ variant }: { variant: "mini" | "full" }) {
   const [isOpened, setIsOpened] = useState(false);
-  const Link = (props: { href: string; children: string; special?: boolean }) => {
-    return (
-      <_Link href={props.href} className={props.special ? styles.special : ""}>
-        {props.children}
-      </_Link>
-    );
-  };
+  const router = useRouter();
 
   // automatically close the mobile menu when the user navigates
-  const router = useRouter();
   useEffect(() => {
-    router.events.on("routeChangeStart", () => {
+    const onRouteChangeStart = () => {
       setIsOpened(false);
-    });
-  }, []);
+    };
+    router.events.on("routeChangeStart", onRouteChangeStart);
+    return () => {
+      router.events.off("routeChangeStart", onRouteChangeStart);
+    };
+  }, [router]);
+
+  const menuItems = [
+    { href: "/", label: "HOME", icon: faHome },
+    { href: "/about", label: "ABOUT", icon: faUser },
+    { href: "/r101", label: "R101", icon: faClipboardList },
+    { href: "/faqs", label: "FAQS", icon: faQuestionCircle },
+    { href: "/results", label: "RESULTS", icon: faCheckSquare },
+    { href: "/apply", label: "APPLY NOW", icon: faBriefcase },
+  ];
 
   return (
-    <div className={styles.mobile}>
-      <div className={styles.top}>
-        <div className={styles.left}>
-          <_Link href="/">
-            <Image src={YellowInsignia} alt="Yellow insignia" width={100} height={100} className={styles.tomwebLogo} />
-          </_Link>
-        </div>
-
-        <div className={styles.right}>
-          <FontAwesomeIcon icon={isOpened ? faClose : faBars} onClick={() => setIsOpened(!isOpened)} />
-        </div>
+    <div className={styles.mobileNavContainer}>
+      {/* Header bar (always visible on mobile) */}
+      <div className={styles.headerBar}>
+        <span className={styles.logoText}>TomasinoWeb</span>
+        <button className={styles.hamburgerBtn} onClick={() => setIsOpened(true)} aria-label="Open menu">
+          <FontAwesomeIcon icon={faBars} />
+        </button>
       </div>
 
-      <div className={styles.bottom + " " + (isOpened ? styles.opened : "")}>
-        <div className={styles.links}>
-          <Link href="/about" children="ABOUT" />
-          <Link href="/r101" children="R101" />
-          <Link href="/faqs" children="FAQS" />
-          <Link href="/quiz" children="QUIZ" />
-          <Link href="/results" children="RESULTS" />
-          <Link href="/discord" children="THE POOL" />
-          <Link href="/apply" children="APPLY NOW" special />
+      {/* Hamburger menu modal popup drawer */}
+      {isOpened && (
+        <div className={styles.menuOverlay}>
+          <div className={styles.popupWrapper}>
+            {/* Modal Header */}
+            <div className={styles.popupHeader}>
+              <span className={styles.logoText}>TomasinoWeb</span>
+              <button className={styles.closeBtn} onClick={() => setIsOpened(false)} aria-label="Close menu">
+                <FontAwesomeIcon icon={faClose} />
+              </button>
+            </div>
+
+            {/* Links List */}
+            <div className={styles.menuLinksList}>
+              {menuItems.map((item) => {
+                const isActive = router.pathname === item.href;
+                return (
+                  <_Link 
+                    key={item.href}
+                    href={item.href} 
+                    className={`${styles.menuLinkItem} ${isActive ? styles.activeLinkItem : ""}`}
+                  >
+                    <div className={styles.linkLeft}>
+                      <FontAwesomeIcon icon={item.icon} className={styles.linkIcon} />
+                      <span className={styles.linkLabel}>{item.label}</span>
+                    </div>
+                    <FontAwesomeIcon icon={faChevronRight} className={styles.chevronIcon} />
+                  </_Link>
+                );
+              })}
+            </div>
+
+            {/* Modal Footer */}
+            <div className={styles.popupFooter}>
+              <span>© 2026 TomasinoWeb</span>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

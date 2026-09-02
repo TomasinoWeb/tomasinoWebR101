@@ -17,8 +17,20 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 70px;
+  padding-bottom: var(--nav-h);
   overflow-x: hidden;
+
+  @media screen and (min-width: 1920px) {
+    --header-height: 64px !important; /* Increase header height globally on 1920px+ monitors */
+  }
+
+  @media screen and (min-width: 2400px) {
+    --header-height: 76px !important; /* Scaled header height for 2560px+ displays */
+  }
+
+  @media screen and (max-width: 1024px) {
+    --header-height: 48px !important; /* Scaled down header height for tablet landscape */
+  }
 
   background-image: radial-gradient(var(--dot-color) 2px, transparent 0px);
   background-repeat: repeat; /* or omit this declaration */
@@ -37,7 +49,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10000;
   height: var(--header-height);
   display: flex;
   justify-content: center;
@@ -53,10 +65,10 @@
 
   .centeredBrand {
     a {
-      font-family: "Helvetica Neue", sans-serif;
-      font-weight: 700;
+      font-family: var(--font-ui);
+      font-weight: var(--type-weight-bold);
       color: white;
-      font-size: 26px;
+      font-size: var(--type-header);
       text-decoration: none;
       letter-spacing: 0.5px;
       transition: opacity 0.2s ease;
@@ -94,12 +106,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10000;
   height: var(--header-height);
 
   .inner {
-    padding: 10px 20px;
+    padding: 0; /* Changed from 10px 20px to full-width */
     width: 100%;
+    height: 100%;
   }
 
   @media screen and (max-width: 850px) {
@@ -164,12 +177,12 @@
 }
 
 .nonScrollable {
-  height: 100vh;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   overflow: hidden;
-  
+
   main {
-    height: calc(100vh - var(--header-height) - 70px);
+    height: calc(100dvh - var(--header-height) - var(--nav-h));
     overflow: hidden;
   }
 }
