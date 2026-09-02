@@ -1,0 +1,68 @@
+.card {
+  position: relative;
+  background: var(--about-neutral-white, #fff);
+  border-radius: 8px;
+  overflow: hidden;
+  color: var(--about-neutral-black, #1e1e1e);
+  display: flex;
+  flex-direction: column;
+}
+
+.featured {
+  border-top: 6px solid var(--about-accent, #d9a441);
+}
+
+.departmentTag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--about-primary, #6d1b3a);
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--about-neutral-light, #e4e2e6);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.position {
+  font-size: 0.65rem;
+  color: var(--about-neutral-mid, #999);
+}
+
+.quote {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  margin-top: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featured .quote {
+  -webkit-line-clamp: 5;
+}

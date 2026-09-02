@@ -37,6 +37,12 @@ const metatags = {
       "Experience TomasinoWeb's supportive culture where students grow together as innovators and leaders, just like Charlie Brown's lovable gang of misfits!",
     tags: "TomasinoWeb, R101, UST, tomasinoweb.org",
   },
+  "/about/life": {
+    title: "Life at TomasinoWeb | Planet TomasinoWeb",
+    description:
+      "From on-site coverages to late-night PowerPoint parties — see what life is really like inside TomasinoWeb.",
+    tags: "TomasinoWeb, R101, UST, TomasinoWeb culture, life at TomasinoWeb",
+  },
   "/r101": {
     title: "R101 Application | Planet TomasinoWeb",
     description:
