@@ -1,13 +1,13 @@
 import React from "react";
-import { PublicLayoutFrontend } from "../../layouts/public/frontend";
-import { PublicLayoutBackend } from "../../layouts/public/static";
+import { createPublicPage } from "../../layouts/public/frontend";
+import { createPublicStaticProps } from "../../layouts/public/static";
 import styles from "./departments.module.scss";
 import departmentsData from "../../data/departments.json";
 import DefaultImage from "../../../public/assets/about/departments/DefaultImage.png";
 import Image from "next/image";
 import { Button } from "../../components/Button";
 
-export default PublicLayoutFrontend.use(() => {
+export default createPublicPage(() => {
   return {
     header: "full_regular",
     footer: "regular",
@@ -16,7 +16,7 @@ export default PublicLayoutFrontend.use(() => {
   };
 });
 
-export const getStaticProps = PublicLayoutBackend.use({});
+export const getStaticProps = createPublicStaticProps({});
 
 function DepartmentPage() {
   const [selectedDepartment, setSelectedDepartment] = React.useState<(typeof departmentsData)[0] | null>(null);
@@ -69,10 +69,10 @@ function DepartmentPage() {
 
         <div className={styles.right}>
           <div className={styles.blocks}>
-            {departmentsData.map(({ id, name }, idx) => (
+            {departmentsData.map(({ id, name }) => (
               <div
                 className={`${styles.block} ${selectedDepartment?.id === id ? styles.selectedBlock : ""}`}
-                key={idx}
+                key={id}
                 onClick={() => handleBlockClick(id)}
               >
                 <div className={styles.overlay}>

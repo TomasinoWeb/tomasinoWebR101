@@ -103,10 +103,10 @@
     .title {
       color: var(--neutral-black, #1e1e1e);
       text-align: left;
-      font-family: "Groundnut", "GroundnutTW";
-      font-size: var(--font-sizes-h2, 48px);
-      font-weight: 400;
-      letter-spacing: -1.056px;
+      font-family: var(--font-ui);
+      font-size: var(--type-about-life-h1);
+      font-weight: var(--type-weight-bold);
+      letter-spacing: -0.4px;
 
       @media screen and (max-width: 900px) {
         text-align: center;
@@ -116,11 +116,10 @@
     .description {
       margin-top: 10px;
       color: var(--neutral-black, #1e1e1e);
-      font-family: "Helvetica Neue";
-      font-size: var(--font-sizes-base, 20px);
-      font-style: normal;
-      font-weight: 400;
-      line-height: 24px; /* 120% */
+      font-family: var(--font-ui);
+      font-size: var(--type-body);
+      font-weight: var(--type-weight-regular);
+      line-height: 1.4;
       letter-spacing: -0.4px;
     }
   }
@@ -155,15 +154,15 @@
 
       .title {
         color: var(--neutral-black, #1e1e1e);
-        font-family: "Groundnut", "GroundnutTW";
-        font-size: var(--font-sizes-base, 20px);
-        font-weight: 400;
+        font-family: var(--font-ui);
+        font-size: var(--type-about-life-h2);
+        font-weight: var(--type-weight-bold);
       }
       .description {
         color: var(--neutral-black, #1e1e1e);
-        font-family: "Helvetica Neue";
-        font-size: var(--font-sizes-secondary-base, 16px);
-        font-weight: 400;
+        font-family: var(--font-ui);
+        font-size: var(--type-body);
+        font-weight: var(--type-weight-regular);
       }
 
       @media screen and (max-width: 850px) {

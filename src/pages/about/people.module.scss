@@ -14,31 +14,24 @@
   padding: 32px 40px;
 
   .pageTitle {
-    color: var(--neutral-white, #fbf9f4);
+    color: var(--neutral-black, #1e1e1e);
     text-align: center;
-    text-shadow: -3px 5px 0 #1e1e1e;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
-    font-family: Snoopy;
-    font-size: var(--font-sizes-hero-title, 96px);
+    font-family: var(--font-ui);
+    font-size: var(--type-h1-faq);
     font-style: normal;
-    font-weight: 400;
-    letter-spacing: -2px;
-    line-height: normal;
-
-    @media screen and (max-width: 1000px) {
-      -webkit-text-stroke-width: 2px;
-    }
+    font-weight: var(--type-weight-bold);
+    letter-spacing: -0.4px;
+    line-height: 1.1;
   }
 
   .pageDescription {
     width: clamp(330px, 60vw, 620px);
     color: #393939;
     text-align: center;
-    font-family: "Helvetica Neue";
-    font-size: var(--font-sizes-base, 20px);
+    font-family: var(--font-ui);
+    font-size: var(--type-body);
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--type-weight-regular);
     margin-top: 10px;
     line-height: 1.3em;
     letter-spacing: -0.4px;
@@ -59,27 +52,25 @@
       gap: 20px;
 
       h1 {
-        font-family: "Snoopy", sans-serif;
-        font-size: 64px;
+        font-family: var(--font-ui);
+        font-size: var(--type-about-life-h1);
+        font-weight: var(--type-weight-bold);
+        letter-spacing: -0.4px;
       }
 
       h2 {
-        font-family: "Helvetica Neue", sans-serif;
-        font-style: oblique;
-        font-size: 20px;
-      }
-
-      @media screen and (max-width: 900px) {
-        h1 {
-          font-size: 48px;
-        }
+        font-family: var(--font-ui);
+        font-style: italic;
+        font-size: var(--type-profile-body);
+        font-weight: var(--type-weight-regular);
       }
     }
 
     > h2 {
       margin-top: 10px;
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: 20px;
+      font-family: var(--font-ui);
+      font-size: var(--type-profile-body);
+      font-weight: var(--type-weight-regular);
     }
 
     .pictures {
@@ -110,34 +101,16 @@
     @media screen and (max-width: 900px) {
       margin-top: 80px;
 
-      .rail {
-        font-size: 48px;
-      }
-
       .pictures {
         margin-top: 40px;
       }
     }
 
     @media screen and (max-width: 700px) {
-      > h2 {
-        font-size: 18px;
-      }
-
       .rail {
         flex-direction: column;
         gap: 0px;
         align-items: flex-start;
-
-        h1 {
-          font-size: 36px;
-        }
-
-        h2 {
-          font-family: "Helvetica Neue", sans-serif;
-          font-style: oblique;
-          font-size: 18px;
-        }
       }
 
       .pictures {
@@ -150,20 +123,19 @@
   > h2 {
     text-align: center;
     color: var(--neutral-black, #1e1e1e);
-    font-family: "Snoopy", sans-serif;
-    font-size: 64px;
-    letter-spacing: -2px;
+    font-family: var(--font-ui);
+    font-size: var(--type-about-life-h1);
+    font-weight: var(--type-weight-bold);
+    letter-spacing: -0.4px;
     margin-top: 150px;
 
     @media screen and (max-width: 900px) {
-      font-size: 48px;
       max-width: 500px;
       margin: 0 auto;
       margin-top: 100px;
     }
 
     @media screen and (max-width: 700px) {
-      font-size: 36px;
       margin-top: 60px;
     }
   }
@@ -222,8 +194,9 @@
   }
 
   .p {
-    font-family: "Groundnut", "GroundnutTW", sans-serif;
-    font-size: 24px;
+    font-family: var(--font-ui);
+    font-size: var(--type-body);
+    font-weight: var(--type-weight-regular);
   }
 
   .comics {
@@ -287,24 +260,18 @@
     text-align: center;
 
     h2 {
-      font-family: Snoopy, sans-serif;
-      letter-spacing: -2px;
-      font-size: 64px;
-      line-height: 1em;
+      font-family: var(--font-ui);
+      letter-spacing: -0.4px;
+      font-size: var(--type-about-life-h1);
+      font-weight: var(--type-weight-bold);
+      line-height: 1.1;
       margin-bottom: 10px;
-
-      @media screen and (max-width: 900px) {
-        font-size: 56px;
-      }
-
-      @media screen and (max-width: 700px) {
-        font-size: 48px;
-      }
     }
 
     .subheading {
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: 20px;
+      font-family: var(--font-ui);
+      font-size: var(--type-body);
+      font-weight: var(--type-weight-regular);
     }
   }
 }
@@ -409,22 +376,21 @@
         .name {
           line-height: 1em;
           margin-top: auto;
-          font-size: 24px;
+          font-size: var(--type-about-life-h2);
+          font-weight: var(--type-weight-bold);
           padding-bottom: 5px;
         }
 
         .position {
-          font-size: 16px;
+          font-size: var(--type-body);
+          font-weight: var(--type-weight-regular);
           text-transform: uppercase;
         }
 
         .name,
         .position {
           text-align: left;
-          font-family: "Groundnut", "GroundnutTW", sans-serif;
-          text-shadow: -2px 2px 0px var(--neutral-black);
-          // -webkit-text-stroke: 1px var(--neutral-black);
-
+          font-family: var(--font-ui);
           color: white;
         }
       }
@@ -499,16 +465,18 @@
       color: black;
 
       h2 {
-        font-family: Snoopy;
-        font-size: 64px;
-        line-height: 1em;
+        font-family: var(--font-ui);
+        font-size: var(--type-about-life-h1);
+        font-weight: var(--type-weight-bold);
+        line-height: 1.1;
         margin-bottom: 10px;
-        letter-spacing: -2px;
+        letter-spacing: -0.4px;
       }
 
       p {
-        font-family: "Helvetica Neue", sans-serif;
-        font-size: 20px;
+        font-family: var(--font-ui);
+        font-size: var(--type-body);
+        font-weight: var(--type-weight-regular);
       }
     }
 
@@ -522,12 +490,6 @@
 
     @media screen and (max-width: 900px) {
       padding: 60px 30px;
-
-      .header {
-        h2 {
-          font-size: 48px;
-        }
-      }
     }
   }
 }
@@ -594,45 +556,29 @@
         padding: 45px 60px;
 
         p {
-          font-family: "Helvetica Neue", sans-serif;
-          font-weight: 400;
-          font-size: 24px;
+          font-family: var(--font-ui);
+          font-weight: var(--type-weight-regular);
+          font-size: var(--type-body);
           text-align: center;
         }
 
         h2 {
-          font-family: Snoopy, sans-serif;
-          font-size: 64px;
+          font-family: var(--font-ui);
+          font-size: var(--type-about-life-h1);
+          font-weight: var(--type-weight-bold);
           display: block;
           margin: 30px 0px;
-          letter-spacing: -2px;
-          line-height: 0.8em;
+          letter-spacing: -0.4px;
+          line-height: 1.1;
           text-align: center;
         }
 
         @media screen and (max-width: 900px) {
           padding: 30px;
-
-          p {
-            font-size: 20px;
-          }
-
-          h2 {
-            font-size: 48px;
-          }
         }
 
         @media screen and (max-width: 500px) {
           padding: 20px;
-
-          p {
-            font-size: 18px;
-          }
-
-          h2 {
-            margin: 20px 0px;
-            font-size: 36px;
-          }
         }
       }
     }

@@ -1,7 +1,8 @@
-import { PublicLayoutFrontend } from "../layouts/public/frontend";
-import { PublicLayoutBackend } from "../layouts/public/static";
+import { createPublicPage } from "../layouts/public/frontend";
+import { createPublicStaticProps } from "../layouts/public/static";
 import { DashboardWidget } from "../components/DashboardWidget";
 import { AppIconShortcut } from "../components/AppIconShortcut";
+import Footer from "../components/Footer";
 import styles from "./index.module.scss";
 import Image from "next/image";
 import ToraTomwegg from "../../public/assets/tomweggs/ToraTomweggVer2.png";
@@ -27,42 +28,7 @@ import {
 
 interface PageProps {}
 
-export default PublicLayoutFrontend.use<PageProps>(() => {
-  const getGlobalCell = (groupRowIndex: number, groupColIndex: number, startRow: number, startCol: number) => {
-    const globalRow = startRow + groupRowIndex;
-    const globalCol = startCol + groupColIndex;
-    return (globalRow - 1) * 10 + globalCol;
-  };
-
-  const renderGroup = (startRow: number, startCol: number, totalRows: number, totalCols: number) => {
-    const subCells = [];
-    for (let r = 0; r < totalRows; r++) {
-      for (let c = 0; c < totalCols; c++) {
-        const cellNum = getGlobalCell(r, c, startRow, startCol);
-        const globalRow = startRow + r;
-        const globalCol = startCol + c;
-        subCells.push({ cellNum, globalRow, globalCol });
-      }
-    }
-
-    return (
-      <div 
-        className={styles.subGrid} 
-        style={{ 
-          gridTemplateColumns: `repeat(${totalCols}, 1fr)`,
-          gridTemplateRows: `repeat(${totalRows}, 1fr)`
-        }}
-      >
-        {subCells.map(({ cellNum, globalRow, globalCol }) => (
-          <div key={cellNum} className={styles.gridCell}>
-            <span className={styles.cellLabel}>C{cellNum}</span>
-            <span className={styles.subtext}>R{globalRow}, C{globalCol}</span>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
+export default createPublicPage<PageProps>(() => {
   return {
     header: "full_regular",
     footer: "disabled",
@@ -74,7 +40,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
         <div className={styles.container}>
           
           {/* Top Row Groups (Rows 1-2) */}
-          <div className={styles.rowGroupGrid}>
+          <div className={`${styles.rowGroupGrid} ${styles.topRow}`}>
             <div className={styles.widgetCell}>
               <DashboardWidget title="2026 is the new 2016!" aspectRatio="square">
                 <Image src={ToraTomwegg} alt="2026 is the new 2016!" fill style={{ objectFit: "cover" }} />
@@ -98,7 +64,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           </div>
 
           {/* Bottom Row Groups (Rows 3-4) */}
-          <div className={styles.rowGroupGrid}>
+          <div className={`${styles.rowGroupGrid} ${styles.bottomRow}`}>
             <div className={styles.widgetCell}>
               <DashboardWidget title="Application Process" aspectRatio="square">
                 <Image src={Confuse} alt="Application Process" fill style={{ objectFit: "cover" }} />
@@ -126,10 +92,12 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             </div>
           </div>
 
+          <Footer className={styles.homeFooter} />
+
         </div>
       </div>
     ),
   };
 });
 
-export const getStaticProps = PublicLayoutBackend.use<PageProps>({});
+export const getStaticProps = createPublicStaticProps<PageProps>({});

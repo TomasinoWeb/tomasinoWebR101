@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { MotionConfig } from "framer-motion";
 import "../globals.scss";
 import type { AppProps } from "next/app";
 import { NextSeo } from "next-seo";
@@ -63,7 +64,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    setTimeout(() => setHasLoaded(true), 2500);
+    const id = setTimeout(() => setHasLoaded(true), 2500);
+    return () => clearTimeout(id);
   }, []);
 
   const details = metatags[router.pathname as keyof typeof metatags] ?? metatags["/"];
@@ -71,7 +73,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const tags = "tags" in details ? details.tags : metatags["/"].tags;
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <NextSeo
         title={details.title}
         description={description}
@@ -93,6 +95,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </div>
 
       <Component {...pageProps} />
-    </>
+    </MotionConfig>
   );
 }

@@ -5,14 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTiktok, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUp, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
-interface FooterProps {}
+interface FooterProps {
+  className?: string;
+}
 
-export default function Footer(props: FooterProps) {
+export default function Footer({ className = "" }: FooterProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${className}`}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <p>(c) TomasinoWeb 2025</p>
+          <p>© TomasinoWeb 2026</p>
           <Link href="/about/departments">Departments</Link>
           <Link href="/apply">Application Form</Link>
           <Link href="/faqs">FREQUENTLY ASKED QUESTIONS</Link>
@@ -23,7 +25,7 @@ export default function Footer(props: FooterProps) {
             <FontAwesomeIcon icon={faFacebook} />
           </Link>
 
-          <Link href="https://twit1ter.com/tomasinoweb" target="_blank">
+          <Link href="https://twitter.com/tomasinoweb" target="_blank">
             <FontAwesomeIcon icon={faTwitter} />
           </Link>
 
@@ -42,8 +44,6 @@ export default function Footer(props: FooterProps) {
           <Link href="https://tomasinoweb.org" target="_blank">
             <FontAwesomeIcon icon={faGlobe} />
           </Link>
-
-          <p>⋅</p>
 
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <FontAwesomeIcon icon={faArrowUp} />

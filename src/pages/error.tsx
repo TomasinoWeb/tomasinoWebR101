@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "../components/Button";
-import { PublicLayoutFrontend } from "../layouts/public/frontend";
+import { createPublicPage } from "../layouts/public/frontend";
 import styles from "../components/error_components/error.module.scss";
-import { PublicLayoutBackend } from "../layouts/public/static";
+import { createPublicStaticProps } from "../layouts/public/static";
 import TomWegg from "../../public/assets/tomweggs/Idk.png";
 import SpeechBubble from "./about/components/SpeechBubble";
 import Window from "../components/error_components/Window";
@@ -13,7 +13,7 @@ import { faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {}
 
-export default PublicLayoutFrontend.use<Props>(() => {
+export default createPublicPage<Props>(() => {
   return {
     header: "full_regular",
     footer: "regular",
@@ -44,4 +44,4 @@ export default PublicLayoutFrontend.use<Props>(() => {
   };
 });
 
-export const getStaticProps = PublicLayoutBackend.use<{}>({});
+export const getStaticProps = createPublicStaticProps<{}>({});

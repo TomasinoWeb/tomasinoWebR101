@@ -14,30 +14,24 @@
   padding: 32px 40px;
 
   .pageTitle {
-    color: var(--neutral-white, #fbf9f4);
+    color: var(--neutral-black, #1e1e1e);
     text-align: center;
-    text-shadow: -3px 5px 0 #1e1e1e;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
-    font-family: Snoopy;
-    font-size: var(--font-sizes-hero-title, 96px);
+    font-family: var(--font-ui);
+    font-size: var(--type-h1-faq);
     font-style: normal;
-    font-weight: 400;
-    letter-spacing: -2px;
-
-    @media screen and (max-width: 1000px) {
-      -webkit-text-stroke-width: 2px;
-    }
+    font-weight: var(--type-weight-bold);
+    letter-spacing: -0.4px;
+    line-height: 1.1;
   }
 
   .pageDescription {
     width: clamp(330px, 60vw, 620px);
     color: #393939;
     text-align: center;
-    font-family: "Helvetica Neue";
-    font-size: var(--font-sizes-base, 20px);
+    font-family: var(--font-ui);
+    font-size: var(--type-body);
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--type-weight-regular);
     margin-top: 10px;
     line-height: 1.3em;
     letter-spacing: -0.4px;
@@ -58,15 +52,17 @@
   .left {
     flex: 4;
     .title {
-      font-family: "Groundnut", "GroundnutTW", sans-serif;
-      font-size: 20px;
+      font-family: var(--font-ui);
+      font-size: var(--type-about-life-h2);
+      font-weight: var(--type-weight-bold);
       text-align: center;
       margin-bottom: 20px;
     }
 
     .subtitle {
-      font-family: "Groundnut", "GroundnutTW", sans-serif;
-      font-size: 48px;
+      font-family: var(--font-ui);
+      font-size: var(--type-about-life-h1);
+      font-weight: var(--type-weight-bold);
       text-align: center;
     }
 
@@ -80,9 +76,9 @@
     }
 
     .disclaimer {
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: 20px;
-      // font-weight: 300;
+      font-family: var(--font-ui);
+      font-size: var(--type-body);
+      font-weight: var(--type-weight-regular);
     }
 
     .rail {
@@ -91,19 +87,11 @@
 
     @media screen and (max-width: 650px) {
       .title {
-        font-size: 18px;
         margin-bottom: 10px;
       }
 
       .subtitle {
-        font-size: 36px;
         margin-bottom: 10px;
-      }
-
-      .disclaimer {
-        font-family: "Helvetica Neue", sans-serif;
-        font-size: 16px;
-        // font-weight: 300;
       }
     }
   }
@@ -150,11 +138,11 @@
           border: 2px solid var(--neutral-black, #1e1e1e);
           padding: 6px 10px;
 
-          font-family: "Groundnut", "GroundnutTW", sans-serif;
-          font-size: 16px;
+          font-family: var(--font-ui);
+          font-size: var(--type-body);
+          font-weight: var(--type-weight-bold);
 
           @media screen and (max-width: 650px) {
-            font-size: 14px;
             padding: 4px 8px;
           }
         }

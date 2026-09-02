@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { PublicLayoutFrontend } from '../layouts/public/frontend';
-import { PublicLayoutBackend } from '../layouts/public/static';
+import { createPublicPage } from '../layouts/public/frontend';
+import { createPublicStaticProps } from '../layouts/public/static';
 import styles from './r101.module.scss';
 
 interface ApplicationStep {
@@ -55,7 +55,7 @@ const supportItems: SupportItem[] = [
   }
 ];
 
-export default PublicLayoutFrontend.use(() => {
+export default createPublicPage(() => {
   return {
     header: 'full_regular',
     footer: 'regular',
@@ -158,4 +158,4 @@ function R101PageContent() {
   );
 }
 
-export const getStaticProps = PublicLayoutBackend.use({});
+export const getStaticProps = createPublicStaticProps({});

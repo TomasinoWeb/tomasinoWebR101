@@ -223,6 +223,7 @@ section {
 }
 body {
   line-height: 1;
+  font-family: var(--font-ui);
 }
 ol,
 ul {
@@ -255,13 +256,57 @@ table {
   --font-sizes-main-title: 64px;
   --font-sizes-hero-title: 96px;
 
+  /* UI type scale (Inter / SF Pro). Desktop values; mobile overrides below. */
+  --font-ui: "Inter", "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --type-header: 20px;
+  --type-h1-faq: 32px;
+  --type-footer: 12px;
+  --type-nav: 11px;
+  --type-section-tab: 14px;
+  --type-profile-body: 14px;
+  --type-profile-stat: 16px;
+  --type-r101-h1: 16px;
+  --type-r101-h2: 14px;
+  --type-r101-h3: 14px;
+  --type-about-life-h1: 28px;
+  --type-about-life-h2: 14px;
+  --type-btn-cta: 10px;
+  --type-btn-register: 14px;
+  --type-body: 12px;
+  --type-weight-regular: 400;
+  --type-weight-semibold: 600;
+  --type-weight-bold: 700;
+
   --header-height: 50px;
   --footer-height: 53.3333px;
+
+  /* Height of the fixed bottom tab bar. Pages that size themselves against the
+     viewport subtract this, so it must stay in sync with GlobalNavigator. */
+  --nav-h: 70px;
+}
+
+@media screen and (min-width: 1920px) {
+  :root {
+    --nav-h: 85px;
+  }
+}
+
+@media screen and (min-width: 2400px) {
+  :root {
+    --nav-h: 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --nav-h: 62px;
+  }
 }
 
 @media screen and (max-width: 850px) {
   :root {
     --header-height: 50px;
+    --nav-h: 54px;
   }
 }
 
@@ -281,6 +326,22 @@ table {
     --font-sizes-h2: 36px;
     --font-sizes-main-title: 48px;
     --font-sizes-hero-title: 64px;
+
+    --type-header: 16px;
+    --type-h1-faq: 28px;
+    --type-footer: 8px;
+    --type-nav: 8px;
+    --type-section-tab: 10px;
+    --type-profile-body: 10px;
+    --type-profile-stat: 14px;
+    --type-r101-h1: 14px;
+    --type-r101-h2: 12px;
+    --type-r101-h3: 12px;
+    --type-about-life-h1: 24px;
+    --type-about-life-h2: 12px;
+    --type-btn-cta: 8px;
+    --type-btn-register: 12px;
+    --type-body: 8px;
   }
 }
 

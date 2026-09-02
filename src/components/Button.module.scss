@@ -1,9 +1,9 @@
 .button {
-  font-family: "Groundnut", "GroundnutTW", sans-serif;
-  font-size: var(--font-sizes-base, 1.25rem);
+  font-family: var(--font-ui);
+  font-size: var(--type-btn-register);
   color: var(--neutral-black, #1e1e1e);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--type-weight-bold);
   text-transform: uppercase;
   line-height: normal;
   text-align: center;
@@ -133,11 +133,11 @@
 
 /* ==== SIZES ==== */
 .large {
-  font-size: 1.5rem;
+  font-size: var(--type-btn-register);
 }
 
 .small {
-  font-size: 0.875rem;
+  font-size: var(--type-btn-cta);
 }
 
 // @media (max-width: 768px) {

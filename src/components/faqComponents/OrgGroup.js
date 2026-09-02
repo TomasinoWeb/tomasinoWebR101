@@ -40,7 +40,7 @@ function OrgGroup() {
   return (
     <div>
       {faqs.map((faq, i) => (
-        <div key={i}>
+        <div key={faq.question}>
           <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
         </div>
       ))}
