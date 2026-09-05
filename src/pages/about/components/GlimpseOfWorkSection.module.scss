@@ -1,14 +1,15 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 40px;
 }
 
 .card {
   background: var(--about-neutral-white, #fff);
+  border: 1px solid;
   border-radius: 8px;
   overflow: hidden;
-  color: var(--about-neutral-black, #1e1e1e);
+  padding-bottom: 20px;
 }
 
 .imageWrapper {
@@ -16,6 +17,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   background: var(--about-neutral-light, #e4e2e6);
+  max-height: 140px;
 }
 
 .image {
@@ -23,20 +25,41 @@
 }
 
 .tag {
+  font-family: var(--font-oswald), sans-serif;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 13px;
   font-weight: 700;
-  padding: 6px 10px;
+  padding: 15px 12px ;
+  line-height: 1.4;
+
+}
+
+.card:nth-child(1) .tag {
+  background: linear-gradient(180deg, rgba(255, 183, 2, 1) 0%, rgba(199, 156, 61, 1) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.7);
+}
+
+.card:nth-child(2) .tag {
+  background: linear-gradient(180deg, rgba(234, 74, 104, 0.95) 0%, rgba(255, 39, 97, 0.9) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.7);
+}
+
+.card:nth-child(3) .tag {
+  background: linear-gradient(180deg, rgba(255, 106, 32, 0.95) 0%, rgba(235, 46, 20, 0.8) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.7);
 }
 
 .description {
-  font-size: 0.7rem;
-  padding: 8px 10px;
+  font-size: 12px;
+  padding: 12px;
+  color: #262626;
   line-height: 1.4;
+  max-width: 280px ;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

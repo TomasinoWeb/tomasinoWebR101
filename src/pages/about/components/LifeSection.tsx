@@ -9,13 +9,15 @@ interface LifeSectionProps {
 export function LifeSection({ title, text, children }: LifeSectionProps) {
   return (
     <section className={styles.section}>
-      <div className={styles.header}>
-        <h2>{title}</h2>
-      </div>
-      <div className={styles.content}>
-        <p>{text}</p>
-        {children}
+      <div className={styles.inner}>
+        <div className={styles.header}>
+          <h2>{title}</h2>
         </div>
+        <div className={styles.content}>
+          <p className={styles.subtitle}>{text}</p>
+          {children}
+          </div>
+      </div>
     </section>
   );
 }

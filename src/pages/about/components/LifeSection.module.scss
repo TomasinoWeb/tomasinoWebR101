@@ -2,8 +2,13 @@
   width: auto;
   margin-inline: -40px;
   border-radius: 12px;
-  overflow: hidden;
   color: #fff;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.inner {
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .header {
@@ -20,19 +25,18 @@
   }
 }
 
-
-
 .content{
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 48px 100px;
   background: rgba(229, 26, 155, 0.123);
-  p {
-    text-align: center;
-    color: #999999;
-    font-size: 14px;
-  }
+}
+
+.subtitle {
+  text-align: center;
+  color: #999999;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {

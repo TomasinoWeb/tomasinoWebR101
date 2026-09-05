@@ -1,13 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 12px;
+  gap: 35px;
 }
 
 .collage {
-  background: var(--about-neutral-light, #e4e2e6);
-  border-radius: 8px;
+  position: relative;
+  background: #D9DEE5;
+  border-radius: 12px;
+  border: 1px solid #A83268;
   min-height: 220px;
+  overflow: hidden;
 }
 
 .grid {
@@ -20,16 +29,18 @@
 .member {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: start;
+  gap: 8px;
 }
 
 .photo {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 6px;
+  border-radius: 12px;
+  border: 1px solid #A83268;
   overflow: hidden;
-  background: var(--about-neutral-light, #e4e2e6);
+  background: #D9DEE5;
 }
 
 .image {
@@ -37,14 +48,171 @@
 }
 
 .name {
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: 12px;
+  text-decoration: underline;
+  color: #A83268;
   text-align: center;
 }
 
-@media (max-width: 600px) {
+.joinUs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.testimonialRow3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.testimonialRow4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.smallMemberRow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--about-neutral-white, #fff);
+  border: 1px solid #A83268;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.testimonialTag {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-radius: 8px 8 px 0 0;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: rgba(255, 255, 255, 0.5);
+  padding-left: 16px;
+  background: linear-gradient(180deg, #A83268 0%, #713458 100%);
+  box-shadow: inset 0px 2px 3px 0px rgba(255, 255, 255, 0.55);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.testimonialPhoto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #D9DEE5;
+}
+
+.testimonialBody {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+}
+
+.testimonialName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--about-neutral-black, #1e1e1e);
+}
+
+.testimonialPosition {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--about-neutral-black, #1e1e1e);
+}
+
+.testimonialQuote {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--about-neutral-mid, #666);
+}
+
+.banner {
+  width: auto;
+  margin-inline: -100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(180deg, rgba(255, 183, 2, 1) 0%, rgba(196, 126, 8, 0.75) 100%);
+  box-shadow:
+    inset 0px 2px 4px 0px rgba(255, 255, 255, 0.45),
+    0px 3px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.bannerText {
+  color: #fff;
+  font-size: 20px ;
+  font-weight: 700;
+}
+
+.registerButton.registerButton {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  width: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 10px 12px;
+  background: linear-gradient(180deg, rgba(115, 229, 102, 0.95) 0%, rgba(61, 153, 51, 0.7) 100%);
+  box-shadow:
+    inset 0px 2px 2px 0px rgba(255, 255, 255, 0.7),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.registerButton.registerButton:hover {
+  background: linear-gradient(180deg, rgba(85, 190, 72, 0.95) 0%, rgba(45, 120, 38, 0.7) 100%);
+  box-shadow:
+    inset 0px 2px 2px 0px rgba(255, 255, 255, 0.7),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .photo {
+    aspect-ratio: 3.5 / 4;
+  }
+
+  .banner {
+    margin-inline: 0;
+    border-radius: 8px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonialRow3,
+  .testimonialRow4 {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialRow3 .testimonialCard:nth-child(n+2) {
+    display: none;
+  }
+
+  .testimonialRow4 .testimonialCard:nth-child(n+3) {
+    display: none;
+  }
+
+  .smallMemberRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
