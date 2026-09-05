@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./Loading.module.scss";
-import bgWallpaper from "../../../public/assets/loading/bg_wallpaper_transparent.png";
+import bgWallpaper from "../../../public/assets/py18/loading/bg_wallpaper_transparent.png";
 
 export const StickerFeed: React.FC = () => {
   return (

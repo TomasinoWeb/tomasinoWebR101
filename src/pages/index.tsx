@@ -5,10 +5,10 @@ import { AppIconShortcut } from "../components/AppIconShortcut";
 import Footer from "../components/Footer";
 import styles from "./index.module.scss";
 import Image from "next/image";
-import ToraTomwegg from "../../public/assets/tomweggs/ToraTomweggVer2.png";
-import Sleeping from "../../public/assets/tomweggs/Sleeping.png";
-import Confuse from "../../public/assets/tomweggs/Confuse.png";
-import Dancing from "../../public/assets/tomweggs/Dancing.png";
+import ToraTomwegg from "../../public/assets/py18/tomweggs/ToraTomweggVer2.png";
+import Sleeping from "../../public/assets/py18/tomweggs/Sleeping.png";
+import Confuse from "../../public/assets/py18/tomweggs/Confuse.png";
+import Dancing from "../../public/assets/py18/tomweggs/Dancing.png";
 import {
   faUser,
   faCircleQuestion,
