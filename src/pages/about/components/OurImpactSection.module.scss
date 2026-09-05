@@ -64,7 +64,7 @@
   justify-content: center;
   align-items: center;
   gap: 2px;
-  max-height: 110px;
+  min-height: 110px;
 }
 
 .content {
@@ -173,7 +173,7 @@
   .websiteBodyMobile {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     padding: 16px;
     img {
       border-radius: 12px;
@@ -185,7 +185,7 @@
   .websiteIconsRowMobile {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
   }
 
   .websiteIconsFirstTwo {
@@ -193,10 +193,16 @@
     gap: 12px;
   }
 
+   .valueGroup {
+    justify-content: end;
+    gap: 8px;
+  }
+
   .websiteIconsRest {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
   }
 
 
