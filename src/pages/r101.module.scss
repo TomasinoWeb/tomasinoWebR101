@@ -18,9 +18,9 @@
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  font-size: 20px;
-  font-weight: 700;
-  font-family: 'Inter', sans-serif;
+  font-size: var(--type-header);
+  font-weight: var(--type-weight-bold);
+  font-family: var(--font-ui);
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -46,6 +46,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  font-family: var(--font-ui);
 }
 
 /* Card Header Bar */
@@ -58,8 +59,9 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
+  font-family: var(--font-ui);
+  font-size: var(--type-r101-h1);
+  font-weight: var(--type-weight-bold);
   letter-spacing: 0.32px;
 }
 
@@ -87,14 +89,16 @@
       background: transparent;
       border-radius: 5px;
       color: #4d4d4d;
-      font-size: 11px;
-      font-weight: 700;
+      font-family: var(--font-ui);
+      font-size: var(--type-r101-h2);
+      font-weight: var(--type-weight-regular);
       cursor: pointer;
       transition: all 0.2s ease;
 
       &.activeTab {
         background: linear-gradient(180deg, #a83268 0%, #713458 100%);
         color: #ffffff;
+        font-weight: var(--type-weight-bold);
         box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
       }
     }
@@ -121,15 +125,17 @@
 
   .bannerTitle {
     color: #b5124f;
-    font-size: 12px;
-    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: var(--type-r101-h3);
+    font-weight: var(--type-weight-bold);
     text-transform: uppercase;
   }
 
   .bannerDesc {
     color: #1f1f24;
-    font-size: 11px;
-    font-weight: 400;
+    font-family: var(--font-ui);
+    font-size: var(--type-body);
+    font-weight: var(--type-weight-regular);
     line-height: 1.5;
     text-align: justify;
   }
@@ -140,8 +146,9 @@
     border-radius: 16px;
     padding: 8px 16px;
     color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: var(--type-btn-cta);
+    font-weight: var(--type-weight-bold);
     cursor: pointer;
     align-self: flex-start;
     transition: opacity 0.2s ease;
@@ -178,21 +185,24 @@
 
       .itemIndex {
         color: #b5124f;
-        font-size: 14px;
-        font-weight: 700;
+        font-family: var(--font-ui);
+        font-size: var(--type-r101-h3);
+        font-weight: var(--type-weight-bold);
       }
 
       .itemTitle {
         color: #1f1f24;
-        font-size: 14px;
-        font-weight: 700;
+        font-family: var(--font-ui);
+        font-size: var(--type-r101-h3);
+        font-weight: var(--type-weight-bold);
       }
     }
 
     .itemDesc {
       color: #808594;
-      font-size: 12px;
-      font-weight: 400;
+      font-family: var(--font-ui);
+      font-size: var(--type-body);
+      font-weight: var(--type-weight-regular);
     }
   }
 
@@ -203,8 +213,9 @@
     border-radius: 6px;
     padding: 6px 12px;
     color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: var(--type-btn-cta);
+    font-weight: var(--type-weight-bold);
     cursor: pointer;
     white-space: nowrap;
 
@@ -219,12 +230,13 @@
     border-radius: 6px;
     padding: 4px 10px;
     color: #358b16;
-    font-size: 10px;
-    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: var(--type-btn-cta);
+    font-weight: var(--type-weight-bold);
   }
 }
 
-/* Footer */
+/* Unused local footer (page uses the layout footer) */
 .footer {
   width: 100%;
   background-color: #ffffff;
@@ -239,17 +251,18 @@
     align-items: center;
     gap: 24px;
     color: #1f1f24;
-    font-size: 12px;
+    font-family: var(--font-ui);
+    font-size: var(--type-footer);
 
     .brand {
-      font-weight: 700;
+      font-weight: var(--type-weight-bold);
       letter-spacing: 0.24px;
     }
 
     a {
       color: #1f1f24;
       text-decoration: none;
-      font-weight: 400;
+      font-weight: var(--type-weight-regular);
       letter-spacing: 0.24px;
 
       &:hover {
@@ -290,8 +303,9 @@
     gap: 4px;
     cursor: pointer;
     color: #a1a1a1;
-    font-size: 11px;
-    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: var(--type-nav);
+    font-weight: var(--type-weight-regular);
     transition: all 0.2s ease;
 
     .iconBox {
@@ -306,7 +320,7 @@
       border-color: #a83268;
       box-shadow: inset 0px 0px 15px rgba(198, 155, 61, 0.3);
       color: #f1d6e2;
-      font-weight: 700;
+      font-weight: var(--type-weight-semibold);
 
       .iconBox {
         background-color: #f1d6e2;

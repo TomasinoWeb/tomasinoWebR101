@@ -4,14 +4,19 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  min-width: 0;
 }
 
+/* The cell is (column width + caption block) tall and the caption block is a
+   fixed height, so the card resolves to exactly the column width. In the side
+   columns that column is 2 icons wide, which makes the card a true square. */
 .card {
   position: relative;
   width: 100%;
-  flex: 1; /* Fills remaining height within the grid cell container */
+  flex: 1 1 auto;
+  min-height: 0;
   background-color: #dce0ec;
-  border-radius: 32px;
+  border-radius: clamp(14px, calc(var(--app-unit, 110px) * 0.26), 44px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
@@ -36,16 +41,18 @@
 }
 
 .caption {
-  margin-top: 12px;
-  font-family: "Inter", "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--caption-h, 30px);
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+  line-height: 1;
+  font-weight: var(--type-weight-bold);
   color: #1e1e1e;
   text-align: center;
   letter-spacing: -0.2px;
-
-  @media screen and (max-width: 850px) {
-    font-size: 12px;
-    margin-top: 8px;
-  }
+  white-space: nowrap;
 }

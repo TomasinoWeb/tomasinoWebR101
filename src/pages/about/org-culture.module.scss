@@ -48,31 +48,24 @@
   padding: 32px 40px;
 
   .pageTitle {
-    color: var(--neutral-white, #fbf9f4);
+    color: var(--neutral-black, #1e1e1e);
     text-align: center;
-    text-shadow: -3px 5px 0 #1e1e1e;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: var(--neutral-black, #1e1e1e);
-    font-family: Snoopy;
-    font-size: var(--font-sizes-hero-title, 96px);
+    font-family: var(--font-ui);
+    font-size: var(--type-h1-faq);
     font-style: normal;
-    font-weight: 400;
-    letter-spacing: -2px;
-    line-height: normal;
-
-    @media screen and (max-width: 1000px) {
-      -webkit-text-stroke-width: 2px;
-    }
+    font-weight: var(--type-weight-bold);
+    letter-spacing: -0.4px;
+    line-height: 1.1;
   }
 
   .pageDescription {
     width: clamp(330px, 60vw, 620px);
     color: #393939;
     text-align: center;
-    font-family: "Helvetica Neue";
-    font-size: var(--font-sizes-base, 20px);
+    font-family: var(--font-ui);
+    font-size: var(--type-body);
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--type-weight-regular);
     margin-top: 10px;
     line-height: 1.3em;
     letter-spacing: -0.4px;
@@ -96,11 +89,11 @@
 
   .sectionTitle {
     color: var(--neutral-black, #1e1e1e);
-    font-family: Snoopy;
-    font-size: var(--font-sizes-main-title, 64px);
-    font-weight: 400;
-    line-height: 1em;
-    letter-spacing: -1.408px;
+    font-family: var(--font-ui);
+    font-size: var(--type-about-life-h1);
+    font-weight: var(--type-weight-bold);
+    line-height: 1.1;
+    letter-spacing: -0.4px;
     text-transform: uppercase;
 
     width: 100%;
@@ -120,16 +113,17 @@
 
       .statValue {
         color: var(--neutral-black);
-        font-family: Snoopy;
-        font-size: var(--font-sizes-h2, 48px);
-        letter-spacing: -1.056px;
+        font-family: var(--font-ui);
+        font-size: var(--type-profile-stat);
+        font-weight: var(--type-weight-regular);
+        letter-spacing: -0.2px;
       }
       .statLabel {
         color: var(--neutral-black, #1e1e1e);
-        font-family: "Helvetica Neue";
-        font-size: var(--font-sizes-base, 20px);
-        font-weight: 400; /* This seems to be bugged? */
-        letter-spacing: -0.44px;
+        font-family: var(--font-ui);
+        font-size: var(--type-profile-body);
+        font-weight: var(--type-weight-regular);
+        letter-spacing: -0.2px;
       }
     }
 
@@ -368,11 +362,12 @@
       .right {
         flex-grow: 1;
         h1 {
-          font-family: Snoopy;
-          font-size: clamp(48px, 4vw, var(--font-sizes-main-title, 64px));
+          font-family: var(--font-ui);
+          font-size: var(--type-about-life-h1);
+          font-weight: var(--type-weight-bold);
           display: -webkit-box;
-          letter-spacing: -3px;
-          line-height: 0.8em;
+          letter-spacing: -0.4px;
+          line-height: 1.1;
         }
 
         .rail {
@@ -400,11 +395,12 @@
 
         .mobile {
           display: block;
-          font-family: Snoopy;
-          font-size: 36px;
+          font-family: var(--font-ui);
+          font-size: var(--type-about-life-h1);
+          font-weight: var(--type-weight-bold);
           display: -webkit-box;
-          letter-spacing: -3px;
-          line-height: 0.8em;
+          letter-spacing: -0.4px;
+          line-height: 1.1;
         }
 
         .right {
@@ -509,7 +505,9 @@
           -webkit-box-orient: vertical; /* Ensures the box model is vertical */
           line-clamp: 2; /* Standard property for future compatibility */
           line-height: 1em;
-          font-size: clamp(20px, 1.8vw, var(--font-sizes-p-lead, 24px));
+          font-size: var(--type-about-life-h2);
+          font-family: var(--font-ui);
+          font-weight: var(--type-weight-bold);
 
           width: 100%;
           overflow: hidden;
@@ -517,10 +515,8 @@
 
           color: var(--neutral-black, #1e1e1e);
           text-align: center;
-          font-family: "Groundnut", "GroundnutTW";
-
-          font-style: normal;
-          font-weight: 400;
+          font-family: var(--font-ui);
+          font-weight: var(--type-weight-bold);
 
           letter-spacing: -0.528px;
         }
@@ -530,9 +526,9 @@
         margin-top: var(--title-height);
 
         color: var(--neutral-black, #1e1e1e);
-        font-family: "Helvetica Neue";
-        font-size: var(--font-sizes-secondary-base, 16px);
-        font-weight: 400;
+        font-family: var(--font-ui);
+        font-size: var(--type-body);
+        font-weight: var(--type-weight-regular);
         letter-spacing: -0.352px;
       }
     }
