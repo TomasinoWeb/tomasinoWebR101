@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./Loading.module.scss";
-import loadingMascot from "../../../public/assets/loading/loading_icon.png";
+import loadingMascot from "../../../public/assets/py18/loading/loading_icon.png";
 
 interface LoadingStickerProps {
   progress?: number;

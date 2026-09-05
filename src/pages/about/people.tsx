@@ -2,17 +2,17 @@ import QuoteBlock from "../../components/QuoteBlock";
 import { createPublicPage } from "../../layouts/public/frontend";
 import { createPublicStaticProps } from "../../layouts/public/static";
 import styles from "./people.module.scss";
-import Left from "../../../public/assets/about/the-people/Left.png";
-import Center from "../../../public/assets/about/the-people/Center.png";
-import Right from "../../../public/assets/about/the-people/Right.png";
+import Left from "../../../public/assets/py18/about/the-people/Left.png";
+import Center from "../../../public/assets/py18/about/the-people/Center.png";
+import Right from "../../../public/assets/py18/about/the-people/Right.png";
 import Image from "next/image";
 import Link from "next/link";
-import ThomScoreLogo from "../../../public/assets/about/org-culture/thomscore.png";
-import LamonaLogo from "../../../public/assets/about/org-culture/lamona.png";
-import Draft143Logo from "../../../public/assets/about/org-culture/draft143.png";
-import MWRLogo from "../../../public/assets/about/org-culture/tw.png";
-import comicImage from "../../../public/assets/about/org-culture/test.png";
-import comicDots from "../../../public/assets/about/org-culture/dots.png";
+import ThomScoreLogo from "../../../public/assets/py18/about/org-culture/thomscore.png";
+import LamonaLogo from "../../../public/assets/py18/about/org-culture/lamona.png";
+import Draft143Logo from "../../../public/assets/py18/about/org-culture/draft143.png";
+import MWRLogo from "../../../public/assets/py18/about/org-culture/tw.png";
+import comicImage from "../../../public/assets/py18/about/org-culture/test.png";
+import comicDots from "../../../public/assets/py18/about/org-culture/dots.png";
 import { HoverableImageFade } from "../../components/HoverableImageFade";
 import { useState } from "react";
 import { Button } from "../../components/Button";
@@ -25,91 +25,91 @@ const coreMembers = [
   {
     name: "Charisse Suni",
     position: "President",
-    image: "/assets/about/the-people/core/p.png",
+    image: "/assets/py18/about/the-people/core/p.png",
   },
   {
     name: "Jessica Siega",
     position: "Executive Secretary",
-    image: "/assets/about/the-people/core/sec.png",
+    image: "/assets/py18/about/the-people/core/sec.png",
   },
   {
     name: "Florian Venturina",
     position: "VP for Finance",
-    image: "/assets/about/the-people/core/fin.png",
+    image: "/assets/py18/about/the-people/core/fin.png",
   },
   {
     name: "Andrea Figarola",
     position: "VP for Human Resources",
-    image: "/assets/about/the-people/core/hr.png",
+    image: "/assets/py18/about/the-people/core/hr.png",
   },
   {
     name: "Paula Martinez",
     position: "VP for Community Development",
-    image: "/assets/about/the-people/core/commdev.png",
+    image: "/assets/py18/about/the-people/core/commdev.png",
   },
   {
     name: "Liana Ortega",
     position: "Executive Editor",
-    image: "/assets/about/the-people/core/execed.png",
+    image: "/assets/py18/about/the-people/core/execed.png",
   },
   {
     name: "Elisse Arzadon",
     position: "Managing Editor",
-    image: "/assets/about/the-people/core/maned.png",
+    image: "/assets/py18/about/the-people/core/maned.png",
   },
   {
     name: "Joaquin Balolong",
     position: "Chief Photographer",
-    image: "/assets/about/the-people/core/cp.png",
+    image: "/assets/py18/about/the-people/core/cp.png",
   },
   {
     name: "Shuhei De Belen",
     position: "Asst. Chief Photographer",
-    image: "/assets/about/the-people/core/acp.png",
+    image: "/assets/py18/about/the-people/core/acp.png",
   },
   {
     name: "Candice Villasis",
     position: "Chief Videographer",
-    image: "/assets/about/the-people/core/cv.png",
+    image: "/assets/py18/about/the-people/core/cv.png",
   },
   {
     name: "James Romero",
     position: "Asst. Chief Videographer",
-    image: "/assets/about/the-people/core/acv.png",
+    image: "/assets/py18/about/the-people/core/acv.png",
   },
   {
     name: "Rayven Laurel",
     position: "Creative Director",
-    image: "/assets/about/the-people/core/cd.png",
+    image: "/assets/py18/about/the-people/core/cd.png",
   },
   {
     name: "Danielle Mantes",
     position: "Asst. Creative Director",
-    image: "/assets/about/the-people/core/acd.png",
+    image: "/assets/py18/about/the-people/core/acd.png",
   },
   {
     name: "Lance Gulinao",
     position: "Chief Technology Officer",
-    image: "/assets/about/the-people/core/cto.png",
+    image: "/assets/py18/about/the-people/core/cto.png",
   },
   {
     name: "Zeandarra Giva",
     position: "Asst. Chief Technology Officer",
-    image: "/assets/about/the-people/core/acto.png",
+    image: "/assets/py18/about/the-people/core/acto.png",
   },
 ];
 
 const pictures = [
-  "/assets/featuredMembers/member-frame-0.png",
-  "/assets/featuredMembers/member-frame-3.png",
-  "/assets/featuredMembers/member-frame-17.png",
-  "/assets/featuredMembers/member-frame-16.png",
-  "/assets/featuredMembers/member-frame-4.png",
-  "/assets/featuredMembers/member-frame-5.png",
-  "/assets/featuredMembers/member-frame-15.png",
-  "/assets/featuredMembers/member-frame-1.png",
-  "/assets/featuredMembers/member-frame-14.png",
-  "/assets/featuredMembers/member-frame-13.png",
+  "/assets/py18/featuredMembers/member-frame-0.png",
+  "/assets/py18/featuredMembers/member-frame-3.png",
+  "/assets/py18/featuredMembers/member-frame-17.png",
+  "/assets/py18/featuredMembers/member-frame-16.png",
+  "/assets/py18/featuredMembers/member-frame-4.png",
+  "/assets/py18/featuredMembers/member-frame-5.png",
+  "/assets/py18/featuredMembers/member-frame-15.png",
+  "/assets/py18/featuredMembers/member-frame-1.png",
+  "/assets/py18/featuredMembers/member-frame-14.png",
+  "/assets/py18/featuredMembers/member-frame-13.png",
 ];
 
 export default createPublicPage<PageProps>(() => {

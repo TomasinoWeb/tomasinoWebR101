@@ -1,10 +1,10 @@
-import Dayo from "../../public/assets/testimonials/dayo.png";
-import Lagman from "../../public/assets/testimonials/lagman.png";
-import Giva from "../../public/assets/testimonials/giva.png";
-import Bunyi from "../../public/assets/testimonials/bunyi.png";
-import Renomeron from "../../public/assets/testimonials/renomeron.png";
-import Suni from "../../public/assets/testimonials/suni.png";
-import Gulinao from "../../public/assets/testimonials/gulinao.png";
+import Dayo from "../../public/assets/py18/testimonials/dayo.png";
+import Lagman from "../../public/assets/py18/testimonials/lagman.png";
+import Giva from "../../public/assets/py18/testimonials/giva.png";
+import Bunyi from "../../public/assets/py18/testimonials/bunyi.png";
+import Renomeron from "../../public/assets/py18/testimonials/renomeron.png";
+import Suni from "../../public/assets/py18/testimonials/suni.png";
+import Gulinao from "../../public/assets/py18/testimonials/gulinao.png";
 import { StaticImageData } from "next/image";
 
 export type Testimonial = { imageSrc: StaticImageData; quoteText: string; authorName: string; authorDetails: string };

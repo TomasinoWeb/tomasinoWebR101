@@ -7,24 +7,24 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 
 // other websites
-import ThomScoreLogo from "../../../public/assets/about/org-culture/thomscore.png";
-import LamonaLogo from "../../../public/assets/about/org-culture/lamona.png";
-import Draft143Logo from "../../../public/assets/about/org-culture/draft143.png";
-import MWRLogo from "../../../public/assets/about/org-culture/tw.png";
+import ThomScoreLogo from "../../../public/assets/py18/about/org-culture/thomscore.png";
+import LamonaLogo from "../../../public/assets/py18/about/org-culture/lamona.png";
+import Draft143Logo from "../../../public/assets/py18/about/org-culture/draft143.png";
+import MWRLogo from "../../../public/assets/py18/about/org-culture/tw.png";
 
-import ImageInteractive from "../../../public/assets/about/org-culture/actWork/interactive.png";
-import ImageMentor from "../../../public/assets/about/org-culture/actWork/mentor.png";
-import ImageOnsite from "../../../public/assets/about/org-culture/actWork/onsite.png";
-import ImageVirtual from "../../../public/assets/about/org-culture/actWork/virtual.png";
+import ImageInteractive from "../../../public/assets/py18/about/org-culture/actWork/interactive.png";
+import ImageMentor from "../../../public/assets/py18/about/org-culture/actWork/mentor.png";
+import ImageOnsite from "../../../public/assets/py18/about/org-culture/actWork/onsite.png";
+import ImageVirtual from "../../../public/assets/py18/about/org-culture/actWork/virtual.png";
 
-import ImageDiscord from "../../../public/assets/about/org-culture/fun/dc.png";
-import ImageGeneralAssembly from "../../../public/assets/about/org-culture/fun/genAssembly.jpg";
-import ImagePostCoverage from "../../../public/assets/about/org-culture/fun/postCoverageHangouts.png";
-import ImagePPT from "../../../public/assets/about/org-culture/fun/pptParties.png";
+import ImageDiscord from "../../../public/assets/py18/about/org-culture/fun/dc.png";
+import ImageGeneralAssembly from "../../../public/assets/py18/about/org-culture/fun/genAssembly.jpg";
+import ImagePostCoverage from "../../../public/assets/py18/about/org-culture/fun/postCoverageHangouts.png";
+import ImagePPT from "../../../public/assets/py18/about/org-culture/fun/pptParties.png";
 
 // for stickercard
-import comicImage from "../../../public/assets/about/org-culture/test.png";
-import comicDots from "../../../public/assets/about/org-culture/dots.png";
+import comicImage from "../../../public/assets/py18/about/org-culture/test.png";
+import comicDots from "../../../public/assets/py18/about/org-culture/dots.png";
 
 /* Other component files */
 import SpeechBubble from "./components/SpeechBubble";
@@ -36,21 +36,21 @@ import { Button } from "../../components/Button";
 import QuoteBlock from "../../components/QuoteBlock";
 import { createPublicStaticProps } from "../../layouts/public/static";
 import { testimonials } from "../../data/testimonials";
-import ToraTomwegg from "../../../public/assets/tomweggs/ToraTomweggVer1.png";
-import Dancing from "../../../public/assets/tomweggs/Dancing.png";
-import Love from "../../../public/assets/tomweggs/Love.png";
-import Tongue from "../../../public/assets/tomweggs/Tongue.png";
+import ToraTomwegg from "../../../public/assets/py18/tomweggs/ToraTomweggVer1.png";
+import Dancing from "../../../public/assets/py18/tomweggs/Dancing.png";
+import Love from "../../../public/assets/py18/tomweggs/Love.png";
+import Tongue from "../../../public/assets/py18/tomweggs/Tongue.png";
 import { FadeIn } from "../../components/FadeIn";
 
 const stickerCardImages = [
-  "/assets/featuredMembers/member-frame-2.png",
-  "/assets/featuredMembers/member-frame-6.png",
-  "/assets/featuredMembers/member-frame-7.png",
-  "/assets/featuredMembers/member-frame-11.png",
-  "/assets/featuredMembers/member-frame-9.png",
-  "/assets/featuredMembers/member-frame-10.png",
-  "/assets/featuredMembers/member-frame-8.png",
-  "/assets/featuredMembers/member-frame-12.png",
+  "/assets/py18/featuredMembers/member-frame-2.png",
+  "/assets/py18/featuredMembers/member-frame-6.png",
+  "/assets/py18/featuredMembers/member-frame-7.png",
+  "/assets/py18/featuredMembers/member-frame-11.png",
+  "/assets/py18/featuredMembers/member-frame-9.png",
+  "/assets/py18/featuredMembers/member-frame-10.png",
+  "/assets/py18/featuredMembers/member-frame-8.png",
+  "/assets/py18/featuredMembers/member-frame-12.png",
 ];
 interface PageProps {}
 

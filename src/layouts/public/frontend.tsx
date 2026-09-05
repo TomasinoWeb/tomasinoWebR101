@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 import Footer from "../../components/Footer";
 import { MobileNavbar, Navbar } from "../../components/Navbar";
 import Image from "next/image";
-import PlantTomasinoWeb from "../../../public/assets/logos/WORDMARK_Ver1.png";
+import PlantTomasinoWeb from "../../../public/assets/py18/logos/WORDMARK_Ver1.png";
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
 import Stairs from "../../components/Stairs";

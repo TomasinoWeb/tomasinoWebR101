@@ -3,7 +3,7 @@ import styles from "./QuoteBlock.module.scss";
 import { Testimonial } from "../data/testimonials";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
-import SVG from "../../public/assets/faq/pencil-icon-vector 1.svg";
+import SVG from "../../public/assets/py18/faq/pencil-icon-vector 1.svg";
 
 interface QuoteBlockProps {
   testimonial: Testimonial;

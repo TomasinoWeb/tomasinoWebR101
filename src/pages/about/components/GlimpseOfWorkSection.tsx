@@ -10,28 +10,28 @@ const items = [
   {
     label: "On-Site Coverage",
     description: "Live event documentation — photos, write-ups, and real-time social posting.",
-    image: "/assets/about/org-culture/actWork/onsite.png",
+    image: "/assets/py18/about/org-culture/actWork/onsite.png",
     color: "#FFB702",
     useCssBackground: true,
   },
   {
     label: "Virtual Campaigns",
     description: "Digital-first productions reaching thousands across Facebook, Twitter and beyond.",
-    image: "/assets/about/org-culture/actWork/virtual.png",
+    image: "/assets/py18/about/org-culture/actWork/virtual.png",
     color: "#EA4A68",
     useCssBackground: true,
   },
   {
     label: "Mentorship Sessions",
     description: "Knowledge-sharing and workshops that level up every member of the org.",
-    image: "/assets/about/org-culture/actWork/mentor.png",
+    image: "/assets/py18/about/org-culture/actWork/mentor.png",
     color: "#FF6A20",
     useCssBackground: true,
   },
   {
     label: "Interactive Meetings",
     description: "Collaborative sessions where ideas are born, projects planned, and fun is had.",
-    image: "/assets/about/org-culture/actWork/interactive.png",
+    image: "/assets/py18/about/org-culture/actWork/interactive.png",
     color: "#3aaa9a",
   },
 ];

@@ -9,12 +9,12 @@ const collageImage: string | null = null;
 // Reused from the old about/people.tsx core-team roster — same real photos, just presented
 // in the new grid layout instead of the old expandable gallery.
 const coreMembers = [
-  { name: "Charisse Suni", position: "President", image: "/assets/about/the-people/core/p.png" },
-  { name: "Jessica Siega", position: "Executive Secretary", image: "/assets/about/the-people/core/sec.png" },
-  { name: "Florian Venturina", position: "VP for Finance", image: "/assets/about/the-people/core/fin.png" },
-  { name: "Andrea Figarola", position: "VP for Human Resources", image: "/assets/about/the-people/core/hr.png" },
-  { name: "Lance Gulinao", position: "Chief Technology Officer", image: "/assets/about/the-people/core/cto.png" },
-  { name: "Zeandarra Giva", position: "Asst. Chief Technology Officer", image: "/assets/about/the-people/core/acto.png" },
+  { name: "Charisse Suni", position: "President", image: "/assets/py18/about/the-people/core/p.png" },
+  { name: "Jessica Siega", position: "Executive Secretary", image: "/assets/py18/about/the-people/core/sec.png" },
+  { name: "Florian Venturina", position: "VP for Finance", image: "/assets/py18/about/the-people/core/fin.png" },
+  { name: "Andrea Figarola", position: "VP for Human Resources", image: "/assets/py18/about/the-people/core/hr.png" },
+  { name: "Lance Gulinao", position: "Chief Technology Officer", image: "/assets/py18/about/the-people/core/cto.png" },
+  { name: "Zeandarra Giva", position: "Asst. Chief Technology Officer", image: "/assets/py18/about/the-people/core/acto.png" },
 ];
 
 type Testimonial = {
