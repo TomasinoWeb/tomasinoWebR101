@@ -12,7 +12,7 @@ import Stairs from "../../components/Stairs";
 import { GlobalNavigator } from "../../components/GlobalNavigator";
 
 type PublicLayoutViewProps = {
-  internalProps: PublicLayoutOptions["ServerSideLayoutProps"];
+  internalProps?: PublicLayoutOptions["ServerSideLayoutProps"];
   layoutProps: PublicLayoutOptions["ClientSideLayoutProps"] & { children: ReactNode };
 };
 
@@ -79,7 +79,7 @@ function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps)
           </Stairs>
         </AnimatePresence>
 
-        <GlobalNavigator containsResults={internalProps.resultsAreOut} />
+        <GlobalNavigator containsResults={internalProps?.resultsAreOut} />
 
         {layoutProps.footer !== "disabled" && (
           <div className={styles.footer}>

@@ -1,11 +1,6 @@
 import React from "react";
-import Image from "next/image";
-import { Button } from "../components/Button";
 import { createPublicPage } from "../layouts/public/frontend";
 import styles from "../components/error_components/error.module.scss";
-import { createPublicStaticProps } from "../layouts/public/static";
-import TomWegg from "../../public/assets/py18/tomweggs/Idk.png";
-import SpeechBubble from "./about/components/SpeechBubble";
 import Window from "../components/error_components/Window";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,5 +38,3 @@ export default createPublicPage<Props>(() => {
     ),
   };
 });
-
-export const getStaticProps = createPublicStaticProps<{}>({});
