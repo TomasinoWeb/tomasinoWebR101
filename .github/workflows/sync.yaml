@@ -1,0 +1,38 @@
+
+# NOTE: Do not uncomment this file unless needed or approved by the CTO/ACTO.
+# This will be used for syncing the organization repo to webtech's deployment repo.
+
+# name: Sync to Deployment Repo
+
+# on:
+#   push:
+#     branches: [main]
+
+# jobs:
+#   sync:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v4
+#         with: 
+#           fetch-depth: 0
+#           persist-credentials: false
+
+#       - name: Configure git identity
+#         run: |
+#           git config user.name "tw-webtech"
+#           git config user.email "tw.webtech.services@gmail.com"
+      
+#       - name: Push to Deployment Repo
+#         run: |
+#           git remote add mirror https://x-access-token:${{ secrets.TW_SYNC_PAT }}@github.com/tw-webtech/r101-website.git
+#           git push mirror main --force
+
+#       - name: Deploy to Vercel
+#         env:
+#           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+#           VERCEL_ORG_ID: ${{ secrets.VERCEL_TEAM_ID }}
+#           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+#         run: |
+#           rm -rf .git
+#           npx vercel deploy --prod --yes --token=$VERCEL_TOKEN
