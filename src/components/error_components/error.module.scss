@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap");
 .container {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
@@ -42,11 +42,32 @@
   font-weight: 700;
 }
 
+.crownIcon {
+  width: 88px;
+  height: 48px;
+}
+
 // 3. Keep Calm 
 .errorEmblem {
-  padding: 1em;
-  font-size: 3rem;
-  font-weight: 700;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding-top: 1.5rem;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 70px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: 1.5px;
+  line-height: 1;
+
+  @media (max-width: 480px) {
+    font-size: 40px;
+  }
 }
 
 // 4. Error message
@@ -54,6 +75,7 @@
   max-width: 55ch;
   color: #4D4D4D;
   padding: 1em;
+  text-align: center;
 }
 
 .errorSubheader {
