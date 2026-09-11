@@ -1,0 +1,376 @@
+@font-face {
+  font-family: Snoopy;
+  src: url("/fonts/snoopy/Snoopy.ttf");
+}
+@font-face {
+  font-family: "Groundnut";
+  src: url("/fonts/groundnut/Groundnut.otf");
+}
+@font-face {
+  font-family: "GroundnutTW";
+  src: url("/fonts/groundnut/GroundnutTW-Regular.ttf");
+  size-adjust: 125%;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 100;
+  src: url("/fonts/helvetica_neue/HelveticaNeueUltraLight.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 100;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueUltraLightItalic.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  src: url("/fonts/helvetica_neue/HelveticaNeueThin.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueThinItalic.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 300;
+  src: url("/fonts/helvetica_neue/HelveticaNeueLight.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 300;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueLightItalic.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 400;
+  src: url("/fonts/helvetica_neue/HelveticaNeueRoman.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueItalic.ttf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  src: url("/fonts/helvetica_neue/HelveticaNeueMedium.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueMediumItalic.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 700;
+  src: url("/fonts/helvetica_neue/HelveticaNeueBold.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueBoldItalic.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 800;
+  src: url("/fonts/helvetica_neue/HelveticaNeueHeavy.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 800;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueHeavyItalic.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 900;
+  src: url("/fonts/helvetica_neue/HelveticaNeueBlack.otf");
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 900;
+  font-style: italic;
+  src: url("/fonts/helvetica_neue/HelveticaNeueBlackItalic.otf");
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: var(--font-ui);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Typography */
+:root {
+  /* Desktop */
+  --font-sizes-caption-label: 14px;
+  --font-sizes-secondary-base: 16px;
+  --font-sizes-base: 20px;
+  --font-sizes-p-lead: 24px;
+  --font-sizes-h3: 36px;
+  --font-sizes-h2: 48px;
+  --font-sizes-main-title: 64px;
+  --font-sizes-hero-title: 96px;
+  /* UI type scale (Inter / SF Pro). Desktop values; mobile overrides below. */
+  --font-ui: "Inter", "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --type-header: 20px;
+  --type-h1-faq: 32px;
+  --type-footer: 12px;
+  --type-nav: 11px;
+  --type-section-tab: 14px;
+  --type-profile-body: 14px;
+  --type-profile-stat: 16px;
+  --type-r101-h1: 16px;
+  --type-r101-h2: 14px;
+  --type-r101-h3: 14px;
+  --type-about-life-h1: 28px;
+  --type-about-life-h2: 14px;
+  --type-btn-cta: 10px;
+  --type-btn-register: 14px;
+  --type-body: 12px;
+  --type-weight-regular: 400;
+  --type-weight-semibold: 600;
+  --type-weight-bold: 700;
+  --header-height: 50px;
+  --footer-height: 53.3333px;
+  /* Height of the fixed bottom tab bar. Pages that size themselves against the
+     viewport subtract this, so it must stay in sync with GlobalNavigator. */
+  --nav-h: 70px;
+}
+
+@media screen and (min-width: 1920px) {
+  :root {
+    --nav-h: 85px;
+  }
+}
+@media screen and (min-width: 2400px) {
+  :root {
+    --nav-h: 100px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  :root {
+    --nav-h: 62px;
+  }
+}
+@media screen and (max-width: 850px) {
+  :root {
+    --header-height: 50px;
+    --nav-h: 54px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  :root {
+    --footer-height: 212.5px;
+  }
+}
+@media screen and (max-width: 850px) {
+  :root {
+    --font-sizes-caption-label: 12px;
+    --font-sizes-secondary-base: 14px;
+    --font-sizes-base: 16px;
+    --font-sizes-p-lead: 20px;
+    --font-sizes-h3: 24px;
+    --font-sizes-h2: 36px;
+    --font-sizes-main-title: 48px;
+    --font-sizes-hero-title: 64px;
+    --type-header: 16px;
+    --type-h1-faq: 28px;
+    --type-footer: 8px;
+    --type-nav: 8px;
+    --type-section-tab: 10px;
+    --type-profile-body: 10px;
+    --type-profile-stat: 14px;
+    --type-r101-h1: 14px;
+    --type-r101-h2: 12px;
+    --type-r101-h3: 12px;
+    --type-about-life-h1: 24px;
+    --type-about-life-h2: 12px;
+    --type-btn-cta: 8px;
+    --type-btn-register: 12px;
+    --type-body: 8px;
+  }
+}
+/* Color Palette */
+:root {
+  --neutral-black: #1e1e1e;
+  --neutral-cream: #fcebd1;
+  --neutral-gray: #cecccc;
+  --neutral-dark-gray: #343332;
+  --neutral-light-gray: #dddddd;
+  --neutral-white: #fbf9f4;
+  --primary-blue: #60b0e3;
+  --primary-blue-green: #3aaa9a;
+  --primary-blue-violet: #728cc7;
+  --primary-green: #8ec21f;
+  --primary-lightbrown-yellow: #fac170;
+  --primary-red-orange: #e95412;
+  --primary-yellow: #ffd400;
+  --secondary-dark-cream: #d9b39f;
+  --secondary-light-blue: #bfebff;
+  --secondary-light-yellow: #fff1aa;
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --footer-height: 192px;
+  }
+}
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20000;
+  opacity: 1;
+  transition: 400ms ease-in-out;
+}
+
+.application-loading-container {
+  z-index: 30000;
+  background: #fbf9f4;
+}
+
+.has-loaded {
+  opacity: 0;
+  transition: 400ms ease-in-out;
+  pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}

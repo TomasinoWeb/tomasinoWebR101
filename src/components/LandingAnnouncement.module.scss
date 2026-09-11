@@ -1,0 +1,105 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 21000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(17, 12, 24, 0.72);
+  animation: announcementFadeIn 450ms ease-out both;
+}
+
+.dialog {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(88vw, 920px);
+  max-height: calc(100dvh - 96px);
+  animation: announcementScaleIn 450ms ease-out both;
+}
+
+.posterFrame {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(88vw, 920px);
+  max-height: calc(100dvh - 96px);
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(35%, -35%);
+  z-index: 1;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #b5124f;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 30px;
+  line-height: 1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+
+  &:hover,
+  &:focus-visible {
+    background: #713458;
+    transform: translate(35%, -35%) scale(1.06);
+  }
+}
+
+@keyframes announcementFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes announcementScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .overlay {
+    padding: 18px;
+  }
+
+  .dialog,
+  .posterFrame,
+  .image {
+    max-height: calc(100dvh - 48px);
+  }
+
+  .closeButton {
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    font-size: 25px;
+  }
+}

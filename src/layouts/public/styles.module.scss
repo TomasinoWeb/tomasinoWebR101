@@ -186,3 +186,10 @@
     overflow: hidden;
   }
 }
+
+.nonScrollableWithFooter {
+  .main {
+    height: calc(100dvh - var(--header-height) - var(--footer-height) - var(--nav-h));
+    min-height: 0;
+  }
+}

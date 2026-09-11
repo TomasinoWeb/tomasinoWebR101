@@ -5,10 +5,11 @@ import "../globals.scss";
 import type { AppProps } from "next/app";
 import { NextSeo } from "next-seo";
 import Loading from "../components/Loading";
+import LandingAnnouncement from "../components/LandingAnnouncement";
 
 const metatags = {
   "/": {
-    title: "Planet TomasinoWeb",
+    title: "2016 TomasinoWeb",
     description:
       "Good grief, the applications are open! Be part of TomasinoWeb – UST’s premier digital media organization in journalism, design, photography, videography, and web.",
     tags: "TomasinoWeb, R101, UST, TomasinoWeb application, UST digital media organization",
@@ -67,12 +68,37 @@ const CANONICAL_URL = "https://join.tomasinoweb.org/";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [hasLoaded, setHasLoaded] = useState(false); // set this to false before we launch
+  const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
   const router = useRouter();
+  const isLandingPage = router.pathname === "/";
 
   useEffect(() => {
+    if (!isLandingPage) {
+      setHasLoaded(true);
+      return;
+    }
+
     const id = setTimeout(() => setHasLoaded(true), 2500);
     return () => clearTimeout(id);
-  }, []);
+  }, [isLandingPage]);
+
+  useEffect(() => {
+    if (isLandingPage && hasLoaded) {
+      setIsAnnouncementOpen(true);
+    } else if (!isLandingPage) {
+      setIsAnnouncementOpen(false);
+    }
+  }, [hasLoaded, isLandingPage]);
+
+  useEffect(() => {
+    if (!isLandingPage) {
+      return;
+    }
+
+    const openAnnouncement = () => setIsAnnouncementOpen(true);
+    window.addEventListener("open-landing-announcement", openAnnouncement);
+    return () => window.removeEventListener("open-landing-announcement", openAnnouncement);
+  }, [isLandingPage]);
 
   const details = metatags[router.pathname as keyof typeof metatags] ?? metatags["/"];
   const description = "description" in details ? details.description : metatags["/"].description;
@@ -96,11 +122,17 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
 
-      <div className={`loading-container ${hasLoaded ? "has-loaded" : ""}`}>
-        <Loading />
-      </div>
+      {isLandingPage && (
+        <div className={`loading-container ${hasLoaded ? "has-loaded" : ""}`}>
+          <Loading />
+        </div>
+      )}
 
       <Component {...pageProps} />
+
+      {isLandingPage && isAnnouncementOpen && (
+        <LandingAnnouncement onClose={() => setIsAnnouncementOpen(false)} />
+      )}
     </MotionConfig>
   );
 }

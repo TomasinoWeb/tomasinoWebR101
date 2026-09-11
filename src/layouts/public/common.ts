@@ -8,6 +8,7 @@ export interface PublicLayoutOptions extends GenerateLayoutOptionsImpl {
     dots: "subtle" | "full" | "disabled";
     header: "full_transparent" | "full_regular" | "mini";
     footer: "transparent" | "regular" | "disabled";
+    footerClassName?: string;
     nonScrollable?: boolean;
   };
 

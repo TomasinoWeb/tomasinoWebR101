@@ -7,9 +7,10 @@ import LoadingText from "./loading_components/LoadingText";
 interface LoadingProps {
   progress?: number;
   onComplete?: () => void;
+  variant?: "default" | "application";
 }
 
-const Loading: React.FC<LoadingProps> = ({ progress: externalProgress, onComplete }) => {
+const Loading: React.FC<LoadingProps> = ({ progress: externalProgress, onComplete, variant = "default" }) => {
   const [internalProgress, setInternalProgress] = useState(0);
 
   const currentProgress = externalProgress !== undefined ? externalProgress : internalProgress;
@@ -38,7 +39,7 @@ const Loading: React.FC<LoadingProps> = ({ progress: externalProgress, onComplet
       <StickerFeed />
       <div className={styles.centerContent}>
         <LoadingSticker progress={currentProgress} />
-        <LoadingText progress={currentProgress} />
+        <LoadingText progress={currentProgress} variant={variant} />
       </div>
     </div>
   );

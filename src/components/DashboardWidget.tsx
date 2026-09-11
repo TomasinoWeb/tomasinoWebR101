@@ -6,6 +6,7 @@ interface DashboardWidgetProps {
   aspectRatio?: "square" | "rectangle";
   children?: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
@@ -13,10 +14,22 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
   aspectRatio = "square",
   children,
   className = "",
+  onClick,
 }) => {
   return (
     <div className={`${styles.widgetWrapper} ${className}`}>
-      <div className={`${styles.card} ${styles[aspectRatio]}`}>
+      <div
+        className={`${styles.card} ${styles[aspectRatio]} ${onClick ? styles.clickable : ""}`}
+        onClick={onClick}
+        onKeyDown={(event) => {
+          if (onClick && (event.key === "Enter" || event.key === " ")) {
+            event.preventDefault();
+            onClick();
+          }
+        }}
+        role={onClick ? "button" : undefined}
+        tabIndex={onClick ? 0 : undefined}
+      >
         <div className={styles.contentContainer}>
           {children}
         </div>

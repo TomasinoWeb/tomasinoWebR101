@@ -1,3 +1,20 @@
+@keyframes iconShine {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0 rgba(190, 77, 157, 0));
+    transform: translateY(0) scale(1);
+  }
+
+  45% {
+    filter: brightness(1.8) drop-shadow(0 0 10px rgba(190, 77, 157, 0.95));
+    transform: translateY(-2px) scale(1.12);
+  }
+
+  100% {
+    filter: brightness(1.15) drop-shadow(0 0 6px rgba(190, 77, 157, 0.75));
+    transform: translateY(0) scale(1.04);
+  }
+}
+
 .globalNavigator {
   position: fixed;
   left: 0;
@@ -58,6 +75,17 @@
       }
     }
 
+    &:hover,
+    &:focus-visible {
+      color: #c44f9f;
+      background: linear-gradient(180deg, #33223a 0%, #17121c 100%);
+
+      .icon {
+        color: #c44f9f;
+        animation: iconShine 700ms ease-out both;
+      }
+    }
+
     &.activeNavTab {
       background: linear-gradient(180deg, #713458 0%, #451632 100%);
       border-color: #a83268;
@@ -69,5 +97,14 @@
         filter: drop-shadow(0px 0px 8px #b5124f);
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globalNavigator .navTab:hover .icon,
+  .globalNavigator .navTab:focus-visible .icon {
+    animation: none;
+    filter: drop-shadow(0 0 6px rgba(190, 77, 157, 0.75));
+    transform: none;
   }
 }

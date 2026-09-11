@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import styles from './GlobalNavigator.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faUser, faClipboardList, faComment, faBriefcase, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
+import { ApplicationRedirect, applicationUrl } from './ApplicationRedirect';
 
 export interface NavTabItem {
   id: string;
@@ -21,7 +22,7 @@ const defaultTabs: NavTabItem[] = [
   { id: 'ABOUT', label: 'ABOUT', href: '/about' },
   { id: 'R101', label: 'R101', href: '/r101' },
   { id: 'FAQS', label: 'FAQS', href: '/faqs' },
-  { id: 'APPLY', label: 'APPLY', href: 'https://docs.google.com/forms/d/e/1FAIpQLSfrw5Z8r2ERyq9TR8aDlH9_Uy-A4HqMahIFsSk_GHFLSJ6gwQ/viewform?usp=preview' },
+  { id: 'APPLY', label: 'APPLY', href: applicationUrl },
   { id: 'RESULT', label: 'RESULT', href: '/results' }
 ];
 
@@ -47,6 +48,18 @@ export const GlobalNavigator: React.FC<GlobalNavigatorProps> = ({ tabs = default
     <nav className={styles.globalNavigator}>
       {visibleTabs.map((tab) => {
         const IconComponent = tabIcons[tab.id] || faHouse;
+        if (tab.id === 'APPLY') {
+          return (
+            <ApplicationRedirect
+              key={tab.id}
+              className={`${styles.navTab} ${isTabActive(router.pathname, tab.href) ? styles.activeNavTab : ''}`}
+            >
+              <FontAwesomeIcon icon={IconComponent} className={styles.icon} />
+              <span>{tab.label}</span>
+            </ApplicationRedirect>
+          );
+        }
+
         return (
           <Link
             key={tab.id}

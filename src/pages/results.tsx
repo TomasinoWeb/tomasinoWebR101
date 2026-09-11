@@ -20,6 +20,7 @@ export default createPublicPage<Props>(({ results }) => {
     header: "full_regular",
     footer: "regular",
     dots: "full",
+    nonScrollable: true,
     children: <GoodResultPage results={results} />,
   };
 });

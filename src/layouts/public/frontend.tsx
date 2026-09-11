@@ -51,7 +51,7 @@ function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps)
 
   return (
       <div
-        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : layoutProps.dots === "subtle" ? styles.subtleDots : styles.disabledDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""} ${layoutProps.footer === "disabled" ? styles.disabledFooter : ""} ${layoutProps.nonScrollable ? styles.nonScrollable : ""}`}
+        className={`${styles.root} ${layoutProps.dots === "full" ? styles.fullDots : layoutProps.dots === "subtle" ? styles.subtleDots : styles.disabledDots} ${layoutProps.header !== "full_regular" ? styles.transparentHeader : ""}  ${layoutProps.footer === "transparent" ? styles.transparentFooter : ""} ${layoutProps.header === "mini" ? styles.overlappingMini : ""} ${layoutProps.footer === "disabled" ? styles.disabledFooter : ""} ${layoutProps.nonScrollable ? styles.nonScrollable : ""} ${layoutProps.nonScrollable && layoutProps.footer !== "disabled" ? styles.nonScrollableWithFooter : ""}`}
       >
         <header
           className={
@@ -83,7 +83,7 @@ function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps)
 
         {layoutProps.footer !== "disabled" && (
           <div className={styles.footer}>
-            <Footer />
+            <Footer className={layoutProps.footerClassName} />
           </div>
         )}
       </div>
