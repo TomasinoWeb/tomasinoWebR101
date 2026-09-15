@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faTableCells, faList, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { departments } from "../../../data/departments";
-import { ApplicationRedirect } from "../../../components/ApplicationRedirect";
+import { departments } from "../../data/departments";
+import { ApplicationRedirect } from "../ApplicationRedirect";
 import styles from "./AboutShell.module.scss";
 
 const tabs = [

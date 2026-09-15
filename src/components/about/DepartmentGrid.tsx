@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import { departments } from "../../../data/departments";
+import { departments } from "../../data/departments";
 import { DepartmentPostCard } from "./DepartmentPostCard";
 import { Modal } from "./Modal";
 import styles from "./DepartmentGrid.module.scss";

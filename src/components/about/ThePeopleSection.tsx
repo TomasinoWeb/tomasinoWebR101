@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "../../../components/Button";
+import { Button } from "../Button";
 import styles from "./ThePeopleSection.module.scss";
 
 const collageImage = "/assets/py19/about/core/CORE COLLAGE.png";

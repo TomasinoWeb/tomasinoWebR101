@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { websites } from "../../../data/websites";
+import { websites } from "../../data/websites";
 import styles from "./OurImpactSection.module.scss";
 
 const stats = [

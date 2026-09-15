@@ -1,7 +1,7 @@
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import { PublicLayoutBackend } from "../../layouts/public/static";
-import { AboutShell } from "./components/AboutShell";
-import { DepartmentGrid } from "./components/DepartmentGrid";
+import { AboutShell } from "../../components/about/AboutShell";
+import { DepartmentGrid } from "../../components/about/DepartmentGrid";
 import styles from "./about.module.scss";
 
 interface PageProps {}

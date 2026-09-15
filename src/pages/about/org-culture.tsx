@@ -27,7 +27,7 @@ import comicImage from "../../../public/assets/py18/about/org-culture/test.png";
 import comicDots from "../../../public/assets/py18/about/org-culture/dots.png";
 
 /* Other component files */
-import SpeechBubble from "./components/SpeechBubble";
+import SpeechBubble from "../../components/about/SpeechBubble";
 
 import Link from "next/link";
 import { Button } from "../../components/Button";

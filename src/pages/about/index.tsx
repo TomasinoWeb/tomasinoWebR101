@@ -1,7 +1,7 @@
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import { PublicLayoutBackend } from "../../layouts/public/static";
-import { AboutShell } from "./components/AboutShell";
-import { SocialPostCard } from "./components/SocialPostCard";
+import { AboutShell } from "../../components/about/AboutShell";
+import { SocialPostCard } from "../../components/about/SocialPostCard";
 import styles from "./about.module.scss";
 
 interface PageProps {}

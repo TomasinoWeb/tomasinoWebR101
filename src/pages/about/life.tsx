@@ -1,10 +1,10 @@
 import { PublicLayoutFrontend } from "../../layouts/public/frontend";
 import { PublicLayoutBackend } from "../../layouts/public/static";
-import { AboutShell } from "./components/AboutShell";
-import { LifeSection } from "./components/LifeSection";
-import { OurImpactSection } from "./components/OurImpactSection";
-import { GlimpseOfWorkSection } from "./components/GlimpseOfWorkSection";
-import { ThePeopleSection } from "./components/ThePeopleSection";
+import { AboutShell } from "../../components/about/AboutShell";
+import { LifeSection } from "../../components/about/LifeSection";
+import { OurImpactSection } from "../../components/about/OurImpactSection";
+import { GlimpseOfWorkSection } from "../../components/about/GlimpseOfWorkSection";
+import { ThePeopleSection } from "../../components/about/ThePeopleSection";
 import styles from "./about.module.scss";
 
 interface PageProps {}
