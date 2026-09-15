@@ -15,15 +15,20 @@ export function ImageCarousel({ images, alt, variant = "square" }: ImageCarousel
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
 
+  if (!images || images.length === 0) {
+    return null;
+  }
+
   const goTo = (next: number) => {
-    setDirection(next > index || (next < 0 && index === images.length - 1) ? 1 : -1);
-    setIndex((next + images.length) % images.length);
+    const nextIndex = (next + images.length) % images.length;
+    setDirection(next > index ? 1 : -1);
+    setIndex(nextIndex);
   };
 
   const slideVariants = {
-    enter: (slideDirection: number) => ({ x: `${slideDirection * 100}%` }),
-    center: { x: 0 },
-    exit: (slideDirection: number) => ({ x: `${slideDirection * -100}%` }),
+    enter: (slideDirection: number) => ({ x: `${slideDirection * 100}%`, opacity: 0.6 }),
+    center: { x: 0, opacity: 1 },
+    exit: (slideDirection: number) => ({ x: `${slideDirection * -100}%`, opacity: 0.6 }),
   };
 
   return (
@@ -31,7 +36,7 @@ export function ImageCarousel({ images, alt, variant = "square" }: ImageCarousel
       <div className={styles.frame}>
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
-            key={index}
+            key={`${images[index]}-${index}`}
             className={styles.slide}
             custom={direction}
             variants={slideVariants}
@@ -40,7 +45,7 @@ export function ImageCarousel({ images, alt, variant = "square" }: ImageCarousel
             exit="exit"
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            <Image src={images[index]} alt={`${alt} ${index + 1}`} fill className={styles.image} />
+            <Image src={images[index]} alt={`${alt} ${index + 1}`} fill className={styles.image} sizes="100vw" />
           </motion.div>
         </AnimatePresence>
 

@@ -4,16 +4,28 @@ import styles from "./ThePeopleSection.module.scss";
 
 const collageImage = "/assets/py19/about/core/CORE COLLAGE.png";
 
-// Reused from the old about/people.tsx core-team roster — same real photos, just presented
-// in the new grid layout instead of the old expandable gallery.
-const coreMembers = [
-  { name: "Charisse Suni", position: "President", image: "/assets/py18/about/the-people/core/p.png" },
-  { name: "Jessica Siega", position: "Executive Secretary", image: "/assets/py18/about/the-people/core/sec.png" },
-  { name: "Florian Venturina", position: "VP for Finance", image: "/assets/py18/about/the-people/core/fin.png" },
-  { name: "Andrea Figarola", position: "VP for Human Resources", image: "/assets/py18/about/the-people/core/hr.png" },
-  { name: "Lance Gulinao", position: "Chief Technology Officer", image: "/assets/py18/about/the-people/core/cto.png" },
-  { name: "Zeandarra Giva", position: "Asst. Chief Technology Officer", image: "/assets/py18/about/the-people/core/acto.png" },
-];
+const membersForGrid = [
+  ["6.png", "Charisse Suni", "President"],
+  ["17.png", "Paula Martinez", "VP for Community Development"],
+  ["38.png", "Shanley Lacanlale", "VP for External Affairs"],
+  ["12.png", "Shanah Inojosa", "VP for Human Resources"],
+  ["16.png", "Joelle Delos Santos", "VP for Finance"],
+  ["7.png", "Chai Quijano", "Executive Secretary"],
+  ["10.png", "Elisse Arzadon", "Managing Editor"],
+  ["69.png", "Bella Sañosa", "Associate Editor"],
+  ["8.png", "Lianne Gumban", "Managing Editor"],
+  ["15.png", "Miko Cruz", "Chief Photographer"],
+  ["14.png", "Eloisa Sy", "Asst. Chief Photographer"],
+  ["11.png", "Arron Romero", "Asst. Chief Videographer"],
+  ["9.png", "Danielle Mantes", "Asst. Creative Director"],
+  ["13.png", "Micah De Guzman", "Asst. Creative Director"],
+  ["5.png", "Aivan Sanchez", "Chief Technology Officer"],
+  ["27.png", "Caitlin Gayosa", "Asst. Chief Technology Officer"],
+].map(([image, name, position]) => ({
+  image: `/assets/py19/about/core/${image}`,
+  name,
+  position,
+}));
 
 type Testimonial = {
   name: string;
@@ -78,20 +90,23 @@ export function ThePeopleSection() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.layout}>
-          <div className={styles.collage}>
-            {collageImage && <Image src={collageImage} alt="TomasinoWeb collage" fill className={styles.image} />}
-          </div>
+        <div className={styles.collage}>
+          {collageImage && <Image src={collageImage} alt="TomasinoWeb collage" fill className={styles.image} />}
+        </div>
 
-          <div className={styles.grid}>
-            {coreMembers.map((member) => (
-              <div className={styles.member} key={member.name}>
-                <div className={styles.photo}>
-                  <Image src={member.image} alt={member.name} fill className={styles.image} />
-                </div>
-                <span className={styles.name}>{member.name}</span>
+        <div className={styles.grid}>
+          {membersForGrid.map((member, index) => (
+            <div className={styles.member} key={`${member.name}-${index}`}>
+              <div className={styles.photo}>
+                <Image src={member.image} alt={member.name} fill className={styles.image} />
               </div>
-            ))}
-          </div>
+              <div className={styles.memberDetails}>
+                <span className={styles.name}>{member.name}</span>
+                <span className={styles.position}>{member.position}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className={styles.banner}>

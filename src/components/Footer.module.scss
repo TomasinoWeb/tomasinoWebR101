@@ -1,10 +1,17 @@
 .footer {
   height: var(--footer-height);
   padding: 0 4%;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 0.5px solid #d9d9d9;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+  box-shadow: none;
   z-index: 100;
   backdrop-filter: blur(8px);
   color: var(--footer-fg, #343332);
-  border-top: 0.5px solid #d9d9d9;
   display: flex;
   align-items: center;
   font-family: var(--font-ui);

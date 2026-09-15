@@ -5,17 +5,20 @@
 }
 
 .layout {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 
 .collage {
   position: relative;
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
   background: #D9DEE5;
   border-radius: 12px;
   border: 1px solid #A83268;
-  min-height: 220px;
   overflow: hidden;
 }
 
@@ -25,22 +28,26 @@
 }
 
 .grid {
+  width: 100%;
+  max-width: 1100px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
   align-content: start;
 }
 
 .member {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  gap: 0.5rem;
 }
 
 .photo {
   position: relative;
   width: 100%;
+  max-width: 240px;
   aspect-ratio: 1 / 1;
   border-radius: 12px;
   border: 1px solid #A83268;
@@ -52,12 +59,33 @@
   object-fit: cover;
 }
 
+.memberDetails {
+  width: 100%;
+  min-width: 0;
+  min-height: 3.25rem;
+  text-align: center;
+}
+
+.name,
+.position {
+  display: block;
+  width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
 .name {
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 1.25;
   text-decoration: underline;
   color: #A83268;
-  text-align: center;
-  width: 100%;
+}
+
+.position {
+  min-height: 2.5rem;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #555;
 }
 
 .joinUs {
@@ -208,17 +236,12 @@
 }
 
 @media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .photo {
-    aspect-ratio: 3.5 / 4;
+    aspect-ratio: 1 / 1;
   }
 
   .banner {
