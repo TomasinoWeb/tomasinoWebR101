@@ -5,10 +5,10 @@ export type WebsiteEntry = {
 };
 
 export const websites: WebsiteEntry[] = [
-  { name: "TomasinoWeb", icon: "/assets/about_py19/websites/tomasinoweb_site.png", href: "https://tomasinoweb.org/" },
-  { name: "Draft143", icon: "/assets/about_py19/websites/draft143_site.png", href: "https://draft143.com" },
-  { name: "Lamona", icon: "/assets/about_py19/websites/lamona_site.png", href: "https://lamona.lol" },
-  { name: "ThomScore", icon: "/assets/about_py19/websites/thomscore_site.png", href: "https://uaap.tomasinoweb.org/" },
-  { name: "MeReserve", icon: "/logo/insignia_yellow.png", href: "https://mereserve-git-main-tw-webtechs-projects.vercel.app" },
-  { name: "R101", icon: "/logo/insignia_yellow.png", href: "/r101" },
+  { name: "TomasinoWeb", icon: "/assets/py19/landing/tomasinoweb_logo.svg", href: "https://tomasinoweb.org/" },
+  { name: "Draft143", icon: "/assets/py19/landing/draft143_logo.svg", href: "https://draft143.com" },
+  { name: "Lamona", icon: "/assets/py19/landing/lamona_logo.svg", href: "https://lamona.lol" },
+  { name: "ThomScore", icon: "/assets/py19/landing/thomscore_logo.svg", href: "https://uaap.tomasinoweb.org/" },
+  { name: "MeReserve", icon: "/assets/py19/about/websites/mereserve_site.png", href: "https://mereserve-git-main-tw-webtechs-projects.vercel.app" },
+  { name: "R101", icon: "/assets/py19/about/websites/r101_site.png", href: "/r101" },
 ];

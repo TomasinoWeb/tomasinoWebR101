@@ -2,9 +2,7 @@ import Image from "next/image";
 import { Button } from "../../../components/Button";
 import styles from "./ThePeopleSection.module.scss";
 
-// Collage art is a pending Figma asset (checklist 3.5.1) — no image yet, but the markup
-// is ready to render one once the asset is exported.
-const collageImage: string | null = null;
+const collageImage = "/assets/py19/about/core/CORE COLLAGE.png";
 
 // Reused from the old about/people.tsx core-team roster — same real photos, just presented
 // in the new grid layout instead of the old expandable gallery.
@@ -25,30 +23,35 @@ type Testimonial = {
   image: string | null;
 };
 
-// Placeholder content until real member testimonials/photos are exported from Figma —
-// edit each entry's fields directly, no JSX changes needed.
-const firstTestimonialRow: Testimonial[] = [
-  { name: "Member Name", department: "Department", position: "Position", quote: "TomasinoWeb is more than an organization, it is a family of digital practitioners.", image: null },
-  { name: "Member Name", department: "Department", position: "Position", quote: "TomasinoWeb is more than an organization, it is a family of digital practitioners.", image: null },
-  { name: "Member Name", department: "Department", position: "Position", quote: "TomasinoWeb is more than an organization, it is a family of digital practitioners.", image: null },
-];
-
-const secondTestimonialRow: Testimonial[] = [
-  { name: "Member Name", department: "Department", position: "Position", quote: "TomasinoWeb is more than an organization, it is a family of digital practitioners.", image: null },
-  { name: "Member Name", department: "Department", position: "Position", quote: "TomasinoWeb is more than an organization, it is a family of digital practitioners.", image: null },
-  { name: "Member Name", department: "Department", position: "Position", quote: "TomasinoWeb is more than an organization, it is a family of digital practitioners.", image: null },
-  { name: "Member Name", department: "Department", position: "Position", quote: "TomasinoWeb is more than an organization, it is a family of digital practitioners.", image: null },
-];
-
-type SmallMember = { name: string; image: string | null };
-
-const smallMemberRow: SmallMember[] = [
-  { name: "Member Name", image: null },
-  { name: "Member Name", image: null },
-  { name: "Member Name", image: null },
-  { name: "Member Name", image: null },
-  { name: "Member Name", image: null },
-  { name: "Member Name", image: null },
+const testimonials: Testimonial[] = [
+  {
+    name: "Jelsey Liz Dizon",
+    department: "Blogs",
+    position: "Blogs Editor, 2025-2026",
+    quote: "I found my way to TomasinoWeb and it found me. What started as a leap of faith became one of my greatest teachers in growing and trusting myself artistically. I found my voice and met passionate, like-minded people who inspired me to become better as a whole. What's more, blogging with TomWeb added a bit more whimsy to my college years! I'll always look back with so much fondness and thanks to having been a part of it through the tangle of deadlines, meetings, and drafts.",
+    image: "/assets/py19/about/testimonials/DIZON.png",
+  },
+  {
+    name: "Shuhei De Belen",
+    department: "Photography",
+    position: "Asst. Chief Photographer, 2025-2026",
+    quote: "When I first joined TomasinoWeb, I was skeptical of my own skills, as I had no prior experience in the publication department. Through my time at TomasinoWeb, I developed my photography and social skills and was able to work on a team that helped me a lot improve. I really enjoy my time with the org, especially when we're handling big events and hanging out afterward to celebrate.",
+    image: "/assets/py19/about/testimonials/DE BELEN.png",
+  },
+  {
+    name: "Paula Beatrice Martinez",
+    department: "Executive",
+    position: "Executive Vice President, 2026-2027",
+    quote: "Joining TomasinoWeb is one of my college plot twists. I never expected an organization that I randomly stumbled upon during R101 to be the one that gave me an opportunity to grow and develop. I get to meet new people and explore beyond my comfort zone, which helps me to be the person I aspire to be.",
+    image: "/assets/py19/about/testimonials/MARTINEZ.png",
+  },
+  {
+    name: "Ma. Andrea Figarola",
+    department: "Human Resources",
+    position: "Vice President for Human Resources, 2025-2026",
+    quote: "TomasinoWeb has become one of the most meaningful parts of my university journey. I found pieces of myself in the people I've met and they have pushed me to become a better version of who I am. Between the deadlines and late nights, they have made every moment worthwhile. I'll always carry with me the same warmth I felt when I first joined, all the way until the very end.",
+    image: "/assets/py19/about/testimonials/FIGAROLA.png",
+  },
 ];
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
@@ -57,13 +60,15 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       <div className={styles.testimonialTag}>
         {testimonial.name} x {testimonial.department}
       </div>
-      <div className={styles.testimonialPhoto}>
-        {testimonial.image && <Image src={testimonial.image} alt={testimonial.name} fill className={styles.image} />}
-      </div>
-      <div className={styles.testimonialBody}>
-        <span className={styles.testimonialName}>{testimonial.name}</span>
-        <span className={styles.testimonialPosition}>{testimonial.position}</span>
-        <p className={styles.testimonialQuote}>&quot;{testimonial.quote}&quot;</p>
+      <div className={styles.testimonialCardBody}>
+        <div className={styles.testimonialPhoto}>
+          {testimonial.image && <img src={testimonial.image} alt={testimonial.name} className={styles.image} />}
+        </div>
+        <div className={styles.testimonialBody}>
+          <span className={styles.testimonialName}>{testimonial.name}</span>
+          <span className={styles.testimonialPosition}>{testimonial.position}</span>
+          <p className={styles.testimonialQuote}>&quot;{testimonial.quote}&quot;</p>
+        </div>
       </div>
     </div>
   );
@@ -81,9 +86,9 @@ export function ThePeopleSection() {
             {coreMembers.map((member) => (
               <div className={styles.member} key={member.name}>
                 <div className={styles.photo}>
-                  <Image src={''} alt={''} fill className={styles.image} />
+                  <Image src={member.image} alt={member.name} fill className={styles.image} />
                 </div>
-                <span className={styles.name}>Member Name</span>
+                <span className={styles.name}>{member.name}</span>
               </div>
             ))}
           </div>
@@ -91,31 +96,14 @@ export function ThePeopleSection() {
 
       <div className={styles.banner}>
         <span className={styles.bannerText}>Want to join the team?</span>
-        <Button href="/apply" variant="pill" className={styles.registerButton}>
+        <Button href="/apply" variant="pill" className={styles.registerButton} application>
           Register now &gt;&gt;
         </Button>
       </div>
 
       <div className={styles.joinUs}>
-        <div className={styles.testimonialRow3}>
-          {firstTestimonialRow.map((testimonial, i) => (
-            <TestimonialCard testimonial={testimonial} key={i} />
-          ))}
-        </div>
-
-        <div className={styles.smallMemberRow}>
-          {smallMemberRow.map((member, i) => (
-            <div className={styles.member} key={i}>
-              <div className={styles.photo}>
-                {member.image && <Image src={member.image} alt={member.name} fill className={styles.image} />}
-              </div>
-              <span className={styles.name}>{member.name}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.testimonialRow4}>
-          {secondTestimonialRow.map((testimonial, i) => (
+        <div className={styles.testimonialRow}>
+          {testimonials.map((testimonial, i) => (
             <TestimonialCard testimonial={testimonial} key={i} />
           ))}
         </div>

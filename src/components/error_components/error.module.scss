@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap");
-
-/* 1. Page Container & Layout */
 .container {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
@@ -8,46 +5,25 @@
   gap: 1em;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  background-color: #f4f4f4;
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-color: #fbf9f4;
+  background-image: linear-gradient(rgba(251, 249, 244, 0.5), rgba(251, 249, 244, 0.5)), url("/assets/py18/error/bg_wallpaper.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 2em 2.5em;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("/assets/py19/backgrounds/bg_wallpaper_transparent.png");
-    background-size: 550px auto;
-    background-position: center;
-    background-repeat: repeat;
-    opacity: 0.12;
-    filter: grayscale(100%);
-    pointer-events: none;
-    z-index: 0;
-  }
 }
 
 .content {
   max-width: 600px;
   width: 100%;
   font-family: "Inter", "Helvetica Neue", sans-serif;
-  position: relative;
-  z-index: 1;
+  
 }
 
-/* 2. Error Window Card & Header */
 .window {
   background: white;
   border-radius: 0.5em;
-  border: 2px solid #222222;
+  border: 2px solid #943C1C;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,165 +32,55 @@
   overflow: hidden;
 }
 
+// 2. Top header bar
 .errorHeader {
   width: 100%;
   background: linear-gradient(to bottom, #A83268, #713458 100%);
   color: white;
-  padding: 0.75em 1em;
+  padding: 0.75em;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
-.windowDots {
-  position: absolute;
-  left: 1em;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-
-  span {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    display: inline-block;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-  }
+.crownIcon {
+  width: 88px;
+  height: 48px;
 }
 
-.dot1 {
-  background-color: #FF1B6D;
-}
-
-.dot2 {
-  background-color: #FFB300;
-}
-
-.dot3 {
-  background-color: #7DCB9C;
-}
-
-/* 3. Emblem, Mascot & Text Wall */
-.keepCalmWallContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// 3. Keep Calm 
+.errorEmblem {
   width: 100%;
-  overflow: hidden;
-  padding: 1.5rem 0 0.5rem;
-  min-height: 275px;
-
-  @media (max-width: 480px) {
-    min-height: 190px;
-  }
-}
-
-.keepCalmWall {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding-top: 1.5rem;
+  margin-bottom: 10px;
   font-family: "Poppins", sans-serif;
-  font-size: 49px;
+  font-size: 70px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 0.95;
-  color: transparent;
-  -webkit-text-stroke: 2px #E0527A;
-  opacity: 0.12;
-  white-space: nowrap;
-  user-select: none;
-  width: 100%;
-
-  div {
-    width: 100%;
-    text-align: center;
-  }
+  color: #000000;
+  letter-spacing: 1.5px;
+  line-height: 1;
 
   @media (max-width: 480px) {
-    font-size: 30px;
-    -webkit-text-stroke: 1.5px #E0527A;
+    font-size: 40px;
   }
 }
 
-.mascotWrapper {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 260px;
-  height: 260px;
-  z-index: 2;
-
-  @media (max-width: 480px) {
-    top: 10px;
-    width: 178px;
-    height: 178px;
-  }
-}
-
-.tiltedCrownIcon {
-  position: absolute;
-  top: 2%;
-  left: 44%;
-  width: 49px;
-  height: auto;
-  transform: rotate(-30deg);
-  z-index: 3;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
-
-  @media (max-width: 480px) {
-    width: 34px;
-    top: 2%;
-    left: 44%;
-  }
-}
-
-.centeredErrorIcon {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: grayscale(100%);
-  z-index: 2;
-}
-
-.dinosaurShadow {
-  position: absolute;
-  bottom: 23px;
-  left: 47%;
-  transform: translateX(-50%);
-  width: 161px;
-  height: 26px;
-  background: #d4d4d4;
-  opacity: 0.65;
-  border-radius: 50%;
-  z-index: 1;
-  pointer-events: none;
-
-  @media (max-width: 480px) {
-    width: 109px;
-    height: 17px;
-    bottom: 16px;
-  }
-}
-
-/* 4. Error Message & Description */
+// 4. Error message
 .errorMessage {
   max-width: 55ch;
   color: #4D4D4D;
-  padding: 0.25em 1em 1em;
+  padding: 1em;
   text-align: center;
 }
 
 .errorSubheader {
-  font-weight: 800;
-  color: #222222;
-  font-size: clamp(19px, calc(7px + 1dvw), 1.55rem);
+  font-weight: 700;
+  color: #A83268;
+  font-size: clamp(18px, calc(6px + 1dvw), 1.5rem);
   margin-bottom: 0.25rem;
 }
 
@@ -222,7 +88,9 @@
   font-size: clamp(16px, calc(4px + 0.5dvw), 1.25rem);
 }
 
-/* 5. Action Buttons & Navigation */
+
+
+// 5. Buttons
 .buttonGroup {
   width: 100%;
   display: grid;
@@ -240,18 +108,27 @@
   width: 100%;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  color: #ffffff;
   border-radius: 8px;
   padding: 0.8em 1.5em;
   font-size: 14px;
+  border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: all 0.2s ease;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease, transform 0.15s ease;
+
+  &:hover {
+    background-position: 0 0;
+    transform: scale(1.02);
+  }
 
   &:active {
-    transform: scale(0.96);
+    transform: scale(0.95);
   }
 }
 
@@ -259,48 +136,14 @@
   font-size: 14px;
   width: 16px;
   height: 16px;
+  color: #ffffff;
+  fill: #ffffff;
 }
 
 .homeButton {
-  background-color: #FF1B6D;
-  color: #ffffff;
-  font-weight: 700;
-  border: 2px solid #FF1B6D;
-
-  .buttonIcon {
-    color: #ffffff;
-    fill: #ffffff;
-  }
-
-  &:hover {
-    background-color: #C4088C;
-    border-color: #C4088C;
-    transform: scale(1.02);
-  }
+  background-image: linear-gradient(to right, #ff3c71 50%, #FF2761 50%);
 }
 
-.secondaryButton,
 .aboutButton {
-  background-color: transparent;
-  border: 2px solid #E0527A;
-  color: #222222;
-  font-weight: 600;
-
-  .buttonIcon {
-    color: #E0527A;
-    fill: #E0527A;
-    transition: color 0.2s ease, fill 0.2s ease;
-  }
-
-  &:hover {
-    background-color: rgba(224, 82, 122, 0.08);
-    border-color: #C4088C;
-    color: #C4088C;
-    transform: scale(1.02);
-
-    .buttonIcon {
-      color: #C4088C;
-      fill: #C4088C;
-    }
-  }
+  background-image: linear-gradient(to right, #dc1c96 50%, #D50B8A 50%);
 }

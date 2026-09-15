@@ -45,10 +45,10 @@
 .processCard {
   width: 100%;
   max-width: 1120px;
-  background-color: #ffffff;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid #dbdbe0;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -123,8 +123,9 @@
 .supportBanner {
   padding: 22px;
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -182,11 +183,11 @@
   position: relative;
   width: min(100%, 440px);
   padding: 34px;
-  border: 0;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   background: #ffffff;
   color: #1f1f24;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   font-family: var(--font-ui);
   animation: supportScaleIn 450ms ease-out both;

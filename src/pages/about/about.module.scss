@@ -1,7 +1,6 @@
 .whoWeAre {
   max-width: 1040px;
   margin-inline: auto;
-  background: #F2F2F2;
   padding: 40px;
   flex: 1;
   width: 100%;
@@ -27,6 +26,11 @@
   flex-direction: column;
   gap: 48px;
   padding-block: 40px;
+}
+
+.aboutFooter {
+  background-color: var(--neutral-white, #fbf9f4) !important;
+  --footer-fg: var(--neutral-black, #343332);
 }
 
 

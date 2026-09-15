@@ -6,17 +6,18 @@ import styles from "./about.module.scss";
 
 interface PageProps {}
 
-// Placeholder carousel images until the "2016 nostalgic vibe" edited photos are exported from Figma.
 const whoWeAreImages = [
-  "/logo/logo_yellow.png",
-  "/logo/logo_black.png",
-  "/logo/logo_white.png",
+  "/assets/py19/about/who-we-are/featured_1.png",
+  "/assets/py19/about/who-we-are/featured_2.png",
+  "/assets/py19/about/who-we-are/featured_3.png",
+  "/assets/py19/about/who-we-are/featured_4.png",
 ];
 
 export default PublicLayoutFrontend.use<PageProps>(() => {
   return {
     header: "full_regular",
     footer: "regular",
+    footerClassName: styles.aboutFooter,
     dots: "full",
 
     children: (

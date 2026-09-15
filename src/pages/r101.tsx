@@ -101,7 +101,7 @@ function R101PageContent() {
       <main className={styles.mainContainer}>
         <section className={styles.processCard}>
           {/* Title Bar */}
-          <div className={styles.cardTitleBar}>
+          <div className={`font-2016-script ${styles.cardTitleBar}`}>
             R101 Process
           </div>
 

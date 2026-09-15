@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx rimraf .next && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -34,4 +34,6 @@
   "devDependencies": {
     "prettier": "^3.0.3"
   }
+  
+  
 }

@@ -6,9 +6,10 @@
 
 .card {
   grid-column: span 2;
-  background: var(--about-neutral-white, #fff);
-  border: 1px solid;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   color: var(--about-neutral-black, #1e1e1e);
 

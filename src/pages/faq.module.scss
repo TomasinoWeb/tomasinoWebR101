@@ -19,6 +19,36 @@
   gap: 24px;
 }
 
+.announcementBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  .announcementModal {
+    position: relative;
+    max-width: 85vw;
+    max-height: 80vh;
+
+    img {
+      max-width: 85vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 16px;
+      display: block;
+    }
+  }
+}
+
 .pageLinks {
   display: flex;
   align-items: center;
@@ -150,10 +180,11 @@
 
   .cardBody {
     flex: 1;
-    background-color: #ffffff;
-    border-radius: 10px;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 84%, #e8e4e8 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
     padding: 14px 16px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -216,24 +247,15 @@
       margin-top: 14px;
       padding: 12px 14px;
       border-left: 3px solid #713458;
-      background-color: #f5f1f4;
-
-      .replyLabel {
-        display: block;
-        margin-bottom: 6px;
-        color: #713458;
-        font-size: var(--type-body);
-        font-weight: var(--type-weight-bold);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-      }
+      background-color: #FAFAFA;
 
       .answer {
         font-family: var(--font-ui);
-        font-size: var(--type-body);
+        font-size: 1rem;
         font-weight: var(--type-weight-regular);
-        color: #26292e;
-        line-height: 1.4;
+        color: #26292e !important;
+        line-height: 1.6;
+        margin: 0;
       }
     }
   }
@@ -248,9 +270,10 @@
   font-family: var(--font-ui);
 
   .statWidget {
-    background-color: #81466a;
-    border-radius: 8px;
-    outline: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
     .statRow {
       height: 42px;
@@ -259,7 +282,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      color: #e5ebf2;
+      color: #26292e;
       font-size: var(--type-profile-body);
       font-weight: var(--type-weight-regular);
 
@@ -278,8 +301,10 @@
   }
 
   .featuredWidget {
-    background-color: #81466a;
-    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
 
     .photoBox {

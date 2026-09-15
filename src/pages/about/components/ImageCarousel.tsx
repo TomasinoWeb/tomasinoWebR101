@@ -13,20 +13,32 @@ interface ImageCarouselProps {
 
 export function ImageCarousel({ images, alt, variant = "square" }: ImageCarouselProps) {
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
-  const goTo = (next: number) => setIndex((next + images.length) % images.length);
+  const goTo = (next: number) => {
+    setDirection(next > index || (next < 0 && index === images.length - 1) ? 1 : -1);
+    setIndex((next + images.length) % images.length);
+  };
+
+  const slideVariants = {
+    enter: (slideDirection: number) => ({ x: `${slideDirection * 100}%` }),
+    center: { x: 0 },
+    exit: (slideDirection: number) => ({ x: `${slideDirection * -100}%` }),
+  };
 
   return (
     <div className={`${styles.carousel} ${variant === "fill" ? styles.fill : ""}`}>
       <div className={styles.frame}>
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={index}
             className={styles.slide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.35, ease: "easeInOut" }}
           >
             <Image src={images[index]} alt={`${alt} ${index + 1}`} fill className={styles.image} />
           </motion.div>
@@ -34,7 +46,7 @@ export function ImageCarousel({ images, alt, variant = "square" }: ImageCarousel
 
         {images.length > 1 && (
           <>
-            <button type="button" className={`${styles.arrow} ${styles.left}`} onClick={() => goTo(index - 1)}>
+              <button type="button" className={`${styles.arrow} ${styles.left}`} onClick={() => goTo(index - 1)}>
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
             <button type="button" className={`${styles.arrow} ${styles.right}`} onClick={() => goTo(index + 1)}>

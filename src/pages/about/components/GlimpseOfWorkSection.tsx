@@ -1,8 +1,5 @@
 import Image from "next/image";
-import { Oswald } from "next/font/google";
 import styles from "./GlimpseOfWorkSection.module.scss";
-
-const oswald = Oswald({ subsets: ["latin"], weight: ["700"], variable: "--font-oswald" });
 
 // Reuses the existing org-culture "actWork" photos rather than sourcing new placeholder art —
 // these are already the same four categories the mockup calls for.
@@ -38,7 +35,7 @@ const items = [
 
 export function GlimpseOfWorkSection() {
   return (
-    <div className={`${styles.grid} ${oswald.variable}`}>
+    <div className={styles.grid}>
         {items.map((item) => (
           <div className={styles.card} style={{ borderColor: item.color }} key={item.label}>
             <div className={styles.imageWrapper}>

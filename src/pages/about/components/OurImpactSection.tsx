@@ -1,9 +1,6 @@
 import Image from "next/image";
-import { Oswald } from "next/font/google";
 import { websites } from "../../../data/websites";
 import styles from "./OurImpactSection.module.scss";
-
-const oswald = Oswald({ subsets: ["latin"], weight: ["700"], variable: "--font-oswald" });
 
 const stats = [
   { label: "Events", value: "29", description: "Academic Events", color: "#E5800D", linkLabel: "Events Organized", linkHref: "#", useCssBackground: true },
@@ -19,7 +16,7 @@ const secondaryStats = [
 export function OurImpactSection() {
   return (
     <>
-      <div className={`${styles.grid} ${oswald.variable}`}>
+      <div className={styles.grid}>
         {stats.map((stat) => (
           <div className={styles.card} style={{ borderColor: stat.color }} key={stat.label}>
             <div className={styles.tag} style={stat.useCssBackground ? undefined : { background: stat.color }}>

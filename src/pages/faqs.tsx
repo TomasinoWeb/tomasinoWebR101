@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { createPublicPage } from '../layouts/public/frontend';
 import { createPublicStaticProps } from '../layouts/public/static';
 import styles from './faq.module.scss';
+import landingAnnouncementStyles from '../components/LandingAnnouncement.module.scss';
 
 const faqAvatars = [
   'Untitled188_20260816214958.png',
@@ -121,6 +122,7 @@ export default createPublicPage(() => {
 function FAQsPageContent() {
   const [selectedCategory, setSelectedCategory] = useState<FAQCategory>('all');
   const [featuredPhotoIndex, setFeaturedPhotoIndex] = useState(0);
+  const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
   const visibleFAQs = selectedCategory === 'all'
     ? faqData
     : faqData.filter((faq) => faq.category === selectedCategory);
@@ -128,6 +130,36 @@ function FAQsPageContent() {
   React.useEffect(() => {
     setFeaturedPhotoIndex(Math.floor(Math.random() * featuredPhotos.length));
   }, []);
+
+  React.useEffect(() => {
+    const windowState = window as Window & { faqAnnouncementShown?: boolean };
+
+    if (!windowState.faqAnnouncementShown) {
+      windowState.faqAnnouncementShown = true;
+      setIsAnnouncementOpen(true);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (!isAnnouncementOpen) {
+      document.body.style.overflow = '';
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsAnnouncementOpen(false);
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isAnnouncementOpen]);
 
   const changeFeaturedPhoto = (direction: number) => {
     setFeaturedPhotoIndex((currentIndex) => (
@@ -137,11 +169,56 @@ function FAQsPageContent() {
 
   return (
     <main className={styles.faqPage}>
+      {isAnnouncementOpen && (
+        <div
+          className={`${styles.announcementBackdrop} ${landingAnnouncementStyles.overlay}`}
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              setIsAnnouncementOpen(false);
+            }
+          }}
+        >
+          <div
+            className={`${styles.announcementModal} ${landingAnnouncementStyles.dialog}`}
+            role="dialog"
+            aria-modal="true"
+            aria-label="FAQ announcement"
+          >
+            <button
+              type="button"
+              className={landingAnnouncementStyles.closeButton}
+              onClick={() => setIsAnnouncementOpen(false)}
+              aria-label="Close announcement"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+            <Image
+              src="/assets/py19/faqs/faqs_banner.png"
+              alt="Frequently asked questions"
+              width={1200}
+              height={675}
+              priority
+            />
+          </div>
+        </div>
+      )}
       <nav className={styles.pageNavigation} aria-label="FAQ sections">
-        <h1 className={styles.pageTitle}>FAQs</h1>
+        <h1 className={`font-2016-script ${styles.pageTitle}`}>FAQs</h1>
         <div className={styles.pageLinks}>
           <Link href="/faqs" aria-current="page">All</Link>
-          <Link href="/about/org-culture">The Org</Link>
+          <Link href="/about">The Org</Link>
           <Link href="/apply">Application</Link>
           <Link href="/r101">Interviews</Link>
           <Link href="/results">Results &amp; Exams</Link>
@@ -187,7 +264,6 @@ function FAQsPageContent() {
                 <details className={styles.answerDropdown}>
                   <summary className={styles.question}>{faq.question}</summary>
                   <div className={styles.reply}>
-                    <span className={styles.replyLabel}>Reply</span>
                     <p className={styles.answer}>{faq.answer}</p>
                   </div>
                 </details>

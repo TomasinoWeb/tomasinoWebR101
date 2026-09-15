@@ -15,8 +15,10 @@
   max-width: 420px;
   max-height: 90vh;
   overflow-y: auto;
-  background: var(--about-neutral-white, #fff);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .content.wide {

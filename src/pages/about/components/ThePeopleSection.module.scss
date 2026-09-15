@@ -19,6 +19,11 @@
   overflow: hidden;
 }
 
+.collage .image {
+  object-fit: cover;
+  object-position: center;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -29,7 +34,7 @@
 .member {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: stretch;
   gap: 8px;
 }
 
@@ -52,6 +57,7 @@
   text-decoration: underline;
   color: #A83268;
   text-align: center;
+  width: 100%;
 }
 
 .joinUs {
@@ -60,78 +66,102 @@
   gap: 24px;
 }
 
-.testimonialRow3 {
+.testimonialRow {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-}
-
-.testimonialRow4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.smallMemberRow {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 8px;
 }
 
 .testimonialCard {
   display: flex;
   flex-direction: column;
-  background: var(--about-neutral-white, #fff);
-  border: 1px solid #A83268;
-  border-radius: 8px;
+  align-items: stretch;
+  height: 100%;
+  min-width: 0;
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
 .testimonialTag {
+  width: 100%;
   display: flex;
   align-items: center;
-  height: 32px;
-  border-radius: 8px 8 px 0 0;
-  border-style: solid;
-  border-width: 0px 1px 1px 1px;
-  border-color: rgba(255, 255, 255, 0.5);
-  padding-left: 16px;
+  min-height: 0;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
   background: linear-gradient(180deg, #A83268 0%, #713458 100%);
   box-shadow: inset 0px 2px 3px 0px rgba(255, 255, 255, 0.55);
   color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.testimonialCardBody {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+  width: 100%;
 }
 
 .testimonialPhoto {
+  flex: 0 0 38%;
+  width: 38%;
+  height: 100%;
+  align-self: stretch;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.testimonialPhoto .image {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #D9DEE5;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .testimonialBody {
   display: flex;
   flex-direction: column;
-  padding: 10px 12px;
+  flex: 0 0 62%;
+  width: 62%;
+  min-width: 0;
+  justify-content: center;
+  padding: 1rem 1.25rem;
 }
 
 .testimonialName {
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   font-weight: 700;
+  margin-bottom: 0.1rem;
   color: var(--about-neutral-black, #1e1e1e);
 }
 
 .testimonialPosition {
   font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--about-neutral-black, #1e1e1e);
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
 }
 
 .testimonialQuote {
-  margin-top: 8px;
-  font-size: 0.75rem;
-  color: var(--about-neutral-mid, #666);
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #333333;
 }
 
 .banner {
@@ -198,21 +228,21 @@
     text-align: center;
   }
 
-  .testimonialRow3,
-  .testimonialRow4 {
+  .testimonialRow {
     grid-template-columns: 1fr;
   }
 
-  .testimonialRow3 .testimonialCard:nth-child(n+2) {
-    display: none;
+  .testimonialCard {
+    align-items: stretch;
   }
 
-  .testimonialRow4 .testimonialCard:nth-child(n+3) {
-    display: none;
+  .testimonialCardBody {
+    flex-direction: row;
   }
 
-  .smallMemberRow {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  .testimonialPhoto {
+    flex-basis: 38%;
+    width: 38%;
   }
+
 }

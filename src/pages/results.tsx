@@ -30,21 +30,23 @@ function GoodResultPage({ results }: Props) {
 
   return (
     <div className={styles.page}>
-      <h1 className={styles.header}>RESULTS</h1>
+      <section className={styles.introCard}>
+        <h1 className={`font-2016-script ${styles.header}`}>RESULTS</h1>
 
-      <div className={styles.description}>
-        <h2>
-          Welcome to Planet TomasinoWeb! <br /> Go ahead, scroll through and see if your name made the list. <br />
-          Whether you're smiling wide or crossing fingers, we're proud of you for taking the leap.
-        </h2>
-      </div>
+        <div className={styles.description}>
+          <h2>
+            Welcome to Planet TomasinoWeb! <br /> Go ahead, scroll through and see if your name made the list. <br />
+            Whether you're smiling wide or crossing fingers, we're proud of you for taking the leap.
+          </h2>
+        </div>
 
-      <h3>This list is updated as new applicants are accepted.</h3>
+        <h3>This list is updated as new applicants are accepted.</h3>
+      </section>
 
       {!results.public || Object.values(results.data).every((d) => d.length == 0) ? (
-        <div className={styles.na}>
+        <section className={styles.na}>
           <h1>Results are not available yet.</h1>
-        </div>
+        </section>
       ) : (
         <>
           <div className={styles.selector}>

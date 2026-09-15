@@ -3,7 +3,7 @@
   margin-inline: -40px;
   border-radius: 12px;
   color: #fff;
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .inner {
@@ -30,7 +30,9 @@
   flex-direction: column;
   gap: 2rem;
   padding: 48px 100px;
-  background: rgba(229, 26, 155, 0.123);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .subtitle {

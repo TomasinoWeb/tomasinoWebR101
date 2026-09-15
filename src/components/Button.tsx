@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Button.module.scss";
+import { ApplicationRedirect } from "./ApplicationRedirect";
 
 type CommonProps = {
   children: React.ReactNode;
   variant: "speech" | "pill" | "rectangle";
   className?: string;
   maxWidth?: boolean;
+  application?: boolean;
 };
 
 type ButtonElementProps = CommonProps & {
@@ -43,6 +45,14 @@ export const Button = (props: ButtonProps) => {
   );
 
   if ("href" in props) {
+    if (props.application) {
+      return (
+        <ApplicationRedirect className={classes}>
+          {content}
+        </ApplicationRedirect>
+      );
+    }
+
     return (
       <Link href={props.href} className={classes}>
         {content}

@@ -11,25 +11,34 @@
   --about-neutral-mid: #999999;
 
   font-family: var(--font-inter), sans-serif;
-  background: var(--about-neutral-white);
+  background-color: #ffdf8b;
+  background-image: url('/assets/py19/backgrounds/bg_wallpaper.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   padding-top: 20px;
   overflow-x: hidden;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .header {
   max-width: 1040px;
+  width: 100%;
+  min-height: 176px;
   margin: auto;
 }
 
 
 .profile {
   background: var(--about-neutral-white);
-  border: 1px solid var(--about-neutral-light);
-  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: grid;
+  min-height: 148px;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   margin-bottom: .75rem;
@@ -147,6 +156,7 @@
   margin-top: 8px;
   border-bottom: 1px solid var(--about-neutral-light);
   width: 100vw;
+  min-height: 47px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);

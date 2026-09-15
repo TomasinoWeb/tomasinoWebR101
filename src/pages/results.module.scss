@@ -20,8 +20,21 @@
     margin-right: auto;
   }
 
+  .introCard,
+  .na {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #1e1e1e;
+  }
+
+  .introCard {
+    padding: 28px 32px;
+  }
+
   .header {
-    color: #ffffff;
+    color: #1e1e1e;
     text-align: center;
     font-family: var(--font-ui);
     font-size: var(--type-h1-faq);
@@ -29,15 +42,16 @@
     font-weight: var(--type-weight-bold);
     letter-spacing: -0.4px;
     line-height: 1.1;
+    margin: 0;
   }
 
   .description {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 
     > h2 {
-      color: #ffffff;
+      color: #1e1e1e;
       text-align: center;
       font-family: var(--font-ui);
       font-size: var(--type-body);
@@ -47,11 +61,12 @@
       letter-spacing: -0.2px;
 
       max-width: 650px;
+      margin: 0;
     }
   }
 
-  > h3 {
-    color: #ffffff;
+  .introCard > h3 {
+    color: #1e1e1e;
     text-align: center;
     font-family: var(--font-ui);
     font-size: var(--type-profile-body);
@@ -59,17 +74,19 @@
     font-weight: var(--type-weight-regular);
     line-height: 120%; /* 28.8px */
     letter-spacing: -0.48px;
-    margin-top: 25px;
+    margin: 20px 0 0;
   }
 
   .na {
+    padding: 28px 32px;
     text-align: center;
+
     h1 {
-      color: #ffffff;
+      color: #1e1e1e;
       font-family: var(--font-ui);
       font-weight: var(--type-weight-bold);
       font-size: var(--type-about-life-h1);
-      margin: 50px 0px;
+      margin: 20px 0;
     }
   }
 
@@ -96,8 +113,10 @@
     gap: 20px;
 
     .block {
-      border: 2px solid var(--neutral-black, #1e1e1e);
-      background: rgba(56, 16, 40, 0.9);
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       padding: 18px 36px;
       cursor: pointer;
       max-height: 131.4px;
@@ -133,7 +152,7 @@
         }
 
         h2 {
-          color: #ffffff;
+          color: #1e1e1e;
           font-family: var(--font-ui);
           font-size: var(--type-about-life-h1);
           font-style: normal;
@@ -141,7 +160,7 @@
         }
 
         svg {
-          color: #ffffff;
+          color: #1e1e1e;
           font-size: 24px;
           transform: rotate(0deg);
           transition: all 0.3s ease-in-out;
@@ -156,7 +175,7 @@
           list-style-position: inside;
 
           li {
-            color: #ffffff;
+            color: #1e1e1e;
             font-family: var(--font-ui);
             display: list-item;
             font-size: var(--type-body);
@@ -180,9 +199,12 @@
   }
 
   @media screen and (max-width: 850px) {
-    .description {
-      margin-top: 20px;
+    .introCard,
+    .na {
+      padding: 24px;
+    }
 
+    .description {
       > h2 {
         max-width: 500px;
       }
@@ -205,12 +227,9 @@
       line-height: 1.15;
     }
 
-    .description {
-      margin-top: 20px;
-
-      > h2 {
-        max-width: 500px;
-      }
+    .introCard,
+    .na {
+      padding: 20px 16px;
     }
 
     .selector {

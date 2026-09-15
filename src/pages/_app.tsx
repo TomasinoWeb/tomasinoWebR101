@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { MotionConfig } from "framer-motion";
 import "../globals.scss";
 import type { AppProps } from "next/app";
+import { Inter, Oswald } from "next/font/google";
 import { NextSeo } from "next-seo";
 import Loading from "../components/Loading";
 import LandingAnnouncement from "../components/LandingAnnouncement";
@@ -65,6 +66,8 @@ const metatags = {
 };
 
 const CANONICAL_URL = "https://join.tomasinoweb.org/";
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const oswald = Oswald({ subsets: ["latin"], weight: ["700"], variable: "--font-oswald" });
 
 export default function App({ Component, pageProps }: AppProps) {
   const [hasLoaded, setHasLoaded] = useState(false); // set this to false before we launch
@@ -84,7 +87,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     if (isLandingPage && hasLoaded) {
-      setIsAnnouncementOpen(true);
+      const windowState = window as Window & { landingAnnouncementShown?: boolean };
+
+      if (!windowState.landingAnnouncementShown) {
+        windowState.landingAnnouncementShown = true;
+        setIsAnnouncementOpen(true);
+      }
     } else if (!isLandingPage) {
       setIsAnnouncementOpen(false);
     }
@@ -122,7 +130,8 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
 
-      {isLandingPage && (
+      <div className={`${inter.variable} ${oswald.variable}`}>
+      {isLandingPage && !hasLoaded && (
         <div className={`loading-container ${hasLoaded ? "has-loaded" : ""}`}>
           <Loading />
         </div>
@@ -133,6 +142,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {isLandingPage && isAnnouncementOpen && (
         <LandingAnnouncement onClose={() => setIsAnnouncementOpen(false)} />
       )}
+      </div>
     </MotionConfig>
   );
 }

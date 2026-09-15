@@ -1,13 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Inter } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faTableCells, faList, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { departments } from "../../../data/departments";
+import { ApplicationRedirect } from "../../../components/ApplicationRedirect";
 import styles from "./AboutShell.module.scss";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const tabs = [
   { href: "/about", label: "Who We Are", icon: faUser },
@@ -23,8 +21,8 @@ export function AboutShell({ children }: AboutShellProps) {
   const router = useRouter();
 
   return (
-    <div className={`${styles.shell} ${inter.variable}`}> 
-      <div className={`${styles.header} ${inter.variable}`}>
+    <div className={styles.shell}>
+      <div className={styles.header}>
         <div className={styles.profile}>
           <div className={styles.avatar}>
             <Image
@@ -51,10 +49,10 @@ export function AboutShell({ children }: AboutShellProps) {
             </div>
           </div>
 
-          <Link href="/apply" className={styles.joinUs}>
+          <ApplicationRedirect className={styles.joinUs}>
             Join Us
             <FontAwesomeIcon icon={faChevronRight} className={styles.joinUsIcon} />
-          </Link>
+          </ApplicationRedirect>
 
           <div className={styles.bio}>
             <p className={styles.bioName}>TomasinoWeb</p>

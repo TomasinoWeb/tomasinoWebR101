@@ -6,9 +6,49 @@ export type DepartmentEntry = {
   name: Department;
   description: string;
   offeredPositions: string[];
-  /** Carousel images for this department's post. Placeholder: reuses the existing active/inactive icons until real photos are exported from Figma. */
+  /** Images used by the department tile and its clicked carousel. */
   images: string[];
   icon: string;
+};
+
+const departmentImages: Record<Department, string[]> = {
+  Secretariat: ["27_20260912_143255_0026.png", "28_20260912_143256_0027.png", "29_20260912_143256_0028.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/secre/${file}`,
+  ),
+  Finance: ["9_20260912_143255_0008.png", "10_20260912_143255_0009.png", "11_20260912_143255_0010.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/finance/${file}`,
+  ),
+  "External Affairs": ["21_20260912_143255_0020.png", "22_20260912_143255_0021.png", "23_20260912_143255_0022.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/exec/${file}`,
+  ),
+  "Human Resources": ["24_20260912_143255_0023.png", "25_20260912_143255_0024.png", "26_20260912_143255_0025.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/hr/${file}`,
+  ),
+  "Publicity and Communications": [
+    "15_20260912_143255_0014.png",
+    "16_20260912_143255_0015.png",
+    "17_20260912_143255_0016.png",
+  ].map((file) => `/assets/py19/about/dept-grid-images/${file}`),
+  "Community Development": [
+    "15_20260912_143255_0014.png",
+    "16_20260912_143255_0015.png",
+    "17_20260912_143255_0016.png",
+  ].map((file) => `/assets/py19/about/dept-grid-images/${file}`),
+  Writing: ["12_20260912_143255_0011.png", "13_20260912_143255_0012.png", "14_20260912_143255_0013.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/writing/${file}`,
+  ),
+  Photography: ["photogs 1.png", "photogs 2.png", "photogs 3.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/photogs/${file}`,
+  ),
+  Videography: ["4_20260912_143255_0003.png", "5_20260912_143255_0004.png", "6_20260912_143255_0005.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/videogs/${file}`,
+  ),
+  Creatives: ["7_20260912_143255_0006.png", "8_20260912_143255_0007.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/creatives/${file}`,
+  ),
+  "Web Technologies": ["18_20260912_143255_0017.png", "19_20260912_143255_0018.png", "20_20260912_143255_0019.png"].map(
+    (file) => `/assets/py19/about/dept-grid-images/webtech/${file}`,
+  ),
 };
 
 const offeredPositionsByName: Record<Department, string[]> = {
@@ -34,6 +74,6 @@ export const departments: DepartmentEntry[] = departmentDescriptions
     name: d.name as Department,
     description: d.description,
     offeredPositions: offeredPositionsByName[d.name as Department] ?? [],
-    images: [`/logo/logo_yellow.png`],
-    icon: `/logo/insignia_yellow.png`,
+    images: departmentImages[d.name as Department],
+    icon: departmentImages[d.name as Department][0],
   }));
