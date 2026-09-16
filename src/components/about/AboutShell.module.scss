@@ -172,6 +172,7 @@
 }
 
 .tabGrid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
@@ -179,7 +180,24 @@
   max-width: none;
 }
 
+.activeTabIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #ffffff;
+  border-bottom: 3px solid var(--about-primary, #B5124F);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .tab {
+  position: relative;
+  z-index: 2;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
@@ -194,19 +212,21 @@
   color: var(--about-neutral-mid);
   text-decoration: none;
   text-align: center;
-  background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 100%);
-  border-width: 1px 0 1px 0;
-  border-style: solid;
-  border-color: #D9D9D9;
-  box-shadow: inset 0px 1px 0px 0px #FFFFFF;
-  
-
-  &:not(:first-child) {
-    border-left: 2px solid #D9D9D9;
-  }
+  background: transparent;
+  border: none;
+  transition: color 0.25s ease;
 
   &.active {
-    color: var(--about-primary);
+    color: var(--about-primary, #B5124F);
+    font-weight: 700;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  span {
+    transition: font-weight 0.2s ease;
   }
 }
 
@@ -219,13 +239,12 @@
   display: block;
 }
 
-.tab:hover{
-  background: linear-gradient(180deg, #A83268 0%, #713458 100%);
-  border:  #A83268;
-  color: #FFFFFF;
+.tab:hover {
+  background: rgba(168, 50, 104, 0.08);
+  color: var(--about-primary, #B5124F);
 }
 
-.container{
+.container {
   width: 100%;
   background: #FFFFFF;
   flex: 1;
@@ -238,10 +257,7 @@
   margin: 0 auto;
 }
 
-
-
 @media (max-width: 768px) {
-
   .shell {
     padding: 0;
   }
@@ -255,7 +271,7 @@
   }
 
   .tab span {
-     font-size: .625rem;
+    font-size: .75rem;
   }
 
   .tabBar {
@@ -273,9 +289,27 @@
   }
 
   .tabIcon {
-    width: 16px;
-    height: 16px;
-    flex-basis: 16px;
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tab span {
+    display: none !important;
   }
 
+  .tab {
+    gap: 0;
+    padding: 8px 4px;
+  }
+
+  .tabIcon {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    flex-basis: 20px !important;
+  }
 }
