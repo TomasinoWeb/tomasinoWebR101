@@ -158,11 +158,11 @@ export function DepartmentGrid() {
               </div>
               <div className={styles.overlay}>
                 <div className={styles.overlayItem}>
-                  <FontAwesomeIcon icon={faHeart} className={styles.overlayIcon} style={{ width: "16px", height: "16px" }} />
+                  <FontAwesomeIcon icon={faHeart} className={styles.overlayIcon} />
                   <span>{itemMeta?.likes ?? "24.9k"}</span>
                 </div>
                 <div className={styles.overlayItem}>
-                  <FontAwesomeIcon icon={faComment} className={styles.overlayIcon} style={{ width: "16px", height: "16px" }} />
+                  <FontAwesomeIcon icon={faComment} className={styles.overlayIcon} />
                   <span>{itemMeta?.commentsCount ?? "3.1k"}</span>
                 </div>
               </div>

@@ -33,3 +33,17 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .backdrop {
+    padding: 12px;
+  }
+
+  .content.wide {
+    width: 94vw;
+    height: 85vh;
+    max-height: 85dvh;
+    border-radius: 12px;
+    flex-direction: column;
+  }
+}
+

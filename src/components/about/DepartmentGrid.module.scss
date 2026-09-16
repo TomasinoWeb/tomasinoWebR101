@@ -21,7 +21,8 @@
   }
 
   &:hover .overlay,
-  &:focus-visible .overlay {
+  &:focus-visible .overlay,
+  &:active .overlay {
     opacity: 1;
   }
 }
@@ -59,7 +60,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(10px, 2vw, 24px);
+  gap: clamp(8px, 2vw, 24px);
   color: #ffffff;
   opacity: 0;
   transition: opacity 180ms ease-in-out;
@@ -71,12 +72,39 @@
   align-items: center;
   gap: 6px;
   font-weight: 700;
-  font-size: clamp(0.75rem, 1.4vw, 1.05rem);
+  font-size: clamp(0.7rem, 1.4vw, 1.05rem);
   color: #ffffff;
 
   .overlayIcon {
     width: 18px;
     height: 18px;
     color: #ffffff;
+  }
+}
+
+@media (max-width: 600px) {
+  .overlay {
+    gap: 6px;
+    padding: 2px;
+  }
+
+  .overlayItem {
+    gap: 4px;
+    font-size: 0.68rem;
+
+    .overlayIcon {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  .carouselBadge {
+    top: 6px;
+    right: 6px;
+
+    .badgeIcon {
+      width: 13px;
+      height: 13px;
+    }
   }
 }
