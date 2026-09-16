@@ -243,7 +243,12 @@
 @media (max-width: 768px) {
 
   .shell {
-    padding: 0;
+    padding: 64px 16px 0;
+    min-height: 100dvh;
+  }
+
+  .header {
+    padding-inline: 0;
   }
 
   .profile {
@@ -252,6 +257,18 @@
 
   .container {
     padding: 0;
+  }
+
+  .contentInner {
+    width: 100%;
+    max-width: 36rem;
+    margin-inline: auto;
+    padding: 1rem;
+    border: 1px solid #f0f0f0;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
   }
 
   .tab span {

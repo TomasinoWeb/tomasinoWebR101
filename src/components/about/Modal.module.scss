@@ -1,20 +1,23 @@
 .backdrop {
   position: fixed;
   inset: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overscroll-behavior: contain;
 }
 
 .content {
   position: relative;
   width: 100%;
-  max-width: 420px;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-width: 28rem;
+  max-height: 90dvh;
+  overflow: hidden;
+  overscroll-behavior: contain;
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -23,13 +26,30 @@
 
 .content.wide {
   display: flex;
-  width: 90vw;
-  max-width: 800px;
-  height: 500px;
-  max-height: 85vh;
+  flex-direction: column;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  max-height: 90dvh;
   margin: auto;
-  border-radius: 16px;
+  border-radius: 1rem;
   overflow: hidden;
   position: relative;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .backdrop {
+    padding: 16px;
+  }
+
+  .content,
+  .content.wide {
+    max-height: 85dvh;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 

@@ -263,15 +263,35 @@
 
   .testimonialCard {
     align-items: stretch;
+    padding: 1rem;
+    gap: 1rem;
   }
 
   .testimonialCardBody {
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
   .testimonialPhoto {
-    flex-basis: 38%;
-    width: 38%;
+    flex: 0 0 auto;
+    width: 8rem;
+    height: 8rem;
+    aspect-ratio: 1;
+    margin-inline: auto;
+    border-radius: 0.75rem;
+  }
+
+  .testimonialBody {
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .testimonialQuote {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
 }

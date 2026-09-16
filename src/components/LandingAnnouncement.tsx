@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { createPortal } from "react-dom";
+import { useEffect, useState } from "react";
 import styles from "./LandingAnnouncement.module.scss";
 
 interface LandingAnnouncementProps {
@@ -6,6 +7,12 @@ interface LandingAnnouncementProps {
 }
 
 export default function LandingAnnouncement({ onClose }: LandingAnnouncementProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -17,7 +24,11 @@ export default function LandingAnnouncement({ onClose }: LandingAnnouncementProp
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
-  return (
+  if (!isMounted) {
+    return null;
+  }
+
+  return createPortal(
     <div className={styles.overlay} role="presentation" onClick={onClose}>
       <div
         className={styles.dialog}
@@ -48,6 +59,7 @@ export default function LandingAnnouncement({ onClose }: LandingAnnouncementProp
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

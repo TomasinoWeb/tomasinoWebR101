@@ -14,7 +14,7 @@
 }
 
 .root {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -222,13 +222,13 @@
 @media screen and (max-width: 1023px) {
   .root {
     height: auto;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow-y: auto;
-    padding-bottom: 90px;
+    padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));
   }
 
   .footer {
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
 
   .main {
@@ -239,7 +239,7 @@
 
   .nonScrollable {
     height: auto;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow: visible;
 
     main {

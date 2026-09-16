@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 import { createPublicPage } from '../layouts/public/frontend';
@@ -123,9 +124,14 @@ function FAQsPageContent() {
   const [selectedCategory, setSelectedCategory] = useState<FAQCategory>('all');
   const [featuredPhotoIndex, setFeaturedPhotoIndex] = useState(0);
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const visibleFAQs = selectedCategory === 'all'
     ? faqData
     : faqData.filter((faq) => faq.category === selectedCategory);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   React.useEffect(() => {
     setFeaturedPhotoIndex(Math.floor(Math.random() * featuredPhotos.length));
@@ -169,9 +175,9 @@ function FAQsPageContent() {
 
   return (
     <main className={styles.faqPage}>
-      {isAnnouncementOpen && (
-        <div
-          className={`${styles.announcementBackdrop} ${landingAnnouncementStyles.overlay}`}
+      {isAnnouncementOpen && isMounted && createPortal(
+          <div
+            className={`${styles.announcementBackdrop} ${landingAnnouncementStyles.overlay}`}
           role="presentation"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
@@ -212,7 +218,8 @@ function FAQsPageContent() {
               priority
             />
           </div>
-        </div>
+          </div>,
+          document.body,
       )}
       <nav className={styles.pageNavigation} aria-label="FAQ sections">
         <h1 className={styles.pageTitle}>FAQs</h1>

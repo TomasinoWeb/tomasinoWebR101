@@ -1,6 +1,7 @@
 .faqPage {
   width: 100%;
-  min-height: 100vh;
+  box-sizing: border-box;
+  min-height: 100dvh;
   background-color: #381028; // Page background
   padding: 28px 20px;
   display: flex;
@@ -23,7 +24,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 10001;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
@@ -34,16 +35,20 @@
 
   .announcementModal {
     position: relative;
-    max-width: 85vw;
-    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: calc(100vh - 32px);
 
     img {
-      max-width: 85vw;
-      max-height: 80vh;
+      max-width: 90vw;
+      max-height: 85vh;
       width: auto;
       height: auto;
       object-fit: contain;
-      border-radius: 16px;
+      border-radius: 8px;
       display: block;
     }
   }
@@ -98,6 +103,8 @@
   border-radius: 12px;
   display: flex;
   gap: 28px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .feed {
@@ -223,6 +230,9 @@
       line-height: 1.2;
       cursor: pointer;
       list-style: none;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: auto;
 
       &::-webkit-details-marker {
         display: none;
@@ -387,6 +397,10 @@
 
 @media screen and (max-width: 800px) {
   .faqPage {
+    width: 100%;
+    max-width: 36rem;
+    margin-inline: auto;
+    box-sizing: border-box;
     padding: 20px 16px;
     padding-inline-start: max(16px, env(safe-area-inset-left));
     padding-inline-end: max(16px, env(safe-area-inset-right));
@@ -397,14 +411,44 @@
     flex-direction: column;
     gap: 18px;
     padding: 14px;
+    width: 100%;
+    max-width: 36rem;
+    margin-inline: auto;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .feed,
   .sidebar {
     width: 100%;
+    min-width: 0;
+  }
+
+  .actionHeader {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .navBar {
+      width: max-content;
+      min-width: 100%;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 0 4px;
+    }
   }
 
   .postCard {
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
     gap: 10px;
 
     .avatar {
@@ -415,6 +459,9 @@
     .cardBody {
       min-width: 0;
       padding: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
 
       .cardHeader {
         align-items: flex-start;
