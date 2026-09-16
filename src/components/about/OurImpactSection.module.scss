@@ -1,7 +1,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
+  gap: 16px;
+  width: 100%;
 }
 
 .card {
@@ -12,6 +13,9 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   color: var(--about-neutral-black, #1e1e1e);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &:nth-child(-n+2) {
     grid-column: span 3;
@@ -26,7 +30,9 @@
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 14px;
+  padding: 12px 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .card:first-child .tag {
@@ -64,51 +70,48 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
   min-height: 110px;
+  padding: 16px;
+  flex: 1;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 4px;
+  text-align: center;
 }
 
 .value {
   font-family: var(--font-oswald), sans-serif;
   font-size: 2.25rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 .description {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
-  
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .valueGroup {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
 }
-
-
-.card:nth-child(3) .body {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
 
 .websiteBody {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  padding: 16px 24px;
+  flex: 1;
 }
 
 .websiteBodyMobile {
@@ -118,9 +121,8 @@
 .websiteIcons {
   display: flex;
   gap: 16px;
-  padding: 16px;
   flex-wrap: wrap;
-  margin-bottom: 4px;
+  align-items: center;
 
   img {
     border-radius: 12px;
@@ -141,7 +143,7 @@
 
 .footer {
   border-top: 1px solid var(--about-neutral-light, #e4e2e6);
-  padding: 10px;
+  padding: 10px 16px;
   background: #F7F7F7;
 }
 
@@ -153,23 +155,52 @@
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
   }
 
-  .card {
-    grid-column: auto;
-  }
-
-  .body{
-    display: block;
-    display: flex;
-    align-items: start;
-    padding: 20px;
+  .card:nth-child(-n+2) {
+    grid-column: span 3;
   }
 
   .card:nth-child(3) {
-    border-radius: 0;
+    grid-column: span 6;
+  }
+
+  .card:nth-child(n+4) {
+    grid-column: span 2;
+  }
+
+  .tag {
+    padding: 10px 8px;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  .body {
+    padding: 12px 6px;
+    min-height: 90px;
+  }
+
+  .value {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+  }
+
+  .description {
+    font-size: clamp(0.45rem, 1.2vw, 0.55rem);
+  }
+
+  .footer {
+    padding: 8px 6px;
+    text-align: center;
+  }
+
+  .link {
+    font-size: clamp(0.5rem, 1.2vw, 0.65rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
   }
 
   .websiteBody {
@@ -179,26 +210,32 @@
   .websiteBodyMobile {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 16px;
-    img {
-      border-radius: 12px;
-      border: 2px solid #2E9E2E;
-      object-fit: cover;
-    }
+    align-items: center;
+    gap: 16px;
+    padding: 20px 16px;
+  }
+
+  .websiteBodyMobile .valueGroup {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .websiteIconsMobile {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
     width: 100%;
+    max-width: 360px;
   }
 
   .websiteIconsMobile .websiteIcon {
     width: 100%;
     aspect-ratio: 1 / 1;
     min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .websiteIconsMobile .websiteIcon img {
@@ -209,18 +246,4 @@
     border: 2px solid #2E9E2E;
     object-fit: cover;
   }
-
-  .websiteBodyMobile .valueGroup {
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-
-  .card:nth-child(4) .content .value, .card:nth-child(5) .body .value, 
-  .card:nth-child(6) .body .value {
-    max-height: 80px;
-    font-size: 24px;
-  }
-
 }

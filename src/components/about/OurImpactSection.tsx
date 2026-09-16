@@ -66,6 +66,10 @@ export function OurImpactSection() {
 
           {/* Mobile layout */}
           <div className={styles.websiteBodyMobile}>
+            <div className={styles.valueGroup}>
+              <span className={styles.value} style={{color: "#2E9E2E"}}>{websites.length}</span>
+              <span className={styles.description}>Developments</span>
+            </div>
             <div className={styles.websiteIconsMobile}>
               {websites.map((site) => (
                 <a
@@ -78,10 +82,6 @@ export function OurImpactSection() {
                   <Image src={site.icon} alt={site.name} width={70} height={70} />
                 </a>
               ))}
-            </div>
-            <div className={styles.valueGroup}>
-              <span className={styles.value} style={{color: "#2E9E2E"}}>{websites.length}</span>
-              <span className={styles.description}>Developments</span>
             </div>
           </div>
 
