@@ -1,7 +1,8 @@
 .pageWrapper {
   width: 100%;
-  min-height: 100%;
-  height: 100%;
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  min-height: calc(100dvh - var(--header-height, 60px) - var(--nav-h, 62px));
   background-color: #ffdf8b;
   background-image: url('/assets/py19/backgrounds/bg_wallpaper.png');
   background-position: center;
@@ -9,9 +10,8 @@
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  overflow-y: auto;
 }
 
 /* Top Header Bar */
@@ -33,22 +33,23 @@
 /* Main Content Area */
 .mainContainer {
   width: 100%;
-  max-width: 1360px;
-  padding: 56px 28px;
+  max-width: 1200px;
+  padding: 40px 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
+  box-sizing: border-box;
 }
 
 /* Central Process Card */
 .processCard {
   width: 100%;
-  max-width: 1120px;
+  max-width: 780px;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -57,54 +58,76 @@
 
 /* Card Header Bar */
 .cardTitleBar {
-  height: 68px;
-  padding: 0 24px;
+  height: 52px;
+  padding: 0 20px;
   background: linear-gradient(180deg, #a83268 0%, #713458 100%);
   border-bottom: 1px solid #14408c;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: clamp(18px, 1.6vw, 24px);
+  font-size: clamp(16px, 1.3vw, 20px);
   font-weight: var(--type-weight-bold);
   letter-spacing: 0.32px;
 }
 
 /* Tab Control Bar */
 .tabBar {
-  height: 58px;
-  padding: 8px 22px;
+  height: 48px;
+  padding: 0;
   background-color: #e0e5ed;
   border-bottom: 1px solid #dbdbe0;
   display: flex;
 
   .segmentedControl {
+    position: relative;
     width: 100%;
-    background-color: #bfc7d1;
-    border-radius: 6px;
-    border: 1px solid #999ead;
+    height: 100%;
+    background-color: #e0e5ed;
+    border-radius: 0;
+    border: none;
     display: flex;
-    padding: 2px;
-    gap: 2px;
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+
+    .activeTabIndicator {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      background: linear-gradient(180deg, #a83268 0%, #713458 100%);
+      border-radius: 0;
+      box-shadow: none;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.2s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
 
     .tabButton {
+      position: relative;
+      z-index: 2;
       flex: 1;
-      height: 40px;
+      height: 100%;
       border: none;
-      background: transparent;
-      border-radius: 5px;
+      background: transparent !important;
+      border-radius: 0;
       color: #4d4d4d;
       font-family: var(--font-ui);
-      font-size: clamp(12px, 1.1vw, 16px);
+      font-size: clamp(12px, 0.95vw, 14px);
       font-weight: var(--type-weight-regular);
       cursor: pointer;
-      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.25s ease, font-weight 0.25s ease;
 
       &.activeTab {
-        background: linear-gradient(180deg, #a83268 0%, #713458 100%);
         color: #ffffff;
         font-weight: var(--type-weight-bold);
-        box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
       }
     }
   }
@@ -112,28 +135,28 @@
 
 /* Content Container */
 .tabContent {
-  padding: 22px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 /* Help & Support Notice Banner */
 .supportBanner {
-  padding: 24px;
+  padding: 16px 18px;
   background-color: #ffffff;
   border: 1px solid #eaeaea;
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 10px;
+  margin-bottom: 16px;
 
   .bannerTitle {
     color: #b5124f;
     font-family: var(--font-ui);
-    font-size: clamp(15px, 1.2vw, 18px);
+    font-size: clamp(13.5px, 1.05vw, 16px);
     font-weight: var(--type-weight-bold);
     line-height: 1.25;
     margin: 0;
@@ -143,7 +166,7 @@
   .bannerDesc {
     color: #1f1f24;
     font-family: var(--font-ui);
-    font-size: clamp(12px, 0.95vw, 14px);
+    font-size: clamp(12px, 0.9vw, 13px);
     font-weight: var(--type-weight-regular);
     line-height: 1.5;
     margin: 0;
@@ -153,18 +176,17 @@
   .supportCta {
     background: linear-gradient(180deg, rgba(255, 196, 48, 0.95) 0%, rgba(196, 126, 8, 0.75) 100%);
     border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
-    padding: 10px 20px;
+    border-radius: 14px;
+    padding: 7px 16px;
     color: #ffffff;
     text-decoration: none;
     font-family: var(--font-ui);
-    font-size: clamp(14px, 1.1vw, 17px);
+    font-size: clamp(12.5px, 0.95vw, 14px);
     font-weight: var(--type-weight-bold);
     cursor: pointer;
     align-self: flex-start;
-    margin-top: 8px;
+    margin-top: 4px;
     transition: opacity 0.2s ease;
-    text-decoration: none;
 
     &:hover {
       opacity: 0.9;
@@ -284,13 +306,13 @@
 
 /* Item List Row (Shared for Steps & Help Items) */
 .itemRow {
-  padding: 20px 0;
+  padding: 14px 0;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 
   &:last-child {
     border-bottom: none;
@@ -299,7 +321,7 @@
   .itemContent {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
     flex: 1;
     min-width: 0;
 
@@ -311,7 +333,7 @@
       .itemIndex {
         color: #111111;
         font-family: var(--font-ui);
-        font-size: 18px;
+        font-size: clamp(14.5px, 1.1vw, 16.5px);
         font-weight: 700;
         line-height: 1.25;
         margin: 0;
@@ -320,7 +342,7 @@
       .itemTitle {
         color: #111111;
         font-family: var(--font-ui);
-        font-size: 18px;
+        font-size: clamp(14.5px, 1.1vw, 16.5px);
         font-weight: 700;
         line-height: 1.25;
         margin: 0;
@@ -330,7 +352,7 @@
     .itemDesc {
       color: #808594;
       font-family: var(--font-ui);
-      font-size: 14px;
+      font-size: clamp(12px, 0.9vw, 13.5px);
       font-weight: var(--type-weight-regular);
       line-height: 1.5;
       margin: 0;
@@ -341,12 +363,12 @@
     background: linear-gradient(180deg, #2e9e2e 0%, #176817 100%);
     box-shadow: inset 0px 1px 2px rgba(255, 255, 255, 0.5), 0px 2px 4px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 6px;
-    padding: 10px 20px;
+    border-radius: 5px;
+    padding: 8px 16px;
     color: #ffffff;
     text-decoration: none;
     font-family: var(--font-ui);
-    font-size: clamp(14px, 1.1vw, 17px);
+    font-size: clamp(12.5px, 0.95vw, 14px);
     font-weight: var(--type-weight-bold);
     cursor: pointer;
     flex-shrink: 0;
@@ -369,11 +391,11 @@
   .infoBadge {
     background-color: #e7ffd9;
     border: 1px solid #88bd8e;
-    border-radius: 6px;
-    padding: 10px 18px;
+    border-radius: 5px;
+    padding: 8px 14px;
     color: #358b16;
     font-family: var(--font-ui);
-    font-size: clamp(14px, 1.1vw, 17px);
+    font-size: clamp(12px, 0.9vw, 13.5px);
     font-weight: var(--type-weight-bold);
     flex-shrink: 0;
   }
@@ -473,11 +495,55 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+/* Tablet View (601px - 1024px) */
+@media screen and (max-width: 1024px) {
   .mainContainer {
-    padding: 24px 16px;
-    padding-inline-start: max(16px, env(safe-area-inset-left));
-    padding-inline-end: max(16px, env(safe-area-inset-right));
+    padding: 28px 20px;
+  }
+
+  .processCard {
+    max-width: 100%;
+  }
+
+  .cardTitleBar {
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+  }
+
+  .tabBar {
+    height: 44px;
+    padding: 0;
+
+    .segmentedControl .tabButton {
+      height: 100%;
+      font-size: 13px;
+    }
+  }
+
+  .tabContent {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .itemRow {
+    padding: 12px 0;
+    gap: 12px;
+
+    .actionButton,
+    .infoBadge {
+      padding: 7px 14px;
+      font-size: 12.5px;
+    }
+  }
+}
+
+/* Mobile Phone View (< 600px) */
+@media screen and (max-width: 600px) {
+  .mainContainer {
+    padding: 16px 12px;
+    padding-inline-start: max(12px, env(safe-area-inset-left));
+    padding-inline-end: max(12px, env(safe-area-inset-right));
     align-items: flex-start;
   }
 
@@ -486,18 +552,21 @@
   }
 
   .cardTitleBar {
-    height: 56px;
-    padding: 0 16px;
+    height: 44px;
+    padding: 0 12px;
+    font-size: 14.5px;
   }
 
   .tabBar {
-    height: auto;
-    padding: 8px 12px;
-  }
+    height: 40px;
+    padding: 0;
 
-  .tabButton {
-    min-height: 40px;
-    padding: 8px 10px;
+    .segmentedControl .tabButton {
+      height: 100%;
+      min-height: 40px;
+      padding: 0 8px;
+      font-size: 12px;
+    }
   }
 
   .tabContent {
@@ -508,8 +577,8 @@
   .itemRow {
     align-items: stretch;
     flex-direction: column;
-    gap: 14px;
-    padding: 16px;
+    gap: 10px;
+    padding: 12px 0;
 
     .itemContent {
       min-width: 0;
@@ -521,21 +590,43 @@
 
     .actionButton,
     .infoBadge {
-      align-self: flex-start;
-    }
-
-    .actionButton {
-      padding: 9px 16px;
+      align-self: stretch;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 8px 12px;
+      font-size: 13px;
     }
   }
 
+  .supportBanner {
+    padding: 12px 14px;
+    gap: 8px;
+
+    .bannerTitle {
+      font-size: 13px;
+    }
+
+    .bannerDesc {
+      font-size: 12px;
+    }
+
+    .supportCta {
+      align-self: stretch;
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+  }
 
   .supportPrompt {
-    padding: 24px;
+    padding: 20px;
 
     h2 {
-      margin: -24px -24px 18px;
-      padding: 16px 48px 16px 16px;
+      margin: -20px -20px 16px;
+      padding: 14px 40px 14px 14px;
+      font-size: 16px;
     }
   }
 
