@@ -102,10 +102,9 @@ export default createPublicPage<PageProps>(() => {
               </DashboardWidget>
             </div>
           </div>
-
-          <Footer className={styles.homeFooter} />
-
         </div>
+
+        <Footer className={styles.homeFooter} />
       </div>
     ),
   };

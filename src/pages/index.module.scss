@@ -134,6 +134,7 @@ $portrait-tablet: "(orientation: portrait) and (max-width: 1280px) and (min-widt
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    padding: var(--pad-y) 0 0;
 
     --gap-app: 12px;
     --caption-h: 18px;
@@ -144,26 +145,28 @@ $portrait-tablet: "(orientation: portrait) and (max-width: 1280px) and (min-widt
     --pad-y: 16px;
     --home-footer-h: 56px;
 
-    /* Phone view: ~60x60px app icons */
-    --app-unit: clamp(54px, 14.5vw, 62px);
+    /* Phone view: scale app-unit off width to fill available phone screen width */
+    --unit-from-w: calc((calc(100vw - 2 * var(--side-pad)) - 3 * var(--gap-app)) / 4);
+    --app-unit: clamp(48px, var(--unit-from-w), 66px);
 
     --m-card: calc(2 * var(--app-unit) + var(--gap-app));
     --m-widget-row-h: calc(var(--m-card) + var(--caption-h));
     --m-apps-row-h: calc(2 * var(--app-unit) + 2 * var(--app-label-h) + var(--m-inner-gap));
     --m-grid-w: calc(4 * var(--app-unit) + 3 * var(--gap-app));
 
-    /* Tablet Devices: ~75x75px app icons */
+    /* Tablet Devices: scale app-unit off 6-column width for smooth tablet responsiveness */
     @media screen and (min-width: #{$tablet-min}) {
-      --gap-app: 18px;
-      --caption-h: 24px;
-      --app-label-h: 18px;
-      --m-inner-gap: 12px;
-      --gap-row: 24px;
+      --gap-app: 16px;
+      --caption-h: 22px;
+      --app-label-h: 16px;
+      --m-inner-gap: 10px;
+      --gap-row: 20px;
       --side-pad: 20px;
       --pad-y: 20px;
       --home-footer-h: 60px;
 
-      --app-unit: clamp(68px, 9.5vw, 80px);
+      --unit-from-w: calc((calc(100vw - 2 * var(--side-pad)) - 5 * var(--gap-app)) / 6);
+      --app-unit: clamp(56px, var(--unit-from-w), 85px);
       --m-grid-w: calc(6 * var(--app-unit) + 5 * var(--gap-app));
     }
   }
@@ -220,6 +223,9 @@ $portrait-tablet: "(orientation: portrait) and (max-width: 1280px) and (min-widt
     overflow: visible;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    padding: 0 var(--side-pad);
+    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
   }
@@ -288,9 +294,11 @@ $portrait-tablet: "(orientation: portrait) and (max-width: 1280px) and (min-widt
 .homeFooter {
   position: absolute !important;
   bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: 100dvw !important;
+  max-width: 100dvw !important;
   height: var(--home-footer-h) !important;
   overflow: hidden !important;
   padding: 0 4% !important;
@@ -405,8 +413,18 @@ $portrait-tablet: "(orientation: portrait) and (max-width: 1280px) and (min-widt
 
 @media screen and #{$portrait} {
   .homeFooter {
-    height: var(--home-footer-h) !important;
-    padding: 6px 4% !important;
+    position: relative !important;
+    bottom: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    margin-top: auto !important;
+    width: 100vw !important;
+    width: 100dvw !important;
+    max-width: 100dvw !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    padding: 12px 4% !important;
 
     & > div {
       flex-direction: column !important;

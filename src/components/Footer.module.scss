@@ -1,7 +1,13 @@
 .footer {
-  height: var(--footer-height);
-  padding: 0 4%;
-  width: 100%;
+  width: 100vw;
+  width: 100dvw;
+  max-width: 100dvw;
+  position: relative;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  height: auto;
+  padding: 12px 4%;
   background-color: #ffffff;
   border-top: 0.5px solid #d9d9d9;
   border-left: none;
@@ -36,17 +42,17 @@
   }
 
   .inner {
-    max-width: var(--footer-max-width, 100%);
+    max-width: var(--footer-max-width, 1600px);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically center left and right groups */
+    align-items: center;
     width: 100%;
 
     .left {
       display: flex;
       gap: 20px;
-      align-items: center; /* Vertically center copyright and text links */
+      align-items: center;
       font-family: var(--font-ui);
       font-size: var(--type-footer);
       font-weight: var(--type-weight-regular);
@@ -94,18 +100,52 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+/* Tablet Device Responsive View (620px to 1023px) */
+@media screen and (min-width: 620px) and (max-width: 1023px) {
   .footer {
-    height: var(--footer-height);
-    padding: 8px 4% 80px;
+    height: auto !important;
+    padding: 14px 4% !important;
 
     .inner {
-      padding: 0px;
+      padding: 0;
       flex-direction: column;
-      gap: 7px;
+      gap: 10px;
+
+      .left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        a,
+        p {
+          text-align: center;
+        }
+      }
+
+      .right {
+        justify-content: center;
+        gap: 16px;
+      }
+    }
+  }
+}
+
+/* Mobile Phone Responsive View (< 620px) */
+@media screen and (max-width: 619px) {
+  .footer {
+    height: auto !important;
+    padding: 14px 4% !important;
+
+    .inner {
+      padding: 0;
+      flex-direction: column;
+      gap: 8px;
 
       .left {
         flex-direction: column;
+        align-items: center;
         gap: 5px;
 
         a,
@@ -131,18 +171,5 @@
       width: 13px;
       height: 13px;
     }
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1023px) {
-  .footer {
-    padding-bottom: 80px;
-  }
-}
-
-@media screen and (max-width: 50em) {
-  .container {
-    flex-direction: column;
-    gap: 24px;
   }
 }

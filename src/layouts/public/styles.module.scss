@@ -171,10 +171,15 @@
 .footer {
   flex-shrink: 0;
   position: relative;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  width: 100dvw;
+  max-width: 100dvw;
   background-color: #ffffff;
   --footer-fg: var(--neutral-black, #1e1e1e);
   z-index: 10;
+  box-sizing: border-box;
 }
 
 .footerVisible {
