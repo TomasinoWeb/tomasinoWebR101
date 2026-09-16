@@ -224,11 +224,11 @@
     height: auto;
     min-height: 100vh;
     overflow-y: auto;
-    padding-bottom: 90px;
+    padding-bottom: var(--nav-h);
   }
 
   .footer {
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
 
   .main {
