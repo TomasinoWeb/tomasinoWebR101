@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe, faUsers, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { createPublicPage } from '../layouts/public/frontend';
 import { createPublicStaticProps } from '../layouts/public/static';
 import styles from './faq.module.scss';
@@ -124,6 +125,29 @@ function FAQsPageContent() {
   const [featuredPhotoIndex, setFeaturedPhotoIndex] = useState(0);
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
   const [openFaqIds, setOpenFaqIds] = useState<Set<number>>(new Set());
+  const navBarRef = React.useRef<HTMLDivElement>(null);
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+
+  React.useEffect(() => {
+    const updateIndicator = () => {
+      if (!navBarRef.current) return;
+      const activeButton = navBarRef.current.querySelector<HTMLButtonElement>(`.${styles.active}`);
+      if (activeButton) {
+        setIndicatorStyle({
+          left: activeButton.offsetLeft,
+          width: activeButton.offsetWidth,
+        });
+      }
+    };
+
+    updateIndicator();
+    const timer = setTimeout(updateIndicator, 50);
+    window.addEventListener('resize', updateIndicator);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateIndicator);
+    };
+  }, [selectedCategory]);
 
   const toggleFaq = (id: number) => {
     setOpenFaqIds((prev) => {
@@ -228,21 +252,23 @@ function FAQsPageContent() {
           </div>
         </div>
       )}
-      <nav className={styles.pageNavigation} aria-label="FAQ sections">
+      <header className={styles.pageNavigation}>
         <h1 className={styles.pageTitle}>FAQs</h1>
-        <div className={styles.pageLinks}>
-          <Link href="/faqs" aria-current="page">All</Link>
-          <Link href="/about">The Org</Link>
-          <Link href="/apply">Application</Link>
-          <Link href="/r101">Interviews</Link>
-        </div>
-      </nav>
+      </header>
       <div className={styles.dashboardContainer}>
         {/* Main Feed Section */}
         <section className={styles.feed}>
           {/* Top Quick Bar */}
           <div className={styles.actionHeader}>
-            <div className={styles.navBar}>
+            <div className={styles.navBar} ref={navBarRef}>
+              <div
+                className={styles.activeIndicator}
+                style={{
+                  transform: `translate3d(${indicatorStyle.left}px, 0, 0)`,
+                  width: `${indicatorStyle.width}px`,
+                  opacity: indicatorStyle.width ? 1 : 0,
+                }}
+              />
               {faqCategories.map((category) => (
                 <button
                   key={category.key}
@@ -251,7 +277,7 @@ function FAQsPageContent() {
                   onClick={() => setSelectedCategory(category.key)}
                   aria-pressed={selectedCategory === category.key}
                 >
-                  <span>{category.label}</span>
+                  <span className={styles.tabLabel}>{category.label}</span>
                 </button>
               ))}
             </div>
@@ -303,9 +329,27 @@ function FAQsPageContent() {
         {/* Sidebar Widgets */}
         <aside className={styles.sidebar}>
           <div className={styles.statWidget}>
-            <div className={styles.statRow}><span>Websites</span><span className={styles.badge}>6</span></div>
-            <div className={styles.statRow}><span>Members</span><span className={styles.badge}>81+</span></div>
-            <div className={styles.statRow}><span>Awards</span><span className={styles.badge}>29</span></div>
+            <div className={`${styles.statRow} ${styles.statWebsites}`}>
+              <div className={styles.labelGroup}>
+                <FontAwesomeIcon icon={faGlobe} className={styles.statIcon} />
+                <span>Websites</span>
+              </div>
+              <span className={styles.badge}>6</span>
+            </div>
+            <div className={`${styles.statRow} ${styles.statMembers}`}>
+              <div className={styles.labelGroup}>
+                <FontAwesomeIcon icon={faUsers} className={styles.statIcon} />
+                <span>Members</span>
+              </div>
+              <span className={styles.badge}>81+</span>
+            </div>
+            <div className={`${styles.statRow} ${styles.statAwards}`}>
+              <div className={styles.labelGroup}>
+                <FontAwesomeIcon icon={faTrophy} className={styles.statIcon} />
+                <span>Awards</span>
+              </div>
+              <span className={styles.badge}>29</span>
+            </div>
           </div>
 
           <div className={styles.featuredWidget}>
