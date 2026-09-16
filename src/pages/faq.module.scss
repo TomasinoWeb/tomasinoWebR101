@@ -166,7 +166,8 @@
 /* Post Cards */
 .postCard {
   display: flex;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 14px;
 
   .avatar {
     width: 60px;
@@ -179,14 +180,18 @@
 
   .cardBody {
     flex: 1;
+    min-width: 0;
+    min-height: 60px;
     background: linear-gradient(180deg, #ffffff 0%, #ffffff 84%, #e8e4e8 100%);
     border: 1px solid #e5e7eb;
     border-radius: 12px;
-    padding: 14px 16px;
+    padding: 6px 14px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    gap: 3px;
+    box-sizing: border-box;
 
     .cardHeader {
       display: flex;
@@ -196,64 +201,103 @@
       .username {
         color: #8c94a3;
         font-family: var(--font-ui);
-        font-size: var(--type-body);
+        font-size: 12px;
         font-weight: var(--type-weight-regular);
+        line-height: 1;
       }
 
       .stats {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
 
         .noteBadge {
           background-color: #e0e0e5;
           border-radius: 3px;
-          padding: 2px 6px;
-          font-size: var(--type-body);
+          padding: 1px 5px;
+          font-size: 11px;
           font-weight: var(--type-weight-bold);
           color: #26292e;
+          line-height: 1;
         }
       }
     }
 
-    .question {
-      font-size: clamp(17px, 1.8vw, 24px);
-      font-weight: var(--type-weight-bold);
-      color: #26292e;
-      line-height: 1.2;
-      cursor: pointer;
-      list-style: none;
+    .answerDropdown {
+      width: 100%;
 
-      &::-webkit-details-marker {
-        display: none;
-      }
-
-      &::after {
-        content: '+';
-        float: right;
-        margin-left: 16px;
-        font-size: 1.2em;
-        font-weight: var(--type-weight-regular);
-      }
-    }
-
-    .answerDropdown[open] .question::after {
-      content: '-';
-    }
-
-    .reply {
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-left: 3px solid #713458;
-      background-color: #FAFAFA;
-
-      .answer {
-        font-family: var(--font-ui);
-        font-size: 1rem;
-        font-weight: var(--type-weight-regular);
-        color: #26292e !important;
-        line-height: 1.6;
+      .question {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        padding: 0;
         margin: 0;
+        font-family: inherit;
+        font-size: clamp(13px, 1.15vw, 15px);
+        font-weight: var(--type-weight-bold);
+        color: #26292e;
+        line-height: 1.25;
+        cursor: pointer;
+        text-align: left;
+
+        .toggleIcon {
+          font-size: 1.15em;
+          font-weight: var(--type-weight-regular);
+          line-height: 1;
+          margin-left: 10px;
+          flex-shrink: 0;
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+      }
+
+      .replyWrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        margin-top: 0;
+        transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.25s ease,
+                    margin-top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+        .replyInner {
+          overflow: hidden;
+        }
+
+        .reply {
+          margin-top: 4px;
+          padding: 10px 12px;
+          border-left: 3px solid #713458;
+          background-color: #FAFAFA;
+          border-radius: 4px;
+
+          .answer {
+            font-family: var(--font-ui);
+            font-size: 0.92rem;
+            font-weight: var(--type-weight-regular);
+            color: #26292e !important;
+            line-height: 1.5;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.isOpen {
+    .cardBody {
+      .answerDropdown {
+        .question .toggleIcon {
+          transform: rotate(180deg);
+        }
+
+        .replyWrapper {
+          grid-template-rows: 1fr;
+          opacity: 1;
+          margin-top: 8px;
+        }
       }
     }
   }
@@ -385,18 +429,90 @@
   border-top-color: #d9d9d9 !important;
 }
 
-@media screen and (max-width: 800px) {
+/* Tablet Responsive View (600px - 1024px) */
+@media screen and (max-width: 1024px) {
   .faqPage {
-    padding: 20px 16px;
-    padding-inline-start: max(16px, env(safe-area-inset-left));
-    padding-inline-end: max(16px, env(safe-area-inset-right));
-    justify-content: flex-start;
+    padding: 24px 24px calc(var(--nav-h, 62px) + 24px);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .pageNavigation {
+    max-width: 100%;
+    padding: 0 4px 16px;
+    box-sizing: border-box;
   }
 
   .dashboardContainer {
+    max-width: 100%;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 14px;
+  }
+
+  .actionHeader .navBar {
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start !important;
+    gap: 10px;
+    padding: 0 12px !important;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .navItem {
+      flex-shrink: 0;
+      padding: 6px 14px !important;
+      font-size: 13px !important;
+    }
+  }
+
+  .postCard {
+    gap: 12px;
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+    }
+
+    .cardBody {
+      min-height: 50px;
+      padding: 6px 14px;
+
+      .cardHeader {
+        .username {
+          font-size: 12px;
+        }
+
+        .noteBadge {
+          font-size: 10px;
+          padding: 1px 5px;
+        }
+      }
+
+      .question {
+        font-size: clamp(13px, 1.4vw, 15px);
+      }
+
+      .reply {
+        margin-top: 8px;
+        padding: 10px 12px;
+
+        .answer {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .dashboardContainer {
     flex-direction: column;
-    gap: 18px;
-    padding: 14px;
+    gap: 20px;
   }
 
   .feed,
@@ -404,45 +520,94 @@
     width: 100%;
   }
 
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Mobile Phone Responsive View (< 600px) */
+@media screen and (max-width: 599px) {
+  .faqPage {
+    padding: 18px 16px calc(var(--nav-h, 54px) + 20px);
+    padding-inline-start: max(16px, env(safe-area-inset-left));
+    padding-inline-end: max(16px, env(safe-area-inset-right));
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .pageNavigation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 2px 12px;
+  }
+
+  .pageLinks {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+
+  .dashboardContainer {
+    padding: 16px;
+    gap: 16px;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
   .postCard {
     gap: 10px;
 
     .avatar {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
     }
 
     .cardBody {
-      min-width: 0;
-      padding: 12px;
+      min-height: 44px;
+      padding: 5px 12px;
 
       .cardHeader {
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 6px 10px;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 6px;
+
+        .username {
+          font-size: 11px;
+        }
+
+        .noteBadge {
+          font-size: 10px;
+          padding: 1px 4px;
+        }
       }
 
       .question {
-        padding-right: 4px;
-        font-size: clamp(16px, 4.5vw, 20px);
+        padding-right: 2px;
+        font-size: clamp(12px, 3.6vw, 14px);
 
         &::after {
-          margin-left: 10px;
+          margin-left: 6px;
         }
       }
 
       .reply {
-        margin-top: 10px;
-        padding: 10px 12px;
+        margin-top: 6px;
+        padding: 8px 10px;
 
         .answer {
-          font-size: 0.95rem;
+          font-size: 0.86rem;
         }
       }
     }
   }
 
   .sidebar {
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }

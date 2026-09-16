@@ -123,6 +123,20 @@ function FAQsPageContent() {
   const [selectedCategory, setSelectedCategory] = useState<FAQCategory>('all');
   const [featuredPhotoIndex, setFeaturedPhotoIndex] = useState(0);
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
+  const [openFaqIds, setOpenFaqIds] = useState<Set<number>>(new Set());
+
+  const toggleFaq = (id: number) => {
+    setOpenFaqIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
   const visibleFAQs = selectedCategory === 'all'
     ? faqData
     : faqData.filter((faq) => faq.category === selectedCategory);
@@ -244,31 +258,46 @@ function FAQsPageContent() {
           </div>
 
           {/* Mapped FAQ Posts */}
-          {visibleFAQs.map((faq) => (
-            <article key={faq.id} className={styles.postCard}>
-              <Image
-                className={styles.avatar}
-                src={avatarPath(faqAvatars[faq.id])}
-                alt={`FAQ profile ${faq.id}`}
-                width={60}
-                height={60}
-              />
-              <div className={styles.cardBody}>
-                <div className={styles.cardHeader}>
-                  <span className={styles.username}>{faqUsernames[faq.id - 1]}</span>
-                  <div className={styles.stats}>
-                    <span className={styles.noteBadge}>{faq.notes}</span>
+          {visibleFAQs.map((faq) => {
+            const isOpen = openFaqIds.has(faq.id);
+            return (
+              <article key={faq.id} className={`${styles.postCard} ${isOpen ? styles.isOpen : ''}`}>
+                <Image
+                  className={styles.avatar}
+                  src={avatarPath(faqAvatars[faq.id])}
+                  alt={`FAQ profile ${faq.id}`}
+                  width={60}
+                  height={60}
+                />
+                <div className={styles.cardBody}>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.username}>{faqUsernames[faq.id - 1]}</span>
+                    <div className={styles.stats}>
+                      <span className={styles.noteBadge}>{faq.notes}</span>
+                    </div>
+                  </div>
+                  <div className={styles.answerDropdown}>
+                    <button
+                      type="button"
+                      className={styles.question}
+                      onClick={() => toggleFaq(faq.id)}
+                      aria-expanded={isOpen}
+                    >
+                      <span>{faq.question}</span>
+                      <span className={styles.toggleIcon}>{isOpen ? '−' : '+'}</span>
+                    </button>
+                    <div className={styles.replyWrapper}>
+                      <div className={styles.replyInner}>
+                        <div className={styles.reply}>
+                          <p className={styles.answer}>{faq.answer}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <details className={styles.answerDropdown}>
-                  <summary className={styles.question}>{faq.question}</summary>
-                  <div className={styles.reply}>
-                    <p className={styles.answer}>{faq.answer}</p>
-                  </div>
-                </details>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </section>
 
         {/* Sidebar Widgets */}

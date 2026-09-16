@@ -9,12 +9,12 @@
   height: auto;
   padding: 12px 4%;
   background-color: #ffffff;
-  border-top: 0.5px solid #d9d9d9;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-left: none;
   border-right: none;
   border-bottom: none;
   border-radius: 0;
-  box-shadow: none;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
   z-index: 100;
   backdrop-filter: blur(8px);
   color: var(--footer-fg, #343332);
