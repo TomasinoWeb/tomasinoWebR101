@@ -63,29 +63,40 @@ function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps)
           }
         >
           <div className={styles.centeredBrand}>
-            <Link href="/">TomasinoWeb</Link>
+            <Link href="/" aria-label="Go to the landing page">
+              <Image
+                className={styles.headerLogo}
+                src="/logo/logo_white.png"
+                alt="TomasinoWeb"
+                width={144}
+                height={32}
+                priority
+              />
+            </Link>
           </div>
         </header>
 
         <header className={styles.mobile}>
           <div className={styles.inner}>
-            <MobileNavbar variant="mini" />
+            <MobileNavbar variant="mini" useLogo />
           </div>
         </header>
 
-        <AnimatePresence mode="wait">
-          <Stairs>
-            <main className={`${styles.main}`}>{layoutProps.children}</main>
-          </Stairs>
-        </AnimatePresence>
+        <GlobalNavigator />
 
-        <GlobalNavigator containsResults={internalProps?.resultsAreOut} />
+        <div className={styles.pageContent}>
+          <AnimatePresence mode="wait">
+            <Stairs>
+              <main className={`${styles.main}`}>{layoutProps.children}</main>
+            </Stairs>
+          </AnimatePresence>
 
-        {layoutProps.footer !== "disabled" && (
-          <div className={styles.footer}>
-            <Footer className={layoutProps.footerClassName} />
-          </div>
-        )}
+          {layoutProps.footer !== "disabled" && (
+            <div className={styles.footer}>
+              <Footer className={layoutProps.footerClassName} />
+            </div>
+          )}
+        </div>
       </div>
     );
 }

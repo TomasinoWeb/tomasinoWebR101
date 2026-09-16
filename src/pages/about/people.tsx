@@ -44,7 +44,7 @@ const coreMembers = [
   },
   {
     name: "Paula Martinez",
-    position: "VP for Community Development",
+    position: "Executive Vice President",
     image: "/assets/py18/about/the-people/core/commdev.png",
   },
   {
@@ -54,7 +54,7 @@ const coreMembers = [
   },
   {
     name: "Elisse Arzadon",
-    position: "Managing Editor",
+    position: "Executive Editor",
     image: "/assets/py18/about/the-people/core/maned.png",
   },
   {
@@ -74,7 +74,7 @@ const coreMembers = [
   },
   {
     name: "James Romero",
-    position: "Asst. Chief Videographer",
+    position: "Chief Videographer",
     image: "/assets/py18/about/the-people/core/acv.png",
   },
   {
@@ -84,7 +84,7 @@ const coreMembers = [
   },
   {
     name: "Danielle Mantes",
-    position: "Asst. Creative Director",
+    position: "Creative Director",
     image: "/assets/py18/about/the-people/core/acd.png",
   },
   {

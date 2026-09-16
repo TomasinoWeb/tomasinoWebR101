@@ -59,6 +59,16 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 850px) {
+  .mobileNavContainer {
+    visibility: visible;
+  }
+
+  .hamburgerBtn {
+    z-index: 2;
+  }
+}
+
 .headerBar {
   width: 100%;
   height: 56px;
@@ -82,6 +92,20 @@
     font-size: var(--type-header);
     font-weight: var(--type-weight-bold);
     letter-spacing: -0.2px;
+  }
+
+  .logoLink {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+
+    .headerLogo {
+      display: block;
+      width: 124px;
+      height: 28px;
+      object-fit: contain;
+    }
   }
 
   .hamburgerBtn {
@@ -154,17 +178,30 @@
     font-weight: var(--type-weight-bold);
   }
 
+  .logoLink {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+
+    .headerLogo {
+      display: block;
+      width: 124px;
+      height: 28px;
+      object-fit: contain;
+    }
+  }
+
   .closeBtn {
     position: absolute;
     right: 16px;
-    width: 32px;
-    height: 32px;
-    background-color: #a83268; /* Pink block background for the close button */
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
     border: none;
-    border-radius: 4px;
     outline: none;
     color: #ffffff;
-    font-size: 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -179,8 +216,10 @@
 
 .menuLinksList {
   flex: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   background-color: #ffffff;
   overflow-y: auto;
 }
@@ -188,9 +227,14 @@
 .menuLinkItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  width: 100%;
+  flex: 1;
+  text-align: center;
   box-sizing: border-box;
-  padding: 18px 24px;
+  min-height: 48px;
+  height: auto;
+  padding: 16px 20px;
   text-decoration: none;
   background-color: #f5f6f8; /* Light off-white background */
   border-bottom: 1.5px solid #d9dce1; /* Hairline separator */
@@ -199,7 +243,9 @@
   .linkLeft {
     display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
 
     .linkIcon {
       font-size: 20px;
@@ -210,17 +256,12 @@
 
     .linkLabel {
       font-family: var(--font-ui);
-      font-size: var(--type-section-tab);
-      font-weight: var(--type-weight-regular);
+      font-size: 16px;
+      font-weight: 600;
       color: #7c8896; /* Gray/blue-gray label text */
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-  }
-
-  .chevronIcon {
-    font-size: 14px;
-    color: #7c8896;
   }
 
   /* Active state */
@@ -239,9 +280,6 @@
       }
     }
 
-    .chevronIcon {
-      color: #ffffff;
-    }
   }
 
   &:hover:not(.activeLinkItem) {

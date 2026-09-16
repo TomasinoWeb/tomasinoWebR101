@@ -65,7 +65,6 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-family: var(--font-ui);
   font-size: clamp(18px, 1.6vw, 24px);
   font-weight: var(--type-weight-bold);
   letter-spacing: 0.32px;
@@ -121,20 +120,23 @@
 
 /* Help & Support Notice Banner */
 .supportBanner {
-  padding: 22px;
+  padding: 24px;
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #eaeaea;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 24px;
 
   .bannerTitle {
     color: #b5124f;
     font-family: var(--font-ui);
     font-size: clamp(15px, 1.2vw, 18px);
     font-weight: var(--type-weight-bold);
+    line-height: 1.25;
+    margin: 0;
     text-transform: uppercase;
   }
 
@@ -144,6 +146,7 @@
     font-size: clamp(12px, 0.95vw, 14px);
     font-weight: var(--type-weight-regular);
     line-height: 1.5;
+    margin: 0;
     text-align: justify;
   }
 
@@ -153,11 +156,13 @@
     border-radius: 16px;
     padding: 10px 20px;
     color: #ffffff;
+    text-decoration: none;
     font-family: var(--font-ui);
     font-size: clamp(14px, 1.1vw, 17px);
     font-weight: var(--type-weight-bold);
     cursor: pointer;
     align-self: flex-start;
+    margin-top: 8px;
     transition: opacity 0.2s ease;
     text-decoration: none;
 
@@ -279,12 +284,13 @@
 
 /* Item List Row (Shared for Steps & Help Items) */
 .itemRow {
-  padding: 18px 24px;
+  padding: 20px 0;
   background-color: #ffffff;
-  border-bottom: 1px solid #dbdbe0;
+  border-bottom: 1px solid #e5e5e5;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 
   &:last-child {
     border-bottom: none;
@@ -293,8 +299,9 @@
   .itemContent {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
     flex: 1;
+    min-width: 0;
 
     .itemHeader {
       display: flex;
@@ -302,25 +309,31 @@
       gap: 8px;
 
       .itemIndex {
-        color: #b5124f;
+        color: #111111;
         font-family: var(--font-ui);
-        font-size: clamp(16px, 1.3vw, 20px);
-        font-weight: var(--type-weight-bold);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin: 0;
       }
 
       .itemTitle {
-        color: #1f1f24;
+        color: #111111;
         font-family: var(--font-ui);
-        font-size: clamp(16px, 1.3vw, 20px);
-        font-weight: var(--type-weight-bold);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin: 0;
       }
     }
 
     .itemDesc {
       color: #808594;
       font-family: var(--font-ui);
-      font-size: clamp(12px, 0.95vw, 14px);
+      font-size: 14px;
       font-weight: var(--type-weight-regular);
+      line-height: 1.5;
+      margin: 0;
     }
   }
 
@@ -331,12 +344,20 @@
     border-radius: 6px;
     padding: 10px 20px;
     color: #ffffff;
+    text-decoration: none;
     font-family: var(--font-ui);
     font-size: clamp(14px, 1.1vw, 17px);
     font-weight: var(--type-weight-bold);
     cursor: pointer;
+    flex-shrink: 0;
     white-space: nowrap;
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:visited {
+      text-decoration: none;
+    }
 
     &:hover {
       transform: translateY(-2px) scale(1.03);
@@ -354,6 +375,7 @@
     font-family: var(--font-ui);
     font-size: clamp(14px, 1.1vw, 17px);
     font-weight: var(--type-weight-bold);
+    flex-shrink: 0;
   }
 }
 
@@ -448,5 +470,81 @@
         box-shadow: 0px 0px 8px #b5124f;
       }
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mainContainer {
+    padding: 24px 16px;
+    padding-inline-start: max(16px, env(safe-area-inset-left));
+    padding-inline-end: max(16px, env(safe-area-inset-right));
+    align-items: flex-start;
+  }
+
+  .processCard {
+    border-radius: 8px;
+  }
+
+  .cardTitleBar {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .tabBar {
+    height: auto;
+    padding: 8px 12px;
+  }
+
+  .tabButton {
+    min-height: 40px;
+    padding: 8px 10px;
+  }
+
+  .tabContent {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .itemRow {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+
+    .itemContent {
+      min-width: 0;
+
+      .itemHeader {
+        align-items: flex-start;
+      }
+    }
+
+    .actionButton,
+    .infoBadge {
+      align-self: flex-start;
+    }
+
+    .actionButton {
+      padding: 9px 16px;
+    }
+  }
+
+
+  .supportPrompt {
+    padding: 24px;
+
+    h2 {
+      margin: -24px -24px 18px;
+      padding: 16px 48px 16px 16px;
+    }
+  }
+
+  .supportPromptActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .supportOption {
+    flex-basis: auto;
   }
 }

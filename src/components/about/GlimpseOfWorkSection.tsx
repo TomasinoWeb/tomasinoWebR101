@@ -6,28 +6,28 @@ import styles from "./GlimpseOfWorkSection.module.scss";
 const items = [
   {
     label: "On-Site Coverage",
-    description: "Live event documentation — photos, write-ups, and real-time social posting.",
+    description: "UST events go brrr... Here are the live event documentations by TomasinoWeb!",
     image: "/assets/py18/about/org-culture/actWork/onsite.png",
     color: "#FFB702",
     useCssBackground: true,
   },
   {
     label: "Virtual Campaigns",
-    description: "Digital-first productions reaching thousands across Facebook, Twitter and beyond.",
+    description: "We are everywhere — Facebook, Instagram, X, and beyond.",
     image: "/assets/py18/about/org-culture/actWork/virtual.png",
     color: "#EA4A68",
     useCssBackground: true,
   },
   {
     label: "Mentorship Sessions",
-    description: "Knowledge-sharing and workshops that level up every member of the org.",
+    description: "Boss level mentorship toward success! 🦾 #KeepCalm",
     image: "/assets/py18/about/org-culture/actWork/mentor.png",
     color: "#FF6A20",
     useCssBackground: true,
   },
   {
     label: "Interactive Meetings",
-    description: "Collaborative sessions where ideas are born, projects planned, and fun is had.",
+    description: "Me? I am Me. You? I am not you. But as WE, TomasinoWeb, our ideas will come to life. 🧡",
     image: "/assets/py18/about/org-culture/actWork/interactive.png",
     color: "#3aaa9a",
   },

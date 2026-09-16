@@ -3,14 +3,14 @@ import { websites } from "../../data/websites";
 import styles from "./OurImpactSection.module.scss";
 
 const stats = [
-  { label: "Events", value: "29", description: "Academic Events", color: "#E5800D", linkLabel: "Events Organized", linkHref: "#", useCssBackground: true },
-  { label: "Facebook", value: "81", description: "Followers", color: "#3B6BC7", linkLabel: "Visit FB Page", linkHref: "#", useCssBackground: true },
+  { label: "Awards", value: "29+", description: "Prestigious Awards", color: "#E5800D", linkLabel: "", linkHref: "#", useCssBackground: true },
+  { label: "Community", value: "85", description: "active members", color: "#5947D1", linkLabel: "", linkHref: "#", useCssBackground: true },
 ];
 
 const secondaryStats = [
-  { label: "Twitter", value: "154K", description: "Impressions ", color: "#1CA1F2", linkLabel: "@tomasinoweb", linkHref: "#", useCssBackground: true },
-  { label: "Youtube", value: "24+", description: "Videos Uploaded", color: "#DB1A1A", linkLabel: "Watch on YouTube", linkHref: "#", useCssBackground: true },
-  { label: "Discord", value: "270+", description: "active members", color: "#5947D1", linkLabel: "Join The Pool", linkHref: "#", useCssBackground: true },
+  { label: "Twitter", value: "54.1k", description: "Followers", color: "#1CA1F2", linkLabel: "@tomasinoweb", linkHref: "#", useCssBackground: true },
+  { label: "Youtube", value: "100+", description: "Videos Uploaded Since 2012", color: "#DB1A1A", linkLabel: "Watch on YouTube", linkHref: "#", useCssBackground: true },
+  { label: "Facebook", value: "122k", description: "Followers", color: "#3B6BC7", linkLabel: "Visit FB Page", linkHref: "#", useCssBackground: true },
 ];
 
 export function OurImpactSection() {
@@ -29,9 +29,11 @@ export function OurImpactSection() {
               </div>
             </div>
             <div className={styles.footer}>
-              <a href={stat.linkHref} className={styles.link} style={{ color: stat.color }}>
-                {stat.linkLabel}
-              </a>
+              {stat.linkLabel && (
+                <a href={stat.linkHref} className={styles.link} style={{ color: stat.color }}>
+                  {stat.linkLabel}
+                </a>
+              )}
             </div>
           </div>
         ))}
@@ -62,29 +64,10 @@ export function OurImpactSection() {
             </div>
           </div>
 
-          {/* Mobile layout — first 2 icons sit beside the count, remaining 4 wrap below */}
+          {/* Mobile layout */}
           <div className={styles.websiteBodyMobile}>
-            <div className={styles.websiteIconsRowMobile}>
-              <div className={styles.websiteIconsFirstTwo}>
-                {websites.slice(0, 2).map((site) => (
-                  <a
-                    key={site.name}
-                    href={site.href}
-                    target={site.href.startsWith("http") ? "_blank" : undefined}
-                    rel={site.href.startsWith("http") ? "noreferrer" : undefined}
-                    className={styles.websiteIcon}
-                  >
-                    <Image src={site.icon} alt={site.name} width={70} height={70} />
-                  </a>
-                ))}
-              </div>
-              <div className={styles.valueGroup}>
-                <span className={styles.value} style={{color: "#2E9E2E"}}>{websites.length}</span>
-                <span className={styles.description}>Developments</span>
-              </div>
-            </div>
-            <div className={styles.websiteIconsRest}>
-              {websites.slice(2).map((site) => (
+            <div className={styles.websiteIconsMobile}>
+              {websites.map((site) => (
                 <a
                   key={site.name}
                   href={site.href}
@@ -92,15 +75,19 @@ export function OurImpactSection() {
                   rel={site.href.startsWith("http") ? "noreferrer" : undefined}
                   className={styles.websiteIcon}
                 >
-                  <Image src={site.icon} alt={site.name} width={60} height={60} />
+                  <Image src={site.icon} alt={site.name} width={70} height={70} />
                 </a>
               ))}
+            </div>
+            <div className={styles.valueGroup}>
+              <span className={styles.value} style={{color: "#2E9E2E"}}>{websites.length}</span>
+              <span className={styles.description}>Developments</span>
             </div>
           </div>
 
           <div className={styles.footer}>
             <a href="#" className={styles.link} style={{ color: "#5a9e5a" }}>
-              Visit
+              Visit Main Website
             </a>
           </div>
         </div>

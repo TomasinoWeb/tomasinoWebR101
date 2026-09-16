@@ -97,7 +97,7 @@
 @media screen and (max-width: 600px) {
   .footer {
     height: var(--footer-height);
-    padding: 8px 4%;
+    padding: 8px 4% 80px;
 
     .inner {
       padding: 0px;
@@ -131,6 +131,12 @@
       width: 13px;
       height: 13px;
     }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  .footer {
+    padding-bottom: 80px;
   }
 }
 

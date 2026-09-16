@@ -54,7 +54,7 @@ const faqUsernames = [
   '@department_dreamer',
   '@peopleperson_ust',
   '@applicationally',
-  '@results_reader',
+  '@application_reader',
 ];
 
 const faqData: FAQItem[] = [
@@ -105,7 +105,7 @@ const faqData: FAQItem[] = [
     notes: 259,
     category: 'apply',
     question: "Where can I view official recruitment results?",
-    answer: "Official results will be published on the R101 Results page and announced on our official Facebook and Twitter accounts."
+    answer: "Official recruitment results will be announced through our official Facebook and Twitter accounts."
   }
 ];
 
@@ -215,13 +215,12 @@ function FAQsPageContent() {
         </div>
       )}
       <nav className={styles.pageNavigation} aria-label="FAQ sections">
-        <h1 className={`font-2016-script ${styles.pageTitle}`}>FAQs</h1>
+        <h1 className={styles.pageTitle}>FAQs</h1>
         <div className={styles.pageLinks}>
           <Link href="/faqs" aria-current="page">All</Link>
           <Link href="/about">The Org</Link>
           <Link href="/apply">Application</Link>
           <Link href="/r101">Interviews</Link>
-          <Link href="/results">Results &amp; Exams</Link>
         </div>
       </nav>
       <div className={styles.dashboardContainer}>

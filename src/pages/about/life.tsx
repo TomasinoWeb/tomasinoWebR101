@@ -16,8 +16,8 @@ const sections = [
     content: <OurImpactSection />,
   },
   {
-    title: "A Glimpse of the Work!",
-    text: "Here's a look at some of our published work — from virtual campaigns to on-site coverages, every output tells a story.",
+    title: "A Glimpse of the Work! ✨",
+    text: "PU-PU-Published! See that? We made that.",
     content: <GlimpseOfWorkSection />,
   },
 ];
@@ -39,7 +39,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
 
           <LifeSection
             title="The People"
-            text="Here's a look at some of our published work — from virtual campaigns to on-site coverages, every output tells a story."
+            text="PU-PU-Published! See that? We made that."
           >
             <ThePeopleSection />
           </LifeSection>

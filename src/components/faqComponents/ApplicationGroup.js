@@ -13,7 +13,7 @@ function ApplicationGroup() {
     {
       question: "What is the application process?",
       answer:
-        "Fill out the [application form](/apply). You'll receive an email giving you access to the MeReserve platform where you can send your requirements.\n\nShould you qualify for an interview, the Human Resources department will notify you to schedule and confirm your slot. After the interview, wait for a few days to receive your application results. You can also check the [results page](/results) of the this website periodically.",
+        "Fill out the [application form](/apply). You'll receive an email giving you access to the MeReserve platform where you can send your requirements.\n\nShould you qualify for an interview, the Human Resources department will notify you to schedule and confirm your slot. After the interview, wait for a few days to receive your application results.",
       tag: "application",
       open: false,
     },

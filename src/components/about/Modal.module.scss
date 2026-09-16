@@ -22,5 +22,14 @@
 }
 
 .content.wide {
-  max-width: 900px;
+  display: flex;
+  width: 90vw;
+  max-width: 800px;
+  height: 500px;
+  max-height: 85vh;
+  margin: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
 }
+

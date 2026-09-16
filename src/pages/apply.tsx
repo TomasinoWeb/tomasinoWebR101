@@ -12,7 +12,7 @@ export default function ApplyPage() {
   }, []);
 
   return (
-    <div className="loading-container">
+    <div className="loading-container" style={{ position: "fixed", inset: 0, width: "100vw", height: "100vh", zIndex: 99999 }}>
       <Loading variant="application" />
     </div>
   );

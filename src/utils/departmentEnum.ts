@@ -3,13 +3,12 @@ export const departmentsEnum = [
   "Finance",
   "External Affairs",
   "Human Resources",
-  "Publicity and Communications",
-  "Community Development",
   "Writing",
   "Photography",
   "Videography",
   "Creatives",
   "Web Technologies",
+  "Special Projects",
 ] as const;
 
 export type Department = (typeof departmentsEnum)[number];

@@ -16,6 +16,7 @@ interface DepartmentPostCardProps {
   date?: string;
   commentsCount?: string;
   comments?: SocialPostComment[];
+  onClose?: () => void;
 }
 
 export function DepartmentPostCard({
@@ -29,6 +30,7 @@ export function DepartmentPostCard({
   date,
   commentsCount,
   comments,
+  onClose,
 }: DepartmentPostCardProps) {
   return (
     <article className={styles.post}>
@@ -38,10 +40,19 @@ export function DepartmentPostCard({
 
       <div className={styles.textColumn}>
         <header className={styles.header}>
-          <Image src={avatar} alt={`${name} avatar`} width={36} height={36} className={styles.avatar} />
-          <span className={styles.name}>{name}</span>
-          <span className={styles.following}>Following</span>
-          <FontAwesomeIcon icon={faEllipsis} className={styles.more} />
+          <div className={styles.headerLeft}>
+            <Image src={avatar} alt={`${name} avatar`} width={36} height={36} className={styles.avatar} />
+            <span className={styles.name}>{name}</span>
+            <span className={styles.following}>Following</span>
+          </div>
+          <div className={styles.headerRight}>
+            <FontAwesomeIcon icon={faEllipsis} className={styles.more} />
+            {onClose && (
+              <button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close department details">
+                &times;
+              </button>
+            )}
+          </div>
         </header>
 
         <div className={styles.bodyWrap}>

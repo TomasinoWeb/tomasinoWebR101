@@ -24,7 +24,14 @@ export function SocialPostCard({ avatar, name, images, likes, caption, offeredPo
     <article className={styles.post}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <Image src={avatar} alt={`${name} avatar`} width={36} height={36} className={styles.avatar} />
+          <Image
+            src={avatar}
+            alt={`${name} avatar`}
+            width={44}
+            height={44}
+            className={styles.avatar}
+            style={{ width: "44px", height: "44px", minWidth: "44px", minHeight: "44px", flexShrink: 0 }}
+          />
           <span className={styles.name}>{name}</span>
           <span className={styles.following}>Following</span>
           <FontAwesomeIcon icon={faEllipsis} className={styles.more} />

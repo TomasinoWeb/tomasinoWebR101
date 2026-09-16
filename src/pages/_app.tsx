@@ -57,9 +57,6 @@ const metatags = {
       "Blockhead got questions? We've got answers! Navigate the R101 application process and learn how Thomasians can join UST’s digital media organization.",
     tags: "TomasinoWeb, R101, UST, R101 questions",
   },
-  "/results": {
-    title: "Results | Planet TomasinoWeb",
-  },
   "/quiz": {
     title: "Quiz | Planet TomasinoWeb",
   },

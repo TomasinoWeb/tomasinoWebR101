@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createPublicPage } from '../layouts/public/frontend';
 import { createPublicStaticProps } from '../layouts/public/static';
+import { ApplicationRedirect } from '../components/ApplicationRedirect';
 import styles from './r101.module.scss';
 
 interface ApplicationStep {
@@ -21,24 +22,24 @@ const applicationSteps: ApplicationStep[] = [
   {
     id: "1.",
     title: "Application Form",
-    description: "Submit the online R101 form",
+    description: "Cool people would accomplish the Google Form, btw!",
     actionButtonText: "Submit Form >>"
   },
   {
     id: "2.",
     title: "Departmental Exam",
-    description: "Take the department-specific test.",
+    description: "Cry about this, whine about that, when you answer the department exam, we can call you back.",
     badgeText: "Exams are sent via email after applying!"
   },
   {
     id: "3.",
     title: "Interview",
-    description: "A brief, friendly chat with HR and Department Heads."
+    description: "Your TomasinoWeb uncs and aunties will schedule your interview on the chosen recruitment platform."
   },
   {
     id: "4.",
     title: "The Results",
-    description: "Reveal on the official Results page."
+    description: "“I know when that hotline bling, that can only be one thing,” well, maybe it is just the Human Resources knocking about your application results."
   }
 ];
 
@@ -46,12 +47,12 @@ const supportItems: SupportItem[] = [
   {
     id: "A.",
     title: "Check Spam / Junk Email Folder",
-    description: "Exams are sent automatically via email. Please allow up to 24 hours."
+    description: "The exams are sent automatically to the email you typed in on the R101 form. Keep calm and allow up to 24 hours for it to be sent."
   },
   {
     id: "B.",
     title: "Verify Email Address on R101 Form",
-    description: "Ensure your UST Google Account email was entered correctly."
+    description: "Check your R101 form again! Is the email typed in correctly? No? Fam... contact join@tomasinoweb.org 😒 Yes? Wait 24 hours before, well, also contacting join@tomasinoweb.org. #HowBoutDat"
   }
 ];
 
@@ -101,7 +102,7 @@ function R101PageContent() {
       <main className={styles.mainContainer}>
         <section className={styles.processCard}>
           {/* Title Bar */}
-          <div className={`font-2016-script ${styles.cardTitleBar}`}>
+          <div className={styles.cardTitleBar}>
             R101 Process
           </div>
 
@@ -139,9 +140,9 @@ function R101PageContent() {
                   </div>
 
                   {step.actionButtonText && (
-                    <button type="button" className={styles.actionButton}>
+                    <ApplicationRedirect className={styles.actionButton}>
                       {step.actionButtonText}
-                    </button>
+                    </ApplicationRedirect>
                   )}
 
                   {step.badgeText && (
@@ -158,7 +159,7 @@ function R101PageContent() {
                     HAVEN&apos;T RECEIVED YOUR DEPARTMENTAL EXAM WITHIN 24 HOURS?
                   </div>
                   <div className={styles.bannerDesc}>
-                    First, please check your Spam / Junk email folder. If your exam email is still missing after 24 hours of submitting your R101 form, send an email to help@tomasinoweb.org or contact our HR team directly on Discord!
+                    Lowkey, check your Spam or Junk email folder first. If it&apos;s still missing after 24 hours, #yikes, send an email to join@tomasinoweb.org or contact our HR team directly on Discord. XO
                   </div>
                   <button
                     type="button"

@@ -40,18 +40,22 @@ export function AboutShell({ children }: AboutShellProps) {
               <span className={styles.statLabel}>departments</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>81+</span>
+              <span className={styles.statValue}>85</span>
               <span className={styles.statLabel}>members</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>29</span>
+              <span className={styles.statValue}>29+</span>
               <span className={styles.statLabel}>awards</span>
             </div>
           </div>
 
           <ApplicationRedirect className={styles.joinUs}>
             Join Us
-            <FontAwesomeIcon icon={faChevronRight} className={styles.joinUsIcon} />
+            <FontAwesomeIcon
+              icon={faChevronRight}
+              className={styles.joinUsIcon}
+              style={{ width: "12px", height: "12px", minWidth: "12px", minHeight: "12px" }}
+            />
           </ApplicationRedirect>
 
           <div className={styles.bio}>
@@ -66,21 +70,27 @@ export function AboutShell({ children }: AboutShellProps) {
           </div>
         </div>
 
-        <nav className={styles.tabBar}>
+      </div>
+      <nav className={styles.tabBar} style={{ maxHeight: "47px", overflow: "hidden" }}>
+        <div className={styles.tabGrid}>
           {tabs.map((tab) => (
             <Link
               key={tab.href}
               href={tab.href}
               className={`${styles.tab} ${router.pathname === tab.href ? styles.active : ""}`}
             >
-              <FontAwesomeIcon icon={tab.icon} />
+              <FontAwesomeIcon
+                icon={tab.icon}
+                className={styles.tabIcon}
+                style={{ width: "20px", height: "20px", minWidth: "20px", minHeight: "20px" }}
+              />
               <span>{tab.label}</span>
             </Link>
           ))}
-        </nav>
-      </div>
+        </div>
+      </nav>
       <div className={styles.container}>
-        {children}
+        <div className={styles.contentInner}>{children}</div>
       </div>
     </div>
   );

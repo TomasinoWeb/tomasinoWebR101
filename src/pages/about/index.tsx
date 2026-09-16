@@ -31,11 +31,14 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
             caption={
               <>
                 Welcome to TomasinoWeb! The premier digital media organization of the University of Santo Tomas. We
-                craft high-impact web applications, interactive designs, and journalism for the Thomasian community.
-                [Sample Only]
+                are joined by students who are immensely interested in multimedia journalism.
                 <br />
                 <br />
-                Be part of our team this Academic Year! 🚀
+                Its primary goal as a student publication is to deliver relevant information to the Thomasian community
+                through online media.
+                <br />
+                <br />
+                Be part of our team! 🤩
                 <br />
                 <span className={styles.hashtags}>#TomasinoWeb #TWRecruitment2026 #JoinTW #UST</span>
               </>

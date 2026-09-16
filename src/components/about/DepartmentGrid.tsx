@@ -18,8 +18,8 @@ const departmentCardMeta: Record<
     likes: "18,742",
     commentsCount: "2,184",
     comments: [
-      { username: "dep_head_secretariat", text: "Grabe, ang organized natin this cycle. Keep it sharp, and always make sure the details are clean, no shortcuts." },
-      { username: "secre_ops_dev", text: "Wala nang drama, this team is legit on top of everything. Asan na application form?" },
+      { username: "Secretariat_head", text: "Every detail matters! Join us in keeping TomasinoWeb organized, efficient, and always moving forward!" },
+      { username: "Thomasian_secretariat", text: "Can't wait to submit my application!" },
     ],
     date: "SEPTEMBER 2026",
   },
@@ -27,8 +27,8 @@ const departmentCardMeta: Record<
     likes: "24,930",
     commentsCount: "3,108",
     comments: [
-      { username: "dep_head_finance", text: "Sobrang important ang financial discipline sa team. If you like numbers and making systems work, this is your lane." },
-      { username: "ledger_loop_dev", text: "Lowkey obsessed with how this department keeps everything on track. Madiskarte at precise talaga." },
+      { username: "Finance_head", text: "Attentive to details and numbers? Join finance!" },
+      { username: "Thomasian_finance", text: "Can't wait to submit my application!" },
     ],
     date: "SEPTEMBER 2026",
   },
@@ -36,8 +36,8 @@ const departmentCardMeta: Record<
     likes: "21,406",
     commentsCount: "2,671",
     comments: [
-      { username: "dep_head_external_affairs", text: "This team is all about building bridges and making connections. If you love talking to people and building partnerships, apply na." },
-      { username: "bridge_buzz_dev", text: "The vibe here is all warmth and networking. Puro good conversations and mad useful linkages, honestly." },
+      { username: "ExternalAffairs_VP", text: "I did not manifest for this to show up on the website, so kapag nakita niyo to mag-apply na kayo" },
+      { username: "Tomasino_freshie", text: "May collab po ba kayo with aldub?" },
     ],
     date: "SEPTEMBER 2026",
   },
@@ -45,8 +45,8 @@ const departmentCardMeta: Record<
     likes: "19,855",
     commentsCount: "2,293",
     comments: [
-      { username: "dep_head_hr", text: "We grow people, not just members. If you care about development, communication, and helping others level up, join us." },
-      { username: "peoplepulse_dev", text: "The culture here is so supportive, feels like a safe space to grow. Sobrang ganda ng energy." },
+      { username: "HR_VP", text: "Keep calm and join HR 👑" },
+      { username: "Tomasino67", text: "Okay lang po ba sainyo if madaldal po mag-aapply sa HR??" },
     ],
     date: "SEPTEMBER 2026",
   },
@@ -72,8 +72,8 @@ const departmentCardMeta: Record<
     likes: "29,471",
     commentsCount: "3,760",
     comments: [
-      { username: "dep_head_writing", text: "We chase the truth and turn it into stories that matter. If you write with heart and grit, this is your spot." },
-      { username: "wordcraft_dev", text: "The stories here hit different. Even a simple topic turns into something deep and meaningful, honestly." },
+      { username: "Man_Ed", text: "Have stories to tell? Join writing!" },
+      { username: "Thomasian_writing", text: "Can't wait to submit my application!" },
     ],
     date: "SEPTEMBER 2026",
   },
@@ -81,8 +81,8 @@ const departmentCardMeta: Record<
     likes: "32,118",
     commentsCount: "4,205",
     comments: [
-      { username: "dep_head_photography", text: "We capture moments, details, and emotions that words can’t explain. If you see stories in frames, come through." },
-      { username: "lensline_dev", text: "Every frame here looks like it was chosen with intention. Ang aesthetic, sobrang solid." },
+      { username: "Chief_photogs", text: "Bring your vision to life, one frame at a time!" },
+      { username: "Thomasian_photogs", text: "Can't wait to submit my application!" },
     ],
     date: "SEPTEMBER 2026",
   },
@@ -90,8 +90,8 @@ const departmentCardMeta: Record<
     likes: "30,659",
     commentsCount: "3,972",
     comments: [
-      { username: "dep_head_videography", text: "We make motion feel alive. If you love editing, framing, and telling stories with rhythm, this department is for you." },
-      { username: "frameflow_dev", text: "The cuts here are so smooth, it feels like a music video. Edi wow, every clip hits." },
+      { username: "Chief_videogs", text: "New pub year, new feels, new vibes. Join videogs, it will be lit AF. 🔥👯 #SquadGoals #JustGirlyThings" },
+      { username: "Tomasino_videogs", text: "Submitting my application form! I luv u TW" },
     ],
     date: "SEPTEMBER 2026",
   },
@@ -99,23 +99,32 @@ const departmentCardMeta: Record<
     likes: "26,848",
     commentsCount: "3,541",
     comments: [
-      { username: "dep_head_creatives", text: "We turn ideas into visuals that hit. If you love designing, illustrating, and creating with impact, apply now." },
-      { username: "inkshift_dev", text: "This department really knows how to make things pop. Every design looks cooked, hindi lang aesthetic lang." },
+      { username: "Creative_Director", text: "Go! go! go! Show your creativity." },
+      { username: "Thomasian_creatives", text: "#ReadyToDesign" },
     ],
     date: "SEPTEMBER 2026",
   },
-  webtech: {
+  web_technologies: {
     likes: "34,226",
     commentsCount: "4,613",
     comments: [
-      { username: "dep_head_webtech", text: "We build the digital experiences that power the org. If you’re into design systems, code, and problem-solving, this is the team." },
-      { username: "stacksignal_dev", text: "This team is basically the reason the org feels smooth online. Galing ng UX, galing ng logic, straight-up elite." },
+      { username: "Chief_tech", text: "1... 2... 3... go apply and join us on the Web!" },
+      { username: "Thomasian_tech", text: "Yoohoo! I sent my application." },
+    ],
+    date: "SEPTEMBER 2026",
+  },
+  special_projects: {
+    likes: "22,406",
+    commentsCount: "2,918",
+    comments: [
+      { username: "SpecialProjects_Head", text: "Got an idea? Let's turn it into reality! 👀" },
+      { username: "Thomasian_543", text: "Ready to make things happen! 🙌" },
     ],
     date: "SEPTEMBER 2026",
   },
 };
 
-const normalizeDepartmentKey = (value: string) => value.toLowerCase().replace(/\s+/g, "_");
+const normalizeDepartmentKey = (value: string) => value.toLowerCase().replace(/[\s-]+/g, "_");
 
 export function DepartmentGrid() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -157,6 +166,7 @@ export function DepartmentGrid() {
             date={meta.date}
             commentsCount={meta.commentsCount}
             comments={meta.comments}
+            onClose={() => setOpenId(null)}
           />
         )}
       </Modal>

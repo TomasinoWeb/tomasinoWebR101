@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Loading from "./Loading";
 
 export const applicationUrl =
@@ -34,11 +35,14 @@ export const ApplicationRedirect: React.FC<ApplicationRedirectProps> = ({ classN
       >
         {children}
       </a>
-      {isLoading && (
-        <div className="loading-container">
-          <Loading variant="application" />
-        </div>
-      )}
+      {isLoading && typeof document !== "undefined"
+        ? createPortal(
+            <div className="loading-container">
+              <Loading variant="application" />
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './GlobalNavigator.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faUser, faClipboardList, faComment, faBriefcase, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faUser, faClipboardList, faComment, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { ApplicationRedirect, applicationUrl } from './ApplicationRedirect';
 
 export interface NavTabItem {
@@ -14,7 +14,6 @@ export interface NavTabItem {
 
 interface GlobalNavigatorProps {
   tabs?: NavTabItem[];
-  containsResults?: boolean;
 }
 
 const defaultTabs: NavTabItem[] = [
@@ -22,8 +21,7 @@ const defaultTabs: NavTabItem[] = [
   { id: 'ABOUT', label: 'ABOUT', href: '/about' },
   { id: 'R101', label: 'R101', href: '/r101' },
   { id: 'FAQS', label: 'FAQS', href: '/faqs' },
-  { id: 'APPLY', label: 'APPLY', href: applicationUrl },
-  { id: 'RESULT', label: 'RESULT', href: '/results' }
+  { id: 'APPLY', label: 'APPLY', href: applicationUrl }
 ];
 
 const tabIcons: { [key: string]: any } = {
@@ -32,7 +30,6 @@ const tabIcons: { [key: string]: any } = {
   R101: faClipboardList,
   FAQS: faComment,
   APPLY: faBriefcase,
-  RESULT: faClipboardCheck,
 };
 
 const isTabActive = (pathname: string, href: string) => {
@@ -40,13 +37,12 @@ const isTabActive = (pathname: string, href: string) => {
   return pathname === href || pathname.startsWith(`${href}/`);
 };
 
-export const GlobalNavigator: React.FC<GlobalNavigatorProps> = ({ tabs = defaultTabs, containsResults = true }) => {
+export const GlobalNavigator: React.FC<GlobalNavigatorProps> = ({ tabs = defaultTabs }) => {
   const router = useRouter();
-  const visibleTabs = containsResults ? tabs : tabs.filter((tab) => tab.id !== 'RESULT');
 
   return (
     <nav className={styles.globalNavigator}>
-      {visibleTabs.map((tab) => {
+      {tabs.map((tab) => {
         const IconComponent = tabIcons[tab.id] || faHouse;
         if (tab.id === 'APPLY') {
           return (
