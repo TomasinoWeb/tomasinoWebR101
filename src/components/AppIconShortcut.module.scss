@@ -13,6 +13,7 @@
       transform: translateY(-2px);
       background-color: #9fa7b8;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      filter: brightness(0.85);
     }
     .label {
       color: #000000;
@@ -34,7 +35,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 /* Glyphs fill a fixed share of the squircle, so they grow and shrink with
