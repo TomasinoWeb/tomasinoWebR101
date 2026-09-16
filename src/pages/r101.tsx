@@ -76,9 +76,14 @@ function R101PageContent() {
       if (!segmentedControlRef.current) return;
       const activeButton = segmentedControlRef.current.querySelector<HTMLButtonElement>(`.${styles.activeTab}`);
       if (activeButton) {
-        setIndicatorStyle({
-          left: activeButton.offsetLeft,
-          width: activeButton.offsetWidth,
+        setIndicatorStyle((prev) => {
+          if (prev.left === activeButton.offsetLeft && prev.width === activeButton.offsetWidth) {
+            return prev;
+          }
+          return {
+            left: activeButton.offsetLeft,
+            width: activeButton.offsetWidth,
+          };
         });
       }
     };

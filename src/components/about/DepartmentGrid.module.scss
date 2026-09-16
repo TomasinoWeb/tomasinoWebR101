@@ -1,64 +1,82 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(3px, 0.5vw, 10px);
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .tile {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   border: none;
   padding: 0;
   cursor: pointer;
-  background: var(--about-neutral-light, #d9d9d9);
-  transition: transform 180ms ease-in-out, box-shadow 180ms ease-in-out;
-
-  &:hover,
-  &:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
-  }
+  background: #000000;
 
   &:hover .image,
   &:focus-visible .image {
     transform: scale(1.04);
   }
 
-  &:hover .label,
-  &:focus-visible .label {
+  &:hover .overlay,
+  &:focus-visible .overlay {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .image {
   object-fit: cover;
   object-position: center;
-  transition: transform 180ms ease-in-out;
+  transition: transform 250ms ease-in-out;
 }
 
-.label {
+.carouselBadge {
   position: absolute;
-  inset: auto 0 0 0;
-  padding: 8px;
-  font-size: 0.75rem;
-  line-height: 1.1;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  color: #ffffff;
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .badgeIcon {
+    width: 16px;
+    height: 16px;
+    transform: rotate(90deg);
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 24px);
+  color: #ffffff;
   opacity: 0;
-  transform: translateY(4px);
-  transition: 150ms ease-in-out;
-  white-space: normal;
-  word-break: break-word;
+  transition: opacity 180ms ease-in-out;
+  font-family: var(--font-inter), var(--font-ui), sans-serif;
+}
+
+.overlayItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 1.4vw, 1.05rem);
+  color: #ffffff;
+
+  .overlayIcon {
+    width: 18px;
+    height: 18px;
+    color: #ffffff;
+  }
 }

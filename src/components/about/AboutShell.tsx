@@ -41,9 +41,14 @@ export function AboutShell({ children }: AboutShellProps) {
       if (!tabGridRef.current) return;
       const activeElement = tabGridRef.current.querySelector<HTMLElement>(`.${styles.active}`);
       if (activeElement) {
-        setIndicatorStyle({
-          left: activeElement.offsetLeft,
-          width: activeElement.offsetWidth,
+        setIndicatorStyle((prev) => {
+          if (prev.left === activeElement.offsetLeft && prev.width === activeElement.offsetWidth) {
+            return prev;
+          }
+          return {
+            left: activeElement.offsetLeft,
+            width: activeElement.offsetWidth,
+          };
         });
       }
     };
