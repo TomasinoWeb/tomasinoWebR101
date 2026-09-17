@@ -1,7 +1,7 @@
 .backdrop {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 20000;
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
   display: flex;
@@ -28,7 +28,7 @@
   scrollbar-color: #cbd5e1 transparent;
 
   &::-webkit-scrollbar {
-    width: 1px;
+    width: 2px;
   }
 
   &::-webkit-scrollbar-track {
@@ -47,79 +47,78 @@
 
 .content.wide {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 28rem;
+  flex-direction: row;
+  width: min(90vw, 800px);
+  max-width: 800px;
   height: auto;
-  max-height: 90dvh;
+  max-height: min(85dvh, 520px);
   margin: auto;
-  border-radius: 1rem;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
   padding: 0;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.backdropCloseButton {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 20001;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.15s ease, transform 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #ffffff;
+    background: transparent;
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.25px;
+  }
 }
 
 @media (max-width: 768px) {
   .backdrop {
     padding: 16px;
+    z-index: 20000;
   }
 
-  .content,
-  .content.wide {
+  .backdropCloseButton {
+    top: 16px;
+    right: 16px;
+  }
+
+  .content {
     max-height: 85dvh;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     padding: 0;
     box-sizing: border-box;
   }
-}
-
-.backdropCloseButton {
-  position: absolute;
-  top: calc(var(--header-height, 60px) + 16px);
-  right: 24px;
-  z-index: 1001;
-  width: 36px;
-  height: 36px;
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.65);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
-
-  &:hover,
-  &:focus-visible {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.14);
-    transform: scale(1.08);
-  }
-
-  svg {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-@media (max-width: 768px) {
-  .backdrop {
-    padding: 16px;
-  }
-
-  .backdropCloseButton {
-    top: calc(var(--header-height, 54px) + 12px);
-    right: 16px;
-  }
 
   .content.wide {
-    width: min(84vw, 360px);
-    height: 70vh;
-    max-height: 70dvh;
+    width: min(92vw, 420px);
+    max-width: 420px;
+    height: auto;
+    max-height: 80dvh;
     border-radius: 14px;
     flex-direction: column;
+    overflow: hidden;
   }
 }
 

@@ -41,15 +41,27 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  background: #ffffff;
+}
+
+.bodyWrap {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
-  padding: 20px;
+  padding: 0;
+  margin: 0;
 
   /* Thin custom scrollbar */
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 transparent;
 
   &::-webkit-scrollbar {
-    width: 1px;
+    width: 2px;
   }
 
   &::-webkit-scrollbar-track {
@@ -64,15 +76,6 @@
       background: #94a3b8;
     }
   }
-}
-
-.bodyWrap {
-  min-width: 0;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
 }
 
 .header {
