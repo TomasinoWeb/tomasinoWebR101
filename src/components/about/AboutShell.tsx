@@ -27,6 +27,8 @@ const tabs = [
   { href: "/about/life", label: "Life at TomasinoWeb", icon: faList, activeIcon: faList },
 ];
 
+let globalLastTabIndicator: { left: number; width: number } | null = null;
+
 interface AboutShellProps {
   children: React.ReactNode;
 }
@@ -34,22 +36,25 @@ interface AboutShellProps {
 export function AboutShell({ children }: AboutShellProps) {
   const router = useRouter();
   const tabGridRef = React.useRef<HTMLDivElement>(null);
-  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>(() => {
+    return globalLastTabIndicator || { left: 0, width: 0 };
+  });
+  const [isInitialLoad, setIsInitialLoad] = useState(!globalLastTabIndicator);
 
   React.useEffect(() => {
     const updateIndicator = () => {
       if (!tabGridRef.current) return;
       const activeElement = tabGridRef.current.querySelector<HTMLElement>(`.${styles.active}`);
       if (activeElement) {
-        setIndicatorStyle((prev) => {
-          if (prev.left === activeElement.offsetLeft && prev.width === activeElement.offsetWidth) {
-            return prev;
-          }
-          return {
-            left: activeElement.offsetLeft,
-            width: activeElement.offsetWidth,
-          };
-        });
+        const nextStyle = {
+          left: activeElement.offsetLeft,
+          width: activeElement.offsetWidth,
+        };
+        globalLastTabIndicator = nextStyle;
+        setIndicatorStyle(nextStyle);
+        if (isInitialLoad) {
+          setIsInitialLoad(false);
+        }
       }
     };
 
@@ -128,6 +133,7 @@ export function AboutShell({ children }: AboutShellProps) {
               transform: `translate3d(${indicatorStyle.left}px, 0, 0)`,
               width: `${indicatorStyle.width}px`,
               opacity: indicatorStyle.width ? 1 : 0,
+              transition: isInitialLoad ? "none" : undefined,
             }}
           />
           {tabs.map((tab) => {
