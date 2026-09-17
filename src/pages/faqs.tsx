@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faUsers, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faUser, faUsers, faTrophy, faPlus, faRightLeft, faHeart, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { createPublicPage } from '../layouts/public/frontend';
 import { createPublicStaticProps } from '../layouts/public/static';
 import styles from './faq.module.scss';
@@ -204,10 +204,15 @@ function FAQsPageContent() {
     };
   }, [isAnnouncementOpen]);
 
+  const safePhotoIndex = ((featuredPhotoIndex % featuredPhotos.length) + featuredPhotos.length) % featuredPhotos.length;
+  const currentPhoto = featuredPhotos[safePhotoIndex] || featuredPhotos[0];
+
   const changeFeaturedPhoto = (direction: number) => {
-    setFeaturedPhotoIndex((currentIndex) => (
-      (currentIndex + direction + featuredPhotos.length) % featuredPhotos.length
-    ));
+    setFeaturedPhotoIndex((currentIndex) => {
+      const total = featuredPhotos.length;
+      if (!total) return 0;
+      return ((currentIndex + direction) % total + total) % total;
+    });
   };
 
   return (
@@ -305,6 +310,8 @@ function FAQsPageContent() {
                     <span className={styles.username}>{faqUsernames[faq.id - 1]}</span>
                     <div className={styles.stats}>
                       <span className={styles.noteBadge}>{faq.notes}</span>
+                      <FontAwesomeIcon icon={faRightLeft} className={styles.statActionIcon} />
+                      <FontAwesomeIcon icon={faHeart} className={styles.statActionIcon} />
                     </div>
                   </div>
                   <div className={styles.answerDropdown}>
@@ -343,7 +350,7 @@ function FAQsPageContent() {
             </div>
             <div className={`${styles.statRow} ${styles.statMembers}`}>
               <div className={styles.labelGroup}>
-                <FontAwesomeIcon icon={faUsers} className={styles.statIcon} />
+                <FontAwesomeIcon icon={faUser} className={styles.statIcon} />
                 <span>Members</span>
               </div>
               <span className={styles.badge}>81+</span>
@@ -360,11 +367,12 @@ function FAQsPageContent() {
           <div className={styles.featuredWidget}>
             <div className={styles.photoBox}>
               <Image
-                key={featuredPhotos[featuredPhotoIndex]}
-                src={featuredPhotoPath(featuredPhotos[featuredPhotoIndex])}
+                src={featuredPhotoPath(currentPhoto)}
                 alt="Featured TomasinoWeb photo"
                 fill
+                sizes="(max-width: 768px) 100vw, 320px"
                 className={styles.featuredPhoto}
+                priority
               />
               <button
                 type="button"
@@ -372,7 +380,7 @@ function FAQsPageContent() {
                 onClick={() => changeFeaturedPhoto(-1)}
                 aria-label="Previous featured photo"
               >
-                &#8592;
+                <FontAwesomeIcon icon={faChevronLeft} />
               </button>
               <button
                 type="button"
@@ -380,11 +388,28 @@ function FAQsPageContent() {
                 onClick={() => changeFeaturedPhoto(1)}
                 aria-label="Next featured photo"
               >
-                &#8594;
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </div>
+            <div className={styles.widgetActions}>
+              <button type="button" className={styles.actionBtn} aria-label="Add photo">
+                <FontAwesomeIcon icon={faPlus} className={styles.actionIcon} />
+              </button>
+              <button type="button" className={styles.actionBtn} onClick={() => changeFeaturedPhoto(1)} aria-label="Switch photo">
+                <FontAwesomeIcon icon={faRightLeft} className={styles.actionIcon} />
+              </button>
+              <button type="button" className={styles.actionBtn} aria-label="Like photo">
+                <FontAwesomeIcon icon={faHeart} className={styles.actionIcon} />
               </button>
             </div>
             <div className={styles.widgetFooter}>
-              <span>Featured Photo</span>
+              <div className={styles.profileAvatar}>
+                <Image src="/logo/insignia_yellow.png" alt="TomasinoWeb" width={32} height={32} className={styles.avatarImg} />
+              </div>
+              <div className={styles.profileText}>
+                <span className={styles.profileTitle}>TomasinoWeb</span>
+                <span className={styles.profileSubtitle}>R101 2026</span>
+              </div>
             </div>
           </div>
         </aside>
