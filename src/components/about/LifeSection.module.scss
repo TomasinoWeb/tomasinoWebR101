@@ -1,6 +1,5 @@
 .section {
   width: auto;
-  margin-inline: -40px;
   border-radius: 12px;
   color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -13,40 +12,46 @@
 
 .header {
   text-align: center;
-  background: linear-gradient(180deg, #A83268 0%, #713458 100%);
+  background: linear-gradient(135deg, #FF1E6A 0%, #C70067 50%, #9C3D1B 100%);
   box-shadow:
-    inset 0px 2px 4px 0px rgba(255, 255, 255, 0.5),
-    inset 0px -2px 4px 0px rgba(255, 255, 255, 0.2),
-    0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+    inset 0px 2px 4px 0px rgba(255, 255, 255, 0.55),
+    0px 4px 8px 0px rgba(0, 0, 0, 0.2);
   padding: 16px 32px;
+
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 48px 100px;
-  background: #ffffff;
+  padding: 40px 48px;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(255, 30, 106, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 30, 106, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px;
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .subtitle {
   text-align: center;
-  color: #999999;
+  color: #777777;
   font-size: 14px;
 }
 
 @media (max-width: 768px) {
   .section {
-    margin-inline: -10px;
+    margin-inline: 0;
   }
   
   .content {
-    padding: 25px;
+    padding: 20px 16px;
   }
 }

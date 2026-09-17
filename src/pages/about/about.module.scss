@@ -1,9 +1,28 @@
+/* Vaporwave Palette Tokens */
+/* #FF1E6A (Hot Pink), #EE4D68 (Coral), #C70067 (Deep Purple), #EF3013 (Vermilion) */
+/* #FFB703 (Gold), #FF6B1A (Orange), #80CE9E (Mint), #9C3D1B (Brown) */
+
 .whoWeAre {
-  max-width: 700px;
-  margin-inline: auto;
-  padding: 40px;
-  flex: 1;
   width: 100%;
+  max-width: 100%;
+  padding: 40px clamp(20px, 5vw, 60px);
+  flex: 1;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-block: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Vaporwave Grid Texture Only (Hot Pink #FF1E6A) */
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(255, 30, 106, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 30, 106, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px;
 }
 
 .hashtags {
@@ -11,21 +30,45 @@
 }
 
 .theDepartments {
-  max-width: 1171px;
-  margin-inline: auto;
   width: 100%;
-  padding: clamp(20px, 5vw, 40px) clamp(20px, 5vw, 100px);
+  max-width: 100%;
+  padding: clamp(20px, 5vw, 40px) clamp(20px, 5vw, 60px);
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-block: 0;
+
+  /* Vaporwave Grid Texture Only (Mint Green #80CE9E) */
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(128, 206, 158, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 206, 158, 0.18) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px;
 }
 
-
 .life {
-  max-width: 1240px;
-  margin-inline: auto;
   width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 48px;
   padding-block: 40px;
+  padding-inline: clamp(20px, 5vw, 60px);
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-block: 0;
+
+  /* Vaporwave Grid Texture Only (Vermilion Red #EF3013) */
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(239, 48, 19, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 48, 19, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px, 30px 30px;
 }
 
 .aboutFooter {
@@ -34,15 +77,17 @@
   border-top-color: #d9d9d9 !important;
 }
 
-
-
 @media (max-width: 768px) {
   .whoWeAre {
-    padding: 24px;
+    padding: 24px 16px;
   }
 
-  .life{
-    padding: 20px;
+  .theDepartments {
+    padding: 24px 16px;
   }
 
+  .life {
+    padding-inline: 16px;
+    padding-block: 24px;
+  }
 }
