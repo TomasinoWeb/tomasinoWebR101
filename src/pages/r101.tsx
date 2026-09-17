@@ -137,7 +137,7 @@ function R101PageContent() {
           <div className={styles.tabBar}>
             <div className={styles.segmentedControl} ref={segmentedControlRef}>
               <div
-                className={styles.activeTabIndicator}
+                className={`${styles.activeTabIndicator} ${activeSubTab === 'steps' ? styles.stepsActive : styles.supportActive}`}
                 style={{
                   transform: `translate3d(${indicatorStyle.left}px, 0, 0)`,
                   width: `${indicatorStyle.width}px`,

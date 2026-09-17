@@ -166,6 +166,7 @@ export function DepartmentGrid() {
                   <span>{itemMeta?.commentsCount ?? "3.1k"}</span>
                 </div>
               </div>
+              <span className={styles.tileLabel}>{department.name}</span>
             </button>
           );
         })}

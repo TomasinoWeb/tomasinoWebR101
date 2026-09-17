@@ -1,17 +1,35 @@
 .pageWrapper {
+  position: relative;
   width: 100%;
   box-sizing: border-box;
   flex: 1 0 auto;
   min-height: calc(100dvh - var(--header-height, 60px) - var(--nav-h, 62px));
-  background-color: #ffdf8b;
-  background-image: url('/assets/py19/backgrounds/bg_wallpaper.png');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #FFFDF7;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255, 39, 97, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(255, 183, 2, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(235, 46, 20, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(130, 208, 157, 0.18) 0%, transparent 45%),
+    radial-gradient(rgba(168, 50, 104, 0.15) 1.5px, transparent 1.5px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 24px 24px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/py19/backgrounds/bg_wallpaper_transparent.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.20;
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 /* Top Header Bar */
@@ -32,6 +50,8 @@
 
 /* Main Content Area */
 .mainContainer {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1200px;
   padding: 40px 24px;
@@ -97,14 +117,24 @@
       bottom: 0;
       left: 0;
       height: 100%;
-      background: linear-gradient(180deg, #a83268 0%, #713458 100%);
+      background: #FF2761;
       border-radius: 0;
       box-shadow: none;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  background 0.35s ease,
+                  background-color 0.35s ease,
                   opacity 0.2s ease;
       pointer-events: none;
       z-index: 1;
+
+      &.stepsActive {
+        background: rgba(255, 39, 97, 0.8);
+      }
+
+      &.supportActive {
+        background: rgba(235, 46, 20, 0.8);
+      }
     }
 
     .tabButton {
