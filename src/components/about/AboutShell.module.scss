@@ -7,7 +7,7 @@
   --about-accent: #d9a441;
   --about-neutral-black: #262626;
   --about-neutral-white: #ffffff;
-  --about-neutral-light: #E5E7EB;
+  --about-neutral-light: #c4c8cf;
   --about-neutral-mid: #999999;
 
   font-family: var(--font-inter), sans-serif;
@@ -27,16 +27,34 @@
 }
 
 .header {
+  position: relative;
   width: 100%;
   max-width: 100%;
   min-height: auto;
   margin: 0;
   background: #ffffff;
-  border-bottom: 1px solid var(--about-neutral-light);
+  border-bottom: none;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/py19/backgrounds/bg_wallpaper_transparent.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.25;
+    filter: brightness(1.25);
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 .profile {
-  background: var(--about-neutral-white);
+  position: relative;
+  z-index: 1;
+  background: transparent;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -180,7 +198,8 @@
   left: 50%;
   transform: translateX(-50%);
   margin-top: 0;
-  border-bottom: 1px solid var(--about-neutral-light);
+  border-top: 1px solid var(--about-neutral-light, #c4c8cf);
+  border-bottom: 1px solid var(--about-neutral-light, #c4c8cf);
   background: #ffffff;
   min-height: 47px;
   height: 47px;
@@ -230,7 +249,12 @@
   text-align: center;
   background: transparent;
   border: none;
+  border-right: 1px solid var(--about-neutral-light, #c4c8cf);
   transition: color 0.25s ease;
+
+  &:last-child {
+    border-right: none;
+  }
 
   &.active {
     color: var(--about-primary, #B5124F);
@@ -262,7 +286,7 @@
 
 .container {
   width: 100%;
-  background: #FFFFFF;
+  background: #FFFDF7;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -279,7 +303,7 @@
   }
 
   .header {
-    border-bottom: 1px solid var(--about-neutral-light);
+    border-bottom: none;
   }
 
   .profile {
