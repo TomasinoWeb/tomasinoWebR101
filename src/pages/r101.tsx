@@ -61,7 +61,6 @@ export default createPublicPage(() => {
     header: 'full_regular',
     footer: 'regular',
     dots: 'full',
-    nonScrollable: true,
     children: <R101PageContent />,
   };
 });
@@ -69,6 +68,34 @@ export default createPublicPage(() => {
 function R101PageContent() {
   const [activeSubTab, setActiveSubTab] = useState<'steps' | 'support'>('steps');
   const [isSupportPromptOpen, setIsSupportPromptOpen] = useState(false);
+  const segmentedControlRef = React.useRef<HTMLDivElement>(null);
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+
+  useEffect(() => {
+    const updateIndicator = () => {
+      if (!segmentedControlRef.current) return;
+      const activeButton = segmentedControlRef.current.querySelector<HTMLButtonElement>(`.${styles.activeTab}`);
+      if (activeButton) {
+        setIndicatorStyle((prev) => {
+          if (prev.left === activeButton.offsetLeft && prev.width === activeButton.offsetWidth) {
+            return prev;
+          }
+          return {
+            left: activeButton.offsetLeft,
+            width: activeButton.offsetWidth,
+          };
+        });
+      }
+    };
+
+    updateIndicator();
+    const timer = setTimeout(updateIndicator, 50);
+    window.addEventListener('resize', updateIndicator);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateIndicator);
+    };
+  }, [activeSubTab]);
 
   useEffect(() => {
     if (!isSupportPromptOpen) {
@@ -108,7 +135,15 @@ function R101PageContent() {
 
           {/* Sub-Tabs Control */}
           <div className={styles.tabBar}>
-            <div className={styles.segmentedControl}>
+            <div className={styles.segmentedControl} ref={segmentedControlRef}>
+              <div
+                className={`${styles.activeTabIndicator} ${activeSubTab === 'steps' ? styles.stepsActive : styles.supportActive}`}
+                style={{
+                  transform: `translate3d(${indicatorStyle.left}px, 0, 0)`,
+                  width: `${indicatorStyle.width}px`,
+                  opacity: indicatorStyle.width ? 1 : 0,
+                }}
+              />
               <button
                 type="button"
                 className={`${styles.tabButton} ${activeSubTab === 'steps' ? styles.activeTab : ''}`}

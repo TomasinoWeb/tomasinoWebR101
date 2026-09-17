@@ -30,9 +30,21 @@
   aspect-ratio: 1 / 1;
 }
 
+.track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
 .slide {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
 }
 
 .image {
@@ -41,6 +53,9 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .arrow {

@@ -1,12 +1,12 @@
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 10001;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
   animation: announcementFadeIn 450ms ease-out both;
 }
@@ -14,11 +14,10 @@
 .dialog {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 90vw;
-  max-height: calc(100vh - 32px);
+  max-width: min(70vw, 460px);
+  max-height: 65vh;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
@@ -27,13 +26,10 @@
 
 .posterFrame {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  max-width: 90vw;
-  max-height: calc(100vh - 32px);
+  display: inline-block;
+  width: fit-content;
+  max-width: min(70vw, 460px);
+  max-height: 65vh;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -42,39 +38,37 @@
   display: block;
   width: auto;
   height: auto;
-  max-width: 90vw;
-  max-height: 85vh;
+  max-width: min(70vw, 460px);
+  max-height: 65vh;
   object-fit: contain;
-  border-radius: 8px;
 }
 
 .closeButton {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 50;
+  top: calc(var(--header-height, 60px) + 16px);
+  right: 24px;
+  z-index: 1001;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  cursor: pointer;
-  line-height: 1;
-  backdrop-filter: blur(4px);
-  transition: background-color 150ms ease;
+  transition: color 0.15s ease, transform 0.15s ease;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
 
   &:hover,
   &:focus-visible {
-    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    background: transparent;
+    transform: scale(1.1);
   }
 }
 
@@ -107,11 +101,12 @@
   .dialog,
   .posterFrame,
   .image {
-    max-height: 85vh;
+    max-width: min(85vw, 360px);
+    max-height: 68vh;
   }
 
   .closeButton {
-    top: 12px;
-    right: 12px;
+    top: calc(var(--header-height, 54px) + 12px);
+    right: 16px;
   }
 }

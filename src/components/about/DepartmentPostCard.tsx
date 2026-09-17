@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { ImageCarousel } from "./ImageCarousel";
 import type { SocialPostComment } from "./SocialPostCard";
 import styles from "./DepartmentPostCard.module.scss";
@@ -32,31 +34,27 @@ export function DepartmentPostCard({
 }: DepartmentPostCardProps) {
   return (
     <article className={styles.post}>
-      <header className={styles.header}>
-        <div className={styles.headerLeft}>
-          <Image src={avatar} alt={`${name} avatar`} width={32} height={32} className={styles.avatar} />
-          <span className={styles.name}>{name}</span>
-        </div>
-        <div className={styles.headerRight}>
-          <span className={styles.following}>Following</span>
-          {onClose && (
-            <button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close department details">
-              &times;
-            </button>
-          )}
-        </div>
-      </header>
-
       <div className={styles.media}>
         <ImageCarousel images={images} alt={name} variant="fill" />
       </div>
 
-      <div className={styles.content}>
-        <div className={styles.body}>
-          <div className={styles.likes}>{likes} likes</div>
+      <div className={styles.textColumn}>
+        <header className={styles.header}>
+          <div className={styles.headerLeft}>
+            <Image src={avatar} alt={`${name} avatar`} width={36} height={36} className={styles.avatar} />
+            <span className={styles.name}>{name}</span>
+            <span className={styles.following}>Following</span>
+          </div>
+          <div className={styles.headerRight}>
+            <FontAwesomeIcon icon={faEllipsis} className={styles.more} />
+          </div>
+        </header>
 
-          <div className={styles.caption}>
-            <p>
+        <div className={styles.bodyWrap}>
+          <div className={styles.body}>
+            <div className={styles.likes}>{likes} likes</div>
+
+            <p className={styles.caption}>
               <span className={styles.captionName}>{name}</span> {caption}
             </p>
 
@@ -72,20 +70,21 @@ export function DepartmentPostCard({
             )}
 
             {hashtags && <p className={styles.hashtags}>{hashtags}</p>}
+
             {date && <p className={styles.date}>{date}</p>}
           </div>
-        </div>
 
-        {comments && comments.length > 0 && (
-          <div className={styles.comments}>
-            {commentsCount && <p className={styles.viewAll}>view all {commentsCount} comments</p>}
-            {comments.map((comment, index) => (
-              <p key={index} className={styles.comment}>
-                <span className={styles.commentName}>{comment.username}</span> {comment.text}
-              </p>
-            ))}
-          </div>
-        )}
+          {comments && comments.length > 0 && (
+            <div className={styles.comments}>
+              {commentsCount && <p className={styles.viewAll}>view all {commentsCount} comments</p>}
+              {comments.map((comment, i) => (
+                <p key={i} className={styles.comment}>
+                  <span className={styles.commentName}>{comment.username}</span> {comment.text}
+                </p>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </article>
   );

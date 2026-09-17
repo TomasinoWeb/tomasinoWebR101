@@ -22,6 +22,27 @@
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* Thin custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+
+    &:hover {
+      background: #94a3b8;
+    }
+  }
 }
 
 .content.wide {
@@ -50,6 +71,55 @@
     -webkit-overflow-scrolling: touch;
     padding: 0;
     box-sizing: border-box;
+  }
+}
+
+.backdropCloseButton {
+  position: absolute;
+  top: calc(var(--header-height, 60px) + 16px);
+  right: 24px;
+  z-index: 1001;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.14);
+    transform: scale(1.08);
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .backdrop {
+    padding: 16px;
+  }
+
+  .backdropCloseButton {
+    top: calc(var(--header-height, 54px) + 12px);
+    right: 16px;
+  }
+
+  .content.wide {
+    width: min(84vw, 360px);
+    height: 70vh;
+    max-height: 70dvh;
+    border-radius: 14px;
+    flex-direction: column;
   }
 }
 

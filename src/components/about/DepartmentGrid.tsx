@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart, faComment, faClone } from "@fortawesome/free-solid-svg-icons";
 import { departments } from "../../data/departments";
 import { DepartmentPostCard } from "./DepartmentPostCard";
 import { Modal } from "./Modal";
@@ -134,23 +136,40 @@ export function DepartmentGrid() {
   return (
     <>
       <div className={styles.grid}>
-        {departments.map((department) => (
-          <button
-            type="button"
-            key={department.id}
-            className={styles.tile}
-            onClick={() => setOpenId(department.id)}
-          >
-            <Image
-              src={department.icon}
-              alt={department.name}
-              fill
-              sizes="(max-width: 768px) 33vw, 25vw"
-              className={styles.image}
-            />
-            <span className={styles.label}>{department.name}</span>
-          </button>
-        ))}
+        {departments.map((department) => {
+          const key = normalizeDepartmentKey(department.id);
+          const itemMeta = departmentCardMeta[key] ?? departmentCardMeta[department.id];
+          return (
+            <button
+              type="button"
+              key={department.id}
+              className={styles.tile}
+              onClick={() => setOpenId(department.id)}
+            >
+              <Image
+                src={department.icon}
+                alt={department.name}
+                fill
+                sizes="(max-width: 768px) 33vw, 25vw"
+                className={styles.image}
+              />
+              <div className={styles.carouselBadge} aria-hidden="true">
+                <FontAwesomeIcon icon={faClone} className={styles.badgeIcon} />
+              </div>
+              <div className={styles.overlay}>
+                <div className={styles.overlayItem}>
+                  <FontAwesomeIcon icon={faHeart} className={styles.overlayIcon} />
+                  <span>{itemMeta?.likes ?? "24.9k"}</span>
+                </div>
+                <div className={styles.overlayItem}>
+                  <FontAwesomeIcon icon={faComment} className={styles.overlayIcon} />
+                  <span>{itemMeta?.commentsCount ?? "3.1k"}</span>
+                </div>
+              </div>
+              <span className={styles.tileLabel}>{department.name}</span>
+            </button>
+          );
+        })}
       </div>
 
       <Modal isOpen={openDepartment != null} onClose={() => setOpenId(null)} size="wide">

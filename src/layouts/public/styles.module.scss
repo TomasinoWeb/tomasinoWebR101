@@ -14,7 +14,7 @@
 }
 
 .root {
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -171,10 +171,15 @@
 .footer {
   flex-shrink: 0;
   position: relative;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  width: 100dvw;
+  max-width: 100dvw;
   background-color: #ffffff;
   --footer-fg: var(--neutral-black, #1e1e1e);
   z-index: 10;
+  box-sizing: border-box;
 }
 
 .footerVisible {
@@ -222,9 +227,9 @@
 @media screen and (max-width: 1023px) {
   .root {
     height: auto;
-    min-height: 100dvh;
+    min-height: 100vh;
     overflow-y: auto;
-    padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));
+    padding-bottom: var(--nav-h);
   }
 
   .footer {
@@ -239,7 +244,7 @@
 
   .nonScrollable {
     height: auto;
-    min-height: 100dvh;
+    min-height: 100vh;
     overflow: visible;
 
     main {

@@ -34,12 +34,12 @@ const defaultDepartmentImage = "/assets/py18/about/departments/DefaultImage.png"
 
 const offeredPositionsByName: Record<Department, string[]> = {
   Secretariat: [],
-  Finance: ["Finance"],
+  Finance: [],
   "External Affairs": [],
   "Human Resources": [],
   Writing: ["Editorial Assistant", "News Writers", "Features Writers", "Sports Writers", "Stories Writers", "Blogs Writers"],
-  Photography: [],
-  Videography: ["Screenwriters", "Videographers", "Editors"],
+  Photography: ["Events", "Sports", "Portraits", "Photojournalism"],
+  Videography: ["Offline Editor", "Online Editor (Motion Graphics)", "Videographer", "Screenwriter"],
   Creatives: ["Graphic Designers", "Illustrators"],
   "Web Technologies": ["Frontend Web Developer", "UI/UX Product Designer", "Backend Systems Engineer"],
   "Special Projects": [],

@@ -1,9 +1,26 @@
+/* Vaporwave Palette Tokens */
+/* #FF1E6A (Hot Pink), #EE4D68 (Coral), #C70067 (Deep Purple), #EF3013 (Vermilion) */
+/* #FFB703 (Gold), #FF6B1A (Orange), #80CE9E (Mint), #9C3D1B (Brown) */
+
 .whoWeAre {
-  max-width: 700px;
-  margin-inline: auto;
-  padding: 40px;
-  flex: 1;
   width: 100%;
+  max-width: 100%;
+  padding: 40px clamp(32px, 8vw, 120px);
+  flex: 1;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-block: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Dotted Background Texture (Hot Pink #FF1E6A) */
+  background-color: #FFFDF7;
+  background-image: radial-gradient(rgba(255, 30, 106, 0.22) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
 }
 
 .hashtags {
@@ -11,21 +28,41 @@
 }
 
 .theDepartments {
-  max-width: 1171px;
-  margin-inline: auto;
   width: 100%;
-  padding: clamp(20px, 5vw, 40px) clamp(20px, 5vw, 100px);
+  max-width: 100%;
+  padding: 40px clamp(32px, 8vw, 120px);
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-block: 0;
+
+  /* Dotted Background Texture (Mint Green #3AAA9A) */
+  background-color: #FFFDF7;
+  background-image: radial-gradient(rgba(58, 170, 154, 0.28) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
 }
 
-
 .life {
-  max-width: 1240px;
-  margin-inline: auto;
   width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 48px;
   padding-block: 40px;
+  padding-inline: clamp(32px, 8vw, 120px);
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-block: 0;
+
+  /* Dotted Background Texture (Vermilion Red #EF3013) */
+  background-color: #FFFDF7;
+  background-image: radial-gradient(rgba(239, 48, 19, 0.2) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
 }
 
 .aboutFooter {
@@ -34,15 +71,17 @@
   border-top-color: #d9d9d9 !important;
 }
 
-
-
 @media (max-width: 768px) {
   .whoWeAre {
-    padding: 24px;
+    padding: 24px 16px;
   }
 
-  .life{
-    padding: 20px;
+  .theDepartments {
+    padding: 24px 16px;
   }
 
+  .life {
+    padding-inline: 16px;
+    padding-block: 24px;
+  }
 }

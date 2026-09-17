@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
 import Image from 'next/image';
-import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe, faUser, faUsers, faTrophy, faPlus, faRightLeft, faHeart, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { createPublicPage } from '../layouts/public/frontend';
 import { createPublicStaticProps } from '../layouts/public/static';
 import styles from './faq.module.scss';
@@ -124,14 +124,51 @@ function FAQsPageContent() {
   const [selectedCategory, setSelectedCategory] = useState<FAQCategory>('all');
   const [featuredPhotoIndex, setFeaturedPhotoIndex] = useState(0);
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [openFaqIds, setOpenFaqIds] = useState<Set<number>>(new Set());
+  const navBarRef = React.useRef<HTMLDivElement>(null);
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+
+  React.useEffect(() => {
+    const updateIndicator = () => {
+      if (!navBarRef.current) return;
+      const activeButton = navBarRef.current.querySelector<HTMLButtonElement>(`.${styles.active}`);
+      if (activeButton) {
+        setIndicatorStyle((prev) => {
+          if (prev.left === activeButton.offsetLeft && prev.width === activeButton.offsetWidth) {
+            return prev;
+          }
+          return {
+            left: activeButton.offsetLeft,
+            width: activeButton.offsetWidth,
+          };
+        });
+      }
+    };
+
+    updateIndicator();
+    const timer = setTimeout(updateIndicator, 50);
+    window.addEventListener('resize', updateIndicator);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateIndicator);
+    };
+  }, [selectedCategory]);
+
+  const toggleFaq = (id: number) => {
+    setOpenFaqIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
   const visibleFAQs = selectedCategory === 'all'
     ? faqData
     : faqData.filter((faq) => faq.category === selectedCategory);
-
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   React.useEffect(() => {
     setFeaturedPhotoIndex(Math.floor(Math.random() * featuredPhotos.length));
@@ -167,17 +204,22 @@ function FAQsPageContent() {
     };
   }, [isAnnouncementOpen]);
 
+  const safePhotoIndex = ((featuredPhotoIndex % featuredPhotos.length) + featuredPhotos.length) % featuredPhotos.length;
+  const currentPhoto = featuredPhotos[safePhotoIndex] || featuredPhotos[0];
+
   const changeFeaturedPhoto = (direction: number) => {
-    setFeaturedPhotoIndex((currentIndex) => (
-      (currentIndex + direction + featuredPhotos.length) % featuredPhotos.length
-    ));
+    setFeaturedPhotoIndex((currentIndex) => {
+      const total = featuredPhotos.length;
+      if (!total) return 0;
+      return ((currentIndex + direction) % total + total) % total;
+    });
   };
 
   return (
     <main className={styles.faqPage}>
-      {isAnnouncementOpen && isMounted && createPortal(
-          <div
-            className={`${styles.announcementBackdrop} ${landingAnnouncementStyles.overlay}`}
+      {isAnnouncementOpen && (
+        <div
+          className={`${styles.announcementBackdrop} ${landingAnnouncementStyles.overlay}`}
           role="presentation"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
@@ -185,31 +227,31 @@ function FAQsPageContent() {
             }
           }}
         >
+          <button
+            type="button"
+            className={landingAnnouncementStyles.closeButton}
+            onClick={() => setIsAnnouncementOpen(false)}
+            aria-label="Close announcement"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
           <div
             className={`${styles.announcementModal} ${landingAnnouncementStyles.dialog}`}
             role="dialog"
             aria-modal="true"
             aria-label="FAQ announcement"
           >
-            <button
-              type="button"
-              className={landingAnnouncementStyles.closeButton}
-              onClick={() => setIsAnnouncementOpen(false)}
-              aria-label="Close announcement"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
             <Image
               src="/assets/py19/faqs/faqs_banner.png"
               alt="Frequently asked questions"
@@ -218,24 +260,25 @@ function FAQsPageContent() {
               priority
             />
           </div>
-          </div>,
-          document.body,
-      )}
-      <nav className={styles.pageNavigation} aria-label="FAQ sections">
-        <h1 className={styles.pageTitle}>FAQs</h1>
-        <div className={styles.pageLinks}>
-          <Link href="/faqs" aria-current="page">All</Link>
-          <Link href="/about">The Org</Link>
-          <Link href="/apply">Application</Link>
-          <Link href="/r101">Interviews</Link>
         </div>
-      </nav>
+      )}
+      <header className={styles.pageNavigation}>
+        <h1 className={styles.pageTitle}>FAQs</h1>
+      </header>
       <div className={styles.dashboardContainer}>
         {/* Main Feed Section */}
         <section className={styles.feed}>
           {/* Top Quick Bar */}
           <div className={styles.actionHeader}>
-            <div className={styles.navBar}>
+            <div className={styles.navBar} ref={navBarRef}>
+              <div
+                className={styles.activeIndicator}
+                style={{
+                  transform: `translate3d(${indicatorStyle.left}px, 0, 0)`,
+                  width: `${indicatorStyle.width}px`,
+                  opacity: indicatorStyle.width ? 1 : 0,
+                }}
+              />
               {faqCategories.map((category) => (
                 <button
                   key={category.key}
@@ -244,56 +287,92 @@ function FAQsPageContent() {
                   onClick={() => setSelectedCategory(category.key)}
                   aria-pressed={selectedCategory === category.key}
                 >
-                  <span>{category.label}</span>
+                  <span className={styles.tabLabel}>{category.label}</span>
                 </button>
               ))}
             </div>
           </div>
 
           {/* Mapped FAQ Posts */}
-          {visibleFAQs.map((faq) => (
-            <article key={faq.id} className={styles.postCard}>
-              <Image
-                className={styles.avatar}
-                src={avatarPath(faqAvatars[faq.id])}
-                alt={`FAQ profile ${faq.id}`}
-                width={60}
-                height={60}
-              />
-              <div className={styles.cardBody}>
-                <div className={styles.cardHeader}>
-                  <span className={styles.username}>{faqUsernames[faq.id - 1]}</span>
-                  <div className={styles.stats}>
-                    <span className={styles.noteBadge}>{faq.notes}</span>
+          {visibleFAQs.map((faq) => {
+            const isOpen = openFaqIds.has(faq.id);
+            return (
+              <article key={faq.id} className={`${styles.postCard} ${isOpen ? styles.isOpen : ''}`}>
+                <Image
+                  className={styles.avatar}
+                  src={avatarPath(faqAvatars[faq.id])}
+                  alt={`FAQ profile ${faq.id}`}
+                  width={60}
+                  height={60}
+                />
+                <div className={styles.cardBody}>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.username}>{faqUsernames[faq.id - 1]}</span>
+                    <div className={styles.stats}>
+                      <span className={styles.noteBadge}>{faq.notes}</span>
+                      <FontAwesomeIcon icon={faRightLeft} className={styles.statActionIcon} />
+                      <FontAwesomeIcon icon={faHeart} className={styles.statActionIcon} />
+                    </div>
+                  </div>
+                  <div className={styles.answerDropdown}>
+                    <button
+                      type="button"
+                      className={styles.question}
+                      onClick={() => toggleFaq(faq.id)}
+                      aria-expanded={isOpen}
+                    >
+                      <span>{faq.question}</span>
+                      <span className={styles.toggleIcon}>{isOpen ? '−' : '+'}</span>
+                    </button>
+                    <div className={styles.replyWrapper}>
+                      <div className={styles.replyInner}>
+                        <div className={styles.reply}>
+                          <p className={styles.answer}>{faq.answer}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <details className={styles.answerDropdown}>
-                  <summary className={styles.question}>{faq.question}</summary>
-                  <div className={styles.reply}>
-                    <p className={styles.answer}>{faq.answer}</p>
-                  </div>
-                </details>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </section>
 
         {/* Sidebar Widgets */}
         <aside className={styles.sidebar}>
           <div className={styles.statWidget}>
-            <div className={styles.statRow}><span>Websites</span><span className={styles.badge}>6</span></div>
-            <div className={styles.statRow}><span>Members</span><span className={styles.badge}>81+</span></div>
-            <div className={styles.statRow}><span>Awards</span><span className={styles.badge}>29</span></div>
+            <div className={`${styles.statRow} ${styles.statWebsites}`}>
+              <div className={styles.labelGroup}>
+                <FontAwesomeIcon icon={faGlobe} className={styles.statIcon} />
+                <span>Websites</span>
+              </div>
+              <span className={styles.badge}>6</span>
+            </div>
+            <div className={`${styles.statRow} ${styles.statMembers}`}>
+              <div className={styles.labelGroup}>
+                <FontAwesomeIcon icon={faUser} className={styles.statIcon} />
+                <span>Members</span>
+              </div>
+              <span className={styles.badge}>81+</span>
+            </div>
+            <div className={`${styles.statRow} ${styles.statAwards}`}>
+              <div className={styles.labelGroup}>
+                <FontAwesomeIcon icon={faTrophy} className={styles.statIcon} />
+                <span>Awards</span>
+              </div>
+              <span className={styles.badge}>29</span>
+            </div>
           </div>
 
           <div className={styles.featuredWidget}>
             <div className={styles.photoBox}>
               <Image
-                key={featuredPhotos[featuredPhotoIndex]}
-                src={featuredPhotoPath(featuredPhotos[featuredPhotoIndex])}
+                src={featuredPhotoPath(currentPhoto)}
                 alt="Featured TomasinoWeb photo"
                 fill
+                sizes="(max-width: 768px) 100vw, 320px"
                 className={styles.featuredPhoto}
+                priority
               />
               <button
                 type="button"
@@ -301,7 +380,7 @@ function FAQsPageContent() {
                 onClick={() => changeFeaturedPhoto(-1)}
                 aria-label="Previous featured photo"
               >
-                &#8592;
+                <FontAwesomeIcon icon={faChevronLeft} />
               </button>
               <button
                 type="button"
@@ -309,11 +388,28 @@ function FAQsPageContent() {
                 onClick={() => changeFeaturedPhoto(1)}
                 aria-label="Next featured photo"
               >
-                &#8594;
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </div>
+            <div className={styles.widgetActions}>
+              <button type="button" className={styles.actionBtn} aria-label="Add photo">
+                <FontAwesomeIcon icon={faPlus} className={styles.actionIcon} />
+              </button>
+              <button type="button" className={styles.actionBtn} onClick={() => changeFeaturedPhoto(1)} aria-label="Switch photo">
+                <FontAwesomeIcon icon={faRightLeft} className={styles.actionIcon} />
+              </button>
+              <button type="button" className={styles.actionBtn} aria-label="Like photo">
+                <FontAwesomeIcon icon={faHeart} className={styles.actionIcon} />
               </button>
             </div>
             <div className={styles.widgetFooter}>
-              <span>Featured Photo</span>
+              <div className={styles.profileAvatar}>
+                <Image src="/logo/insignia_yellow.png" alt="TomasinoWeb" width={32} height={32} className={styles.avatarImg} />
+              </div>
+              <div className={styles.profileText}>
+                <span className={styles.profileTitle}>TomasinoWeb</span>
+                <span className={styles.profileSubtitle}>R101 2026</span>
+              </div>
             </div>
           </div>
         </aside>

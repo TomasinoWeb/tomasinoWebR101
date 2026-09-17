@@ -19,17 +19,32 @@ type PublicLayoutViewProps = {
 const useScroll = () => {
   const [data, setData] = useState({ x: 0, y: 0, lastX: 0, lastY: 0 });
 
-  const handleScroll = () => {
-    setData((last) => ({
-      x: window.scrollX,
-      y: window.scrollY,
-      lastX: last.x,
-      lastY: last.y,
-    }));
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setData((last) => {
+            const newX = window.scrollX;
+            const newY = window.scrollY;
+            if (last.x === newX && last.y === newY) {
+              return last;
+            }
+            return {
+              x: newX,
+              y: newY,
+              lastX: last.x,
+              lastY: last.y,
+            };
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -37,17 +52,9 @@ const useScroll = () => {
 };
 
 function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps) {
-  const [navClassList, setNavClassList] = useState<string[]>([]);
   const scroll = useScroll();
-  useEffect(() => {
-    const _classList: string[] = [];
-
-    if (scroll.y > 150 && scroll.y - scroll.lastY > 0) {
-      _classList.push(styles["nav-bar--hidden"]);
-    }
-
-    setNavClassList(_classList);
-  }, [scroll.y, scroll.lastY]);
+  const isNavHidden = scroll.y > 150 && scroll.y - scroll.lastY > 0;
+  const navClassList = isNavHidden ? [styles["nav-bar--hidden"]] : [];
 
   return (
       <div
