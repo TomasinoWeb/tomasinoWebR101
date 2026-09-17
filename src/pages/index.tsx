@@ -92,10 +92,10 @@ export default createPublicPage<PageProps>(() => {
             </div>
 
             <div className={styles.widgetCell}>
-              <DashboardWidget title="Application Period" aspectRatio="square">
+              <DashboardWidget title="#TWenty16" aspectRatio="square">
                 <Image
                   src="/assets/py19/landing/square_widget3_twstripes.png"
-                  alt="Application Period"
+                  alt="#TWenty16"
                   fill
                   style={{ objectFit: "cover" }}
                 />
