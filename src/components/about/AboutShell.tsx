@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faUser, faTableCellsLarge, faList, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faTableCellsLarge, faList, faChevronRight, faBuilding, faUsers, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { departments } from "../../data/departments";
 import { ApplicationRedirect } from "../ApplicationRedirect";
 import styles from "./AboutShell.module.scss";
@@ -90,15 +90,24 @@ export function AboutShell({ children }: AboutShellProps) {
 
           <div className={styles.statRow}>
             <div className={styles.stat}>
-              <span className={styles.statValue}>{departments.length}</span>
+              <div className={styles.statValueGroup}>
+                <FontAwesomeIcon icon={faBuilding} className={styles.statIconDepartments} />
+                <span className={styles.statValue}>{departments.length}</span>
+              </div>
               <span className={styles.statLabel}>departments</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>85</span>
+              <div className={styles.statValueGroup}>
+                <FontAwesomeIcon icon={faUsers} className={styles.statIconMembers} />
+                <span className={styles.statValue}>85</span>
+              </div>
               <span className={styles.statLabel}>members</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>29+</span>
+              <div className={styles.statValueGroup}>
+                <FontAwesomeIcon icon={faTrophy} className={styles.statIconAwards} />
+                <span className={styles.statValue}>29+</span>
+              </div>
               <span className={styles.statLabel}>awards</span>
             </div>
           </div>

@@ -2,6 +2,15 @@
 // affect the rest of the site's yellow/black theme. Swap these once Figma provides
 // the final tokens.
 .shell {
+  --hot-pink: #FF1F6D;
+  --rose: #E0527A;
+  --magenta: #C90F94;
+  --red-orange: #EF3719;
+  --amber: #FCB602;
+  --orange: #FB7A1D;
+  --mint: #7FCE9F;
+  --rust: #9A431B;
+
   --about-primary:#B5124F;
   --about-primary-dark: #4f1329;
   --about-accent: #d9a441;
@@ -69,7 +78,7 @@
   min-height: auto;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto auto;
-  padding: 20px 24px 16px;
+  padding: 36px 24px 28px;
   box-sizing: border-box;
 }
 
@@ -118,6 +127,28 @@
   }
 }
 
+.statValueGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.statIconDepartments {
+  color: var(--hot-pink);
+  font-size: 0.95rem;
+}
+
+.statIconMembers {
+  color: var(--orange);
+  font-size: 0.95rem;
+}
+
+.statIconAwards {
+  color: var(--amber);
+  font-size: 0.95rem;
+}
+
 .statValue {
   font-weight: 700;
   font-size: clamp(0.95rem, 3vw, 1.15rem);
@@ -142,20 +173,24 @@
   margin: 6px 16px 0 16px;
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--about-neutral-black);
+  color: #ffffff;
   text-decoration: none;
-  background: #f3f4f6;
+  background: var(--hot-pink);
+  border: 1px solid var(--rose);
   border-radius: 8px;
-  transition: background 150ms ease;
+  box-shadow: 0 2px 8px rgba(255, 31, 109, 0.25);
+  transition: background 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
 
   &:hover {
-    background: #e5e7eb;
+    background: var(--rose, #E0527A);
+    border-color: var(--rose, #E0527A);
+    box-shadow: 0 4px 10px rgba(224, 82, 122, 0.3);
   }
 }
 
 .joinUsIcon {
   font-size: 0.65rem;
-  color: var(--about-neutral-mid);
+  color: #ffffff;
 }
 
 .bio {
@@ -300,6 +335,7 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  padding-bottom: 48px;
 }
 
 .contentInner {
@@ -317,7 +353,7 @@
   }
 
   .profile {
-    padding: 16px;
+    padding: 24px 16px 20px;
     margin: 0;
     width: 100%;
     grid-template-columns: auto 1fr;
