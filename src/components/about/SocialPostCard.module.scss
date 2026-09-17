@@ -24,8 +24,10 @@
   min-height: 44px;
   flex-shrink: 0;
   border-radius: 50%;
-  object-fit: cover;
-  background: rgb(3, 1, 31);
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+  background: #000000;
 }
 
 .name {
@@ -38,7 +40,7 @@
   font-size: 10px;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(180deg, #A83268 0%, #713458 100%);
+  background: #D50B8A;
   border-radius: 4px;
   padding: 8px 10px;
 }

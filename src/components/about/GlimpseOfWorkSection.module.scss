@@ -18,7 +18,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   background: var(--about-neutral-light, #e4e2e6);
-  max-height: 140px;
+  max-height: 210px;
 }
 
 .image {
@@ -62,5 +62,9 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .imageWrapper {
+    max-height: 140px;
   }
 }

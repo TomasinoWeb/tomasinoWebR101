@@ -11,7 +11,7 @@ interface PageProps {}
 
 const sections = [
   {
-    title: "Our Impact",
+    title: "Our Impact! 🚀",
     text: "a look at what we've built and achieved together!",
     content: <OurImpactSection />,
   },
@@ -38,7 +38,7 @@ export default PublicLayoutFrontend.use<PageProps>(() => {
           ))}
 
           <LifeSection
-            title="The People"
+            title="The People! 👥"
             text="PU-PU-Published! See that? We made that."
           >
             <ThePeopleSection />

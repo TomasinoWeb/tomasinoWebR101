@@ -125,6 +125,19 @@ $portrait-tablet: "(orientation: portrait) and (max-width: 1280px) and (min-widt
   padding: var(--pad-y) var(--side-pad) calc(var(--home-footer-h) + var(--pad-y));
   background: repeating-linear-gradient(90deg, #f1f3f7, #f1f3f7 12px, #ffffff 12px, #ffffff 24px);
 
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/py19/backgrounds/bg_wallpaper_transparent.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.20;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   /* Portrait Mobile & Tablet Overrides */
   @media screen and #{$portrait} {
     height: auto;
@@ -173,6 +186,8 @@ $portrait-tablet: "(orientation: portrait) and (max-width: 1280px) and (min-widt
 }
 
 .container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;

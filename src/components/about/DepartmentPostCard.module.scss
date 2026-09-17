@@ -108,7 +108,10 @@
   min-height: 36px;
   flex-shrink: 0;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 6px;
+  box-sizing: border-box;
+  background: #000000;
 }
 
 .name {
@@ -129,7 +132,7 @@
   justify-content: center;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(180deg, #A83268 0%, #713458 100%);
+  background: #D50B8A;
   border-radius: 6px;
 }
 

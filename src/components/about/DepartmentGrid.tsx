@@ -150,7 +150,7 @@ export function DepartmentGrid() {
                 src={department.icon}
                 alt={department.name}
                 fill
-                sizes="(max-width: 768px) 33vw, 33vw"
+                sizes="(max-width: 768px) 33vw, 25vw"
                 className={styles.image}
               />
               <div className={styles.carouselBadge} aria-hidden="true">

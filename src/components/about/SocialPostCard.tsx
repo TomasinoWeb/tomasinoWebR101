@@ -30,7 +30,6 @@ export function SocialPostCard({ avatar, name, images, likes, caption, offeredPo
             width={44}
             height={44}
             className={styles.avatar}
-            style={{ width: "44px", height: "44px", minWidth: "44px", minHeight: "44px", flexShrink: 0 }}
           />
           <span className={styles.name}>{name}</span>
           <span className={styles.following}>Following</span>

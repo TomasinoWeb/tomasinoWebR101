@@ -35,17 +35,27 @@
 
   .announcementModal {
     position: relative;
-    max-width: 85vw;
-    max-height: 80vh;
+    max-width: min(70vw, 460px);
+    max-height: 65vh;
 
     img {
-      max-width: 85vw;
-      max-height: 80vh;
+      max-width: min(70vw, 460px);
+      max-height: 65vh;
       width: auto;
       height: auto;
       object-fit: contain;
       border-radius: 16px;
       display: block;
+    }
+
+    @media screen and (max-width: 600px) {
+      max-width: min(85vw, 360px);
+      max-height: 68vh;
+
+      img {
+        max-width: min(85vw, 360px);
+        max-height: 68vh;
+      }
     }
   }
 }
