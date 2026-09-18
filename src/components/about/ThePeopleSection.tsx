@@ -70,7 +70,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <div className={styles.testimonialCard}>
       <div className={styles.testimonialTag}>
-        #TWrowback X {testimonial.department}
+        #TWThrowback X {testimonial.department}
       </div>
       <div className={styles.testimonialCardBody}>
         <div className={styles.testimonialPhoto}>
