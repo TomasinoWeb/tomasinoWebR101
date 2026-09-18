@@ -232,10 +232,8 @@
 
 .tabBar {
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   margin-top: 0;
   border-top: 1px solid var(--about-neutral-light, #c4c8cf);
   border-bottom: 1px solid var(--about-neutral-light, #c4c8cf);
@@ -325,36 +323,35 @@
 
 .container {
   width: 100%;
-  background-color: #FFFDF7;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-bottom: 48px;
+  padding: 0;
+  margin: 0;
 }
 
 .contentInner {
   width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .shell {
-    padding: 64px 16px 0;
+    padding: 0;
     min-height: 100dvh;
-  }
-
-  .header {
-    padding-inline: 0;
   }
 
   .header {
     border-bottom: none;
     margin: 0;
     padding: 0;
+    padding-inline: 0;
   }
 
   .profile {
@@ -401,14 +398,17 @@
 
   .contentInner {
     width: 100%;
-    max-width: 36rem;
+    max-width: none;
     margin-inline: auto;
-    padding: 1rem;
-    border: 1px solid #f0f0f0;
-    border-radius: 1rem;
-    background: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
     box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .tab span {
