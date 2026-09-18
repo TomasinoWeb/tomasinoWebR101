@@ -334,12 +334,12 @@
   font-family: var(--font-ui);
 
   .statWidget {
-    background: #81466A;
+    background: rgba(129, 70, 106, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 12px;
     box-shadow: none;
-    opacity: 0.8;
     overflow: hidden;
+    backdrop-filter: blur(4px);
 
     .statRow {
       height: 48px;
@@ -396,12 +396,12 @@
   }
 
   .featuredWidget {
-    background: #81466A;
-    border: none;
+    background: rgba(129, 70, 106, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 14px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    opacity: 0.8;
     overflow: hidden;
+    backdrop-filter: blur(4px);
 
     .photoBox {
       position: relative;
@@ -410,17 +410,39 @@
       background-color: #667080;
       text-align: center;
       color: #ffffff;
+      touch-action: pan-y;
+
+      .photoTrack {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+
+      .photoSlide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: pan-y;
+      }
 
       .featuredPhoto {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        animation: featuredPhotoFade 350ms ease-out both;
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
       }
 
       .photoControl {
         position: absolute;
         top: 0;
         bottom: 0;
-        z-index: 2;
+        z-index: 3;
         width: 36px;
         height: 100%;
         padding: 0;
@@ -467,18 +489,20 @@
     }
 
     .widgetActions {
-      background-color: #451632;
+      background-color: rgba(69, 22, 50, 0.7);
       display: flex;
       align-items: center;
       justify-content: space-around;
-      padding: 8px 14px;
+      padding: 4px 10px;
+      min-height: 26px;
+      box-sizing: border-box;
 
       .actionBtn {
         background: transparent;
         border: none;
         color: #ffffff;
         cursor: pointer;
-        padding: 4px 6px;
+        padding: 2px 6px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -491,16 +515,16 @@
         }
 
         .actionIcon {
-          width: 16px;
-          height: 16px;
-          font-size: 16px;
+          width: 13px;
+          height: 13px;
+          font-size: 13px;
           color: #ffffff;
         }
       }
     }
 
     .widgetFooter {
-      background-color: #81466A;
+      background-color: rgba(129, 70, 106, 0.7);
       padding: 10px 14px;
       display: flex;
       align-items: center;
@@ -593,11 +617,13 @@
   }
 
   .actionHeader .navBar {
+    height: 48px;
     overflow-x: auto;
     white-space: nowrap;
     justify-content: flex-start !important;
     gap: 0;
     padding: 0 !important;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
@@ -605,9 +631,10 @@
     }
 
     .navItem {
-      flex-shrink: 0;
-      padding: 6px 14px !important;
+      flex: 1 0 auto;
+      padding: 0 14px !important;
       font-size: 13px !important;
+      height: 100%;
     }
   }
 
@@ -693,6 +720,35 @@
     box-sizing: border-box;
   }
 
+  .actionHeader .navBar {
+    height: 42px;
+    border-radius: 8px 8px 0 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start !important;
+    gap: 0;
+    padding: 0 !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .activeIndicator {
+      border-bottom-width: 2.5px;
+    }
+
+    .navItem {
+      flex: 1 0 auto;
+      min-width: 0;
+      padding: 0 clamp(8px, 2.5vw, 14px) !important;
+      font-size: clamp(11.5px, 3.2vw, 13px) !important;
+      letter-spacing: -0.2px;
+      height: 100%;
+    }
+  }
+
   .postCard {
     gap: 10px;
 
@@ -743,5 +799,20 @@
   .sidebar {
     grid-template-columns: 1fr;
     gap: 14px;
+
+    .featuredWidget .widgetActions {
+      padding: 3px 8px;
+      min-height: 24px;
+
+      .actionBtn {
+        padding: 2px 4px;
+
+        .actionIcon {
+          width: 12px;
+          height: 12px;
+          font-size: 12px;
+        }
+      }
+    }
   }
 }

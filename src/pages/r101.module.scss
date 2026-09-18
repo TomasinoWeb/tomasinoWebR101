@@ -153,11 +153,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
       transition: color 0.25s ease, font-weight 0.25s ease;
+
+      .tabIcon {
+        width: 14px;
+        height: 14px;
+        opacity: 0.8;
+        transition: opacity 0.25s ease;
+      }
 
       &.activeTab {
         color: #ffffff;
         font-weight: var(--type-weight-bold);
+
+        .tabIcon {
+          opacity: 1;
+        }
       }
     }
   }
@@ -603,6 +615,12 @@
     height: 44px;
     padding: 0 12px;
     font-size: 14.5px;
+    gap: 8px;
+
+    .cardTitleIcon {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   .tabBar {
@@ -614,6 +632,12 @@
       min-height: 40px;
       padding: 0 8px;
       font-size: 12px;
+      gap: 6px;
+
+      .tabIcon {
+        width: 12px;
+        height: 12px;
+      }
     }
   }
 
@@ -663,6 +687,7 @@
     .supportCta {
       align-self: stretch;
       text-align: center;
+      justify-content: center;
       padding: 8px 12px;
       font-size: 13px;
     }

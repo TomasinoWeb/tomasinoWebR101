@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faListCheck, faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { createPublicPage } from '../layouts/public/frontend';
 import { createPublicStaticProps } from '../layouts/public/static';
 import { ApplicationRedirect } from '../components/ApplicationRedirect';
@@ -149,14 +151,16 @@ function R101PageContent() {
                 className={`${styles.tabButton} ${activeSubTab === 'steps' ? styles.activeTab : ''}`}
                 onClick={() => setActiveSubTab('steps')}
               >
-                Application Steps
+                <FontAwesomeIcon icon={faListCheck} className={styles.tabIcon} />
+                <span>Application Steps</span>
               </button>
               <button
                 type="button"
                 className={`${styles.tabButton} ${activeSubTab === 'support' ? styles.activeTab : ''}`}
                 onClick={() => setActiveSubTab('support')}
               >
-                Help &amp; Support
+                <FontAwesomeIcon icon={faCircleQuestion} className={styles.tabIcon} />
+                <span>Help &amp; Support</span>
               </button>
             </div>
           </div>

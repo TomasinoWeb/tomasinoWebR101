@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion, PanInfo } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faUser, faUsers, faTrophy, faPlus, faRightLeft, faHeart, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { createPublicPage } from '../layouts/public/frontend';
@@ -126,7 +127,32 @@ function FAQsPageContent() {
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
   const [openFaqIds, setOpenFaqIds] = useState<Set<number>>(new Set());
   const navBarRef = React.useRef<HTMLDivElement>(null);
+  const photoBoxRef = React.useRef<HTMLDivElement>(null);
+  const [photoBoxWidth, setPhotoBoxWidth] = useState(0);
   const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+
+  React.useEffect(() => {
+    const updatePhotoBoxWidth = () => {
+      if (photoBoxRef.current) {
+        setPhotoBoxWidth(photoBoxRef.current.offsetWidth);
+      }
+    };
+    updatePhotoBoxWidth();
+
+    let resizeObserver: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== 'undefined' && photoBoxRef.current) {
+      resizeObserver = new ResizeObserver(() => {
+        updatePhotoBoxWidth();
+      });
+      resizeObserver.observe(photoBoxRef.current);
+    }
+
+    window.addEventListener('resize', updatePhotoBoxWidth);
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener('resize', updatePhotoBoxWidth);
+    };
+  }, []);
 
   React.useEffect(() => {
     const updateIndicator = () => {
@@ -142,6 +168,7 @@ function FAQsPageContent() {
             width: activeButton.offsetWidth,
           };
         });
+        activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
       }
     };
 
@@ -204,15 +231,29 @@ function FAQsPageContent() {
     };
   }, [isAnnouncementOpen]);
 
-  const safePhotoIndex = ((featuredPhotoIndex % featuredPhotos.length) + featuredPhotos.length) % featuredPhotos.length;
-  const currentPhoto = featuredPhotos[safePhotoIndex] || featuredPhotos[0];
-
   const changeFeaturedPhoto = (direction: number) => {
     setFeaturedPhotoIndex((currentIndex) => {
       const total = featuredPhotos.length;
       if (!total) return 0;
-      return ((currentIndex + direction) % total + total) % total;
+      return (currentIndex + direction + total) % total;
     });
+  };
+
+  const handlePhotoDragEnd = (_: unknown, info: PanInfo) => {
+    const currentWidth = photoBoxWidth || (photoBoxRef.current?.offsetWidth ?? 0);
+    const swipeOffset = info.offset.x;
+    const swipeVelocity = info.velocity.x;
+    const threshold = Math.min(currentWidth * 0.15, 50);
+
+    if (swipeOffset < -threshold || swipeVelocity < -200) {
+      if (featuredPhotoIndex < featuredPhotos.length - 1) {
+        setFeaturedPhotoIndex((prev) => prev + 1);
+      }
+    } else if (swipeOffset > threshold || swipeVelocity > 200) {
+      if (featuredPhotoIndex > 0) {
+        setFeaturedPhotoIndex((prev) => prev - 1);
+      }
+    }
   };
 
   return (
@@ -365,15 +406,35 @@ function FAQsPageContent() {
           </div>
 
           <div className={styles.featuredWidget}>
-            <div className={styles.photoBox}>
-              <Image
-                src={featuredPhotoPath(currentPhoto)}
-                alt="Featured TomasinoWeb photo"
-                fill
-                sizes="(max-width: 768px) 100vw, 320px"
-                className={styles.featuredPhoto}
-                priority
-              />
+            <div className={styles.photoBox} ref={photoBoxRef}>
+              <motion.div
+                className={styles.photoTrack}
+                animate={{ x: -featuredPhotoIndex * (photoBoxWidth || (photoBoxRef.current?.offsetWidth ?? 0)) }}
+                transition={{ type: 'tween', duration: 0.45, ease: [0.25, 1, 0.35, 1] }}
+                drag={featuredPhotos.length > 1 ? 'x' : false}
+                dragConstraints={{
+                  left: -((featuredPhotos.length - 1) * (photoBoxWidth || (photoBoxRef.current?.offsetWidth ?? 0))),
+                  right: 0,
+                }}
+                dragElastic={0.2}
+                onDragEnd={handlePhotoDragEnd}
+                style={{ touchAction: 'pan-y', cursor: 'grab' }}
+                whileTap={{ cursor: 'grabbing' }}
+              >
+                {featuredPhotos.map((photo, i) => (
+                  <div key={photo} className={styles.photoSlide}>
+                    <Image
+                      src={featuredPhotoPath(photo)}
+                      alt={`Featured TomasinoWeb photo ${i + 1}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      className={styles.featuredPhoto}
+                      draggable={false}
+                      priority={i === 0}
+                    />
+                  </div>
+                ))}
+              </motion.div>
               <button
                 type="button"
                 className={`${styles.photoControl} ${styles.previousPhoto}`}
