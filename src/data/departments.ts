@@ -37,7 +37,7 @@ const offeredPositionsByName: Record<Department, string[]> = {
   Finance: [],
   "External Affairs": [],
   "Human Resources": [],
-  Writing: ["Editorial Assistant", "News Writers", "Features Writers", "Sports Writers", "Stories Writers", "Blogs Writers"],
+  Writing: ["News Writers", "Features Writers", "Sports Writers", "Stories Writers", "Blogs Writers"],
   Photography: ["Events", "Sports", "Portraits", "Photojournalism"],
   Videography: ["Offline Editor", "Online Editor (Motion Graphics)", "Videographer", "Screenwriter"],
   Creatives: ["Graphic Designers", "Illustrators"],
