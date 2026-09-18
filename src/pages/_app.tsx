@@ -110,7 +110,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const tags = "tags" in details ? details.tags : metatags["/"].tags;
 
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="never">
       <NextSeo
         title={details.title}
         description={description}
