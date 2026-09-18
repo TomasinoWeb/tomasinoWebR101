@@ -8,7 +8,6 @@ import Image from "next/image";
 import PlantTomasinoWeb from "../../../public/assets/py18/logos/WORDMARK_Ver1.png";
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
-import { useRouter } from "next/router";
 import Stairs from "../../components/Stairs";
 import { GlobalNavigator } from "../../components/GlobalNavigator";
 
@@ -53,11 +52,9 @@ const useScroll = () => {
 };
 
 function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps) {
-  const router = useRouter();
   const scroll = useScroll();
   const isNavHidden = scroll.y > 150 && scroll.y - scroll.lastY > 0;
   const navClassList = isNavHidden ? [styles["nav-bar--hidden"]] : [];
-  const sectionTransitionKey = router.pathname.startsWith("/about") ? "/about" : router.asPath;
 
   return (
       <div
@@ -96,7 +93,7 @@ function PublicLayoutView({ internalProps, layoutProps }: PublicLayoutViewProps)
 
         <div className={styles.pageContent}>
           <AnimatePresence mode="wait">
-            <Stairs key={sectionTransitionKey}>
+            <Stairs>
               <main className={`${styles.main}`}>{layoutProps.children}</main>
             </Stairs>
           </AnimatePresence>

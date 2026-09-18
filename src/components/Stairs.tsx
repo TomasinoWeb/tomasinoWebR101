@@ -1,44 +1,36 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Stairs.module.scss";
 
-let previousTopLevelRoute: string | null = null;
-
-const getTopLevelRoute = (path: string) => {
-  if (path.startsWith("/about")) return "/about";
-  return path;
-};
-
-const slideFadeVariants = {
+export const expand = {
   initial: {
-    opacity: 0,
-    x: 40,
+    top: 0,
   },
-  enter: {
-    opacity: 1,
-    x: 0,
+  enter: (i: number) => ({
+    top: "100vh",
     transition: {
-      duration: 0.35,
-      ease: [0.25, 1, 0.35, 1],
+      duration: 0.4,
+      delay: 0.05 * i,
+      ease: [0.215, 0.61, 0.355, 1],
     },
-  },
-  exit: {
-    opacity: 0,
-    x: -30,
+    transitionEnd: { height: "0", top: "0" },
+  }),
+  exit: (i: number) => ({
+    height: "100vh",
     transition: {
-      duration: 0.2,
-      ease: [0.25, 1, 0.35, 1],
+      duration: 0.4,
+      delay: 0.05 * i,
+      ease: [0.215, 0.61, 0.355, 1],
     },
-  },
+  }),
 };
 
-const staticVariants = {
-  initial: { opacity: 1, x: 0 },
-  enter: { opacity: 1, x: 0 },
-  exit: { opacity: 1, x: 0 },
+export const opacity = {
+  initial: { opacity: 0.5 },
+  enter: { opacity: 0 },
+  exit: { opacity: 0.5 },
 };
 
 interface LayoutProps {
@@ -46,27 +38,28 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const router = useRouter();
-  const currentTopLevel = getTopLevelRoute(router.pathname);
+  const anim = (variants: any, custom: number | null = null) => {
+    return {
+      initial: "initial",
+      animate: "enter",
+      exit: "exit",
+      custom,
+      variants,
+    };
+  };
 
-  // Check if we navigated within the same top-level section (e.g. /about -> /about/departments)
-  const isSameSection = previousTopLevelRoute !== null && previousTopLevelRoute === currentTopLevel;
-  const shouldSkipAnimation = useRef(isSameSection);
-
-  useEffect(() => {
-    previousTopLevelRoute = currentTopLevel;
-  }, [currentTopLevel]);
+  const nbOfColumns = 5;
 
   return (
-    <motion.div
-      className={styles.pageTransition}
-      variants={shouldSkipAnimation.current ? staticVariants : slideFadeVariants}
-      initial={shouldSkipAnimation.current ? false : "initial"}
-      animate="enter"
-      exit={shouldSkipAnimation.current ? undefined : "exit"}
-    >
+    <div className={styles.stairs}>
+      <motion.div {...anim(opacity)} className={styles.transitionBackground} />
+      <div className={styles.transitionContainer}>
+        {[...Array(nbOfColumns)].map((_, i) => (
+          <motion.div key={i} {...anim(expand, nbOfColumns - i)} />
+        ))}
+      </div>
       {children}
-    </motion.div>
+    </div>
   );
 };
 
