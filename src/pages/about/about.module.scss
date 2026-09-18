@@ -6,7 +6,8 @@
   width: 100%;
   max-width: 100%;
   padding: 40px clamp(32px, 8vw, 120px);
-  flex: 1;
+  flex: 1 0 auto;
+  min-height: 100%;
   box-sizing: border-box;
   position: relative;
   border-radius: 0;
@@ -31,6 +32,8 @@
   width: 100%;
   max-width: 100%;
   padding: 40px clamp(32px, 8vw, 120px);
+  flex: 1 0 auto;
+  min-height: 100%;
   box-sizing: border-box;
   position: relative;
   border-radius: 0;
@@ -47,6 +50,8 @@
 .life {
   width: 100%;
   max-width: 100%;
+  flex: 1 0 auto;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -73,15 +78,15 @@
 
 @media (max-width: 768px) {
   .whoWeAre {
-    padding: 24px 16px;
+    padding: 20px 0;
   }
 
   .theDepartments {
-    padding: 24px 16px;
+    padding: 0;
   }
 
   .life {
-    padding-inline: 16px;
-    padding-block: 24px;
+    padding-inline: 0;
+    padding-block: 20px;
   }
 }
